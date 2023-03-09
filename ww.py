@@ -24,10 +24,10 @@ class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         if not mainWindow.objectName():
             mainWindow.setObjectName(u"mainWindow")
-        mainWindow.resize(1268, 835)
+        mainWindow.resize(1268, 794)
         self.tabWidget = QTabWidget(mainWindow)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(0, 10, 1251, 741))
+        self.tabWidget.setGeometry(QRect(0, 10, 1251, 771))
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
         self.layoutWidget = QWidget(self.tab_4)
@@ -419,14 +419,27 @@ class Ui_mainWindow(object):
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(0, 0, 1241, 661))
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(150)
-        self.bt_calculate_table3 = QPushButton(self.tab_3)
+        self.widget1 = QWidget(self.tab_3)
+        self.widget1.setObjectName(u"widget1")
+        self.widget1.setGeometry(QRect(1134, 670, 103, 56))
+        self.verticalLayout_4 = QVBoxLayout(self.widget1)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.bt_calculate_table3 = QPushButton(self.widget1)
         self.bt_calculate_table3.setObjectName(u"bt_calculate_table3")
-        self.bt_calculate_table3.setGeometry(QRect(1160, 670, 75, 24))
+
+        self.verticalLayout_4.addWidget(self.bt_calculate_table3)
+
+        self.bt_show_chart_table3 = QPushButton(self.widget1)
+        self.bt_show_chart_table3.setObjectName(u"bt_show_chart_table3")
+
+        self.verticalLayout_4.addWidget(self.bt_show_chart_table3)
+
         self.tabWidget.addTab(self.tab_3, "")
 
         self.retranslateUi(mainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(mainWindow)
@@ -666,7 +679,8 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem102.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled2)
 
-        self.bt_calculate_table3.setText(QCoreApplication.translate("mainWindow", u"PushButton", None))
+        self.bt_calculate_table3.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
+        self.bt_show_chart_table3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 3", None))
     # retranslateUi
 

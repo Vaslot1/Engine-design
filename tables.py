@@ -260,6 +260,8 @@ class table2:
         I_1_p = self.f13_2() * (math.sqrt(self.f11_2() ** 2 + (self.f12_2() + x_1_2_p) ** 2) / (c_1_p * x_1_2_p))
         return I_1_p
 
+
+
     def calculateTable(self, numeration, s):
         self.setS(s)
         if numeration == 1:
@@ -323,12 +325,14 @@ class table2:
 
 
 class table3:
-    C_N = k_y_1 = u_p = k_ob = Z_1 = Z_2 = sigma = t_z_1 = b_sh = h_sh = Lamda_p_1 = Lamda_d_1 = Lamda_l_1 = x_1_2_p = t_z_2 = b_sh_2 = Lamda_p_2 = Lamda_l_2 = Lamda_d_2 = h_sh_shtrih = X_2_shtrih = r_1 = r_2_Ksi_shtrih = U = I_1_p = I_1_nom = I2_shtrih = s_nom = h_k = Lamda_p_2_Ksi = s_kr = K_R = 0
+    C_N = k_y_1 = u_p = k_ob = Z_1 = Z_2 = sigma = t_z_1 = b_sh = h_sh = Lamda_p_1 = Lamda_d_1 = Lamda_l_1 = x_1_2_p = t_z_2 = b_sh_2 = Lamda_p_2 = Lamda_l_2 = Lamda_d_2 = h_sh_shtrih = X_2_shtrih = r_1 = r_2_Ksi_shtrih = U = I_1_p = I_1_nom = I2_shtrih = s_nom = h_k = Lamda_p_2_Ksi = K_R = 0
+    s_kr = count = 0
+    table_2 = 0
 
     def __init__(self, _C_N, _k_y_1, _u_p, _k_ob, _Z_1, _Z_2, _sigma, _t_z_1, _b_sh, _h_sh, _Lamda_p_1, _Lamda_d_1,
                  _Lamda_l_1, _x_1_2_p, _t_z_2, _b_sh_2, _Lamda_p_2, _Lamda_l_2, _Lamda_d_2, _h_sh_shtrih, _X_2_shtrih,
-                 _r_1, _r_2_Ksi_shtrih, _U, _I_1_p, _I_1_nom, _I2_shtrih, _s_nom, _h_k, _Lamda_p_2_Ksi, _s_kr, _K_R):
-        global C_N, k_y_1, u_p, k_ob, Z_1, Z_2, sigma, t_z_1, b_sh, h_sh, Lamda_p_1, Lamda_d_1, Lamda_l_1, x_1_2_p, t_z_2, b_sh_2, Lamda_p_2, Lamda_l_2, Lamda_d_2, h_sh_shtrih, X_2_shtrih, r_1, r_2_Ksi_shtrih, U, I_1_p, I_1_nom, I2_shtrih, s_nom, h_k, Lamda_p_2_Ksi, s_kr, K_R
+                 _r_1, _r_2_Ksi_shtrih, _U, _I_1_p, _I_1_nom, _I2_shtrih, _s_nom, _h_k, _Lamda_p_2_Ksi, _K_R):
+        global C_N, k_y_1, u_p, k_ob, Z_1, Z_2, sigma, t_z_1, b_sh, h_sh, Lamda_p_1, Lamda_d_1, Lamda_l_1, x_1_2_p, t_z_2, b_sh_2, Lamda_p_2, Lamda_l_2, Lamda_d_2, h_sh_shtrih, X_2_shtrih, r_1, r_2_Ksi_shtrih, U, I_1_p, I_1_nom, I2_shtrih, s_nom, h_k, Lamda_p_2_Ksi, K_R, s_kr, count_, table_2
         C_N = _C_N
         k_y_1 = _k_y_1
         u_p = _u_p
@@ -359,15 +363,22 @@ class table3:
         s_nom = _s_nom
         h_k = _h_k
         Lamda_p_2_Ksi = _Lamda_p_2_Ksi
-        s_kr = _s_kr
         K_R = _K_R
+        s_kr = self.s_kr_calc()
+        print(s_kr)
+        print(self.calculateTable(20, s_kr))
+        count_ = 0
+        table_2 = table2(h_c, h_p_2, h_sh, h_sh_shtrih, b_1_r, b_2_r, h_1, q_c, r_c, r_2, h_0, b_sh_2, Lamda_p_2,
+                         Lamda_l_2,
+                         Lamda_d_2, X_2_shtrih, x_1_2_p, c_1_p, X_1)
 
     def setS(self, s):
         global s_shtrih
         s_shtrih = s
 
     def f1_3(self):
-        return 1.4
+        k_nas = {1: 1.4, 0.8: 1.3, 0.5: 1.2, 0.2: 1.1, 0.1: 1.05, 0.19: 1.08, 0.18691379075427084: 1.08, 0.3: 1.15}
+        return k_nas[s_shtrih]
 
     def f2_3(self):
         return 0.7 * (((I_1_p * self.f1_3() * u_p) / a_harmonic) * (k_beta_shtrih + k_y_1 * k_ob * (Z_1 / Z_2)))
@@ -394,7 +405,7 @@ class table3:
         return 1 + (self.f8_3() / x_1_2_p)
 
     def f10_3(self):
-        return ((t_z_2*10**3) - b_sh_2) * (1 - self.f4_3())
+        return ((t_z_2 * 10 ** 3) - b_sh_2) * (1 - self.f4_3())
 
     def f11_3(self):
         return Lamda_p_2_Ksi - (h_sh_shtrih / b_sh_2) * (self.f10_3() / (self.f10_3() + b_sh_2))
@@ -406,7 +417,10 @@ class table3:
         return X_2_shtrih * (self.f11_3() + self.f12_3() + Lamda_l_2) / (Lamda_p_2 + Lamda_d_2 + Lamda_l_2)
 
     def f14_3(self):
-        return r_1 + (1 + (self.f8_3() / x_1_2_p)) * (r_2_Ksi_shtrih / s_shtrih)
+        table_2 = table2(h_c, h_p_2, h_sh, h_sh_shtrih, b_1_r, b_2_r, h_1, q_c, r_c, r_2, h_0, b_sh_2, Lamda_p_2,
+                         Lamda_l_2,
+                         Lamda_d_2, X_2_shtrih, x_1_2_p, c_1_p, X_1)
+        return r_1 + (1 + (self.f8_3() / x_1_2_p)) * (table_2.calculateTable(6,s_shtrih) / s_shtrih)
 
     def f15_3(self):
         return self.f8_3() + (1 + (self.f8_3() / x_1_2_p)) * self.f13_3()
@@ -416,16 +430,28 @@ class table3:
 
     def f17_3(self):
         return self.f16_3() * (math.sqrt(self.f14_3() ** 2 + (self.f15_3() + x_1_2_p) ** 2)) / (
-                    (1 + (self.f8_3() / x_1_2_p)) * x_1_2_p)
+                (1 + (self.f8_3() / x_1_2_p)) * x_1_2_p)
 
     def f18_3(self):
-        return self.f17_3() / I_1_p
+        table_2 = table2(h_c, h_p_2, h_sh, h_sh_shtrih, b_1_r, b_2_r, h_1, q_c, r_c, r_2, h_0, b_sh_2, Lamda_p_2,
+                         Lamda_l_2,
+                         Lamda_d_2, X_2_shtrih, x_1_2_p, c_1_p, X_1)
+        return self.f17_3() / table_2.calculateTable(14,s_shtrih)
 
     def f19_3(self):
         return self.f17_3() / I_1_nom
 
     def f20_3(self):
         return (self.f16_3() / I2_shtrih) ** 2 * K_R * (s_nom / s_shtrih)
+
+    def s_kr_calc(self):
+        global s_shtrih
+        s_shtrih = 1
+        table_2 = table2(h_c, h_p_2, h_sh, h_sh_shtrih, b_1_r, b_2_r, h_1, q_c, r_c, r_2, h_0, b_sh_2, Lamda_p_2,
+                         Lamda_l_2,
+                         Lamda_d_2, X_2_shtrih, x_1_2_p, c_1_p, X_1)
+        s_kr = table_2.calculateTable(6,s_shtrih) / ((self.f8_3() / self.f9_3()) + self.f13_3())
+        return s_kr
 
     def calculateTable(self, numeration, s):
         self.setS(s)
