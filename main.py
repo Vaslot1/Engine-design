@@ -11,8 +11,8 @@ from tables import table1, table2, table3
 table_1 = table1(a, a_shtrih, r_2_shtrih, b, b_shtrih, U, I_0_a, I_nu, C_1, r_1, P_st, P_meh)
 table_2 = table2(h_c, h_p_2, h_sh, h_sh_shtrih, b_1_r, b_2_r, h_1, q_c, r_c, r_2, h_0, b_sh_2, Lamda_p_2, Lamda_l_2,
                  Lamda_d_2, X_2_shtrih, x_1_2_p, c_1_p, X_1)
-table_3 = table3(C_N, k_y_1, u_p, k_ob, Z_1, Z_2, sigma, t_z_1, b_sh, h_sh, Lamda_p_1, Lamda_d_1, Lamda_l_1, x_1_2_p,
-                 t_z_2, b_sh_2, Lamda_p_2, Lamda_l_2, Lamda_d_2, h_sh_shtrih, X_2_shtrih, r_1, r_2_Ksi_shtrih, U, I_1_p,
+table_3 = table3(C_N, k_y_1, u_p, k_ob, Z_1, Z_2, sigma, t_z_1, b_sh[h], h_sh_r[h], Lamda_p_1, Lamda_d_1, Lamda_l_1, x_1_2_p,
+                 t_z_2, b_sh_2[h], Lamda_p_2, Lamda_l_2, Lamda_d_2, h_sh_shtrih, X_2_shtrih, r_1, r_2_Ksi_shtrih, U, I_1_p,
                  I_1_nom, table_1.calculateTable(11, s_nom), s_nom, h_k, Lamda_p_2_Ksi, K_R)
 
 
@@ -51,6 +51,7 @@ class MainWindow(QMainWindow):
         self.ui.bt_export_xl_1.clicked.connect(self.save_table_to_xl_1)
         self.ui.bt_show_chart_1.clicked.connect(self.show_chart_table_1)
         self.ui.bt_show_chart_table3.clicked.connect(self.show_chart_table_3)
+
 
 
     def save_table_to_xl_1(self):

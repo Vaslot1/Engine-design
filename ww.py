@@ -16,9 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+    QLabel, QPushButton, QSizePolicy, QTabWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
@@ -27,66 +26,7 @@ class Ui_mainWindow(object):
         mainWindow.resize(1268, 794)
         self.tabWidget = QTabWidget(mainWindow)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(0, 10, 1251, 771))
-        self.tab_4 = QWidget()
-        self.tab_4.setObjectName(u"tab_4")
-        self.layoutWidget = QWidget(self.tab_4)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(80, 100, 194, 110))
-        self.horizontalLayout = QHBoxLayout(self.layoutWidget)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.label = QLabel(self.layoutWidget)
-        self.label.setObjectName(u"label")
-
-        self.verticalLayout_2.addWidget(self.label)
-
-        self.label_2 = QLabel(self.layoutWidget)
-        self.label_2.setObjectName(u"label_2")
-
-        self.verticalLayout_2.addWidget(self.label_2)
-
-        self.label_3 = QLabel(self.layoutWidget)
-        self.label_3.setObjectName(u"label_3")
-
-        self.verticalLayout_2.addWidget(self.label_3)
-
-        self.label_4 = QLabel(self.layoutWidget)
-        self.label_4.setObjectName(u"label_4")
-
-        self.verticalLayout_2.addWidget(self.label_4)
-
-
-        self.horizontalLayout.addLayout(self.verticalLayout_2)
-
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.lineEdit = QLineEdit(self.layoutWidget)
-        self.lineEdit.setObjectName(u"lineEdit")
-
-        self.verticalLayout.addWidget(self.lineEdit)
-
-        self.lineEdit_2 = QLineEdit(self.layoutWidget)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-
-        self.verticalLayout.addWidget(self.lineEdit_2)
-
-        self.lineEdit_3 = QLineEdit(self.layoutWidget)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-
-        self.verticalLayout.addWidget(self.lineEdit_3)
-
-        self.lineEdit_4 = QLineEdit(self.layoutWidget)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-
-        self.verticalLayout.addWidget(self.lineEdit_4)
-
-
-        self.horizontalLayout.addLayout(self.verticalLayout)
-
-        self.tabWidget.addTab(self.tab_4, "")
+        self.tabWidget.setGeometry(QRect(10, 10, 1251, 771))
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.tableWidget = QTableWidget(self.tab)
@@ -227,34 +167,37 @@ class Ui_mainWindow(object):
         __qtablewidgetitem58 = QTableWidgetItem()
         self.tableWidget.setItem(19, 1, __qtablewidgetitem58)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(10, 10, 1111, 511))
+        self.tableWidget.setGeometry(QRect(0, 100, 1111, 511))
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setRowCount(20)
         self.tableWidget.setColumnCount(9)
         self.tableWidget.horizontalHeader().setDefaultSectionSize(120)
         self.tableWidget.verticalHeader().setDefaultSectionSize(24)
-        self.widget = QWidget(self.tab)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(1020, 530, 104, 86))
-        self.verticalLayout_3 = QVBoxLayout(self.widget)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.bt_calculate_table1 = QPushButton(self.widget)
+        self.layoutWidget = QWidget(self.tab)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(740, 620, 369, 31))
+        self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.bt_calculate_table1 = QPushButton(self.layoutWidget)
         self.bt_calculate_table1.setObjectName(u"bt_calculate_table1")
 
-        self.verticalLayout_3.addWidget(self.bt_calculate_table1)
+        self.horizontalLayout_2.addWidget(self.bt_calculate_table1)
 
-        self.bt_show_chart_1 = QPushButton(self.widget)
+        self.bt_show_chart_1 = QPushButton(self.layoutWidget)
         self.bt_show_chart_1.setObjectName(u"bt_show_chart_1")
 
-        self.verticalLayout_3.addWidget(self.bt_show_chart_1)
+        self.horizontalLayout_2.addWidget(self.bt_show_chart_1)
 
-        self.bt_export_xl_1 = QPushButton(self.widget)
+        self.bt_export_xl_1 = QPushButton(self.layoutWidget)
         self.bt_export_xl_1.setObjectName(u"bt_export_xl_1")
         self.bt_export_xl_1.setAutoDefault(False)
 
-        self.verticalLayout_3.addWidget(self.bt_export_xl_1)
+        self.horizontalLayout_2.addWidget(self.bt_export_xl_1)
 
+        self.label_5 = QLabel(self.tab)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(10, 10, 331, 101))
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -419,18 +362,18 @@ class Ui_mainWindow(object):
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(0, 0, 1241, 661))
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(150)
-        self.widget1 = QWidget(self.tab_3)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(1134, 670, 103, 56))
-        self.verticalLayout_4 = QVBoxLayout(self.widget1)
+        self.layoutWidget1 = QWidget(self.tab_3)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(1134, 670, 103, 56))
+        self.verticalLayout_4 = QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.bt_calculate_table3 = QPushButton(self.widget1)
+        self.bt_calculate_table3 = QPushButton(self.layoutWidget1)
         self.bt_calculate_table3.setObjectName(u"bt_calculate_table3")
 
         self.verticalLayout_4.addWidget(self.bt_calculate_table3)
 
-        self.bt_show_chart_table3 = QPushButton(self.widget1)
+        self.bt_show_chart_table3 = QPushButton(self.layoutWidget1)
         self.bt_show_chart_table3.setObjectName(u"bt_show_chart_table3")
 
         self.verticalLayout_4.addWidget(self.bt_show_chart_table3)
@@ -439,19 +382,14 @@ class Ui_mainWindow(object):
 
         self.retranslateUi(mainWindow)
 
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(mainWindow)
     # setupUi
 
     def retranslateUi(self, mainWindow):
-        mainWindow.setWindowTitle(QCoreApplication.translate("mainWindow", u"Dialog", None))
-        self.label.setText(QCoreApplication.translate("mainWindow", u"P_2 =", None))
-        self.label_2.setText(QCoreApplication.translate("mainWindow", u"U = ", None))
-        self.label_3.setText(QCoreApplication.translate("mainWindow", u"2p =", None))
-        self.label_4.setText(QCoreApplication.translate("mainWindow", u"TextLabel", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("mainWindow", u"\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430", None))
+        mainWindow.setWindowTitle(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
@@ -558,6 +496,12 @@ class Ui_mainWindow(object):
         self.bt_calculate_table1.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.bt_show_chart_1.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
         self.bt_export_xl_1.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
+        self.label_5.setText(QCoreApplication.translate("mainWindow", u"P_2 = 22; U = 380/660 ; 2p = 4; I_0_a = 0,37; I_0_p = 5,39\n"
+"P_st + P_tr_sh + P_mex = 0,67; r_1 = 0,6; r'_2 = 0,38\n"
+"c_1 = 1,029; a' = 1,06; a = 0,364; b' = 0\n"
+"b = 4,17; p_st = 0,44928; P_mex = 0,20854; P_e_1 = 1,012\n"
+"P_e_m = 0,559; P_dob = 0,121; SUMMA p= 2,349; P_2 = 21,908\n"
+"", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 1", None))
         ___qtablewidgetitem49 = self.tableWidget_2.horizontalHeaderItem(0)
         ___qtablewidgetitem49.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
