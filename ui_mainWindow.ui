@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1268</width>
-    <height>794</height>
+    <width>1404</width>
+    <height>783</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>10</y>
-     <width>1251</width>
+     <width>1391</width>
      <height>771</height>
     </rect>
    </property>
@@ -33,10 +33,13 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>100</y>
-       <width>1111</width>
-       <height>511</height>
+       <y>60</y>
+       <width>1381</width>
+       <height>631</height>
       </rect>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhNone</set>
      </property>
      <property name="showGrid">
       <bool>true</bool>
@@ -47,11 +50,17 @@
      <property name="columnCount">
       <number>9</number>
      </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>120</number>
+      <number>150</number>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>24</number>
+      <number>30</number>
      </attribute>
      <row>
       <property name="text">
@@ -272,7 +281,15 @@
      </item>
      <item row="1" column="0">
       <property name="text">
-       <string/>
+       <string>a'r'_2/s'</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
       </property>
      </item>
      <item row="1" column="1">
@@ -303,9 +320,29 @@
        </brush>
       </property>
      </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>R = a+a'r'_2/s</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="2" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>X = b+b'r'_2/s</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="3" column="1">
@@ -313,9 +350,29 @@
        <string>Ом</string>
       </property>
      </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>Z = √(R^2+X^2)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="4" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+     </item>
+     <item row="5" column="0">
+      <property name="text">
+       <string>I'_2 = U/Z</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="5" column="1">
@@ -323,9 +380,29 @@
        <string>А</string>
       </property>
      </item>
+     <item row="6" column="0">
+      <property name="text">
+       <string>cos(φ)'_2 = R/Z</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="6" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+     </item>
+     <item row="7" column="0">
+      <property name="text">
+       <string>sin(φ)'_2 = X/Z</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="7" column="1">
@@ -333,9 +410,29 @@
        <string>-</string>
       </property>
      </item>
+     <item row="8" column="0">
+      <property name="text">
+       <string>I_1п = I_0п+I'_2cos(φ)'_2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="8" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+     </item>
+     <item row="9" column="0">
+      <property name="text">
+       <string>I_1р = I_0п+I'_2sin(φ)'_2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="9" column="1">
@@ -343,9 +440,29 @@
        <string>А</string>
       </property>
      </item>
+     <item row="10" column="0">
+      <property name="text">
+       <string>I_1 = √(I_1п^2+I_1р^2)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="10" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+     </item>
+     <item row="11" column="0">
+      <property name="text">
+       <string>I'_2 = c_1 I'_2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="11" column="1">
@@ -353,9 +470,29 @@
        <string>А</string>
       </property>
      </item>
+     <item row="12" column="0">
+      <property name="text">
+       <string>P_1 = 3U I_1a * 10^-3</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="12" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+     </item>
+     <item row="13" column="0">
+      <property name="text">
+       <string>P_э1 = 3I_1^2*r_1*10^-3</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="13" column="1">
@@ -363,9 +500,29 @@
        <string>кВт</string>
       </property>
      </item>
+     <item row="14" column="0">
+      <property name="text">
+       <string>P_э2=3I'_2^2*r'_2*10^-3</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="14" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+     </item>
+     <item row="15" column="0">
+      <property name="text">
+       <string>P_доб = 0,005P_1</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="15" column="1">
@@ -373,9 +530,32 @@
        <string>кВт</string>
       </property>
      </item>
+     <item row="16" column="0">
+      <property name="text">
+       <string>ΣP=Pст+Pмех+Pэ2+Pэ1+Pэ.щ+Pдоб</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI Symbol</family>
+        <pointsize>6</pointsize>
+        <bold>true</bold>
+        <kerning>false</kerning>
+       </font>
+      </property>
+     </item>
      <item row="16" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+     </item>
+     <item row="17" column="0">
+      <property name="text">
+       <string>P_2 = P_1 - ΣP</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="17" column="1">
@@ -383,9 +563,29 @@
        <string>кВт</string>
       </property>
      </item>
+     <item row="18" column="0">
+      <property name="text">
+       <string>η = 1 - ΣP/P_1</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
      <item row="18" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+     </item>
+     <item row="19" column="0">
+      <property name="text">
+       <string>cos(φ) = I_1a/I_1</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="19" column="1">
@@ -397,8 +597,8 @@
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>740</x>
-       <y>620</y>
+       <x>1010</x>
+       <y>700</y>
        <width>369</width>
        <height>31</height>
       </rect>
@@ -433,19 +633,14 @@
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>331</width>
-       <height>101</height>
+       <x>0</x>
+       <y>0</y>
+       <width>551</width>
+       <height>61</height>
       </rect>
      </property>
      <property name="text">
-      <string>P_2 = 22; U = 380/660 ; 2p = 4; I_0_a = 0,37; I_0_p = 5,39
-P_st + P_tr_sh + P_mex = 0,67; r_1 = 0,6; r'_2 = 0,38
-c_1 = 1,029; a' = 1,06; a = 0,364; b' = 0
-b = 4,17; p_st = 0,44928; P_mex = 0,20854; P_e_1 = 1,012
-P_e_m = 0,559; P_dob = 0,121; SUMMA p= 2,349; P_2 = 21,908
-</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;P&lt;span style=&quot; vertical-align:sub;&quot;&gt;2н&lt;/span&gt; = 22; U = 380/660 ; 2p = 4; I&lt;span style=&quot; vertical-align:sub;&quot;&gt;0a&lt;/span&gt; = 0,37; I&lt;span style=&quot; vertical-align:sub;&quot;&gt;0p&lt;/span&gt; = 5,39; P&lt;span style=&quot; vertical-align:sub;&quot;&gt;ст&lt;/span&gt; + P&lt;span style=&quot; vertical-align:sub;&quot;&gt;тр.щ&lt;/span&gt; + P&lt;span style=&quot; vertical-align:sub;&quot;&gt;мех&lt;/span&gt; = 0,67; r&lt;span style=&quot; vertical-align:sub;&quot;&gt;1 &lt;/span&gt;= 0,6; r'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 0,38; c&lt;span style=&quot; vertical-align:sub;&quot;&gt;1 &lt;/span&gt;= 1,029;&lt;/p&gt;&lt;p&gt;a' = 1,06; a = 0,364; b' = 0; b = 4,17; P&lt;span style=&quot; vertical-align:sub;&quot;&gt;ст&lt;/span&gt; = 0,44928; P&lt;span style=&quot; vertical-align:sub;&quot;&gt;мех&lt;/span&gt; = 0,20854; P&lt;span style=&quot; vertical-align:sub;&quot;&gt;э1&lt;/span&gt; = 1,012; P&lt;span style=&quot; vertical-align:sub;&quot;&gt;эщ&lt;/span&gt; = 0,559;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -457,13 +652,13 @@ P_e_m = 0,559; P_dob = 0,121; SUMMA p= 2,349; P_2 = 21,908
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>10</y>
-       <width>1231</width>
+       <y>80</y>
+       <width>1391</width>
        <height>481</height>
       </rect>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>150</number>
+      <number>170</number>
      </attribute>
      <row>
       <property name="text">
@@ -641,18 +836,252 @@ P_e_m = 0,559; P_dob = 0,121; SUMMA p= 2,349; P_2 = 21,908
        <string>0.19</string>
       </property>
      </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>ξ=63,61h_c*√s</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>φ(ξ)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>h_r = h_c/(1-φ)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string>мм</string>
+      </property>
+     </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>k_r=q_c/q_r</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="4" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="5" column="0">
+      <property name="text">
+       <string>K_R =1+(r_c/r_2)*(k_r-1)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="5" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="6" column="0">
+      <property name="text">
+       <string>r'_2_ξ = K_R*r'_2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="6" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="7" column="0">
+      <property name="text">
+       <string>к_д = φ'(ξ)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="7" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="8" column="0">
+      <property name="text">
+       <string>λ_п2ξ = λ_п2 - Δλп2ξ</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="8" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="9" column="0">
+      <property name="text">
+       <string>Kx = Σλ_2ξ/Σλ_2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="9" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="10" column="0">
+      <property name="text">
+       <string>x'2ξ = Kx * x'_2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="10" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="11" column="0">
+      <property name="text">
+       <string>Rп = r_1+c_1п* (r'_2_ξ/s)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="11" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="12" column="0">
+      <property name="text">
+       <string>Xп = x_1+c_1п*x'2ξ</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="12" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="13" column="0">
+      <property name="text">
+       <string>I'_2п = U/√(Rп^2 + Xп^2)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="13" column="1">
+      <property name="text">
+       <string>А</string>
+      </property>
+     </item>
+     <item row="14" column="0">
+      <property name="text">
+       <string>I_1п=I'_2√(Rп^2 + (Xп+x_12п)^2)/(c_1п*x_12п)</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="14" column="1">
+      <property name="text">
+       <string>А</string>
+      </property>
+     </item>
     </widget>
     <widget class="QPushButton" name="bt_calculate_table2">
      <property name="geometry">
       <rect>
-       <x>1000</x>
-       <y>630</y>
-       <width>75</width>
+       <x>1290</x>
+       <y>570</y>
+       <width>91</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>Рассчитать</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>731</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;P&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 22; U = 380/660; 2p = 4 ; I&lt;span style=&quot; vertical-align:sub;&quot;&gt;1ном&lt;/span&gt; = 23,715;I'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2ном&lt;/span&gt; = 22,158; x&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt; = 1,89; x'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 2,03; x&lt;span style=&quot; vertical-align:sub;&quot;&gt;12п&lt;/span&gt; = 91,84; r&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt; = 0,6; r'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 0,38;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;s&lt;span style=&quot; vertical-align:sub;&quot;&gt;ном&lt;/span&gt; = 0,0244; C&lt;span style=&quot; vertical-align:sub;&quot;&gt;1п&lt;/span&gt; = 1,02; h&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; = 29,62; q&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; = 184,94; q&lt;span style=&quot; vertical-align:sub;&quot;&gt;r&lt;/span&gt; = 112,074; r&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; = 38,3 * 10&lt;span style=&quot; vertical-align:super;&quot;&gt;-6 &lt;/span&gt;; r&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 57,3 * 10&lt;span style=&quot; vertical-align:super;&quot;&gt;-6&lt;/span&gt;;  x'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2ξ &lt;/span&gt;= 1,624&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;п2&lt;/span&gt; = 2,42; &lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-weight:700; color:#202122; background-color:#ffffff;&quot;&gt;Δ&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;п2&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;ξ&lt;/span&gt; = 0,148; &lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;л2&lt;/span&gt; = 0,678; &lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;д2&lt;/span&gt; = 2,19&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -663,14 +1092,14 @@ P_e_m = 0,559; P_dob = 0,121; SUMMA p= 2,349; P_2 = 21,908
     <widget class="QTableWidget" name="tableWidget_3">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>1241</width>
+       <x>10</x>
+       <y>50</y>
+       <width>1391</width>
        <height>661</height>
       </rect>
      </property>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>150</number>
+      <number>170</number>
      </attribute>
      <row>
       <property name="text">
@@ -847,17 +1276,328 @@ P_e_m = 0,559; P_dob = 0,121; SUMMA p= 2,349; P_2 = 21,908
        <string>0.19</string>
       </property>
      </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>k_нас</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>Fп.ср=0,7*((I_1*k_нас*u_п)/a)(k'_beta+k_y1*k_об1*(Z1/Z2))</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string>А</string>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>В_фб = Fп.ср * 10^(-6)/(1,6δ*С_N)</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string>Тл</string>
+      </property>
+     </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>k_δ = f(В_фб)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="4" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="4" column="2">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item row="5" column="0">
+      <property name="text">
+       <string>с_1 = (t_z1-b_ш1)(1-k_δ)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="5" column="1">
+      <property name="text">
+       <string>мм</string>
+      </property>
+     </item>
+     <item row="6" column="0">
+      <property name="text">
+       <string>λ_п1нас = λп1 - Δλ_п1нас</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="6" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="7" column="0">
+      <property name="text">
+       <string>λ_д1нас = k_δ*λд1</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="7" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="8" column="0">
+      <property name="text">
+       <string>х_1нас = х1*Σλ_1нас/Σλ_1</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="8" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="9" column="0">
+      <property name="text">
+       <string>c_1_п = 1 + x_1нас/ x_12п</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="9" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="10" column="0">
+      <property name="text">
+       <string>с_2 = (t_z2-b_ш2)(1-k_δ)</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="10" column="1">
+      <property name="text">
+       <string>мм</string>
+      </property>
+     </item>
+     <item row="11" column="0">
+      <property name="text">
+       <string>λ_п2ξнас = λ_п2ξ - Δλ_п2нас</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="11" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="12" column="0">
+      <property name="text">
+       <string>λ_д2нас = k_δ*λд2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="12" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="13" column="0">
+      <property name="text">
+       <string>х'_2ξнас = x'2*Σλ_2ξнас/Σλ_2</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="13" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="14" column="0">
+      <property name="text">
+       <string>Rп.нас = r_1 + c_1п.нас * r'_2ξ / s</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="14" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="15" column="0">
+      <property name="text">
+       <string>Хп.нас = x_1нас + c_1п.нас * х'_2ξнас</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="15" column="1">
+      <property name="text">
+       <string>Ом</string>
+      </property>
+     </item>
+     <item row="16" column="0">
+      <property name="text">
+       <string>I'_2нас = U/√(Rп.нас^2+Хп.нас^2)</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>6</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="16" column="1">
+      <property name="text">
+       <string>А</string>
+      </property>
+     </item>
+     <item row="17" column="0">
+      <property name="text">
+       <string>I_1нас=I'_2нас*((√(Rп.нас^2+(Хп.нас+х_12п)^2))/(с_1п.нас*х_12п))</string>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>6</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="17" column="1">
+      <property name="text">
+       <string>А</string>
+      </property>
+     </item>
+     <item row="18" column="0">
+      <property name="text">
+       <string>k'нас = I_1нас/I_1п</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="18" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="19" column="0">
+      <property name="text">
+       <string>I_i= I_1нас / I_1ном</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="19" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="20" column="0">
+      <property name="text">
+       <string>М*</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </item>
+     <item row="20" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
     </widget>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>1134</x>
-       <y>670</y>
-       <width>103</width>
-       <height>56</height>
+       <x>1200</x>
+       <y>710</y>
+       <width>184</width>
+       <height>26</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QPushButton" name="bt_calculate_table3">
         <property name="text">
@@ -873,6 +1613,27 @@ P_e_m = 0,559; P_dob = 0,121; SUMMA p= 2,349; P_2 = 21,908
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1341</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;P&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 22; U = 380/660; 2p = 4; I = 23,715; I'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 22,158; x&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt; = 1,89; x'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 2,03; x&lt;span style=&quot; vertical-align:sub;&quot;&gt;12п&lt;/span&gt; = 91,84; r&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt; = 0,6; r'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; = 0,38; s&lt;span style=&quot; vertical-align:sub;&quot;&gt;ном&lt;/span&gt; = 0,0244; u&lt;span style=&quot; vertical-align:sub;&quot;&gt;p &lt;/span&gt;= 20; a = 1; k'&lt;span style=&quot; vertical-align:sub;&quot;&gt;β&lt;/span&gt; = 1; k&lt;span style=&quot; vertical-align:sub;&quot;&gt;y1&lt;/span&gt;  = 1; k&lt;span style=&quot; vertical-align:sub;&quot;&gt;об1&lt;/span&gt; = 0,91; δ = 0,55; t&lt;span style=&quot; vertical-align:sub;&quot;&gt;z1&lt;/span&gt;=13,6*10&lt;span style=&quot; vertical-align:super;&quot;&gt;-3&lt;/span&gt;; b&lt;span style=&quot; vertical-align:sub;&quot;&gt;ш1 &lt;/span&gt;= 3,7; x&lt;span style=&quot; vertical-align:sub;&quot;&gt;1ном &lt;/span&gt;= 1,360; Δλ_п1нас = 0,37; λ_п1 = 1,99;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; λ_л1 = 1,1; t&lt;span style=&quot; vertical-align:sub;&quot;&gt;z2&lt;/span&gt;=17,11; b&lt;span style=&quot; vertical-align:sub;&quot;&gt;ш2 &lt;/span&gt;=1,55; C&lt;span style=&quot; vertical-align:sub;&quot;&gt;1п &lt;/span&gt;= 1,015; C&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt;=8,112; λ_п2ξ = 2,272; λ_д2 = 2,19;  λ_л2 = 0,678; λ_п2 = 2,42; C&lt;span style=&quot; vertical-align:sub;&quot;&gt;N&lt;/span&gt;= 0,975; I&lt;span style=&quot; vertical-align:sub;&quot;&gt;1п &lt;/span&gt;=103,993&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
     </widget>
    </widget>
   </widget>

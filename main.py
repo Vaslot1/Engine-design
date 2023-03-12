@@ -101,7 +101,8 @@ class MainWindow(QMainWindow):
         cosPhi_chart.grid(which='minor',
                           color='k',
                           linestyle=':')
-        cosPhi_chart.set_title('cos(φ)')
+        cosPhi_chart.set_ylabel('cos(φ)')
+        cosPhi_chart.set_xlabel('P_квт')
 
         kpd_chart.plot(x_list, [Lagrange(x, x_arr, y_arr_2) for x in x_list], color='red', marker='o', markersize=3)
         kpd_chart.minorticks_on()
@@ -111,7 +112,8 @@ class MainWindow(QMainWindow):
         kpd_chart.grid(which='minor',
                           color='k',
                           linestyle=':')
-        kpd_chart.set_title('η')
+        kpd_chart.set_ylabel('η')
+        kpd_chart.set_xlabel('P_квт')
 
         s_chart.plot(x_list, [Lagrange(x, x_arr, y_arr_3) for x in x_list], color='red', marker='o', markersize=3)
         s_chart.minorticks_on()
@@ -121,7 +123,8 @@ class MainWindow(QMainWindow):
         s_chart.grid(which='minor',
                        color='k',
                        linestyle=':')
-        s_chart.set_title('s')
+        s_chart.set_ylabel('s')
+        s_chart.set_xlabel('P_квт')
 
         I_1_chart.plot(x_list, [Lagrange(x, x_arr, y_arr_4) for x in x_list], color='red', marker='o', markersize=3)
         I_1_chart.minorticks_on()
@@ -131,7 +134,8 @@ class MainWindow(QMainWindow):
         I_1_chart.grid(which='minor',
                      color='k',
                      linestyle=':')
-        I_1_chart.set_title('I₁')
+        I_1_chart.set_ylabel('I₁')
+        I_1_chart.set_xlabel('P_квт')
 
         fig.set_figwidth(12)
         fig.set_figheight(12)
@@ -174,7 +178,8 @@ class MainWindow(QMainWindow):
         I_dot.grid(which='minor',
                           color='k',
                           linestyle=':')
-        I_dot.set_title('I.')
+        I_dot.set_ylabel('I.')
+        I_dot.set_xlabel('s')
 
         M_star.plot(x_list, [LinearInterpolation(x, x_arr, y_arr_2) for x in x_list], color='red', marker='o', markersize=3)
         M_star.minorticks_on()
@@ -184,7 +189,8 @@ class MainWindow(QMainWindow):
         M_star.grid(which='minor',
                    color='k',
                    linestyle=':')
-        M_star.set_title('M*')
+        M_star.set_ylabel('M*')
+        M_star.set_xlabel('s')
 
         fig.set_figwidth(12)
         fig.set_figheight(12)
