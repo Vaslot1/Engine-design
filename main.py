@@ -7,6 +7,7 @@ from main1 import *
 from PySide6.QtWidgets import QApplication, QMainWindow
 from ww import *
 from tables import table1, table2, table3
+from scipy import interpolate
 
 table_1 = table1(a, a_shtrih, r_2_shtrih, b, b_shtrih, U, I_0_a, I_nu, C_1, r_1, P_st, P_meh)
 table_2 = table2(h_c, h_p_2, h_sh, h_sh_shtrih, b_1_r, b_2_r, h_1, q_c, r_c, r_2, h_0, b_sh_2, Lamda_p_2, Lamda_l_2,
@@ -45,6 +46,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(parent)
         self.ui = Ui_mainWindow()
         self.ui.setupUi(self)
+        self.resizetables()
         self.ui.bt_calculate_table1.clicked.connect(self.calculate_table1)
         self.ui.bt_calculate_table2.clicked.connect(self.calculate_table2)
         self.ui.bt_calculate_table3.clicked.connect(self.calculate_table3)
@@ -53,7 +55,32 @@ class MainWindow(QMainWindow):
         self.ui.bt_show_chart_table3.clicked.connect(self.show_chart_table_3)
 
 
-
+    def resizetables(self):
+        self.ui.tableWidget.setColumnWidth(0, 250)
+        self.ui.tableWidget.setColumnWidth(1, 80)
+        self.ui.tableWidget.setColumnWidth(2, 80)
+        self.ui.tableWidget.setColumnWidth(3, 80)
+        self.ui.tableWidget.setColumnWidth(4, 80)
+        self.ui.tableWidget.setColumnWidth(5, 120)
+        self.ui.tableWidget.setColumnWidth(6, 80)
+        self.ui.tableWidget.setColumnWidth(7, 80)
+        self.ui.tableWidget.setColumnWidth(8, 80)
+        self.ui.tableWidget_2.setColumnWidth(0, 390)
+        self.ui.tableWidget_2.setColumnWidth(1, 80)
+        self.ui.tableWidget_2.setColumnWidth(2, 80)
+        self.ui.tableWidget_2.setColumnWidth(3, 80)
+        self.ui.tableWidget_2.setColumnWidth(4, 120)
+        self.ui.tableWidget_2.setColumnWidth(5, 80)
+        self.ui.tableWidget_2.setColumnWidth(6, 80)
+        self.ui.tableWidget_2.setColumnWidth(7, 80)
+        self.ui.tableWidget_3.setColumnWidth(0, 500)
+        self.ui.tableWidget_3.setColumnWidth(1, 80)
+        self.ui.tableWidget_3.setColumnWidth(2, 75)
+        self.ui.tableWidget_3.setColumnWidth(3, 75)
+        self.ui.tableWidget_3.setColumnWidth(4, 110)
+        self.ui.tableWidget_3.setColumnWidth(5, 75)
+        self.ui.tableWidget_3.setColumnWidth(6, 75)
+        self.ui.tableWidget_3.setColumnWidth(7, 75)
     def save_table_to_xl_1(self):
         df = write_qtable_to_df(self.ui.tableWidget)
         print(df)
@@ -64,7 +91,7 @@ class MainWindow(QMainWindow):
     def show_chart_table_1(self):
 
         x_arr = [0]
-        y_arr_1 = [0]
+        y_arr_1 = [0.1]
         y_arr_2 = [0]
         y_arr_3 = [0]
         y_arr_4 = [0]
@@ -101,8 +128,9 @@ class MainWindow(QMainWindow):
         cosPhi_chart.grid(which='minor',
                           color='k',
                           linestyle=':')
-        cosPhi_chart.set_ylabel('cos(φ)')
-        cosPhi_chart.set_xlabel('P_квт')
+        cosPhi_chart.set_ylabel('cos(φ)',size=16)
+        cosPhi_chart.set_xlabel('P_квт',size=16)
+        cosPhi_chart.set_ylim(0,1)
 
         kpd_chart.plot(x_list, [Lagrange(x, x_arr, y_arr_2) for x in x_list], color='red', marker='o', markersize=3)
         kpd_chart.minorticks_on()
@@ -112,8 +140,9 @@ class MainWindow(QMainWindow):
         kpd_chart.grid(which='minor',
                           color='k',
                           linestyle=':')
-        kpd_chart.set_ylabel('η')
-        kpd_chart.set_xlabel('P_квт')
+        kpd_chart.set_ylabel('η',size=16)
+        kpd_chart.set_xlabel('P_квт',size=16)
+        kpd_chart.set_ylim(0, 1)
 
         s_chart.plot(x_list, [Lagrange(x, x_arr, y_arr_3) for x in x_list], color='red', marker='o', markersize=3)
         s_chart.minorticks_on()
@@ -123,8 +152,8 @@ class MainWindow(QMainWindow):
         s_chart.grid(which='minor',
                        color='k',
                        linestyle=':')
-        s_chart.set_ylabel('s')
-        s_chart.set_xlabel('P_квт')
+        s_chart.set_ylabel('s',size=16)
+        s_chart.set_xlabel('P_квт',size=16)
 
         I_1_chart.plot(x_list, [Lagrange(x, x_arr, y_arr_4) for x in x_list], color='red', marker='o', markersize=3)
         I_1_chart.minorticks_on()
@@ -134,11 +163,12 @@ class MainWindow(QMainWindow):
         I_1_chart.grid(which='minor',
                      color='k',
                      linestyle=':')
-        I_1_chart.set_ylabel('I₁')
-        I_1_chart.set_xlabel('P_квт')
+        I_1_chart.set_ylabel('I₁',size=16)
+        I_1_chart.set_xlabel('P_квт',size=16)
 
         fig.set_figwidth(12)
         fig.set_figheight(12)
+
 
         plt.show()
     def show_chart_table_3(self):
@@ -178,8 +208,8 @@ class MainWindow(QMainWindow):
         I_dot.grid(which='minor',
                           color='k',
                           linestyle=':')
-        I_dot.set_ylabel('I.')
-        I_dot.set_xlabel('s')
+        I_dot.set_ylabel('I.',size=16)
+        I_dot.set_xlabel('s',size=16)
 
         M_star.plot(x_list, [LinearInterpolation(x, x_arr, y_arr_2) for x in x_list], color='red', marker='o', markersize=3)
         M_star.minorticks_on()
@@ -189,8 +219,8 @@ class MainWindow(QMainWindow):
         M_star.grid(which='minor',
                    color='k',
                    linestyle=':')
-        M_star.set_ylabel('M*')
-        M_star.set_xlabel('s')
+        M_star.set_ylabel('M*',size=16)
+        M_star.set_xlabel('s',size=16)
 
         fig.set_figwidth(12)
         fig.set_figheight(12)
@@ -213,7 +243,7 @@ class MainWindow(QMainWindow):
         for i in range(2, 7 + 1):
             for j in range(1, 20 + 1):
                 self.ui.tableWidget_3.setItem(j, i, QTableWidgetItem(
-                    str(round(table_3.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 3))))
+                    str(round(table_3.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 2))))
 
 
 app = QApplication()

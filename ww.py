@@ -23,10 +23,13 @@ class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         if not mainWindow.objectName():
             mainWindow.setObjectName(u"mainWindow")
-        mainWindow.resize(1404, 783)
+        mainWindow.resize(1404, 929)
         self.tabWidget = QTabWidget(mainWindow)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(0, 10, 1391, 771))
+        self.tabWidget.setGeometry(QRect(0, 10, 1411, 871))
+        font = QFont()
+        font.setPointSize(14)
+        self.tabWidget.setFont(font)
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.tableWidget = QTableWidget(self.tab)
@@ -118,10 +121,11 @@ class Ui_mainWindow(object):
         self.tableWidget.setItem(0, 7, __qtablewidgetitem36)
         __qtablewidgetitem37 = QTableWidgetItem()
         self.tableWidget.setItem(0, 8, __qtablewidgetitem37)
-        font = QFont()
-        font.setBold(True)
+        font1 = QFont()
+        font1.setPointSize(12)
+        font1.setBold(True)
         __qtablewidgetitem38 = QTableWidgetItem()
-        __qtablewidgetitem38.setFont(font);
+        __qtablewidgetitem38.setFont(font1);
         __qtablewidgetitem38.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
         self.tableWidget.setItem(1, 0, __qtablewidgetitem38)
         __qtablewidgetitem39 = QTableWidgetItem()
@@ -134,114 +138,118 @@ class Ui_mainWindow(object):
         __qtablewidgetitem40.setBackground(brush1);
         __qtablewidgetitem40.setForeground(brush);
         self.tableWidget.setItem(1, 8, __qtablewidgetitem40)
+        font2 = QFont()
+        font2.setBold(True)
         __qtablewidgetitem41 = QTableWidgetItem()
-        __qtablewidgetitem41.setFont(font);
+        __qtablewidgetitem41.setFont(font2);
         self.tableWidget.setItem(2, 0, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
         self.tableWidget.setItem(2, 1, __qtablewidgetitem42)
         __qtablewidgetitem43 = QTableWidgetItem()
-        __qtablewidgetitem43.setFont(font);
+        __qtablewidgetitem43.setFont(font2);
         self.tableWidget.setItem(3, 0, __qtablewidgetitem43)
         __qtablewidgetitem44 = QTableWidgetItem()
         self.tableWidget.setItem(3, 1, __qtablewidgetitem44)
         __qtablewidgetitem45 = QTableWidgetItem()
-        __qtablewidgetitem45.setFont(font);
+        __qtablewidgetitem45.setFont(font2);
         self.tableWidget.setItem(4, 0, __qtablewidgetitem45)
         __qtablewidgetitem46 = QTableWidgetItem()
         self.tableWidget.setItem(4, 1, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
-        __qtablewidgetitem47.setFont(font);
+        __qtablewidgetitem47.setFont(font2);
         self.tableWidget.setItem(5, 0, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
         self.tableWidget.setItem(5, 1, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
-        __qtablewidgetitem49.setFont(font);
+        __qtablewidgetitem49.setFont(font2);
         self.tableWidget.setItem(6, 0, __qtablewidgetitem49)
         __qtablewidgetitem50 = QTableWidgetItem()
         self.tableWidget.setItem(6, 1, __qtablewidgetitem50)
         __qtablewidgetitem51 = QTableWidgetItem()
-        __qtablewidgetitem51.setFont(font);
+        __qtablewidgetitem51.setFont(font2);
         self.tableWidget.setItem(7, 0, __qtablewidgetitem51)
         __qtablewidgetitem52 = QTableWidgetItem()
         self.tableWidget.setItem(7, 1, __qtablewidgetitem52)
         __qtablewidgetitem53 = QTableWidgetItem()
-        __qtablewidgetitem53.setFont(font);
+        __qtablewidgetitem53.setFont(font2);
         self.tableWidget.setItem(8, 0, __qtablewidgetitem53)
         __qtablewidgetitem54 = QTableWidgetItem()
         self.tableWidget.setItem(8, 1, __qtablewidgetitem54)
         __qtablewidgetitem55 = QTableWidgetItem()
-        __qtablewidgetitem55.setFont(font);
+        __qtablewidgetitem55.setFont(font2);
         self.tableWidget.setItem(9, 0, __qtablewidgetitem55)
         __qtablewidgetitem56 = QTableWidgetItem()
         self.tableWidget.setItem(9, 1, __qtablewidgetitem56)
         __qtablewidgetitem57 = QTableWidgetItem()
-        __qtablewidgetitem57.setFont(font);
+        __qtablewidgetitem57.setFont(font2);
         self.tableWidget.setItem(10, 0, __qtablewidgetitem57)
         __qtablewidgetitem58 = QTableWidgetItem()
         self.tableWidget.setItem(10, 1, __qtablewidgetitem58)
         __qtablewidgetitem59 = QTableWidgetItem()
-        __qtablewidgetitem59.setFont(font);
+        __qtablewidgetitem59.setFont(font2);
         self.tableWidget.setItem(11, 0, __qtablewidgetitem59)
         __qtablewidgetitem60 = QTableWidgetItem()
         self.tableWidget.setItem(11, 1, __qtablewidgetitem60)
         __qtablewidgetitem61 = QTableWidgetItem()
-        __qtablewidgetitem61.setFont(font);
+        __qtablewidgetitem61.setFont(font2);
         self.tableWidget.setItem(12, 0, __qtablewidgetitem61)
         __qtablewidgetitem62 = QTableWidgetItem()
         self.tableWidget.setItem(12, 1, __qtablewidgetitem62)
         __qtablewidgetitem63 = QTableWidgetItem()
-        __qtablewidgetitem63.setFont(font);
+        __qtablewidgetitem63.setFont(font2);
         self.tableWidget.setItem(13, 0, __qtablewidgetitem63)
         __qtablewidgetitem64 = QTableWidgetItem()
         self.tableWidget.setItem(13, 1, __qtablewidgetitem64)
         __qtablewidgetitem65 = QTableWidgetItem()
-        __qtablewidgetitem65.setFont(font);
+        __qtablewidgetitem65.setFont(font2);
         self.tableWidget.setItem(14, 0, __qtablewidgetitem65)
         __qtablewidgetitem66 = QTableWidgetItem()
         self.tableWidget.setItem(14, 1, __qtablewidgetitem66)
         __qtablewidgetitem67 = QTableWidgetItem()
-        __qtablewidgetitem67.setFont(font);
+        __qtablewidgetitem67.setFont(font2);
         self.tableWidget.setItem(15, 0, __qtablewidgetitem67)
         __qtablewidgetitem68 = QTableWidgetItem()
         self.tableWidget.setItem(15, 1, __qtablewidgetitem68)
-        font1 = QFont()
-        font1.setFamilies([u"Segoe UI Symbol"])
-        font1.setPointSize(6)
-        font1.setBold(True)
-        font1.setKerning(False)
+        font3 = QFont()
+        font3.setFamilies([u"Segoe UI Symbol"])
+        font3.setPointSize(9)
+        font3.setBold(True)
+        font3.setKerning(False)
         __qtablewidgetitem69 = QTableWidgetItem()
-        __qtablewidgetitem69.setFont(font1);
+        __qtablewidgetitem69.setFont(font3);
         self.tableWidget.setItem(16, 0, __qtablewidgetitem69)
         __qtablewidgetitem70 = QTableWidgetItem()
         self.tableWidget.setItem(16, 1, __qtablewidgetitem70)
         __qtablewidgetitem71 = QTableWidgetItem()
-        __qtablewidgetitem71.setFont(font);
+        __qtablewidgetitem71.setFont(font2);
         self.tableWidget.setItem(17, 0, __qtablewidgetitem71)
         __qtablewidgetitem72 = QTableWidgetItem()
         self.tableWidget.setItem(17, 1, __qtablewidgetitem72)
         __qtablewidgetitem73 = QTableWidgetItem()
-        __qtablewidgetitem73.setFont(font);
+        __qtablewidgetitem73.setFont(font2);
         self.tableWidget.setItem(18, 0, __qtablewidgetitem73)
         __qtablewidgetitem74 = QTableWidgetItem()
         self.tableWidget.setItem(18, 1, __qtablewidgetitem74)
         __qtablewidgetitem75 = QTableWidgetItem()
-        __qtablewidgetitem75.setFont(font);
+        __qtablewidgetitem75.setFont(font2);
         self.tableWidget.setItem(19, 0, __qtablewidgetitem75)
         __qtablewidgetitem76 = QTableWidgetItem()
         self.tableWidget.setItem(19, 1, __qtablewidgetitem76)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(0, 60, 1381, 631))
+        self.tableWidget.setGeometry(QRect(0, 70, 1391, 711))
+        self.tableWidget.setFont(font)
         self.tableWidget.setInputMethodHints(Qt.ImhNone)
         self.tableWidget.setShowGrid(True)
         self.tableWidget.setRowCount(20)
         self.tableWidget.setColumnCount(9)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
+        self.tableWidget.horizontalHeader().setMinimumSectionSize(25)
         self.tableWidget.horizontalHeader().setDefaultSectionSize(150)
         self.tableWidget.horizontalHeader().setStretchLastSection(False)
         self.tableWidget.verticalHeader().setDefaultSectionSize(30)
         self.layoutWidget = QWidget(self.tab)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(1010, 700, 369, 31))
+        self.layoutWidget.setGeometry(QRect(0, 780, 429, 36))
         self.horizontalLayout_2 = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -263,7 +271,7 @@ class Ui_mainWindow(object):
 
         self.label_5 = QLabel(self.tab)
         self.label_5.setObjectName(u"label_5")
-        self.label_5.setGeometry(QRect(0, 0, 551, 61))
+        self.label_5.setGeometry(QRect(0, 0, 1011, 61))
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -342,87 +350,88 @@ class Ui_mainWindow(object):
         __qtablewidgetitem107 = QTableWidgetItem()
         self.tableWidget_2.setItem(0, 7, __qtablewidgetitem107)
         __qtablewidgetitem108 = QTableWidgetItem()
-        __qtablewidgetitem108.setFont(font);
+        __qtablewidgetitem108.setFont(font2);
         self.tableWidget_2.setItem(1, 0, __qtablewidgetitem108)
         __qtablewidgetitem109 = QTableWidgetItem()
         self.tableWidget_2.setItem(1, 1, __qtablewidgetitem109)
         __qtablewidgetitem110 = QTableWidgetItem()
-        __qtablewidgetitem110.setFont(font);
+        __qtablewidgetitem110.setFont(font2);
         self.tableWidget_2.setItem(2, 0, __qtablewidgetitem110)
         __qtablewidgetitem111 = QTableWidgetItem()
         self.tableWidget_2.setItem(2, 1, __qtablewidgetitem111)
         __qtablewidgetitem112 = QTableWidgetItem()
-        __qtablewidgetitem112.setFont(font);
+        __qtablewidgetitem112.setFont(font2);
         self.tableWidget_2.setItem(3, 0, __qtablewidgetitem112)
         __qtablewidgetitem113 = QTableWidgetItem()
         self.tableWidget_2.setItem(3, 1, __qtablewidgetitem113)
         __qtablewidgetitem114 = QTableWidgetItem()
-        __qtablewidgetitem114.setFont(font);
+        __qtablewidgetitem114.setFont(font2);
         self.tableWidget_2.setItem(4, 0, __qtablewidgetitem114)
         __qtablewidgetitem115 = QTableWidgetItem()
         self.tableWidget_2.setItem(4, 1, __qtablewidgetitem115)
         __qtablewidgetitem116 = QTableWidgetItem()
-        __qtablewidgetitem116.setFont(font);
+        __qtablewidgetitem116.setFont(font2);
         self.tableWidget_2.setItem(5, 0, __qtablewidgetitem116)
         __qtablewidgetitem117 = QTableWidgetItem()
         self.tableWidget_2.setItem(5, 1, __qtablewidgetitem117)
         __qtablewidgetitem118 = QTableWidgetItem()
-        __qtablewidgetitem118.setFont(font);
+        __qtablewidgetitem118.setFont(font2);
         self.tableWidget_2.setItem(6, 0, __qtablewidgetitem118)
         __qtablewidgetitem119 = QTableWidgetItem()
         self.tableWidget_2.setItem(6, 1, __qtablewidgetitem119)
         __qtablewidgetitem120 = QTableWidgetItem()
-        __qtablewidgetitem120.setFont(font);
+        __qtablewidgetitem120.setFont(font2);
         self.tableWidget_2.setItem(7, 0, __qtablewidgetitem120)
         __qtablewidgetitem121 = QTableWidgetItem()
         self.tableWidget_2.setItem(7, 1, __qtablewidgetitem121)
         __qtablewidgetitem122 = QTableWidgetItem()
-        __qtablewidgetitem122.setFont(font);
+        __qtablewidgetitem122.setFont(font2);
         self.tableWidget_2.setItem(8, 0, __qtablewidgetitem122)
         __qtablewidgetitem123 = QTableWidgetItem()
         self.tableWidget_2.setItem(8, 1, __qtablewidgetitem123)
         __qtablewidgetitem124 = QTableWidgetItem()
-        __qtablewidgetitem124.setFont(font);
+        __qtablewidgetitem124.setFont(font2);
         self.tableWidget_2.setItem(9, 0, __qtablewidgetitem124)
         __qtablewidgetitem125 = QTableWidgetItem()
         self.tableWidget_2.setItem(9, 1, __qtablewidgetitem125)
         __qtablewidgetitem126 = QTableWidgetItem()
-        __qtablewidgetitem126.setFont(font);
+        __qtablewidgetitem126.setFont(font2);
         self.tableWidget_2.setItem(10, 0, __qtablewidgetitem126)
         __qtablewidgetitem127 = QTableWidgetItem()
         self.tableWidget_2.setItem(10, 1, __qtablewidgetitem127)
         __qtablewidgetitem128 = QTableWidgetItem()
-        __qtablewidgetitem128.setFont(font);
+        __qtablewidgetitem128.setFont(font2);
         self.tableWidget_2.setItem(11, 0, __qtablewidgetitem128)
         __qtablewidgetitem129 = QTableWidgetItem()
         self.tableWidget_2.setItem(11, 1, __qtablewidgetitem129)
         __qtablewidgetitem130 = QTableWidgetItem()
-        __qtablewidgetitem130.setFont(font);
+        __qtablewidgetitem130.setFont(font2);
         self.tableWidget_2.setItem(12, 0, __qtablewidgetitem130)
         __qtablewidgetitem131 = QTableWidgetItem()
         self.tableWidget_2.setItem(12, 1, __qtablewidgetitem131)
         __qtablewidgetitem132 = QTableWidgetItem()
-        __qtablewidgetitem132.setFont(font);
+        __qtablewidgetitem132.setFont(font2);
         self.tableWidget_2.setItem(13, 0, __qtablewidgetitem132)
         __qtablewidgetitem133 = QTableWidgetItem()
         self.tableWidget_2.setItem(13, 1, __qtablewidgetitem133)
-        font2 = QFont()
-        font2.setPointSize(7)
-        font2.setBold(True)
+        font4 = QFont()
+        font4.setPointSize(11)
+        font4.setBold(True)
         __qtablewidgetitem134 = QTableWidgetItem()
-        __qtablewidgetitem134.setFont(font2);
+        __qtablewidgetitem134.setFont(font4);
         self.tableWidget_2.setItem(14, 0, __qtablewidgetitem134)
         __qtablewidgetitem135 = QTableWidgetItem()
         self.tableWidget_2.setItem(14, 1, __qtablewidgetitem135)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
-        self.tableWidget_2.setGeometry(QRect(0, 80, 1391, 481))
+        self.tableWidget_2.setGeometry(QRect(0, 110, 1391, 511))
+        self.tableWidget_2.setFont(font)
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(170)
         self.bt_calculate_table2 = QPushButton(self.tab_2)
         self.bt_calculate_table2.setObjectName(u"bt_calculate_table2")
-        self.bt_calculate_table2.setGeometry(QRect(1290, 570, 91, 24))
+        self.bt_calculate_table2.setGeometry(QRect(0, 630, 111, 24))
         self.label = QLabel(self.tab_2)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(0, 0, 731, 81))
+        self.label.setGeometry(QRect(0, 0, 911, 111))
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
@@ -502,116 +511,114 @@ class Ui_mainWindow(object):
         __qtablewidgetitem170 = QTableWidgetItem()
         self.tableWidget_3.setItem(0, 7, __qtablewidgetitem170)
         __qtablewidgetitem171 = QTableWidgetItem()
-        __qtablewidgetitem171.setFont(font);
+        __qtablewidgetitem171.setFont(font2);
         self.tableWidget_3.setItem(1, 0, __qtablewidgetitem171)
         __qtablewidgetitem172 = QTableWidgetItem()
         self.tableWidget_3.setItem(1, 1, __qtablewidgetitem172)
         __qtablewidgetitem173 = QTableWidgetItem()
-        __qtablewidgetitem173.setFont(font2);
+        __qtablewidgetitem173.setFont(font4);
         self.tableWidget_3.setItem(2, 0, __qtablewidgetitem173)
         __qtablewidgetitem174 = QTableWidgetItem()
         self.tableWidget_3.setItem(2, 1, __qtablewidgetitem174)
         __qtablewidgetitem175 = QTableWidgetItem()
-        __qtablewidgetitem175.setFont(font2);
+        __qtablewidgetitem175.setFont(font4);
         self.tableWidget_3.setItem(3, 0, __qtablewidgetitem175)
         __qtablewidgetitem176 = QTableWidgetItem()
         self.tableWidget_3.setItem(3, 1, __qtablewidgetitem176)
         __qtablewidgetitem177 = QTableWidgetItem()
-        __qtablewidgetitem177.setFont(font);
+        __qtablewidgetitem177.setFont(font2);
         self.tableWidget_3.setItem(4, 0, __qtablewidgetitem177)
         __qtablewidgetitem178 = QTableWidgetItem()
         self.tableWidget_3.setItem(4, 1, __qtablewidgetitem178)
         __qtablewidgetitem179 = QTableWidgetItem()
         self.tableWidget_3.setItem(4, 2, __qtablewidgetitem179)
         __qtablewidgetitem180 = QTableWidgetItem()
-        __qtablewidgetitem180.setFont(font);
+        __qtablewidgetitem180.setFont(font2);
         self.tableWidget_3.setItem(5, 0, __qtablewidgetitem180)
         __qtablewidgetitem181 = QTableWidgetItem()
         self.tableWidget_3.setItem(5, 1, __qtablewidgetitem181)
         __qtablewidgetitem182 = QTableWidgetItem()
-        __qtablewidgetitem182.setFont(font);
+        __qtablewidgetitem182.setFont(font2);
         self.tableWidget_3.setItem(6, 0, __qtablewidgetitem182)
         __qtablewidgetitem183 = QTableWidgetItem()
         self.tableWidget_3.setItem(6, 1, __qtablewidgetitem183)
         __qtablewidgetitem184 = QTableWidgetItem()
-        __qtablewidgetitem184.setFont(font);
+        __qtablewidgetitem184.setFont(font2);
         self.tableWidget_3.setItem(7, 0, __qtablewidgetitem184)
         __qtablewidgetitem185 = QTableWidgetItem()
         self.tableWidget_3.setItem(7, 1, __qtablewidgetitem185)
         __qtablewidgetitem186 = QTableWidgetItem()
-        __qtablewidgetitem186.setFont(font);
+        __qtablewidgetitem186.setFont(font2);
         self.tableWidget_3.setItem(8, 0, __qtablewidgetitem186)
         __qtablewidgetitem187 = QTableWidgetItem()
         self.tableWidget_3.setItem(8, 1, __qtablewidgetitem187)
         __qtablewidgetitem188 = QTableWidgetItem()
-        __qtablewidgetitem188.setFont(font);
+        __qtablewidgetitem188.setFont(font2);
         self.tableWidget_3.setItem(9, 0, __qtablewidgetitem188)
         __qtablewidgetitem189 = QTableWidgetItem()
         self.tableWidget_3.setItem(9, 1, __qtablewidgetitem189)
         __qtablewidgetitem190 = QTableWidgetItem()
-        __qtablewidgetitem190.setFont(font);
+        __qtablewidgetitem190.setFont(font2);
         self.tableWidget_3.setItem(10, 0, __qtablewidgetitem190)
         __qtablewidgetitem191 = QTableWidgetItem()
         self.tableWidget_3.setItem(10, 1, __qtablewidgetitem191)
         __qtablewidgetitem192 = QTableWidgetItem()
-        __qtablewidgetitem192.setFont(font);
+        __qtablewidgetitem192.setFont(font2);
         self.tableWidget_3.setItem(11, 0, __qtablewidgetitem192)
         __qtablewidgetitem193 = QTableWidgetItem()
         self.tableWidget_3.setItem(11, 1, __qtablewidgetitem193)
         __qtablewidgetitem194 = QTableWidgetItem()
-        __qtablewidgetitem194.setFont(font);
+        __qtablewidgetitem194.setFont(font2);
         self.tableWidget_3.setItem(12, 0, __qtablewidgetitem194)
         __qtablewidgetitem195 = QTableWidgetItem()
         self.tableWidget_3.setItem(12, 1, __qtablewidgetitem195)
         __qtablewidgetitem196 = QTableWidgetItem()
-        __qtablewidgetitem196.setFont(font);
+        __qtablewidgetitem196.setFont(font2);
         self.tableWidget_3.setItem(13, 0, __qtablewidgetitem196)
         __qtablewidgetitem197 = QTableWidgetItem()
         self.tableWidget_3.setItem(13, 1, __qtablewidgetitem197)
         __qtablewidgetitem198 = QTableWidgetItem()
-        __qtablewidgetitem198.setFont(font2);
+        __qtablewidgetitem198.setFont(font4);
         self.tableWidget_3.setItem(14, 0, __qtablewidgetitem198)
         __qtablewidgetitem199 = QTableWidgetItem()
         self.tableWidget_3.setItem(14, 1, __qtablewidgetitem199)
         __qtablewidgetitem200 = QTableWidgetItem()
-        __qtablewidgetitem200.setFont(font2);
+        __qtablewidgetitem200.setFont(font4);
         self.tableWidget_3.setItem(15, 0, __qtablewidgetitem200)
         __qtablewidgetitem201 = QTableWidgetItem()
         self.tableWidget_3.setItem(15, 1, __qtablewidgetitem201)
-        font3 = QFont()
-        font3.setPointSize(6)
-        font3.setBold(True)
         __qtablewidgetitem202 = QTableWidgetItem()
-        __qtablewidgetitem202.setFont(font3);
+        __qtablewidgetitem202.setFont(font4);
         self.tableWidget_3.setItem(16, 0, __qtablewidgetitem202)
         __qtablewidgetitem203 = QTableWidgetItem()
         self.tableWidget_3.setItem(16, 1, __qtablewidgetitem203)
         __qtablewidgetitem204 = QTableWidgetItem()
-        __qtablewidgetitem204.setFont(font3);
+        __qtablewidgetitem204.setFont(font4);
         self.tableWidget_3.setItem(17, 0, __qtablewidgetitem204)
         __qtablewidgetitem205 = QTableWidgetItem()
         self.tableWidget_3.setItem(17, 1, __qtablewidgetitem205)
         __qtablewidgetitem206 = QTableWidgetItem()
-        __qtablewidgetitem206.setFont(font);
+        __qtablewidgetitem206.setFont(font4);
         self.tableWidget_3.setItem(18, 0, __qtablewidgetitem206)
         __qtablewidgetitem207 = QTableWidgetItem()
         self.tableWidget_3.setItem(18, 1, __qtablewidgetitem207)
         __qtablewidgetitem208 = QTableWidgetItem()
-        __qtablewidgetitem208.setFont(font);
+        __qtablewidgetitem208.setFont(font2);
         self.tableWidget_3.setItem(19, 0, __qtablewidgetitem208)
         __qtablewidgetitem209 = QTableWidgetItem()
         self.tableWidget_3.setItem(19, 1, __qtablewidgetitem209)
         __qtablewidgetitem210 = QTableWidgetItem()
-        __qtablewidgetitem210.setFont(font);
+        __qtablewidgetitem210.setFont(font2);
         self.tableWidget_3.setItem(20, 0, __qtablewidgetitem210)
         __qtablewidgetitem211 = QTableWidgetItem()
         self.tableWidget_3.setItem(20, 1, __qtablewidgetitem211)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
-        self.tableWidget_3.setGeometry(QRect(10, 50, 1391, 661))
+        self.tableWidget_3.setGeometry(QRect(0, 90, 1391, 681))
+        self.tableWidget_3.setFont(font)
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(170)
         self.layoutWidget1 = QWidget(self.tab_3)
         self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(1200, 710, 184, 26))
+        self.layoutWidget1.setGeometry(QRect(0, 770, 258, 36))
         self.horizontalLayout = QHBoxLayout(self.layoutWidget1)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -627,12 +634,15 @@ class Ui_mainWindow(object):
 
         self.label_2 = QLabel(self.tab_3)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(10, 10, 1341, 31))
+        self.label_2.setGeometry(QRect(0, 0, 1391, 91))
+        font5 = QFont()
+        font5.setPointSize(12)
+        self.label_2.setFont(font5)
         self.tabWidget.addTab(self.tab_3, "")
 
         self.retranslateUi(mainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(mainWindow)
@@ -784,7 +794,8 @@ class Ui_mainWindow(object):
         self.bt_calculate_table1.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.bt_show_chart_1.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
         self.bt_export_xl_1.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
-        self.label_5.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">2\u043d</span> = 22; U = 380/660 ; 2p = 4; I<span style=\" vertical-align:sub;\">0a</span> = 0,37; I<span style=\" vertical-align:sub;\">0p</span> = 5,39; P<span style=\" vertical-align:sub;\">\u0441\u0442</span> + P<span style=\" vertical-align:sub;\">\u0442\u0440.\u0449</span> + P<span style=\" vertical-align:sub;\">\u043c\u0435\u0445</span> = 0,67; r<span style=\" vertical-align:sub;\">1 </span>= 0,6; r'<span style=\" vertical-align:sub;\">2</span> = 0,38; c<span style=\" vertical-align:sub;\">1 </span>= 1,029;</p><p>a' = 1,06; a = 0,364; b' = 0; b = 4,17; P<span style=\" vertical-align:sub;\">\u0441\u0442</span> = 0,44928; P<span style=\" vertical-align:sub;\">\u043c\u0435\u0445</span> = 0,20854; P<span style=\" vertical-align:sub;\">\u044d1</span> = 1,012; P<span style=\" vertical-align:sub;\">\u044d\u0449</span> = 0,559;</p><p><br/></p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">P</span><span style=\" font-size:14pt; vertical-align:sub;\">2\u043d</span><span style=\" font-size:14pt;\"> = 22; U = 380/660 ; 2p = 4; I</span><span style=\" font-size:14pt; vertical-align:sub;\">0a</span><span style=\" font-size:14pt;\"> = 0,37; I</span><span style=\" font-size:14pt; vertical-align:sub;\">0p</span><span style=\" font-size:14pt;\"> = 5,39; P</span><span style=\" font-size:14pt; vertical-align:sub;\">\u0441\u0442</span><span style=\" font-size:14pt;\"> + P</span><span style=\" font-size:14pt; vertical-align:sub;\">\u0442\u0440.\u0449</span><span style=\" font-size:14pt;\"> + P</span><span style=\" font-size:14pt; vertical-align:sub;\">\u043c\u0435\u0445</span><span style=\" font-size:14pt;\"> = 0,67; r</span><span style=\" font-size:14pt; vertical-align:sub;\">1 </span><span style=\" font-size:14pt;\">= 0,6; r'</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 0,38; c</span><span style="
+                        "\" font-size:14pt; vertical-align:sub;\">1 </span><span style=\" font-size:14pt;\">= 1,029;</span></p><p><span style=\" font-size:14pt;\">a' = 1,06; a = 0,364; b' = 0; b = 4,17; P</span><span style=\" font-size:14pt; vertical-align:sub;\">\u0441\u0442</span><span style=\" font-size:14pt;\"> = 0,44928; P</span><span style=\" font-size:14pt; vertical-align:sub;\">\u043c\u0435\u0445</span><span style=\" font-size:14pt;\"> = 0,20854; P</span><span style=\" font-size:14pt; vertical-align:sub;\">\u044d1</span><span style=\" font-size:14pt;\"> = 1,012; P</span><span style=\" font-size:14pt; vertical-align:sub;\">\u044d\u0449</span><span style=\" font-size:14pt;\"> = 0,559;</span></p><p><span style=\" font-size:14pt;\"><br/></span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 1", None))
         ___qtablewidgetitem68 = self.tableWidget_2.horizontalHeaderItem(0)
         ___qtablewidgetitem68.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
@@ -903,13 +914,14 @@ class Ui_mainWindow(object):
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">P<span style=\" vertical-align:sub;\">2</span> = 22; U = 380/660; 2p = 4 ; I<span style=\" vertical-align:sub;\">1\u043d\u043e\u043c</span> = 23,715;I'<span style=\" vertical-align:sub;\">2\u043d\u043e\u043c</span> = 22,158; x<span style=\" vertical-align:sub;\">1</span> = 1,89; x'<span style=\" vertical-align:sub;\">2</span> = 2,03; x<span style=\" vertical-align:sub;\">12\u043f</span> = 91,84; r<s"
-                        "pan style=\" vertical-align:sub;\">1</span> = 0,6; r'<span style=\" vertical-align:sub;\">2</span> = 0,38;</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">s<span style=\" vertical-align:sub;\">\u043d\u043e\u043c</span> = 0,0244; C<span style=\" vertical-align:sub;\">1\u043f</span> = 1,02; h<span style=\" vertical-align:sub;\">c</span> = 29,62; q<span style=\" vertical-align:sub;\">c</span> = 184,94; q<span style=\" vertical-align:sub;\">r</span> = 112,074; r<span style=\" vertical-align:sub;\">c</span> = 38,3 * 10<span style=\" vertical-align:super;\">-6 </span>; r<span style=\" vertical-align:sub;\">2</span> = 57,3 * 10<span style=\" vertical-align:super;\">-6</span>;  x'<span style=\" vertical-align:sub;\">2\u03be </span>= 1,624</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'sans-serif'; font-size:14px; color:#202122"
-                        "; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043f2</span> = 2,42; <span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-weight:700; color:#202122; background-color:#ffffff;\">\u0394</span><span style=\" font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043f2</span><span style=\" vertical-align:sub;\">\u03be</span> = 0,148; <span style=\" font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043b2</span> = 0,678; <span style=\" font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#fffff"
-                        "f;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14px; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u04342</span> = 2,19</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">P</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 22; U = 380/660; 2p = 4 ; I</span><span style=\" font-size:14pt; vertical-align:sub;\">1\u043d\u043e\u043c</span><span style=\" font-size:14pt;\"> = 23,715;I'</span><span style=\" font-size:14pt; vertical-align:sub;\">2\u043d\u043e\u043c</span><span style=\" font-"
+                        "size:14pt;\"> = 22,158; x</span><span style=\" font-size:14pt; vertical-align:sub;\">1</span><span style=\" font-size:14pt;\"> = 1,89; x'</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 2,03; x</span><span style=\" font-size:14pt; vertical-align:sub;\">12\u043f</span><span style=\" font-size:14pt;\"> = 91,84; r</span><span style=\" font-size:14pt; vertical-align:sub;\">1</span><span style=\" font-size:14pt;\"> = 0,6; r'</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 0,38;</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">s</span><span style=\" font-size:14pt; vertical-align:sub;\">\u043d\u043e\u043c</span><span style=\" font-size:14pt;\"> = 0,0244; C</span><span style=\" font-size:14pt; vertical-align:sub;\">1\u043f</span><span style=\" font-size:14pt;\"> = 1,02; h</span><span style"
+                        "=\" font-size:14pt; vertical-align:sub;\">c</span><span style=\" font-size:14pt;\"> = 29,62; q</span><span style=\" font-size:14pt; vertical-align:sub;\">c</span><span style=\" font-size:14pt;\"> = 184,94; q</span><span style=\" font-size:14pt; vertical-align:sub;\">r</span><span style=\" font-size:14pt;\"> = 112,074; r</span><span style=\" font-size:14pt; vertical-align:sub;\">c</span><span style=\" font-size:14pt;\"> = 38,3 * 10</span><span style=\" font-size:14pt; vertical-align:super;\">-6 </span><span style=\" font-size:14pt;\">; r</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 57,3 * 10</span><span style=\" font-size:14pt; vertical-align:super;\">-6</span><span style=\" font-size:14pt;\">;  x'</span><span style=\" font-size:14pt; vertical-align:sub;\">2\u03be </span><span style=\" font-size:14pt;\">= 1,624</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span s"
+                        "tyle=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043f2</span><span style=\" font-size:14pt;\"> = 2,42; </span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:14pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u0394</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043f2</span><span style=\" font-size:14pt; vertical-align:sub;\">\u03be</span><span style=\" font-size:14pt;\"> = 0,148; </span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#"
+                        "202122; background-color:#ffffff; vertical-align:sub;\">\u043b2</span><span style=\" font-size:14pt;\"> = 0,678; </span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u04342</span><span style=\" font-size:14pt;\"> = 2,19</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"><br /></span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 2", None))
         ___qtablewidgetitem120 = self.tableWidget_3.horizontalHeaderItem(0)
         ___qtablewidgetitem120.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
@@ -1064,11 +1076,17 @@ class Ui_mainWindow(object):
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">P<span style=\" vertical-align:sub;\">2</span> = 22; U = 380/660; 2p = 4; I = 23,715; I'<span style=\" vertical-align:sub;\">2</span> = 22,158; x<span style=\" vertical-align:sub;\">1</span> = 1,89; x'<span style=\" vertical-align:sub;\">2</span> = 2,03; x<span style=\" vertical-align:sub;\">12\u043f</span> = 91,84; r<span style=\" vertical-align:sub;\">1</span> = 0,6; r'<span style=\" vertical-align:"
-                        "sub;\">2</span> = 0,38; s<span style=\" vertical-align:sub;\">\u043d\u043e\u043c</span> = 0,0244; u<span style=\" vertical-align:sub;\">p </span>= 20; a = 1; k'<span style=\" vertical-align:sub;\">\u03b2</span> = 1; k<span style=\" vertical-align:sub;\">y1</span>  = 1; k<span style=\" vertical-align:sub;\">\u043e\u04311</span> = 0,91; \u03b4 = 0,55; t<span style=\" vertical-align:sub;\">z1</span>=13,6*10<span style=\" vertical-align:super;\">-3</span>; b<span style=\" vertical-align:sub;\">\u04481 </span>= 3,7; x<span style=\" vertical-align:sub;\">1\u043d\u043e\u043c </span>= 1,360; \u0394\u03bb_\u043f1\u043d\u0430\u0441 = 0,37; \u03bb_\u043f1 = 1,99;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> \u03bb_\u043b1 = 1,1; t<span style=\" vertical-align:sub;\">z2</span>=17,11; b<span style=\" vertical-align:sub;\">\u04482 </span>=1,55; C<span style=\" vertical-align:sub;\">1\u043f </span>= 1,015; C<span style=\" vertical-align:sub;"
-                        "\">2</span>=8,112; \u03bb_\u043f2\u03be = 2,272; \u03bb_\u04342 = 2,19;  \u03bb_\u043b2 = 0,678; \u03bb_\u043f2 = 2,42; C<span style=\" vertical-align:sub;\">N</span>= 0,975; I<span style=\" vertical-align:sub;\">1\u043f </span>=103,993</p></body></html>", None))
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">P</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 22; U = 380/660; 2p = 4; I = 23,715; I'</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 22,158; x</span><span style=\" font-size:14pt; vertical-align:sub;\">1</span><span style=\" font-size:14pt;\"> = 1,89; x'<"
+                        "/span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 2,03; x</span><span style=\" font-size:14pt; vertical-align:sub;\">12\u043f</span><span style=\" font-size:14pt;\"> = 91,84; r</span><span style=\" font-size:14pt; vertical-align:sub;\">1</span><span style=\" font-size:14pt;\"> = 0,6; r'</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 0,38; s</span><span style=\" font-size:14pt; vertical-align:sub;\">\u043d\u043e\u043c</span><span style=\" font-size:14pt;\"> = 0,0244; u</span><span style=\" font-size:14pt; vertical-align:sub;\">p </span><span style=\" font-size:14pt;\">= 20; a = 1;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">k'</span><span style=\" font-size:14pt; vertical-align:sub;\">\u03b2</span><span style=\" font-size:14pt;\"> = 1; k</span><span style=\" font-size:14pt; vertica"
+                        "l-align:sub;\">y1</span><span style=\" font-size:14pt;\">  = 1; k</span><span style=\" font-size:14pt; vertical-align:sub;\">\u043e\u04311</span><span style=\" font-size:14pt;\"> = 0,91; \u03b4 = 0,55; t</span><span style=\" font-size:14pt; vertical-align:sub;\">z1</span><span style=\" font-size:14pt;\">=13,6*10</span><span style=\" font-size:14pt; vertical-align:super;\">-3</span><span style=\" font-size:14pt;\">; b</span><span style=\" font-size:14pt; vertical-align:sub;\">\u04481 </span><span style=\" font-size:14pt;\">= 3,7; x</span><span style=\" font-size:14pt; vertical-align:sub;\">1\u043d\u043e\u043c </span><span style=\" font-size:14pt;\">= 1,360; \u0394\u03bb_\u043f1\u043d\u0430\u0441 = 0,37; \u03bb_\u043f1 = 1,99;</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> \u03bb_\u043b1 = 1,1; t</span><span style=\" font-size:14pt; vertical-align:sub;\">z2</span><span style=\" font-size:14p"
+                        "t;\">=17,11; b</span><span style=\" font-size:14pt; vertical-align:sub;\">\u04482 </span><span style=\" font-size:14pt;\">=1,55; C</span><span style=\" font-size:14pt; vertical-align:sub;\">1\u043f </span><span style=\" font-size:14pt;\">= 1,015; C</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\">=8,112; \u03bb_\u043f2\u03be = 2,272; \u03bb_\u04342 = 2,19;  \u03bb_\u043b2 = 0,678; \u03bb_\u043f2 = 2,42; C</span><span style=\" font-size:14pt; vertical-align:sub;\">N</span><span style=\" font-size:14pt;\">= 0,975; I</span><span style=\" font-size:14pt; vertical-align:sub;\">1\u043f </span><span style=\" font-size:14pt;\">=103,993</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 3", None))
     # retranslateUi
 
+#Error: ui_mainWindow.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+
+
+#while executing 'C:\Users\Vaslot\AppData\Local\Programs\Python\Python311\Lib\site-packages\PySide6\uic -g python ui_mainWindow.ui'

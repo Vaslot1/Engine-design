@@ -1,4 +1,5 @@
 #####################################################################################*
+from scipy import interpolate
 def FindApproximateWithinBounds(arr, x):
     min = 1000
     res = 0
@@ -1228,3 +1229,6 @@ def K_e_func(D_a):
         return None
     else:
         return LinearInterpolation(D_a, x_meow, y_meow)
+def spinter(x,xmeow,ymeow):
+    tck = interpolate.splrep(xmeow, ymeow)
+    return interpolate.splev(x, tck)
