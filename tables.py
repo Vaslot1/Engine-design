@@ -364,9 +364,9 @@ class table3:
         h_k = _h_k
         Lamda_p_2_Ksi = _Lamda_p_2_Ksi
         K_R = _K_R
-        s_kr = self.s_kr_calc()
-        print(s_kr)
-        print(self.calculateTable(20, s_kr))
+        #s_kr = self.s_kr_calc()
+        #print(s_kr)
+        #print(self.calculateTable(20, s_kr))
         count_ = 0
         table_2 = table2(h_c, h_p_2, h_sh, h_sh_shtrih, b_1_r, b_2_r, h_1, q_c, r_c, r_2, h_0, b_sh_2, Lamda_p_2,
                          Lamda_l_2,
