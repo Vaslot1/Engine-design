@@ -11,8 +11,8 @@ from func import *
 
 ####* __ТЗ__
 a_harmonic = 1  # гармоника 1 порядка
-n_el = 2 # 17 пункт
-P_2 = 1.5
+n_el = 2  # 17 пункт либо вводит либо словарь для всех вариантов
+P_2 = 4
 U = 220
 n = 1500
 _2p = 4
@@ -47,20 +47,20 @@ h = FindApproximateWithinBounds(
     h_shtrih
 )
 D_a = {
-    56: 0.088,
-    63: 0.104,
+    56: 0.08,
+    63: 0.1,
     71: 0.116,
     80: 0.131,
-    90: 0.153,
-    100: 0.173,
-    112: 0.194,
-    132: 0.229,
-    160: 0.2785,
-    180: 0.32,
-    200: 0.354,
-    225: 0.399,
+    90: 0.149,
+    100: 0.168,
+    112: 0.191,
+    132: 0.225,
+    160: 0.272,
+    180: 0.313,
+    200: 0.349,
+    225: 0.392,
     250: 0.437,
-    280: 0.525,
+    280: 0.52,
     315: 0.59,
     355: 0.66
 }[h]
@@ -107,7 +107,8 @@ D_a_max = {
     355: 0.66
 
 }
-while D_a !=D_a_max[h]+sumator_D_a:
+while D_a != D_a_max[h] + sumator_D_a:
+    D_a = round(D_a, 3)
     k_D = 0.62
     while (k_D != 0.685):
 
@@ -141,9 +142,9 @@ while D_a !=D_a_max[h]+sumator_D_a:
         P_shtrih = (P_2 * 1000) * (k_e / (kpd * cosPhi))
 
         ####* __5__
-        A_shtrih = (A__up(_2p, D_a) + A__down(_2p, D_a)) / 2
-        B_sig_shtrih = (B_sig__up(_2p, D_a) + B_sig__down(_2p, D_a)) / 2
-
+        A_shtrih = (A__down(_2p, D_a) + A__up(_2p, D_a)) / 2
+        B_sig_shtrih = (B_sig__down(_2p, D_a) + B_sig__up(_2p, D_a)) / 2.1
+        print(tau)
         ####* __6__
         t_z_1_max = round(t_z1__2_max(tau), 3)
         t_z_1_min = round(t_z1__2_min(tau), 3)
@@ -172,7 +173,7 @@ while D_a !=D_a_max[h]+sumator_D_a:
         l_sig = (P_shtrih / (k_B * D ** 2 * omega * k_ob * A_shtrih * B_sig_shtrih))
 
         ####? __8__
-        lamda = l_sig / tau
+        lamda = round(l_sig / tau, 1)
 
         ####* __9__
 
@@ -241,7 +242,8 @@ while D_a !=D_a_max[h]+sumator_D_a:
         h_a = Ph / (2 * B_a * l_sig * k_c)
 
         ####* __20__
-        b_sh = {50: 1.8, 63: 1.8, 71: 2, 80: 3, 90: 3, 100: 3.5, 112: 3.5, 132: 3.5, 160: 3.7, 180: 3.7, 200: 3.7, 225: 3.7,
+        b_sh = {56: 1.8, 63: 1.8, 71: 2, 80: 3, 90: 3, 100: 3.5, 112: 3.5, 132: 3.5, 160: 3.7, 180: 3.7, 200: 3.7,
+                225: 3.7,
                 250: 3.7, 280: 3.7, 315: 3.7, 355: 3.7}
         h_sh = 0.8
         h_p = ((D_a - D) / 2 - h_a) * 10 ** 3
@@ -252,7 +254,7 @@ while D_a !=D_a_max[h]+sumator_D_a:
         ####* __21__
         delta_b = 0
         delta_h = 0
-        if (50 <= h <= 132):
+        if (56 <= h <= 132):
             delta_b = 0.1
             delta_h = 0.1
         elif (160 <= h <= 250):
@@ -282,6 +284,8 @@ while D_a !=D_a_max[h]+sumator_D_a:
             b_iz = 0.4
         elif (180 <= h <= 250):
             b_iz = 0.4
+        elif (280 <= h <= 355):
+            b_iz = 0.55
         S_iz = b_iz * (2 * h_p + b_1 + b_2)
         S_p_shtrih = ((b_1_shtrih + b_2_shtrih) / 2) * h_p_k_shtrih - (S_iz + S_pr)
 
@@ -348,28 +352,33 @@ while D_a !=D_a_max[h]+sumator_D_a:
         k_z = round((d_iz ** 2 * u_p * n_el) / S_p_shtrih, 2)
         print(Back.YELLOW + "Пункт: 22")
         print("d_iz =", d_iz)
-        if (0.7 <= k_z <= 0.75):
+        if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3):
             print("k_D = " + str(k_D))
             print("D_a = " + str(D_a))
+            print("lamda = " + str(lamda))
             print(Back.GREEN + "k_z = " + str(k_z), end='\n\n')
             break
         else:
             print("k_D = " + str(k_D), end='\n\n')
+            print("lamda = " + str(lamda))
+            print("D_a = " + str(D_a))
             print(Back.RED + "k_z = " + str(k_z), end='\n\n')
             k_D += sumator
     if (0.7 <= k_z <= 0.75):
-        print("k_D = " + str(k_D))
-        print("D_a = " + str(D_a))
-        print(Back.GREEN + "k_z = " + str(k_z), end='\n\n')
-
-        break
+        if (0.7 <= lamda <= 1.3 and h <= 250) or (0.6 <= lamda <= 1 and h >= 280):
+            print("k_D = " + str(k_D))
+            print("D_a = " + str(D_a))
+            print("lamda = " + str(lamda))
+            print(Back.GREEN + "k_z = " + str(k_z), end='\n\n')
+            break
     else:
         print("D_a = " + str(D_a), end='\n\n')
+        print("lamda = " + str(lamda))
         print(Back.RED + "k_z = " + str(k_z), end='\n\n')
         D_a += sumator_D_a
 
 # КЦ
-if (0.7 > k_z or k_z > 0.75):
+if (0.7 > k_z or k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and h <= 250 ) or((lamda < 0.6 or lamda > 1) and h >= 280)):
     print(Back.RED + "k_z = " + str(k_z), end='\n\n')
     exit(1)
 print(Back.BLUE + "Пункт: 1")
@@ -398,6 +407,11 @@ print("omega =", omega)
 print("l_sig =", l_sig, end='\n\n')
 print(Back.YELLOW + "Пункт: 8")
 print("lamda =", lamda, end='\n\n')
+if (0.7 <= lamda <= 1.3):
+    print(Back.GREEN + "lamda =" + str(lamda), end='\n\n')
+else:
+    print(Back.RED + "lamda =" + str(lamda), end='\n\n')
+    exit()
 print(Back.BLUE + "Пункт: 9")
 print("t_z_1_max =", t_z_1_max)
 print("t_z_1_min =", t_z_1_min, end='\n\n')
@@ -523,25 +537,25 @@ print("k_i =", k_i)
 print("I_2 =", I_2, end='\n\n')
 
 ####* __30__
-J_2 = 3 * 10 ** 6
+J_2 = 3.5 * 10 ** 6
 q_p = I_2 / J_2
 print(Back.BLUE + "Пункт: 30")
 print("J_2 =", J_2)
 print("q_p =", q_p, end='\n\n')
 
 ####* __31__
-b_sh_2 = {50: 1.0, 63: 1.0, 71: 1.0, 80: 1.0, 90: 1.0, 100: 1.0, 112: 1.5, 132: 1.5, 160: 1.5, 180: 1.5, 200: 1.5,
+b_sh_2 = {56: 1.0, 63: 1.0, 71: 1.0, 80: 1.0, 90: 1.0, 100: 1.0, 112: 1.5, 132: 1.5, 160: 1.5, 180: 1.5, 200: 1.5,
           225: 1.5,
-          250: 1.5, 280:1.5,315:1.5,355:1.5}
+          250: 1.5, 280: 1.5, 315: 1.5, 355: 1.5}
 h_sh_shtrih = 0.3  # это для 2p >= 4, для 2p=2 см стр 380
-h_sh_r = {50: 0.5, 63: 0.5, 71: 0.5, 80: 0.5, 90: 0.5, 100: 0.5, 112: 0.75, 132: 0.75, 160: 0.7, 180: 0.7, 200: 0.7,
+h_sh_r = {56: 0.5, 63: 0.5, 71: 0.5, 80: 0.5, 90: 0.5, 100: 0.5, 112: 0.75, 132: 0.75, 160: 0.7, 180: 0.7, 200: 0.7,
           225: 0.7,
-          250: 0.7, 280:0.7,315:0.7,355:0.7}
-B_z_2 = 1.95 #от 1.7 до 1.95
+          250: 0.7, 280: 0.7, 315: 0.7, 355: 0.7}
+B_z_2 = 1.95  # от 1.7 до 1.95
 l_st_2 = l_st_1
 b_z_2 = ((B_sig * t_z_2 * l_sig) / (B_z_2 * l_st_1 * k_c)) * 10 ** 3
 b_1_r = (math.pi * (D_2 * 10 ** 3 - 2 * h_sh_r[h] - 2 * h_sh_shtrih) - Z_2 * b_z_2) / (math.pi + Z_2)
-b_2_r = math.sqrt((b_1_r ** 2 * (Z_2 / math.pi + math.pi / 2) - 4 * q_p*10**6) / (Z_2 / math.pi + math.pi / 2))
+b_2_r = math.sqrt((b_1_r ** 2 * (Z_2 / math.pi + math.pi / 2) - 4 * q_p * 10 ** 6) / (Z_2 / math.pi + math.pi / 2))
 h_1 = (b_1_r - b_2_r) * (Z_2 / (2 * math.pi))
 print(Back.BLUE + "Пункт: 31")
 print("b_sh_2 =", b_sh_2[h])
