@@ -146,7 +146,7 @@ def p6_down__p4_up(P_2):
         return None
     elif (P_2 > x_meow[-1]):
         return ppp_up(P_2)
-    return Lagrange(P_2, x_meow, y_meow)
+    return LinearInterpolation(P_2, x_meow, y_meow)
     # return -0.0022*(x**4) + 0.0907*(x**3) - 1.4506*(x**2) + 15.087*(x**1) + 67.207
 
 
@@ -168,7 +168,7 @@ def p4_down(P_2):
         return None
     elif (P_2 > x_meow[-1]):
         return ppp_down(P_2)
-    return Lagrange(P_2, x_meow, y_meow)
+    return LinearInterpolation(P_2, x_meow, y_meow)
     # return -0.0007*(x**4) + 0.037*(x**3) - 0.7797*(x**2) + 11.435*(x**1) + 63.526
 
 
