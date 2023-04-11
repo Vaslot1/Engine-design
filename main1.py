@@ -14,8 +14,8 @@ from func import *
 ####* __ТЗ__
 start = time.perf_counter()
 a_harmonic = 1  # гармоника 1 порядка
-P_2 = 315
-U = 660
+P_2 = 5.5
+U = 220
 n = 1500
 _2p = 4
 m = 3
@@ -165,8 +165,15 @@ while step_h <= 300:
             B_sig_shtrih = (B_sig__down(_2p, D_a) + B_sig__up(_2p, D_a)) / 2.1
             print(tau)
             ####* __6__
-            t_z_1_max = round(t_z1__2_max(tau), 3)
-            t_z_1_min = round(t_z1__2_min(tau), 3)
+            if h <= 90:  # пока не сделали,костыль
+                t_z_1_max = round(t_z1__1_max(tau), 3)
+                t_z_1_min = round(t_z1__1_max(tau), 3)
+            elif 90 < h <= 250:
+                t_z_1_max = round(t_z1__2_max(tau), 3)
+                t_z_1_min = round(t_z1__2_min(tau), 3)
+            elif h >= 280:
+                t_z_1_max = round(t_z1__3_max(tau), 3)
+                t_z_1_min = round(t_z1__3_min(tau), 3)
 
             Z_1_min = round((math.pi * D) / t_z_1_max)
             Z_1_max = round((math.pi * D) / t_z_1_min)
@@ -206,7 +213,12 @@ while step_h <= 300:
             u_shtrih_p = (math.pi * D * A_shtrih) / (I_1_nom * Z_1)
 
             ####* __13__
-            u_p = round(a_harmonic * u_shtrih_p)
+            if P_2 <= 15:
+                u_p = round(a_harmonic * u_shtrih_p)
+            else:
+                u_p = round(a_harmonic * u_shtrih_p)  # ДЛЯ ДВУСЛОЙНОЙ ОБМОТКЕ ОКРУЛУГЛЯТЬ НУЖНО ДО ЧЕТНОГО ЧИСЛА
+                if u_p % 2 != 0:
+                    u_p += 1
 
             ####? __14__
             w_1 = (u_p * Z_1) / (2 * a_harmonic * m)
@@ -331,7 +343,7 @@ while step_h <= 300:
             S_p_shtrih = ((b_1_shtrih + b_2_shtrih) / 2) * h_p_k_shtrih - (S_iz + S_pr)
 
             ####? __22__
-            if(P_2<110):
+            if (P_2 < 110):
                 d_iz = {
                     0.00502: 0.1,
                     0.00636: 0.11,
@@ -669,6 +681,7 @@ print("F_sig =", F_sig, end='\n\n')
 ####* __36__
 h_Z_1 = h_p
 B_Z_1_shtrih = round(((B_sig * (t_z_1 * 10 ** 3) * l_sig) / (b_z_1 * l_st_1 * k_c)), 2)
+b_p = t_z_1 * 10 ** 3 - B_Z_1_shtrih
 
 if (B_Z_1_shtrih > 1.8):
     h_Z_1 = 0.5 * h_Z_1
@@ -740,7 +753,7 @@ print("F_j =", F_j)
 print("H_j =", H_j, end='\n\n')
 
 ####* __41__
-F_c = F_sig + F_Z_1 + F_Z_2 + F_a + F_j
+F_c = round(F_sig, 3) + round(F_Z_1, 3) + round(F_Z_2, 3) + round(F_a, 3) + round(F_j, 3)
 print(Back.BLUE + "Пункт: 41")
 print("F_c =", F_c, end='\n\n')
 
@@ -822,8 +835,11 @@ h_k = 0.5 * (b_1 - b_sh_2[h])
 k_B_shtrih = 0.25 * (1 + 3 * beta_shtrih)
 k_B = 0.25 * (1 + 3 * k_B_shtrih)
 h_1_temp = 0
-Lamda_p_1 = h_2 / (3 * b_1) * k_B + (
-        h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2[h]) + h_sh_shtrih / b_sh_2[h]) * k_B_shtrih
+
+Lamda_p_1 = (h_2 / (3 * b_p)) + (h_k / b_p)
+
+        # h_2 / (3 * b_1) * k_B + (
+    # h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2[h]) + h_sh_shtrih / b_sh_2[h]) * k_B_shtrih
 Lamda_l_1 = 0.34 * (q_1 / l_sig) * (l_l_1 - 0.64 * beta_shtrih * tau)
 B_sk = 0
 k_sk_shtrih = k_sk_shtrih_func(t_z_2 / t_z_1)
