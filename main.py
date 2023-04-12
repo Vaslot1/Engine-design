@@ -184,7 +184,7 @@ class MainWindow(QMainWindow):
         fig = plt.figure()
 
         for i in range(2, 7 ):
-            x_arr.append(float(self.ui.tableWidget_3.item(0, i).text()))
+             x_arr.append(float(self.ui.tableWidget_3.item(0, i).text()))
         for i in range(2, 7 ):
             y_arr_1.append(round(table_3.calculateTable(19, float(self.ui.tableWidget_3.item(0, i).text())), 3))
         for i in range(2, 7 ):

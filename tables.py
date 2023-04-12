@@ -377,7 +377,7 @@ class table3:
         s_shtrih = s
 
     def f1_3(self):
-        k_nas = {1: 1.4, 0.8: 1.3, 0.5: 1.2, 0.2: 1.1, 0.1: 1.05, 0.19: 1.08, 0.18691379075427084: 1.08, 0.3: 1.15, 0.15:1.08}
+        k_nas = {1: 1.4, 0.8: 1.3, 0.5: 1.2, 0.2: 1.1, 0.1: 1.05, 0.19: 1.08}
         return k_nas[s_shtrih]
 
     def f2_3(self):
@@ -426,7 +426,7 @@ class table3:
         return self.f8_3() + (1 + (self.f8_3() / x_1_2_p)) * self.f13_3()
 
     def f16_3(self):
-        return U / math.sqrt(self.f14_3() ** 2 + self.f15_3())
+        return U / math.sqrt(self.f14_3() ** 2 + self.f15_3() ** 2 )
 
     def f17_3(self):
         return self.f16_3() * (math.sqrt(self.f14_3() ** 2 + (self.f15_3() + x_1_2_p) ** 2)) / (

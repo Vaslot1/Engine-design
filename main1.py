@@ -14,8 +14,8 @@ from func import *
 ####* __ТЗ__
 start = time.perf_counter()
 a_harmonic = 1  # гармоника 1 порядка
-P_2 = 5.5
-U = 220
+P_2 = 315
+U = 660
 n = 1500
 _2p = 4
 m = 3
@@ -87,6 +87,7 @@ k_D = {
     10: 0.76,
     12: 0.76
 }[_2p]
+k_D = 0.62
 sumator = 0.005
 sumator_D_a = 0.001
 # НЦ
@@ -218,7 +219,8 @@ while step_h <= 300:
             else:
                 u_p = round(a_harmonic * u_shtrih_p)  # ДЛЯ ДВУСЛОЙНОЙ ОБМОТКЕ ОКРУЛУГЛЯТЬ НУЖНО ДО ЧЕТНОГО ЧИСЛА
                 if u_p % 2 != 0:
-                    u_p += 1
+                    u_p -= 1
+
 
             ####? __14__
             w_1 = (u_p * Z_1) / (2 * a_harmonic * m)
@@ -836,10 +838,10 @@ k_B_shtrih = 0.25 * (1 + 3 * beta_shtrih)
 k_B = 0.25 * (1 + 3 * k_B_shtrih)
 h_1_temp = 0
 
-Lamda_p_1 = (h_2 / (3 * b_p)) + (h_k / b_p)
+Lamda_p_1 = h_2 / (3 * b_1) * k_B + (
+     h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2[h]) + h_sh_shtrih / b_sh_2[h]) * k_B_shtrih
+#Lamda_p_1 = (h_2 / (3 * b_p)) + (h_k / b_p)
 
-        # h_2 / (3 * b_1) * k_B + (
-    # h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2[h]) + h_sh_shtrih / b_sh_2[h]) * k_B_shtrih
 Lamda_l_1 = 0.34 * (q_1 / l_sig) * (l_l_1 - 0.64 * beta_shtrih * tau)
 B_sk = 0
 k_sk_shtrih = k_sk_shtrih_func(t_z_2 / t_z_1)
@@ -896,7 +898,7 @@ m_z_1 = (h_Z_1 * 10 ** -3) * (b_z_1 * 10 ** -3) * Z_1 * l_st_1 * k_sk * gamma_c
 if (P_2 < 250):
     k_d_a = 1.6
     k_d_z = 1.8
-elif (P_2 > 250):
+elif (P_2 >= 250):
     k_d_a = 1.4
     k_d_z = 1.7
 
@@ -1494,7 +1496,7 @@ def calculate_Table_3(numeration, s):
 
     def f16():
         global I_2_nas_shtrih
-        I_2_nas_shtrih = U / math.sqrt(f14() ** 2 + f15())
+        I_2_nas_shtrih = U / math.sqrt(f14() ** 2 + f15() ** 2)
         return I_2_nas_shtrih
 
     def f17():
