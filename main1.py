@@ -12,8 +12,9 @@ start = time.perf_counter()
 a_harmonic = 1  # гармоника 1 порядка
 P_2 = 250
 U = 660
-n = 1500
 _2p = 4
+
+n = 1500
 m = 3
 f = 50
 beta_shtrih = 0.833
