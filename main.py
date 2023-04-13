@@ -32,6 +32,8 @@ class MainWindow(QMainWindow):
         self.ui.bt_show_chart_table3.clicked.connect(self.show_chart_table_3)
         self.ui.submitValues.clicked.connect(self.submitValuesButton)
         self.ui.bt_check_table_1.clicked.connect(self.checkTable1)
+        self.ui.bt_check_table_2.clicked.connect(self.checkTable2)
+        self.ui.bt_check_table_3.clicked.connect(self.checkTable3)
 
     def resizetables(self):
         self.ui.tableWidget.setColumnWidth(0, 250)
@@ -86,8 +88,8 @@ class MainWindow(QMainWindow):
 
             self.ui.tableWidget.item(i, 8).setFlags(self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
 
-            if (table_1.calculateTable(i, aboba.s_nom) * 0.01 < curr_value < table_1.calculateTable(i,
-                                                                                                    aboba.s_nom) * 100):
+            if (table_1.calculateTable(i, aboba.s_nom) * 0.9 < curr_value < table_1.calculateTable(i,
+                                                                                                    aboba.s_nom) * 1.1):
                 self.ui.tableWidget.item(i, 8).setBackground(QColor(150, 255, 35))
                 count += 1
             else:
@@ -95,6 +97,67 @@ class MainWindow(QMainWindow):
 
         if (count == 19):
             self.ui.bt_calculate_table1.setEnabled(True)
+            self.ui.le_Pst.setEnabled(True)
+            self.ui.le_Pmeh.setEnabled(True)
+            self.ui.le_a.setEnabled(True)
+            self.ui.le_a_shtrih.setEnabled(True)
+            self.ui.le_b.setEnabled(True)
+            self.ui.le_b_shtrih.setEnabled(True)
+            self.ui.le_I0p.setEnabled(True)
+            self.ui.le_I0a.setEnabled(True)
+            self.ui.le_r1.setEnabled(True)
+            self.ui.le_r2_shtrih.setEnabled(True)
+            self.ui.le_c1.setEnabled(True)
+
+    def checkTable2(self):
+        global aboba
+        global table_2
+
+        count = 0
+        for i in range(1, 14 + 1):
+            try:
+                curr_value = float(self.ui.tableWidget_2.item(i, 2).text())
+            except Exception as e:
+                continue
+
+            self.ui.tableWidget_2.item(i, 2).setFlags(self.ui.tableWidget_2.item(i, 3).flags() & ~Qt.ItemIsSelectable)
+
+            if table_2.calculateTable(i, 1) * 0.9 < curr_value < table_2.calculateTable(i, 1) * 1.1:
+
+                self.ui.tableWidget_2.item(i, 2).setBackground(QColor(150, 255, 35))
+                count += 1
+            else:
+                self.ui.tableWidget_2.item(i, 2).setBackground(QColor(255, 50, 35))
+
+        if count == 14:
+            self.ui.bt_calculate_table2.setEnabled(True)
+
+
+
+
+    def checkTable3(self):
+        global aboba
+        global table_3
+
+        count = 0
+        for i in range(1, 20 + 1):
+            try:
+                curr_value = float(self.ui.tableWidget_3.item(i, 2).text())
+            except Exception as e:
+                continue
+
+            self.ui.tableWidget_3.item(i, 2).setFlags(
+                self.ui.tableWidget_3.item(i, 2).flags() & ~Qt.ItemIsSelectable)
+
+            if table_3.calculateTable(i, 1) * 0.9 < curr_value < table_3.calculateTable(i, 1) * 1.1:
+
+                self.ui.tableWidget_3.item(i, 2).setBackground(QColor(150, 255, 35))
+                count += 1
+            else:
+                self.ui.tableWidget_3.item(i, 2).setBackground(QColor(255, 50, 35))
+
+        if count == 20:
+            self.ui.bt_calculate_table3.setEnabled(True)
 
     def submitValuesButton(self):
         global aboba
@@ -114,10 +177,7 @@ class MainWindow(QMainWindow):
             msgBox.setText("Неправильно введены значения")
             msgBox.exec()
 
-
         self.ui.tableWidget.item(0, 8).setText(str(S_nom))
-
-
 
         table_1 = table1(
             aboba.a, aboba.a_shtrih, aboba.r_2_shtrih, aboba.b, aboba.b_shtrih, aboba.U, aboba.I_0_a, aboba.I_nu,
@@ -147,6 +207,9 @@ class MainWindow(QMainWindow):
         self.ui.bt_calculate_table1.setEnabled(False)
         self.ui.bt_show_chart_1.setEnabled(False)
         self.ui.bt_export_xl_1.setEnabled(False)
+        self.ui.bt_calculate_table2.setEnabled(False)
+        self.ui.bt_calculate_table3.setEnabled(False)
+        self.ui.bt_show_chart_table3.setEnabled(False)
 
         self.clearTables()
         self.ui.tabWidget.setCurrentWidget(self.ui.tab)
@@ -327,16 +390,28 @@ class MainWindow(QMainWindow):
         plt.show()
 
     def calculate_table1(self):
+        global aboba
         self.ui.bt_show_chart_1.setEnabled(True)
         self.ui.bt_export_xl_1.setEnabled(True)
+        try:
+            table_1_student = table1(float(self.ui.le_a.text()), float(self.ui.le_a_shtrih.text()),
+                                     float(self.ui.le_r2_shtrih.text()), float(self.ui.le_b.text()),
+                                     float(self.ui.le_b_shtrih.text()), aboba.U, float(self.ui.le_I0a.text()),
+                                     float(self.ui.le_I0p.text()), float(self.ui.le_c1.text()),
+                                     float(self.ui.le_r1.text()), float(self.ui.le_Pst.text()),
+                                     float(self.ui.le_Pmeh.text()))
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText("Неправильно введены значения")
+            msgBox.exec()
         for i in range(2, 8):
             for j in range(1, 19 + 1):
                 self.ui.tableWidget.setItem(j, i, QTableWidgetItem(
-                    str(round(table_1.calculateTable(j, float(self.ui.tableWidget.item(0, i).text())), 3))))
+                    str(round(table_1_student.calculateTable(j, float(self.ui.tableWidget.item(0, i).text())), 3))))
                 self.ui.tableWidget.item(j, i).setFlags(self.ui.tableWidget.item(j, i).flags() & ~Qt.ItemIsEditable)
 
     def calculate_table2(self):
-        for i in range(2, 7):
+        for i in range(3, 7 + 1):
             for j in range(1, 14 + 1):
                 self.ui.tableWidget_2.setItem(j, i, QTableWidgetItem(
                     str(round(table_2.calculateTable(j, float(self.ui.tableWidget_2.item(0, i).text())), 3))))
@@ -344,7 +419,7 @@ class MainWindow(QMainWindow):
 
     def calculate_table3(self):
         self.ui.bt_show_chart_table3.setEnabled(True)
-        for i in range(2, 7):
+        for i in range(3, 7 + 1):
             for j in range(1, 20 + 1):
                 self.ui.tableWidget_3.setItem(j, i, QTableWidgetItem(
                     str(round(table_3.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 2))))
