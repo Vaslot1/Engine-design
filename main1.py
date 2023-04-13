@@ -1,20 +1,16 @@
 import math
-
 import time
-
 from colorama import *
-
 init(autoreset=True)
 
 import matplotlib.pyplot as plt
-
 from dict import *
 from func import *
 
 ####* __ТЗ__
 start = time.perf_counter()
 a_harmonic = 1  # гармоника 1 порядка
-P_2 = 315
+P_2 = 250
 U = 660
 n = 1500
 _2p = 4
@@ -1654,6 +1650,11 @@ def calculate_Table_3(numeration, s):
 for i in range(1, 20 + 1):
     print(i, "|\t", calculate_Table_3(i, s_kr))
 
+
+
+
+
 end = time.perf_counter()
+
 
 print(end - start)

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1404</width>
+    <width>1407</width>
     <height>929</height>
    </rect>
   </property>
@@ -28,8 +28,109 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>О программе</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Ввод данных</string>
+    </attribute>
+    <widget class="QLabel" name="Power">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Мощность двигателя </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Введите:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Voltage">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>241</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Номинальное напряжение</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="polarity">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Полярность</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="linePower">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>70</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>22</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineVoltage">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>100</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>380</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="linePolarity">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>130</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>4</string>
+     </property>
+    </widget>
+   </widget>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>Таблица 1</string>
@@ -73,7 +174,7 @@
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>30</number>
+      <number>34</number>
      </attribute>
      <row>
       <property name="text">
@@ -1638,33 +1739,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </widget>
       </item>
      </layout>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>1391</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 22; U = 380/660; 2p = 4; I = 23,715; I'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 22,158; x&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 1,89; x'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 2,03; x&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;12п&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 91,84; r&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,6; r'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,38; s&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ном&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,0244; u&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;p &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 20; a = 1;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;k'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;β&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 1; k&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;y1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;  = 1; k&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;об1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,91; δ = 0,55; t&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;z1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=13,6*10&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:super;&quot;&gt;-3&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;; b&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ш1 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 3,7; x&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1ном &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 1,360; Δλ_п1нас = 0,37; λ_п1 = 1,99;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; λ_л1 = 1,1; t&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;z2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=17,11; b&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ш2 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=1,55; C&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1п &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 1,015; C&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=8,112; λ_п2ξ = 2,272; λ_д2 = 2,19;  λ_л2 = 0,678; λ_п2 = 2,42; C&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;N&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 0,975; I&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1п &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=103,993&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
     </widget>
    </widget>
   </widget>
