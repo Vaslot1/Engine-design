@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1404</width>
+    <width>1432</width>
     <height>929</height>
    </rect>
   </property>
@@ -14,9 +14,12 @@
    <string>Расчётная программа</string>
   </property>
   <widget class="QTabWidget" name="tabWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>10</y>
      <width>1411</width>
      <height>871</height>
@@ -28,18 +31,136 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>О программе</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Ввод данных</string>
+    </attribute>
+    <widget class="QLabel" name="Input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Введите:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="submitValues">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>240</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Ввести значения</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>445</width>
+       <height>150</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="Power">
+          <property name="text">
+           <string>Мощность двигателя </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="Voltage">
+          <property name="text">
+           <string>Номинальное напряжение</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="polarity">
+          <property name="text">
+           <string>Полярность</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="Snom">
+          <property name="text">
+           <string>S_номинальное</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLineEdit" name="linePower">
+          <property name="text">
+           <string>22</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineVoltage">
+          <property name="text">
+           <string>380</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="linePolarity">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineSnom">
+          <property name="text">
+           <string>0.024</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
    <widget class="QWidget" name="tab">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <attribute name="title">
      <string>Таблица 1</string>
     </attribute>
     <widget class="QTableWidget" name="tableWidget">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>70</y>
-       <width>1391</width>
+       <y>0</y>
+       <width>971</width>
        <height>711</height>
       </rect>
      </property>
@@ -73,7 +194,7 @@
       <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderDefaultSectionSize">
-      <number>30</number>
+      <number>34</number>
      </attribute>
      <row>
       <property name="text">
@@ -291,6 +412,14 @@
       <property name="text">
        <string>0.024</string>
       </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="1" column="0">
       <property name="text">
@@ -303,12 +432,15 @@
        </font>
       </property>
       <property name="flags">
-       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="1" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="1" column="8">
@@ -343,10 +475,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="2" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="3" column="0">
@@ -358,10 +496,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="3" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="4" column="0">
@@ -373,10 +517,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="4" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="5" column="0">
@@ -388,10 +538,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="5" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="6" column="0">
@@ -403,10 +559,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="6" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="7" column="0">
@@ -418,10 +580,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="7" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="8" column="0">
@@ -433,10 +601,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="8" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="9" column="0">
@@ -448,10 +622,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="9" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="10" column="0">
@@ -463,10 +643,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="10" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="11" column="0">
@@ -478,10 +664,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="11" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="12" column="0">
@@ -493,10 +685,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="12" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="13" column="0">
@@ -508,10 +706,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="13" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="14" column="0">
@@ -523,10 +727,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="14" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="15" column="0">
@@ -538,10 +748,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="15" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="16" column="0">
@@ -556,10 +772,16 @@
         <kerning>false</kerning>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="16" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="17" column="0">
@@ -571,10 +793,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="17" column="1">
       <property name="text">
        <string>кВт</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="18" column="0">
@@ -586,10 +814,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="18" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="19" column="0">
@@ -601,25 +835,44 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="19" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
     </widget>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>780</y>
-       <width>429</width>
+       <x>10</x>
+       <y>720</y>
+       <width>534</width>
        <height>36</height>
       </rect>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="hl_buttons">
+      <item>
+       <widget class="QPushButton" name="bt_check_table_1">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Проверка</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="bt_calculate_table1">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>Рассчитать</string>
         </property>
@@ -627,6 +880,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="bt_show_chart_1">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>Показать график</string>
         </property>
@@ -634,6 +890,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="bt_export_xl_1">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>Экспорт в эксель</string>
         </property>
@@ -644,25 +903,405 @@
       </item>
      </layout>
     </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>970</x>
        <y>0</y>
-       <width>1011</width>
-       <height>61</height>
+       <width>255</width>
+       <height>468</height>
       </rect>
      </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2н&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 22; U = 380/660 ; 2p = 4; I&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;0a&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,37; I&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;0p&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 5,39; P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ст&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; + P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;тр.щ&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; + P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;мех&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,67; r&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 0,6; r'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,38; c&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 1,029;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;a' = 1,06; a = 0,364; b' = 0; b = 4,17; P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ст&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,44928; P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;мех&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,20854; P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;э1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 1,012; P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;эщ&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,559;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
+     <layout class="QVBoxLayout" name="vl_variables">
+      <item>
+       <layout class="QHBoxLayout" name="hl_I0a" stretch="0,0">
+        <property name="spacing">
+         <number>6</number>
+        </property>
+        <property name="leftMargin">
+         <number>2</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lb_I0a">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;0a &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_I0a">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>32</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_I0p">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lb_I0p">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;0p &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_I0p">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_Pst">
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lb_Pst">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;P&lt;span style=&quot; vertical-align:sub;&quot;&gt;СТ&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_Pst">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_Pmeh">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lb_Pmeh">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;P&lt;span style=&quot; vertical-align:sub;&quot;&gt;мех&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_Pmeh">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>100</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_r1">
+        <item>
+         <widget class="QLabel" name="lb_r1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;r&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_r1">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_r2_shtrih">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lb_r2_shtrih">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2 &lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_r2_shtrih">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_c1">
+        <item>
+         <widget class="QLabel" name="lb_c1">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;c&lt;span style=&quot; vertical-align:sub;&quot;&gt;1 &lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_c1">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_a_shtrih">
+        <item>
+         <widget class="QLabel" name="lb_a_shtrih">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a' =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_a_shtrih">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_a">
+        <item>
+         <widget class="QLabel" name="lb_a">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;a =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_a">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_b_shtrih">
+        <item>
+         <widget class="QLabel" name="lb_b_shtrih">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b' =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_b_shtrih">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hl_b">
+        <item>
+         <widget class="QLabel" name="lb_b">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="le_b">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <attribute name="title">
      <string>Таблица 2</string>
     </attribute>
     <widget class="QTableWidget" name="tableWidget_2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -854,6 +1493,11 @@
       <property name="text">
        <string>0.19</string>
       </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
      </item>
      <item row="1" column="0">
       <property name="text">
@@ -864,10 +1508,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="1" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="2" column="0">
@@ -879,10 +1529,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="2" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="3" column="0">
@@ -894,10 +1550,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="3" column="1">
       <property name="text">
        <string>мм</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="4" column="0">
@@ -909,10 +1571,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="4" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="5" column="0">
@@ -924,10 +1592,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="5" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="6" column="0">
@@ -939,10 +1613,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="6" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="7" column="0">
@@ -954,10 +1634,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="7" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="8" column="0">
@@ -969,10 +1655,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="8" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="9" column="0">
@@ -984,10 +1676,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="9" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="10" column="0">
@@ -999,10 +1697,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="10" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="11" column="0">
@@ -1014,10 +1718,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="11" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="12" column="0">
@@ -1029,10 +1739,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="12" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="13" column="0">
@@ -1044,10 +1760,16 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="13" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="14" column="0">
@@ -1060,25 +1782,18 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="14" column="1">
       <property name="text">
        <string>А</string>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
-    </widget>
-    <widget class="QPushButton" name="bt_calculate_table2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>630</y>
-       <width>111</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Рассчитать</string>
-     </property>
     </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
@@ -1103,8 +1818,37 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>630</y>
+       <width>207</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="bt_check_table_2">
+        <property name="text">
+         <string>Проверка</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bt_calculate_table2">
+        <property name="text">
+         <string>Рассчитать</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <attribute name="title">
      <string>Таблица 3</string>
     </attribute>
@@ -1274,30 +2018,50 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <property name="text">
        <string>1</string>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+      </property>
      </item>
      <item row="0" column="3">
       <property name="text">
        <string>0.8</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
       </property>
      </item>
      <item row="0" column="4">
       <property name="text">
        <string>0.5</string>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+      </property>
      </item>
      <item row="0" column="5">
       <property name="text">
        <string>0.2</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
       </property>
      </item>
      <item row="0" column="6">
       <property name="text">
        <string>0.1</string>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable</set>
+      </property>
      </item>
      <item row="0" column="7">
       <property name="text">
        <string>0.19</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
       </property>
      </item>
      <item row="1" column="0">
@@ -1309,10 +2073,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="1" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="2" column="0">
@@ -1325,10 +2095,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="2" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="3" column="0">
@@ -1341,10 +2117,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="3" column="1">
       <property name="text">
        <string>Тл</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="4" column="0">
@@ -1356,10 +2138,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="4" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="4" column="2">
@@ -1376,10 +2164,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="5" column="1">
       <property name="text">
        <string>мм</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="6" column="0">
@@ -1391,10 +2185,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="6" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="7" column="0">
@@ -1406,10 +2206,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="7" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="8" column="0">
@@ -1421,10 +2227,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="8" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="9" column="0">
@@ -1436,10 +2248,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="9" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="10" column="0">
@@ -1451,10 +2269,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="10" column="1">
       <property name="text">
        <string>мм</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="11" column="0">
@@ -1466,10 +2290,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="11" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="12" column="0">
@@ -1481,10 +2311,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="12" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="13" column="0">
@@ -1496,10 +2332,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="13" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="14" column="0">
@@ -1512,10 +2354,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="14" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="15" column="0">
@@ -1528,10 +2376,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="15" column="1">
       <property name="text">
        <string>Ом</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="16" column="0">
@@ -1544,10 +2398,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="16" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="17" column="0">
@@ -1560,10 +2420,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="17" column="1">
       <property name="text">
        <string>А</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="18" column="0">
@@ -1576,10 +2442,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="18" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="19" column="0">
@@ -1591,10 +2463,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="19" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="20" column="0">
@@ -1606,10 +2484,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
      </item>
      <item row="20" column="1">
       <property name="text">
        <string>-</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
     </widget>
@@ -1618,11 +2502,18 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <rect>
        <x>0</x>
        <y>770</y>
-       <width>258</width>
-       <height>36</height>
+       <width>369</width>
+       <height>62</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="bt_check_table_3">
+        <property name="text">
+         <string>Проверка</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="bt_calculate_table3">
         <property name="text">
@@ -1632,39 +2523,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </item>
       <item>
        <widget class="QPushButton" name="bt_show_chart_table3">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>Показать график</string>
         </property>
        </widget>
       </item>
      </layout>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>1391</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;P&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 22; U = 380/660; 2p = 4; I = 23,715; I'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 22,158; x&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 1,89; x'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 2,03; x&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;12п&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 91,84; r&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,6; r'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,38; s&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ном&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,0244; u&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;p &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 20; a = 1;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;k'&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;β&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 1; k&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;y1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;  = 1; k&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;об1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; = 0,91; δ = 0,55; t&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;z1&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=13,6*10&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:super;&quot;&gt;-3&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;; b&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ш1 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 3,7; x&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1ном &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 1,360; Δλ_п1нас = 0,37; λ_п1 = 1,99;&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; λ_л1 = 1,1; t&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;z2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=17,11; b&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;ш2 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=1,55; C&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1п &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 1,015; C&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=8,112; λ_п2ξ = 2,272; λ_д2 = 2,19;  λ_л2 = 0,678; λ_п2 = 2,42; C&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;N&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;= 0,975; I&lt;/span&gt;&lt;span style=&quot; font-size:14pt; vertical-align:sub;&quot;&gt;1п &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;=103,993&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
     </widget>
    </widget>
   </widget>

@@ -1,20 +1,20 @@
 import math
-
+import time
 from colorama import *
-
 init(autoreset=True)
 
 import matplotlib.pyplot as plt
-
 from dict import *
 from func import *
 
 ####* __ТЗ__
+start = time.perf_counter()
 a_harmonic = 1  # гармоника 1 порядка
-P_2 = 22
-U = 380
-n = 1500
+P_2 = 250
+U = 660
 _2p = 4
+
+n = 1500
 m = 3
 f = 50
 beta_shtrih = 0.833
@@ -34,10 +34,10 @@ print("2p =", _2p, end='\n\n')
 
 ####* __1__
 h_shtrih = {
-    2: (p2_up(P_2) + p2_down(P_2)) / 2,
+    # 2: (p2_up(P_2) + p2_down(P_2)) / 2,
     4: (p6_down__p4_up(P_2) + p4_down(P_2)) / 2,
-    6: (p8_down__p6_up(P_2) + p6_down__p4_up(P_2) / 2),
-    8: (p8_up(P_2) + p8_down__p6_up(P_2)) / 2,
+    # 6: (p8_down__p6_up(P_2) + p6_down__p4_up(P_2) / 2),
+    # 8: (p8_up(P_2) + p8_down__p6_up(P_2)) / 2,
     10: 0,
     12: 0
 }[_2p]
@@ -45,30 +45,26 @@ h = FindApproximateWithinBounds(
     [56, 63, 71, 80, 90, 100, 112, 132, 160, 180, 200, 225, 250, 280, 315, 355],
     h_shtrih
 )
-
+print(h_shtrih)
+print(h)
 D_a = {
-    56: 0.088,
-    63: 0.104,
-    71: 0.119,
-    80: 0.135,
-    90: 0.153,
-    100: 0.171,
-    112: 0.194,
-    132: 0.229,
-    160: 0.2785,
-    180: 0.32,
-    200: 0.354,
-    225: 0.399,
-    250: 0.444,
-    280: 0.525,
+    56: 0.08,
+    63: 0.1,
+    71: 0.116,
+    80: 0.131,
+    90: 0.149,
+    100: 0.168,
+    112: 0.191,
+    132: 0.225,
+    160: 0.272,
+    180: 0.313,
+    200: 0.349,
+    225: 0.392,
+    250: 0.437,
+    280: 0.52,
     315: 0.59,
     355: 0.66
 }[h]
-
-print(Back.BLUE + "Пункт: 1")
-print("h_shtrih =", h_shtrih)
-print("h =", h)
-print("D_a =", D_a, end='\n\n')
 
 ####* __2__
 # k_D = {
@@ -82,131 +78,420 @@ print("D_a =", D_a, end='\n\n')
 
 k_D = {
     2: 0.56,
-    4: 0.65,
+    4: 0.62,
     6: 0.71,
     8: 0.73,
     10: 0.76,
     12: 0.76
 }[_2p]
-D = round(k_D * D_a, 3)
+k_D = 0.62
+sumator = 0.005
+sumator_D_a = 0.001
+# НЦ
+print(h)
+print(D_a)
+D_a_max = {
+    56: 0.096,
+    63: 0.108,
+    71: 0.122,
+    80: 0.139,
+    90: 0.157,
+    100: 0.175,
+    112: 0.197,
+    132: 0.233,
+    160: 0.285,
+    180: 0.322,
+    200: 0.359,
+    225: 0.406,
+    250: 0.452,
+    280: 0.53,
+    315: 0.59,
+    355: 0.66
+}
+
+step_h = 0
+exit_from_inf_while = False
+number_of_iteration = 1
+print("======================Начало цикла перебора значений=========================")
+while step_h <= 300:
+    print(f"==================                {number_of_iteration}                     =====================")
+    h = FindApproximateWithinBounds(
+        [56, 63, 71, 80, 90, 100, 112, 132, 160, 180, 200, 225, 250, 280, 315, 355],
+        h_shtrih + step_h
+    )
+
+    while D_a != D_a_max[h] + sumator_D_a:
+        print("---------------------")
+        print("D_a =", D_a)
+        print("k_D =", k_D)
+        print(f"D_a_max[{h}] =", D_a_max[h] + sumator_D_a)
+        print("---------------------", end='\n')
+        D_a = round(D_a, 3)
+        k_D = 0.62
+        while (k_D != 0.685):
+            D = round(k_D * D_a, 3)
+
+            ####* __3__
+            tau = (math.pi * D) / _2p
+
+            ####* __4__
+            # k_e = {
+            #     4: {
+            #         0.08: 0.948,
+            #         0.104: 0.952,
+            #         0.119: 0.956,
+            #         0.135: 0.96,
+            #         0.153: 0.963,
+            #         0.171: 0.965,
+            #         0.194: 0.968,
+            #         0.229: 0.972,
+            #         0.2785: 0.975,
+            #         0.32: 0.976,
+            #         0.354: 0.978,
+            #         0.399: 0.98,
+            #         0.444: 0.981,
+            #         0.525: 0.983,
+            #         0.59: 0.985,
+            #         0.66: 0.986
+            #     }
+            # }[_2p][D_a]
+            k_e = K_e_func(D_a)
+            P_shtrih = (P_2 * 1000) * (k_e / (kpd * cosPhi))
+
+            ####* __5__
+            A_shtrih = (A__down(_2p, D_a) + A__up(_2p, D_a)) / 2
+            B_sig_shtrih = (B_sig__down(_2p, D_a) + B_sig__up(_2p, D_a)) / 2.1
+            print(tau)
+            ####* __6__
+            if h <= 90:  # пока не сделали,костыль
+                t_z_1_max = round(t_z1__1_max(tau), 3)
+                t_z_1_min = round(t_z1__1_max(tau), 3)
+            elif 90 < h <= 250:
+                t_z_1_max = round(t_z1__2_max(tau), 3)
+                t_z_1_min = round(t_z1__2_min(tau), 3)
+            elif h >= 280:
+                t_z_1_max = round(t_z1__3_max(tau), 3)
+                t_z_1_min = round(t_z1__3_min(tau), 3)
+
+            Z_1_min = round((math.pi * D) / t_z_1_max)
+            Z_1_max = round((math.pi * D) / t_z_1_min)
+
+            Z_1 = {  # АЛГОРИТМ РАБОТАЕТ, НО ЕСТЬ НЬЮАНС
+                2: FindMaxInBounds([12, 18, 24, 30, 36, 42, 48], Z_1_min, Z_1_max),
+                4: FindMaxInBounds([12, 18, 24, 36, 42, 48, 60, 72], Z_1_min, Z_1_max),
+                6: FindMaxInBounds([36, 54, 72, 90], Z_1_min, Z_1_max),
+                8: FindMaxInBounds([48, 72, 84, 96], Z_1_min, Z_1_max),
+                10: FindMaxInBounds([60, 90, 120], Z_1_min, Z_1_max),
+                12: FindMaxInBounds([72, 90, 108, 144], Z_1_min, Z_1_max)
+            }[_2p]
+
+            q_1 = math.ceil(Z_1 / (_2p * m))
+            k_ras = (math.sin(math.pi / (2 * m))) / (q_1 * math.sin(math.pi / (2 * m * q_1)))
+
+            k_ob = k_ras * k_uk
+
+            ####* __7__
+            p = _2p / 2
+            k_B = math.pi / (2 * math.sqrt(2))
+            omega = math.pi * 2 * f / p
+            l_sig = (P_shtrih / (k_B * D ** 2 * omega * k_ob * A_shtrih * B_sig_shtrih))
+
+            ####? __8__
+            lamda = round(l_sig / tau, 1)
+
+            ####* __9__
+
+            ####* __10__
+
+            ####* __11__
+            t_z_1 = (math.pi * D) / (_2p * q_1 * m)
+
+            ####* __12__
+            I_1_nom = (P_2 * 1000) / (m * U * cosPhi * kpd)
+            u_shtrih_p = (math.pi * D * A_shtrih) / (I_1_nom * Z_1)
+
+            ####* __13__
+            if P_2 <= 15:
+                u_p = round(a_harmonic * u_shtrih_p)
+            else:
+                u_p = round(a_harmonic * u_shtrih_p)  # ДЛЯ ДВУСЛОЙНОЙ ОБМОТКЕ ОКРУЛУГЛЯТЬ НУЖНО ДО ЧЕТНОГО ЧИСЛА
+                if u_p % 2 != 0:
+                    u_p -= 1
+
+
+            ####? __14__
+            w_1 = (u_p * Z_1) / (2 * a_harmonic * m)
+            A = (2 * I_1_nom * w_1 * m) / (math.pi * D)
+            Ph = (k_e * U) / (4 * k_B * w_1 * k_ob * f)
+            B_sig = ((_2p / 2) * Ph) / (D * l_sig)
+
+            ####* __15__
+            J_1_shtrih = ((AJ__up(_2p, D_a) + AJ__down(_2p, D_a)) / 2) / A
+
+            ####* __16__
+            q_ef_shtrih = (I_1_nom / (a_harmonic * J_1_shtrih)) * 10 ** 6
+
+            ####* __17__
+            n_el = 0
+            if (0 < P_2 <= 15):
+                n_el = 3
+            elif (15 < P_2 <= 90):
+                n_el = 5
+            elif (90 < P_2 <= 132):
+                n_el = 1
+            elif (132 < P_2 < 315):
+                n_el = 2
+            elif (P_2 == 315):
+                n_el = 4
+            q_el_shtrih = q_ef_shtrih / n_el
+            if (P_2 < 110):
+                q_el = FindApproximateWithinBounds(
+                    [0.00502, 0.00636, 0.00785, 0.00985, 0.01227, 0.01368, 0.01539,
+                     0.01767, 0.0201, 0.0227, 0.0255, 0.0284, 0.0314, 0.0353, 0.0394,
+                     0.0437, 0.0491, 0.0552, 0.0616, 0.0707, 0.0779, 0.0881, 0.099,
+                     0.1104, 0.1257, 0.1419, 0.159, 0.1772, 0.1963, 0.221, 0.246,
+                     0.283, 0.312, 0.353, 0.396, 0.442, 0.503, 0.567, 0.636, 0.709,
+                     0.785, 0.883, 0.985, 1.094, 1.227, 1.368, 1.539, 1.767, 2.011,
+                     2.27, 2.54, 2.83, 3.14, 3.53, 3.94, 4.36, 4.91],
+                    q_el_shtrih
+                )
+            else:
+                q_el = FindApproximateWithinBounds(
+                    [3.369, 3.561, 3.785, 3.887, 4.025, 4.397, 4.585, 4.825, 4.992, 5.14, 5.465,
+                     5.672, 5.785, 6.185, 6.437, 6.585, 6.985, 7.287, 7.385, 7.785, 8.137, 8.265,
+                     9.157, 9.745, 9.385, 9.865, 10.35, 10.51, 11.15, 11.71, 11.79, 12.59, 13.24, 13.39
+                        , 14.19, 14.94, 14.99, 15.79, 16.75, 16.64, 17.71, 18.67, 18.68, 19.79, 20.89],
+                    q_el_shtrih
+                )
+            q_ef = n_el * q_el
+
+            print("q_ef_shtrih =", q_ef_shtrih)
+            print("q_el =", q_el, end='\n')
+
+            ####* __18__
+            J_1 = I_1_nom / (a_harmonic * q_el * n_el)
+
+            ####* __19__
+            B_z_1 = {
+                2: 1.75,
+                4: 1.7,
+                6: 1.75,
+                8: 1.75,
+                10: 1.7,
+                12: 1.7
+            }[_2p]
+            B_a = {
+                2: 1.5,
+                4: 1.5,
+                6: 1.5,
+                8: 1.25,
+                10: 1.15,
+                12: 1.15
+            }[_2p]
+            k_c = 0.97
+            l_st_1 = l_sig
+            b_z_1 = ((B_sig * t_z_1 * l_sig) / (B_z_1 * l_sig * k_c)) * 10 ** 3
+            h_a = Ph / (2 * B_a * l_sig * k_c)
+
+            ####* __20__
+            b_sh = {56: 1.8, 63: 1.8, 71: 2, 80: 3, 90: 3, 100: 3.5, 112: 3.5, 132: 3.5, 160: 3.7, 180: 3.7, 200: 3.7,
+                    225: 3.7,
+                    250: 3.7, 280: 3.7, 315: 3.7, 355: 3.7}
+            h_sh = 0.8
+            h_p = ((D_a - D) / 2 - h_a) * 10 ** 3
+            b_1 = (math.pi * ((D * 10 ** 3) + 2 * h_sh - b_sh[h]) - Z_1 * b_z_1) / (Z_1 - math.pi)
+            b_2 = ((math.pi * ((D * 10 ** 3) + 2 * h_p)) / Z_1) - b_z_1
+            h_p_k = h_p - (h_sh + ((b_1 - b_sh[h]) / 2))
+
+            ####* __21__
+            delta_b = 0
+            delta_h = 0
+            if (56 <= h <= 132):
+                delta_b = 0.1
+                delta_h = 0.1
+            elif (160 <= h <= 250):
+                delta_b = 0.2
+                delta_h = 0.2
+            elif (280 <= h <= 355):
+                delta_b = 0.3
+                delta_h = 0.3
+            elif (400 <= h <= 500):
+                delta_b = 0.4
+                delta_h = 0.3
+
+            b_1_shtrih = b_1 - delta_b
+            b_2_shtrih = b_2 - delta_b
+            h_p_k_shtrih = h_p_k - delta_h
+            S_pr = 0
+            if (180 <= h <= 250):
+                S_pr = 0.6 * (b_1 + b_2)
+            elif (h >= 280):
+                S_pr = 0.9 * b_1 + 0.4 * b_2
+            b_iz = 0
+            if (50 <= h <= 80):
+                b_iz = 0.2
+            elif (90 <= h <= 132):
+                b_iz = 0.25
+            elif (h == 160):
+                b_iz = 0.4
+            elif (180 <= h <= 250):
+                b_iz = 0.4
+            elif (280 <= h <= 355):
+                b_iz = 0.55
+            S_iz = b_iz * (2 * h_p + b_1 + b_2)
+            S_p_shtrih = ((b_1_shtrih + b_2_shtrih) / 2) * h_p_k_shtrih - (S_iz + S_pr)
+
+            ####? __22__
+            if (P_2 < 110):
+                d_iz = {
+                    0.00502: 0.1,
+                    0.00636: 0.11,
+                    0.00785: 0.122,
+                    0.00985: 0.134,
+                    0.01227: 0.147,
+                    0.01368: 0.154,
+                    0.01539: 0.162,
+                    0.01767: 0.18,
+                    0.0201: 0.19,
+                    0.0227: 0.2,
+                    0.0255: 0.21,
+                    0.0284: 0.22,
+                    0.0314: 0.23,
+                    0.0353: 0.242,
+                    0.0394: 0.259,
+                    0.0437: 0.271,
+                    0.0491: 0.285,
+                    0.0552: 0.3,
+                    0.0616: 0.315,
+                    0.0707: 0.335,
+                    0.0779: 0.35,
+                    0.0881: 0.37,
+                    0.099: 0.395,
+                    0.1104: 0.415,
+                    0.1257: 0.44,
+                    0.1419: 0.565,
+                    0.159: 0.49,
+                    0.1772: 0.515,
+                    0.1963: 0.545,
+                    0.221: 0.585,
+                    0.246: 0.615,
+                    0.283: 0.655,
+                    0.312: 0.69,
+                    0.353: 0.73,
+                    0.396: 0.77,
+                    0.442: 0.815,
+                    0.503: 0.865,
+                    0.567: 0.915,
+                    0.636: 0.965,
+                    0.709: 1.015,
+                    0.785: 1.08,
+                    0.883: 1.14,
+                    0.985: 1.2,
+                    1.094: 1.26,
+                    1.227: 1.33,
+                    1.368: 1.405,
+                    1.539: 1.485,
+                    1.767: 1.585,
+                    2.011: 1.685,
+                    2.27: 1.785,
+                    2.54: 1.895,
+                    2.83: 1.995,
+                    3.14: 2.095,
+                    3.53: 2.22,
+                    3.94: 2.34,
+                    4.36: 2.16,
+                    4.91: 2.6
+                }[q_el]
+                k_z = round((d_iz ** 2 * u_p * n_el) / S_p_shtrih, 2)
+            else:
+                d_iz = 0
+                k_z = 0
+            print(Back.YELLOW + "Пункт: 22")
+            print("d_iz =", d_iz)
+            if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3) or (0.6 <= lamda <= 1 and h >= 280):
+                print("k_D = " + str(k_D))
+                print("D_a = " + str(D_a))
+                print("lamda = " + str(lamda))
+                print(Back.GREEN + "k_z = " + str(k_z), end='\n\n')
+                exit_from_inf_while = True
+                break
+            else:
+                print("k_D = " + str(k_D), end='\n\n')
+                print("lamda = " + str(lamda))
+                print("D_a = " + str(D_a))
+                print(Back.RED + "k_z = " + str(k_z), end='\n\n')
+                k_D += sumator
+        if (0.7 <= k_z <= 0.75) or (P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
+            if (0.7 <= lamda <= 1.3 and h <= 250) or (0.6 <= lamda <= 1 and h >= 280):
+                print("k_D = " + str(k_D))
+                print("D_a = " + str(D_a))
+                print("lamda = " + str(lamda))
+                print(Back.GREEN + "k_z = " + str(k_z), end='\n\n')
+                exit_from_inf_while = True
+                break
+        else:
+            print("D_a = " + str(D_a), end='\n\n')
+            print("lamda = " + str(lamda))
+            print(Back.RED + "k_z = " + str(k_z), end='\n\n')
+            D_a += sumator_D_a
+
+    if exit_from_inf_while:
+        break
+    else:
+        step_h += 10
+        number_of_iteration += 1
+print("======================Конец цикла перебора значений=========================")
+
+if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and h <= 250) or (
+        (lamda < 0.6 or lamda > 1) and h >= 280)) and P_2 < 100:
+    print(Back.RED + "k_z = " + str(k_z), end='\n\n')
+    exit(1)
+print(Back.BLUE + "Пункт: 1")
+print("h_shtrih =", h_shtrih)
+print("h =", h)
+print("D_a =", D_a, end='\n\n')
 print(Back.BLUE + "Пункт: 2")
 print("k_D =", k_D)
 print("D =", D, end='\n\n')
-
-####* __3__
-tau = (math.pi * D) / _2p
 print(Back.BLUE + "Пункт: 3")
 print("tau =", tau, end='\n\n')
-
-####* __4__
-# k_e = {
-#     4: {
-#         0.08: 0.948,
-#         0.104: 0.952,
-#         0.119: 0.956,
-#         0.135: 0.96,
-#         0.153: 0.963,
-#         0.171: 0.965,
-#         0.194: 0.968,
-#         0.229: 0.972,
-#         0.2785: 0.975,
-#         0.32: 0.976,
-#         0.354: 0.978,
-#         0.399: 0.98,
-#         0.444: 0.981,
-#         0.525: 0.983,
-#         0.59: 0.985,
-#         0.66: 0.986
-#     }
-# }[_2p][D_a]
-k_e = K_e_func(D_a)
-P_shtrih = (P_2 * 1000) * (k_e / (kpd * cosPhi))
 print(Back.BLUE + "Пункт: 4")
 print("k_e =", k_e)
 print("P_shtrih =", P_shtrih, end='\n\n')
-
-####* __5__
-A_shtrih = (A__up(_2p, D_a) + A__down(_2p, D_a)) / 2
-B_sig_shtrih = (B_sig__up(_2p, D_a) + B_sig__down(_2p, D_a)) / 2
 print(Back.BLUE + "Пункт: 5")
 print("A_shtrih =", A_shtrih)
 print("B_sig_shtrih =", B_sig_shtrih, end='\n\n')
-
-####* __6__
-t_z_1_max = round(t_z1__2_max(tau), 3)
-t_z_1_min = round(t_z1__2_min(tau), 3)
-
-Z_1_min = round((math.pi * D) / t_z_1_max)
-Z_1_max = round((math.pi * D) / t_z_1_min)
-
-Z_1 = {
-    2: FindMaxInBounds([12, 18, 24, 30, 36, 42, 48], Z_1_min, Z_1_max),
-    4: FindMaxInBounds([12, 18, 24, 36, 42, 48, 60, 72], Z_1_min, Z_1_max),
-    6: FindMaxInBounds([36, 54, 72, 90], Z_1_min, Z_1_max),
-    8: FindMaxInBounds([48, 72, 84, 96], Z_1_min, Z_1_max),
-    10: FindMaxInBounds([60, 90, 120], Z_1_min, Z_1_max),
-    12: FindMaxInBounds([72, 90, 108, 144], Z_1_min, Z_1_max)
-}[_2p]
-
-q_1 = math.ceil(Z_1 / (_2p * m))
-k_ras = (math.sin(math.pi / (2 * m))) / (q_1 * math.sin(math.pi / (2 * m * q_1)))
-
-k_ob = k_ras * k_uk
 print(Back.BLUE + "Пункт: 6")
 print("k_ras =", k_ras)
 print("k_uk =", k_uk)
 print("k_ob =", k_ob, end='\n\n')
-
-####* __7__
-p = _2p / 2
-k_B = math.pi / (2 * math.sqrt(2))
-omega = math.pi * 2 * f / p
-l_sig = (P_shtrih / (k_B * D ** 2 * omega * k_ob * A_shtrih * B_sig_shtrih))
 print(Back.BLUE + "Пункт: 7")
 print("p =", p)
 print("k_B =", k_B)
 print("omega =", omega)
 print("l_sig =", l_sig, end='\n\n')
-
-####? __8__
-lamda = l_sig / tau
 print(Back.YELLOW + "Пункт: 8")
 print("lamda =", lamda, end='\n\n')
-
-####* __9__
+if (0.7 <= lamda <= 1.3):
+    print(Back.GREEN + "lamda =" + str(lamda), end='\n\n')
+else:
+    print(Back.RED + "lamda =" + str(lamda), end='\n\n')
+    exit()
 print(Back.BLUE + "Пункт: 9")
 print("t_z_1_max =", t_z_1_max)
 print("t_z_1_min =", t_z_1_min, end='\n\n')
-
-####* __10__
 print(Back.BLUE + "Пункт: 10")
 print("Z_1_min =", (math.pi * D) / t_z_1_max)
 print("Z_1_max =", (math.pi * D) / t_z_1_min)
 print("Z_1 =", Z_1)
 print("q1 =", q_1, end='\n\n')
-
-####* __11__
-t_z_1 = (math.pi * D) / (_2p * q_1 * m)
 print(Back.BLUE + "Пункт: 11")
 print("t_z_1 =", t_z_1, end='\n\n')
-
-####* __12__
-I_1_nom = (P_2 * 1000) / (m * U * cosPhi * kpd)
-u_shtrih_p = (math.pi * D * A_shtrih) / (I_1_nom * Z_1)
 print(Back.BLUE + "Пункт: 12")
 print("I_1_nom =", I_1_nom)
 print("u_shtrih_p =", u_shtrih_p, end='\n\n')
-
-####* __13__
-u_p = round(a_harmonic * u_shtrih_p)
 print(Back.BLUE + "Пункт: 13")
 print("u_p =", u_p, end='\n\n')
-
-####? __14__
-w_1 = (u_p * Z_1) / (2 * a_harmonic * m)
-A = (2 * I_1_nom * w_1 * m) / (math.pi * D)
-Ph = (k_e * U) / (4 * k_B * w_1 * k_ob * f)
-B_sig = ((_2p / 2) * Ph) / (D * l_sig)
 print(Back.YELLOW + "Пункт: 14")
 print("w_1 =", w_1)
 print("Ph =", Ph)
@@ -217,83 +502,28 @@ else:
     print(Back.RED + "A = " + str(A))
     print(Back.RED + "B_sig = " + str(B_sig), end='\n\n')
     exit()
-
-####* __15__
-J_1_shtrih = ((AJ__up(_2p, D_a) + AJ__down(_2p, D_a)) / 2) / A
 print(Back.BLUE + "Пункт: 15")
 print("AJ =", (AJ__up(_2p, D_a) + AJ__down(_2p, D_a)) / 2)
 print("J_1_shtrih =", J_1_shtrih, end='\n\n')
-
-####* __16__
-q_ef_shtrih = (I_1_nom / (a_harmonic * J_1_shtrih)) * 10 ** 6
 print(Back.BLUE + "Пункт: 16")
 print("q_ef_shtrih =", q_ef_shtrih, end='\n\n')
-
-####* __17__
-n_el = 5
-q_el_shtrih = q_ef_shtrih / n_el
-q_el = FindApproximateWithinBounds(
-    [0.00502, 0.00636, 0.00785, 0.00985, 0.01227, 0.01368, 0.01539,
-     0.01767, 0.0201, 0.0227, 0.0255, 0.0284, 0.0314, 0.0353, 0.0394,
-     0.0437, 0.0491, 0.0552, 0.0616, 0.0707, 0.0779, 0.0881, 0.099,
-     0.1104, 0.1257, 0.1419, 0.159, 0.1772, 0.1963, 0.221, 0.246,
-     0.283, 0.312, 0.353, 0.396, 0.442, 0.503, 0.567, 0.636, 0.709,
-     0.785, 0.883, 0.985, 1.094, 1.227, 1.368, 1.539, 1.767, 2.011,
-     2.27, 2.54, 2.83, 3.14, 3.53, 3.94, 4.36, 4.91],
-    q_el_shtrih
-)
-q_ef = n_el * q_el
 print(Back.BLUE + "Пункт: 17")
 print("n_el =", n_el)
 print("q_el_shtrih =", q_el_shtrih)
 print("q_el =", q_el)
 print("q_ef =", q_ef, end='\n\n')
-
-####* __18__
-J_1 = I_1_nom / (a_harmonic * q_el * n_el)
 print(Back.BLUE + "Пункт: 18")
 if ((J_1_shtrih * 0.9) * 10 ** -6 < J_1 < (J_1_shtrih * 1.1) * 10 ** -6):
     print(Back.GREEN + "J_1 = " + str(J_1), end='\n\n')
 else:
     print(Back.RED + "J_1 = " + str(J_1), end='\n\n')
     exit()
-
-####* __19__
-B_z_1 = {
-    2: 1.75,
-    4: 1.7,
-    6: 1.75,
-    8: 1.75,
-    10: 1.7,
-    12: 1.7
-}[_2p]
-B_a = {
-    2: 1.5,
-    4: 1.5,
-    6: 1.5,
-    8: 1.25,
-    10: 1.15,
-    12: 1.15
-}[_2p]
-k_c = 0.97
-l_st_1 = l_sig
-b_z_1 = ((B_sig * t_z_1 * l_sig) / (B_z_1 * l_sig * k_c)) * 10 ** 3
-h_a = Ph / (2 * B_a * l_sig * k_c)
 print(Back.BLUE + "Пункт: 19")
 print("B_z_1 =", B_z_1)
 print("B_a =", B_a)
 print("k_c =", k_c)
 print("b_z_1 =", b_z_1)
 print("h_a =", h_a, end='\n\n')
-
-####* __20__
-b_sh = {50: 1.8, 63: 1.8, 71: 2, 80: 3, 90: 3, 100: 3.5, 112: 3.5, 132: 3.5, 160: 3.7, 180: 3.7, 200: 3.7, 225: 3.7,
-        250: 3.7}
-h_sh = 0.8
-h_p = ((D_a - D) / 2 - h_a) * 10 ** 3
-b_1 = (math.pi * ((D * 10 ** 3) + 2 * h_sh - b_sh[h]) - Z_1 * b_z_1) / (Z_1 - math.pi)
-b_2 = ((math.pi * ((D * 10 ** 3) + 2 * h_p)) / Z_1) - b_z_1
-h_p_k = h_p - (h_sh + ((b_1 - b_sh[h]) / 2))
 print(Back.BLUE + "Пункт: 20")
 print("b_sh =", b_sh[h])
 print("h_sh =", h_sh)
@@ -301,42 +531,6 @@ print("h_p =", h_p)
 print("b_1 =", b_1)
 print("b_2 =", b_2)
 print("h_p_k =", h_p_k, end='\n\n')
-
-####* __21__
-delta_b = 0
-delta_h = 0
-if (50 <= h <= 132):
-    delta_b = 0.1
-    delta_h = 0.1
-elif (160 <= h <= 250):
-    delta_b = 0.2
-    delta_h = 0.2
-elif (280 <= h <= 355):
-    delta_b = 0.3
-    delta_h = 0.3
-elif (400 <= h <= 500):
-    delta_b = 0.4
-    delta_h = 0.3
-
-b_1_shtrih = b_1 - delta_b
-b_2_shtrih = b_2 - delta_b
-h_p_k_shtrih = h_p_k - delta_h
-S_pr = 0
-if (180 <= h <= 250):
-    S_pr = 0.6 * (b_1 + b_2)
-elif (h >= 280):
-    S_pr = 0.9 * b_1 + 0.4 * b_2
-b_iz = 0
-if (50 <= h <= 80):
-    b_iz = 0.2
-elif (90 <= h <= 132):
-    b_iz = 0.25
-elif (h == 160):
-    b_iz = 0.4
-elif (180 <= h <= 250):
-    b_iz = 0.4
-S_iz = b_iz * (2 * h_p + b_1 + b_2)
-S_p_shtrih = ((b_1_shtrih + b_2_shtrih) / 2) * h_p_k_shtrih - (S_iz + S_pr)
 print(Back.BLUE + "Пункт: 21")
 print("delta_b =", delta_b)
 print("delta_h =", delta_h)
@@ -347,75 +541,6 @@ print("b_iz =", b_iz)
 print("S_pr =", S_pr)
 print("S_iz =", S_iz)
 print("S_p_shtrih =", S_p_shtrih, end='\n\n')
-
-####? __22__
-d_iz = {
-    0.00502: 0.1,
-    0.00636: 0.11,
-    0.00785: 0.122,
-    0.00985: 0.134,
-    0.01227: 0.147,
-    0.01368: 0.154,
-    0.01539: 0.162,
-    0.01767: 0.18,
-    0.0201: 0.19,
-    0.0227: 0.2,
-    0.0255: 0.21,
-    0.0284: 0.22,
-    0.0314: 0.23,
-    0.0353: 0.242,
-    0.0394: 0.259,
-    0.0437: 0.271,
-    0.0491: 0.285,
-    0.0552: 0.3,
-    0.0616: 0.315,
-    0.0707: 0.335,
-    0.0779: 0.35,
-    0.0881: 0.37,
-    0.099: 0.395,
-    0.1104: 0.415,
-    0.1257: 0.44,
-    0.1419: 0.565,
-    0.159: 0.49,
-    0.1772: 0.515,
-    0.1963: 0.545,
-    0.221: 0.585,
-    0.246: 0.615,
-    0.283: 0.655,
-    0.312: 0.69,
-    0.353: 0.73,
-    0.396: 0.77,
-    0.442: 0.815,
-    0.503: 0.865,
-    0.567: 0.915,
-    0.636: 0.965,
-    0.709: 1.015,
-    0.785: 1.08,
-    0.883: 1.14,
-    0.985: 1.2,
-    1.094: 1.26,
-    1.227: 1.33,
-    1.368: 1.405,
-    1.539: 1.485,
-    1.767: 1.585,
-    2.011: 1.685,
-    2.27: 1.785,
-    2.54: 1.895,
-    2.83: 1.995,
-    3.14: 2.095,
-    3.53: 2.22,
-    3.94: 2.34,
-    4.36: 2.16,
-    4.91: 2.6
-}[q_el]
-k_z = (d_iz ** 2 * u_p * n_el) / S_p_shtrih
-print(Back.YELLOW + "Пункт: 22")
-print("d_iz =", d_iz)
-if (0.7 <= k_z <= 0.75):
-    print(Back.GREEN + "k_z = " + str(k_z), end='\n\n')
-else:
-    print(Back.RED + "k_z = " + str(k_z), end='\n\n')
-    exit()
 
 ####* __23__
 sigma = Sigma(h)[_2p](D)
@@ -477,19 +602,21 @@ print("k_i =", k_i)
 print("I_2 =", I_2, end='\n\n')
 
 ####* __30__
-J_2 = 3 * 10 ** 6
+J_2 = 3.5 * 10 ** 6
 q_p = I_2 / J_2
 print(Back.BLUE + "Пункт: 30")
 print("J_2 =", J_2)
 print("q_p =", q_p, end='\n\n')
 
 ####* __31__
-b_sh_2 = {50: 1.0, 63: 1.0, 71: 1.0, 80: 1.0, 90: 1.0, 100: 1.0, 112: 1.5, 132: 1.5, 160: 1.5, 180: 1.5, 200: 1.5, 225: 1.5,
-        250: 1.5}
-h_sh_shtrih = 0.3 # это для 2p >= 4, для 2p=2 см стр 380
-h_sh_r = {50: 0.5, 63: 0.5, 71: 0.5, 80: 0.5, 90: 0.5, 100: 0.5, 112: 0.75, 132: 0.75, 160: 0.7, 180: 0.7, 200: 0.7, 225: 0.7,
-        250: 0.7}
-B_z_2 = 1.7
+b_sh_2 = {56: 1.0, 63: 1.0, 71: 1.0, 80: 1.0, 90: 1.0, 100: 1.0, 112: 1.5, 132: 1.5, 160: 1.5, 180: 1.5, 200: 1.5,
+          225: 1.5,
+          250: 1.5, 280: 1.5, 315: 1.5, 355: 1.5}
+h_sh_shtrih = 0.3  # это для 2p >= 4, для 2p=2 см стр 380
+h_sh_r = {56: 0.5, 63: 0.5, 71: 0.5, 80: 0.5, 90: 0.5, 100: 0.5, 112: 0.75, 132: 0.75, 160: 0.7, 180: 0.7, 200: 0.7,
+          225: 0.7,
+          250: 0.7, 280: 0.7, 315: 0.7, 355: 0.7}
+B_z_2 = 1.95  # от 1.7 до 1.95
 l_st_2 = l_st_1
 b_z_2 = ((B_sig * t_z_2 * l_sig) / (B_z_2 * l_st_1 * k_c)) * 10 ** 3
 b_1_r = (math.pi * (D_2 * 10 ** 3 - 2 * h_sh_r[h] - 2 * h_sh_shtrih) - Z_2 * b_z_2) / (math.pi + Z_2)
@@ -553,6 +680,7 @@ print("F_sig =", F_sig, end='\n\n')
 ####* __36__
 h_Z_1 = h_p
 B_Z_1_shtrih = round(((B_sig * (t_z_1 * 10 ** 3) * l_sig) / (b_z_1 * l_st_1 * k_c)), 2)
+b_p = t_z_1 * 10 ** 3 - B_Z_1_shtrih
 
 if (B_Z_1_shtrih > 1.8):
     h_Z_1 = 0.5 * h_Z_1
@@ -624,7 +752,7 @@ print("F_j =", F_j)
 print("H_j =", H_j, end='\n\n')
 
 ####* __41__
-F_c = F_sig + F_Z_1 + F_Z_2 + F_a + F_j
+F_c = round(F_sig, 3) + round(F_Z_1, 3) + round(F_Z_2, 3) + round(F_a, 3) + round(F_j, 3)
 print(Back.BLUE + "Пункт: 41")
 print("F_c =", F_c, end='\n\n')
 
@@ -706,8 +834,11 @@ h_k = 0.5 * (b_1 - b_sh_2[h])
 k_B_shtrih = 0.25 * (1 + 3 * beta_shtrih)
 k_B = 0.25 * (1 + 3 * k_B_shtrih)
 h_1_temp = 0
+
 Lamda_p_1 = h_2 / (3 * b_1) * k_B + (
-            h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2[h]) + h_sh_shtrih / b_sh_2[h]) * k_B_shtrih
+     h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2[h]) + h_sh_shtrih / b_sh_2[h]) * k_B_shtrih
+#Lamda_p_1 = (h_2 / (3 * b_p)) + (h_k / b_p)
+
 Lamda_l_1 = 0.34 * (q_1 / l_sig) * (l_l_1 - 0.64 * beta_shtrih * tau)
 B_sk = 0
 k_sk_shtrih = k_sk_shtrih_func(t_z_2 / t_z_1)
@@ -733,7 +864,7 @@ print("X_1_star =", X_1_star, end='\n\n')
 h_0 = h_1 + 0.4 * b_2_r
 k_d = 1
 Lamda_p_2 = (h_0 / (3 * b_1_r) * (1 - (math.pi * b_1_r ** 2) / (8 * q_c)) ** 2 + 0.66 - b_sh_2[h] / (
-            2 * b_1_r)) * k_d + h_sh_r[h] / b_sh_2[h] + 1.12 * (h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
+        2 * b_1_r)) * k_d + h_sh_r[h] / b_sh_2[h] + 1.12 * (h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
 Lamda_l_2 = (2.3 * (D_k_avg * 10 ** -3)) / (Z_2 * l_sig * delta ** 2) * math.log10(
     (4.7 * D_k_avg * 10 ** -3) / (h_kl * 10 ** -3 + 2 * b_kl * 10 ** -3))
 delta_z = 0
@@ -764,7 +895,7 @@ m_z_1 = (h_Z_1 * 10 ** -3) * (b_z_1 * 10 ** -3) * Z_1 * l_st_1 * k_sk * gamma_c
 if (P_2 < 250):
     k_d_a = 1.6
     k_d_z = 1.8
-elif (P_2 > 250):
+elif (P_2 >= 250):
     k_d_a = 1.4
     k_d_z = 1.7
 
@@ -1101,7 +1232,7 @@ print("r_2_Ksi_shtrih =", r_2_Ksi_shtrih, end='\n\n')
 ####* __58__
 K_d = phi_shtrih_func(Ksi)
 delta_Lambda_p_2_Ksi = (h_0 / (3 * b_1_r) * (1 - (math.pi * b_1_r ** 2) / (8 * q_c)) ** 2 + 0.66 - b_sh_2[h] / (
-            2 * b_1_r)) * (1 - K_d)
+        2 * b_1_r)) * (1 - K_d)
 Lamda_p_2_Ksi = Lamda_p_2 - delta_Lambda_p_2_Ksi
 K_x = (Lamda_p_2_Ksi + Lamda_l_2 + Lamda_d_2) / (Lamda_p_2 + Lamda_l_2 + Lamda_d_2)
 X_2__Ksi_shtrih = X_2_shtrih * K_x
@@ -1362,7 +1493,7 @@ def calculate_Table_3(numeration, s):
 
     def f16():
         global I_2_nas_shtrih
-        I_2_nas_shtrih = U / math.sqrt(f14() ** 2 + f15())
+        I_2_nas_shtrih = U / math.sqrt(f14() ** 2 + f15() ** 2)
         return I_2_nas_shtrih
 
     def f17():
@@ -1520,38 +1651,11 @@ def calculate_Table_3(numeration, s):
 for i in range(1, 20 + 1):
     print(i, "|\t", calculate_Table_3(i, s_kr))
 
-####################################################################################?
-# print('h =', h)
-# print("(15000 * k_e[4][0.2785]) / (kpd_4(15) * cosPhi_4(15)) =", (15000 * k_e[4][0.2785]) / (kpd_4(15) * cosPhi_4(15)))
-# print("k_e[4][0.2785] =", k_e[4][0.2785])
-# print("kpd_4(15) =", kpd_4(15))
-# print("cosPhi_4(15) =", cosPhi_4(15))
-# print("induction_4(D_a[160]) =", induction_4(0.272))
-# print("A_4(D_a[160]) =", A_4(0.272))
 
-# x_list = [x/1000 for x in range(-500000, 500000)]
 
-# plt.plot(x_list, [p8_up(x) for x in x_list], color='blue', marker='o', markersize=3)
-# plt.plot(x_list, [p8_down__p6_up(x) for x in x_list], color='brown', marker='o', markersize=3)
-# plt.plot(x_list, [p6_down__p4_up(x) for x in x_list], color='gray', marker='o', markersize=3)
-# plt.plot(x_list, [p2_up(x) for x in x_list], color='orange', marker='o', markersize=3)
-# plt.plot(x_list, [p4_down(x) for x in x_list], color='blue', marker='o', markersize=3)
-# plt.plot(x_list, [p2_down(x) for x in x_list], color='green', marker='o', markersize=3)
 
-# plt.plot(x_list, [cosPHI_4(x) for x in x_list], color='red', marker='o', markersize=3)
-# plt.plot(x_list, [induction_4(x) for x in x_list], color='red', marker='o', markersize=3)
-# plt.plot(x_list, [KPD_4(x) for x in x_list], color='green', marker='o', markersize=3)
 
-# plt.plot(x_list, [A_4(x) for x in x_list], color='green', marker='o', markersize=3)
+end = time.perf_counter()
 
-# plt.plot(x_list, [t_z1__2_max(x) for x in x_list], color='green', marker='o', markersize=3)
-# plt.plot(x_list, [t_z1__2_min(x) for x in x_list], color='green', marker='o', markersize=3)
 
-# plt.plot(x_list, [AJ_4(x) for x in x_list], color='green', marker='o', markersize=3)
-
-# plt.plot(x_list, [k_sk_shtrih_func(x) for x in x_list], color='blue', marker='o', markersize=3)
-
-# plt.plot(x_list, [k_sig_func(x) for x in x_list], color='blue', marker='o', markersize=3)
-
-plt.show()
-####################################################################################?
+print(end - start)
