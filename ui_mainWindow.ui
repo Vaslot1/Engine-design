@@ -58,9 +58,9 @@
     <widget class="QPushButton" name="submitValues">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>20</x>
        <y>240</y>
-       <width>181</width>
+       <width>441</width>
        <height>41</height>
       </rect>
      </property>
@@ -74,7 +74,7 @@
        <x>20</x>
        <y>70</y>
        <width>445</width>
-       <height>150</height>
+       <height>159</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -113,24 +113,233 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QLineEdit" name="linePower">
-          <property name="text">
-           <string>22</string>
+         <widget class="QComboBox" name="linePower">
+          <property name="editable">
+           <bool>false</bool>
           </property>
+          <property name="currentIndex">
+           <number>18</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>0.06</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>0.09</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>0.12</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>0.18</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>0.25</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>0.37</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>0.56</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>0.75</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1.1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>1.5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2.2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3.0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4.0</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5.5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>7.5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>11</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>18.5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>22</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>30</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>37</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>45</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>55</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>75</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>90</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>110</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>132</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>160</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>200</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>250</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>315</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineVoltage">
-          <property name="text">
-           <string>380</string>
+         <widget class="QComboBox" name="lineVoltage">
+          <property name="editable">
+           <bool>false</bool>
           </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>220</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>380</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>660</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="linePolarity">
-          <property name="text">
-           <string>4</string>
+         <widget class="QComboBox" name="linePolarity">
+          <property name="editable">
+           <bool>false</bool>
           </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
@@ -485,6 +694,11 @@
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="2" column="2">
+      <property name="text">
+       <string/>
       </property>
      </item>
      <item row="3" column="0">

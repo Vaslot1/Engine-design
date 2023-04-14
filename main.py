@@ -16,6 +16,8 @@ global table_1
 global table_2
 global table_3
 
+correct_color = QColor(216, 255, 218)
+incorrect_color = QColor(255, 216, 216)
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -82,6 +84,8 @@ class MainWindow(QMainWindow):
 
         count = 0
         for i in range(1, 19 + 1):
+            self.ui.tableWidget.item(i, 8).setBackground(incorrect_color)
+            
             try:
                 curr_value = float(self.ui.tableWidget.item(i, 8).text())
             except Exception as e:
@@ -90,10 +94,8 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget.item(i, 8).setFlags(self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
 
             if (table_1.calculateTable(i, aboba.s_nom) * 0.9 < curr_value < table_1.calculateTable(i,aboba.s_nom) * 1.1):
-                self.ui.tableWidget.item(i, 8).setBackground(QColor(161, 255, 158))
+                self.ui.tableWidget.item(i, 8).setBackground(correct_color)
                 count += 1
-            else:
-                self.ui.tableWidget.item(i, 8).setBackground(QColor(255, 158, 158))
 
         if (count == 19):
             self.ui.bt_calculate_table1.setEnabled(True)
@@ -116,6 +118,8 @@ class MainWindow(QMainWindow):
 
         count = 0
         for i in range(1, 14 + 1):
+            self.ui.tableWidget_2.item(i, 2).setBackground(incorrect_color)
+            
             try:
                 curr_value = float(self.ui.tableWidget_2.item(i, 2).text())
             except Exception as e:
@@ -124,10 +128,8 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget_2.item(i, 2).setFlags(self.ui.tableWidget_2.item(i, 3).flags() & ~Qt.ItemIsSelectable)
 
             if table_2.calculateTable(i, 1) * 0.9 < curr_value < table_2.calculateTable(i, 1) * 1.1:
-                self.ui.tableWidget_2.item(i, 2).setBackground(QColor(161, 255, 158))
+                self.ui.tableWidget_2.item(i, 2).setBackground(correct_color)
                 count += 1
-            else:
-                self.ui.tableWidget_2.item(i, 2).setBackground(QColor(255, 158, 158))
 
         if count == 14:
             self.ui.bt_calculate_table2.setEnabled(True)
@@ -141,19 +143,18 @@ class MainWindow(QMainWindow):
 
         count = 0
         for i in range(1, 20 + 1):
+            self.ui.tableWidget_3.item(i, 2).setBackground(incorrect_color)
+            
             try:
                 curr_value = float(self.ui.tableWidget_3.item(i, 2).text())
             except Exception as e:
                 continue
 
-            self.ui.tableWidget_3.item(i, 2).setFlags(
-                self.ui.tableWidget_3.item(i, 2).flags() & ~Qt.ItemIsSelectable)
+            self.ui.tableWidget_3.item(i, 2).setFlags(self.ui.tableWidget_3.item(i, 2).flags() & ~Qt.ItemIsSelectable)
 
             if table_3.calculateTable(i, 1) * 0.9 < curr_value < table_3.calculateTable(i, 1) * 1.1:
-                self.ui.tableWidget_3.item(i, 2).setBackground(QColor(161, 255, 158))
+                self.ui.tableWidget_3.item(i, 2).setBackground(correct_color)
                 count += 1
-            else:
-                self.ui.tableWidget_3.item(i, 2).setBackground(QColor(255, 158, 158))
 
         if count == 20:
             self.ui.bt_calculate_table3.setEnabled(True)
@@ -163,18 +164,28 @@ class MainWindow(QMainWindow):
         global table_1
         global table_2
         global table_3
+        
+        P_2 = float(self.ui.linePower.currentText())
+        U = int(self.ui.lineVoltage.currentText())
+        _2p = int(self.ui.linePolarity.currentText())
+        
         try:
-            P_2 = float(self.ui.linePower.text())
-            U = int(self.ui.lineVoltage.text())
-            _2p = int(self.ui.linePolarity.text())
             S_nom = float(self.ui.lineSnom.text())
-            aboba = MainProgram(P_2, U, _2p, S_nom)
-
-            aboba.Run()
-        except Exception as e:
+            if (not(0 < S_nom <= 1)):
+                raise KeyError()
+        except ValueError:
             msgBox = QMessageBox()
-            msgBox.setText("Неправильно введены значения")
+            msgBox.setText("Введены недопустимые символы")
             msgBox.exec()
+            return
+        except KeyError:
+            msgBox = QMessageBox()
+            msgBox.setText("Некорректно введено S_nom (0;1]")
+            msgBox.exec()
+            return
+
+        aboba = MainProgram(P_2, U, _2p, S_nom)
+        aboba.Run()
 
         self.ui.tableWidget.item(0, 8).setText(str(S_nom))
 

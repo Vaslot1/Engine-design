@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QTabWidget, QTableWidget, QTableWidgetItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QPushButton, QSizePolicy, QTabWidget, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
@@ -42,10 +42,10 @@ class Ui_mainWindow(object):
         self.Input.setGeometry(QRect(20, 40, 111, 21))
         self.submitValues = QPushButton(self.tab_4)
         self.submitValues.setObjectName(u"submitValues")
-        self.submitValues.setGeometry(QRect(110, 240, 181, 41))
+        self.submitValues.setGeometry(QRect(20, 240, 441, 41))
         self.layoutWidget = QWidget(self.tab_4)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(20, 70, 445, 150))
+        self.layoutWidget.setGeometry(QRect(20, 70, 445, 159))
         self.horizontalLayout_3 = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -76,18 +76,61 @@ class Ui_mainWindow(object):
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.linePower = QLineEdit(self.layoutWidget)
+        self.linePower = QComboBox(self.layoutWidget)
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
+        self.linePower.addItem("")
         self.linePower.setObjectName(u"linePower")
+        self.linePower.setEditable(False)
 
         self.verticalLayout.addWidget(self.linePower)
 
-        self.lineVoltage = QLineEdit(self.layoutWidget)
+        self.lineVoltage = QComboBox(self.layoutWidget)
+        self.lineVoltage.addItem("")
+        self.lineVoltage.addItem("")
+        self.lineVoltage.addItem("")
         self.lineVoltage.setObjectName(u"lineVoltage")
+        self.lineVoltage.setEditable(False)
 
         self.verticalLayout.addWidget(self.lineVoltage)
 
-        self.linePolarity = QLineEdit(self.layoutWidget)
+        self.linePolarity = QComboBox(self.layoutWidget)
+        self.linePolarity.addItem("")
+        self.linePolarity.addItem("")
+        self.linePolarity.addItem("")
+        self.linePolarity.addItem("")
+        self.linePolarity.addItem("")
+        self.linePolarity.addItem("")
         self.linePolarity.setObjectName(u"linePolarity")
+        self.linePolarity.setEditable(False)
 
         self.verticalLayout.addWidget(self.linePolarity)
 
@@ -222,129 +265,131 @@ class Ui_mainWindow(object):
         __qtablewidgetitem42.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
         self.tableWidget.setItem(2, 1, __qtablewidgetitem42)
         __qtablewidgetitem43 = QTableWidgetItem()
-        __qtablewidgetitem43.setFont(font1);
-        __qtablewidgetitem43.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(3, 0, __qtablewidgetitem43)
+        self.tableWidget.setItem(2, 2, __qtablewidgetitem43)
         __qtablewidgetitem44 = QTableWidgetItem()
+        __qtablewidgetitem44.setFont(font1);
         __qtablewidgetitem44.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(3, 1, __qtablewidgetitem44)
+        self.tableWidget.setItem(3, 0, __qtablewidgetitem44)
         __qtablewidgetitem45 = QTableWidgetItem()
-        __qtablewidgetitem45.setFont(font1);
         __qtablewidgetitem45.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(4, 0, __qtablewidgetitem45)
+        self.tableWidget.setItem(3, 1, __qtablewidgetitem45)
         __qtablewidgetitem46 = QTableWidgetItem()
+        __qtablewidgetitem46.setFont(font1);
         __qtablewidgetitem46.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(4, 1, __qtablewidgetitem46)
+        self.tableWidget.setItem(4, 0, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
-        __qtablewidgetitem47.setFont(font1);
         __qtablewidgetitem47.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(5, 0, __qtablewidgetitem47)
+        self.tableWidget.setItem(4, 1, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
+        __qtablewidgetitem48.setFont(font1);
         __qtablewidgetitem48.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(5, 1, __qtablewidgetitem48)
+        self.tableWidget.setItem(5, 0, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
-        __qtablewidgetitem49.setFont(font1);
         __qtablewidgetitem49.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(6, 0, __qtablewidgetitem49)
+        self.tableWidget.setItem(5, 1, __qtablewidgetitem49)
         __qtablewidgetitem50 = QTableWidgetItem()
+        __qtablewidgetitem50.setFont(font1);
         __qtablewidgetitem50.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(6, 1, __qtablewidgetitem50)
+        self.tableWidget.setItem(6, 0, __qtablewidgetitem50)
         __qtablewidgetitem51 = QTableWidgetItem()
-        __qtablewidgetitem51.setFont(font1);
         __qtablewidgetitem51.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(7, 0, __qtablewidgetitem51)
+        self.tableWidget.setItem(6, 1, __qtablewidgetitem51)
         __qtablewidgetitem52 = QTableWidgetItem()
+        __qtablewidgetitem52.setFont(font1);
         __qtablewidgetitem52.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(7, 1, __qtablewidgetitem52)
+        self.tableWidget.setItem(7, 0, __qtablewidgetitem52)
         __qtablewidgetitem53 = QTableWidgetItem()
-        __qtablewidgetitem53.setFont(font1);
         __qtablewidgetitem53.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(8, 0, __qtablewidgetitem53)
+        self.tableWidget.setItem(7, 1, __qtablewidgetitem53)
         __qtablewidgetitem54 = QTableWidgetItem()
+        __qtablewidgetitem54.setFont(font1);
         __qtablewidgetitem54.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(8, 1, __qtablewidgetitem54)
+        self.tableWidget.setItem(8, 0, __qtablewidgetitem54)
         __qtablewidgetitem55 = QTableWidgetItem()
-        __qtablewidgetitem55.setFont(font1);
         __qtablewidgetitem55.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(9, 0, __qtablewidgetitem55)
+        self.tableWidget.setItem(8, 1, __qtablewidgetitem55)
         __qtablewidgetitem56 = QTableWidgetItem()
+        __qtablewidgetitem56.setFont(font1);
         __qtablewidgetitem56.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(9, 1, __qtablewidgetitem56)
+        self.tableWidget.setItem(9, 0, __qtablewidgetitem56)
         __qtablewidgetitem57 = QTableWidgetItem()
-        __qtablewidgetitem57.setFont(font1);
         __qtablewidgetitem57.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(10, 0, __qtablewidgetitem57)
+        self.tableWidget.setItem(9, 1, __qtablewidgetitem57)
         __qtablewidgetitem58 = QTableWidgetItem()
+        __qtablewidgetitem58.setFont(font1);
         __qtablewidgetitem58.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(10, 1, __qtablewidgetitem58)
+        self.tableWidget.setItem(10, 0, __qtablewidgetitem58)
         __qtablewidgetitem59 = QTableWidgetItem()
-        __qtablewidgetitem59.setFont(font1);
         __qtablewidgetitem59.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(11, 0, __qtablewidgetitem59)
+        self.tableWidget.setItem(10, 1, __qtablewidgetitem59)
         __qtablewidgetitem60 = QTableWidgetItem()
+        __qtablewidgetitem60.setFont(font1);
         __qtablewidgetitem60.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(11, 1, __qtablewidgetitem60)
+        self.tableWidget.setItem(11, 0, __qtablewidgetitem60)
         __qtablewidgetitem61 = QTableWidgetItem()
-        __qtablewidgetitem61.setFont(font1);
-        __qtablewidgetitem61.setFlags(Qt.ItemIsEditable|Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(12, 0, __qtablewidgetitem61)
+        __qtablewidgetitem61.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(11, 1, __qtablewidgetitem61)
         __qtablewidgetitem62 = QTableWidgetItem()
-        __qtablewidgetitem62.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(12, 1, __qtablewidgetitem62)
+        __qtablewidgetitem62.setFont(font1);
+        __qtablewidgetitem62.setFlags(Qt.ItemIsEditable|Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(12, 0, __qtablewidgetitem62)
         __qtablewidgetitem63 = QTableWidgetItem()
-        __qtablewidgetitem63.setFont(font1);
         __qtablewidgetitem63.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(13, 0, __qtablewidgetitem63)
+        self.tableWidget.setItem(12, 1, __qtablewidgetitem63)
         __qtablewidgetitem64 = QTableWidgetItem()
+        __qtablewidgetitem64.setFont(font1);
         __qtablewidgetitem64.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(13, 1, __qtablewidgetitem64)
+        self.tableWidget.setItem(13, 0, __qtablewidgetitem64)
         __qtablewidgetitem65 = QTableWidgetItem()
-        __qtablewidgetitem65.setFont(font1);
         __qtablewidgetitem65.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(14, 0, __qtablewidgetitem65)
+        self.tableWidget.setItem(13, 1, __qtablewidgetitem65)
         __qtablewidgetitem66 = QTableWidgetItem()
+        __qtablewidgetitem66.setFont(font1);
         __qtablewidgetitem66.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(14, 1, __qtablewidgetitem66)
+        self.tableWidget.setItem(14, 0, __qtablewidgetitem66)
         __qtablewidgetitem67 = QTableWidgetItem()
-        __qtablewidgetitem67.setFont(font1);
         __qtablewidgetitem67.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(15, 0, __qtablewidgetitem67)
+        self.tableWidget.setItem(14, 1, __qtablewidgetitem67)
         __qtablewidgetitem68 = QTableWidgetItem()
+        __qtablewidgetitem68.setFont(font1);
         __qtablewidgetitem68.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(15, 1, __qtablewidgetitem68)
+        self.tableWidget.setItem(15, 0, __qtablewidgetitem68)
+        __qtablewidgetitem69 = QTableWidgetItem()
+        __qtablewidgetitem69.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(15, 1, __qtablewidgetitem69)
         font3 = QFont()
         font3.setFamilies([u"Segoe UI Symbol"])
         font3.setPointSize(9)
         font3.setBold(True)
         font3.setKerning(False)
-        __qtablewidgetitem69 = QTableWidgetItem()
-        __qtablewidgetitem69.setFont(font3);
-        __qtablewidgetitem69.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(16, 0, __qtablewidgetitem69)
         __qtablewidgetitem70 = QTableWidgetItem()
+        __qtablewidgetitem70.setFont(font3);
         __qtablewidgetitem70.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(16, 1, __qtablewidgetitem70)
+        self.tableWidget.setItem(16, 0, __qtablewidgetitem70)
         __qtablewidgetitem71 = QTableWidgetItem()
-        __qtablewidgetitem71.setFont(font1);
         __qtablewidgetitem71.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(17, 0, __qtablewidgetitem71)
+        self.tableWidget.setItem(16, 1, __qtablewidgetitem71)
         __qtablewidgetitem72 = QTableWidgetItem()
+        __qtablewidgetitem72.setFont(font1);
         __qtablewidgetitem72.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(17, 1, __qtablewidgetitem72)
+        self.tableWidget.setItem(17, 0, __qtablewidgetitem72)
         __qtablewidgetitem73 = QTableWidgetItem()
-        __qtablewidgetitem73.setFont(font1);
         __qtablewidgetitem73.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(18, 0, __qtablewidgetitem73)
+        self.tableWidget.setItem(17, 1, __qtablewidgetitem73)
         __qtablewidgetitem74 = QTableWidgetItem()
+        __qtablewidgetitem74.setFont(font1);
         __qtablewidgetitem74.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(18, 1, __qtablewidgetitem74)
+        self.tableWidget.setItem(18, 0, __qtablewidgetitem74)
         __qtablewidgetitem75 = QTableWidgetItem()
-        __qtablewidgetitem75.setFont(font1);
         __qtablewidgetitem75.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(19, 0, __qtablewidgetitem75)
+        self.tableWidget.setItem(18, 1, __qtablewidgetitem75)
         __qtablewidgetitem76 = QTableWidgetItem()
+        __qtablewidgetitem76.setFont(font1);
         __qtablewidgetitem76.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(19, 1, __qtablewidgetitem76)
+        self.tableWidget.setItem(19, 0, __qtablewidgetitem76)
+        __qtablewidgetitem77 = QTableWidgetItem()
+        __qtablewidgetitem77.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(19, 1, __qtablewidgetitem77)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEnabled(False)
         self.tableWidget.setGeometry(QRect(0, 0, 971, 711))
@@ -643,179 +688,179 @@ class Ui_mainWindow(object):
         self.tableWidget_2 = QTableWidget(self.tab_2)
         if (self.tableWidget_2.columnCount() < 8):
             self.tableWidget_2.setColumnCount(8)
-        __qtablewidgetitem77 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem77)
         __qtablewidgetitem78 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem78)
+        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem78)
         __qtablewidgetitem79 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem79)
+        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem79)
         __qtablewidgetitem80 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem80)
+        self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem80)
         __qtablewidgetitem81 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(4, __qtablewidgetitem81)
+        self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem81)
         __qtablewidgetitem82 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(5, __qtablewidgetitem82)
+        self.tableWidget_2.setHorizontalHeaderItem(4, __qtablewidgetitem82)
         __qtablewidgetitem83 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(6, __qtablewidgetitem83)
+        self.tableWidget_2.setHorizontalHeaderItem(5, __qtablewidgetitem83)
         __qtablewidgetitem84 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(7, __qtablewidgetitem84)
+        self.tableWidget_2.setHorizontalHeaderItem(6, __qtablewidgetitem84)
+        __qtablewidgetitem85 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(7, __qtablewidgetitem85)
         if (self.tableWidget_2.rowCount() < 15):
             self.tableWidget_2.setRowCount(15)
-        __qtablewidgetitem85 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem85)
         __qtablewidgetitem86 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem86)
+        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem86)
         __qtablewidgetitem87 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem87)
+        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem87)
         __qtablewidgetitem88 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem88)
+        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem88)
         __qtablewidgetitem89 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem89)
+        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem89)
         __qtablewidgetitem90 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem90)
+        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem90)
         __qtablewidgetitem91 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem91)
+        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem91)
         __qtablewidgetitem92 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem92)
+        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem92)
         __qtablewidgetitem93 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem93)
+        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem93)
         __qtablewidgetitem94 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem94)
+        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem94)
         __qtablewidgetitem95 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem95)
+        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem95)
         __qtablewidgetitem96 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem96)
+        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem96)
         __qtablewidgetitem97 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem97)
+        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem97)
         __qtablewidgetitem98 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem98)
+        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem98)
         __qtablewidgetitem99 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem99)
+        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem99)
         __qtablewidgetitem100 = QTableWidgetItem()
-        __qtablewidgetitem100.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 0, __qtablewidgetitem100)
+        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem100)
         __qtablewidgetitem101 = QTableWidgetItem()
         __qtablewidgetitem101.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 1, __qtablewidgetitem101)
+        self.tableWidget_2.setItem(0, 0, __qtablewidgetitem101)
         __qtablewidgetitem102 = QTableWidgetItem()
         __qtablewidgetitem102.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 2, __qtablewidgetitem102)
+        self.tableWidget_2.setItem(0, 1, __qtablewidgetitem102)
         __qtablewidgetitem103 = QTableWidgetItem()
         __qtablewidgetitem103.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 3, __qtablewidgetitem103)
+        self.tableWidget_2.setItem(0, 2, __qtablewidgetitem103)
         __qtablewidgetitem104 = QTableWidgetItem()
         __qtablewidgetitem104.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 4, __qtablewidgetitem104)
+        self.tableWidget_2.setItem(0, 3, __qtablewidgetitem104)
         __qtablewidgetitem105 = QTableWidgetItem()
         __qtablewidgetitem105.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 5, __qtablewidgetitem105)
+        self.tableWidget_2.setItem(0, 4, __qtablewidgetitem105)
         __qtablewidgetitem106 = QTableWidgetItem()
         __qtablewidgetitem106.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 6, __qtablewidgetitem106)
+        self.tableWidget_2.setItem(0, 5, __qtablewidgetitem106)
         __qtablewidgetitem107 = QTableWidgetItem()
-        __qtablewidgetitem107.setFont(font1);
-        self.tableWidget_2.setItem(0, 7, __qtablewidgetitem107)
+        __qtablewidgetitem107.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_2.setItem(0, 6, __qtablewidgetitem107)
         __qtablewidgetitem108 = QTableWidgetItem()
         __qtablewidgetitem108.setFont(font1);
-        __qtablewidgetitem108.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(1, 0, __qtablewidgetitem108)
+        self.tableWidget_2.setItem(0, 7, __qtablewidgetitem108)
         __qtablewidgetitem109 = QTableWidgetItem()
+        __qtablewidgetitem109.setFont(font1);
         __qtablewidgetitem109.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(1, 1, __qtablewidgetitem109)
+        self.tableWidget_2.setItem(1, 0, __qtablewidgetitem109)
         __qtablewidgetitem110 = QTableWidgetItem()
-        __qtablewidgetitem110.setFont(font1);
         __qtablewidgetitem110.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(2, 0, __qtablewidgetitem110)
+        self.tableWidget_2.setItem(1, 1, __qtablewidgetitem110)
         __qtablewidgetitem111 = QTableWidgetItem()
+        __qtablewidgetitem111.setFont(font1);
         __qtablewidgetitem111.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(2, 1, __qtablewidgetitem111)
+        self.tableWidget_2.setItem(2, 0, __qtablewidgetitem111)
         __qtablewidgetitem112 = QTableWidgetItem()
-        __qtablewidgetitem112.setFont(font1);
         __qtablewidgetitem112.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(3, 0, __qtablewidgetitem112)
+        self.tableWidget_2.setItem(2, 1, __qtablewidgetitem112)
         __qtablewidgetitem113 = QTableWidgetItem()
+        __qtablewidgetitem113.setFont(font1);
         __qtablewidgetitem113.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(3, 1, __qtablewidgetitem113)
+        self.tableWidget_2.setItem(3, 0, __qtablewidgetitem113)
         __qtablewidgetitem114 = QTableWidgetItem()
-        __qtablewidgetitem114.setFont(font1);
         __qtablewidgetitem114.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(4, 0, __qtablewidgetitem114)
+        self.tableWidget_2.setItem(3, 1, __qtablewidgetitem114)
         __qtablewidgetitem115 = QTableWidgetItem()
+        __qtablewidgetitem115.setFont(font1);
         __qtablewidgetitem115.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(4, 1, __qtablewidgetitem115)
+        self.tableWidget_2.setItem(4, 0, __qtablewidgetitem115)
         __qtablewidgetitem116 = QTableWidgetItem()
-        __qtablewidgetitem116.setFont(font1);
         __qtablewidgetitem116.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(5, 0, __qtablewidgetitem116)
+        self.tableWidget_2.setItem(4, 1, __qtablewidgetitem116)
         __qtablewidgetitem117 = QTableWidgetItem()
+        __qtablewidgetitem117.setFont(font1);
         __qtablewidgetitem117.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(5, 1, __qtablewidgetitem117)
+        self.tableWidget_2.setItem(5, 0, __qtablewidgetitem117)
         __qtablewidgetitem118 = QTableWidgetItem()
-        __qtablewidgetitem118.setFont(font1);
         __qtablewidgetitem118.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(6, 0, __qtablewidgetitem118)
+        self.tableWidget_2.setItem(5, 1, __qtablewidgetitem118)
         __qtablewidgetitem119 = QTableWidgetItem()
+        __qtablewidgetitem119.setFont(font1);
         __qtablewidgetitem119.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(6, 1, __qtablewidgetitem119)
+        self.tableWidget_2.setItem(6, 0, __qtablewidgetitem119)
         __qtablewidgetitem120 = QTableWidgetItem()
-        __qtablewidgetitem120.setFont(font1);
         __qtablewidgetitem120.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(7, 0, __qtablewidgetitem120)
+        self.tableWidget_2.setItem(6, 1, __qtablewidgetitem120)
         __qtablewidgetitem121 = QTableWidgetItem()
+        __qtablewidgetitem121.setFont(font1);
         __qtablewidgetitem121.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(7, 1, __qtablewidgetitem121)
+        self.tableWidget_2.setItem(7, 0, __qtablewidgetitem121)
         __qtablewidgetitem122 = QTableWidgetItem()
-        __qtablewidgetitem122.setFont(font1);
         __qtablewidgetitem122.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(8, 0, __qtablewidgetitem122)
+        self.tableWidget_2.setItem(7, 1, __qtablewidgetitem122)
         __qtablewidgetitem123 = QTableWidgetItem()
+        __qtablewidgetitem123.setFont(font1);
         __qtablewidgetitem123.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(8, 1, __qtablewidgetitem123)
+        self.tableWidget_2.setItem(8, 0, __qtablewidgetitem123)
         __qtablewidgetitem124 = QTableWidgetItem()
-        __qtablewidgetitem124.setFont(font1);
         __qtablewidgetitem124.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(9, 0, __qtablewidgetitem124)
+        self.tableWidget_2.setItem(8, 1, __qtablewidgetitem124)
         __qtablewidgetitem125 = QTableWidgetItem()
+        __qtablewidgetitem125.setFont(font1);
         __qtablewidgetitem125.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(9, 1, __qtablewidgetitem125)
+        self.tableWidget_2.setItem(9, 0, __qtablewidgetitem125)
         __qtablewidgetitem126 = QTableWidgetItem()
-        __qtablewidgetitem126.setFont(font1);
         __qtablewidgetitem126.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(10, 0, __qtablewidgetitem126)
+        self.tableWidget_2.setItem(9, 1, __qtablewidgetitem126)
         __qtablewidgetitem127 = QTableWidgetItem()
+        __qtablewidgetitem127.setFont(font1);
         __qtablewidgetitem127.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(10, 1, __qtablewidgetitem127)
+        self.tableWidget_2.setItem(10, 0, __qtablewidgetitem127)
         __qtablewidgetitem128 = QTableWidgetItem()
-        __qtablewidgetitem128.setFont(font1);
         __qtablewidgetitem128.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(11, 0, __qtablewidgetitem128)
+        self.tableWidget_2.setItem(10, 1, __qtablewidgetitem128)
         __qtablewidgetitem129 = QTableWidgetItem()
+        __qtablewidgetitem129.setFont(font1);
         __qtablewidgetitem129.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(11, 1, __qtablewidgetitem129)
+        self.tableWidget_2.setItem(11, 0, __qtablewidgetitem129)
         __qtablewidgetitem130 = QTableWidgetItem()
-        __qtablewidgetitem130.setFont(font1);
         __qtablewidgetitem130.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(12, 0, __qtablewidgetitem130)
+        self.tableWidget_2.setItem(11, 1, __qtablewidgetitem130)
         __qtablewidgetitem131 = QTableWidgetItem()
+        __qtablewidgetitem131.setFont(font1);
         __qtablewidgetitem131.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(12, 1, __qtablewidgetitem131)
+        self.tableWidget_2.setItem(12, 0, __qtablewidgetitem131)
         __qtablewidgetitem132 = QTableWidgetItem()
-        __qtablewidgetitem132.setFont(font1);
         __qtablewidgetitem132.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(13, 0, __qtablewidgetitem132)
+        self.tableWidget_2.setItem(12, 1, __qtablewidgetitem132)
         __qtablewidgetitem133 = QTableWidgetItem()
+        __qtablewidgetitem133.setFont(font1);
         __qtablewidgetitem133.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(13, 1, __qtablewidgetitem133)
+        self.tableWidget_2.setItem(13, 0, __qtablewidgetitem133)
+        __qtablewidgetitem134 = QTableWidgetItem()
+        __qtablewidgetitem134.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(13, 1, __qtablewidgetitem134)
         font4 = QFont()
         font4.setPointSize(11)
         font4.setBold(True)
-        __qtablewidgetitem134 = QTableWidgetItem()
-        __qtablewidgetitem134.setFont(font4);
-        __qtablewidgetitem134.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(14, 0, __qtablewidgetitem134)
         __qtablewidgetitem135 = QTableWidgetItem()
+        __qtablewidgetitem135.setFont(font4);
         __qtablewidgetitem135.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(14, 1, __qtablewidgetitem135)
+        self.tableWidget_2.setItem(14, 0, __qtablewidgetitem135)
+        __qtablewidgetitem136 = QTableWidgetItem()
+        __qtablewidgetitem136.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(14, 1, __qtablewidgetitem136)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
         self.tableWidget_2.setEnabled(False)
         self.tableWidget_2.setGeometry(QRect(0, 110, 1391, 511))
@@ -847,226 +892,226 @@ class Ui_mainWindow(object):
         self.tableWidget_3 = QTableWidget(self.tab_3)
         if (self.tableWidget_3.columnCount() < 8):
             self.tableWidget_3.setColumnCount(8)
-        __qtablewidgetitem136 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem136)
         __qtablewidgetitem137 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem137)
+        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem137)
         __qtablewidgetitem138 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem138)
+        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem138)
         __qtablewidgetitem139 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem139)
+        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem139)
         __qtablewidgetitem140 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem140)
+        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem140)
         __qtablewidgetitem141 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem141)
+        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem141)
         __qtablewidgetitem142 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem142)
+        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem142)
         __qtablewidgetitem143 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem143)
+        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem143)
+        __qtablewidgetitem144 = QTableWidgetItem()
+        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem144)
         if (self.tableWidget_3.rowCount() < 21):
             self.tableWidget_3.setRowCount(21)
-        __qtablewidgetitem144 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem144)
         __qtablewidgetitem145 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem145)
+        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem145)
         __qtablewidgetitem146 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(2, __qtablewidgetitem146)
+        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem146)
         __qtablewidgetitem147 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(3, __qtablewidgetitem147)
+        self.tableWidget_3.setVerticalHeaderItem(2, __qtablewidgetitem147)
         __qtablewidgetitem148 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem148)
+        self.tableWidget_3.setVerticalHeaderItem(3, __qtablewidgetitem148)
         __qtablewidgetitem149 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(5, __qtablewidgetitem149)
+        self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem149)
         __qtablewidgetitem150 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(6, __qtablewidgetitem150)
+        self.tableWidget_3.setVerticalHeaderItem(5, __qtablewidgetitem150)
         __qtablewidgetitem151 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(7, __qtablewidgetitem151)
+        self.tableWidget_3.setVerticalHeaderItem(6, __qtablewidgetitem151)
         __qtablewidgetitem152 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(8, __qtablewidgetitem152)
+        self.tableWidget_3.setVerticalHeaderItem(7, __qtablewidgetitem152)
         __qtablewidgetitem153 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(9, __qtablewidgetitem153)
+        self.tableWidget_3.setVerticalHeaderItem(8, __qtablewidgetitem153)
         __qtablewidgetitem154 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(10, __qtablewidgetitem154)
+        self.tableWidget_3.setVerticalHeaderItem(9, __qtablewidgetitem154)
         __qtablewidgetitem155 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(11, __qtablewidgetitem155)
+        self.tableWidget_3.setVerticalHeaderItem(10, __qtablewidgetitem155)
         __qtablewidgetitem156 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(12, __qtablewidgetitem156)
+        self.tableWidget_3.setVerticalHeaderItem(11, __qtablewidgetitem156)
         __qtablewidgetitem157 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(13, __qtablewidgetitem157)
+        self.tableWidget_3.setVerticalHeaderItem(12, __qtablewidgetitem157)
         __qtablewidgetitem158 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(14, __qtablewidgetitem158)
+        self.tableWidget_3.setVerticalHeaderItem(13, __qtablewidgetitem158)
         __qtablewidgetitem159 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(15, __qtablewidgetitem159)
+        self.tableWidget_3.setVerticalHeaderItem(14, __qtablewidgetitem159)
         __qtablewidgetitem160 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(16, __qtablewidgetitem160)
+        self.tableWidget_3.setVerticalHeaderItem(15, __qtablewidgetitem160)
         __qtablewidgetitem161 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(17, __qtablewidgetitem161)
+        self.tableWidget_3.setVerticalHeaderItem(16, __qtablewidgetitem161)
         __qtablewidgetitem162 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(18, __qtablewidgetitem162)
+        self.tableWidget_3.setVerticalHeaderItem(17, __qtablewidgetitem162)
         __qtablewidgetitem163 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(19, __qtablewidgetitem163)
+        self.tableWidget_3.setVerticalHeaderItem(18, __qtablewidgetitem163)
         __qtablewidgetitem164 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(20, __qtablewidgetitem164)
+        self.tableWidget_3.setVerticalHeaderItem(19, __qtablewidgetitem164)
         __qtablewidgetitem165 = QTableWidgetItem()
-        __qtablewidgetitem165.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 2, __qtablewidgetitem165)
+        self.tableWidget_3.setVerticalHeaderItem(20, __qtablewidgetitem165)
         __qtablewidgetitem166 = QTableWidgetItem()
         __qtablewidgetitem166.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 3, __qtablewidgetitem166)
+        self.tableWidget_3.setItem(0, 2, __qtablewidgetitem166)
         __qtablewidgetitem167 = QTableWidgetItem()
         __qtablewidgetitem167.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 4, __qtablewidgetitem167)
+        self.tableWidget_3.setItem(0, 3, __qtablewidgetitem167)
         __qtablewidgetitem168 = QTableWidgetItem()
         __qtablewidgetitem168.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 5, __qtablewidgetitem168)
+        self.tableWidget_3.setItem(0, 4, __qtablewidgetitem168)
         __qtablewidgetitem169 = QTableWidgetItem()
         __qtablewidgetitem169.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 6, __qtablewidgetitem169)
+        self.tableWidget_3.setItem(0, 5, __qtablewidgetitem169)
         __qtablewidgetitem170 = QTableWidgetItem()
-        __qtablewidgetitem170.setFont(font1);
-        self.tableWidget_3.setItem(0, 7, __qtablewidgetitem170)
+        __qtablewidgetitem170.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_3.setItem(0, 6, __qtablewidgetitem170)
         __qtablewidgetitem171 = QTableWidgetItem()
         __qtablewidgetitem171.setFont(font1);
-        __qtablewidgetitem171.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem171)
+        self.tableWidget_3.setItem(0, 7, __qtablewidgetitem171)
         __qtablewidgetitem172 = QTableWidgetItem()
+        __qtablewidgetitem172.setFont(font1);
         __qtablewidgetitem172.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem172)
+        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem172)
         __qtablewidgetitem173 = QTableWidgetItem()
-        __qtablewidgetitem173.setFont(font4);
         __qtablewidgetitem173.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(2, 0, __qtablewidgetitem173)
+        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem173)
         __qtablewidgetitem174 = QTableWidgetItem()
+        __qtablewidgetitem174.setFont(font4);
         __qtablewidgetitem174.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(2, 1, __qtablewidgetitem174)
+        self.tableWidget_3.setItem(2, 0, __qtablewidgetitem174)
         __qtablewidgetitem175 = QTableWidgetItem()
-        __qtablewidgetitem175.setFont(font4);
         __qtablewidgetitem175.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(3, 0, __qtablewidgetitem175)
+        self.tableWidget_3.setItem(2, 1, __qtablewidgetitem175)
         __qtablewidgetitem176 = QTableWidgetItem()
+        __qtablewidgetitem176.setFont(font4);
         __qtablewidgetitem176.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(3, 1, __qtablewidgetitem176)
+        self.tableWidget_3.setItem(3, 0, __qtablewidgetitem176)
         __qtablewidgetitem177 = QTableWidgetItem()
-        __qtablewidgetitem177.setFont(font1);
         __qtablewidgetitem177.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(4, 0, __qtablewidgetitem177)
+        self.tableWidget_3.setItem(3, 1, __qtablewidgetitem177)
         __qtablewidgetitem178 = QTableWidgetItem()
+        __qtablewidgetitem178.setFont(font1);
         __qtablewidgetitem178.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(4, 1, __qtablewidgetitem178)
+        self.tableWidget_3.setItem(4, 0, __qtablewidgetitem178)
         __qtablewidgetitem179 = QTableWidgetItem()
-        self.tableWidget_3.setItem(4, 2, __qtablewidgetitem179)
+        __qtablewidgetitem179.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(4, 1, __qtablewidgetitem179)
         __qtablewidgetitem180 = QTableWidgetItem()
-        __qtablewidgetitem180.setFont(font1);
-        __qtablewidgetitem180.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(5, 0, __qtablewidgetitem180)
+        self.tableWidget_3.setItem(4, 2, __qtablewidgetitem180)
         __qtablewidgetitem181 = QTableWidgetItem()
+        __qtablewidgetitem181.setFont(font1);
         __qtablewidgetitem181.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(5, 1, __qtablewidgetitem181)
+        self.tableWidget_3.setItem(5, 0, __qtablewidgetitem181)
         __qtablewidgetitem182 = QTableWidgetItem()
-        __qtablewidgetitem182.setFont(font1);
         __qtablewidgetitem182.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(6, 0, __qtablewidgetitem182)
+        self.tableWidget_3.setItem(5, 1, __qtablewidgetitem182)
         __qtablewidgetitem183 = QTableWidgetItem()
+        __qtablewidgetitem183.setFont(font1);
         __qtablewidgetitem183.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(6, 1, __qtablewidgetitem183)
+        self.tableWidget_3.setItem(6, 0, __qtablewidgetitem183)
         __qtablewidgetitem184 = QTableWidgetItem()
-        __qtablewidgetitem184.setFont(font1);
         __qtablewidgetitem184.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(7, 0, __qtablewidgetitem184)
+        self.tableWidget_3.setItem(6, 1, __qtablewidgetitem184)
         __qtablewidgetitem185 = QTableWidgetItem()
+        __qtablewidgetitem185.setFont(font1);
         __qtablewidgetitem185.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(7, 1, __qtablewidgetitem185)
+        self.tableWidget_3.setItem(7, 0, __qtablewidgetitem185)
         __qtablewidgetitem186 = QTableWidgetItem()
-        __qtablewidgetitem186.setFont(font1);
         __qtablewidgetitem186.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(8, 0, __qtablewidgetitem186)
+        self.tableWidget_3.setItem(7, 1, __qtablewidgetitem186)
         __qtablewidgetitem187 = QTableWidgetItem()
+        __qtablewidgetitem187.setFont(font1);
         __qtablewidgetitem187.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(8, 1, __qtablewidgetitem187)
+        self.tableWidget_3.setItem(8, 0, __qtablewidgetitem187)
         __qtablewidgetitem188 = QTableWidgetItem()
-        __qtablewidgetitem188.setFont(font1);
         __qtablewidgetitem188.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(9, 0, __qtablewidgetitem188)
+        self.tableWidget_3.setItem(8, 1, __qtablewidgetitem188)
         __qtablewidgetitem189 = QTableWidgetItem()
+        __qtablewidgetitem189.setFont(font1);
         __qtablewidgetitem189.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(9, 1, __qtablewidgetitem189)
+        self.tableWidget_3.setItem(9, 0, __qtablewidgetitem189)
         __qtablewidgetitem190 = QTableWidgetItem()
-        __qtablewidgetitem190.setFont(font1);
         __qtablewidgetitem190.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(10, 0, __qtablewidgetitem190)
+        self.tableWidget_3.setItem(9, 1, __qtablewidgetitem190)
         __qtablewidgetitem191 = QTableWidgetItem()
+        __qtablewidgetitem191.setFont(font1);
         __qtablewidgetitem191.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(10, 1, __qtablewidgetitem191)
+        self.tableWidget_3.setItem(10, 0, __qtablewidgetitem191)
         __qtablewidgetitem192 = QTableWidgetItem()
-        __qtablewidgetitem192.setFont(font1);
         __qtablewidgetitem192.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(11, 0, __qtablewidgetitem192)
+        self.tableWidget_3.setItem(10, 1, __qtablewidgetitem192)
         __qtablewidgetitem193 = QTableWidgetItem()
+        __qtablewidgetitem193.setFont(font1);
         __qtablewidgetitem193.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(11, 1, __qtablewidgetitem193)
+        self.tableWidget_3.setItem(11, 0, __qtablewidgetitem193)
         __qtablewidgetitem194 = QTableWidgetItem()
-        __qtablewidgetitem194.setFont(font1);
         __qtablewidgetitem194.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(12, 0, __qtablewidgetitem194)
+        self.tableWidget_3.setItem(11, 1, __qtablewidgetitem194)
         __qtablewidgetitem195 = QTableWidgetItem()
+        __qtablewidgetitem195.setFont(font1);
         __qtablewidgetitem195.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(12, 1, __qtablewidgetitem195)
+        self.tableWidget_3.setItem(12, 0, __qtablewidgetitem195)
         __qtablewidgetitem196 = QTableWidgetItem()
-        __qtablewidgetitem196.setFont(font1);
         __qtablewidgetitem196.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(13, 0, __qtablewidgetitem196)
+        self.tableWidget_3.setItem(12, 1, __qtablewidgetitem196)
         __qtablewidgetitem197 = QTableWidgetItem()
+        __qtablewidgetitem197.setFont(font1);
         __qtablewidgetitem197.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(13, 1, __qtablewidgetitem197)
+        self.tableWidget_3.setItem(13, 0, __qtablewidgetitem197)
         __qtablewidgetitem198 = QTableWidgetItem()
-        __qtablewidgetitem198.setFont(font4);
         __qtablewidgetitem198.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(14, 0, __qtablewidgetitem198)
+        self.tableWidget_3.setItem(13, 1, __qtablewidgetitem198)
         __qtablewidgetitem199 = QTableWidgetItem()
+        __qtablewidgetitem199.setFont(font4);
         __qtablewidgetitem199.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(14, 1, __qtablewidgetitem199)
+        self.tableWidget_3.setItem(14, 0, __qtablewidgetitem199)
         __qtablewidgetitem200 = QTableWidgetItem()
-        __qtablewidgetitem200.setFont(font4);
         __qtablewidgetitem200.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(15, 0, __qtablewidgetitem200)
+        self.tableWidget_3.setItem(14, 1, __qtablewidgetitem200)
         __qtablewidgetitem201 = QTableWidgetItem()
+        __qtablewidgetitem201.setFont(font4);
         __qtablewidgetitem201.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(15, 1, __qtablewidgetitem201)
+        self.tableWidget_3.setItem(15, 0, __qtablewidgetitem201)
         __qtablewidgetitem202 = QTableWidgetItem()
-        __qtablewidgetitem202.setFont(font4);
         __qtablewidgetitem202.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(16, 0, __qtablewidgetitem202)
+        self.tableWidget_3.setItem(15, 1, __qtablewidgetitem202)
         __qtablewidgetitem203 = QTableWidgetItem()
+        __qtablewidgetitem203.setFont(font4);
         __qtablewidgetitem203.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(16, 1, __qtablewidgetitem203)
+        self.tableWidget_3.setItem(16, 0, __qtablewidgetitem203)
         __qtablewidgetitem204 = QTableWidgetItem()
-        __qtablewidgetitem204.setFont(font4);
         __qtablewidgetitem204.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(17, 0, __qtablewidgetitem204)
+        self.tableWidget_3.setItem(16, 1, __qtablewidgetitem204)
         __qtablewidgetitem205 = QTableWidgetItem()
+        __qtablewidgetitem205.setFont(font4);
         __qtablewidgetitem205.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(17, 1, __qtablewidgetitem205)
+        self.tableWidget_3.setItem(17, 0, __qtablewidgetitem205)
         __qtablewidgetitem206 = QTableWidgetItem()
-        __qtablewidgetitem206.setFont(font4);
         __qtablewidgetitem206.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(18, 0, __qtablewidgetitem206)
+        self.tableWidget_3.setItem(17, 1, __qtablewidgetitem206)
         __qtablewidgetitem207 = QTableWidgetItem()
+        __qtablewidgetitem207.setFont(font4);
         __qtablewidgetitem207.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(18, 1, __qtablewidgetitem207)
+        self.tableWidget_3.setItem(18, 0, __qtablewidgetitem207)
         __qtablewidgetitem208 = QTableWidgetItem()
-        __qtablewidgetitem208.setFont(font1);
         __qtablewidgetitem208.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(19, 0, __qtablewidgetitem208)
+        self.tableWidget_3.setItem(18, 1, __qtablewidgetitem208)
         __qtablewidgetitem209 = QTableWidgetItem()
+        __qtablewidgetitem209.setFont(font1);
         __qtablewidgetitem209.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(19, 1, __qtablewidgetitem209)
+        self.tableWidget_3.setItem(19, 0, __qtablewidgetitem209)
         __qtablewidgetitem210 = QTableWidgetItem()
-        __qtablewidgetitem210.setFont(font1);
         __qtablewidgetitem210.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(20, 0, __qtablewidgetitem210)
+        self.tableWidget_3.setItem(19, 1, __qtablewidgetitem210)
         __qtablewidgetitem211 = QTableWidgetItem()
+        __qtablewidgetitem211.setFont(font1);
         __qtablewidgetitem211.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(20, 1, __qtablewidgetitem211)
+        self.tableWidget_3.setItem(20, 0, __qtablewidgetitem211)
+        __qtablewidgetitem212 = QTableWidgetItem()
+        __qtablewidgetitem212.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(20, 1, __qtablewidgetitem212)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(0, 90, 1391, 681))
         self.tableWidget_3.setFont(font)
@@ -1098,6 +1143,9 @@ class Ui_mainWindow(object):
         self.retranslateUi(mainWindow)
 
         self.tabWidget.setCurrentIndex(1)
+        self.linePower.setCurrentIndex(18)
+        self.lineVoltage.setCurrentIndex(1)
+        self.linePolarity.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(mainWindow)
@@ -1112,9 +1160,49 @@ class Ui_mainWindow(object):
         self.Voltage.setText(QCoreApplication.translate("mainWindow", u"\u041d\u043e\u043c\u0438\u043d\u0430\u043b\u044c\u043d\u043e\u0435 \u043d\u0430\u043f\u0440\u044f\u0436\u0435\u043d\u0438\u0435", None))
         self.polarity.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043b\u044f\u0440\u043d\u043e\u0441\u0442\u044c", None))
         self.Snom.setText(QCoreApplication.translate("mainWindow", u"S_\u043d\u043e\u043c\u0438\u043d\u0430\u043b\u044c\u043d\u043e\u0435", None))
-        self.linePower.setText(QCoreApplication.translate("mainWindow", u"22", None))
-        self.lineVoltage.setText(QCoreApplication.translate("mainWindow", u"380", None))
-        self.linePolarity.setText(QCoreApplication.translate("mainWindow", u"4", None))
+        self.linePower.setItemText(0, QCoreApplication.translate("mainWindow", u"0.06", None))
+        self.linePower.setItemText(1, QCoreApplication.translate("mainWindow", u"0.09", None))
+        self.linePower.setItemText(2, QCoreApplication.translate("mainWindow", u"0.12", None))
+        self.linePower.setItemText(3, QCoreApplication.translate("mainWindow", u"0.18", None))
+        self.linePower.setItemText(4, QCoreApplication.translate("mainWindow", u"0.25", None))
+        self.linePower.setItemText(5, QCoreApplication.translate("mainWindow", u"0.37", None))
+        self.linePower.setItemText(6, QCoreApplication.translate("mainWindow", u"0.56", None))
+        self.linePower.setItemText(7, QCoreApplication.translate("mainWindow", u"0.75", None))
+        self.linePower.setItemText(8, QCoreApplication.translate("mainWindow", u"1.1", None))
+        self.linePower.setItemText(9, QCoreApplication.translate("mainWindow", u"1.5", None))
+        self.linePower.setItemText(10, QCoreApplication.translate("mainWindow", u"2.2", None))
+        self.linePower.setItemText(11, QCoreApplication.translate("mainWindow", u"3.0", None))
+        self.linePower.setItemText(12, QCoreApplication.translate("mainWindow", u"4.0", None))
+        self.linePower.setItemText(13, QCoreApplication.translate("mainWindow", u"5.5", None))
+        self.linePower.setItemText(14, QCoreApplication.translate("mainWindow", u"7.5", None))
+        self.linePower.setItemText(15, QCoreApplication.translate("mainWindow", u"11", None))
+        self.linePower.setItemText(16, QCoreApplication.translate("mainWindow", u"15", None))
+        self.linePower.setItemText(17, QCoreApplication.translate("mainWindow", u"18.5", None))
+        self.linePower.setItemText(18, QCoreApplication.translate("mainWindow", u"22", None))
+        self.linePower.setItemText(19, QCoreApplication.translate("mainWindow", u"30", None))
+        self.linePower.setItemText(20, QCoreApplication.translate("mainWindow", u"37", None))
+        self.linePower.setItemText(21, QCoreApplication.translate("mainWindow", u"45", None))
+        self.linePower.setItemText(22, QCoreApplication.translate("mainWindow", u"55", None))
+        self.linePower.setItemText(23, QCoreApplication.translate("mainWindow", u"75", None))
+        self.linePower.setItemText(24, QCoreApplication.translate("mainWindow", u"90", None))
+        self.linePower.setItemText(25, QCoreApplication.translate("mainWindow", u"110", None))
+        self.linePower.setItemText(26, QCoreApplication.translate("mainWindow", u"132", None))
+        self.linePower.setItemText(27, QCoreApplication.translate("mainWindow", u"160", None))
+        self.linePower.setItemText(28, QCoreApplication.translate("mainWindow", u"200", None))
+        self.linePower.setItemText(29, QCoreApplication.translate("mainWindow", u"250", None))
+        self.linePower.setItemText(30, QCoreApplication.translate("mainWindow", u"315", None))
+
+        self.lineVoltage.setItemText(0, QCoreApplication.translate("mainWindow", u"220", None))
+        self.lineVoltage.setItemText(1, QCoreApplication.translate("mainWindow", u"380", None))
+        self.lineVoltage.setItemText(2, QCoreApplication.translate("mainWindow", u"660", None))
+
+        self.linePolarity.setItemText(0, QCoreApplication.translate("mainWindow", u"2", None))
+        self.linePolarity.setItemText(1, QCoreApplication.translate("mainWindow", u"4", None))
+        self.linePolarity.setItemText(2, QCoreApplication.translate("mainWindow", u"6", None))
+        self.linePolarity.setItemText(3, QCoreApplication.translate("mainWindow", u"8", None))
+        self.linePolarity.setItemText(4, QCoreApplication.translate("mainWindow", u"10", None))
+        self.linePolarity.setItemText(5, QCoreApplication.translate("mainWindow", u"12", None))
+
         self.lineSnom.setText(QCoreApplication.translate("mainWindow", u"0.024", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("mainWindow", u"\u0412\u0432\u043e\u0434 \u0434\u0430\u043d\u043d\u044b\u0445", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
