@@ -125,7 +125,7 @@ class MainWindow(QMainWindow):
             except Exception as e:
                 continue
 
-            self.ui.tableWidget_2.item(i, 2).setFlags(self.ui.tableWidget_2.item(i, 3).flags() & ~Qt.ItemIsSelectable)
+            self.ui.tableWidget_2.item(i, 2).setFlags(self.ui.tableWidget_2.item(i, 2).flags() & ~Qt.ItemIsSelectable)
 
             if table_2.calculateTable(i, 1) * 0.9 < curr_value < table_2.calculateTable(i, 1) * 1.1:
                 self.ui.tableWidget_2.item(i, 2).setBackground(correct_color)
@@ -133,7 +133,25 @@ class MainWindow(QMainWindow):
 
         if count == 14:
             self.ui.bt_calculate_table2.setEnabled(True)
-
+            self.ui.le_h_c.setEnabled(True)
+            self.ui.le_h_p_2.setEnabled(True)
+            self.ui.le_h_sh.setEnabled(True)
+            self.ui.le_h_sh_shtrih.setEnabled(True)
+            self.ui.le_b_1_r.setEnabled(True)
+            self.ui.le_b_2_r.setEnabled(True)
+            self.ui.le_h_1.setEnabled(True)
+            self.ui.le_q_c.setEnabled(True)
+            self.ui.le_r_2.setEnabled(True)
+            self.ui.le_h_0.setEnabled(True)
+            self.ui.le_b_sh_2.setEnabled(True)
+            self.ui.le_Lamda_p_2.setEnabled(True)
+            self.ui.le_Lamda_d_2.setEnabled(True)
+            self.ui.le_Lamda_l_2.setEnabled(True)
+            self.ui.le_X_2_shtrih.setEnabled(True)
+            self.ui.le_x_1_2_p.setEnabled(True)
+            self.ui.le_c_1_p.setEnabled(True)
+            self.ui.le_X_1.setEnabled(True)
+            self.ui.le_r_c.setEnabled(True)
 
 
 
@@ -158,6 +176,26 @@ class MainWindow(QMainWindow):
 
         if count == 20:
             self.ui.bt_calculate_table3.setEnabled(True)
+            self.ui.le_C_N.setEnabled(True)
+            self.ui.le_k_y_1.setEnabled(True)
+            self.ui.le_u_p.setEnabled(True)
+            self.ui.le_k_ob.setEnabled(True)
+            self.ui.le_Z_1.setEnabled(True)
+            self.ui.le_Z_2.setEnabled(True)
+            self.ui.le_sigma.setEnabled(True)
+            self.ui.le_t_z_1.setEnabled(True)
+            self.ui.le_b_sh.setEnabled(True)
+            self.ui.le_h_sh_r.setEnabled(True)
+            self.ui.le_Lamda_l_1.setEnabled(True)
+            self.ui.le_Lamda_p_1.setEnabled(True)
+            self.ui.le_Lamda_d_1.setEnabled(True)
+            self.ui.le_t_z_2.setEnabled(True)
+            self.ui.le_r_2_Ksi_shtrih.setEnabled(True)
+            self.ui.le_I_1_p.setEnabled(True)
+            self.ui.le_I_1_nom.setEnabled(True)
+            self.ui.le_Lamda_p_2_Ksi.setEnabled(True)
+            self.ui.le_h_k.setEnabled(True)
+            self.ui.le_K_R.setEnabled(True)
 
     def submitValuesButton(self):
         global aboba
@@ -235,14 +273,14 @@ class MainWindow(QMainWindow):
             for j in range(0, 8):
                 if (i % 2):
                     self.ui.tableWidget_2.item(i, j).setBackground(QColor(230, 230, 230))
-                if (j < 8 - 1):
+                if (j > 2):
                     self.ui.tableWidget_2.item(i, j).setFlags(~Qt.ItemIsEditable)
 
         for i in range(1, 20 + 1):
             for j in range(0, 8):
                 if (i % 2):
                     self.ui.tableWidget_3.item(i, j).setBackground(QColor(230, 230, 230))
-                if (j < 8 - 1):
+                if (j > 2):
                     self.ui.tableWidget_3.item(i, j).setFlags(~Qt.ItemIsEditable)
 
 
@@ -442,17 +480,45 @@ class MainWindow(QMainWindow):
                     str(round(table_1_student.calculateTable(j, float(self.ui.tableWidget.item(0, i).text())), 3))))
 
     def calculate_table2(self):
+        global aboba
+        try:
+            table_2_student = table2(
+            float(self.ui.le_h_c.text()), float(self.ui.le_h_p_2.text()), float(self.ui.le_h_sh.text()),
+            float(self.ui.le_h_sh_shtrih.text()), float(self.ui.le_b_1_r.text()), float(self.ui.le_b_2_r.text()),
+            float(self.ui.le_h_1.text()), float(self.ui.le_q_c.text()),
+            float(self.ui.le_r_c.text()), float(self.ui.le_r_2.text()), float(self.ui.le_h_0.text()),
+            float(self.ui.le_b_sh_2.text()), float(self.ui.le_Lamda_p_2.text()),float(self.ui.le_Lamda_l_2.text()),
+            float(self.ui.le_Lamda_d_2.text()),
+            float(self.ui.le_X_2_shtrih.text()), float(self.ui.le_x_1_2_p.text()), float(self.ui.le_c_1_p.text()), float(self.ui.le_X_1.text())
+            )
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText("Неправильно введены значения")
+            msgBox.exec()
         for i in range(3, 7 + 1):
-            for j in range(1, 14 + 1):
+            for j in range(2, 14 + 1):
                 self.ui.tableWidget_2.setItem(j, i, QTableWidgetItem(
-                    str(round(table_2.calculateTable(j, float(self.ui.tableWidget_2.item(0, i).text())), 3))))
+                    str(round(table_2_student.calculateTable(j, float(self.ui.tableWidget_2.item(0, i).text())), 3))))
 
     def calculate_table3(self):
         self.ui.bt_show_chart_table3.setEnabled(True)
+        try:
+            table_3_student = table3(
+                float(self.ui.le_C_N.text()), float(self.ui.le_k_y_1.text()), aboba.float(self.ui.le_u_p.text()), float(self.ui.le_k_ob.text()), float(self.ui.le_Z_1.text()), float(self.ui.le_Z_2.text()), float(self.ui.le_sigma.text()), float(self.ui.le_t_z_1.text()),
+                float(self.ui.le_b_sh.text()), float(self.ui.le_h_sh_r.text()), float(self.ui.le_Lamda_p_1.text()), float(self.ui.le_Lamda_d_1.text()), float(self.ui.le_Lamda_l_1.text()),
+                float(self.ui.le_x_1_2_p.text()), float(self.ui.le_t_z_2.text()), float(self.ui.le_b_sh_2.text()), float(self.ui.le_Lamda_p_2.text()), float(self.ui.le_Lamda_l_2.text()), float(self.ui.le_Lamda_d_2.text()),
+                float(self.ui.le_h_sh_shtrih.text()), float(self.ui.le_X_2_shtrih.text()), float(self.ui.le_r1.text()), float(self.ui.le_r_2_Ksi_shtrih.text()), aboba.U, float(self.ui.le_I_1_p.text()),
+                float(self.ui.le_I_1_nom.text()),
+                table_1.calculateTable(11, aboba.s_nom), aboba.s_nom, float(self.ui.le_h_k.text()), aboba.float(self.ui.le_Lamda_p_2_Ksi.text()), float(self.ui.le_K_R.text())
+            )
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText("Неправильно введены значения")
+            msgBox.exec()
         for i in range(3, 7 + 1):
             for j in range(1, 20 + 1):
                 self.ui.tableWidget_3.setItem(j, i, QTableWidgetItem(
-                    str(round(table_3.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 2))))
+                    str(round(table_3_student.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 2))))
 
 
 app = QApplication()

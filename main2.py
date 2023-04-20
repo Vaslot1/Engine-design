@@ -1148,121 +1148,121 @@ class MainProgram:
 
             if numeration == 1:
                 result = f1()
-                if (result * 0.9 < 16.783 < result * 1.1):
+                if (result * 0.85 < 16.783 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 2:
                 result = f2()
-                if (result * 0.9 < 17.147 < result * 1.1):
+                if (result * 0.85 < 17.147 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 3:
                 result = f3()
-                if (result * 0.9 < 4.17 < result * 1.1):
+                if (result * 0.85 < 4.17 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 4:
                 result = f4()
-                if (result * 0.9 < 17.646 < result * 1.1):
+                if (result * 0.85 < 17.646 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 5:
                 result = f5()
-                if (result * 0.9 < 21.534 < result * 1.1):
+                if (result * 0.85 < 21.534 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 6:
                 result = f6()
-                if (result * 0.9 < 0.971 < result * 1.1):
+                if (result * 0.85 < 0.971 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 7:
                 result = f7()
-                if (result * 0.9 < 0.236 < result * 1.1):
+                if (result * 0.85 < 0.236 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 8:
                 result = f8()
-                if (result * 0.9 < 21.279 < result * 1.1):
+                if (result * 0.85 < 21.279 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 9:
                 result = f9()
-                if (result * 0.9 < 10.47 < result * 1.1):
+                if (result * 0.85 < 10.47 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 10:
                 result = f10()
-                if (result * 0.9 < 23.715 < result * 1.1):
+                if (result * 0.85 < 23.715 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 11:
                 result = f11()
-                if (result * 0.9 < 22.158 < result * 1.1):
+                if (result * 0.85 < 22.158 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 12:
                 result = f12()
-                if (result * 0.9 < 24.258 < result * 1.1):
+                if (result * 0.85 < 24.258 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 13:
                 result = f13()
-                if (result * 0.9 < 1.012 < result * 1.1):
+                if (result * 0.85 < 1.012 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 14:
                 result = f14()
-                if (result * 0.9 < 0.559 < result * 1.1):
+                if (result * 0.85 < 0.559 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 15:
                 result = f15()
-                if (result * 0.9 < 0.121 < result * 1.1):
+                if (result * 0.85 < 0.121 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 16:
                 result = f16()
-                if (result * 0.9 < 2.349 < result * 1.1):
+                if (result * 0.85 < 2.349 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 17:
                 result = f17()
-                if (result * 0.9 < 21.908 < result * 1.1):
+                if (result * 0.85 < 21.908 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 18:
                 result = f18()
-                if (result * 0.9 < 0.903 < result * 1.1):
+                if (result * 0.85 < 0.903 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 19:
                 result = f19()
-                if (result * 0.9 < 0.897 < result * 1.1):
+                if (result * 0.85 < 0.897 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
 
-            return alert + "{:.3f}".format(result * 0.9) + Style.RESET_ALL + "\t-\t" + alert + "{:.3f}".format(
-                result) + Style.RESET_ALL + "\t+\t" + alert + "{:.3f}".format(result * 1.1)
+            return alert + "{:.3f}".format(result * 0.85) + Style.RESET_ALL + "\t-\t" + alert + "{:.3f}".format(
+                result) + Style.RESET_ALL + "\t+\t" + alert + "{:.3f}".format(result * 1.15)
 
 
         for i in range(1, 19 + 1):
@@ -1388,91 +1388,91 @@ class MainProgram:
 
             if numeration == 1:
                 result = f1()
-                if (result * 0.9 < 1.884 < result * 1.1):
+                if (result * 0.85 < 1.884 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 2:
                 result = f2()
-                if (result * 0.9 < 0.78 < result * 1.1):
+                if (result * 0.85 < 0.78 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 3:
                 result = f3()
-                if (result * 0.9 < 16.64 < result * 1.1):
+                if (result * 0.85 < 16.64 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 4:
                 result = f4()
-                if (result * 0.9 < 1.557 < result * 1.1):
+                if (result * 0.85 < 1.557 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 5:
                 result = f5()
-                if (result * 0.9 < 1.372 < result * 1.1):
+                if (result * 0.85 < 1.372 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 6:
                 result = f6()
-                if (result * 0.9 < 0.521 < result * 1.1):
+                if (result * 0.85 < 0.521 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 7:
                 result = f7()
-                if (result * 0.9 < 0.8 < result * 1.1):
+                if (result * 0.85 < 0.8 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 8:
                 result = f8()
-                if (result * 0.9 < 2.272 < result * 1.1):
+                if (result * 0.85 < 2.272 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 9:
                 result = f9()
-                if (result * 0.9 < 0.8 < result * 1.1):
+                if (result * 0.85 < 0.8 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 10:
                 result = f10()
-                if (result * 0.9 < 1.624 < result * 1.1):
+                if (result * 0.85 < 1.624 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 11:
                 result = f11()
-                if (result * 0.9 < 1.130 < result * 1.1):
+                if (result * 0.85 < 1.130 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 12:
                 result = f12()
-                if (result * 0.9 < 3.546 < result * 1.1):
+                if (result * 0.85 < 3.546 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 13:
                 result = f13()
-                if (result * 0.9 < 102.123 < result * 1.1):
+                if (result * 0.85 < 102.123 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 14:
                 result = f14()
-                if (result * 0.9 < 103.993 < result * 1.1):
+                if (result * 0.85 < 103.993 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
 
-            return alert + "{:.3f}".format(result * 0.9) + Style.RESET_ALL + "\t-\t" + alert + "{:.3f}".format(
-                result) + Style.RESET_ALL + "\t+\t" + alert + "{:.3f}".format(result * 1.1)
+            return alert + "{:.3f}".format(result * 0.85) + Style.RESET_ALL + "\t-\t" + alert + "{:.3f}".format(
+                result) + Style.RESET_ALL + "\t+\t" + alert + "{:.3f}".format(result * 1.15)
 
 
         for i in range(1, 14 + 1):
@@ -1596,127 +1596,127 @@ class MainProgram:
 
             if numeration == 1:
                 result = f1()
-                if (result * 0.9 < 1.4 < result * 1.1):
+                if (result * 0.85 < 1.4 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 2:
                 result = f2()
-                if (result * 0.9 < 4339.46 < result * 1.1):
+                if (result * 0.85 < 4339.46 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 3:
                 result = f3()
-                if (result * 0.9 < 5.057 < result * 1.1):
+                if (result * 0.85 < 5.057 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 4:
                 result = f4()
-                if (result * 0.9 < 0.48 < result * 1.1):
+                if (result * 0.85 < 0.48 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 5:
                 result = f5()
-                if (result * 0.9 < 5.148 < result * 1.1):
+                if (result * 0.85 < 5.148 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 6:
                 result = f6()
-                if (result * 0.9 < 1.587 < result * 1.1):
+                if (result * 0.85 < 1.587 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 7:
                 result = f7()
-                if (result * 0.9 < 0.988 < result * 1.1):
+                if (result * 0.85 < 0.988 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 8:
                 result = f8()
-                if (result * 0.9 < 1.378 < result * 1.1):
+                if (result * 0.85 < 1.378 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 9:
                 result = f9()
-                if (result * 0.9 < 1.02 < result * 1.1):
+                if (result * 0.85 < 1.02 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 10:
                 result = f10()
-                if (result * 0.9 < 8.117 < result * 1.1):
+                if (result * 0.85 < 8.117 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 11:
                 result = f11()
-                if (result * 0.9 < 1.71 < result * 1.1):
+                if (result * 0.85 < 1.71 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 12:
                 result = f12()
-                if (result * 0.9 < 1.051 < result * 1.1):
+                if (result * 0.85 < 1.051 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 13:
                 result = f13()
-                if (result * 0.9 < 1.32 < result * 1.1):
+                if (result * 0.85 < 1.32 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 14:
                 result = f14()
-                if (result * 0.9 < 1.129 < result * 1.1):
+                if (result * 0.85 < 1.129 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 15:
                 result = f15()
-                if (result * 0.9 < 2.717 < result * 1.1):
+                if (result * 0.85 < 2.717 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 16:
                 result = f16()
-                if (result * 0.9 < 129.163 < result * 1.1):
+                if (result * 0.85 < 129.163 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 17:
                 result = f17()
-                if (result * 0.9 < 131.718 < result * 1.1):
+                if (result * 0.85 < 131.718 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 18:
                 result = f18()
-                if (result * 0.9 < 1.266 < result * 1.1):
+                if (result * 0.85 < 1.266 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 19:
                 result = f19()
-                if (result * 0.9 < 5.4 < result * 1.1):
+                if (result * 0.85 < 5.4 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
             elif numeration == 20:
                 result = f20()
-                if (result * 0.9 < 1.13 < result * 1.1):
+                if (result * 0.85 < 1.13 < result * 1.15):
                     pass
                 else:
                     alert = Back.RED
 
-            return alert + "{:.3f}".format(result * 0.9) + Style.RESET_ALL + "\t-\t" + alert + "{:.3f}".format(
-                result) + Style.RESET_ALL + "\t+\t" + alert + "{:.3f}".format(result * 1.1)
+            return alert + "{:.3f}".format(result * 0.85) + Style.RESET_ALL + "\t-\t" + alert + "{:.3f}".format(
+                result) + Style.RESET_ALL + "\t+\t" + alert + "{:.3f}".format(result * 1.15)
 
 
         for i in range(1, 20 + 1):

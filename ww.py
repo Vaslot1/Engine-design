@@ -16,19 +16,19 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QPushButton, QSizePolicy, QTabWidget, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
+    QHBoxLayout, QHeaderView, QLabel, QLayout,
+    QLineEdit, QPushButton, QSizePolicy, QTabWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         if not mainWindow.objectName():
             mainWindow.setObjectName(u"mainWindow")
-        mainWindow.resize(1432, 929)
+        mainWindow.resize(1435, 929)
         self.tabWidget = QTabWidget(mainWindow)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setEnabled(True)
-        self.tabWidget.setGeometry(QRect(10, 10, 1411, 871))
+        self.tabWidget.setGeometry(QRect(10, 0, 1411, 871))
         font = QFont()
         font.setPointSize(14)
         self.tabWidget.setFont(font)
@@ -863,15 +863,12 @@ class Ui_mainWindow(object):
         self.tableWidget_2.setItem(14, 1, __qtablewidgetitem136)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
         self.tableWidget_2.setEnabled(False)
-        self.tableWidget_2.setGeometry(QRect(0, 110, 1391, 511))
+        self.tableWidget_2.setGeometry(QRect(0, 0, 1031, 511))
         self.tableWidget_2.setFont(font)
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(170)
-        self.label = QLabel(self.tab_2)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(0, 0, 911, 111))
         self.layoutWidget3 = QWidget(self.tab_2)
         self.layoutWidget3.setObjectName(u"layoutWidget3")
-        self.layoutWidget3.setGeometry(QRect(0, 630, 207, 36))
+        self.layoutWidget3.setGeometry(QRect(0, 510, 207, 36))
         self.horizontalLayout_4 = QHBoxLayout(self.layoutWidget3)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -884,6 +881,409 @@ class Ui_mainWindow(object):
         self.bt_calculate_table2.setObjectName(u"bt_calculate_table2")
 
         self.horizontalLayout_4.addWidget(self.bt_calculate_table2)
+
+        self.layoutWidget_2 = QWidget(self.tab_2)
+        self.layoutWidget_2.setObjectName(u"layoutWidget_2")
+        self.layoutWidget_2.setGeometry(QRect(1050, 0, 266, 762))
+        self.vl_variables_t2 = QVBoxLayout(self.layoutWidget_2)
+        self.vl_variables_t2.setObjectName(u"vl_variables_t2")
+        self.vl_variables_t2.setContentsMargins(0, 0, 0, 0)
+        self.hl_h_c = QHBoxLayout()
+        self.hl_h_c.setSpacing(6)
+        self.hl_h_c.setObjectName(u"hl_h_c")
+        self.hl_h_c.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.hl_h_c.setContentsMargins(2, -1, -1, -1)
+        self.lb_h_c = QLabel(self.layoutWidget_2)
+        self.lb_h_c.setObjectName(u"lb_h_c")
+        sizePolicy.setHeightForWidth(self.lb_h_c.sizePolicy().hasHeightForWidth())
+        self.lb_h_c.setSizePolicy(sizePolicy)
+
+        self.hl_h_c.addWidget(self.lb_h_c)
+
+        self.le_h_c = QLineEdit(self.layoutWidget_2)
+        self.le_h_c.setObjectName(u"le_h_c")
+        self.le_h_c.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_h_c.sizePolicy().hasHeightForWidth())
+        self.le_h_c.setSizePolicy(sizePolicy1)
+        self.le_h_c.setMinimumSize(QSize(50, 32))
+        self.le_h_c.setSizeIncrement(QSize(0, 0))
+        self.le_h_c.setBaseSize(QSize(0, 0))
+        self.le_h_c.setLayoutDirection(Qt.LeftToRight)
+        self.le_h_c.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.hl_h_c.addWidget(self.le_h_c)
+
+
+        self.vl_variables_t2.addLayout(self.hl_h_c)
+
+        self.hl_h_p_2 = QHBoxLayout()
+        self.hl_h_p_2.setObjectName(u"hl_h_p_2")
+        self.hl_h_p_2.setContentsMargins(0, -1, -1, -1)
+        self.lb_h_p_2 = QLabel(self.layoutWidget_2)
+        self.lb_h_p_2.setObjectName(u"lb_h_p_2")
+        sizePolicy.setHeightForWidth(self.lb_h_p_2.sizePolicy().hasHeightForWidth())
+        self.lb_h_p_2.setSizePolicy(sizePolicy)
+
+        self.hl_h_p_2.addWidget(self.lb_h_p_2)
+
+        self.le_h_p_2 = QLineEdit(self.layoutWidget_2)
+        self.le_h_p_2.setObjectName(u"le_h_p_2")
+        self.le_h_p_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_h_p_2.sizePolicy().hasHeightForWidth())
+        self.le_h_p_2.setSizePolicy(sizePolicy1)
+
+        self.hl_h_p_2.addWidget(self.le_h_p_2)
+
+
+        self.vl_variables_t2.addLayout(self.hl_h_p_2)
+
+        self.hl_h_sh = QHBoxLayout()
+        self.hl_h_sh.setObjectName(u"hl_h_sh")
+        self.hl_h_sh.setContentsMargins(-1, -1, 6, -1)
+        self.lb_h_sh = QLabel(self.layoutWidget_2)
+        self.lb_h_sh.setObjectName(u"lb_h_sh")
+        sizePolicy.setHeightForWidth(self.lb_h_sh.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh.setSizePolicy(sizePolicy)
+
+        self.hl_h_sh.addWidget(self.lb_h_sh)
+
+        self.le_h_sh = QLineEdit(self.layoutWidget_2)
+        self.le_h_sh.setObjectName(u"le_h_sh")
+        self.le_h_sh.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_h_sh.sizePolicy().hasHeightForWidth())
+        self.le_h_sh.setSizePolicy(sizePolicy1)
+
+        self.hl_h_sh.addWidget(self.le_h_sh)
+
+
+        self.vl_variables_t2.addLayout(self.hl_h_sh)
+
+        self.hl_h_sh_shtrih = QHBoxLayout()
+        self.hl_h_sh_shtrih.setSpacing(0)
+        self.hl_h_sh_shtrih.setObjectName(u"hl_h_sh_shtrih")
+        self.hl_h_sh_shtrih.setContentsMargins(-1, -1, 6, -1)
+        self.lb_h_sh_shtrih = QLabel(self.layoutWidget_2)
+        self.lb_h_sh_shtrih.setObjectName(u"lb_h_sh_shtrih")
+        sizePolicy.setHeightForWidth(self.lb_h_sh_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh_shtrih.setSizePolicy(sizePolicy)
+
+        self.hl_h_sh_shtrih.addWidget(self.lb_h_sh_shtrih)
+
+        self.le_h_sh_shtrih = QLineEdit(self.layoutWidget_2)
+        self.le_h_sh_shtrih.setObjectName(u"le_h_sh_shtrih")
+        self.le_h_sh_shtrih.setEnabled(False)
+        sizePolicy2.setHeightForWidth(self.le_h_sh_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_h_sh_shtrih.setSizePolicy(sizePolicy2)
+        self.le_h_sh_shtrih.setMinimumSize(QSize(20, 20))
+        self.le_h_sh_shtrih.setSizeIncrement(QSize(100, 0))
+
+        self.hl_h_sh_shtrih.addWidget(self.le_h_sh_shtrih)
+
+
+        self.vl_variables_t2.addLayout(self.hl_h_sh_shtrih)
+
+        self.hl_b_1_r = QHBoxLayout()
+        self.hl_b_1_r.setObjectName(u"hl_b_1_r")
+        self.lb_b_1_r = QLabel(self.layoutWidget_2)
+        self.lb_b_1_r.setObjectName(u"lb_b_1_r")
+        sizePolicy.setHeightForWidth(self.lb_b_1_r.sizePolicy().hasHeightForWidth())
+        self.lb_b_1_r.setSizePolicy(sizePolicy)
+
+        self.hl_b_1_r.addWidget(self.lb_b_1_r)
+
+        self.le_b_1_r = QLineEdit(self.layoutWidget_2)
+        self.le_b_1_r.setObjectName(u"le_b_1_r")
+        self.le_b_1_r.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_b_1_r.sizePolicy().hasHeightForWidth())
+        self.le_b_1_r.setSizePolicy(sizePolicy1)
+        self.le_b_1_r.setLayoutDirection(Qt.LeftToRight)
+
+        self.hl_b_1_r.addWidget(self.le_b_1_r)
+
+
+        self.vl_variables_t2.addLayout(self.hl_b_1_r)
+
+        self.hl_b_2_r = QHBoxLayout()
+        self.hl_b_2_r.setObjectName(u"hl_b_2_r")
+        self.hl_b_2_r.setContentsMargins(0, -1, -1, -1)
+        self.lb_b_2_r = QLabel(self.layoutWidget_2)
+        self.lb_b_2_r.setObjectName(u"lb_b_2_r")
+        sizePolicy.setHeightForWidth(self.lb_b_2_r.sizePolicy().hasHeightForWidth())
+        self.lb_b_2_r.setSizePolicy(sizePolicy)
+        self.lb_b_2_r.setFrameShape(QFrame.NoFrame)
+
+        self.hl_b_2_r.addWidget(self.lb_b_2_r)
+
+        self.le_b_2_r = QLineEdit(self.layoutWidget_2)
+        self.le_b_2_r.setObjectName(u"le_b_2_r")
+        self.le_b_2_r.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_b_2_r.sizePolicy().hasHeightForWidth())
+        self.le_b_2_r.setSizePolicy(sizePolicy1)
+
+        self.hl_b_2_r.addWidget(self.le_b_2_r)
+
+
+        self.vl_variables_t2.addLayout(self.hl_b_2_r)
+
+        self.hl_h_1 = QHBoxLayout()
+        self.hl_h_1.setObjectName(u"hl_h_1")
+        self.lb_h_1 = QLabel(self.layoutWidget_2)
+        self.lb_h_1.setObjectName(u"lb_h_1")
+        sizePolicy.setHeightForWidth(self.lb_h_1.sizePolicy().hasHeightForWidth())
+        self.lb_h_1.setSizePolicy(sizePolicy)
+
+        self.hl_h_1.addWidget(self.lb_h_1)
+
+        self.le_h_1 = QLineEdit(self.layoutWidget_2)
+        self.le_h_1.setObjectName(u"le_h_1")
+        self.le_h_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_h_1.sizePolicy().hasHeightForWidth())
+        self.le_h_1.setSizePolicy(sizePolicy1)
+
+        self.hl_h_1.addWidget(self.le_h_1)
+
+
+        self.vl_variables_t2.addLayout(self.hl_h_1)
+
+        self.hl_q_c = QHBoxLayout()
+        self.hl_q_c.setObjectName(u"hl_q_c")
+        self.lb_q_c = QLabel(self.layoutWidget_2)
+        self.lb_q_c.setObjectName(u"lb_q_c")
+        sizePolicy.setHeightForWidth(self.lb_q_c.sizePolicy().hasHeightForWidth())
+        self.lb_q_c.setSizePolicy(sizePolicy)
+
+        self.hl_q_c.addWidget(self.lb_q_c)
+
+        self.le_q_c = QLineEdit(self.layoutWidget_2)
+        self.le_q_c.setObjectName(u"le_q_c")
+        self.le_q_c.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_q_c.sizePolicy().hasHeightForWidth())
+        self.le_q_c.setSizePolicy(sizePolicy1)
+
+        self.hl_q_c.addWidget(self.le_q_c)
+
+
+        self.vl_variables_t2.addLayout(self.hl_q_c)
+
+        self.hl_r_c = QHBoxLayout()
+        self.hl_r_c.setObjectName(u"hl_r_c")
+        self.lb_r_c = QLabel(self.layoutWidget_2)
+        self.lb_r_c.setObjectName(u"lb_r_c")
+        sizePolicy.setHeightForWidth(self.lb_r_c.sizePolicy().hasHeightForWidth())
+        self.lb_r_c.setSizePolicy(sizePolicy)
+
+        self.hl_r_c.addWidget(self.lb_r_c)
+
+        self.le_r_c = QLineEdit(self.layoutWidget_2)
+        self.le_r_c.setObjectName(u"le_r_c")
+        self.le_r_c.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_r_c.sizePolicy().hasHeightForWidth())
+        self.le_r_c.setSizePolicy(sizePolicy1)
+
+        self.hl_r_c.addWidget(self.le_r_c)
+
+
+        self.vl_variables_t2.addLayout(self.hl_r_c)
+
+        self.hl_r_2 = QHBoxLayout()
+        self.hl_r_2.setObjectName(u"hl_r_2")
+        self.lb_r_2 = QLabel(self.layoutWidget_2)
+        self.lb_r_2.setObjectName(u"lb_r_2")
+        sizePolicy.setHeightForWidth(self.lb_r_2.sizePolicy().hasHeightForWidth())
+        self.lb_r_2.setSizePolicy(sizePolicy)
+
+        self.hl_r_2.addWidget(self.lb_r_2)
+
+        self.le_r_2 = QLineEdit(self.layoutWidget_2)
+        self.le_r_2.setObjectName(u"le_r_2")
+        self.le_r_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_r_2.sizePolicy().hasHeightForWidth())
+        self.le_r_2.setSizePolicy(sizePolicy1)
+
+        self.hl_r_2.addWidget(self.le_r_2)
+
+
+        self.vl_variables_t2.addLayout(self.hl_r_2)
+
+        self.hl_h_0 = QHBoxLayout()
+        self.hl_h_0.setObjectName(u"hl_h_0")
+        self.lb_h_0 = QLabel(self.layoutWidget_2)
+        self.lb_h_0.setObjectName(u"lb_h_0")
+        sizePolicy.setHeightForWidth(self.lb_h_0.sizePolicy().hasHeightForWidth())
+        self.lb_h_0.setSizePolicy(sizePolicy)
+
+        self.hl_h_0.addWidget(self.lb_h_0)
+
+        self.le_h_0 = QLineEdit(self.layoutWidget_2)
+        self.le_h_0.setObjectName(u"le_h_0")
+        self.le_h_0.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_h_0.sizePolicy().hasHeightForWidth())
+        self.le_h_0.setSizePolicy(sizePolicy1)
+
+        self.hl_h_0.addWidget(self.le_h_0)
+
+
+        self.vl_variables_t2.addLayout(self.hl_h_0)
+
+        self.hl_b_sh_2 = QHBoxLayout()
+        self.hl_b_sh_2.setObjectName(u"hl_b_sh_2")
+        self.lb_b_sh_2 = QLabel(self.layoutWidget_2)
+        self.lb_b_sh_2.setObjectName(u"lb_b_sh_2")
+        sizePolicy.setHeightForWidth(self.lb_b_sh_2.sizePolicy().hasHeightForWidth())
+        self.lb_b_sh_2.setSizePolicy(sizePolicy)
+
+        self.hl_b_sh_2.addWidget(self.lb_b_sh_2)
+
+        self.le_b_sh_2 = QLineEdit(self.layoutWidget_2)
+        self.le_b_sh_2.setObjectName(u"le_b_sh_2")
+        self.le_b_sh_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_b_sh_2.sizePolicy().hasHeightForWidth())
+        self.le_b_sh_2.setSizePolicy(sizePolicy1)
+
+        self.hl_b_sh_2.addWidget(self.le_b_sh_2)
+
+
+        self.vl_variables_t2.addLayout(self.hl_b_sh_2)
+
+        self.hl_Lamda_p_2 = QHBoxLayout()
+        self.hl_Lamda_p_2.setObjectName(u"hl_Lamda_p_2")
+        self.lb_Lamda_p_2 = QLabel(self.layoutWidget_2)
+        self.lb_Lamda_p_2.setObjectName(u"lb_Lamda_p_2")
+        sizePolicy.setHeightForWidth(self.lb_Lamda_p_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_2.setSizePolicy(sizePolicy)
+
+        self.hl_Lamda_p_2.addWidget(self.lb_Lamda_p_2)
+
+        self.le_Lamda_p_2 = QLineEdit(self.layoutWidget_2)
+        self.le_Lamda_p_2.setObjectName(u"le_Lamda_p_2")
+        self.le_Lamda_p_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Lamda_p_2.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_p_2.setSizePolicy(sizePolicy1)
+
+        self.hl_Lamda_p_2.addWidget(self.le_Lamda_p_2)
+
+
+        self.vl_variables_t2.addLayout(self.hl_Lamda_p_2)
+
+        self.hl_Lamda_l_2 = QHBoxLayout()
+        self.hl_Lamda_l_2.setObjectName(u"hl_Lamda_l_2")
+        self.lb_Lamda_l_2 = QLabel(self.layoutWidget_2)
+        self.lb_Lamda_l_2.setObjectName(u"lb_Lamda_l_2")
+        sizePolicy.setHeightForWidth(self.lb_Lamda_l_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_l_2.setSizePolicy(sizePolicy)
+
+        self.hl_Lamda_l_2.addWidget(self.lb_Lamda_l_2)
+
+        self.le_Lamda_l_2 = QLineEdit(self.layoutWidget_2)
+        self.le_Lamda_l_2.setObjectName(u"le_Lamda_l_2")
+        self.le_Lamda_l_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Lamda_l_2.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_l_2.setSizePolicy(sizePolicy1)
+
+        self.hl_Lamda_l_2.addWidget(self.le_Lamda_l_2)
+
+
+        self.vl_variables_t2.addLayout(self.hl_Lamda_l_2)
+
+        self.hl_Lamda_d_2 = QHBoxLayout()
+        self.hl_Lamda_d_2.setObjectName(u"hl_Lamda_d_2")
+        self.lb_Lamda_d_2 = QLabel(self.layoutWidget_2)
+        self.lb_Lamda_d_2.setObjectName(u"lb_Lamda_d_2")
+        sizePolicy.setHeightForWidth(self.lb_Lamda_d_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_d_2.setSizePolicy(sizePolicy)
+
+        self.hl_Lamda_d_2.addWidget(self.lb_Lamda_d_2)
+
+        self.le_Lamda_d_2 = QLineEdit(self.layoutWidget_2)
+        self.le_Lamda_d_2.setObjectName(u"le_Lamda_d_2")
+        self.le_Lamda_d_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Lamda_d_2.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_d_2.setSizePolicy(sizePolicy1)
+
+        self.hl_Lamda_d_2.addWidget(self.le_Lamda_d_2)
+
+
+        self.vl_variables_t2.addLayout(self.hl_Lamda_d_2)
+
+        self.hl_X_2_shtrih = QHBoxLayout()
+        self.hl_X_2_shtrih.setObjectName(u"hl_X_2_shtrih")
+        self.lb_X_2_shtrih = QLabel(self.layoutWidget_2)
+        self.lb_X_2_shtrih.setObjectName(u"lb_X_2_shtrih")
+        sizePolicy.setHeightForWidth(self.lb_X_2_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_X_2_shtrih.setSizePolicy(sizePolicy)
+
+        self.hl_X_2_shtrih.addWidget(self.lb_X_2_shtrih)
+
+        self.le_X_2_shtrih = QLineEdit(self.layoutWidget_2)
+        self.le_X_2_shtrih.setObjectName(u"le_X_2_shtrih")
+        self.le_X_2_shtrih.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_X_2_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_X_2_shtrih.setSizePolicy(sizePolicy1)
+
+        self.hl_X_2_shtrih.addWidget(self.le_X_2_shtrih)
+
+
+        self.vl_variables_t2.addLayout(self.hl_X_2_shtrih)
+
+        self.hl_x_1_2_p = QHBoxLayout()
+        self.hl_x_1_2_p.setObjectName(u"hl_x_1_2_p")
+        self.lb_x_1_2_p = QLabel(self.layoutWidget_2)
+        self.lb_x_1_2_p.setObjectName(u"lb_x_1_2_p")
+        sizePolicy.setHeightForWidth(self.lb_x_1_2_p.sizePolicy().hasHeightForWidth())
+        self.lb_x_1_2_p.setSizePolicy(sizePolicy)
+
+        self.hl_x_1_2_p.addWidget(self.lb_x_1_2_p)
+
+        self.le_x_1_2_p = QLineEdit(self.layoutWidget_2)
+        self.le_x_1_2_p.setObjectName(u"le_x_1_2_p")
+        self.le_x_1_2_p.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_x_1_2_p.sizePolicy().hasHeightForWidth())
+        self.le_x_1_2_p.setSizePolicy(sizePolicy1)
+
+        self.hl_x_1_2_p.addWidget(self.le_x_1_2_p)
+
+
+        self.vl_variables_t2.addLayout(self.hl_x_1_2_p)
+
+        self.hl_c_1_p = QHBoxLayout()
+        self.hl_c_1_p.setObjectName(u"hl_c_1_p")
+        self.lb_c_1_p = QLabel(self.layoutWidget_2)
+        self.lb_c_1_p.setObjectName(u"lb_c_1_p")
+        sizePolicy.setHeightForWidth(self.lb_c_1_p.sizePolicy().hasHeightForWidth())
+        self.lb_c_1_p.setSizePolicy(sizePolicy)
+
+        self.hl_c_1_p.addWidget(self.lb_c_1_p)
+
+        self.le_c_1_p = QLineEdit(self.layoutWidget_2)
+        self.le_c_1_p.setObjectName(u"le_c_1_p")
+        self.le_c_1_p.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_c_1_p.sizePolicy().hasHeightForWidth())
+        self.le_c_1_p.setSizePolicy(sizePolicy1)
+
+        self.hl_c_1_p.addWidget(self.le_c_1_p)
+
+
+        self.vl_variables_t2.addLayout(self.hl_c_1_p)
+
+        self.hl_X_1 = QHBoxLayout()
+        self.hl_X_1.setObjectName(u"hl_X_1")
+        self.lb_X_1 = QLabel(self.layoutWidget_2)
+        self.lb_X_1.setObjectName(u"lb_X_1")
+        sizePolicy.setHeightForWidth(self.lb_X_1.sizePolicy().hasHeightForWidth())
+        self.lb_X_1.setSizePolicy(sizePolicy)
+
+        self.hl_X_1.addWidget(self.lb_X_1)
+
+        self.le_X_1 = QLineEdit(self.layoutWidget_2)
+        self.le_X_1.setObjectName(u"le_X_1")
+        self.le_X_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_X_1.sizePolicy().hasHeightForWidth())
+        self.le_X_1.setSizePolicy(sizePolicy1)
+
+        self.hl_X_1.addWidget(self.le_X_1)
+
+
+        self.vl_variables_t2.addLayout(self.hl_X_1)
 
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
@@ -1113,12 +1513,12 @@ class Ui_mainWindow(object):
         __qtablewidgetitem212.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
         self.tableWidget_3.setItem(20, 1, __qtablewidgetitem212)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
-        self.tableWidget_3.setGeometry(QRect(0, 90, 1391, 681))
+        self.tableWidget_3.setGeometry(QRect(0, 0, 1111, 681))
         self.tableWidget_3.setFont(font)
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(170)
         self.layoutWidget4 = QWidget(self.tab_3)
         self.layoutWidget4.setObjectName(u"layoutWidget4")
-        self.layoutWidget4.setGeometry(QRect(0, 770, 369, 62))
+        self.layoutWidget4.setGeometry(QRect(0, 690, 369, 62))
         self.horizontalLayout = QHBoxLayout(self.layoutWidget4)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -1137,6 +1537,424 @@ class Ui_mainWindow(object):
         self.bt_show_chart_table3.setEnabled(False)
 
         self.horizontalLayout.addWidget(self.bt_show_chart_table3)
+
+        self.layoutWidget_3 = QWidget(self.tab_3)
+        self.layoutWidget_3.setObjectName(u"layoutWidget_3")
+        self.layoutWidget_3.setGeometry(QRect(1120, 0, 266, 802))
+        self.vl_variables_t3 = QVBoxLayout(self.layoutWidget_3)
+        self.vl_variables_t3.setObjectName(u"vl_variables_t3")
+        self.vl_variables_t3.setContentsMargins(0, 0, 0, 0)
+        self.hl_C_N = QHBoxLayout()
+        self.hl_C_N.setSpacing(6)
+        self.hl_C_N.setObjectName(u"hl_C_N")
+        self.hl_C_N.setContentsMargins(2, -1, -1, -1)
+        self.lb_C_N = QLabel(self.layoutWidget_3)
+        self.lb_C_N.setObjectName(u"lb_C_N")
+        sizePolicy.setHeightForWidth(self.lb_C_N.sizePolicy().hasHeightForWidth())
+        self.lb_C_N.setSizePolicy(sizePolicy)
+
+        self.hl_C_N.addWidget(self.lb_C_N)
+
+        self.le_C_N = QLineEdit(self.layoutWidget_3)
+        self.le_C_N.setObjectName(u"le_C_N")
+        self.le_C_N.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_C_N.sizePolicy().hasHeightForWidth())
+        self.le_C_N.setSizePolicy(sizePolicy1)
+        self.le_C_N.setMinimumSize(QSize(100, 32))
+
+        self.hl_C_N.addWidget(self.le_C_N)
+
+
+        self.vl_variables_t3.addLayout(self.hl_C_N)
+
+        self.hl_k_y_1 = QHBoxLayout()
+        self.hl_k_y_1.setObjectName(u"hl_k_y_1")
+        self.hl_k_y_1.setContentsMargins(0, -1, -1, -1)
+        self.lb_k_y_1 = QLabel(self.layoutWidget_3)
+        self.lb_k_y_1.setObjectName(u"lb_k_y_1")
+        sizePolicy.setHeightForWidth(self.lb_k_y_1.sizePolicy().hasHeightForWidth())
+        self.lb_k_y_1.setSizePolicy(sizePolicy)
+
+        self.hl_k_y_1.addWidget(self.lb_k_y_1)
+
+        self.le_k_y_1 = QLineEdit(self.layoutWidget_3)
+        self.le_k_y_1.setObjectName(u"le_k_y_1")
+        self.le_k_y_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_k_y_1.sizePolicy().hasHeightForWidth())
+        self.le_k_y_1.setSizePolicy(sizePolicy1)
+
+        self.hl_k_y_1.addWidget(self.le_k_y_1)
+
+
+        self.vl_variables_t3.addLayout(self.hl_k_y_1)
+
+        self.hl_u_p = QHBoxLayout()
+        self.hl_u_p.setObjectName(u"hl_u_p")
+        self.hl_u_p.setContentsMargins(-1, -1, 6, -1)
+        self.lb_u_p = QLabel(self.layoutWidget_3)
+        self.lb_u_p.setObjectName(u"lb_u_p")
+        sizePolicy.setHeightForWidth(self.lb_u_p.sizePolicy().hasHeightForWidth())
+        self.lb_u_p.setSizePolicy(sizePolicy)
+
+        self.hl_u_p.addWidget(self.lb_u_p)
+
+        self.le_u_p = QLineEdit(self.layoutWidget_3)
+        self.le_u_p.setObjectName(u"le_u_p")
+        self.le_u_p.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_u_p.sizePolicy().hasHeightForWidth())
+        self.le_u_p.setSizePolicy(sizePolicy1)
+
+        self.hl_u_p.addWidget(self.le_u_p)
+
+
+        self.vl_variables_t3.addLayout(self.hl_u_p)
+
+        self.hl_k_ob = QHBoxLayout()
+        self.hl_k_ob.setSpacing(0)
+        self.hl_k_ob.setObjectName(u"hl_k_ob")
+        self.hl_k_ob.setContentsMargins(-1, -1, 6, -1)
+        self.lb_k_ob = QLabel(self.layoutWidget_3)
+        self.lb_k_ob.setObjectName(u"lb_k_ob")
+        sizePolicy.setHeightForWidth(self.lb_k_ob.sizePolicy().hasHeightForWidth())
+        self.lb_k_ob.setSizePolicy(sizePolicy)
+
+        self.hl_k_ob.addWidget(self.lb_k_ob)
+
+        self.le_k_ob = QLineEdit(self.layoutWidget_3)
+        self.le_k_ob.setObjectName(u"le_k_ob")
+        self.le_k_ob.setEnabled(False)
+        sizePolicy2.setHeightForWidth(self.le_k_ob.sizePolicy().hasHeightForWidth())
+        self.le_k_ob.setSizePolicy(sizePolicy2)
+        self.le_k_ob.setMinimumSize(QSize(20, 20))
+        self.le_k_ob.setSizeIncrement(QSize(100, 0))
+
+        self.hl_k_ob.addWidget(self.le_k_ob)
+
+
+        self.vl_variables_t3.addLayout(self.hl_k_ob)
+
+        self.hl_Z_1 = QHBoxLayout()
+        self.hl_Z_1.setObjectName(u"hl_Z_1")
+        self.lb_Z_1 = QLabel(self.layoutWidget_3)
+        self.lb_Z_1.setObjectName(u"lb_Z_1")
+        sizePolicy.setHeightForWidth(self.lb_Z_1.sizePolicy().hasHeightForWidth())
+        self.lb_Z_1.setSizePolicy(sizePolicy)
+
+        self.hl_Z_1.addWidget(self.lb_Z_1)
+
+        self.le_Z_1 = QLineEdit(self.layoutWidget_3)
+        self.le_Z_1.setObjectName(u"le_Z_1")
+        self.le_Z_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Z_1.sizePolicy().hasHeightForWidth())
+        self.le_Z_1.setSizePolicy(sizePolicy1)
+        self.le_Z_1.setLayoutDirection(Qt.LeftToRight)
+
+        self.hl_Z_1.addWidget(self.le_Z_1)
+
+
+        self.vl_variables_t3.addLayout(self.hl_Z_1)
+
+        self.hl_Z_2 = QHBoxLayout()
+        self.hl_Z_2.setObjectName(u"hl_Z_2")
+        self.hl_Z_2.setContentsMargins(0, -1, -1, -1)
+        self.lb_Z_2 = QLabel(self.layoutWidget_3)
+        self.lb_Z_2.setObjectName(u"lb_Z_2")
+        sizePolicy.setHeightForWidth(self.lb_Z_2.sizePolicy().hasHeightForWidth())
+        self.lb_Z_2.setSizePolicy(sizePolicy)
+        self.lb_Z_2.setFrameShape(QFrame.NoFrame)
+
+        self.hl_Z_2.addWidget(self.lb_Z_2)
+
+        self.le_Z_2 = QLineEdit(self.layoutWidget_3)
+        self.le_Z_2.setObjectName(u"le_Z_2")
+        self.le_Z_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Z_2.sizePolicy().hasHeightForWidth())
+        self.le_Z_2.setSizePolicy(sizePolicy1)
+
+        self.hl_Z_2.addWidget(self.le_Z_2)
+
+
+        self.vl_variables_t3.addLayout(self.hl_Z_2)
+
+        self.hl_sigma = QHBoxLayout()
+        self.hl_sigma.setObjectName(u"hl_sigma")
+        self.lb_sigma = QLabel(self.layoutWidget_3)
+        self.lb_sigma.setObjectName(u"lb_sigma")
+        sizePolicy.setHeightForWidth(self.lb_sigma.sizePolicy().hasHeightForWidth())
+        self.lb_sigma.setSizePolicy(sizePolicy)
+
+        self.hl_sigma.addWidget(self.lb_sigma)
+
+        self.le_sigma = QLineEdit(self.layoutWidget_3)
+        self.le_sigma.setObjectName(u"le_sigma")
+        self.le_sigma.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_sigma.sizePolicy().hasHeightForWidth())
+        self.le_sigma.setSizePolicy(sizePolicy1)
+
+        self.hl_sigma.addWidget(self.le_sigma)
+
+
+        self.vl_variables_t3.addLayout(self.hl_sigma)
+
+        self.hl_t_z_1 = QHBoxLayout()
+        self.hl_t_z_1.setObjectName(u"hl_t_z_1")
+        self.lb_t_z_1 = QLabel(self.layoutWidget_3)
+        self.lb_t_z_1.setObjectName(u"lb_t_z_1")
+        sizePolicy.setHeightForWidth(self.lb_t_z_1.sizePolicy().hasHeightForWidth())
+        self.lb_t_z_1.setSizePolicy(sizePolicy)
+
+        self.hl_t_z_1.addWidget(self.lb_t_z_1)
+
+        self.le_t_z_1 = QLineEdit(self.layoutWidget_3)
+        self.le_t_z_1.setObjectName(u"le_t_z_1")
+        self.le_t_z_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_t_z_1.sizePolicy().hasHeightForWidth())
+        self.le_t_z_1.setSizePolicy(sizePolicy1)
+
+        self.hl_t_z_1.addWidget(self.le_t_z_1)
+
+
+        self.vl_variables_t3.addLayout(self.hl_t_z_1)
+
+        self.hl_b_sh = QHBoxLayout()
+        self.hl_b_sh.setObjectName(u"hl_b_sh")
+        self.lb_b_sh = QLabel(self.layoutWidget_3)
+        self.lb_b_sh.setObjectName(u"lb_b_sh")
+        sizePolicy.setHeightForWidth(self.lb_b_sh.sizePolicy().hasHeightForWidth())
+        self.lb_b_sh.setSizePolicy(sizePolicy)
+
+        self.hl_b_sh.addWidget(self.lb_b_sh)
+
+        self.le_b_sh = QLineEdit(self.layoutWidget_3)
+        self.le_b_sh.setObjectName(u"le_b_sh")
+        self.le_b_sh.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_b_sh.sizePolicy().hasHeightForWidth())
+        self.le_b_sh.setSizePolicy(sizePolicy1)
+
+        self.hl_b_sh.addWidget(self.le_b_sh)
+
+
+        self.vl_variables_t3.addLayout(self.hl_b_sh)
+
+        self.hl_h_sh_r = QHBoxLayout()
+        self.hl_h_sh_r.setObjectName(u"hl_h_sh_r")
+        self.lb_h_sh_r = QLabel(self.layoutWidget_3)
+        self.lb_h_sh_r.setObjectName(u"lb_h_sh_r")
+        sizePolicy.setHeightForWidth(self.lb_h_sh_r.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh_r.setSizePolicy(sizePolicy)
+
+        self.hl_h_sh_r.addWidget(self.lb_h_sh_r)
+
+        self.le_h_sh_r = QLineEdit(self.layoutWidget_3)
+        self.le_h_sh_r.setObjectName(u"le_h_sh_r")
+        self.le_h_sh_r.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_h_sh_r.sizePolicy().hasHeightForWidth())
+        self.le_h_sh_r.setSizePolicy(sizePolicy1)
+
+        self.hl_h_sh_r.addWidget(self.le_h_sh_r)
+
+
+        self.vl_variables_t3.addLayout(self.hl_h_sh_r)
+
+        self.hl_Lamda_p_1 = QHBoxLayout()
+        self.hl_Lamda_p_1.setObjectName(u"hl_Lamda_p_1")
+        self.lb_Lamda_p_1 = QLabel(self.layoutWidget_3)
+        self.lb_Lamda_p_1.setObjectName(u"lb_Lamda_p_1")
+        sizePolicy.setHeightForWidth(self.lb_Lamda_p_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_1.setSizePolicy(sizePolicy)
+
+        self.hl_Lamda_p_1.addWidget(self.lb_Lamda_p_1)
+
+        self.le_Lamda_p_1 = QLineEdit(self.layoutWidget_3)
+        self.le_Lamda_p_1.setObjectName(u"le_Lamda_p_1")
+        self.le_Lamda_p_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Lamda_p_1.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_p_1.setSizePolicy(sizePolicy1)
+
+        self.hl_Lamda_p_1.addWidget(self.le_Lamda_p_1)
+
+
+        self.vl_variables_t3.addLayout(self.hl_Lamda_p_1)
+
+        self.hl_Lamda_d_1 = QHBoxLayout()
+        self.hl_Lamda_d_1.setObjectName(u"hl_Lamda_d_1")
+        self.lb_Lamda_d_1 = QLabel(self.layoutWidget_3)
+        self.lb_Lamda_d_1.setObjectName(u"lb_Lamda_d_1")
+        sizePolicy.setHeightForWidth(self.lb_Lamda_d_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_d_1.setSizePolicy(sizePolicy)
+
+        self.hl_Lamda_d_1.addWidget(self.lb_Lamda_d_1)
+
+        self.le_Lamda_d_1 = QLineEdit(self.layoutWidget_3)
+        self.le_Lamda_d_1.setObjectName(u"le_Lamda_d_1")
+        self.le_Lamda_d_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Lamda_d_1.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_d_1.setSizePolicy(sizePolicy1)
+
+        self.hl_Lamda_d_1.addWidget(self.le_Lamda_d_1)
+
+
+        self.vl_variables_t3.addLayout(self.hl_Lamda_d_1)
+
+        self.hl_Lamda_l_1 = QHBoxLayout()
+        self.hl_Lamda_l_1.setObjectName(u"hl_Lamda_l_1")
+        self.lb_Lamda_l_1 = QLabel(self.layoutWidget_3)
+        self.lb_Lamda_l_1.setObjectName(u"lb_Lamda_l_1")
+        sizePolicy.setHeightForWidth(self.lb_Lamda_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_l_1.setSizePolicy(sizePolicy)
+
+        self.hl_Lamda_l_1.addWidget(self.lb_Lamda_l_1)
+
+        self.le_Lamda_l_1 = QLineEdit(self.layoutWidget_3)
+        self.le_Lamda_l_1.setObjectName(u"le_Lamda_l_1")
+        self.le_Lamda_l_1.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Lamda_l_1.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_l_1.setSizePolicy(sizePolicy1)
+
+        self.hl_Lamda_l_1.addWidget(self.le_Lamda_l_1)
+
+
+        self.vl_variables_t3.addLayout(self.hl_Lamda_l_1)
+
+        self.hl_t_z_2 = QHBoxLayout()
+        self.hl_t_z_2.setObjectName(u"hl_t_z_2")
+        self.lb_t_z_2 = QLabel(self.layoutWidget_3)
+        self.lb_t_z_2.setObjectName(u"lb_t_z_2")
+        sizePolicy.setHeightForWidth(self.lb_t_z_2.sizePolicy().hasHeightForWidth())
+        self.lb_t_z_2.setSizePolicy(sizePolicy)
+
+        self.hl_t_z_2.addWidget(self.lb_t_z_2)
+
+        self.le_t_z_2 = QLineEdit(self.layoutWidget_3)
+        self.le_t_z_2.setObjectName(u"le_t_z_2")
+        self.le_t_z_2.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_t_z_2.sizePolicy().hasHeightForWidth())
+        self.le_t_z_2.setSizePolicy(sizePolicy1)
+
+        self.hl_t_z_2.addWidget(self.le_t_z_2)
+
+
+        self.vl_variables_t3.addLayout(self.hl_t_z_2)
+
+        self.hl_r_2_Ksi_shtrih = QHBoxLayout()
+        self.hl_r_2_Ksi_shtrih.setObjectName(u"hl_r_2_Ksi_shtrih")
+        self.lb_r_2_Ksi_shtrih = QLabel(self.layoutWidget_3)
+        self.lb_r_2_Ksi_shtrih.setObjectName(u"lb_r_2_Ksi_shtrih")
+        sizePolicy.setHeightForWidth(self.lb_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_r_2_Ksi_shtrih.setSizePolicy(sizePolicy)
+
+        self.hl_r_2_Ksi_shtrih.addWidget(self.lb_r_2_Ksi_shtrih)
+
+        self.le_r_2_Ksi_shtrih = QLineEdit(self.layoutWidget_3)
+        self.le_r_2_Ksi_shtrih.setObjectName(u"le_r_2_Ksi_shtrih")
+        self.le_r_2_Ksi_shtrih.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_r_2_Ksi_shtrih.setSizePolicy(sizePolicy1)
+
+        self.hl_r_2_Ksi_shtrih.addWidget(self.le_r_2_Ksi_shtrih)
+
+
+        self.vl_variables_t3.addLayout(self.hl_r_2_Ksi_shtrih)
+
+        self.hl_I_1_p = QHBoxLayout()
+        self.hl_I_1_p.setObjectName(u"hl_I_1_p")
+        self.lb_I_1_p = QLabel(self.layoutWidget_3)
+        self.lb_I_1_p.setObjectName(u"lb_I_1_p")
+        sizePolicy.setHeightForWidth(self.lb_I_1_p.sizePolicy().hasHeightForWidth())
+        self.lb_I_1_p.setSizePolicy(sizePolicy)
+
+        self.hl_I_1_p.addWidget(self.lb_I_1_p)
+
+        self.le_I_1_p = QLineEdit(self.layoutWidget_3)
+        self.le_I_1_p.setObjectName(u"le_I_1_p")
+        self.le_I_1_p.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_I_1_p.sizePolicy().hasHeightForWidth())
+        self.le_I_1_p.setSizePolicy(sizePolicy1)
+
+        self.hl_I_1_p.addWidget(self.le_I_1_p)
+
+
+        self.vl_variables_t3.addLayout(self.hl_I_1_p)
+
+        self.hl_I_1_nom = QHBoxLayout()
+        self.hl_I_1_nom.setObjectName(u"hl_I_1_nom")
+        self.lb_I_1_nom = QLabel(self.layoutWidget_3)
+        self.lb_I_1_nom.setObjectName(u"lb_I_1_nom")
+        sizePolicy.setHeightForWidth(self.lb_I_1_nom.sizePolicy().hasHeightForWidth())
+        self.lb_I_1_nom.setSizePolicy(sizePolicy)
+
+        self.hl_I_1_nom.addWidget(self.lb_I_1_nom)
+
+        self.le_I_1_nom = QLineEdit(self.layoutWidget_3)
+        self.le_I_1_nom.setObjectName(u"le_I_1_nom")
+        self.le_I_1_nom.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_I_1_nom.sizePolicy().hasHeightForWidth())
+        self.le_I_1_nom.setSizePolicy(sizePolicy1)
+
+        self.hl_I_1_nom.addWidget(self.le_I_1_nom)
+
+
+        self.vl_variables_t3.addLayout(self.hl_I_1_nom)
+
+        self.hl_h_k = QHBoxLayout()
+        self.hl_h_k.setObjectName(u"hl_h_k")
+        self.lb_h_k = QLabel(self.layoutWidget_3)
+        self.lb_h_k.setObjectName(u"lb_h_k")
+        sizePolicy.setHeightForWidth(self.lb_h_k.sizePolicy().hasHeightForWidth())
+        self.lb_h_k.setSizePolicy(sizePolicy)
+
+        self.hl_h_k.addWidget(self.lb_h_k)
+
+        self.le_h_k = QLineEdit(self.layoutWidget_3)
+        self.le_h_k.setObjectName(u"le_h_k")
+        self.le_h_k.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_h_k.sizePolicy().hasHeightForWidth())
+        self.le_h_k.setSizePolicy(sizePolicy1)
+
+        self.hl_h_k.addWidget(self.le_h_k)
+
+
+        self.vl_variables_t3.addLayout(self.hl_h_k)
+
+        self.hl_Lamda_p_2_Ksi = QHBoxLayout()
+        self.hl_Lamda_p_2_Ksi.setObjectName(u"hl_Lamda_p_2_Ksi")
+        self.lb_Lamda_p_2_Ksi = QLabel(self.layoutWidget_3)
+        self.lb_Lamda_p_2_Ksi.setObjectName(u"lb_Lamda_p_2_Ksi")
+        sizePolicy.setHeightForWidth(self.lb_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_2_Ksi.setSizePolicy(sizePolicy)
+
+        self.hl_Lamda_p_2_Ksi.addWidget(self.lb_Lamda_p_2_Ksi)
+
+        self.le_Lamda_p_2_Ksi = QLineEdit(self.layoutWidget_3)
+        self.le_Lamda_p_2_Ksi.setObjectName(u"le_Lamda_p_2_Ksi")
+        self.le_Lamda_p_2_Ksi.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_p_2_Ksi.setSizePolicy(sizePolicy1)
+
+        self.hl_Lamda_p_2_Ksi.addWidget(self.le_Lamda_p_2_Ksi)
+
+
+        self.vl_variables_t3.addLayout(self.hl_Lamda_p_2_Ksi)
+
+        self.hl_K_R = QHBoxLayout()
+        self.hl_K_R.setObjectName(u"hl_K_R")
+        self.lb_K_R = QLabel(self.layoutWidget_3)
+        self.lb_K_R.setObjectName(u"lb_K_R")
+        sizePolicy.setHeightForWidth(self.lb_K_R.sizePolicy().hasHeightForWidth())
+        self.lb_K_R.setSizePolicy(sizePolicy)
+
+        self.hl_K_R.addWidget(self.lb_K_R)
+
+        self.le_K_R = QLineEdit(self.layoutWidget_3)
+        self.le_K_R.setObjectName(u"le_K_R")
+        self.le_K_R.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.le_K_R.sizePolicy().hasHeightForWidth())
+        self.le_K_R.setSizePolicy(sizePolicy1)
+
+        self.hl_K_R.addWidget(self.le_K_R)
+
+
+        self.vl_variables_t3.addLayout(self.hl_K_R)
 
         self.tabWidget.addTab(self.tab_3, "")
 
@@ -1471,23 +2289,27 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem119.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
         self.tableWidget_2.setSortingEnabled(__sortingEnabled1)
 
-        self.label.setText(QCoreApplication.translate("mainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">P</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 22; U = 380/660; 2p = 4 ; I</span><span style=\" font-size:14pt; vertical-align:sub;\">1\u043d\u043e\u043c</span><span style=\" font-size:14pt;\"> = 23,715;I'</span><span style=\" font-size:14pt; vertical-align:sub;\">2\u043d\u043e\u043c</span><span style=\" font-"
-                        "size:14pt;\"> = 22,158; x</span><span style=\" font-size:14pt; vertical-align:sub;\">1</span><span style=\" font-size:14pt;\"> = 1,89; x'</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 2,03; x</span><span style=\" font-size:14pt; vertical-align:sub;\">12\u043f</span><span style=\" font-size:14pt;\"> = 91,84; r</span><span style=\" font-size:14pt; vertical-align:sub;\">1</span><span style=\" font-size:14pt;\"> = 0,6; r'</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 0,38;</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">s</span><span style=\" font-size:14pt; vertical-align:sub;\">\u043d\u043e\u043c</span><span style=\" font-size:14pt;\"> = 0,0244; C</span><span style=\" font-size:14pt; vertical-align:sub;\">1\u043f</span><span style=\" font-size:14pt;\"> = 1,02; h</span><span style"
-                        "=\" font-size:14pt; vertical-align:sub;\">c</span><span style=\" font-size:14pt;\"> = 29,62; q</span><span style=\" font-size:14pt; vertical-align:sub;\">c</span><span style=\" font-size:14pt;\"> = 184,94; q</span><span style=\" font-size:14pt; vertical-align:sub;\">r</span><span style=\" font-size:14pt;\"> = 112,074; r</span><span style=\" font-size:14pt; vertical-align:sub;\">c</span><span style=\" font-size:14pt;\"> = 38,3 * 10</span><span style=\" font-size:14pt; vertical-align:super;\">-6 </span><span style=\" font-size:14pt;\">; r</span><span style=\" font-size:14pt; vertical-align:sub;\">2</span><span style=\" font-size:14pt;\"> = 57,3 * 10</span><span style=\" font-size:14pt; vertical-align:super;\">-6</span><span style=\" font-size:14pt;\">;  x'</span><span style=\" font-size:14pt; vertical-align:sub;\">2\u03be </span><span style=\" font-size:14pt;\">= 1,624</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span s"
-                        "tyle=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043f2</span><span style=\" font-size:14pt;\"> = 2,42; </span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:14pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u0394</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043f2</span><span style=\" font-size:14pt; vertical-align:sub;\">\u03be</span><span style=\" font-size:14pt;\"> = 0,148; </span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#"
-                        "202122; background-color:#ffffff; vertical-align:sub;\">\u043b2</span><span style=\" font-size:14pt;\"> = 0,678; </span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'sans-serif'; font-size:14pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u04342</span><span style=\" font-size:14pt;\"> = 2,19</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"><br /></span></p></body></html>", None))
         self.bt_check_table_2.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
         self.bt_calculate_table2.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
+        self.lb_h_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">c </span>=</p></body></html>", None))
+        self.lb_h_p_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">p2 </span>=</p></body></html>", None))
+        self.lb_h_sh.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u0448</span> =</p></body></html>", None))
+        self.lb_h_sh_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h'<span style=\" vertical-align:sub;\">\u0448</span> =</p></body></html>", None))
+        self.lb_b_1_r.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">1\u0440\u043e\u0442.</span>=</p></body></html>", None))
+        self.lb_b_2_r.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">2\u0440\u043e\u0442.</span>=</p></body></html>", None))
+        self.lb_h_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">1 </span>=</p></body></html>", None))
+        self.lb_q_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>q<span style=\" vertical-align:sub;\">c</span> =</p></body></html>", None))
+        self.lb_r_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>r<span style=\" vertical-align:sub;\">c</span> =</p></body></html>", None))
+        self.lb_r_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>r<span style=\" vertical-align:sub;\">2</span> =</p></body></html>", None))
+        self.lb_h_0.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">0</span> =</p></body></html>", None))
+        self.lb_b_sh_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">\u04482</span> =</p></body></html>", None))
+        self.lb_Lamda_p_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">p2</span>=</p></body></html>", None))
+        self.lb_Lamda_l_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043b</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">2</span>=</p></body></html>", None))
+        self.lb_Lamda_d_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u0434</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">2</span>=</p></body></html>", None))
+        self.lb_X_2_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>X'<span style=\" vertical-align:sub;\">2</span> =</p></body></html>", None))
+        self.lb_x_1_2_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0445<span style=\" vertical-align:sub;\">12\u0440</span> =</p></body></html>", None))
+        self.lb_c_1_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0441<span style=\" vertical-align:sub;\">1\u0440</span> =</p></body></html>", None))
+        self.lb_X_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0425<span style=\" vertical-align:sub;\">1</span> =</p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 2", None))
         ___qtablewidgetitem120 = self.tableWidget_3.horizontalHeaderItem(0)
         ___qtablewidgetitem120.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
@@ -1637,5 +2459,27 @@ class Ui_mainWindow(object):
         self.bt_check_table_3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
         self.bt_calculate_table3.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.bt_show_chart_table3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
+        self.lb_C_N.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0421<span style=\" vertical-align:sub;\">N </span>=</p></body></html>", None))
+        self.lb_k_y_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>k<span style=\" vertical-align:sub;\">y1 </span>=</p></body></html>", None))
+        self.lb_u_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>u<span style=\" vertical-align:sub;\">p</span> =</p></body></html>", None))
+        self.lb_k_ob.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>k<span style=\" vertical-align:sub;\">\u043e\u0431</span> =</p></body></html>", None))
+        self.lb_Z_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Z<span style=\" vertical-align:sub;\">1 </span>=</p></body></html>", None))
+        self.lb_Z_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Z<span style=\" vertical-align:sub;\">2</span> =</p></body></html>", None))
+        self.lb_sigma.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-weight:700; color:#202122; background-color:#ffffff;\">\u03b4 </span>=</p></body></html>", None))
+        self.lb_t_z_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>t<span style=\" vertical-align:sub;\">z1</span> =</p></body></html>", None))
+        self.lb_b_sh.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">\u0448</span> =</p></body></html>", None))
+        self.lb_h_sh_r.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u0448 \u0440\u043e\u0442.</span> =</p></body></html>", None))
+        self.lb_Lamda_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">p1</span>=</p></body></html>", None))
+        self.lb_Lamda_d_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u04341</span>=</p></body></html>", None))
+        self.lb_Lamda_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043b1</span>=</p></body></html>", None))
+        self.lb_t_z_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>t<span style=\" vertical-align:sub;\">z2</span> =</p></body></html>", None))
+        self.lb_r_2_Ksi_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>r'<span style=\" vertical-align:sub;\">2\u03be </span>=</p></body></html>", None))
+        self.lb_I_1_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>I<span style=\" vertical-align:sub;\">1p</span> =</p></body></html>", None))
+        self.lb_I_1_nom.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>I<span style=\" vertical-align:sub;\">1\u043d\u043e\u043c</span> =</p></body></html>", None))
+        self.lb_h_k.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">k</span> =</p></body></html>", None))
+        self.lb_Lamda_p_2_Ksi.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u03bb<span style=\" vertical-align:sub;\">\u043f2\u03be </span>=</p></body></html>", None))
+        self.lb_K_R.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>K<span style=\" vertical-align:sub;\">R</span> =</p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 3", None))
     # retranslateUi
+
+
