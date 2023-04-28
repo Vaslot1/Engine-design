@@ -376,7 +376,8 @@ class table3:
         return k_nas[self.s_shtrih]
 
     def f2_3(self):
-        return 0.7 * (((self.I_1_p * self.f1_3() * self.u_p) / a_harmonic) * (k_beta_shtrih + self.k_y_1 * self.k_ob * (self.Z_1 / self.Z_2)))
+        return 0.7 * (((self.I_1_p * self.f1_3() * self.u_p) / a_harmonic) * (k_beta_shtrih + self.k_y_1 * self.k_ob *
+                                                                              (self.Z_1 / self.Z_2)))
 
     def f3_3(self):
         return (self.f2_3() * 10 ** -6) / (1.6 * self.sigma * 10 ** -3 * self.C_N)

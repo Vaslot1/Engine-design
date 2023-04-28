@@ -3,9 +3,11 @@ import sys
 import matplotlib.pyplot as plt
 from PyQt6 import uic
 import pandas as pd
+from PySide6 import QtGui
+
 from main2 import MainProgram
 from func import Lagrange, LinearInterpolation, SplineCubicInterpolate
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox,QFileDialog,QTextEdit
 from ww import *
 from tables import table1, table2, table3
 from scipy import interpolate
@@ -36,6 +38,52 @@ class MainWindow(QMainWindow):
         self.ui.bt_check_table_1.clicked.connect(self.checkTable1)
         self.ui.bt_check_table_2.clicked.connect(self.checkTable2)
         self.ui.bt_check_table_3.clicked.connect(self.checkTable3)
+        self.ui.sl_ValueOfError.valueChanged.connect(self.changeError)
+        self.ui.linePower.currentTextChanged.connect(self.updateVoltage)
+
+        openFile = QtGui.QAction("&Открыть файл", self)
+        openFile.setShortcut("Ctrl+O")
+        openFile.triggered.connect(self.file_open)
+
+        saveFile = QtGui.QAction("&Сохранить файл", self)
+        saveFile.setShortcut("Ctrl+S")
+        saveFile.triggered.connect(self.file_save)
+
+        mainMenu = self.menuBar()
+
+        fileMenu = mainMenu.addMenu('&Файл')
+        fileMenu.addAction(openFile)
+        fileMenu.addAction(saveFile)
+
+    def file_open(self):
+        name,_ = QFileDialog.getOpenFileName(self, 'Открыть файл')
+        file = open(name, 'r')
+
+        self.editor()
+
+        with file:
+            text = file.read()
+            self.textEdit.setText(text)
+
+    def file_save(self):
+        name, = QFileDialog.getSaveFileName(self, 'Сохранить файл')
+        print(name)
+        file = open(name, 'w')
+        text = self.textEdit.toPlainText()
+        file.write(text)
+        file.close()
+
+    def editor(self):
+        self.textEdit = QTextEdit()
+        self.setCentralWidget(self.textEdit)
+
+    def updateVoltage(self):
+        if 0 < float(self.ui.linePower.currentText()) < 22:
+            self.ui.lineVoltage.setCurrentText("220")
+        elif 22 <= float(self.ui.linePower.currentText()) < 100:
+            self.ui.lineVoltage.setCurrentText("380")
+        else:
+            self.ui.lineVoltage.setCurrentText("660")
 
 
     def resizetables(self):
@@ -92,8 +140,8 @@ class MainWindow(QMainWindow):
 
             self.ui.tableWidget.item(i, 8).setFlags(self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
 
-            if (self.table_1.calculateTable(i, self.aboba.s_nom) * 0.9 < curr_value < self.table_1.calculateTable(i,
-                                                                                                                  self.aboba.s_nom) * 1.1):
+            if (self.table_1.calculateTable(i, self.aboba.s_nom) * (1-(self.ui.sl_ValueOfError.value()/100)) < curr_value < self.table_1.calculateTable(i,
+                                                                                                                  self.aboba.s_nom) * (1+(self.ui.sl_ValueOfError.value()/100))):
                 self.ui.tableWidget.item(i, 8).setBackground(correct_color)
                 count += 1
 
@@ -210,9 +258,19 @@ class MainWindow(QMainWindow):
             msgBox.setText("Некорректно введено S_nom (0;1]")
             msgBox.exec()
             return
-
-        self.aboba = MainProgram(P_2, U, _2p, S_nom)
-        self.aboba.Run()
+        try:
+            self.aboba = MainProgram(P_2, U, _2p, S_nom)
+            self.aboba.Run()
+        except KeyError:
+            msgBox = QMessageBox()
+            msgBox.setText("Неккоректно введена полярность")
+            msgBox.exec()
+            return
+        except Exception:
+            msgBox = QMessageBox()
+            msgBox.setText("Напряжение не соответствует мощности, попробуйте снова")
+            msgBox.exec()
+            return
 
         self.ui.tableWidget.item(0, 8).setText(str(S_nom))
 
@@ -253,6 +311,8 @@ class MainWindow(QMainWindow):
 
         self.clearTables()
         self.ui.tabWidget.setCurrentWidget(self.ui.tab)
+
+        self.ui.lb_error.setText("При значении погрешности = "+str(self.ui.sl_ValueOfError.value())+"%")
 
         for i in range(1, 19 + 1):
             for j in range(0, 9):
@@ -361,7 +421,7 @@ class MainWindow(QMainWindow):
         cosPhi_chart.set_xlabel('P_квт', size=16)
         cosPhi_chart.set_ylim(0, 1)
 
-        kpd_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_2) for x in x_list], color='red', marker='o',
+        kpd_chart.plot(x_list, [Lagrange(x, x_arr, y_arr_2) for x in x_list], color='red', marker='o',
                        markersize=3)
         kpd_chart.minorticks_on()
         kpd_chart.grid(which='major',
@@ -531,6 +591,22 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget_3.item(j, i).setText(
                     str(round(self.table_3_student.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 2)))
         self.ui.tableWidget_3.reset()
+
+    def changeError(self):
+        self.ui.lb_error.setText("При значении погрешности = "+str(self.ui.sl_ValueOfError.value())+"%")
+        self.ui.bt_calculate_table1.setEnabled(False)
+        self.ui.le_Pst.setEnabled(False)
+        self.ui.le_Pmeh.setEnabled(False)
+        self.ui.le_a.setEnabled(False)
+        self.ui.le_a_shtrih.setEnabled(False)
+        self.ui.le_b.setEnabled(False)
+        self.ui.le_b_shtrih.setEnabled(False)
+        self.ui.le_I0p.setEnabled(False)
+        self.ui.le_I0a.setEnabled(False)
+        self.ui.le_r1.setEnabled(False)
+        self.ui.le_r2_shtrih.setEnabled(False)
+        self.ui.le_c1.setEnabled(False)
+        self.clearTables()
 
 
 app = QApplication()

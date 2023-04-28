@@ -67,7 +67,7 @@ def findTheNumberOfRotorSlots(P_2, Z_1):
 
 
 #####################################################################################*
-def SplineCubicInterpolate(x, x_meow, y_meow):
+def  SplineCubicInterpolate(x, x_meow, y_meow):
     return interpolate.interp1d(x_meow, y_meow, 'cubic')(x)
 
 

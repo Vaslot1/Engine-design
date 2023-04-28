@@ -518,6 +518,7 @@ class MainProgram:
         if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
                 (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
             print(Back.RED + "k_z = " + str(k_z), end='\n')
+            raise Exception("Some exception")
             exit(1)
         print(Back.BLUE + "Пункт: 1")
         print("h_shtrih =", h_shtrih)
