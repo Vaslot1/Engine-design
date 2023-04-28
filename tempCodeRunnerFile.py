@@ -1,1 +1,1 @@
-self.ui.tableWidget.item(i, 8).flags() & 
+el

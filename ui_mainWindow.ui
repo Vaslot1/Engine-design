@@ -6,12 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1776</width>
-    <height>878</height>
+    <width>1407</width>
+    <height>824</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1600</width>
+    <height>900</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Расчётная программа</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
   </property>
   <widget class="QTabWidget" name="tabWidget">
    <property name="enabled">
@@ -21,8 +36,8 @@
     <rect>
      <x>9</x>
      <y>9</y>
-     <width>1758</width>
-     <height>860</height>
+     <width>1401</width>
+     <height>820</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -383,54 +398,7 @@
      <string>Таблица 1</string>
     </attribute>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <layout class="QHBoxLayout" name="hl_buttons">
-       <item>
-        <widget class="QPushButton" name="bt_check_table_1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Проверка</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_calculate_table1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Рассчитать</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_show_chart_1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Показать график</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_export_xl_1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Экспорт в эксель</string>
-         </property>
-         <property name="autoDefault">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="0" alignment="Qt::AlignLeft">
+     <item row="0" column="0">
       <widget class="QTableWidget" name="tableWidget">
        <property name="enabled">
         <bool>false</bool>
@@ -451,6 +419,9 @@
         <font>
          <pointsize>14</pointsize>
         </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
        </property>
        <property name="inputMethodHints">
         <set>Qt::ImhNone</set>
@@ -1236,13 +1207,6 @@
        </item>
       </widget>
      </item>
-     <item row="0" column="3" rowspan="2">
-      <widget class="QScrollBar" name="verticalScrollBar">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="1">
       <layout class="QVBoxLayout" name="vl_variables">
        <item>
@@ -1655,6 +1619,53 @@
        </item>
       </layout>
      </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="hl_buttons">
+       <item>
+        <widget class="QPushButton" name="bt_check_table_1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Проверка</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_calculate_table1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Рассчитать</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_show_chart_1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Показать график</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_export_xl_1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Экспорт в эксель</string>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
      <item row="1" column="1">
       <widget class="QLabel" name="lb_error">
        <property name="text">
@@ -1899,6 +1910,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="1" column="2">
+        <property name="text">
+         <string>1.55</string>
+        </property>
+       </item>
        <item row="2" column="0">
         <property name="text">
          <string>φ(ξ)</string>
@@ -1918,6 +1934,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="2" column="2">
+        <property name="text">
+         <string>0.39</string>
         </property>
        </item>
        <item row="3" column="0">
@@ -1941,6 +1962,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="3" column="2">
+        <property name="text">
+         <string>17.524</string>
+        </property>
+       </item>
        <item row="4" column="0">
         <property name="text">
          <string>k_r=q_c/q_r</string>
@@ -1960,6 +1986,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="4" column="2">
+        <property name="text">
+         <string>1.348</string>
         </property>
        </item>
        <item row="5" column="0">
@@ -1983,6 +2014,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="5" column="2">
+        <property name="text">
+         <string>1.23</string>
+        </property>
+       </item>
        <item row="6" column="0">
         <property name="text">
          <string>r'_2_ξ = K_R*r'_2</string>
@@ -2002,6 +2038,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="6" column="2">
+        <property name="text">
+         <string>0.48</string>
         </property>
        </item>
        <item row="7" column="0">
@@ -2025,6 +2066,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="7" column="2">
+        <property name="text">
+         <string>0.85</string>
+        </property>
+       </item>
        <item row="8" column="0">
         <property name="text">
          <string>λ_п2ξ = λ_п2 - Δλп2ξ</string>
@@ -2044,6 +2090,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="8" column="2">
+        <property name="text">
+         <string>1.9</string>
         </property>
        </item>
        <item row="9" column="0">
@@ -2067,6 +2118,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="9" column="2">
+        <property name="text">
+         <string>0.972</string>
+        </property>
+       </item>
        <item row="10" column="0">
         <property name="text">
          <string>x'2ξ = Kx * x'_2</string>
@@ -2086,6 +2142,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="10" column="2">
+        <property name="text">
+         <string>2.058</string>
         </property>
        </item>
        <item row="11" column="0">
@@ -2109,6 +2170,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="11" column="2">
+        <property name="text">
+         <string>1.16</string>
+        </property>
+       </item>
        <item row="12" column="0">
         <property name="text">
          <string>Xп = x_1+c_1п*x'2ξ</string>
@@ -2130,6 +2196,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="12" column="2">
+        <property name="text">
+         <string>3.667</string>
+        </property>
+       </item>
        <item row="13" column="0">
         <property name="text">
          <string>I'_2п = U/√(Rп^2 + Xп^2)</string>
@@ -2149,6 +2220,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="13" column="2">
+        <property name="text">
+         <string>98.81</string>
         </property>
        </item>
        <item row="14" column="0">
@@ -2173,11 +2249,184 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="14" column="2">
+        <property name="text">
+         <string>101.15</string>
+        </property>
+       </item>
       </widget>
      </item>
-     <item row="0" column="1" rowspan="3">
-      <layout class="QVBoxLayout" name="vl_variables_t2">
-       <item>
+     <item row="0" column="1">
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="13" column="0">
+        <layout class="QHBoxLayout" name="hl_Lamda_l_2">
+         <item>
+          <widget class="QLabel" name="lb_Lamda_l_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;л&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_Lamda_l_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>0.678</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <layout class="QHBoxLayout" name="hl_b_1_r">
+         <item>
+          <widget class="QLabel" name="lb_b_1_r">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b&lt;span style=&quot; vertical-align:sub;&quot;&gt;1рот.&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_b_1_r">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>8.36</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="17" column="0">
+        <layout class="QHBoxLayout" name="hl_c_1_p">
+         <item>
+          <widget class="QLabel" name="lb_c_1_p">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;с&lt;span style=&quot; vertical-align:sub;&quot;&gt;1р&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_c_1_p">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>1.02</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="9" column="0">
+        <layout class="QHBoxLayout" name="hl_r_2">
+         <item>
+          <widget class="QLabel" name="lb_r_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_r_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>57.3</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="15" column="0">
+        <layout class="QHBoxLayout" name="hl_X_2_shtrih">
+         <item>
+          <widget class="QLabel" name="lb_X_2_shtrih">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;X'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_X_2_shtrih">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>2.03</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
         <layout class="QHBoxLayout" name="hl_h_c" stretch="0,0">
          <property name="spacing">
           <number>6</number>
@@ -2233,6 +2482,9 @@
            <property name="layoutDirection">
             <enum>Qt::LeftToRight</enum>
            </property>
+           <property name="text">
+            <string>29.62</string>
+           </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
@@ -2240,7 +2492,145 @@
          </item>
         </layout>
        </item>
-       <item>
+       <item row="14" column="0">
+        <layout class="QHBoxLayout" name="hl_Lamda_d_2">
+         <item>
+          <widget class="QLabel" name="lb_Lamda_d_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;д&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_Lamda_d_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>2.19</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0">
+        <layout class="QHBoxLayout" name="hl_b_2_r">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lb_b_2_r">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b&lt;span style=&quot; vertical-align:sub;&quot;&gt;2рот.&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_b_2_r">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>4.53</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="12" column="0">
+        <layout class="QHBoxLayout" name="hl_Lamda_p_2">
+         <item>
+          <widget class="QLabel" name="lb_Lamda_p_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;p2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_Lamda_p_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>2.42</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="10" column="0">
+        <layout class="QHBoxLayout" name="hl_h_0">
+         <item>
+          <widget class="QLabel" name="lb_h_0">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;h&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_h_0">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>24.98</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
         <layout class="QHBoxLayout" name="hl_h_p_2">
          <property name="leftMargin">
           <number>0</number>
@@ -2269,17 +2659,17 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>30.62</string>
+           </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_h_sh">
-         <property name="rightMargin">
-          <number>6</number>
-         </property>
+       <item row="11" column="0">
+        <layout class="QHBoxLayout" name="hl_b_sh_2">
          <item>
-          <widget class="QLabel" name="lb_h_sh">
+          <widget class="QLabel" name="lb_b_sh_2">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2287,12 +2677,12 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;h&lt;span style=&quot; vertical-align:sub;&quot;&gt;ш&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b&lt;span style=&quot; vertical-align:sub;&quot;&gt;ш2&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_h_sh">
+          <widget class="QLineEdit" name="le_b_sh_2">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -2302,11 +2692,47 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>1.5</string>
+           </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
+       <item row="16" column="0">
+        <layout class="QHBoxLayout" name="hl_x_1_2_p">
+         <item>
+          <widget class="QLabel" name="lb_x_1_2_p">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;х&lt;span style=&quot; vertical-align:sub;&quot;&gt;12р&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_x_1_2_p">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>91.84</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
         <layout class="QHBoxLayout" name="hl_h_sh_shtrih">
          <property name="spacing">
           <number>0</number>
@@ -2350,80 +2776,14 @@
              <height>0</height>
             </size>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_b_1_r">
-         <item>
-          <widget class="QLabel" name="lb_b_1_r">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b&lt;span style=&quot; vertical-align:sub;&quot;&gt;1рот.&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_b_1_r">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
+            <string>0.3</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_b_2_r">
-         <property name="leftMargin">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="lb_b_2_r">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b&lt;span style=&quot; vertical-align:sub;&quot;&gt;2рот.&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_b_2_r">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
+       <item row="6" column="0">
         <layout class="QHBoxLayout" name="hl_h_1">
          <item>
           <widget class="QLabel" name="lb_h_1">
@@ -2449,14 +2809,20 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>23.17</string>
+           </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_q_c">
+       <item row="2" column="0">
+        <layout class="QHBoxLayout" name="hl_h_sh">
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
          <item>
-          <widget class="QLabel" name="lb_q_c">
+          <widget class="QLabel" name="lb_h_sh">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2464,12 +2830,12 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;q&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;h&lt;span style=&quot; vertical-align:sub;&quot;&gt;ш&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_q_c">
+          <widget class="QLineEdit" name="le_h_sh">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -2479,11 +2845,14 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>0.7</string>
+           </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
+       <item row="8" column="0">
         <layout class="QHBoxLayout" name="hl_r_c">
          <item>
           <widget class="QLabel" name="lb_r_c">
@@ -2509,281 +2878,14 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_r_2">
-         <item>
-          <widget class="QLabel" name="lb_r_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_r_2">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+            <string>38.3</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_h_0">
-         <item>
-          <widget class="QLabel" name="lb_h_0">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;h&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_h_0">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_b_sh_2">
-         <item>
-          <widget class="QLabel" name="lb_b_sh_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;b&lt;span style=&quot; vertical-align:sub;&quot;&gt;ш2&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_b_sh_2">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_Lamda_p_2">
-         <item>
-          <widget class="QLabel" name="lb_Lamda_p_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;p2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_Lamda_p_2">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_Lamda_l_2">
-         <item>
-          <widget class="QLabel" name="lb_Lamda_l_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;л&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_Lamda_l_2">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_Lamda_d_2">
-         <item>
-          <widget class="QLabel" name="lb_Lamda_d_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;&quot;&gt;λ&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;д&lt;/span&gt;&lt;span style=&quot; font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;&quot;&gt;2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_Lamda_d_2">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_X_2_shtrih">
-         <item>
-          <widget class="QLabel" name="lb_X_2_shtrih">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;X'&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_X_2_shtrih">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_x_1_2_p">
-         <item>
-          <widget class="QLabel" name="lb_x_1_2_p">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;х&lt;span style=&quot; vertical-align:sub;&quot;&gt;12р&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_x_1_2_p">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="hl_c_1_p">
-         <item>
-          <widget class="QLabel" name="lb_c_1_p">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;с&lt;span style=&quot; vertical-align:sub;&quot;&gt;1р&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_c_1_p">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
+       <item row="18" column="0">
         <layout class="QHBoxLayout" name="hl_X_1">
          <item>
           <widget class="QLabel" name="lb_X_1">
@@ -2809,6 +2911,42 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>1.89</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="0">
+        <layout class="QHBoxLayout" name="hl_q_c">
+         <item>
+          <widget class="QLabel" name="lb_q_c">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;q&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; =&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="le_q_c">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>184.94</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -2816,15 +2954,18 @@
       </layout>
      </item>
      <item row="1" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <item row="0" column="0">
         <widget class="QPushButton" name="bt_check_table_2">
          <property name="text">
           <string>Проверка</string>
          </property>
         </widget>
        </item>
-       <item>
+       <item row="0" column="1">
         <widget class="QPushButton" name="bt_calculate_table2">
          <property name="text">
           <string>Рассчитать</string>
@@ -2843,6 +2984,34 @@
      <string>Таблица 3</string>
     </attribute>
     <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="bt_check_table_3">
+         <property name="text">
+          <string>Проверка</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_calculate_table3">
+         <property name="text">
+          <string>Расчитать</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bt_show_chart_table3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Показать график</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
      <item row="0" column="0" alignment="Qt::AlignLeft">
       <widget class="QTableWidget" name="tableWidget_3">
        <property name="minimumSize">
@@ -3081,6 +3250,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="1" column="2">
+        <property name="text">
+         <string>1.4</string>
+        </property>
+       </item>
        <item row="2" column="0">
         <property name="text">
          <string>Fп.ср=0,7*((I_1*k_нас*u_п)/a)(k'_beta+k_y1*k_об1*(Z1/Z2))</string>
@@ -3103,6 +3277,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="2" column="2">
+        <property name="text">
+         <string>4587.33</string>
+        </property>
+       </item>
        <item row="3" column="0">
         <property name="text">
          <string>В_фб = Fп.ср * 10^(-6)/(1,6δ*С_N)</string>
@@ -3123,6 +3302,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="3" column="2">
+        <property name="text">
+         <string>5.114</string>
         </property>
        </item>
        <item row="4" column="0">
@@ -3148,7 +3332,7 @@
        </item>
        <item row="4" column="2">
         <property name="text">
-         <string/>
+         <string>0.481</string>
         </property>
        </item>
        <item row="5" column="0">
@@ -3172,6 +3356,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="5" column="2">
+        <property name="text">
+         <string>5.114</string>
+        </property>
+       </item>
        <item row="6" column="0">
         <property name="text">
          <string>λ_п1нас = λп1 - Δλ_п1нас</string>
@@ -3191,6 +3380,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="6" column="2">
+        <property name="text">
+         <string>1.26</string>
         </property>
        </item>
        <item row="7" column="0">
@@ -3214,6 +3408,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="7" column="2">
+        <property name="text">
+         <string>0.658</string>
+        </property>
+       </item>
        <item row="8" column="0">
         <property name="text">
          <string>х_1нас = х1*Σλ_1нас/Σλ_1</string>
@@ -3233,6 +3432,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="8" column="2">
+        <property name="text">
+         <string>1.176</string>
         </property>
        </item>
        <item row="9" column="0">
@@ -3256,6 +3460,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="9" column="2">
+        <property name="text">
+         <string>1.013</string>
+        </property>
+       </item>
        <item row="10" column="0">
         <property name="text">
          <string>с_2 = (t_z2-b_ш2)(1-k_δ)</string>
@@ -3275,6 +3484,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="10" column="2">
+        <property name="text">
+         <string>9.098</string>
         </property>
        </item>
        <item row="11" column="0">
@@ -3298,6 +3512,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="11" column="2">
+        <property name="text">
+         <string>1.729</string>
+        </property>
+       </item>
        <item row="12" column="0">
         <property name="text">
          <string>λ_д2нас = k_δ*λд2</string>
@@ -3319,6 +3538,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="12" column="2">
+        <property name="text">
+         <string>1.127</string>
+        </property>
+       </item>
        <item row="13" column="0">
         <property name="text">
          <string>х'_2ξнас = x'2*Σλ_2ξнас/Σλ_2</string>
@@ -3338,6 +3562,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="13" column="2">
+        <property name="text">
+         <string>1.470</string>
         </property>
        </item>
        <item row="14" column="0">
@@ -3362,6 +3591,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="14" column="2">
+        <property name="text">
+         <string>1.157</string>
+        </property>
+       </item>
        <item row="15" column="0">
         <property name="text">
          <string>Хп.нас = x_1нас + c_1п.нас * х'_2ξнас</string>
@@ -3382,6 +3616,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="15" column="2">
+        <property name="text">
+         <string>2.666</string>
         </property>
        </item>
        <item row="16" column="0">
@@ -3406,6 +3645,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="16" column="2">
+        <property name="text">
+         <string>130.765</string>
+        </property>
+       </item>
        <item row="17" column="0">
         <property name="text">
          <string>I_1нас=I'_2нас*((√(Rп.нас^2+(Хп.нас+х_12п)^2))/(с_1п.нас*х_12п))</string>
@@ -3426,6 +3670,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="17" column="2">
+        <property name="text">
+         <string>132.983</string>
         </property>
        </item>
        <item row="18" column="0">
@@ -3450,6 +3699,11 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="18" column="2">
+        <property name="text">
+         <string>1.315</string>
+        </property>
+       </item>
        <item row="19" column="0">
         <property name="text">
          <string>I_i= I_1нас / I_1ном</string>
@@ -3469,6 +3723,11 @@
         </property>
         <property name="flags">
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item row="19" column="2">
+        <property name="text">
+         <string>5.582</string>
         </property>
        </item>
        <item row="20" column="0">
@@ -3492,9 +3751,14 @@
          <set>ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item row="20" column="2">
+        <property name="text">
+         <string>1.101</string>
+        </property>
+       </item>
       </widget>
      </item>
-     <item row="0" column="1" rowspan="2">
+     <item row="0" column="1">
       <layout class="QVBoxLayout" name="vl_variables_t3">
        <item>
         <layout class="QHBoxLayout" name="hl_C_N" stretch="0,0">
@@ -3534,6 +3798,9 @@
              <height>32</height>
             </size>
            </property>
+           <property name="text">
+            <string>0.975</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3567,6 +3834,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>1</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3599,6 +3869,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>20</string>
            </property>
           </widget>
          </item>
@@ -3648,6 +3921,9 @@
              <height>0</height>
             </size>
            </property>
+           <property name="text">
+            <string>0.91</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3680,6 +3956,9 @@
            </property>
            <property name="layoutDirection">
             <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>48</string>
            </property>
           </widget>
          </item>
@@ -3717,6 +3996,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>38</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3746,6 +4028,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>0.55</string>
            </property>
           </widget>
          </item>
@@ -3777,6 +4062,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>0.0136</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3806,6 +4094,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>3.7</string>
            </property>
           </widget>
          </item>
@@ -3837,6 +4128,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>0.7</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3866,6 +4160,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>1.99</string>
            </property>
           </widget>
          </item>
@@ -3897,6 +4194,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>2.06</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3926,6 +4226,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>1.1</string>
            </property>
           </widget>
          </item>
@@ -3957,6 +4260,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>0.0171</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -3986,6 +4292,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>0.521</string>
            </property>
           </widget>
          </item>
@@ -4017,6 +4326,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>103.993</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -4046,6 +4358,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>23.715</string>
            </property>
           </widget>
          </item>
@@ -4077,6 +4392,9 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>3.43</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -4106,6 +4424,9 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="text">
+            <string>2.2272</string>
            </property>
           </widget>
          </item>
@@ -4137,37 +4458,12 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="text">
+            <string>1.372</string>
+           </property>
           </widget>
          </item>
         </layout>
-       </item>
-      </layout>
-     </item>
-     <item row="1" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QPushButton" name="bt_check_table_3">
-         <property name="text">
-          <string>Проверка</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_calculate_table3">
-         <property name="text">
-          <string>Расчитать</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bt_show_chart_table3">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Показать график</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </item>
