@@ -61,7 +61,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="usesScrollButtons">
     <bool>true</bool>
@@ -69,11 +69,6 @@
    <property name="tabBarAutoHide">
     <bool>false</bool>
    </property>
-   <widget class="QWidget" name="tab_5">
-    <attribute name="title">
-     <string>О программе</string>
-    </attribute>
-   </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
      <string>Ввод данных</string>
@@ -4531,6 +4526,27 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>О программе</string>
+    </attribute>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1371</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Программа предназначена для облегчения подсчётов при проектировании асинхронного двигателя с короткозамкнутым ротором.&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;Краткое руководство:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;1) Студенту необходимо подсчитать параметры для номинального варианта.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;2) Ввести во вкладке «Ввод данных» данные из технического задания и нажать кнопку «Ввести значения».&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;3) Далее во вкладке «Таблица 1» ввести подсчитанные параметры для номинального варианта.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;4) После ввода параметров номинального варианта нажать кнопку «Проверка».&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;5) При проверке подсчётов с номинальным вариантом студенту будут окрашены зелёным цветом поля с правильными значениями, в противном случае поля будут красного цвета.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;6) При правильном вводе всех полей студенту будет предоставлена возможность ввода данных, необходимых для расчёта всей таблицы.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;7) При полном расчёте таблицы 1 студенту будет предоставлена возможность вывода графика рабочих характеристик а.д. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;8) Аналогично заполняются таблица 2 и таблица 3 для скольжения, равного 1.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
