@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(parent)
         self.ui = Ui_mainWindow()
         self.ui.setupUi(self)
-        self.setCentralWidget(self.ui.tabWidget)
+        self.setCentralWidget(self.ui.scrollArea)
         self.resizetables()
         self.ui.bt_calculate_table1.clicked.connect(self.calculate_table1)
         self.ui.bt_calculate_table2.clicked.connect(self.calculate_table2)
@@ -319,6 +319,8 @@ class MainWindow(QMainWindow):
         self.ui.bt_show_chart_1.setEnabled(False)
         self.ui.bt_export_xl_1.setEnabled(False)
         self.ui.bt_calculate_table2.setEnabled(False)
+        self.ui.bt_export_xl_table_2.setEnabled(False)
+        self.ui.bt_export_xl_table_3.setEnabled(False)
         self.ui.bt_calculate_table3.setEnabled(False)
         self.ui.bt_show_chart_table3.setEnabled(False)
 
@@ -326,7 +328,11 @@ class MainWindow(QMainWindow):
         self.ui.tabWidget.setCurrentWidget(self.ui.tab)
 
         self.ui.lb_error.setText(
-            "При значении погрешности = " + str(self.ui.sl_ValueOfError.value())+"%")
+            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value())+"%")
+        self.ui.lb_error_2.setText(
+            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
+        self.ui.lb_error_3.setText(
+            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
 
         for i in range(1, 19 + 1):
             for j in range(0, 9):
@@ -371,6 +377,13 @@ class MainWindow(QMainWindow):
 
         # df indexing is slow, so use lists
         df_list = []
+        df_list.append(list(
+            [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}', f'I0a = {round(self.table_1_student.I_0_a, 3)}', f'I0p = {round(self.table_1_student.I_nu, 3)}',
+             f'Pст+Pмех = {round(self.table_1_student.P_st + self.table_1_student.P_meh, 3)}', f'r1 = {round(self.table_1_student.r_1, 3)}', f"r'2 = {round(self.table_1_student.r_2_shtrih, 3)}",
+             f'c1 = {round(self.table_1_student.C_1, 3)}']))
+        df_list.append(list([f" a' = {round(self.table_1_student.a_shtrih, 3)}",f'a = {round(self.table_1_student.a, 3)}',f"b' = {round(self.table_1_student.b_shtrih, 3)}", f'b = {round(self.table_1_student.b, 3)}']))
+        df_list.append(list([]))
+
         for row in range(row_count):
             df_list2 = []
             for col in range(col_count):
@@ -383,24 +396,13 @@ class MainWindow(QMainWindow):
                     df_list2.append(
                         '' if table_item is None else float(table_item.text()))
             df_list.append(df_list2)
-        df_list.append(list([]))
-        df_list.append(list(
-            [f'P_2 = {P_2}', f'U = {U}', f'λ = {lamda}', f'A = {round(A, 3)}', f'B =  {round(B_sig, 3)}',
-             f"J1' = {round(J_1_shtrih, 3)}", f"J1 = {round(J_1, 3)}", f'k_з = {k_z}',
-             f'I_nu* = {round(I_nu_star, 3)}']))
-        df_list.append(list([f'n_эл = {n_el}', f'I0a = {round(I_0_a, 3)}', f'I0p = {round(I_nu, 3)}',
-                             f'Pст+Pмех = {round(P_st + P_meh, 3)}', f'r1 = {round(r_1, 3)}',
-                             f"r'2 = {round(r_2_shtrih, 3)}", f'c1 = {round(c_1_p, 3)}', f" a' = {round(a_shtrih, 3)}",
-                             f'a = {round(a, 3)}']))
-        df_list.append(list(
-            [f"b' = {round(b_shtrih, 3)}", f'b = {round(b, 3)}', f'u_p = {u_p}', f'I_1_nom = {round(I_1_nom, 3)}',
-             f'KPD = {kpd}', f'cos(phi) = {cosPhi}']))
+
 
         df = pd.DataFrame(df_list, columns=headers)
         print(df)
-        writer = pd.ExcelWriter('example.xlsx', mode='a')
+        writer = pd.ExcelWriter('example.xlsx', mode='w')
         df.to_excel(writer, f'Двигатель {len(writer.sheets)}')
-        writer.save()
+        writer._save()
 
     def show_chart_table_1(self):
 
@@ -602,9 +604,10 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget_2.item(j, i).setText(str(round(self.table_2_student.calculateTable(
                     j, float(self.ui.tableWidget_2.item(0, i).text())), 3)))
         self.ui.tableWidget_2.reset()
+        self.ui.bt_export_xl_table_2.setEnabled(True)
 
     def calculate_table3(self):
-        self.ui.bt_show_chart_table3.setEnabled(True)
+
         try:
             self.table_3_student = table3(
                 float(self.ui.le_C_N.text()), float(
@@ -641,11 +644,18 @@ class MainWindow(QMainWindow):
             for j in range(1, 20 + 1):
                 self.ui.tableWidget_3.item(j, i).setText(
                     str(round(self.table_3_student.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 2)))
+        self.ui.bt_export_xl_table_3.setEnabled(True)
+        self.ui.bt_show_chart_table3.setEnabled(True)
         self.ui.tableWidget_3.reset()
+
 
     def changeError(self):
         self.ui.lb_error.setText(
-            "При значении погрешности = "+str(self.ui.sl_ValueOfError.value())+"%")
+            "Погрешность при проверке = "+str(self.ui.sl_ValueOfError.value())+"%")
+        self.ui.lb_error_2.setText(
+            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
+        self.ui.lb_error_3.setText(
+            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.bt_calculate_table1.setEnabled(False)
         self.ui.le_Pst.setEnabled(False)
         self.ui.le_Pmeh.setEnabled(False)
