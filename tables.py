@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 from main1 import ro_115_al, f, k_beta_shtrih, a_harmonic
 from func import phi_func, phi_shtrih_func, k_sig_func, LinearInterpolation, SplineCubicInterpolate, Lagrange
 
-class table1():
+class table1:
     a_shtrih = a = b = b_shtrih = r_2_shtrih = U = I_0_a = I_nu = C_1 = r_1 = P_st = P_meh = 0
     s_shtrih = 0
 

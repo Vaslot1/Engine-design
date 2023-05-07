@@ -81,12 +81,18 @@ class MainProgram:
     h_k = 0
     Lamda_p_2_Ksi = 0
     K_R = 0
+    K = 0
+    heatClass = ""# класс нагревостойкости
 
-    def __init__(self, P_2, U, _2p, s_nom):
+    def __init__(self, P_2, U, _2p, heatClass, s_nom):
         self.P_2 = P_2
         self.U = U
         self._2p = _2p
         self.s_nom = s_nom
+        if (self._2p == 4):
+            self.K = 0.2
+        self.heatClass = heatClass
+
 
     def Run(self):
         k_uk = math.sin((math.pi / 2) * self.beta_shtrih)

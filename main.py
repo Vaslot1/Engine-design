@@ -10,6 +10,7 @@ from func import Lagrange, LinearInterpolation, SplineCubicInterpolate
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QTextEdit
 from ww import *
 from tables import table1, table2, table3
+from thermal_calculation import ThermalCalculation
 from scipy import interpolate
 from openpyxl import Workbook
 
@@ -40,6 +41,7 @@ class MainWindow(QMainWindow):
         self.ui.bt_check_table_3.clicked.connect(self.checkTable3)
         self.ui.sl_ValueOfError.valueChanged.connect(self.changeError)
         self.ui.linePower.currentTextChanged.connect(self.updateVoltage)
+        self.ui.bt_thermal_calc.clicked.connect(self.thermalcalculate)
 
         openFile = QtGui.QAction("&Открыть файл", self)
         openFile.setShortcut("Ctrl+O")
@@ -141,8 +143,10 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget.item(i, 8).setFlags(
                 self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
 
-            if (self.table_1.calculateTable(i, self.aboba.s_nom) * (1-(self.ui.sl_ValueOfError.value()/100)) < curr_value < self.table_1.calculateTable(i,
-                                                                                                                                                        self.aboba.s_nom) * (1+(self.ui.sl_ValueOfError.value()/100))):
+            if (self.table_1.calculateTable(i, self.aboba.s_nom) * (
+                    1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_1.calculateTable(i,
+                                                                                                            self.aboba.s_nom) * (
+                    1 + (self.ui.sl_ValueOfError.value() / 100))):
                 self.ui.tableWidget.item(i, 8).setBackground(correct_color)
                 count += 1
 
@@ -245,6 +249,7 @@ class MainWindow(QMainWindow):
         P_2 = float(self.ui.linePower.currentText())
         U = int(self.ui.lineVoltage.currentText())
         _2p = int(self.ui.linePolarity.currentText())
+        heatClass = self.ui.cmb_heatClass.currentText()
 
         try:
             S_nom = float(self.ui.lineSnom.text())
@@ -262,7 +267,7 @@ class MainWindow(QMainWindow):
             msgBox.exec()
             return
         try:
-            self.aboba = MainProgram(P_2, U, _2p, S_nom)
+            self.aboba = MainProgram(P_2, U, _2p, heatClass, S_nom)
             self.aboba.Run()
         except KeyError:
             msgBox = QMessageBox()
@@ -291,12 +296,14 @@ class MainWindow(QMainWindow):
         )
         self.table_2 = table2(
             self.aboba.h_c, self.aboba.h_p_2, self.aboba.h_sh, self.aboba.h_sh_shtrih, self.aboba.b_1_r,
-            self.aboba.b_2_r, self.aboba.h_1, self.aboba.q_c, self.aboba.r_c, self.aboba.U, self.aboba.r_1, self.aboba.r_2, self.aboba.r_2_shtrih, self.aboba.h_0,
+            self.aboba.b_2_r, self.aboba.h_1, self.aboba.q_c, self.aboba.r_c, self.aboba.U, self.aboba.r_1,
+            self.aboba.r_2, self.aboba.r_2_shtrih, self.aboba.h_0,
             self.aboba.b_sh_2[self.aboba.h], self.aboba.Lamda_p_2, self.aboba.Lamda_l_2, self.aboba.Lamda_d_2,
             self.aboba.X_2_shtrih, self.aboba.x_1_2_p, self.aboba.c_1_p, self.aboba.X_1
         )
         self.table_3 = table3(
-            self.aboba.C_N, self.aboba.k_y_1, self.aboba.u_p, self.aboba.k_ob, self.aboba.X_1, self.aboba.Z_1, self.aboba.Z_2,
+            self.aboba.C_N, self.aboba.k_y_1, self.aboba.u_p, self.aboba.k_ob, self.aboba.X_1, self.aboba.Z_1,
+            self.aboba.Z_2,
             self.aboba.sigma, self.aboba.t_z_1, self.aboba.b_sh[
                 self.aboba.h], self.aboba.h_sh_r[self.aboba.h],
             self.aboba.Lamda_p_1, self.aboba.Lamda_d_1, self.aboba.Lamda_l_1, self.aboba.x_1_2_p, self.aboba.t_z_2,
@@ -328,7 +335,7 @@ class MainWindow(QMainWindow):
         self.ui.tabWidget.setCurrentWidget(self.ui.tab)
 
         self.ui.lb_error.setText(
-            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value())+"%")
+            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.lb_error_2.setText(
             "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.lb_error_3.setText(
@@ -378,10 +385,14 @@ class MainWindow(QMainWindow):
         # df indexing is slow, so use lists
         df_list = []
         df_list.append(list(
-            [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}', f'I0a = {round(self.table_1_student.I_0_a, 3)}', f'I0p = {round(self.table_1_student.I_nu, 3)}',
-             f'Pст+Pмех = {round(self.table_1_student.P_st + self.table_1_student.P_meh, 3)}', f'r1 = {round(self.table_1_student.r_1, 3)}', f"r'2 = {round(self.table_1_student.r_2_shtrih, 3)}",
+            [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}',
+             f'I0a = {round(self.table_1_student.I_0_a, 3)}', f'I0p = {round(self.table_1_student.I_nu, 3)}',
+             f'Pст+Pмех = {round(self.table_1_student.P_st + self.table_1_student.P_meh, 3)}',
+             f'r1 = {round(self.table_1_student.r_1, 3)}', f"r'2 = {round(self.table_1_student.r_2_shtrih, 3)}",
              f'c1 = {round(self.table_1_student.C_1, 3)}']))
-        df_list.append(list([f" a' = {round(self.table_1_student.a_shtrih, 3)}",f'a = {round(self.table_1_student.a, 3)}',f"b' = {round(self.table_1_student.b_shtrih, 3)}", f'b = {round(self.table_1_student.b, 3)}']))
+        df_list.append(list(
+            [f" a' = {round(self.table_1_student.a_shtrih, 3)}", f'a = {round(self.table_1_student.a, 3)}',
+             f"b' = {round(self.table_1_student.b_shtrih, 3)}", f'b = {round(self.table_1_student.b, 3)}']))
         df_list.append(list([]))
 
         for row in range(row_count):
@@ -396,7 +407,6 @@ class MainWindow(QMainWindow):
                     df_list2.append(
                         '' if table_item is None else float(table_item.text()))
             df_list.append(df_list2)
-
 
         df = pd.DataFrame(df_list, columns=headers)
         print(df)
@@ -443,7 +453,7 @@ class MainWindow(QMainWindow):
         x_list = [x / 50 for x in range(0, round(x_arr[-1] * 50))]
 
         cosPhi_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_1)
-                          for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+                                   for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
         cosPhi_chart.minorticks_on()
         cosPhi_chart.grid(which='major',
                           color='k',
@@ -456,7 +466,7 @@ class MainWindow(QMainWindow):
         cosPhi_chart.set_ylim(0, 1)
 
         kpd_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_2)
-                       for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+                                for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
         kpd_chart.minorticks_on()
         kpd_chart.grid(which='major',
                        color='k',
@@ -469,7 +479,7 @@ class MainWindow(QMainWindow):
         kpd_chart.set_ylim(0, 1)
 
         s_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_3)
-                     for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+                              for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
         s_chart.minorticks_on()
         s_chart.grid(which='major',
                      color='k',
@@ -481,7 +491,7 @@ class MainWindow(QMainWindow):
         s_chart.set_xlabel('P_квт', size=16)
 
         I_1_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_4)
-                       for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+                                for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
         I_1_chart.minorticks_on()
         I_1_chart.grid(which='major',
                        color='k',
@@ -531,7 +541,7 @@ class MainWindow(QMainWindow):
         x_list = [x / 1000 for x in range(0, round(x_arr[-1] * 1000))]
 
         I_dot.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_1)
-                   for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+                            for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
         I_dot.minorticks_on()
         I_dot.grid(which='major',
                    color='k',
@@ -543,7 +553,7 @@ class MainWindow(QMainWindow):
         I_dot.set_xlabel('s', size=16)
 
         M_star.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_2)
-                    for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+                             for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
         M_star.minorticks_on()
         M_star.grid(which='major',
                     color='k',
@@ -563,8 +573,12 @@ class MainWindow(QMainWindow):
         self.ui.bt_show_chart_1.setEnabled(True)
         self.ui.bt_export_xl_1.setEnabled(True)
         try:
-            self.table_1_student = table1(float(self.ui.le_a.text()), float(self.ui.le_a_shtrih.text()), float(self.ui.le_r2_shtrih.text()), float(self.ui.le_b.text()), float(self.ui.le_b_shtrih.text(
-            )), self.aboba.U, float(self.ui.le_I0a.text()), float(self.ui.le_I0p.text()), float(self.ui.le_c1.text()), float(self.ui.le_r1.text()), float(self.ui.le_Pst.text()), float(self.ui.le_Pmeh.text()))
+            self.table_1_student = table1(float(self.ui.le_a.text()), float(self.ui.le_a_shtrih.text()),
+                                          float(self.ui.le_r2_shtrih.text()), float(self.ui.le_b.text()),
+                                          float(self.ui.le_b_shtrih.text(
+                                          )), self.aboba.U, float(self.ui.le_I0a.text()), float(self.ui.le_I0p.text()),
+                                          float(self.ui.le_c1.text()), float(self.ui.le_r1.text()),
+                                          float(self.ui.le_Pst.text()), float(self.ui.le_Pmeh.text()))
         except Exception as e:
             msgBox = QMessageBox()
             msgBox.setText(
@@ -585,8 +599,10 @@ class MainWindow(QMainWindow):
                     self.ui.le_h_p_2.text()), float(self.ui.le_h_sh.text()),
                 float(self.ui.le_h_sh_shtrih.text()), float(
                     self.ui.le_b_1_r.text()), float(self.ui.le_b_2_r.text()),
-                float(self.ui.le_h_1.text()), float(self.ui.le_q_c.text()), float(self.ui.le_r_c.text()), self.aboba.U, float(self.ui.le_r1.text()), float(
-                    self.ui.le_r_2.text()), float(self.ui.le_r2_shtrih.text()), float(self.ui.le_h_0.text()), float(self.ui.le_b_sh_2.text()),
+                float(self.ui.le_h_1.text()), float(self.ui.le_q_c.text()), float(self.ui.le_r_c.text()), self.aboba.U,
+                float(self.ui.le_r1.text()), float(
+                    self.ui.le_r_2.text()), float(self.ui.le_r2_shtrih.text()), float(self.ui.le_h_0.text()),
+                float(self.ui.le_b_sh_2.text()),
                 float(self.ui.le_Lamda_p_2.text()), float(
                     self.ui.le_Lamda_l_2.text()),
                 float(self.ui.le_Lamda_d_2.text()), float(
@@ -643,15 +659,15 @@ class MainWindow(QMainWindow):
         for i in range(3, 7 + 1):
             for j in range(1, 20 + 1):
                 self.ui.tableWidget_3.item(j, i).setText(
-                    str(round(self.table_3_student.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())), 2)))
+                    str(round(self.table_3_student.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())),
+                              2)))
         self.ui.bt_export_xl_table_3.setEnabled(True)
         self.ui.bt_show_chart_table3.setEnabled(True)
         self.ui.tableWidget_3.reset()
 
-
     def changeError(self):
         self.ui.lb_error.setText(
-            "Погрешность при проверке = "+str(self.ui.sl_ValueOfError.value())+"%")
+            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.lb_error_2.setText(
             "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.lb_error_3.setText(
@@ -669,6 +685,39 @@ class MainWindow(QMainWindow):
         self.ui.le_r2_shtrih.setEnabled(False)
         self.ui.le_c1.setEnabled(False)
         self.clearTables()
+
+    def thermalcalculate(self):
+        k_ro = {"F": 1.07, "B": 1.15, "H": 1.45}
+        if (self.aboba.h <= 132):
+            m_shtrih = 1.8
+        else:
+            m_shtrih = 2.5
+
+        tc = ThermalCalculation(self.aboba.K, k_ro[self.aboba.heatClass],
+                                self.table_1_student.calculateTable(13, self.aboba.s_nom),
+                                float(self.ui.le_P_st_main.text()),
+                                float(self.ui.le_D.text()), float(self.ui.le_l_1.text()), float(self.ui.le_a_1.text()),
+                                float(self.ui.le_Z_1.text()), float(self.ui.le_h_pk.text()),
+                                float(self.ui.le_b_iz_p_1.text()),
+                                float(self.ui.le_b_1.text()), float(self.ui.le_b_2.text()),
+                                float(self.ui.le_lambda_ekv_shtrih.text()),
+                                float(self.ui.le_l_l_1.text()), float(self.ui.le_b_iz_l_1.text()),
+                                float(self.ui.le_h_p_1.text()),
+                                float(self.ui.le_l_vbl.text()), float(self.ui.le_l_avg_1.text()),
+                                self.table_1_student.calculateTable(16, self.aboba.s_nom),
+                                self.table_1_student.calculateTable(14, self.aboba.s_nom),
+                                float(self.ui.le_Pmeh.text()),
+                                float(self.ui.le_s_kor.text()), float(self.ui.le_a_v.text()), m_shtrih, self.aboba.n,
+                                float(self.ui.le_D_a.text()))
+        self.ui.lb_delta_nu_pov_1.setText("delta_nu_pov_1 = "+str(round(tc.delta_nu_pov_1, 3)))
+        self.ui.lb_delta_nu_iz_p_1.setText("delta_nu_iz_p_1 = "+str(round(tc.delta_nu_iz_p_1, 3)))
+        self.ui.lb_delta_nu_iz_l_1.setText("delta_nu_l_1 = "+str(round(tc.delta_nu_iz_l_1, 3)))
+        self.ui.lb_delta_nu_pov_l_1.setText("delta_nu_pov_l_1 = "+str(round(tc.delta_nu_pov_l_1, 3)))
+        self.ui.lb_delta_gamma_v.setText("delta_gamma_v = "+str(round(tc.delta_gamma_v, 3)))
+        self.ui.lb_teta_v_shtrih.setText("teta_v_shtrih = "+str(round(tc.teta_v_shtrih, 3)))
+        self.ui.lb_Q_v.setText("Q_v = "+str(round(tc.Q_v, 3)))
+        self.ui.lb_delta_nu_1_shtrih.setText("delta_nu_1_shtrih = "+str(round(tc.delta_nu_1_shtrih, 3)))
+        self.ui.lb_delta_nu_1.setText("delta_nu_1 = "+str(round(tc.delta_nu_1, 3)))
 
 
 app = QApplication()
