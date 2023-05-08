@@ -1,18 +1,14 @@
 import sys
 
 import matplotlib.pyplot as plt
-from PyQt6 import uic
 import pandas as pd
-from PySide6 import QtGui
 
-from main2 import MainProgram
-from func import Lagrange, LinearInterpolation, SplineCubicInterpolate
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QTextEdit
+from calculate import MainProgram
+from func import SplineCubicInterpolate
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
 from ww import *
 from tables import table1, table2, table3
 from thermal_calculation import ThermalCalculation
-from scipy import interpolate
-from openpyxl import Workbook
 
 correct_color = QColor(216, 255, 218)
 incorrect_color = QColor(255, 216, 216)
@@ -44,43 +40,6 @@ class MainWindow(QMainWindow):
         self.ui.bt_thermal_calc.clicked.connect(self.thermalcalculate)
         self.ui.bt_export_xl_table_2.clicked.connect(self.save_table_2_to_xl)
         self.ui.bt_export_xl_table_3.clicked.connect(self.save_table_3_to_xl)
-
-        openFile = QtGui.QAction("&Открыть файл", self)
-        openFile.setShortcut("Ctrl+O")
-        openFile.triggered.connect(self.file_open)
-
-        saveFile = QtGui.QAction("&Сохранить файл", self)
-        saveFile.setShortcut("Ctrl+S")
-        saveFile.triggered.connect(self.file_save)
-
-        mainMenu = self.menuBar()
-
-        fileMenu = mainMenu.addMenu('&Файл')
-        fileMenu.addAction(openFile)
-        fileMenu.addAction(saveFile)
-
-    def file_open(self):
-        name, _ = QFileDialog.getOpenFileName(self, 'Открыть файл')
-        file = open(name, 'r')
-
-        self.editor()
-
-        with file:
-            text = file.read()
-            self.textEdit.setText(text)
-
-    def file_save(self):
-        name, = QFileDialog.getSaveFileName(
-            self, 'Сохранить файл')
-        print(name)
-        file = open(name, 'w')
-        text = self.textEdit.toPlainText()
-        file.write(text)
-        file.close()
-
-    def editor(self):
-        self.textEdit = QTextEdit()
-        self.setCentralWidget(self.textEdit)
 
     def updateVoltage(self):
         if 0 < float(self.ui.linePower.currentText()) < 22:
@@ -536,6 +495,7 @@ class MainWindow(QMainWindow):
 
         y_arr_1[0] = y_arr_1[1] * 0.1
         y_arr_4[0] = y_arr_4[1] * 0.75
+        
         fig = plt.figure()
 
         cosPhi_chart = fig.add_subplot(2, 2, 1)
@@ -595,8 +555,8 @@ class MainWindow(QMainWindow):
         I_1_chart.set_ylabel('I₁', size=16)
         I_1_chart.set_xlabel('P_квт', size=16)
 
-        fig.set_figwidth(12)
-        fig.set_figheight(12)
+        fig.set_figwidth(10)
+        fig.set_figheight(10)
 
         plt.show()
 
@@ -657,8 +617,8 @@ class MainWindow(QMainWindow):
         M_star.set_ylabel('M*', size=16)
         M_star.set_xlabel('s', size=16)
 
-        fig.set_figwidth(12)
-        fig.set_figheight(12)
+        fig.set_figwidth(10)
+        fig.set_figheight(6)
 
         plt.show()
 

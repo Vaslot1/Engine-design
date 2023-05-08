@@ -2,7 +2,7 @@ import math
 
 from matplotlib import pyplot as plt
 
-from main1 import ro_115_al, f, k_beta_shtrih, a_harmonic
+from calculate import ro_115_al, f, k_beta_shtrih, a_harmonic
 from func import phi_func, phi_shtrih_func, k_sig_func, LinearInterpolation, SplineCubicInterpolate, Lagrange
 
 class table1:

@@ -14,7 +14,7 @@ from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+    QPalette, QPixmap, QRadialGradient, QTransform, QMovie)
 from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFormLayout,
     QFrame, QGridLayout, QHBoxLayout, QHeaderView,
     QLabel, QLayout, QLineEdit, QPushButton,
@@ -2783,6 +2783,29 @@ class Ui_mainWindow(object):
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(10, 10, 1371, 471))
         self.label.setWordWrap(True)
+        
+        movie = QMovie('gif/gif1.gif')
+        self.gif1 = QLabel(self.tab_5)
+        self.gif1.setObjectName(u"gif1")
+        self.gif1.setMovie(movie)
+        self.gif1.setGeometry(QRect(25, 415, 600, 500))
+        movie.setScaledSize(QSize(550, 350))
+        movie.start()
+        
+        movie = QMovie('gif/gif2.gif')
+        self.gif2 = QLabel(self.tab_4)
+        self.gif2.setObjectName(u"gif2")
+        self.gif2.setMovie(movie)
+        self.gif2.setGeometry(QRect(550, -150, 1425, 823))
+        movie.setScaledSize(QSize(900, 450))
+        movie.start()
+        
+        self.labelMeow = QLabel(self.tab_4)
+        self.labelMeow.setObjectName(u"labelMeow")
+        self.labelMeow.setGeometry(QRect(700, 90, 1425, 823))
+        self.labelMeow.setWordWrap(True)
+        self.labelMeow.setText("Пример работы программы при правильно введённых значениях")
+        
         self.tabWidget.addTab(self.tab_5, "")
 
         self.gridLayout_19.addWidget(self.tabWidget, 0, 0, 1, 1)

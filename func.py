@@ -1,6 +1,5 @@
 #####################################################################################*
 from scipy import interpolate
-from matplotlib import pyplot as plt
 
 
 def FindApproximateWithinBounds(arr, x):
@@ -1297,10 +1296,3 @@ def K_e_func(D_a):
 def spinter(x, xmeow, ymeow):
     tck = interpolate.splrep(xmeow, ymeow)
     return interpolate.splev(x, tck)
-
-
-# x_list = [x/1000 for x in range(100000)]
-
-# plt.plot(x_list, [p8_up(x) for x in x_list], color='red', marker='o', markersize=3)
-
-# plt.show()
