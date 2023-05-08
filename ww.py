@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'ui_mainWindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -25,7 +25,7 @@ class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         if not mainWindow.objectName():
             mainWindow.setObjectName(u"mainWindow")
-        mainWindow.resize(1445, 900)
+        mainWindow.resize(1548, 900)
         sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -33,16 +33,16 @@ class Ui_mainWindow(object):
         mainWindow.setSizePolicy(sizePolicy)
         mainWindow.setMaximumSize(QSize(1600, 900))
         mainWindow.setLayoutDirection(Qt.LeftToRight)
-        self.gridLayout_7 = QGridLayout(mainWindow)
-        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.gridLayout_6 = QGridLayout(mainWindow)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.scrollArea = QScrollArea(mainWindow)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1457, 863))
-        self.gridLayout_6 = QGridLayout(self.scrollAreaWidgetContents)
-        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1528, 880))
+        self.gridLayout_19 = QGridLayout(self.scrollAreaWidgetContents)
+        self.gridLayout_19.setObjectName(u"gridLayout_19")
         self.tabWidget = QTabWidget(self.scrollAreaWidgetContents)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setEnabled(True)
@@ -2237,21 +2237,59 @@ class Ui_mainWindow(object):
         self.tabWidget.addTab(self.tab_3, "")
         self.tb_thermal_calc = QWidget()
         self.tb_thermal_calc.setObjectName(u"tb_thermal_calc")
-        self.layoutWidget_3 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_3.setObjectName(u"layoutWidget_3")
-        self.layoutWidget_3.setGeometry(QRect(70, 110, 351, 51))
-        self.horizontalLayout_5 = QHBoxLayout(self.layoutWidget_3)
+        self.gridLayout_7 = QGridLayout(self.tb_thermal_calc)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.lb_D = QLabel(self.tb_thermal_calc)
+        self.lb_D.setObjectName(u"lb_D")
+        self.lb_D.setMinimumSize(QSize(50, 0))
+        self.lb_D.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_4.addWidget(self.lb_D)
+
+        self.le_D = QLineEdit(self.tb_thermal_calc)
+        self.le_D.setObjectName(u"le_D")
+        self.le_D.setMinimumSize(QSize(100, 0))
+        self.le_D.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_4.addWidget(self.le_D)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.lb_P_st_main = QLabel(self.tb_thermal_calc)
+        self.lb_P_st_main.setObjectName(u"lb_P_st_main")
+        self.lb_P_st_main.setMinimumSize(QSize(50, 0))
+        self.lb_P_st_main.setMaximumSize(QSize(60, 16777215))
+
+        self.horizontalLayout_2.addWidget(self.lb_P_st_main)
+
+        self.le_P_st_main = QLineEdit(self.tb_thermal_calc)
+        self.le_P_st_main.setObjectName(u"le_P_st_main")
+        self.le_P_st_main.setMinimumSize(QSize(100, 0))
+        self.le_P_st_main.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_2.addWidget(self.le_P_st_main)
+
+
+        self.horizontalLayout_4.addLayout(self.horizontalLayout_2)
+
+
+        self.gridLayout_7.addLayout(self.horizontalLayout_4, 0, 0, 1, 1)
+
+        self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.lb_l_1 = QLabel(self.layoutWidget_3)
+        self.lb_l_1 = QLabel(self.tb_thermal_calc)
         self.lb_l_1.setObjectName(u"lb_l_1")
         self.lb_l_1.setMinimumSize(QSize(50, 0))
         self.lb_l_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_5.addWidget(self.lb_l_1)
 
-        self.le_l_1 = QLineEdit(self.layoutWidget_3)
+        self.le_l_1 = QLineEdit(self.tb_thermal_calc)
         self.le_l_1.setObjectName(u"le_l_1")
         self.le_l_1.setMinimumSize(QSize(100, 0))
         self.le_l_1.setMaximumSize(QSize(100, 16777215))
@@ -2261,14 +2299,14 @@ class Ui_mainWindow(object):
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.lb_a_1 = QLabel(self.layoutWidget_3)
+        self.lb_a_1 = QLabel(self.tb_thermal_calc)
         self.lb_a_1.setObjectName(u"lb_a_1")
         self.lb_a_1.setMinimumSize(QSize(50, 0))
         self.lb_a_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_6.addWidget(self.lb_a_1)
 
-        self.le_a_1 = QLineEdit(self.layoutWidget_3)
+        self.le_a_1 = QLineEdit(self.tb_thermal_calc)
         self.le_a_1.setObjectName(u"le_a_1")
         self.le_a_1.setMaximumSize(QSize(100, 16777215))
 
@@ -2277,21 +2315,182 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_5.addLayout(self.horizontalLayout_6)
 
-        self.layoutWidget_5 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_5.setObjectName(u"layoutWidget_5")
-        self.layoutWidget_5.setGeometry(QRect(70, 180, 351, 51))
-        self.horizontalLayout_7 = QHBoxLayout(self.layoutWidget_5)
+
+        self.gridLayout_7.addLayout(self.horizontalLayout_5, 1, 0, 1, 1)
+
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setSizeConstraint(QLayout.SetMinimumSize)
+        self.horizontalLayout_20 = QHBoxLayout()
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.l_delta_nu_pov_1 = QLabel(self.tb_thermal_calc)
+        self.l_delta_nu_pov_1.setObjectName(u"l_delta_nu_pov_1")
+
+        self.horizontalLayout_20.addWidget(self.l_delta_nu_pov_1)
+
+        self.lb_delta_nu_pov_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_pov_1.setObjectName(u"lb_delta_nu_pov_1")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.lb_delta_nu_pov_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_pov_1.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_20.addWidget(self.lb_delta_nu_pov_1)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_20)
+
+        self.horizontalLayout_21 = QHBoxLayout()
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.l_delta_nu_iz_p_1 = QLabel(self.tb_thermal_calc)
+        self.l_delta_nu_iz_p_1.setObjectName(u"l_delta_nu_iz_p_1")
+
+        self.horizontalLayout_21.addWidget(self.l_delta_nu_iz_p_1)
+
+        self.lb_delta_nu_iz_p_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_iz_p_1.setObjectName(u"lb_delta_nu_iz_p_1")
+        sizePolicy7.setHeightForWidth(self.lb_delta_nu_iz_p_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_iz_p_1.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_21.addWidget(self.lb_delta_nu_iz_p_1)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_21)
+
+        self.horizontalLayout_22 = QHBoxLayout()
+        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
+        self.l_delta_nu_iz_l_1 = QLabel(self.tb_thermal_calc)
+        self.l_delta_nu_iz_l_1.setObjectName(u"l_delta_nu_iz_l_1")
+
+        self.horizontalLayout_22.addWidget(self.l_delta_nu_iz_l_1)
+
+        self.lb_delta_nu_iz_l_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_iz_l_1.setObjectName(u"lb_delta_nu_iz_l_1")
+        sizePolicy7.setHeightForWidth(self.lb_delta_nu_iz_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_iz_l_1.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_22.addWidget(self.lb_delta_nu_iz_l_1)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_22)
+
+        self.horizontalLayout_23 = QHBoxLayout()
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
+        self.l_delta_nu_pov_l_1 = QLabel(self.tb_thermal_calc)
+        self.l_delta_nu_pov_l_1.setObjectName(u"l_delta_nu_pov_l_1")
+
+        self.horizontalLayout_23.addWidget(self.l_delta_nu_pov_l_1)
+
+        self.lb_delta_nu_pov_l_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_pov_l_1.setObjectName(u"lb_delta_nu_pov_l_1")
+        sizePolicy7.setHeightForWidth(self.lb_delta_nu_pov_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_pov_l_1.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_23.addWidget(self.lb_delta_nu_pov_l_1)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_23)
+
+        self.horizontalLayout_24 = QHBoxLayout()
+        self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
+        self.l_Q_v = QLabel(self.tb_thermal_calc)
+        self.l_Q_v.setObjectName(u"l_Q_v")
+
+        self.horizontalLayout_24.addWidget(self.l_Q_v)
+
+        self.lb_delta_nu_1_shtrih = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_1_shtrih.setObjectName(u"lb_delta_nu_1_shtrih")
+        sizePolicy7.setHeightForWidth(self.lb_delta_nu_1_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_1_shtrih.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_24.addWidget(self.lb_delta_nu_1_shtrih)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_24)
+
+        self.horizontalLayout_25 = QHBoxLayout()
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.l_delta_nu_1_shtrih = QLabel(self.tb_thermal_calc)
+        self.l_delta_nu_1_shtrih.setObjectName(u"l_delta_nu_1_shtrih")
+
+        self.horizontalLayout_25.addWidget(self.l_delta_nu_1_shtrih)
+
+        self.lb_delta_gamma_v = QLabel(self.tb_thermal_calc)
+        self.lb_delta_gamma_v.setObjectName(u"lb_delta_gamma_v")
+        sizePolicy7.setHeightForWidth(self.lb_delta_gamma_v.sizePolicy().hasHeightForWidth())
+        self.lb_delta_gamma_v.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_25.addWidget(self.lb_delta_gamma_v)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_25)
+
+        self.horizontalLayout_26 = QHBoxLayout()
+        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
+        self.l_teta_v_shtrih = QLabel(self.tb_thermal_calc)
+        self.l_teta_v_shtrih.setObjectName(u"l_teta_v_shtrih")
+
+        self.horizontalLayout_26.addWidget(self.l_teta_v_shtrih)
+
+        self.lb_delta_nu_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_1.setObjectName(u"lb_delta_nu_1")
+        sizePolicy7.setHeightForWidth(self.lb_delta_nu_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_1.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_26.addWidget(self.lb_delta_nu_1)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_26)
+
+        self.horizontalLayout_27 = QHBoxLayout()
+        self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
+        self.l_delta_nu_1 = QLabel(self.tb_thermal_calc)
+        self.l_delta_nu_1.setObjectName(u"l_delta_nu_1")
+
+        self.horizontalLayout_27.addWidget(self.l_delta_nu_1)
+
+        self.lb_Q_v = QLabel(self.tb_thermal_calc)
+        self.lb_Q_v.setObjectName(u"lb_Q_v")
+        sizePolicy7.setHeightForWidth(self.lb_Q_v.sizePolicy().hasHeightForWidth())
+        self.lb_Q_v.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_27.addWidget(self.lb_Q_v)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_27)
+
+        self.horizontalLayout_28 = QHBoxLayout()
+        self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
+        self.l_delta_gamma_v = QLabel(self.tb_thermal_calc)
+        self.l_delta_gamma_v.setObjectName(u"l_delta_gamma_v")
+
+        self.horizontalLayout_28.addWidget(self.l_delta_gamma_v)
+
+        self.lb_teta_v_shtrih = QLabel(self.tb_thermal_calc)
+        self.lb_teta_v_shtrih.setObjectName(u"lb_teta_v_shtrih")
+        sizePolicy7.setHeightForWidth(self.lb_teta_v_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_teta_v_shtrih.setSizePolicy(sizePolicy7)
+
+        self.horizontalLayout_28.addWidget(self.lb_teta_v_shtrih)
+
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_28)
+
+
+        self.gridLayout_7.addLayout(self.verticalLayout_3, 1, 1, 5, 1)
+
+        self.horizontalLayout_7 = QHBoxLayout()
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.lb_h_pk = QLabel(self.layoutWidget_5)
+        self.lb_h_pk = QLabel(self.tb_thermal_calc)
         self.lb_h_pk.setObjectName(u"lb_h_pk")
         self.lb_h_pk.setMinimumSize(QSize(50, 0))
         self.lb_h_pk.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_7.addWidget(self.lb_h_pk)
 
-        self.le_h_pk = QLineEdit(self.layoutWidget_5)
+        self.le_h_pk = QLineEdit(self.tb_thermal_calc)
         self.le_h_pk.setObjectName(u"le_h_pk")
         self.le_h_pk.setMinimumSize(QSize(100, 0))
         self.le_h_pk.setMaximumSize(QSize(100, 16777215))
@@ -2301,14 +2500,14 @@ class Ui_mainWindow(object):
         self.horizontalLayout_8 = QHBoxLayout()
         self.horizontalLayout_8.setSpacing(0)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.lb_b_1 = QLabel(self.layoutWidget_5)
+        self.lb_b_1 = QLabel(self.tb_thermal_calc)
         self.lb_b_1.setObjectName(u"lb_b_1")
         self.lb_b_1.setMinimumSize(QSize(50, 0))
         self.lb_b_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_8.addWidget(self.lb_b_1)
 
-        self.le_b_1 = QLineEdit(self.layoutWidget_5)
+        self.le_b_1 = QLineEdit(self.tb_thermal_calc)
         self.le_b_1.setObjectName(u"le_b_1")
         self.le_b_1.setMinimumSize(QSize(100, 0))
         self.le_b_1.setMaximumSize(QSize(100, 16777215))
@@ -2318,21 +2517,20 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_7.addLayout(self.horizontalLayout_8)
 
-        self.layoutWidget_7 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_7.setObjectName(u"layoutWidget_7")
-        self.layoutWidget_7.setGeometry(QRect(70, 250, 351, 51))
-        self.horizontalLayout_9 = QHBoxLayout(self.layoutWidget_7)
+
+        self.gridLayout_7.addLayout(self.horizontalLayout_7, 2, 0, 1, 1)
+
+        self.horizontalLayout_9 = QHBoxLayout()
         self.horizontalLayout_9.setSpacing(0)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.lb_b_2 = QLabel(self.layoutWidget_7)
+        self.lb_b_2 = QLabel(self.tb_thermal_calc)
         self.lb_b_2.setObjectName(u"lb_b_2")
         self.lb_b_2.setMinimumSize(QSize(50, 0))
         self.lb_b_2.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_9.addWidget(self.lb_b_2)
 
-        self.le_b_2 = QLineEdit(self.layoutWidget_7)
+        self.le_b_2 = QLineEdit(self.tb_thermal_calc)
         self.le_b_2.setObjectName(u"le_b_2")
         self.le_b_2.setMinimumSize(QSize(100, 0))
         self.le_b_2.setMaximumSize(QSize(100, 16777215))
@@ -2342,14 +2540,14 @@ class Ui_mainWindow(object):
         self.horizontalLayout_10 = QHBoxLayout()
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.lb_b_iz_p_1 = QLabel(self.layoutWidget_7)
+        self.lb_b_iz_p_1 = QLabel(self.tb_thermal_calc)
         self.lb_b_iz_p_1.setObjectName(u"lb_b_iz_p_1")
         self.lb_b_iz_p_1.setMinimumSize(QSize(50, 0))
         self.lb_b_iz_p_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_10.addWidget(self.lb_b_iz_p_1)
 
-        self.le_b_iz_p_1 = QLineEdit(self.layoutWidget_7)
+        self.le_b_iz_p_1 = QLineEdit(self.tb_thermal_calc)
         self.le_b_iz_p_1.setObjectName(u"le_b_iz_p_1")
         self.le_b_iz_p_1.setMinimumSize(QSize(100, 0))
         self.le_b_iz_p_1.setMaximumSize(QSize(100, 16777215))
@@ -2359,21 +2557,20 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_9.addLayout(self.horizontalLayout_10)
 
-        self.layoutWidget_9 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_9.setObjectName(u"layoutWidget_9")
-        self.layoutWidget_9.setGeometry(QRect(70, 320, 351, 51))
-        self.horizontalLayout_11 = QHBoxLayout(self.layoutWidget_9)
+
+        self.gridLayout_7.addLayout(self.horizontalLayout_9, 3, 0, 1, 1)
+
+        self.horizontalLayout_11 = QHBoxLayout()
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.lb_lambda_ekv_shtrih = QLabel(self.layoutWidget_9)
+        self.lb_lambda_ekv_shtrih = QLabel(self.tb_thermal_calc)
         self.lb_lambda_ekv_shtrih.setObjectName(u"lb_lambda_ekv_shtrih")
         self.lb_lambda_ekv_shtrih.setMinimumSize(QSize(50, 0))
         self.lb_lambda_ekv_shtrih.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_11.addWidget(self.lb_lambda_ekv_shtrih)
 
-        self.le_lambda_ekv_shtrih = QLineEdit(self.layoutWidget_9)
+        self.le_lambda_ekv_shtrih = QLineEdit(self.tb_thermal_calc)
         self.le_lambda_ekv_shtrih.setObjectName(u"le_lambda_ekv_shtrih")
         self.le_lambda_ekv_shtrih.setMinimumSize(QSize(100, 0))
         self.le_lambda_ekv_shtrih.setMaximumSize(QSize(100, 16777215))
@@ -2384,14 +2581,14 @@ class Ui_mainWindow(object):
         self.horizontalLayout_12.setSpacing(0)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.horizontalLayout_12.setContentsMargins(0, -1, -1, -1)
-        self.lb_l_l_1 = QLabel(self.layoutWidget_9)
+        self.lb_l_l_1 = QLabel(self.tb_thermal_calc)
         self.lb_l_l_1.setObjectName(u"lb_l_l_1")
         self.lb_l_l_1.setMinimumSize(QSize(50, 0))
         self.lb_l_l_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_12.addWidget(self.lb_l_l_1)
 
-        self.le_l_l_1 = QLineEdit(self.layoutWidget_9)
+        self.le_l_l_1 = QLineEdit(self.tb_thermal_calc)
         self.le_l_l_1.setObjectName(u"le_l_l_1")
         self.le_l_l_1.setMinimumSize(QSize(100, 0))
         self.le_l_l_1.setMaximumSize(QSize(100, 16777215))
@@ -2401,21 +2598,20 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_11.addLayout(self.horizontalLayout_12)
 
-        self.layoutWidget_11 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_11.setObjectName(u"layoutWidget_11")
-        self.layoutWidget_11.setGeometry(QRect(70, 390, 351, 51))
-        self.horizontalLayout_13 = QHBoxLayout(self.layoutWidget_11)
+
+        self.gridLayout_7.addLayout(self.horizontalLayout_11, 4, 0, 1, 1)
+
+        self.horizontalLayout_13 = QHBoxLayout()
         self.horizontalLayout_13.setSpacing(0)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.lb_b_iz_l_1 = QLabel(self.layoutWidget_11)
+        self.lb_b_iz_l_1 = QLabel(self.tb_thermal_calc)
         self.lb_b_iz_l_1.setObjectName(u"lb_b_iz_l_1")
         self.lb_b_iz_l_1.setMinimumSize(QSize(50, 0))
         self.lb_b_iz_l_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_13.addWidget(self.lb_b_iz_l_1)
 
-        self.le_b_iz_l_1 = QLineEdit(self.layoutWidget_11)
+        self.le_b_iz_l_1 = QLineEdit(self.tb_thermal_calc)
         self.le_b_iz_l_1.setObjectName(u"le_b_iz_l_1")
         self.le_b_iz_l_1.setMinimumSize(QSize(100, 0))
         self.le_b_iz_l_1.setMaximumSize(QSize(100, 16777215))
@@ -2424,14 +2620,14 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_14 = QHBoxLayout()
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.lb_h_p_1 = QLabel(self.layoutWidget_11)
+        self.lb_h_p_1 = QLabel(self.tb_thermal_calc)
         self.lb_h_p_1.setObjectName(u"lb_h_p_1")
         self.lb_h_p_1.setMinimumSize(QSize(50, 0))
         self.lb_h_p_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_14.addWidget(self.lb_h_p_1)
 
-        self.le_h_p_1 = QLineEdit(self.layoutWidget_11)
+        self.le_h_p_1 = QLineEdit(self.tb_thermal_calc)
         self.le_h_p_1.setObjectName(u"le_h_p_1")
         self.le_h_p_1.setMinimumSize(QSize(100, 0))
         self.le_h_p_1.setMaximumSize(QSize(100, 16777215))
@@ -2441,21 +2637,20 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_13.addLayout(self.horizontalLayout_14)
 
-        self.layoutWidget_13 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_13.setObjectName(u"layoutWidget_13")
-        self.layoutWidget_13.setGeometry(QRect(70, 460, 351, 51))
-        self.horizontalLayout_15 = QHBoxLayout(self.layoutWidget_13)
+
+        self.gridLayout_7.addLayout(self.horizontalLayout_13, 5, 0, 1, 1)
+
+        self.horizontalLayout_15 = QHBoxLayout()
         self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.lb_l_vbl = QLabel(self.layoutWidget_13)
+        self.lb_l_vbl = QLabel(self.tb_thermal_calc)
         self.lb_l_vbl.setObjectName(u"lb_l_vbl")
         self.lb_l_vbl.setMinimumSize(QSize(50, 0))
         self.lb_l_vbl.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_15.addWidget(self.lb_l_vbl)
 
-        self.le_l_vbl = QLineEdit(self.layoutWidget_13)
+        self.le_l_vbl = QLineEdit(self.tb_thermal_calc)
         self.le_l_vbl.setObjectName(u"le_l_vbl")
         self.le_l_vbl.setMinimumSize(QSize(100, 0))
         self.le_l_vbl.setMaximumSize(QSize(100, 16777215))
@@ -2464,14 +2659,14 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_16 = QHBoxLayout()
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.lb_l_avg_1 = QLabel(self.layoutWidget_13)
+        self.lb_l_avg_1 = QLabel(self.tb_thermal_calc)
         self.lb_l_avg_1.setObjectName(u"lb_l_avg_1")
         self.lb_l_avg_1.setMinimumSize(QSize(50, 0))
         self.lb_l_avg_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_16.addWidget(self.lb_l_avg_1)
 
-        self.le_l_avg_1 = QLineEdit(self.layoutWidget_13)
+        self.le_l_avg_1 = QLineEdit(self.tb_thermal_calc)
         self.le_l_avg_1.setObjectName(u"le_l_avg_1")
         self.le_l_avg_1.setMinimumSize(QSize(100, 0))
         self.le_l_avg_1.setMaximumSize(QSize(100, 16777215))
@@ -2481,42 +2676,20 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_15.addLayout(self.horizontalLayout_16)
 
-        self.layoutWidget_15 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_15.setObjectName(u"layoutWidget_15")
-        self.layoutWidget_15.setGeometry(QRect(70, 590, 191, 51))
-        self.horizontalLayout_17 = QHBoxLayout(self.layoutWidget_15)
-        self.horizontalLayout_17.setSpacing(0)
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.lb_s_kor = QLabel(self.layoutWidget_15)
-        self.lb_s_kor.setObjectName(u"lb_s_kor")
-        self.lb_s_kor.setMinimumSize(QSize(50, 0))
-        self.lb_s_kor.setMaximumSize(QSize(50, 16777215))
 
-        self.horizontalLayout_17.addWidget(self.lb_s_kor)
+        self.gridLayout_7.addLayout(self.horizontalLayout_15, 6, 0, 1, 1)
 
-        self.le_s_kor = QLineEdit(self.layoutWidget_15)
-        self.le_s_kor.setObjectName(u"le_s_kor")
-        self.le_s_kor.setMinimumSize(QSize(100, 0))
-        self.le_s_kor.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_17.addWidget(self.le_s_kor)
-
-        self.layoutWidget_16 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_16.setObjectName(u"layoutWidget_16")
-        self.layoutWidget_16.setGeometry(QRect(70, 530, 351, 51))
-        self.horizontalLayout_18 = QHBoxLayout(self.layoutWidget_16)
+        self.horizontalLayout_18 = QHBoxLayout()
         self.horizontalLayout_18.setSpacing(0)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.lb_a_v = QLabel(self.layoutWidget_16)
+        self.lb_a_v = QLabel(self.tb_thermal_calc)
         self.lb_a_v.setObjectName(u"lb_a_v")
         self.lb_a_v.setMinimumSize(QSize(50, 0))
         self.lb_a_v.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_18.addWidget(self.lb_a_v)
 
-        self.le_a_v = QLineEdit(self.layoutWidget_16)
+        self.le_a_v = QLineEdit(self.tb_thermal_calc)
         self.le_a_v.setObjectName(u"le_a_v")
         self.le_a_v.setMinimumSize(QSize(100, 0))
         self.le_a_v.setMaximumSize(QSize(100, 16777215))
@@ -2525,14 +2698,14 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_19 = QHBoxLayout()
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.lb_D_a = QLabel(self.layoutWidget_16)
+        self.lb_D_a = QLabel(self.tb_thermal_calc)
         self.lb_D_a.setObjectName(u"lb_D_a")
         self.lb_D_a.setMinimumSize(QSize(50, 0))
         self.lb_D_a.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_19.addWidget(self.lb_D_a)
 
-        self.le_D_a = QLineEdit(self.layoutWidget_16)
+        self.le_D_a = QLineEdit(self.tb_thermal_calc)
         self.le_D_a.setObjectName(u"le_D_a")
         self.le_D_a.setMinimumSize(QSize(100, 0))
         self.le_D_a.setMaximumSize(QSize(100, 16777215))
@@ -2542,159 +2715,38 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_18.addLayout(self.horizontalLayout_19)
 
-        self.layoutWidget1 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget1.setObjectName(u"layoutWidget1")
-        self.layoutWidget1.setGeometry(QRect(560, 40, 131, 331))
-        self.verticalLayout_3 = QVBoxLayout(self.layoutWidget1)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.lb_delta_nu_pov_1 = QLabel(self.layoutWidget1)
-        self.lb_delta_nu_pov_1.setObjectName(u"lb_delta_nu_pov_1")
 
-        self.verticalLayout_3.addWidget(self.lb_delta_nu_pov_1)
+        self.gridLayout_7.addLayout(self.horizontalLayout_18, 7, 0, 1, 1)
 
-        self.lb_delta_nu_iz_p_1 = QLabel(self.layoutWidget1)
-        self.lb_delta_nu_iz_p_1.setObjectName(u"lb_delta_nu_iz_p_1")
+        self.horizontalLayout_17 = QHBoxLayout()
+        self.horizontalLayout_17.setSpacing(0)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.lb_s_kor = QLabel(self.tb_thermal_calc)
+        self.lb_s_kor.setObjectName(u"lb_s_kor")
+        self.lb_s_kor.setMinimumSize(QSize(50, 0))
+        self.lb_s_kor.setMaximumSize(QSize(50, 16777215))
 
-        self.verticalLayout_3.addWidget(self.lb_delta_nu_iz_p_1)
+        self.horizontalLayout_17.addWidget(self.lb_s_kor)
 
-        self.lb_delta_nu_iz_l_1 = QLabel(self.layoutWidget1)
-        self.lb_delta_nu_iz_l_1.setObjectName(u"lb_delta_nu_iz_l_1")
+        self.le_s_kor = QLineEdit(self.tb_thermal_calc)
+        self.le_s_kor.setObjectName(u"le_s_kor")
+        self.le_s_kor.setMinimumSize(QSize(100, 0))
+        self.le_s_kor.setMaximumSize(QSize(100, 16777215))
 
-        self.verticalLayout_3.addWidget(self.lb_delta_nu_iz_l_1)
-
-        self.lb_delta_nu_pov_l_1 = QLabel(self.layoutWidget1)
-        self.lb_delta_nu_pov_l_1.setObjectName(u"lb_delta_nu_pov_l_1")
-
-        self.verticalLayout_3.addWidget(self.lb_delta_nu_pov_l_1)
-
-        self.lb_delta_nu_1_shtrih = QLabel(self.layoutWidget1)
-        self.lb_delta_nu_1_shtrih.setObjectName(u"lb_delta_nu_1_shtrih")
-
-        self.verticalLayout_3.addWidget(self.lb_delta_nu_1_shtrih)
-
-        self.lb_delta_gamma_v = QLabel(self.layoutWidget1)
-        self.lb_delta_gamma_v.setObjectName(u"lb_delta_gamma_v")
-
-        self.verticalLayout_3.addWidget(self.lb_delta_gamma_v)
-
-        self.lb_delta_nu_1 = QLabel(self.layoutWidget1)
-        self.lb_delta_nu_1.setObjectName(u"lb_delta_nu_1")
-
-        self.verticalLayout_3.addWidget(self.lb_delta_nu_1)
-
-        self.lb_Q_v = QLabel(self.layoutWidget1)
-        self.lb_Q_v.setObjectName(u"lb_Q_v")
-
-        self.verticalLayout_3.addWidget(self.lb_Q_v)
-
-        self.lb_teta_v_shtrih = QLabel(self.layoutWidget1)
-        self.lb_teta_v_shtrih.setObjectName(u"lb_teta_v_shtrih")
-
-        self.verticalLayout_3.addWidget(self.lb_teta_v_shtrih)
-
-        self.layoutWidget_2 = QWidget(self.tb_thermal_calc)
-        self.layoutWidget_2.setObjectName(u"layoutWidget_2")
-        self.layoutWidget_2.setGeometry(QRect(70, 40, 351, 51))
-        self.horizontalLayout_4 = QHBoxLayout(self.layoutWidget_2)
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.lb_D = QLabel(self.layoutWidget_2)
-        self.lb_D.setObjectName(u"lb_D")
-        self.lb_D.setMinimumSize(QSize(50, 0))
-        self.lb_D.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_4.addWidget(self.lb_D)
-
-        self.le_D = QLineEdit(self.layoutWidget_2)
-        self.le_D.setObjectName(u"le_D")
-        self.le_D.setMinimumSize(QSize(100, 0))
-        self.le_D.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_4.addWidget(self.le_D)
-
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setSpacing(0)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.lb_P_st_main = QLabel(self.layoutWidget_2)
-        self.lb_P_st_main.setObjectName(u"lb_P_st_main")
-        self.lb_P_st_main.setMinimumSize(QSize(50, 0))
-        self.lb_P_st_main.setMaximumSize(QSize(60, 16777215))
-
-        self.horizontalLayout_2.addWidget(self.lb_P_st_main)
-
-        self.le_P_st_main = QLineEdit(self.layoutWidget_2)
-        self.le_P_st_main.setObjectName(u"le_P_st_main")
-        self.le_P_st_main.setMinimumSize(QSize(100, 0))
-        self.le_P_st_main.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_2.addWidget(self.le_P_st_main)
+        self.horizontalLayout_17.addWidget(self.le_s_kor)
 
 
-        self.horizontalLayout_4.addLayout(self.horizontalLayout_2)
+        self.gridLayout_7.addLayout(self.horizontalLayout_17, 8, 0, 1, 1)
 
-        self.gridLayoutWidget = QWidget(self.tb_thermal_calc)
-        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
-        self.gridLayoutWidget.setGeometry(QRect(70, 650, 351, 151))
-        self.gridLayout_18 = QGridLayout(self.gridLayoutWidget)
+        self.gridLayout_18 = QGridLayout()
         self.gridLayout_18.setObjectName(u"gridLayout_18")
-        self.gridLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.bt_thermal_calc = QPushButton(self.gridLayoutWidget)
+        self.bt_thermal_calc = QPushButton(self.tb_thermal_calc)
         self.bt_thermal_calc.setObjectName(u"bt_thermal_calc")
 
         self.gridLayout_18.addWidget(self.bt_thermal_calc, 0, 0, 1, 1)
 
-        self.verticalLayoutWidget = QWidget(self.tb_thermal_calc)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(469, 40, 91, 331))
-        self.verticalLayout_4 = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.l_delta_nu_pov_1 = QLabel(self.verticalLayoutWidget)
-        self.l_delta_nu_pov_1.setObjectName(u"l_delta_nu_pov_1")
 
-        self.verticalLayout_4.addWidget(self.l_delta_nu_pov_1)
-
-        self.l_delta_nu_iz_p_1 = QLabel(self.verticalLayoutWidget)
-        self.l_delta_nu_iz_p_1.setObjectName(u"l_delta_nu_iz_p_1")
-
-        self.verticalLayout_4.addWidget(self.l_delta_nu_iz_p_1)
-
-        self.l_delta_nu_iz_l_1 = QLabel(self.verticalLayoutWidget)
-        self.l_delta_nu_iz_l_1.setObjectName(u"l_delta_nu_iz_l_1")
-
-        self.verticalLayout_4.addWidget(self.l_delta_nu_iz_l_1)
-
-        self.l_delta_nu_pov_l_1 = QLabel(self.verticalLayoutWidget)
-        self.l_delta_nu_pov_l_1.setObjectName(u"l_delta_nu_pov_l_1")
-
-        self.verticalLayout_4.addWidget(self.l_delta_nu_pov_l_1)
-
-        self.l_Q_v = QLabel(self.verticalLayoutWidget)
-        self.l_Q_v.setObjectName(u"l_Q_v")
-
-        self.verticalLayout_4.addWidget(self.l_Q_v)
-
-        self.l_delta_nu_1_shtrih = QLabel(self.verticalLayoutWidget)
-        self.l_delta_nu_1_shtrih.setObjectName(u"l_delta_nu_1_shtrih")
-
-        self.verticalLayout_4.addWidget(self.l_delta_nu_1_shtrih)
-
-        self.l_teta_v_shtrih = QLabel(self.verticalLayoutWidget)
-        self.l_teta_v_shtrih.setObjectName(u"l_teta_v_shtrih")
-
-        self.verticalLayout_4.addWidget(self.l_teta_v_shtrih)
-
-        self.l_delta_nu_1 = QLabel(self.verticalLayoutWidget)
-        self.l_delta_nu_1.setObjectName(u"l_delta_nu_1")
-
-        self.verticalLayout_4.addWidget(self.l_delta_nu_1)
-
-        self.l_delta_gamma_v = QLabel(self.verticalLayoutWidget)
-        self.l_delta_gamma_v.setObjectName(u"l_delta_gamma_v")
-
-        self.verticalLayout_4.addWidget(self.l_delta_gamma_v)
+        self.gridLayout_7.addLayout(self.gridLayout_18, 9, 0, 1, 1)
 
         self.tabWidget.addTab(self.tb_thermal_calc, "")
         self.tb_settings = QWidget()
@@ -2733,16 +2785,16 @@ class Ui_mainWindow(object):
         self.label.setWordWrap(True)
         self.tabWidget.addTab(self.tab_5, "")
 
-        self.gridLayout_6.addWidget(self.tabWidget, 0, 0, 1, 1)
+        self.gridLayout_19.addWidget(self.tabWidget, 0, 0, 1, 1)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
-        self.gridLayout_7.addWidget(self.scrollArea, 0, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.scrollArea, 0, 0, 1, 1)
 
 
         self.retranslateUi(mainWindow)
 
-        self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.setCurrentIndex(0)
         self.linePower.setCurrentIndex(18)
         self.lineVoltage.setCurrentIndex(1)
         self.linePolarity.setCurrentIndex(1)
@@ -3427,10 +3479,32 @@ class Ui_mainWindow(object):
         self.le_K_R.setText(QCoreApplication.translate("mainWindow", u"1.372", None))
         self.lb_error_3.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 3", None))
+        self.lb_D.setText(QCoreApplication.translate("mainWindow", u"D=", None))
+        self.le_D.setText(QCoreApplication.translate("mainWindow", u"0.208", None))
+        self.lb_P_st_main.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">\u0441\u0442. \u043e\u0441\u043d</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
+        self.le_P_st_main.setText(QCoreApplication.translate("mainWindow", u"371.39", None))
         self.lb_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>l<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_l_1.setText(QCoreApplication.translate("mainWindow", u"0.145", None))
         self.lb_a_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>a<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_a_1.setText(QCoreApplication.translate("mainWindow", u"113", None))
+        self.l_delta_nu_pov_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u04321</span> =</p></body></html>", None))
+        self.lb_delta_nu_pov_1.setText("")
+        self.l_delta_nu_iz_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043f</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
+        self.lb_delta_nu_iz_p_1.setText("")
+        self.l_delta_nu_iz_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043b1</span> =</p></body></html>", None))
+        self.lb_delta_nu_iz_l_1.setText("")
+        self.l_delta_nu_pov_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u0432.\u043b1</span> =</p></body></html>", None))
+        self.lb_delta_nu_pov_l_1.setText("")
+        self.l_Q_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span><span style=\" font-size:22pt; vertical-align:super;\">'</span> =</p></body></html>", None))
+        self.lb_delta_nu_1_shtrih.setText("")
+        self.l_delta_nu_1_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span> =</p></body></html>", None))
+        self.lb_delta_gamma_v.setText("")
+        self.l_teta_v_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
+        self.lb_delta_nu_1.setText("")
+        self.l_delta_nu_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Q<span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span>= </p></body></html>", None))
+        self.lb_Q_v.setText("")
+        self.l_delta_gamma_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:20px; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471);\">\u03b8</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:16pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:sub;\">\u0432</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:24pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:super;\">'</span> =</p></body></html>", None))
+        self.lb_teta_v_shtrih.setText("")
         self.lb_h_pk.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u043f\u043a</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_h_pk.setText(QCoreApplication.translate("mainWindow", u"26.03", None))
         self.lb_b_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
@@ -3451,35 +3525,13 @@ class Ui_mainWindow(object):
         self.le_l_vbl.setText(QCoreApplication.translate("mainWindow", u"0.0723", None))
         self.lb_l_avg_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>l<span style=\" vertical-align:sub;\">\u0441\u04401</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_l_avg_1.setText(QCoreApplication.translate("mainWindow", u"0.734", None))
-        self.lb_s_kor.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>s<span style=\" vertical-align:sub;\">\u043a\u043e\u0440</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_s_kor.setText(QCoreApplication.translate("mainWindow", u"1.12", None))
         self.lb_a_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>a<span style=\" vertical-align:sub;\">\u0432</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_a_v.setText(QCoreApplication.translate("mainWindow", u"22.5", None))
         self.lb_D_a.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>D<span style=\" vertical-align:sub;\">a</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_D_a.setText(QCoreApplication.translate("mainWindow", u"0.32", None))
-        self.lb_delta_nu_pov_1.setText("")
-        self.lb_delta_nu_iz_p_1.setText("")
-        self.lb_delta_nu_iz_l_1.setText("")
-        self.lb_delta_nu_pov_l_1.setText("")
-        self.lb_delta_nu_1_shtrih.setText("")
-        self.lb_delta_gamma_v.setText("")
-        self.lb_delta_nu_1.setText("")
-        self.lb_Q_v.setText("")
-        self.lb_teta_v_shtrih.setText("")
-        self.lb_D.setText(QCoreApplication.translate("mainWindow", u"D=", None))
-        self.le_D.setText(QCoreApplication.translate("mainWindow", u"0.208", None))
-        self.lb_P_st_main.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">\u0441\u0442. \u043e\u0441\u043d</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_P_st_main.setText(QCoreApplication.translate("mainWindow", u"371.39", None))
+        self.lb_s_kor.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>s<span style=\" vertical-align:sub;\">\u043a\u043e\u0440</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
+        self.le_s_kor.setText(QCoreApplication.translate("mainWindow", u"1.12", None))
         self.bt_thermal_calc.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0441\u0442\u0438 \u0442\u0435\u043f\u043b\u043e\u0432\u043e\u0439 \u0440\u0430\u0441\u0447\u0451\u0442", None))
-        self.l_delta_nu_pov_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u04321</span> =</p></body></html>", None))
-        self.l_delta_nu_iz_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043f</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
-        self.l_delta_nu_iz_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043b1</span> =</p></body></html>", None))
-        self.l_delta_nu_pov_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u0432.\u043b1</span> =</p></body></html>", None))
-        self.l_Q_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span><span style=\" font-size:22pt; vertical-align:super;\">'</span> =</p></body></html>", None))
-        self.l_delta_nu_1_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span> =</p></body></html>", None))
-        self.l_teta_v_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
-        self.l_delta_nu_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Q<span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span>= </p></body></html>", None))
-        self.l_delta_gamma_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:20px; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471);\">\u03b8</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:16pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:sub;\">\u0432</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:24pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:super;\">'</span> =</p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tb_thermal_calc), QCoreApplication.translate("mainWindow", u"\u0422\u0435\u043f\u043b\u043e\u0432\u043e\u0439 \u0440\u0430\u0441\u0447\u0451\u0442", None))
         self.lb_valueOfError.setText(QCoreApplication.translate("mainWindow", u"\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043f\u043e\u0433\u0440\u0435\u0448\u043d\u043e\u0441\u0442\u0438", None))
 #if QT_CONFIG(whatsthis)
@@ -3494,5 +3546,4 @@ class Ui_mainWindow(object):
                         "\u0441\u0442\u0438\u043a \u0430.\u0434. </span></p><p><span style=\" font-size:16pt; font-style:italic;\">8) \u0410\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u043e \u0437\u0430\u043f\u043e\u043b\u043d\u044f\u044e\u0442\u0441\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430 2 \u0438 \u0442\u0430\u0431\u043b\u0438\u0446\u0430 3 \u0434\u043b\u044f \u0441\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u044f, \u0440\u0430\u0432\u043d\u043e\u0433\u043e 1.</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("mainWindow", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
     # retranslateUi
-
 

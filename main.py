@@ -42,6 +42,8 @@ class MainWindow(QMainWindow):
         self.ui.sl_ValueOfError.valueChanged.connect(self.changeError)
         self.ui.linePower.currentTextChanged.connect(self.updateVoltage)
         self.ui.bt_thermal_calc.clicked.connect(self.thermalcalculate)
+        self.ui.bt_export_xl_table_2.clicked.connect(self.save_table_2_to_xl)
+        self.ui.bt_export_xl_table_3.clicked.connect(self.save_table_3_to_xl)
 
         openFile = QtGui.QAction("&Открыть файл", self)
         openFile.setShortcut("Ctrl+O")
@@ -335,11 +337,11 @@ class MainWindow(QMainWindow):
         self.ui.tabWidget.setCurrentWidget(self.ui.tab)
 
         self.ui.lb_error.setText(
-            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
+            "Допустимая погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.lb_error_2.setText(
-            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
+            "Допустимая погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.lb_error_3.setText(
-            "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
+            "Допустимая погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
 
         for i in range(1, 19 + 1):
             for j in range(0, 9):
@@ -379,21 +381,13 @@ class MainWindow(QMainWindow):
     def save_table_to_xl_1(self):
         col_count = self.ui.tableWidget.columnCount()
         row_count = self.ui.tableWidget.rowCount()
+        df_list = []
+
         headers = [str(self.ui.tableWidget.horizontalHeaderItem(i).text())
                    for i in range(col_count)]
 
         # df indexing is slow, so use lists
-        df_list = []
-        df_list.append(list(
-            [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}',
-             f'I0a = {round(self.table_1_student.I_0_a, 3)}', f'I0p = {round(self.table_1_student.I_nu, 3)}',
-             f'Pст+Pмех = {round(self.table_1_student.P_st + self.table_1_student.P_meh, 3)}',
-             f'r1 = {round(self.table_1_student.r_1, 3)}', f"r'2 = {round(self.table_1_student.r_2_shtrih, 3)}",
-             f'c1 = {round(self.table_1_student.C_1, 3)}']))
-        df_list.append(list(
-            [f" a' = {round(self.table_1_student.a_shtrih, 3)}", f'a = {round(self.table_1_student.a, 3)}',
-             f"b' = {round(self.table_1_student.b_shtrih, 3)}", f'b = {round(self.table_1_student.b, 3)}']))
-        df_list.append(list([]))
+
 
         for row in range(row_count):
             df_list2 = []
@@ -408,14 +402,113 @@ class MainWindow(QMainWindow):
                         '' if table_item is None else float(table_item.text()))
             df_list.append(df_list2)
 
+        df_list.append(list([]))
+
+        df_list.append(list(
+                [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}',
+                 f'I0a = {round(self.table_1_student.I_0_a, 3)}', f'I0p = {round(self.table_1_student.I_nu, 3)}',
+                 f'Pст+Pмех = {round(self.table_1_student.P_st + self.table_1_student.P_meh, 3)}',
+                 f'r1 = {round(self.table_1_student.r_1, 3)}', f"r'2 = {round(self.table_1_student.r_2_shtrih, 3)}",
+                 f'c1 = {round(self.table_1_student.C_1, 3)}']))
+        df_list.append(list(
+                [f" a' = {round(self.table_1_student.a_shtrih, 3)}", f'a = {round(self.table_1_student.a, 3)}',
+                 f"b' = {round(self.table_1_student.b_shtrih, 3)}", f'b = {round(self.table_1_student.b, 3)}']))
+
         df = pd.DataFrame(df_list, columns=headers)
-        print(df)
-        writer = pd.ExcelWriter('example.xlsx', mode='w')
-        df.to_excel(writer, f'Двигатель {len(writer.sheets)}')
-        writer._save()
+        name = QFileDialog.getSaveFileName(
+            self, 'Сохранить файл','','XLSX File (*.xlsx)',)
+        if name[0] != '':
+            writer = pd.ExcelWriter(name[0], mode='w')
+            df.to_excel(writer, f'Двигатель {len(writer.sheets)}')
+            writer._save()
+    def save_table_2_to_xl(self):
+        col_count = self.ui.tableWidget_2.columnCount()
+        row_count = self.ui.tableWidget_2.rowCount()
+        df_list = []
+        headers = [str(self.ui.tableWidget.horizontalHeaderItem(i).text())
+                   for i in range(col_count)]
+
+        # df indexing is slow, so use lists
+
+
+        for row in range(row_count):
+            df_list2 = []
+            for col in range(col_count):
+                if col <= 1:
+                    table_item = self.ui.tableWidget_2.item(row, col)
+                    df_list2.append(
+                        '' if table_item is None else str(table_item.text()))
+                else:
+                    table_item = self.ui.tableWidget_2.item(row, col)
+                    df_list2.append(
+                        '' if table_item is None else float(table_item.text()))
+            df_list.append(df_list2)
+
+        df_list.append(list([]))
+
+        df_list.append(list(
+                [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}',
+                 f"I'2ном = {round(self.table_1_student.calculateTable(11,self.aboba.s_nom), 3)}",
+                 f'x1 = {round(self.table_2_student.X_1, 3)}', f"x'2 = {round(self.table_2_student.X_2_shtrih, 3)}",
+                 f'r1 = {round(self.table_2_student.r_1, 3)}', f"r'2 = {round(self.table_2_student.r_2_shtrih, 3)}"
+                 ]))
+        df_list.append(list(
+                [f'c1п = {round(self.table_2_student.c_1_p, 3)}', f" x12п = {round(self.table_2_student.x_1_2_p, 3)}", f'sном = {round(self.aboba.s_nom, 3)}']))
+
+        df = pd.DataFrame(df_list, columns=headers)
+        name = QFileDialog.getSaveFileName(
+            self, 'Сохранить файл', '', 'XLSX File (*.xlsx)', )
+        if name[0] != '':
+            writer = pd.ExcelWriter(name[0], mode='w')
+            df.to_excel(writer, f'Двигатель {len(writer.sheets)}')
+            writer._save()
+
+    def save_table_3_to_xl(self):
+        col_count = self.ui.tableWidget_3.columnCount()
+        row_count = self.ui.tableWidget_3.rowCount()
+        df_list = []
+        headers = [str(self.ui.tableWidget.horizontalHeaderItem(i).text())
+                   for i in range(col_count)]
+
+        # df indexing is slow, so use lists
+
+
+        for row in range(row_count):
+            df_list2 = []
+            for col in range(col_count):
+                if col <= 1:
+                    table_item = self.ui.tableWidget_3.item(row, col)
+                    df_list2.append(
+                        '' if table_item is None else str(table_item.text()))
+                else:
+                    table_item = self.ui.tableWidget_3.item(row, col)
+                    df_list2.append(
+                        '' if table_item is None else float(table_item.text()))
+            df_list.append(df_list2)
+
+        df_list.append(list([]))
+
+        df_list.append(list(
+                [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}', f"I1ном = {round(self.table_3_student.I_1_nom, 3)}",
+                 f"I'2ном = {round(self.table_1_student.calculateTable(11,self.aboba.s_nom), 3)}",
+                 f'x1 = {round(self.table_3_student.X_1, 3)}', f"x'2 = {round(self.table_3_student.X_2_shtrih, 3)}",
+                 f'r1 = {round(self.table_3_student.r_1, 3)}',
+                 ]))
+        df_list.append(list(
+                [f"r'2 = {round(self.table_2_student.r_2_shtrih, 3)}",
+                 f" x12п = {round(self.table_3_student.x_1_2_p, 3)}", f'sном = {round(self.aboba.s_nom, 3)}',
+                 f"C_N = {round(self.table_3_student.C_N, 3)}"]))
+
+        df = pd.DataFrame(df_list, columns=headers)
+        name = QFileDialog.getSaveFileName(
+            self, 'Сохранить файл', '', 'XLSX File (*.xlsx)', )
+        if name[0] != '':
+            writer = pd.ExcelWriter(name[0], mode='w')
+            df.to_excel(writer, f'Двигатель {len(writer.sheets)}')
+            writer._save()
+
 
     def show_chart_table_1(self):
-
         x_arr = [0]
         y_arr_1 = [0]
         y_arr_2 = [0]
@@ -656,14 +749,21 @@ class MainWindow(QMainWindow):
             msgBox.setText(
                 "Неправильно введены значения")
             msgBox.exec()
-        for i in range(3, 7 + 1):
-            for j in range(1, 20 + 1):
-                self.ui.tableWidget_3.item(j, i).setText(
-                    str(round(self.table_3_student.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())),
-                              2)))
-        self.ui.bt_export_xl_table_3.setEnabled(True)
-        self.ui.bt_show_chart_table3.setEnabled(True)
-        self.ui.tableWidget_3.reset()
+        try:
+            for i in range(3, 7 + 1):
+                for j in range(1, 20 + 1):
+                    self.ui.tableWidget_3.item(j, i).setText(
+                        str(round(self.table_3_student.calculateTable(j, float(self.ui.tableWidget_3.item(0, i).text())),
+                                  2)))
+            self.ui.bt_export_xl_table_3.setEnabled(True)
+            self.ui.bt_show_chart_table3.setEnabled(True)
+            self.ui.tableWidget_3.reset()
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText(
+                "Необходимо посчитать прошлые таблицы")
+            msgBox.exec()
+
 
     def changeError(self):
         self.ui.lb_error.setText(
@@ -692,32 +792,38 @@ class MainWindow(QMainWindow):
             m_shtrih = 1.8
         else:
             m_shtrih = 2.5
+        try:
+            tc = ThermalCalculation(self.aboba.K, k_ro[self.aboba.heatClass],
+                                    self.table_1_student.calculateTable(13, self.aboba.s_nom),
+                                    float(self.ui.le_P_st_main.text()),
+                                    float(self.ui.le_D.text()), float(self.ui.le_l_1.text()), float(self.ui.le_a_1.text()),
+                                    float(self.ui.le_Z_1.text()), float(self.ui.le_h_pk.text()),
+                                    float(self.ui.le_b_iz_p_1.text()),
+                                    float(self.ui.le_b_1.text()), float(self.ui.le_b_2.text()),
+                                    float(self.ui.le_lambda_ekv_shtrih.text()),
+                                    float(self.ui.le_l_l_1.text()), float(self.ui.le_b_iz_l_1.text()),
+                                    float(self.ui.le_h_p_1.text()),
+                                    float(self.ui.le_l_vbl.text()), float(self.ui.le_l_avg_1.text()),
+                                    self.table_1_student.calculateTable(16, self.aboba.s_nom),
+                                    self.table_1_student.calculateTable(14, self.aboba.s_nom),
+                                    float(self.ui.le_Pmeh.text()),
+                                    float(self.ui.le_s_kor.text()), float(self.ui.le_a_v.text()), m_shtrih, self.aboba.n,
+                                    float(self.ui.le_D_a.text()))
+            self.ui.lb_delta_nu_pov_1.setText(str(round(tc.delta_nu_pov_1, 3)) + " \u00b0C")
+            self.ui.lb_delta_nu_iz_p_1.setText(str(round(tc.delta_nu_iz_p_1, 3)) + " \u00b0C")
+            self.ui.lb_delta_nu_iz_l_1.setText(str(round(tc.delta_nu_iz_l_1, 3)) + " \u00b0C")
+            self.ui.lb_delta_nu_pov_l_1.setText(str(round(tc.delta_nu_pov_l_1, 3)) + " \u00b0C")
+            self.ui.lb_delta_gamma_v.setText(str(round(tc.delta_gamma_v, 3)) + " \u00b0C")
+            self.ui.lb_teta_v_shtrih.setText(str(round(tc.teta_v_shtrih, 3)) + " м^3/c")
+            self.ui.lb_Q_v.setText(str(round(tc.Q_v, 3)) + " м^3/c")
+            self.ui.lb_delta_nu_1_shtrih.setText(str(round(tc.delta_nu_1_shtrih, 3)) + " \u00b0C")
+            self.ui.lb_delta_nu_1.setText(str(round(tc.delta_nu_1, 3)) + " \u00b0C")
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText(
+                "Необходимо посчитать таблицы")
+            msgBox.exec()
 
-        tc = ThermalCalculation(self.aboba.K, k_ro[self.aboba.heatClass],
-                                self.table_1_student.calculateTable(13, self.aboba.s_nom),
-                                float(self.ui.le_P_st_main.text()),
-                                float(self.ui.le_D.text()), float(self.ui.le_l_1.text()), float(self.ui.le_a_1.text()),
-                                float(self.ui.le_Z_1.text()), float(self.ui.le_h_pk.text()),
-                                float(self.ui.le_b_iz_p_1.text()),
-                                float(self.ui.le_b_1.text()), float(self.ui.le_b_2.text()),
-                                float(self.ui.le_lambda_ekv_shtrih.text()),
-                                float(self.ui.le_l_l_1.text()), float(self.ui.le_b_iz_l_1.text()),
-                                float(self.ui.le_h_p_1.text()),
-                                float(self.ui.le_l_vbl.text()), float(self.ui.le_l_avg_1.text()),
-                                self.table_1_student.calculateTable(16, self.aboba.s_nom),
-                                self.table_1_student.calculateTable(14, self.aboba.s_nom),
-                                float(self.ui.le_Pmeh.text()),
-                                float(self.ui.le_s_kor.text()), float(self.ui.le_a_v.text()), m_shtrih, self.aboba.n,
-                                float(self.ui.le_D_a.text()))
-        self.ui.lb_delta_nu_pov_1.setText(str(round(tc.delta_nu_pov_1, 3)) + " \u00b0C")
-        self.ui.lb_delta_nu_iz_p_1.setText(str(round(tc.delta_nu_iz_p_1, 3)) + " \u00b0C")
-        self.ui.lb_delta_nu_iz_l_1.setText(str(round(tc.delta_nu_iz_l_1, 3)) + " \u00b0C")
-        self.ui.lb_delta_nu_pov_l_1.setText(str(round(tc.delta_nu_pov_l_1, 3)) + " \u00b0C")
-        self.ui.lb_delta_gamma_v.setText(str(round(tc.delta_gamma_v, 3)) + " \u00b0C")
-        self.ui.lb_teta_v_shtrih.setText(str(round(tc.teta_v_shtrih, 3)) + " м^3/c")
-        self.ui.lb_Q_v.setText(str(round(tc.Q_v, 3)) + " м^3/c")
-        self.ui.lb_delta_nu_1_shtrih.setText(str(round(tc.delta_nu_1_shtrih, 3)) + " \u00b0C")
-        self.ui.lb_delta_nu_1.setText(str(round(tc.delta_nu_1, 3)) + " \u00b0C")
 
 
 app = QApplication()
