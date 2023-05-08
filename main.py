@@ -556,7 +556,7 @@ class MainWindow(QMainWindow):
         I_1_chart.set_xlabel('P_квт', size=16)
 
         fig.set_figwidth(10)
-        fig.set_figheight(10)
+        fig.set_figheight(8)
 
         plt.show()
 
