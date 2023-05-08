@@ -709,15 +709,15 @@ class MainWindow(QMainWindow):
                                 float(self.ui.le_Pmeh.text()),
                                 float(self.ui.le_s_kor.text()), float(self.ui.le_a_v.text()), m_shtrih, self.aboba.n,
                                 float(self.ui.le_D_a.text()))
-        self.ui.lb_delta_nu_pov_1.setText("delta_nu_pov_1 = "+str(round(tc.delta_nu_pov_1, 3)))
-        self.ui.lb_delta_nu_iz_p_1.setText("delta_nu_iz_p_1 = "+str(round(tc.delta_nu_iz_p_1, 3)))
-        self.ui.lb_delta_nu_iz_l_1.setText("delta_nu_l_1 = "+str(round(tc.delta_nu_iz_l_1, 3)))
-        self.ui.lb_delta_nu_pov_l_1.setText("delta_nu_pov_l_1 = "+str(round(tc.delta_nu_pov_l_1, 3)))
-        self.ui.lb_delta_gamma_v.setText("delta_gamma_v = "+str(round(tc.delta_gamma_v, 3)))
-        self.ui.lb_teta_v_shtrih.setText("teta_v_shtrih = "+str(round(tc.teta_v_shtrih, 3)))
-        self.ui.lb_Q_v.setText("Q_v = "+str(round(tc.Q_v, 3)))
-        self.ui.lb_delta_nu_1_shtrih.setText("delta_nu_1_shtrih = "+str(round(tc.delta_nu_1_shtrih, 3)))
-        self.ui.lb_delta_nu_1.setText("delta_nu_1 = "+str(round(tc.delta_nu_1, 3)))
+        self.ui.lb_delta_nu_pov_1.setText(str(round(tc.delta_nu_pov_1, 3)) + " \u00b0C")
+        self.ui.lb_delta_nu_iz_p_1.setText(str(round(tc.delta_nu_iz_p_1, 3)) + " \u00b0C")
+        self.ui.lb_delta_nu_iz_l_1.setText(str(round(tc.delta_nu_iz_l_1, 3)) + " \u00b0C")
+        self.ui.lb_delta_nu_pov_l_1.setText(str(round(tc.delta_nu_pov_l_1, 3)) + " \u00b0C")
+        self.ui.lb_delta_gamma_v.setText(str(round(tc.delta_gamma_v, 3)) + " \u00b0C")
+        self.ui.lb_teta_v_shtrih.setText(str(round(tc.teta_v_shtrih, 3)) + " м^3/c")
+        self.ui.lb_Q_v.setText(str(round(tc.Q_v, 3)) + " м^3/c")
+        self.ui.lb_delta_nu_1_shtrih.setText(str(round(tc.delta_nu_1_shtrih, 3)) + " \u00b0C")
+        self.ui.lb_delta_nu_1.setText(str(round(tc.delta_nu_1, 3)) + " \u00b0C")
 
 
 app = QApplication()

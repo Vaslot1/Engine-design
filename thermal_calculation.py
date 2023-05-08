@@ -30,14 +30,7 @@ class ThermalCalculation:
         summ_P_shtrih = sum_P * 10**3 + ((k_ro - 1) * (P_e_1 + P_e_2))
         summ_P_v_shtrih = summ_P_shtrih - ((1 - K) * ((P_e_p_1_shtrih + P_st_osn) - (0.9 * P_meh)))
         self.delta_gamma_v = summ_P_v_shtrih / (s_kor * a_v)
-        print(s_kor)
-        print(a_v)
-        print(summ_P_v_shtrih)
-        print(summ_P_shtrih)
-        print(sum_P)
-        print((1 - K))
-        print((P_e_p_1_shtrih + P_st_osn))
-        print((0.9 * P_meh))
+
         # пункт 70
         self.delta_nu_1 = self.delta_nu_1_shtrih + self.delta_gamma_v
         # пункт 71
