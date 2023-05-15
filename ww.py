@@ -14,18 +14,19 @@ from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform, QMovie)
+    QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFormLayout,
-    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
-    QLabel, QLayout, QLineEdit, QPushButton,
-    QScrollArea, QSizePolicy, QSlider, QTabWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QFrame, QGridLayout, QGroupBox, QHBoxLayout,
+    QHeaderView, QLabel, QLayout, QLineEdit,
+    QPushButton, QScrollArea, QSizePolicy, QSlider,
+    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         if not mainWindow.objectName():
             mainWindow.setObjectName(u"mainWindow")
-        mainWindow.resize(1548, 900)
+        mainWindow.resize(1488, 875)
         sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -40,7 +41,7 @@ class Ui_mainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1528, 880))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1483, 838))
         self.gridLayout_19 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_19.setObjectName(u"gridLayout_19")
         self.tabWidget = QTabWidget(self.scrollAreaWidgetContents)
@@ -61,41 +62,42 @@ class Ui_mainWindow(object):
         self.tabWidget.setTabBarAutoHide(False)
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
-        self.Input = QLabel(self.tab_4)
-        self.Input.setObjectName(u"Input")
-        self.Input.setGeometry(QRect(9, 9, 74, 26))
-        self.submitValues = QPushButton(self.tab_4)
-        self.submitValues.setObjectName(u"submitValues")
-        self.submitValues.setGeometry(QRect(0, 240, 154, 34))
-        self.layoutWidget = QWidget(self.tab_4)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(0, 50, 431, 188))
-        self.horizontalLayout_3 = QHBoxLayout(self.layoutWidget)
+        self.gridLayout_23 = QGridLayout(self.tab_4)
+        self.gridLayout_23.setObjectName(u"gridLayout_23")
+        self.groupBox_3 = QGroupBox(self.tab_4)
+        self.groupBox_3.setObjectName(u"groupBox_3")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
+        self.groupBox_3.setSizePolicy(sizePolicy2)
+        self.gridLayout_22 = QGridLayout(self.groupBox_3)
+        self.gridLayout_22.setObjectName(u"gridLayout_22")
+        self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.Power = QLabel(self.layoutWidget)
+        self.Power = QLabel(self.groupBox_3)
         self.Power.setObjectName(u"Power")
 
         self.verticalLayout_2.addWidget(self.Power)
 
-        self.Voltage = QLabel(self.layoutWidget)
+        self.Voltage = QLabel(self.groupBox_3)
         self.Voltage.setObjectName(u"Voltage")
 
         self.verticalLayout_2.addWidget(self.Voltage)
 
-        self.polarity = QLabel(self.layoutWidget)
+        self.polarity = QLabel(self.groupBox_3)
         self.polarity.setObjectName(u"polarity")
 
         self.verticalLayout_2.addWidget(self.polarity)
 
-        self.label_7 = QLabel(self.layoutWidget)
+        self.label_7 = QLabel(self.groupBox_3)
         self.label_7.setObjectName(u"label_7")
 
         self.verticalLayout_2.addWidget(self.label_7)
 
-        self.Snom = QLabel(self.layoutWidget)
+        self.Snom = QLabel(self.groupBox_3)
         self.Snom.setObjectName(u"Snom")
 
         self.verticalLayout_2.addWidget(self.Snom)
@@ -105,7 +107,7 @@ class Ui_mainWindow(object):
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.linePower = QComboBox(self.layoutWidget)
+        self.linePower = QComboBox(self.groupBox_3)
         self.linePower.addItem("")
         self.linePower.addItem("")
         self.linePower.addItem("")
@@ -142,7 +144,7 @@ class Ui_mainWindow(object):
 
         self.verticalLayout.addWidget(self.linePower)
 
-        self.lineVoltage = QComboBox(self.layoutWidget)
+        self.lineVoltage = QComboBox(self.groupBox_3)
         self.lineVoltage.addItem("")
         self.lineVoltage.addItem("")
         self.lineVoltage.addItem("")
@@ -151,7 +153,7 @@ class Ui_mainWindow(object):
 
         self.verticalLayout.addWidget(self.lineVoltage)
 
-        self.linePolarity = QComboBox(self.layoutWidget)
+        self.linePolarity = QComboBox(self.groupBox_3)
         self.linePolarity.addItem("")
         self.linePolarity.addItem("")
         self.linePolarity.addItem("")
@@ -163,7 +165,7 @@ class Ui_mainWindow(object):
 
         self.verticalLayout.addWidget(self.linePolarity)
 
-        self.cmb_heatClass = QComboBox(self.layoutWidget)
+        self.cmb_heatClass = QComboBox(self.groupBox_3)
         self.cmb_heatClass.addItem("")
         self.cmb_heatClass.addItem("")
         self.cmb_heatClass.addItem("")
@@ -171,7 +173,7 @@ class Ui_mainWindow(object):
 
         self.verticalLayout.addWidget(self.cmb_heatClass)
 
-        self.lineSnom = QLineEdit(self.layoutWidget)
+        self.lineSnom = QLineEdit(self.groupBox_3)
         self.lineSnom.setObjectName(u"lineSnom")
 
         self.verticalLayout.addWidget(self.lineSnom)
@@ -179,12 +181,27 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_3.addLayout(self.verticalLayout)
 
+
+        self.gridLayout_22.addLayout(self.horizontalLayout_3, 0, 0, 1, 1)
+
+        self.submitValues = QPushButton(self.groupBox_3)
+        self.submitValues.setObjectName(u"submitValues")
+
+        self.gridLayout_22.addWidget(self.submitValues, 1, 0, 1, 1)
+
+
+        self.gridLayout_23.addWidget(self.groupBox_3, 0, 0, 1, 1, Qt.AlignLeft|Qt.AlignTop)
+
         self.tabWidget.addTab(self.tab_4, "")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.tab.setEnabled(True)
-        self.gridLayout = QGridLayout(self.tab)
-        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout_25 = QGridLayout(self.tab)
+        self.gridLayout_25.setObjectName(u"gridLayout_25")
+        self.verticalLayout_5 = QVBoxLayout()
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.horizontalLayout_13 = QHBoxLayout()
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.tableWidget = QTableWidget(self.tab)
         if (self.tableWidget.columnCount() < 9):
             self.tableWidget.setColumnCount(9)
@@ -467,8 +484,13 @@ class Ui_mainWindow(object):
         self.tableWidget.setItem(19, 8, __qtablewidgetitem95)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEnabled(False)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.MinimumExpanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy3)
         self.tableWidget.setMinimumSize(QSize(820, 0))
-        self.tableWidget.setMaximumSize(QSize(850, 720))
+        self.tableWidget.setMaximumSize(QSize(850, 750))
         self.tableWidget.setFont(font)
         self.tableWidget.setLayoutDirection(Qt.LeftToRight)
         self.tableWidget.setInputMethodHints(Qt.ImhNone)
@@ -484,8 +506,17 @@ class Ui_mainWindow(object):
         self.tableWidget.horizontalHeader().setStretchLastSection(False)
         self.tableWidget.verticalHeader().setDefaultSectionSize(34)
 
-        self.gridLayout.addWidget(self.tableWidget, 0, 0, 1, 1)
+        self.horizontalLayout_13.addWidget(self.tableWidget)
 
+        self.groupBox_5 = QGroupBox(self.tab)
+        self.groupBox_5.setObjectName(u"groupBox_5")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.groupBox_5.sizePolicy().hasHeightForWidth())
+        self.groupBox_5.setSizePolicy(sizePolicy4)
+        self.gridLayout = QGridLayout(self.groupBox_5)
+        self.gridLayout.setObjectName(u"gridLayout")
         self.vl_variables = QVBoxLayout()
         self.vl_variables.setSpacing(0)
         self.vl_variables.setObjectName(u"vl_variables")
@@ -493,24 +524,18 @@ class Ui_mainWindow(object):
         self.hl_I0a.setSpacing(1)
         self.hl_I0a.setObjectName(u"hl_I0a")
         self.hl_I0a.setContentsMargins(2, -1, -1, -1)
-        self.lb_I0a = QLabel(self.tab)
+        self.lb_I0a = QLabel(self.groupBox_5)
         self.lb_I0a.setObjectName(u"lb_I0a")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.lb_I0a.sizePolicy().hasHeightForWidth())
-        self.lb_I0a.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_I0a.sizePolicy().hasHeightForWidth())
+        self.lb_I0a.setSizePolicy(sizePolicy4)
 
         self.hl_I0a.addWidget(self.lb_I0a)
 
-        self.le_I0a = QLineEdit(self.tab)
+        self.le_I0a = QLineEdit(self.groupBox_5)
         self.le_I0a.setObjectName(u"le_I0a")
         self.le_I0a.setEnabled(False)
-        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.le_I0a.sizePolicy().hasHeightForWidth())
-        self.le_I0a.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_I0a.sizePolicy().hasHeightForWidth())
+        self.le_I0a.setSizePolicy(sizePolicy2)
         self.le_I0a.setMinimumSize(QSize(100, 32))
 
         self.hl_I0a.addWidget(self.le_I0a)
@@ -523,18 +548,18 @@ class Ui_mainWindow(object):
         self.hl_I0p = QHBoxLayout()
         self.hl_I0p.setObjectName(u"hl_I0p")
         self.hl_I0p.setContentsMargins(0, -1, -1, -1)
-        self.lb_I0p = QLabel(self.tab)
+        self.lb_I0p = QLabel(self.groupBox_5)
         self.lb_I0p.setObjectName(u"lb_I0p")
-        sizePolicy2.setHeightForWidth(self.lb_I0p.sizePolicy().hasHeightForWidth())
-        self.lb_I0p.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_I0p.sizePolicy().hasHeightForWidth())
+        self.lb_I0p.setSizePolicy(sizePolicy4)
 
         self.hl_I0p.addWidget(self.lb_I0p)
 
-        self.le_I0p = QLineEdit(self.tab)
+        self.le_I0p = QLineEdit(self.groupBox_5)
         self.le_I0p.setObjectName(u"le_I0p")
         self.le_I0p.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_I0p.sizePolicy().hasHeightForWidth())
-        self.le_I0p.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_I0p.sizePolicy().hasHeightForWidth())
+        self.le_I0p.setSizePolicy(sizePolicy2)
 
         self.hl_I0p.addWidget(self.le_I0p)
 
@@ -544,18 +569,18 @@ class Ui_mainWindow(object):
         self.hl_Pst = QHBoxLayout()
         self.hl_Pst.setObjectName(u"hl_Pst")
         self.hl_Pst.setContentsMargins(-1, -1, 6, -1)
-        self.lb_Pst = QLabel(self.tab)
+        self.lb_Pst = QLabel(self.groupBox_5)
         self.lb_Pst.setObjectName(u"lb_Pst")
-        sizePolicy2.setHeightForWidth(self.lb_Pst.sizePolicy().hasHeightForWidth())
-        self.lb_Pst.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Pst.sizePolicy().hasHeightForWidth())
+        self.lb_Pst.setSizePolicy(sizePolicy4)
 
         self.hl_Pst.addWidget(self.lb_Pst)
 
-        self.le_Pst = QLineEdit(self.tab)
+        self.le_Pst = QLineEdit(self.groupBox_5)
         self.le_Pst.setObjectName(u"le_Pst")
         self.le_Pst.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Pst.sizePolicy().hasHeightForWidth())
-        self.le_Pst.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Pst.sizePolicy().hasHeightForWidth())
+        self.le_Pst.setSizePolicy(sizePolicy2)
 
         self.hl_Pst.addWidget(self.le_Pst)
 
@@ -566,21 +591,21 @@ class Ui_mainWindow(object):
         self.hl_Pmeh.setSpacing(0)
         self.hl_Pmeh.setObjectName(u"hl_Pmeh")
         self.hl_Pmeh.setContentsMargins(-1, -1, 6, -1)
-        self.lb_Pmeh = QLabel(self.tab)
+        self.lb_Pmeh = QLabel(self.groupBox_5)
         self.lb_Pmeh.setObjectName(u"lb_Pmeh")
-        sizePolicy2.setHeightForWidth(self.lb_Pmeh.sizePolicy().hasHeightForWidth())
-        self.lb_Pmeh.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Pmeh.sizePolicy().hasHeightForWidth())
+        self.lb_Pmeh.setSizePolicy(sizePolicy4)
 
         self.hl_Pmeh.addWidget(self.lb_Pmeh)
 
-        self.le_Pmeh = QLineEdit(self.tab)
+        self.le_Pmeh = QLineEdit(self.groupBox_5)
         self.le_Pmeh.setObjectName(u"le_Pmeh")
         self.le_Pmeh.setEnabled(False)
-        sizePolicy4 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy4.setHorizontalStretch(100)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.le_Pmeh.sizePolicy().hasHeightForWidth())
-        self.le_Pmeh.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy5.setHorizontalStretch(100)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.le_Pmeh.sizePolicy().hasHeightForWidth())
+        self.le_Pmeh.setSizePolicy(sizePolicy5)
         self.le_Pmeh.setMinimumSize(QSize(20, 20))
         self.le_Pmeh.setSizeIncrement(QSize(100, 0))
 
@@ -591,18 +616,18 @@ class Ui_mainWindow(object):
 
         self.hl_r1 = QHBoxLayout()
         self.hl_r1.setObjectName(u"hl_r1")
-        self.lb_r1 = QLabel(self.tab)
+        self.lb_r1 = QLabel(self.groupBox_5)
         self.lb_r1.setObjectName(u"lb_r1")
-        sizePolicy2.setHeightForWidth(self.lb_r1.sizePolicy().hasHeightForWidth())
-        self.lb_r1.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_r1.sizePolicy().hasHeightForWidth())
+        self.lb_r1.setSizePolicy(sizePolicy4)
 
         self.hl_r1.addWidget(self.lb_r1)
 
-        self.le_r1 = QLineEdit(self.tab)
+        self.le_r1 = QLineEdit(self.groupBox_5)
         self.le_r1.setObjectName(u"le_r1")
         self.le_r1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_r1.sizePolicy().hasHeightForWidth())
-        self.le_r1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_r1.sizePolicy().hasHeightForWidth())
+        self.le_r1.setSizePolicy(sizePolicy2)
         self.le_r1.setLayoutDirection(Qt.LeftToRight)
 
         self.hl_r1.addWidget(self.le_r1)
@@ -613,19 +638,19 @@ class Ui_mainWindow(object):
         self.hl_r2_shtrih = QHBoxLayout()
         self.hl_r2_shtrih.setObjectName(u"hl_r2_shtrih")
         self.hl_r2_shtrih.setContentsMargins(0, -1, -1, -1)
-        self.lb_r2_shtrih = QLabel(self.tab)
+        self.lb_r2_shtrih = QLabel(self.groupBox_5)
         self.lb_r2_shtrih.setObjectName(u"lb_r2_shtrih")
-        sizePolicy2.setHeightForWidth(self.lb_r2_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_r2_shtrih.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_r2_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_r2_shtrih.setSizePolicy(sizePolicy4)
         self.lb_r2_shtrih.setFrameShape(QFrame.NoFrame)
 
         self.hl_r2_shtrih.addWidget(self.lb_r2_shtrih)
 
-        self.le_r2_shtrih = QLineEdit(self.tab)
+        self.le_r2_shtrih = QLineEdit(self.groupBox_5)
         self.le_r2_shtrih.setObjectName(u"le_r2_shtrih")
         self.le_r2_shtrih.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_r2_shtrih.sizePolicy().hasHeightForWidth())
-        self.le_r2_shtrih.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_r2_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_r2_shtrih.setSizePolicy(sizePolicy2)
 
         self.hl_r2_shtrih.addWidget(self.le_r2_shtrih)
 
@@ -634,18 +659,18 @@ class Ui_mainWindow(object):
 
         self.hl_c1 = QHBoxLayout()
         self.hl_c1.setObjectName(u"hl_c1")
-        self.lb_c1 = QLabel(self.tab)
+        self.lb_c1 = QLabel(self.groupBox_5)
         self.lb_c1.setObjectName(u"lb_c1")
-        sizePolicy2.setHeightForWidth(self.lb_c1.sizePolicy().hasHeightForWidth())
-        self.lb_c1.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_c1.sizePolicy().hasHeightForWidth())
+        self.lb_c1.setSizePolicy(sizePolicy4)
 
         self.hl_c1.addWidget(self.lb_c1)
 
-        self.le_c1 = QLineEdit(self.tab)
+        self.le_c1 = QLineEdit(self.groupBox_5)
         self.le_c1.setObjectName(u"le_c1")
         self.le_c1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_c1.sizePolicy().hasHeightForWidth())
-        self.le_c1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_c1.sizePolicy().hasHeightForWidth())
+        self.le_c1.setSizePolicy(sizePolicy2)
 
         self.hl_c1.addWidget(self.le_c1)
 
@@ -654,18 +679,18 @@ class Ui_mainWindow(object):
 
         self.hl_a_shtrih = QHBoxLayout()
         self.hl_a_shtrih.setObjectName(u"hl_a_shtrih")
-        self.lb_a_shtrih = QLabel(self.tab)
+        self.lb_a_shtrih = QLabel(self.groupBox_5)
         self.lb_a_shtrih.setObjectName(u"lb_a_shtrih")
-        sizePolicy2.setHeightForWidth(self.lb_a_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_a_shtrih.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_a_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_a_shtrih.setSizePolicy(sizePolicy4)
 
         self.hl_a_shtrih.addWidget(self.lb_a_shtrih)
 
-        self.le_a_shtrih = QLineEdit(self.tab)
+        self.le_a_shtrih = QLineEdit(self.groupBox_5)
         self.le_a_shtrih.setObjectName(u"le_a_shtrih")
         self.le_a_shtrih.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_a_shtrih.sizePolicy().hasHeightForWidth())
-        self.le_a_shtrih.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_a_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_a_shtrih.setSizePolicy(sizePolicy2)
 
         self.hl_a_shtrih.addWidget(self.le_a_shtrih)
 
@@ -674,18 +699,18 @@ class Ui_mainWindow(object):
 
         self.hl_a = QHBoxLayout()
         self.hl_a.setObjectName(u"hl_a")
-        self.lb_a = QLabel(self.tab)
+        self.lb_a = QLabel(self.groupBox_5)
         self.lb_a.setObjectName(u"lb_a")
-        sizePolicy2.setHeightForWidth(self.lb_a.sizePolicy().hasHeightForWidth())
-        self.lb_a.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_a.sizePolicy().hasHeightForWidth())
+        self.lb_a.setSizePolicy(sizePolicy4)
 
         self.hl_a.addWidget(self.lb_a)
 
-        self.le_a = QLineEdit(self.tab)
+        self.le_a = QLineEdit(self.groupBox_5)
         self.le_a.setObjectName(u"le_a")
         self.le_a.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_a.sizePolicy().hasHeightForWidth())
-        self.le_a.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_a.sizePolicy().hasHeightForWidth())
+        self.le_a.setSizePolicy(sizePolicy2)
 
         self.hl_a.addWidget(self.le_a)
 
@@ -694,18 +719,18 @@ class Ui_mainWindow(object):
 
         self.hl_b_shtrih = QHBoxLayout()
         self.hl_b_shtrih.setObjectName(u"hl_b_shtrih")
-        self.lb_b_shtrih = QLabel(self.tab)
+        self.lb_b_shtrih = QLabel(self.groupBox_5)
         self.lb_b_shtrih.setObjectName(u"lb_b_shtrih")
-        sizePolicy2.setHeightForWidth(self.lb_b_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_b_shtrih.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_b_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_b_shtrih.setSizePolicy(sizePolicy4)
 
         self.hl_b_shtrih.addWidget(self.lb_b_shtrih)
 
-        self.le_b_shtrih = QLineEdit(self.tab)
+        self.le_b_shtrih = QLineEdit(self.groupBox_5)
         self.le_b_shtrih.setObjectName(u"le_b_shtrih")
         self.le_b_shtrih.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_b_shtrih.sizePolicy().hasHeightForWidth())
-        self.le_b_shtrih.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_b_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_b_shtrih.setSizePolicy(sizePolicy2)
 
         self.hl_b_shtrih.addWidget(self.le_b_shtrih)
 
@@ -714,18 +739,18 @@ class Ui_mainWindow(object):
 
         self.hl_b = QHBoxLayout()
         self.hl_b.setObjectName(u"hl_b")
-        self.lb_b = QLabel(self.tab)
+        self.lb_b = QLabel(self.groupBox_5)
         self.lb_b.setObjectName(u"lb_b")
-        sizePolicy2.setHeightForWidth(self.lb_b.sizePolicy().hasHeightForWidth())
-        self.lb_b.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_b.sizePolicy().hasHeightForWidth())
+        self.lb_b.setSizePolicy(sizePolicy4)
 
         self.hl_b.addWidget(self.lb_b)
 
-        self.le_b = QLineEdit(self.tab)
+        self.le_b = QLineEdit(self.groupBox_5)
         self.le_b.setObjectName(u"le_b")
         self.le_b.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_b.sizePolicy().hasHeightForWidth())
-        self.le_b.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_b.sizePolicy().hasHeightForWidth())
+        self.le_b.setSizePolicy(sizePolicy2)
 
         self.hl_b.addWidget(self.le_b)
 
@@ -733,7 +758,13 @@ class Ui_mainWindow(object):
         self.vl_variables.addLayout(self.hl_b)
 
 
-        self.gridLayout.addLayout(self.vl_variables, 0, 1, 1, 1)
+        self.gridLayout.addLayout(self.vl_variables, 0, 0, 1, 1)
+
+
+        self.horizontalLayout_13.addWidget(self.groupBox_5)
+
+
+        self.verticalLayout_5.addLayout(self.horizontalLayout_13)
 
         self.hl_buttons = QHBoxLayout()
         self.hl_buttons.setObjectName(u"hl_buttons")
@@ -762,20 +793,27 @@ class Ui_mainWindow(object):
 
         self.hl_buttons.addWidget(self.bt_export_xl_1)
 
-
-        self.gridLayout.addLayout(self.hl_buttons, 1, 0, 1, 1)
-
         self.lb_error = QLabel(self.tab)
         self.lb_error.setObjectName(u"lb_error")
 
-        self.gridLayout.addWidget(self.lb_error, 1, 1, 1, 1)
+        self.hl_buttons.addWidget(self.lb_error)
+
+
+        self.verticalLayout_5.addLayout(self.hl_buttons)
+
+
+        self.gridLayout_25.addLayout(self.verticalLayout_5, 0, 0, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
         self.tab_2.setEnabled(False)
-        self.gridLayout_2 = QGridLayout(self.tab_2)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_27 = QGridLayout(self.tab_2)
+        self.gridLayout_27.setObjectName(u"gridLayout_27")
+        self.verticalLayout_6 = QVBoxLayout()
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.gridLayout_26 = QGridLayout()
+        self.gridLayout_26.setObjectName(u"gridLayout_26")
         self.tableWidget_2 = QTableWidget(self.tab_2)
         if (self.tableWidget_2.columnCount() < 8):
             self.tableWidget_2.setColumnCount(8)
@@ -987,8 +1025,17 @@ class Ui_mainWindow(object):
         self.tableWidget_2.setFont(font)
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(170)
 
-        self.gridLayout_2.addWidget(self.tableWidget_2, 0, 0, 1, 1, Qt.AlignLeft)
+        self.gridLayout_26.addWidget(self.tableWidget_2, 0, 0, 1, 1)
 
+        self.groupBox_6 = QGroupBox(self.tab_2)
+        self.groupBox_6.setObjectName(u"groupBox_6")
+        sizePolicy6 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.groupBox_6.sizePolicy().hasHeightForWidth())
+        self.groupBox_6.setSizePolicy(sizePolicy6)
+        self.gridLayout_2 = QGridLayout(self.groupBox_6)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_4 = QGridLayout()
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, -1, -1, -1)
@@ -997,19 +1044,19 @@ class Ui_mainWindow(object):
         self.hl_h_c.setObjectName(u"hl_h_c")
         self.hl_h_c.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.hl_h_c.setContentsMargins(0, -1, -1, -1)
-        self.lb_h_c = QLabel(self.tab_2)
+        self.lb_h_c = QLabel(self.groupBox_6)
         self.lb_h_c.setObjectName(u"lb_h_c")
-        sizePolicy2.setHeightForWidth(self.lb_h_c.sizePolicy().hasHeightForWidth())
-        self.lb_h_c.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_h_c.sizePolicy().hasHeightForWidth())
+        self.lb_h_c.setSizePolicy(sizePolicy4)
         self.lb_h_c.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_c.addWidget(self.lb_h_c)
 
-        self.le_h_c = QLineEdit(self.tab_2)
+        self.le_h_c = QLineEdit(self.groupBox_6)
         self.le_h_c.setObjectName(u"le_h_c")
         self.le_h_c.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_h_c.sizePolicy().hasHeightForWidth())
-        self.le_h_c.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_h_c.sizePolicy().hasHeightForWidth())
+        self.le_h_c.setSizePolicy(sizePolicy2)
         self.le_h_c.setMinimumSize(QSize(50, 32))
         self.le_h_c.setMaximumSize(QSize(100, 16777215))
         self.le_h_c.setSizeIncrement(QSize(0, 0))
@@ -1023,19 +1070,19 @@ class Ui_mainWindow(object):
         self.hl_h_p_2.setSpacing(6)
         self.hl_h_p_2.setObjectName(u"hl_h_p_2")
         self.hl_h_p_2.setContentsMargins(0, -1, -1, -1)
-        self.lb_h_p_2 = QLabel(self.tab_2)
+        self.lb_h_p_2 = QLabel(self.groupBox_6)
         self.lb_h_p_2.setObjectName(u"lb_h_p_2")
-        sizePolicy2.setHeightForWidth(self.lb_h_p_2.sizePolicy().hasHeightForWidth())
-        self.lb_h_p_2.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_h_p_2.sizePolicy().hasHeightForWidth())
+        self.lb_h_p_2.setSizePolicy(sizePolicy4)
         self.lb_h_p_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_p_2.addWidget(self.lb_h_p_2)
 
-        self.le_h_p_2 = QLineEdit(self.tab_2)
+        self.le_h_p_2 = QLineEdit(self.groupBox_6)
         self.le_h_p_2.setObjectName(u"le_h_p_2")
         self.le_h_p_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_h_p_2.sizePolicy().hasHeightForWidth())
-        self.le_h_p_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_h_p_2.sizePolicy().hasHeightForWidth())
+        self.le_h_p_2.setSizePolicy(sizePolicy2)
         self.le_h_p_2.setMinimumSize(QSize(100, 0))
         self.le_h_p_2.setMaximumSize(QSize(100, 16777215))
 
@@ -1051,19 +1098,19 @@ class Ui_mainWindow(object):
         self.hl_h_sh.setSpacing(6)
         self.hl_h_sh.setObjectName(u"hl_h_sh")
         self.hl_h_sh.setContentsMargins(-1, -1, 0, -1)
-        self.lb_h_sh = QLabel(self.tab_2)
+        self.lb_h_sh = QLabel(self.groupBox_6)
         self.lb_h_sh.setObjectName(u"lb_h_sh")
-        sizePolicy2.setHeightForWidth(self.lb_h_sh.sizePolicy().hasHeightForWidth())
-        self.lb_h_sh.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_h_sh.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh.setSizePolicy(sizePolicy4)
         self.lb_h_sh.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_sh.addWidget(self.lb_h_sh)
 
-        self.le_h_sh = QLineEdit(self.tab_2)
+        self.le_h_sh = QLineEdit(self.groupBox_6)
         self.le_h_sh.setObjectName(u"le_h_sh")
         self.le_h_sh.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_h_sh.sizePolicy().hasHeightForWidth())
-        self.le_h_sh.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_h_sh.sizePolicy().hasHeightForWidth())
+        self.le_h_sh.setSizePolicy(sizePolicy2)
         self.le_h_sh.setMaximumSize(QSize(100, 16777215))
 
         self.hl_h_sh.addWidget(self.le_h_sh)
@@ -1072,22 +1119,22 @@ class Ui_mainWindow(object):
         self.hl_h_sh_shtrih.setSpacing(6)
         self.hl_h_sh_shtrih.setObjectName(u"hl_h_sh_shtrih")
         self.hl_h_sh_shtrih.setContentsMargins(0, -1, 0, -1)
-        self.lb_h_sh_shtrih = QLabel(self.tab_2)
+        self.lb_h_sh_shtrih = QLabel(self.groupBox_6)
         self.lb_h_sh_shtrih.setObjectName(u"lb_h_sh_shtrih")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.lb_h_sh_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_h_sh_shtrih.setSizePolicy(sizePolicy5)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.lb_h_sh_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh_shtrih.setSizePolicy(sizePolicy7)
         self.lb_h_sh_shtrih.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_sh_shtrih.addWidget(self.lb_h_sh_shtrih)
 
-        self.le_h_sh_shtrih = QLineEdit(self.tab_2)
+        self.le_h_sh_shtrih = QLineEdit(self.groupBox_6)
         self.le_h_sh_shtrih.setObjectName(u"le_h_sh_shtrih")
         self.le_h_sh_shtrih.setEnabled(False)
-        sizePolicy4.setHeightForWidth(self.le_h_sh_shtrih.sizePolicy().hasHeightForWidth())
-        self.le_h_sh_shtrih.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.le_h_sh_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_h_sh_shtrih.setSizePolicy(sizePolicy5)
         self.le_h_sh_shtrih.setMinimumSize(QSize(20, 20))
         self.le_h_sh_shtrih.setMaximumSize(QSize(100, 16777215))
         self.le_h_sh_shtrih.setSizeIncrement(QSize(100, 0))
@@ -1105,24 +1152,24 @@ class Ui_mainWindow(object):
         self.hl_b_1_r.setObjectName(u"hl_b_1_r")
         self.hl_b_1_r.setSizeConstraint(QLayout.SetMinimumSize)
         self.hl_b_1_r.setContentsMargins(0, -1, -1, -1)
-        self.lb_b_1_r = QLabel(self.tab_2)
+        self.lb_b_1_r = QLabel(self.groupBox_6)
         self.lb_b_1_r.setObjectName(u"lb_b_1_r")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.lb_b_1_r.sizePolicy().hasHeightForWidth())
-        self.lb_b_1_r.setSizePolicy(sizePolicy6)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.lb_b_1_r.sizePolicy().hasHeightForWidth())
+        self.lb_b_1_r.setSizePolicy(sizePolicy8)
         self.lb_b_1_r.setMaximumSize(QSize(50, 16777215))
         self.lb_b_1_r.setLineWidth(1)
         self.lb_b_1_r.setMargin(0)
 
         self.hl_b_1_r.addWidget(self.lb_b_1_r)
 
-        self.le_b_1_r = QLineEdit(self.tab_2)
+        self.le_b_1_r = QLineEdit(self.groupBox_6)
         self.le_b_1_r.setObjectName(u"le_b_1_r")
         self.le_b_1_r.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_b_1_r.sizePolicy().hasHeightForWidth())
-        self.le_b_1_r.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_b_1_r.sizePolicy().hasHeightForWidth())
+        self.le_b_1_r.setSizePolicy(sizePolicy2)
         self.le_b_1_r.setMinimumSize(QSize(100, 0))
         self.le_b_1_r.setMaximumSize(QSize(100, 16777215))
         self.le_b_1_r.setLayoutDirection(Qt.LeftToRight)
@@ -1132,20 +1179,20 @@ class Ui_mainWindow(object):
         self.hl_b_2_r = QHBoxLayout()
         self.hl_b_2_r.setObjectName(u"hl_b_2_r")
         self.hl_b_2_r.setContentsMargins(0, -1, -1, -1)
-        self.lb_b_2_r = QLabel(self.tab_2)
+        self.lb_b_2_r = QLabel(self.groupBox_6)
         self.lb_b_2_r.setObjectName(u"lb_b_2_r")
-        sizePolicy2.setHeightForWidth(self.lb_b_2_r.sizePolicy().hasHeightForWidth())
-        self.lb_b_2_r.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_b_2_r.sizePolicy().hasHeightForWidth())
+        self.lb_b_2_r.setSizePolicy(sizePolicy4)
         self.lb_b_2_r.setMaximumSize(QSize(100, 16777215))
         self.lb_b_2_r.setFrameShape(QFrame.NoFrame)
 
         self.hl_b_2_r.addWidget(self.lb_b_2_r)
 
-        self.le_b_2_r = QLineEdit(self.tab_2)
+        self.le_b_2_r = QLineEdit(self.groupBox_6)
         self.le_b_2_r.setObjectName(u"le_b_2_r")
         self.le_b_2_r.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_b_2_r.sizePolicy().hasHeightForWidth())
-        self.le_b_2_r.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_b_2_r.sizePolicy().hasHeightForWidth())
+        self.le_b_2_r.setSizePolicy(sizePolicy2)
         self.le_b_2_r.setMaximumSize(QSize(100, 16777215))
 
         self.hl_b_2_r.addWidget(self.le_b_2_r)
@@ -1158,38 +1205,38 @@ class Ui_mainWindow(object):
 
         self.hl_h_0 = QHBoxLayout()
         self.hl_h_0.setObjectName(u"hl_h_0")
-        self.lb_h_0 = QLabel(self.tab_2)
+        self.lb_h_0 = QLabel(self.groupBox_6)
         self.lb_h_0.setObjectName(u"lb_h_0")
-        sizePolicy2.setHeightForWidth(self.lb_h_0.sizePolicy().hasHeightForWidth())
-        self.lb_h_0.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_h_0.sizePolicy().hasHeightForWidth())
+        self.lb_h_0.setSizePolicy(sizePolicy4)
         self.lb_h_0.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_0.addWidget(self.lb_h_0)
 
-        self.le_h_0 = QLineEdit(self.tab_2)
+        self.le_h_0 = QLineEdit(self.groupBox_6)
         self.le_h_0.setObjectName(u"le_h_0")
         self.le_h_0.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_h_0.sizePolicy().hasHeightForWidth())
-        self.le_h_0.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_h_0.sizePolicy().hasHeightForWidth())
+        self.le_h_0.setSizePolicy(sizePolicy2)
         self.le_h_0.setMaximumSize(QSize(100, 16777215))
 
         self.hl_h_0.addWidget(self.le_h_0)
 
         self.hl_b_sh_2 = QHBoxLayout()
         self.hl_b_sh_2.setObjectName(u"hl_b_sh_2")
-        self.lb_b_sh_2 = QLabel(self.tab_2)
+        self.lb_b_sh_2 = QLabel(self.groupBox_6)
         self.lb_b_sh_2.setObjectName(u"lb_b_sh_2")
-        sizePolicy2.setHeightForWidth(self.lb_b_sh_2.sizePolicy().hasHeightForWidth())
-        self.lb_b_sh_2.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_b_sh_2.sizePolicy().hasHeightForWidth())
+        self.lb_b_sh_2.setSizePolicy(sizePolicy4)
         self.lb_b_sh_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_b_sh_2.addWidget(self.lb_b_sh_2)
 
-        self.le_b_sh_2 = QLineEdit(self.tab_2)
+        self.le_b_sh_2 = QLineEdit(self.groupBox_6)
         self.le_b_sh_2.setObjectName(u"le_b_sh_2")
         self.le_b_sh_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_b_sh_2.sizePolicy().hasHeightForWidth())
-        self.le_b_sh_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_b_sh_2.sizePolicy().hasHeightForWidth())
+        self.le_b_sh_2.setSizePolicy(sizePolicy2)
         self.le_b_sh_2.setMaximumSize(QSize(100, 16777215))
 
         self.hl_b_sh_2.addWidget(self.le_b_sh_2)
@@ -1202,38 +1249,38 @@ class Ui_mainWindow(object):
 
         self.hl_Lamda_d_2 = QHBoxLayout()
         self.hl_Lamda_d_2.setObjectName(u"hl_Lamda_d_2")
-        self.lb_Lamda_d_2 = QLabel(self.tab_2)
+        self.lb_Lamda_d_2 = QLabel(self.groupBox_6)
         self.lb_Lamda_d_2.setObjectName(u"lb_Lamda_d_2")
-        sizePolicy2.setHeightForWidth(self.lb_Lamda_d_2.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_d_2.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Lamda_d_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_d_2.setSizePolicy(sizePolicy4)
         self.lb_Lamda_d_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_Lamda_d_2.addWidget(self.lb_Lamda_d_2)
 
-        self.le_Lamda_d_2 = QLineEdit(self.tab_2)
+        self.le_Lamda_d_2 = QLineEdit(self.groupBox_6)
         self.le_Lamda_d_2.setObjectName(u"le_Lamda_d_2")
         self.le_Lamda_d_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Lamda_d_2.sizePolicy().hasHeightForWidth())
-        self.le_Lamda_d_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Lamda_d_2.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_d_2.setSizePolicy(sizePolicy2)
         self.le_Lamda_d_2.setMaximumSize(QSize(100, 16777215))
 
         self.hl_Lamda_d_2.addWidget(self.le_Lamda_d_2)
 
         self.hl_X_2_shtrih = QHBoxLayout()
         self.hl_X_2_shtrih.setObjectName(u"hl_X_2_shtrih")
-        self.lb_X_2_shtrih = QLabel(self.tab_2)
+        self.lb_X_2_shtrih = QLabel(self.groupBox_6)
         self.lb_X_2_shtrih.setObjectName(u"lb_X_2_shtrih")
-        sizePolicy2.setHeightForWidth(self.lb_X_2_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_X_2_shtrih.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_X_2_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_X_2_shtrih.setSizePolicy(sizePolicy4)
         self.lb_X_2_shtrih.setMaximumSize(QSize(50, 16777215))
 
         self.hl_X_2_shtrih.addWidget(self.lb_X_2_shtrih)
 
-        self.le_X_2_shtrih = QLineEdit(self.tab_2)
+        self.le_X_2_shtrih = QLineEdit(self.groupBox_6)
         self.le_X_2_shtrih.setObjectName(u"le_X_2_shtrih")
         self.le_X_2_shtrih.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_X_2_shtrih.sizePolicy().hasHeightForWidth())
-        self.le_X_2_shtrih.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_X_2_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_X_2_shtrih.setSizePolicy(sizePolicy2)
         self.le_X_2_shtrih.setMaximumSize(QSize(100, 16777215))
 
         self.hl_X_2_shtrih.addWidget(self.le_X_2_shtrih)
@@ -1246,38 +1293,38 @@ class Ui_mainWindow(object):
 
         self.hl_x_1_2_p = QHBoxLayout()
         self.hl_x_1_2_p.setObjectName(u"hl_x_1_2_p")
-        self.lb_x_1_2_p = QLabel(self.tab_2)
+        self.lb_x_1_2_p = QLabel(self.groupBox_6)
         self.lb_x_1_2_p.setObjectName(u"lb_x_1_2_p")
-        sizePolicy2.setHeightForWidth(self.lb_x_1_2_p.sizePolicy().hasHeightForWidth())
-        self.lb_x_1_2_p.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_x_1_2_p.sizePolicy().hasHeightForWidth())
+        self.lb_x_1_2_p.setSizePolicy(sizePolicy4)
         self.lb_x_1_2_p.setMaximumSize(QSize(50, 16777215))
 
         self.hl_x_1_2_p.addWidget(self.lb_x_1_2_p)
 
-        self.le_x_1_2_p = QLineEdit(self.tab_2)
+        self.le_x_1_2_p = QLineEdit(self.groupBox_6)
         self.le_x_1_2_p.setObjectName(u"le_x_1_2_p")
         self.le_x_1_2_p.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_x_1_2_p.sizePolicy().hasHeightForWidth())
-        self.le_x_1_2_p.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_x_1_2_p.sizePolicy().hasHeightForWidth())
+        self.le_x_1_2_p.setSizePolicy(sizePolicy2)
         self.le_x_1_2_p.setMaximumSize(QSize(100, 16777215))
 
         self.hl_x_1_2_p.addWidget(self.le_x_1_2_p)
 
         self.hl_c_1_p = QHBoxLayout()
         self.hl_c_1_p.setObjectName(u"hl_c_1_p")
-        self.lb_c_1_p = QLabel(self.tab_2)
+        self.lb_c_1_p = QLabel(self.groupBox_6)
         self.lb_c_1_p.setObjectName(u"lb_c_1_p")
-        sizePolicy2.setHeightForWidth(self.lb_c_1_p.sizePolicy().hasHeightForWidth())
-        self.lb_c_1_p.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_c_1_p.sizePolicy().hasHeightForWidth())
+        self.lb_c_1_p.setSizePolicy(sizePolicy4)
         self.lb_c_1_p.setMaximumSize(QSize(50, 16777215))
 
         self.hl_c_1_p.addWidget(self.lb_c_1_p)
 
-        self.le_c_1_p = QLineEdit(self.tab_2)
+        self.le_c_1_p = QLineEdit(self.groupBox_6)
         self.le_c_1_p.setObjectName(u"le_c_1_p")
         self.le_c_1_p.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_c_1_p.sizePolicy().hasHeightForWidth())
-        self.le_c_1_p.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_c_1_p.sizePolicy().hasHeightForWidth())
+        self.le_c_1_p.setSizePolicy(sizePolicy2)
         self.le_c_1_p.setMaximumSize(QSize(100, 16777215))
 
         self.hl_c_1_p.addWidget(self.le_c_1_p)
@@ -1290,19 +1337,19 @@ class Ui_mainWindow(object):
 
         self.hl_X_1 = QHBoxLayout()
         self.hl_X_1.setObjectName(u"hl_X_1")
-        self.lb_X_1 = QLabel(self.tab_2)
+        self.lb_X_1 = QLabel(self.groupBox_6)
         self.lb_X_1.setObjectName(u"lb_X_1")
-        sizePolicy2.setHeightForWidth(self.lb_X_1.sizePolicy().hasHeightForWidth())
-        self.lb_X_1.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_X_1.sizePolicy().hasHeightForWidth())
+        self.lb_X_1.setSizePolicy(sizePolicy4)
         self.lb_X_1.setMaximumSize(QSize(50, 16777215))
 
         self.hl_X_1.addWidget(self.lb_X_1)
 
-        self.le_X_1 = QLineEdit(self.tab_2)
+        self.le_X_1 = QLineEdit(self.groupBox_6)
         self.le_X_1.setObjectName(u"le_X_1")
         self.le_X_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_X_1.sizePolicy().hasHeightForWidth())
-        self.le_X_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_X_1.sizePolicy().hasHeightForWidth())
+        self.le_X_1.setSizePolicy(sizePolicy2)
         self.le_X_1.setMaximumSize(QSize(100, 16777215))
 
         self.hl_X_1.addWidget(self.le_X_1)
@@ -1312,38 +1359,38 @@ class Ui_mainWindow(object):
 
         self.hl_h_1 = QHBoxLayout()
         self.hl_h_1.setObjectName(u"hl_h_1")
-        self.lb_h_1 = QLabel(self.tab_2)
+        self.lb_h_1 = QLabel(self.groupBox_6)
         self.lb_h_1.setObjectName(u"lb_h_1")
-        sizePolicy2.setHeightForWidth(self.lb_h_1.sizePolicy().hasHeightForWidth())
-        self.lb_h_1.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_h_1.sizePolicy().hasHeightForWidth())
+        self.lb_h_1.setSizePolicy(sizePolicy4)
         self.lb_h_1.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_1.addWidget(self.lb_h_1)
 
-        self.le_h_1 = QLineEdit(self.tab_2)
+        self.le_h_1 = QLineEdit(self.groupBox_6)
         self.le_h_1.setObjectName(u"le_h_1")
         self.le_h_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_h_1.sizePolicy().hasHeightForWidth())
-        self.le_h_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_h_1.sizePolicy().hasHeightForWidth())
+        self.le_h_1.setSizePolicy(sizePolicy2)
         self.le_h_1.setMaximumSize(QSize(100, 16777215))
 
         self.hl_h_1.addWidget(self.le_h_1)
 
         self.hl_q_c = QHBoxLayout()
         self.hl_q_c.setObjectName(u"hl_q_c")
-        self.lb_q_c = QLabel(self.tab_2)
+        self.lb_q_c = QLabel(self.groupBox_6)
         self.lb_q_c.setObjectName(u"lb_q_c")
-        sizePolicy2.setHeightForWidth(self.lb_q_c.sizePolicy().hasHeightForWidth())
-        self.lb_q_c.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_q_c.sizePolicy().hasHeightForWidth())
+        self.lb_q_c.setSizePolicy(sizePolicy4)
         self.lb_q_c.setMaximumSize(QSize(50, 16777215))
 
         self.hl_q_c.addWidget(self.lb_q_c)
 
-        self.le_q_c = QLineEdit(self.tab_2)
+        self.le_q_c = QLineEdit(self.groupBox_6)
         self.le_q_c.setObjectName(u"le_q_c")
         self.le_q_c.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_q_c.sizePolicy().hasHeightForWidth())
-        self.le_q_c.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_q_c.sizePolicy().hasHeightForWidth())
+        self.le_q_c.setSizePolicy(sizePolicy2)
         self.le_q_c.setMaximumSize(QSize(100, 16777215))
 
         self.hl_q_c.addWidget(self.le_q_c)
@@ -1356,38 +1403,38 @@ class Ui_mainWindow(object):
 
         self.hl_r_c = QHBoxLayout()
         self.hl_r_c.setObjectName(u"hl_r_c")
-        self.lb_r_c = QLabel(self.tab_2)
+        self.lb_r_c = QLabel(self.groupBox_6)
         self.lb_r_c.setObjectName(u"lb_r_c")
-        sizePolicy2.setHeightForWidth(self.lb_r_c.sizePolicy().hasHeightForWidth())
-        self.lb_r_c.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_r_c.sizePolicy().hasHeightForWidth())
+        self.lb_r_c.setSizePolicy(sizePolicy4)
         self.lb_r_c.setMaximumSize(QSize(50, 16777215))
 
         self.hl_r_c.addWidget(self.lb_r_c)
 
-        self.le_r_c = QLineEdit(self.tab_2)
+        self.le_r_c = QLineEdit(self.groupBox_6)
         self.le_r_c.setObjectName(u"le_r_c")
         self.le_r_c.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_r_c.sizePolicy().hasHeightForWidth())
-        self.le_r_c.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_r_c.sizePolicy().hasHeightForWidth())
+        self.le_r_c.setSizePolicy(sizePolicy2)
         self.le_r_c.setMaximumSize(QSize(100, 16777215))
 
         self.hl_r_c.addWidget(self.le_r_c)
 
         self.hl_r_2 = QHBoxLayout()
         self.hl_r_2.setObjectName(u"hl_r_2")
-        self.lb_r_2 = QLabel(self.tab_2)
+        self.lb_r_2 = QLabel(self.groupBox_6)
         self.lb_r_2.setObjectName(u"lb_r_2")
-        sizePolicy2.setHeightForWidth(self.lb_r_2.sizePolicy().hasHeightForWidth())
-        self.lb_r_2.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_r_2.sizePolicy().hasHeightForWidth())
+        self.lb_r_2.setSizePolicy(sizePolicy4)
         self.lb_r_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_r_2.addWidget(self.lb_r_2)
 
-        self.le_r_2 = QLineEdit(self.tab_2)
+        self.le_r_2 = QLineEdit(self.groupBox_6)
         self.le_r_2.setObjectName(u"le_r_2")
         self.le_r_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_r_2.sizePolicy().hasHeightForWidth())
-        self.le_r_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_r_2.sizePolicy().hasHeightForWidth())
+        self.le_r_2.setSizePolicy(sizePolicy2)
         self.le_r_2.setMaximumSize(QSize(100, 16777215))
 
         self.hl_r_2.addWidget(self.le_r_2)
@@ -1400,38 +1447,38 @@ class Ui_mainWindow(object):
 
         self.hl_Lamda_p_2 = QHBoxLayout()
         self.hl_Lamda_p_2.setObjectName(u"hl_Lamda_p_2")
-        self.lb_Lamda_p_2 = QLabel(self.tab_2)
+        self.lb_Lamda_p_2 = QLabel(self.groupBox_6)
         self.lb_Lamda_p_2.setObjectName(u"lb_Lamda_p_2")
-        sizePolicy2.setHeightForWidth(self.lb_Lamda_p_2.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_p_2.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Lamda_p_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_2.setSizePolicy(sizePolicy4)
         self.lb_Lamda_p_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_Lamda_p_2.addWidget(self.lb_Lamda_p_2)
 
-        self.le_Lamda_p_2 = QLineEdit(self.tab_2)
+        self.le_Lamda_p_2 = QLineEdit(self.groupBox_6)
         self.le_Lamda_p_2.setObjectName(u"le_Lamda_p_2")
         self.le_Lamda_p_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Lamda_p_2.sizePolicy().hasHeightForWidth())
-        self.le_Lamda_p_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Lamda_p_2.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_p_2.setSizePolicy(sizePolicy2)
         self.le_Lamda_p_2.setMaximumSize(QSize(100, 16777215))
 
         self.hl_Lamda_p_2.addWidget(self.le_Lamda_p_2)
 
         self.hl_Lamda_l_2 = QHBoxLayout()
         self.hl_Lamda_l_2.setObjectName(u"hl_Lamda_l_2")
-        self.lb_Lamda_l_2 = QLabel(self.tab_2)
+        self.lb_Lamda_l_2 = QLabel(self.groupBox_6)
         self.lb_Lamda_l_2.setObjectName(u"lb_Lamda_l_2")
-        sizePolicy2.setHeightForWidth(self.lb_Lamda_l_2.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_l_2.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Lamda_l_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_l_2.setSizePolicy(sizePolicy4)
         self.lb_Lamda_l_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_Lamda_l_2.addWidget(self.lb_Lamda_l_2)
 
-        self.le_Lamda_l_2 = QLineEdit(self.tab_2)
+        self.le_Lamda_l_2 = QLineEdit(self.groupBox_6)
         self.le_Lamda_l_2.setObjectName(u"le_Lamda_l_2")
         self.le_Lamda_l_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Lamda_l_2.sizePolicy().hasHeightForWidth())
-        self.le_Lamda_l_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Lamda_l_2.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_l_2.setSizePolicy(sizePolicy2)
         self.le_Lamda_l_2.setMaximumSize(QSize(100, 16777215))
 
         self.hl_Lamda_l_2.addWidget(self.le_Lamda_l_2)
@@ -1443,66 +1490,53 @@ class Ui_mainWindow(object):
         self.gridLayout_4.addLayout(self.hl_Lamda_p_2, 12, 0, 1, 1)
 
 
-        self.gridLayout_2.addLayout(self.gridLayout_4, 0, 1, 1, 1)
+        self.gridLayout_2.addLayout(self.gridLayout_4, 0, 0, 1, 1)
+
+
+        self.gridLayout_26.addWidget(self.groupBox_6, 0, 1, 1, 1)
+
+
+        self.verticalLayout_6.addLayout(self.gridLayout_26)
 
         self.gridLayout_5 = QGridLayout()
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.gridLayout_5.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.bt_calculate_table2 = QPushButton(self.tab_2)
-        self.bt_calculate_table2.setObjectName(u"bt_calculate_table2")
+        self.bt_export_xl_table_2 = QPushButton(self.tab_2)
+        self.bt_export_xl_table_2.setObjectName(u"bt_export_xl_table_2")
 
-        self.gridLayout_5.addWidget(self.bt_calculate_table2, 0, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.bt_export_xl_table_2, 0, 2, 1, 1)
 
         self.bt_check_table_2 = QPushButton(self.tab_2)
         self.bt_check_table_2.setObjectName(u"bt_check_table_2")
 
         self.gridLayout_5.addWidget(self.bt_check_table_2, 0, 0, 1, 1)
 
-        self.bt_export_xl_table_2 = QPushButton(self.tab_2)
-        self.bt_export_xl_table_2.setObjectName(u"bt_export_xl_table_2")
+        self.bt_calculate_table2 = QPushButton(self.tab_2)
+        self.bt_calculate_table2.setObjectName(u"bt_calculate_table2")
 
-        self.gridLayout_5.addWidget(self.bt_export_xl_table_2, 0, 2, 1, 1)
-
-
-        self.gridLayout_2.addLayout(self.gridLayout_5, 1, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.bt_calculate_table2, 0, 1, 1, 1)
 
         self.lb_error_2 = QLabel(self.tab_2)
         self.lb_error_2.setObjectName(u"lb_error_2")
 
-        self.gridLayout_2.addWidget(self.lb_error_2, 1, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.lb_error_2, 0, 3, 1, 1)
+
+
+        self.verticalLayout_6.addLayout(self.gridLayout_5)
+
+
+        self.gridLayout_27.addLayout(self.verticalLayout_6, 0, 0, 1, 1)
 
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
         self.tab_3.setEnabled(False)
-        self.gridLayout_3 = QGridLayout(self.tab_3)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.bt_check_table_3 = QPushButton(self.tab_3)
-        self.bt_check_table_3.setObjectName(u"bt_check_table_3")
-
-        self.horizontalLayout.addWidget(self.bt_check_table_3)
-
-        self.bt_calculate_table3 = QPushButton(self.tab_3)
-        self.bt_calculate_table3.setObjectName(u"bt_calculate_table3")
-
-        self.horizontalLayout.addWidget(self.bt_calculate_table3)
-
-        self.bt_show_chart_table3 = QPushButton(self.tab_3)
-        self.bt_show_chart_table3.setObjectName(u"bt_show_chart_table3")
-        self.bt_show_chart_table3.setEnabled(False)
-
-        self.horizontalLayout.addWidget(self.bt_show_chart_table3)
-
-        self.bt_export_xl_table_3 = QPushButton(self.tab_3)
-        self.bt_export_xl_table_3.setObjectName(u"bt_export_xl_table_3")
-
-        self.horizontalLayout.addWidget(self.bt_export_xl_table_3)
-
-
-        self.gridLayout_3.addLayout(self.horizontalLayout, 1, 0, 1, 1)
-
+        self.gridLayout_8 = QGridLayout(self.tab_3)
+        self.gridLayout_8.setObjectName(u"gridLayout_8")
+        self.verticalLayout_8 = QVBoxLayout()
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.horizontalLayout_53 = QHBoxLayout()
+        self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
         self.tableWidget_3 = QTableWidget(self.tab_3)
         if (self.tableWidget_3.columnCount() < 8):
             self.tableWidget_3.setColumnCount(8)
@@ -1770,503 +1804,603 @@ class Ui_mainWindow(object):
         self.tableWidget_3.setFont(font)
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(170)
 
-        self.gridLayout_3.addWidget(self.tableWidget_3, 0, 0, 1, 1, Qt.AlignLeft)
+        self.horizontalLayout_53.addWidget(self.tableWidget_3)
 
-        self.vl_variables_t3 = QVBoxLayout()
-        self.vl_variables_t3.setSpacing(6)
-        self.vl_variables_t3.setObjectName(u"vl_variables_t3")
-        self.gridLayout_12 = QGridLayout()
-        self.gridLayout_12.setObjectName(u"gridLayout_12")
-        self.gridLayout_12.setContentsMargins(0, -1, -1, -1)
-        self.le_C_N = QLineEdit(self.tab_3)
+        self.groupBox_7 = QGroupBox(self.tab_3)
+        self.groupBox_7.setObjectName(u"groupBox_7")
+        self.gridLayout_3 = QGridLayout(self.groupBox_7)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.verticalLayout_7 = QVBoxLayout()
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.horizontalLayout_16 = QHBoxLayout()
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.horizontalLayout_15 = QHBoxLayout()
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.lb_C_N = QLabel(self.groupBox_7)
+        self.lb_C_N.setObjectName(u"lb_C_N")
+        sizePolicy4.setHeightForWidth(self.lb_C_N.sizePolicy().hasHeightForWidth())
+        self.lb_C_N.setSizePolicy(sizePolicy4)
+        self.lb_C_N.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_15.addWidget(self.lb_C_N)
+
+        self.le_C_N = QLineEdit(self.groupBox_7)
         self.le_C_N.setObjectName(u"le_C_N")
         self.le_C_N.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_C_N.sizePolicy().hasHeightForWidth())
-        self.le_C_N.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_C_N.sizePolicy().hasHeightForWidth())
+        self.le_C_N.setSizePolicy(sizePolicy2)
         self.le_C_N.setMinimumSize(QSize(100, 32))
         self.le_C_N.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_12.addWidget(self.le_C_N, 0, 1, 1, 1)
+        self.horizontalLayout_15.addWidget(self.le_C_N)
 
-        self.hl_k_y_1 = QHBoxLayout()
-        self.hl_k_y_1.setObjectName(u"hl_k_y_1")
-        self.hl_k_y_1.setContentsMargins(0, -1, -1, -1)
-        self.lb_k_y_1 = QLabel(self.tab_3)
+
+        self.horizontalLayout_16.addLayout(self.horizontalLayout_15)
+
+        self.horizontalLayout_14 = QHBoxLayout()
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.lb_k_y_1 = QLabel(self.groupBox_7)
         self.lb_k_y_1.setObjectName(u"lb_k_y_1")
-        sizePolicy2.setHeightForWidth(self.lb_k_y_1.sizePolicy().hasHeightForWidth())
-        self.lb_k_y_1.setSizePolicy(sizePolicy2)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.lb_k_y_1.sizePolicy().hasHeightForWidth())
+        self.lb_k_y_1.setSizePolicy(sizePolicy9)
         self.lb_k_y_1.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_k_y_1.addWidget(self.lb_k_y_1)
+        self.horizontalLayout_14.addWidget(self.lb_k_y_1)
 
-        self.le_k_y_1 = QLineEdit(self.tab_3)
+        self.le_k_y_1 = QLineEdit(self.groupBox_7)
         self.le_k_y_1.setObjectName(u"le_k_y_1")
         self.le_k_y_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_k_y_1.sizePolicy().hasHeightForWidth())
-        self.le_k_y_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_k_y_1.sizePolicy().hasHeightForWidth())
+        self.le_k_y_1.setSizePolicy(sizePolicy2)
         self.le_k_y_1.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_k_y_1.addWidget(self.le_k_y_1)
+        self.horizontalLayout_14.addWidget(self.le_k_y_1)
 
 
-        self.gridLayout_12.addLayout(self.hl_k_y_1, 0, 2, 1, 1)
-
-        self.lb_C_N = QLabel(self.tab_3)
-        self.lb_C_N.setObjectName(u"lb_C_N")
-        sizePolicy2.setHeightForWidth(self.lb_C_N.sizePolicy().hasHeightForWidth())
-        self.lb_C_N.setSizePolicy(sizePolicy2)
-        self.lb_C_N.setMaximumSize(QSize(50, 16777215))
-
-        self.gridLayout_12.addWidget(self.lb_C_N, 0, 0, 1, 1)
+        self.horizontalLayout_16.addLayout(self.horizontalLayout_14)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_12)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_16)
 
-        self.gridLayout_11 = QGridLayout()
-        self.gridLayout_11.setObjectName(u"gridLayout_11")
-        self.gridLayout_11.setContentsMargins(-1, -1, 0, -1)
-        self.lb_u_p = QLabel(self.tab_3)
+        self.horizontalLayout_44 = QHBoxLayout()
+        self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
+        self.horizontalLayout_17 = QHBoxLayout()
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.lb_u_p = QLabel(self.groupBox_7)
         self.lb_u_p.setObjectName(u"lb_u_p")
-        sizePolicy2.setHeightForWidth(self.lb_u_p.sizePolicy().hasHeightForWidth())
-        self.lb_u_p.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_u_p.sizePolicy().hasHeightForWidth())
+        self.lb_u_p.setSizePolicy(sizePolicy4)
         self.lb_u_p.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_11.addWidget(self.lb_u_p, 0, 0, 1, 1)
+        self.horizontalLayout_17.addWidget(self.lb_u_p)
 
-        self.le_u_p = QLineEdit(self.tab_3)
+        self.le_u_p = QLineEdit(self.groupBox_7)
         self.le_u_p.setObjectName(u"le_u_p")
         self.le_u_p.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_u_p.sizePolicy().hasHeightForWidth())
-        self.le_u_p.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_u_p.sizePolicy().hasHeightForWidth())
+        self.le_u_p.setSizePolicy(sizePolicy2)
         self.le_u_p.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_11.addWidget(self.le_u_p, 0, 1, 1, 1)
+        self.horizontalLayout_17.addWidget(self.le_u_p)
 
-        self.hl_k_ob = QHBoxLayout()
-        self.hl_k_ob.setSpacing(0)
-        self.hl_k_ob.setObjectName(u"hl_k_ob")
-        self.hl_k_ob.setContentsMargins(-1, -1, 0, -1)
-        self.lb_k_ob = QLabel(self.tab_3)
+
+        self.horizontalLayout_44.addLayout(self.horizontalLayout_17)
+
+        self.horizontalLayout_35 = QHBoxLayout()
+        self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
+        self.lb_k_ob = QLabel(self.groupBox_7)
         self.lb_k_ob.setObjectName(u"lb_k_ob")
-        sizePolicy2.setHeightForWidth(self.lb_k_ob.sizePolicy().hasHeightForWidth())
-        self.lb_k_ob.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_k_ob.sizePolicy().hasHeightForWidth())
+        self.lb_k_ob.setSizePolicy(sizePolicy9)
         self.lb_k_ob.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_k_ob.addWidget(self.lb_k_ob)
+        self.horizontalLayout_35.addWidget(self.lb_k_ob)
 
-        self.le_k_ob = QLineEdit(self.tab_3)
+        self.le_k_ob = QLineEdit(self.groupBox_7)
         self.le_k_ob.setObjectName(u"le_k_ob")
         self.le_k_ob.setEnabled(False)
-        sizePolicy4.setHeightForWidth(self.le_k_ob.sizePolicy().hasHeightForWidth())
-        self.le_k_ob.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.le_k_ob.sizePolicy().hasHeightForWidth())
+        self.le_k_ob.setSizePolicy(sizePolicy5)
         self.le_k_ob.setMinimumSize(QSize(20, 20))
         self.le_k_ob.setMaximumSize(QSize(100, 16777215))
         self.le_k_ob.setSizeIncrement(QSize(100, 0))
 
-        self.hl_k_ob.addWidget(self.le_k_ob)
+        self.horizontalLayout_35.addWidget(self.le_k_ob)
 
 
-        self.gridLayout_11.addLayout(self.hl_k_ob, 0, 2, 1, 1)
+        self.horizontalLayout_44.addLayout(self.horizontalLayout_35)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_11)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_44)
 
-        self.gridLayout_10 = QGridLayout()
-        self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.lb_Z_1 = QLabel(self.tab_3)
+        self.horizontalLayout_45 = QHBoxLayout()
+        self.horizontalLayout_45.setObjectName(u"horizontalLayout_45")
+        self.horizontalLayout_18 = QHBoxLayout()
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.lb_Z_1 = QLabel(self.groupBox_7)
         self.lb_Z_1.setObjectName(u"lb_Z_1")
-        sizePolicy2.setHeightForWidth(self.lb_Z_1.sizePolicy().hasHeightForWidth())
-        self.lb_Z_1.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Z_1.sizePolicy().hasHeightForWidth())
+        self.lb_Z_1.setSizePolicy(sizePolicy4)
         self.lb_Z_1.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_10.addWidget(self.lb_Z_1, 0, 0, 1, 1)
+        self.horizontalLayout_18.addWidget(self.lb_Z_1)
 
-        self.le_Z_1 = QLineEdit(self.tab_3)
+        self.le_Z_1 = QLineEdit(self.groupBox_7)
         self.le_Z_1.setObjectName(u"le_Z_1")
         self.le_Z_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Z_1.sizePolicy().hasHeightForWidth())
-        self.le_Z_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Z_1.sizePolicy().hasHeightForWidth())
+        self.le_Z_1.setSizePolicy(sizePolicy2)
         self.le_Z_1.setMaximumSize(QSize(100, 16777215))
         self.le_Z_1.setLayoutDirection(Qt.LeftToRight)
 
-        self.gridLayout_10.addWidget(self.le_Z_1, 0, 1, 1, 1)
+        self.horizontalLayout_18.addWidget(self.le_Z_1)
 
-        self.hl_Z_2 = QHBoxLayout()
-        self.hl_Z_2.setObjectName(u"hl_Z_2")
-        self.hl_Z_2.setContentsMargins(0, -1, -1, -1)
-        self.lb_Z_2 = QLabel(self.tab_3)
+
+        self.horizontalLayout_45.addLayout(self.horizontalLayout_18)
+
+        self.horizontalLayout_36 = QHBoxLayout()
+        self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
+        self.lb_Z_2 = QLabel(self.groupBox_7)
         self.lb_Z_2.setObjectName(u"lb_Z_2")
-        sizePolicy2.setHeightForWidth(self.lb_Z_2.sizePolicy().hasHeightForWidth())
-        self.lb_Z_2.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_Z_2.sizePolicy().hasHeightForWidth())
+        self.lb_Z_2.setSizePolicy(sizePolicy9)
         self.lb_Z_2.setMaximumSize(QSize(50, 16777215))
         self.lb_Z_2.setFrameShape(QFrame.NoFrame)
 
-        self.hl_Z_2.addWidget(self.lb_Z_2)
+        self.horizontalLayout_36.addWidget(self.lb_Z_2)
 
-        self.le_Z_2 = QLineEdit(self.tab_3)
+        self.le_Z_2 = QLineEdit(self.groupBox_7)
         self.le_Z_2.setObjectName(u"le_Z_2")
         self.le_Z_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Z_2.sizePolicy().hasHeightForWidth())
-        self.le_Z_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Z_2.sizePolicy().hasHeightForWidth())
+        self.le_Z_2.setSizePolicy(sizePolicy2)
         self.le_Z_2.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_Z_2.addWidget(self.le_Z_2)
+        self.horizontalLayout_36.addWidget(self.le_Z_2)
 
 
-        self.gridLayout_10.addLayout(self.hl_Z_2, 0, 2, 1, 1)
+        self.horizontalLayout_45.addLayout(self.horizontalLayout_36)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_10)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_45)
 
-        self.gridLayout_9 = QGridLayout()
-        self.gridLayout_9.setObjectName(u"gridLayout_9")
-        self.lb_sigma = QLabel(self.tab_3)
+        self.horizontalLayout_46 = QHBoxLayout()
+        self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
+        self.horizontalLayout_19 = QHBoxLayout()
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.lb_sigma = QLabel(self.groupBox_7)
         self.lb_sigma.setObjectName(u"lb_sigma")
-        sizePolicy2.setHeightForWidth(self.lb_sigma.sizePolicy().hasHeightForWidth())
-        self.lb_sigma.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_sigma.sizePolicy().hasHeightForWidth())
+        self.lb_sigma.setSizePolicy(sizePolicy4)
         self.lb_sigma.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_9.addWidget(self.lb_sigma, 0, 0, 1, 1)
+        self.horizontalLayout_19.addWidget(self.lb_sigma)
 
-        self.le_sigma = QLineEdit(self.tab_3)
+        self.le_sigma = QLineEdit(self.groupBox_7)
         self.le_sigma.setObjectName(u"le_sigma")
         self.le_sigma.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_sigma.sizePolicy().hasHeightForWidth())
-        self.le_sigma.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_sigma.sizePolicy().hasHeightForWidth())
+        self.le_sigma.setSizePolicy(sizePolicy2)
         self.le_sigma.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_9.addWidget(self.le_sigma, 0, 1, 1, 1)
+        self.horizontalLayout_19.addWidget(self.le_sigma)
 
-        self.hl_t_z_1 = QHBoxLayout()
-        self.hl_t_z_1.setObjectName(u"hl_t_z_1")
-        self.lb_t_z_1 = QLabel(self.tab_3)
+
+        self.horizontalLayout_46.addLayout(self.horizontalLayout_19)
+
+        self.horizontalLayout_37 = QHBoxLayout()
+        self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
+        self.lb_t_z_1 = QLabel(self.groupBox_7)
         self.lb_t_z_1.setObjectName(u"lb_t_z_1")
-        sizePolicy2.setHeightForWidth(self.lb_t_z_1.sizePolicy().hasHeightForWidth())
-        self.lb_t_z_1.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_t_z_1.sizePolicy().hasHeightForWidth())
+        self.lb_t_z_1.setSizePolicy(sizePolicy9)
         self.lb_t_z_1.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_t_z_1.addWidget(self.lb_t_z_1)
+        self.horizontalLayout_37.addWidget(self.lb_t_z_1)
 
-        self.le_t_z_1 = QLineEdit(self.tab_3)
+        self.le_t_z_1 = QLineEdit(self.groupBox_7)
         self.le_t_z_1.setObjectName(u"le_t_z_1")
         self.le_t_z_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_t_z_1.sizePolicy().hasHeightForWidth())
-        self.le_t_z_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_t_z_1.sizePolicy().hasHeightForWidth())
+        self.le_t_z_1.setSizePolicy(sizePolicy2)
         self.le_t_z_1.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_t_z_1.addWidget(self.le_t_z_1)
+        self.horizontalLayout_37.addWidget(self.le_t_z_1)
 
 
-        self.gridLayout_9.addLayout(self.hl_t_z_1, 0, 2, 1, 1)
+        self.horizontalLayout_46.addLayout(self.horizontalLayout_37)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_9)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_46)
 
-        self.gridLayout_8 = QGridLayout()
-        self.gridLayout_8.setObjectName(u"gridLayout_8")
-        self.lb_b_sh = QLabel(self.tab_3)
+        self.horizontalLayout_47 = QHBoxLayout()
+        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
+        self.horizontalLayout_29 = QHBoxLayout()
+        self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
+        self.lb_b_sh = QLabel(self.groupBox_7)
         self.lb_b_sh.setObjectName(u"lb_b_sh")
-        sizePolicy2.setHeightForWidth(self.lb_b_sh.sizePolicy().hasHeightForWidth())
-        self.lb_b_sh.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_b_sh.sizePolicy().hasHeightForWidth())
+        self.lb_b_sh.setSizePolicy(sizePolicy4)
         self.lb_b_sh.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_8.addWidget(self.lb_b_sh, 0, 0, 1, 1)
+        self.horizontalLayout_29.addWidget(self.lb_b_sh)
 
-        self.le_b_sh = QLineEdit(self.tab_3)
+        self.le_b_sh = QLineEdit(self.groupBox_7)
         self.le_b_sh.setObjectName(u"le_b_sh")
         self.le_b_sh.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_b_sh.sizePolicy().hasHeightForWidth())
-        self.le_b_sh.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_b_sh.sizePolicy().hasHeightForWidth())
+        self.le_b_sh.setSizePolicy(sizePolicy2)
         self.le_b_sh.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_8.addWidget(self.le_b_sh, 0, 1, 1, 1)
+        self.horizontalLayout_29.addWidget(self.le_b_sh)
 
-        self.hl_h_sh_r = QHBoxLayout()
-        self.hl_h_sh_r.setObjectName(u"hl_h_sh_r")
-        self.lb_h_sh_r = QLabel(self.tab_3)
+
+        self.horizontalLayout_47.addLayout(self.horizontalLayout_29)
+
+        self.horizontalLayout_38 = QHBoxLayout()
+        self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
+        self.lb_h_sh_r = QLabel(self.groupBox_7)
         self.lb_h_sh_r.setObjectName(u"lb_h_sh_r")
-        sizePolicy2.setHeightForWidth(self.lb_h_sh_r.sizePolicy().hasHeightForWidth())
-        self.lb_h_sh_r.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_h_sh_r.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh_r.setSizePolicy(sizePolicy9)
         self.lb_h_sh_r.setMaximumSize(QSize(75, 16777215))
 
-        self.hl_h_sh_r.addWidget(self.lb_h_sh_r)
+        self.horizontalLayout_38.addWidget(self.lb_h_sh_r)
 
-        self.le_h_sh_r = QLineEdit(self.tab_3)
+        self.le_h_sh_r = QLineEdit(self.groupBox_7)
         self.le_h_sh_r.setObjectName(u"le_h_sh_r")
         self.le_h_sh_r.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_h_sh_r.sizePolicy().hasHeightForWidth())
-        self.le_h_sh_r.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_h_sh_r.sizePolicy().hasHeightForWidth())
+        self.le_h_sh_r.setSizePolicy(sizePolicy2)
         self.le_h_sh_r.setMaximumSize(QSize(75, 16777215))
 
-        self.hl_h_sh_r.addWidget(self.le_h_sh_r)
+        self.horizontalLayout_38.addWidget(self.le_h_sh_r)
 
 
-        self.gridLayout_8.addLayout(self.hl_h_sh_r, 0, 2, 1, 1)
+        self.horizontalLayout_47.addLayout(self.horizontalLayout_38)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_8)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_47)
 
-        self.gridLayout_13 = QGridLayout()
-        self.gridLayout_13.setObjectName(u"gridLayout_13")
-        self.lb_Lamda_p_1 = QLabel(self.tab_3)
+        self.horizontalLayout_48 = QHBoxLayout()
+        self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
+        self.horizontalLayout_30 = QHBoxLayout()
+        self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
+        self.lb_Lamda_p_1 = QLabel(self.groupBox_7)
         self.lb_Lamda_p_1.setObjectName(u"lb_Lamda_p_1")
-        sizePolicy2.setHeightForWidth(self.lb_Lamda_p_1.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_p_1.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Lamda_p_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_1.setSizePolicy(sizePolicy4)
         self.lb_Lamda_p_1.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_13.addWidget(self.lb_Lamda_p_1, 0, 0, 1, 1)
+        self.horizontalLayout_30.addWidget(self.lb_Lamda_p_1)
 
-        self.le_Lamda_p_1 = QLineEdit(self.tab_3)
+        self.le_Lamda_p_1 = QLineEdit(self.groupBox_7)
         self.le_Lamda_p_1.setObjectName(u"le_Lamda_p_1")
         self.le_Lamda_p_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Lamda_p_1.sizePolicy().hasHeightForWidth())
-        self.le_Lamda_p_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Lamda_p_1.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_p_1.setSizePolicy(sizePolicy2)
         self.le_Lamda_p_1.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_13.addWidget(self.le_Lamda_p_1, 0, 1, 1, 1)
+        self.horizontalLayout_30.addWidget(self.le_Lamda_p_1)
 
-        self.hl_Lamda_d_1 = QHBoxLayout()
-        self.hl_Lamda_d_1.setObjectName(u"hl_Lamda_d_1")
-        self.lb_Lamda_d_1 = QLabel(self.tab_3)
+
+        self.horizontalLayout_48.addLayout(self.horizontalLayout_30)
+
+        self.horizontalLayout_39 = QHBoxLayout()
+        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.lb_Lamda_d_1 = QLabel(self.groupBox_7)
         self.lb_Lamda_d_1.setObjectName(u"lb_Lamda_d_1")
-        sizePolicy2.setHeightForWidth(self.lb_Lamda_d_1.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_d_1.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_Lamda_d_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_d_1.setSizePolicy(sizePolicy9)
         self.lb_Lamda_d_1.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_Lamda_d_1.addWidget(self.lb_Lamda_d_1)
+        self.horizontalLayout_39.addWidget(self.lb_Lamda_d_1)
 
-        self.le_Lamda_d_1 = QLineEdit(self.tab_3)
+        self.le_Lamda_d_1 = QLineEdit(self.groupBox_7)
         self.le_Lamda_d_1.setObjectName(u"le_Lamda_d_1")
         self.le_Lamda_d_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Lamda_d_1.sizePolicy().hasHeightForWidth())
-        self.le_Lamda_d_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Lamda_d_1.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_d_1.setSizePolicy(sizePolicy2)
         self.le_Lamda_d_1.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_Lamda_d_1.addWidget(self.le_Lamda_d_1)
+        self.horizontalLayout_39.addWidget(self.le_Lamda_d_1)
 
 
-        self.gridLayout_13.addLayout(self.hl_Lamda_d_1, 0, 2, 1, 1)
+        self.horizontalLayout_48.addLayout(self.horizontalLayout_39)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_13)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_48)
 
-        self.gridLayout_14 = QGridLayout()
-        self.gridLayout_14.setObjectName(u"gridLayout_14")
-        self.lb_Lamda_l_1 = QLabel(self.tab_3)
+        self.horizontalLayout_49 = QHBoxLayout()
+        self.horizontalLayout_49.setObjectName(u"horizontalLayout_49")
+        self.horizontalLayout_31 = QHBoxLayout()
+        self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
+        self.lb_Lamda_l_1 = QLabel(self.groupBox_7)
         self.lb_Lamda_l_1.setObjectName(u"lb_Lamda_l_1")
-        sizePolicy2.setHeightForWidth(self.lb_Lamda_l_1.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_l_1.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Lamda_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_l_1.setSizePolicy(sizePolicy4)
         self.lb_Lamda_l_1.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_14.addWidget(self.lb_Lamda_l_1, 0, 0, 1, 1)
+        self.horizontalLayout_31.addWidget(self.lb_Lamda_l_1)
 
-        self.le_Lamda_l_1 = QLineEdit(self.tab_3)
+        self.le_Lamda_l_1 = QLineEdit(self.groupBox_7)
         self.le_Lamda_l_1.setObjectName(u"le_Lamda_l_1")
         self.le_Lamda_l_1.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Lamda_l_1.sizePolicy().hasHeightForWidth())
-        self.le_Lamda_l_1.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Lamda_l_1.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_l_1.setSizePolicy(sizePolicy2)
         self.le_Lamda_l_1.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_14.addWidget(self.le_Lamda_l_1, 0, 1, 1, 1)
+        self.horizontalLayout_31.addWidget(self.le_Lamda_l_1)
 
-        self.hl_t_z_2 = QHBoxLayout()
-        self.hl_t_z_2.setObjectName(u"hl_t_z_2")
-        self.lb_t_z_2 = QLabel(self.tab_3)
+
+        self.horizontalLayout_49.addLayout(self.horizontalLayout_31)
+
+        self.horizontalLayout_40 = QHBoxLayout()
+        self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
+        self.lb_t_z_2 = QLabel(self.groupBox_7)
         self.lb_t_z_2.setObjectName(u"lb_t_z_2")
-        sizePolicy2.setHeightForWidth(self.lb_t_z_2.sizePolicy().hasHeightForWidth())
-        self.lb_t_z_2.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_t_z_2.sizePolicy().hasHeightForWidth())
+        self.lb_t_z_2.setSizePolicy(sizePolicy9)
         self.lb_t_z_2.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_t_z_2.addWidget(self.lb_t_z_2)
+        self.horizontalLayout_40.addWidget(self.lb_t_z_2)
 
-        self.le_t_z_2 = QLineEdit(self.tab_3)
+        self.le_t_z_2 = QLineEdit(self.groupBox_7)
         self.le_t_z_2.setObjectName(u"le_t_z_2")
         self.le_t_z_2.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_t_z_2.sizePolicy().hasHeightForWidth())
-        self.le_t_z_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_t_z_2.sizePolicy().hasHeightForWidth())
+        self.le_t_z_2.setSizePolicy(sizePolicy2)
         self.le_t_z_2.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_t_z_2.addWidget(self.le_t_z_2)
+        self.horizontalLayout_40.addWidget(self.le_t_z_2)
 
 
-        self.gridLayout_14.addLayout(self.hl_t_z_2, 0, 2, 1, 1)
+        self.horizontalLayout_49.addLayout(self.horizontalLayout_40)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_14)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_49)
 
-        self.gridLayout_15 = QGridLayout()
-        self.gridLayout_15.setObjectName(u"gridLayout_15")
-        self.lb_r_2_Ksi_shtrih = QLabel(self.tab_3)
+        self.horizontalLayout_50 = QHBoxLayout()
+        self.horizontalLayout_50.setObjectName(u"horizontalLayout_50")
+        self.horizontalLayout_32 = QHBoxLayout()
+        self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
+        self.lb_r_2_Ksi_shtrih = QLabel(self.groupBox_7)
         self.lb_r_2_Ksi_shtrih.setObjectName(u"lb_r_2_Ksi_shtrih")
-        sizePolicy2.setHeightForWidth(self.lb_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_r_2_Ksi_shtrih.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_r_2_Ksi_shtrih.setSizePolicy(sizePolicy4)
         self.lb_r_2_Ksi_shtrih.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_15.addWidget(self.lb_r_2_Ksi_shtrih, 0, 0, 1, 1)
+        self.horizontalLayout_32.addWidget(self.lb_r_2_Ksi_shtrih)
 
-        self.le_r_2_Ksi_shtrih = QLineEdit(self.tab_3)
+        self.le_r_2_Ksi_shtrih = QLineEdit(self.groupBox_7)
         self.le_r_2_Ksi_shtrih.setObjectName(u"le_r_2_Ksi_shtrih")
         self.le_r_2_Ksi_shtrih.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
-        self.le_r_2_Ksi_shtrih.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_r_2_Ksi_shtrih.setSizePolicy(sizePolicy2)
         self.le_r_2_Ksi_shtrih.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_15.addWidget(self.le_r_2_Ksi_shtrih, 0, 1, 1, 1)
+        self.horizontalLayout_32.addWidget(self.le_r_2_Ksi_shtrih)
 
-        self.hl_I_1_p = QHBoxLayout()
-        self.hl_I_1_p.setObjectName(u"hl_I_1_p")
-        self.lb_I_1_p = QLabel(self.tab_3)
+
+        self.horizontalLayout_50.addLayout(self.horizontalLayout_32)
+
+        self.horizontalLayout_41 = QHBoxLayout()
+        self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
+        self.lb_I_1_p = QLabel(self.groupBox_7)
         self.lb_I_1_p.setObjectName(u"lb_I_1_p")
-        sizePolicy2.setHeightForWidth(self.lb_I_1_p.sizePolicy().hasHeightForWidth())
-        self.lb_I_1_p.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_I_1_p.sizePolicy().hasHeightForWidth())
+        self.lb_I_1_p.setSizePolicy(sizePolicy9)
         self.lb_I_1_p.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_I_1_p.addWidget(self.lb_I_1_p)
+        self.horizontalLayout_41.addWidget(self.lb_I_1_p)
 
-        self.le_I_1_p = QLineEdit(self.tab_3)
+        self.le_I_1_p = QLineEdit(self.groupBox_7)
         self.le_I_1_p.setObjectName(u"le_I_1_p")
         self.le_I_1_p.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_I_1_p.sizePolicy().hasHeightForWidth())
-        self.le_I_1_p.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_I_1_p.sizePolicy().hasHeightForWidth())
+        self.le_I_1_p.setSizePolicy(sizePolicy2)
         self.le_I_1_p.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_I_1_p.addWidget(self.le_I_1_p)
+        self.horizontalLayout_41.addWidget(self.le_I_1_p)
 
 
-        self.gridLayout_15.addLayout(self.hl_I_1_p, 0, 2, 1, 1)
+        self.horizontalLayout_50.addLayout(self.horizontalLayout_41)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_15)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_50)
 
-        self.gridLayout_16 = QGridLayout()
-        self.gridLayout_16.setObjectName(u"gridLayout_16")
-        self.lb_I_1_nom = QLabel(self.tab_3)
+        self.horizontalLayout_51 = QHBoxLayout()
+        self.horizontalLayout_51.setObjectName(u"horizontalLayout_51")
+        self.horizontalLayout_33 = QHBoxLayout()
+        self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
+        self.lb_I_1_nom = QLabel(self.groupBox_7)
         self.lb_I_1_nom.setObjectName(u"lb_I_1_nom")
-        sizePolicy2.setHeightForWidth(self.lb_I_1_nom.sizePolicy().hasHeightForWidth())
-        self.lb_I_1_nom.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_I_1_nom.sizePolicy().hasHeightForWidth())
+        self.lb_I_1_nom.setSizePolicy(sizePolicy4)
         self.lb_I_1_nom.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_16.addWidget(self.lb_I_1_nom, 0, 0, 1, 1)
+        self.horizontalLayout_33.addWidget(self.lb_I_1_nom)
 
-        self.le_I_1_nom = QLineEdit(self.tab_3)
+        self.le_I_1_nom = QLineEdit(self.groupBox_7)
         self.le_I_1_nom.setObjectName(u"le_I_1_nom")
         self.le_I_1_nom.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_I_1_nom.sizePolicy().hasHeightForWidth())
-        self.le_I_1_nom.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_I_1_nom.sizePolicy().hasHeightForWidth())
+        self.le_I_1_nom.setSizePolicy(sizePolicy2)
         self.le_I_1_nom.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_16.addWidget(self.le_I_1_nom, 0, 1, 1, 1)
+        self.horizontalLayout_33.addWidget(self.le_I_1_nom)
 
-        self.hl_h_k = QHBoxLayout()
-        self.hl_h_k.setObjectName(u"hl_h_k")
-        self.lb_h_k = QLabel(self.tab_3)
+
+        self.horizontalLayout_51.addLayout(self.horizontalLayout_33)
+
+        self.horizontalLayout_42 = QHBoxLayout()
+        self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
+        self.lb_h_k = QLabel(self.groupBox_7)
         self.lb_h_k.setObjectName(u"lb_h_k")
-        sizePolicy2.setHeightForWidth(self.lb_h_k.sizePolicy().hasHeightForWidth())
-        self.lb_h_k.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_h_k.sizePolicy().hasHeightForWidth())
+        self.lb_h_k.setSizePolicy(sizePolicy9)
         self.lb_h_k.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_h_k.addWidget(self.lb_h_k)
+        self.horizontalLayout_42.addWidget(self.lb_h_k)
 
-        self.le_h_k = QLineEdit(self.tab_3)
+        self.le_h_k = QLineEdit(self.groupBox_7)
         self.le_h_k.setObjectName(u"le_h_k")
         self.le_h_k.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_h_k.sizePolicy().hasHeightForWidth())
-        self.le_h_k.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_h_k.sizePolicy().hasHeightForWidth())
+        self.le_h_k.setSizePolicy(sizePolicy2)
         self.le_h_k.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_h_k.addWidget(self.le_h_k)
+        self.horizontalLayout_42.addWidget(self.le_h_k)
 
 
-        self.gridLayout_16.addLayout(self.hl_h_k, 0, 2, 1, 1)
+        self.horizontalLayout_51.addLayout(self.horizontalLayout_42)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_16)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_51)
 
-        self.gridLayout_17 = QGridLayout()
-        self.gridLayout_17.setObjectName(u"gridLayout_17")
-        self.lb_Lamda_p_2_Ksi = QLabel(self.tab_3)
+        self.horizontalLayout_52 = QHBoxLayout()
+        self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
+        self.horizontalLayout_34 = QHBoxLayout()
+        self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
+        self.lb_Lamda_p_2_Ksi = QLabel(self.groupBox_7)
         self.lb_Lamda_p_2_Ksi.setObjectName(u"lb_Lamda_p_2_Ksi")
-        sizePolicy2.setHeightForWidth(self.lb_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_p_2_Ksi.setSizePolicy(sizePolicy2)
+        sizePolicy4.setHeightForWidth(self.lb_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_2_Ksi.setSizePolicy(sizePolicy4)
         self.lb_Lamda_p_2_Ksi.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_17.addWidget(self.lb_Lamda_p_2_Ksi, 0, 0, 1, 1)
+        self.horizontalLayout_34.addWidget(self.lb_Lamda_p_2_Ksi)
 
-        self.le_Lamda_p_2_Ksi = QLineEdit(self.tab_3)
+        self.le_Lamda_p_2_Ksi = QLineEdit(self.groupBox_7)
         self.le_Lamda_p_2_Ksi.setObjectName(u"le_Lamda_p_2_Ksi")
         self.le_Lamda_p_2_Ksi.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
-        self.le_Lamda_p_2_Ksi.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
+        self.le_Lamda_p_2_Ksi.setSizePolicy(sizePolicy2)
         self.le_Lamda_p_2_Ksi.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout_17.addWidget(self.le_Lamda_p_2_Ksi, 0, 1, 1, 1)
+        self.horizontalLayout_34.addWidget(self.le_Lamda_p_2_Ksi)
 
-        self.hl_K_R = QHBoxLayout()
-        self.hl_K_R.setObjectName(u"hl_K_R")
-        self.lb_K_R = QLabel(self.tab_3)
+
+        self.horizontalLayout_52.addLayout(self.horizontalLayout_34)
+
+        self.horizontalLayout_43 = QHBoxLayout()
+        self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
+        self.lb_K_R = QLabel(self.groupBox_7)
         self.lb_K_R.setObjectName(u"lb_K_R")
-        sizePolicy2.setHeightForWidth(self.lb_K_R.sizePolicy().hasHeightForWidth())
-        self.lb_K_R.setSizePolicy(sizePolicy2)
+        sizePolicy9.setHeightForWidth(self.lb_K_R.sizePolicy().hasHeightForWidth())
+        self.lb_K_R.setSizePolicy(sizePolicy9)
         self.lb_K_R.setMaximumSize(QSize(50, 16777215))
 
-        self.hl_K_R.addWidget(self.lb_K_R)
+        self.horizontalLayout_43.addWidget(self.lb_K_R)
 
-        self.le_K_R = QLineEdit(self.tab_3)
+        self.le_K_R = QLineEdit(self.groupBox_7)
         self.le_K_R.setObjectName(u"le_K_R")
         self.le_K_R.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.le_K_R.sizePolicy().hasHeightForWidth())
-        self.le_K_R.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.le_K_R.sizePolicy().hasHeightForWidth())
+        self.le_K_R.setSizePolicy(sizePolicy2)
         self.le_K_R.setMaximumSize(QSize(100, 16777215))
 
-        self.hl_K_R.addWidget(self.le_K_R)
+        self.horizontalLayout_43.addWidget(self.le_K_R)
 
 
-        self.gridLayout_17.addLayout(self.hl_K_R, 0, 2, 1, 1)
+        self.horizontalLayout_52.addLayout(self.horizontalLayout_43)
 
 
-        self.vl_variables_t3.addLayout(self.gridLayout_17)
+        self.verticalLayout_7.addLayout(self.horizontalLayout_52)
 
 
-        self.gridLayout_3.addLayout(self.vl_variables_t3, 0, 1, 1, 1)
+        self.gridLayout_3.addLayout(self.verticalLayout_7, 0, 0, 1, 1)
+
+
+        self.horizontalLayout_53.addWidget(self.groupBox_7)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_53)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.bt_check_table_3 = QPushButton(self.tab_3)
+        self.bt_check_table_3.setObjectName(u"bt_check_table_3")
+
+        self.horizontalLayout.addWidget(self.bt_check_table_3)
+
+        self.bt_calculate_table3 = QPushButton(self.tab_3)
+        self.bt_calculate_table3.setObjectName(u"bt_calculate_table3")
+
+        self.horizontalLayout.addWidget(self.bt_calculate_table3)
+
+        self.bt_show_chart_table3 = QPushButton(self.tab_3)
+        self.bt_show_chart_table3.setObjectName(u"bt_show_chart_table3")
+        self.bt_show_chart_table3.setEnabled(False)
+
+        self.horizontalLayout.addWidget(self.bt_show_chart_table3)
+
+        self.bt_export_xl_table_3 = QPushButton(self.tab_3)
+        self.bt_export_xl_table_3.setObjectName(u"bt_export_xl_table_3")
+
+        self.horizontalLayout.addWidget(self.bt_export_xl_table_3)
 
         self.lb_error_3 = QLabel(self.tab_3)
         self.lb_error_3.setObjectName(u"lb_error_3")
 
-        self.gridLayout_3.addWidget(self.lb_error_3, 1, 1, 1, 1)
+        self.horizontalLayout.addWidget(self.lb_error_3)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout)
+
+
+        self.gridLayout_8.addLayout(self.verticalLayout_8, 0, 0, 1, 1)
 
         self.tabWidget.addTab(self.tab_3, "")
         self.tb_thermal_calc = QWidget()
         self.tb_thermal_calc.setObjectName(u"tb_thermal_calc")
-        self.gridLayout_7 = QGridLayout(self.tb_thermal_calc)
-        self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.lb_D = QLabel(self.tb_thermal_calc)
+        self.gridLayout_24 = QGridLayout(self.tb_thermal_calc)
+        self.gridLayout_24.setObjectName(u"gridLayout_24")
+        self.groupBox_4 = QGroupBox(self.tb_thermal_calc)
+        self.groupBox_4.setObjectName(u"groupBox_4")
+        self.gridLayout_21 = QGridLayout(self.groupBox_4)
+        self.gridLayout_21.setObjectName(u"gridLayout_21")
+        self.horizontalLayout_12 = QHBoxLayout()
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.groupBox_2 = QGroupBox(self.groupBox_4)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        sizePolicy4.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        self.groupBox_2.setSizePolicy(sizePolicy4)
+        self.gridLayout_18 = QGridLayout(self.groupBox_2)
+        self.gridLayout_18.setObjectName(u"gridLayout_18")
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.lb_D = QLabel(self.groupBox_2)
         self.lb_D.setObjectName(u"lb_D")
         self.lb_D.setMinimumSize(QSize(50, 0))
         self.lb_D.setMaximumSize(QSize(50, 16777215))
 
-        self.horizontalLayout_4.addWidget(self.lb_D)
+        self.horizontalLayout_2.addWidget(self.lb_D)
 
-        self.le_D = QLineEdit(self.tb_thermal_calc)
+        self.le_D = QLineEdit(self.groupBox_2)
         self.le_D.setObjectName(u"le_D")
+        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.le_D.sizePolicy().hasHeightForWidth())
+        self.le_D.setSizePolicy(sizePolicy10)
         self.le_D.setMinimumSize(QSize(100, 0))
         self.le_D.setMaximumSize(QSize(100, 16777215))
 
-        self.horizontalLayout_4.addWidget(self.le_D)
+        self.horizontalLayout_2.addWidget(self.le_D)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setSpacing(0)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.lb_P_st_main = QLabel(self.tb_thermal_calc)
+        self.lb_P_st_main = QLabel(self.groupBox_2)
         self.lb_P_st_main.setObjectName(u"lb_P_st_main")
         self.lb_P_st_main.setMinimumSize(QSize(50, 0))
         self.lb_P_st_main.setMaximumSize(QSize(60, 16777215))
 
         self.horizontalLayout_2.addWidget(self.lb_P_st_main)
 
-        self.le_P_st_main = QLineEdit(self.tb_thermal_calc)
+        self.le_P_st_main = QLineEdit(self.groupBox_2)
         self.le_P_st_main.setObjectName(u"le_P_st_main")
         self.le_P_st_main.setMinimumSize(QSize(100, 0))
         self.le_P_st_main.setMaximumSize(QSize(100, 16777215))
@@ -2274,67 +2408,287 @@ class Ui_mainWindow(object):
         self.horizontalLayout_2.addWidget(self.le_P_st_main)
 
 
-        self.horizontalLayout_4.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_4.addLayout(self.horizontalLayout_2)
 
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_4, 0, 0, 1, 1)
-
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.lb_l_1 = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.lb_l_1 = QLabel(self.groupBox_2)
         self.lb_l_1.setObjectName(u"lb_l_1")
         self.lb_l_1.setMinimumSize(QSize(50, 0))
         self.lb_l_1.setMaximumSize(QSize(50, 16777215))
 
-        self.horizontalLayout_5.addWidget(self.lb_l_1)
+        self.horizontalLayout_4.addWidget(self.lb_l_1)
 
-        self.le_l_1 = QLineEdit(self.tb_thermal_calc)
+        self.le_l_1 = QLineEdit(self.groupBox_2)
         self.le_l_1.setObjectName(u"le_l_1")
         self.le_l_1.setMinimumSize(QSize(100, 0))
         self.le_l_1.setMaximumSize(QSize(100, 16777215))
 
-        self.horizontalLayout_5.addWidget(self.le_l_1)
+        self.horizontalLayout_4.addWidget(self.le_l_1)
 
-        self.horizontalLayout_6 = QHBoxLayout()
-        self.horizontalLayout_6.setSpacing(0)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.lb_a_1 = QLabel(self.tb_thermal_calc)
+        self.lb_a_1 = QLabel(self.groupBox_2)
         self.lb_a_1.setObjectName(u"lb_a_1")
         self.lb_a_1.setMinimumSize(QSize(50, 0))
         self.lb_a_1.setMaximumSize(QSize(50, 16777215))
 
-        self.horizontalLayout_6.addWidget(self.lb_a_1)
+        self.horizontalLayout_4.addWidget(self.lb_a_1)
 
-        self.le_a_1 = QLineEdit(self.tb_thermal_calc)
+        self.le_a_1 = QLineEdit(self.groupBox_2)
         self.le_a_1.setObjectName(u"le_a_1")
         self.le_a_1.setMaximumSize(QSize(100, 16777215))
 
-        self.horizontalLayout_6.addWidget(self.le_a_1)
+        self.horizontalLayout_4.addWidget(self.le_a_1)
 
 
-        self.horizontalLayout_5.addLayout(self.horizontalLayout_6)
+        self.verticalLayout_4.addLayout(self.horizontalLayout_4)
+
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.lb_h_pk = QLabel(self.groupBox_2)
+        self.lb_h_pk.setObjectName(u"lb_h_pk")
+        self.lb_h_pk.setMinimumSize(QSize(50, 0))
+        self.lb_h_pk.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_5.addWidget(self.lb_h_pk)
+
+        self.le_h_pk = QLineEdit(self.groupBox_2)
+        self.le_h_pk.setObjectName(u"le_h_pk")
+        self.le_h_pk.setMinimumSize(QSize(100, 0))
+        self.le_h_pk.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_5.addWidget(self.le_h_pk)
+
+        self.lb_b_1 = QLabel(self.groupBox_2)
+        self.lb_b_1.setObjectName(u"lb_b_1")
+        self.lb_b_1.setMinimumSize(QSize(50, 0))
+        self.lb_b_1.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_5.addWidget(self.lb_b_1)
+
+        self.le_b_1 = QLineEdit(self.groupBox_2)
+        self.le_b_1.setObjectName(u"le_b_1")
+        self.le_b_1.setMinimumSize(QSize(100, 0))
+        self.le_b_1.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_5.addWidget(self.le_b_1)
 
 
-        self.gridLayout_7.addLayout(self.horizontalLayout_5, 1, 0, 1, 1)
+        self.verticalLayout_4.addLayout(self.horizontalLayout_5)
 
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.lb_b_2 = QLabel(self.groupBox_2)
+        self.lb_b_2.setObjectName(u"lb_b_2")
+        self.lb_b_2.setMinimumSize(QSize(50, 0))
+        self.lb_b_2.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_6.addWidget(self.lb_b_2)
+
+        self.le_b_2 = QLineEdit(self.groupBox_2)
+        self.le_b_2.setObjectName(u"le_b_2")
+        self.le_b_2.setMinimumSize(QSize(100, 0))
+        self.le_b_2.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_6.addWidget(self.le_b_2)
+
+        self.lb_b_iz_p_1 = QLabel(self.groupBox_2)
+        self.lb_b_iz_p_1.setObjectName(u"lb_b_iz_p_1")
+        self.lb_b_iz_p_1.setMinimumSize(QSize(50, 0))
+        self.lb_b_iz_p_1.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_6.addWidget(self.lb_b_iz_p_1)
+
+        self.le_b_iz_p_1 = QLineEdit(self.groupBox_2)
+        self.le_b_iz_p_1.setObjectName(u"le_b_iz_p_1")
+        self.le_b_iz_p_1.setMinimumSize(QSize(100, 0))
+        self.le_b_iz_p_1.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_6.addWidget(self.le_b_iz_p_1)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_6)
+
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.lb_lambda_ekv_shtrih = QLabel(self.groupBox_2)
+        self.lb_lambda_ekv_shtrih.setObjectName(u"lb_lambda_ekv_shtrih")
+        self.lb_lambda_ekv_shtrih.setMinimumSize(QSize(50, 0))
+        self.lb_lambda_ekv_shtrih.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_7.addWidget(self.lb_lambda_ekv_shtrih)
+
+        self.le_lambda_ekv_shtrih = QLineEdit(self.groupBox_2)
+        self.le_lambda_ekv_shtrih.setObjectName(u"le_lambda_ekv_shtrih")
+        self.le_lambda_ekv_shtrih.setMinimumSize(QSize(100, 0))
+        self.le_lambda_ekv_shtrih.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_7.addWidget(self.le_lambda_ekv_shtrih)
+
+        self.lb_l_l_1 = QLabel(self.groupBox_2)
+        self.lb_l_l_1.setObjectName(u"lb_l_l_1")
+        self.lb_l_l_1.setMinimumSize(QSize(50, 0))
+        self.lb_l_l_1.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_7.addWidget(self.lb_l_l_1)
+
+        self.le_l_l_1 = QLineEdit(self.groupBox_2)
+        self.le_l_l_1.setObjectName(u"le_l_l_1")
+        self.le_l_l_1.setMinimumSize(QSize(100, 0))
+        self.le_l_l_1.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_7.addWidget(self.le_l_l_1)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_7)
+
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.lb_b_iz_l_1 = QLabel(self.groupBox_2)
+        self.lb_b_iz_l_1.setObjectName(u"lb_b_iz_l_1")
+        self.lb_b_iz_l_1.setMinimumSize(QSize(50, 0))
+        self.lb_b_iz_l_1.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_8.addWidget(self.lb_b_iz_l_1)
+
+        self.le_b_iz_l_1 = QLineEdit(self.groupBox_2)
+        self.le_b_iz_l_1.setObjectName(u"le_b_iz_l_1")
+        self.le_b_iz_l_1.setMinimumSize(QSize(100, 0))
+        self.le_b_iz_l_1.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_8.addWidget(self.le_b_iz_l_1)
+
+        self.lb_h_p_1 = QLabel(self.groupBox_2)
+        self.lb_h_p_1.setObjectName(u"lb_h_p_1")
+        self.lb_h_p_1.setMinimumSize(QSize(50, 0))
+        self.lb_h_p_1.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_8.addWidget(self.lb_h_p_1)
+
+        self.le_h_p_1 = QLineEdit(self.groupBox_2)
+        self.le_h_p_1.setObjectName(u"le_h_p_1")
+        self.le_h_p_1.setMinimumSize(QSize(100, 0))
+        self.le_h_p_1.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_8.addWidget(self.le_h_p_1)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_8)
+
+        self.horizontalLayout_9 = QHBoxLayout()
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.lb_l_vbl = QLabel(self.groupBox_2)
+        self.lb_l_vbl.setObjectName(u"lb_l_vbl")
+        self.lb_l_vbl.setMinimumSize(QSize(50, 0))
+        self.lb_l_vbl.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_9.addWidget(self.lb_l_vbl)
+
+        self.le_l_vbl = QLineEdit(self.groupBox_2)
+        self.le_l_vbl.setObjectName(u"le_l_vbl")
+        self.le_l_vbl.setMinimumSize(QSize(100, 0))
+        self.le_l_vbl.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_9.addWidget(self.le_l_vbl)
+
+        self.lb_l_avg_1 = QLabel(self.groupBox_2)
+        self.lb_l_avg_1.setObjectName(u"lb_l_avg_1")
+        self.lb_l_avg_1.setMinimumSize(QSize(50, 0))
+        self.lb_l_avg_1.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_9.addWidget(self.lb_l_avg_1)
+
+        self.le_l_avg_1 = QLineEdit(self.groupBox_2)
+        self.le_l_avg_1.setObjectName(u"le_l_avg_1")
+        self.le_l_avg_1.setMinimumSize(QSize(100, 0))
+        self.le_l_avg_1.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_9.addWidget(self.le_l_avg_1)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_9)
+
+        self.horizontalLayout_10 = QHBoxLayout()
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.lb_a_v = QLabel(self.groupBox_2)
+        self.lb_a_v.setObjectName(u"lb_a_v")
+        self.lb_a_v.setMinimumSize(QSize(50, 0))
+        self.lb_a_v.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_10.addWidget(self.lb_a_v)
+
+        self.le_a_v = QLineEdit(self.groupBox_2)
+        self.le_a_v.setObjectName(u"le_a_v")
+        self.le_a_v.setMinimumSize(QSize(100, 0))
+        self.le_a_v.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_10.addWidget(self.le_a_v)
+
+        self.lb_D_a = QLabel(self.groupBox_2)
+        self.lb_D_a.setObjectName(u"lb_D_a")
+        self.lb_D_a.setMinimumSize(QSize(50, 0))
+        self.lb_D_a.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_10.addWidget(self.lb_D_a)
+
+        self.le_D_a = QLineEdit(self.groupBox_2)
+        self.le_D_a.setObjectName(u"le_D_a")
+        self.le_D_a.setMinimumSize(QSize(100, 0))
+        self.le_D_a.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_10.addWidget(self.le_D_a)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_10)
+
+        self.horizontalLayout_11 = QHBoxLayout()
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.lb_s_kor = QLabel(self.groupBox_2)
+        self.lb_s_kor.setObjectName(u"lb_s_kor")
+        self.lb_s_kor.setMinimumSize(QSize(50, 0))
+        self.lb_s_kor.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout_11.addWidget(self.lb_s_kor)
+
+        self.le_s_kor = QLineEdit(self.groupBox_2)
+        self.le_s_kor.setObjectName(u"le_s_kor")
+        self.le_s_kor.setMinimumSize(QSize(100, 0))
+        self.le_s_kor.setMaximumSize(QSize(100, 16777215))
+
+        self.horizontalLayout_11.addWidget(self.le_s_kor)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_11)
+
+
+        self.gridLayout_18.addLayout(self.verticalLayout_4, 0, 0, 1, 1)
+
+
+        self.horizontalLayout_12.addWidget(self.groupBox_2)
+
+        self.groupBox = QGroupBox(self.groupBox_4)
+        self.groupBox.setObjectName(u"groupBox")
+        sizePolicy2.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy2)
+        self.gridLayout_7 = QGridLayout(self.groupBox)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setSizeConstraint(QLayout.SetMinimumSize)
         self.horizontalLayout_20 = QHBoxLayout()
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.l_delta_nu_pov_1 = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_20.setContentsMargins(25, -1, -1, -1)
+        self.l_delta_nu_pov_1 = QLabel(self.groupBox)
         self.l_delta_nu_pov_1.setObjectName(u"l_delta_nu_pov_1")
 
         self.horizontalLayout_20.addWidget(self.l_delta_nu_pov_1)
 
-        self.lb_delta_nu_pov_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_pov_1 = QLabel(self.groupBox)
         self.lb_delta_nu_pov_1.setObjectName(u"lb_delta_nu_pov_1")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.lb_delta_nu_pov_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_pov_1.setSizePolicy(sizePolicy7)
+        sizePolicy11 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Preferred)
+        sizePolicy11.setHorizontalStretch(0)
+        sizePolicy11.setVerticalStretch(0)
+        sizePolicy11.setHeightForWidth(self.lb_delta_nu_pov_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_pov_1.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_20.addWidget(self.lb_delta_nu_pov_1)
 
@@ -2343,15 +2697,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_21 = QHBoxLayout()
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.l_delta_nu_iz_p_1 = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_21.setContentsMargins(25, -1, -1, -1)
+        self.l_delta_nu_iz_p_1 = QLabel(self.groupBox)
         self.l_delta_nu_iz_p_1.setObjectName(u"l_delta_nu_iz_p_1")
 
         self.horizontalLayout_21.addWidget(self.l_delta_nu_iz_p_1)
 
-        self.lb_delta_nu_iz_p_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_iz_p_1 = QLabel(self.groupBox)
         self.lb_delta_nu_iz_p_1.setObjectName(u"lb_delta_nu_iz_p_1")
-        sizePolicy7.setHeightForWidth(self.lb_delta_nu_iz_p_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_iz_p_1.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_delta_nu_iz_p_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_iz_p_1.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_21.addWidget(self.lb_delta_nu_iz_p_1)
 
@@ -2360,15 +2715,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_22 = QHBoxLayout()
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.l_delta_nu_iz_l_1 = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_22.setContentsMargins(25, -1, -1, -1)
+        self.l_delta_nu_iz_l_1 = QLabel(self.groupBox)
         self.l_delta_nu_iz_l_1.setObjectName(u"l_delta_nu_iz_l_1")
 
         self.horizontalLayout_22.addWidget(self.l_delta_nu_iz_l_1)
 
-        self.lb_delta_nu_iz_l_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_iz_l_1 = QLabel(self.groupBox)
         self.lb_delta_nu_iz_l_1.setObjectName(u"lb_delta_nu_iz_l_1")
-        sizePolicy7.setHeightForWidth(self.lb_delta_nu_iz_l_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_iz_l_1.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_delta_nu_iz_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_iz_l_1.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_22.addWidget(self.lb_delta_nu_iz_l_1)
 
@@ -2377,15 +2733,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_23 = QHBoxLayout()
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
-        self.l_delta_nu_pov_l_1 = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_23.setContentsMargins(25, -1, -1, -1)
+        self.l_delta_nu_pov_l_1 = QLabel(self.groupBox)
         self.l_delta_nu_pov_l_1.setObjectName(u"l_delta_nu_pov_l_1")
 
         self.horizontalLayout_23.addWidget(self.l_delta_nu_pov_l_1)
 
-        self.lb_delta_nu_pov_l_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_pov_l_1 = QLabel(self.groupBox)
         self.lb_delta_nu_pov_l_1.setObjectName(u"lb_delta_nu_pov_l_1")
-        sizePolicy7.setHeightForWidth(self.lb_delta_nu_pov_l_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_pov_l_1.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_delta_nu_pov_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_pov_l_1.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_23.addWidget(self.lb_delta_nu_pov_l_1)
 
@@ -2394,15 +2751,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_24 = QHBoxLayout()
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.l_Q_v = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_24.setContentsMargins(25, -1, -1, -1)
+        self.l_Q_v = QLabel(self.groupBox)
         self.l_Q_v.setObjectName(u"l_Q_v")
 
         self.horizontalLayout_24.addWidget(self.l_Q_v)
 
-        self.lb_delta_nu_1_shtrih = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_1_shtrih = QLabel(self.groupBox)
         self.lb_delta_nu_1_shtrih.setObjectName(u"lb_delta_nu_1_shtrih")
-        sizePolicy7.setHeightForWidth(self.lb_delta_nu_1_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_1_shtrih.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_delta_nu_1_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_1_shtrih.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_24.addWidget(self.lb_delta_nu_1_shtrih)
 
@@ -2411,15 +2769,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_25 = QHBoxLayout()
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.l_delta_nu_1_shtrih = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_25.setContentsMargins(25, -1, -1, -1)
+        self.l_delta_nu_1_shtrih = QLabel(self.groupBox)
         self.l_delta_nu_1_shtrih.setObjectName(u"l_delta_nu_1_shtrih")
 
         self.horizontalLayout_25.addWidget(self.l_delta_nu_1_shtrih)
 
-        self.lb_delta_gamma_v = QLabel(self.tb_thermal_calc)
+        self.lb_delta_gamma_v = QLabel(self.groupBox)
         self.lb_delta_gamma_v.setObjectName(u"lb_delta_gamma_v")
-        sizePolicy7.setHeightForWidth(self.lb_delta_gamma_v.sizePolicy().hasHeightForWidth())
-        self.lb_delta_gamma_v.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_delta_gamma_v.sizePolicy().hasHeightForWidth())
+        self.lb_delta_gamma_v.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_25.addWidget(self.lb_delta_gamma_v)
 
@@ -2428,15 +2787,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_26 = QHBoxLayout()
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
-        self.l_teta_v_shtrih = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_26.setContentsMargins(25, -1, -1, -1)
+        self.l_teta_v_shtrih = QLabel(self.groupBox)
         self.l_teta_v_shtrih.setObjectName(u"l_teta_v_shtrih")
 
         self.horizontalLayout_26.addWidget(self.l_teta_v_shtrih)
 
-        self.lb_delta_nu_1 = QLabel(self.tb_thermal_calc)
+        self.lb_delta_nu_1 = QLabel(self.groupBox)
         self.lb_delta_nu_1.setObjectName(u"lb_delta_nu_1")
-        sizePolicy7.setHeightForWidth(self.lb_delta_nu_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_1.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_delta_nu_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_1.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_26.addWidget(self.lb_delta_nu_1)
 
@@ -2445,15 +2805,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_27 = QHBoxLayout()
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
-        self.l_delta_nu_1 = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_27.setContentsMargins(25, -1, -1, -1)
+        self.l_delta_nu_1 = QLabel(self.groupBox)
         self.l_delta_nu_1.setObjectName(u"l_delta_nu_1")
 
         self.horizontalLayout_27.addWidget(self.l_delta_nu_1)
 
-        self.lb_Q_v = QLabel(self.tb_thermal_calc)
+        self.lb_Q_v = QLabel(self.groupBox)
         self.lb_Q_v.setObjectName(u"lb_Q_v")
-        sizePolicy7.setHeightForWidth(self.lb_Q_v.sizePolicy().hasHeightForWidth())
-        self.lb_Q_v.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_Q_v.sizePolicy().hasHeightForWidth())
+        self.lb_Q_v.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_27.addWidget(self.lb_Q_v)
 
@@ -2462,15 +2823,16 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_28 = QHBoxLayout()
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
-        self.l_delta_gamma_v = QLabel(self.tb_thermal_calc)
+        self.horizontalLayout_28.setContentsMargins(25, -1, -1, -1)
+        self.l_delta_gamma_v = QLabel(self.groupBox)
         self.l_delta_gamma_v.setObjectName(u"l_delta_gamma_v")
 
         self.horizontalLayout_28.addWidget(self.l_delta_gamma_v)
 
-        self.lb_teta_v_shtrih = QLabel(self.tb_thermal_calc)
+        self.lb_teta_v_shtrih = QLabel(self.groupBox)
         self.lb_teta_v_shtrih.setObjectName(u"lb_teta_v_shtrih")
-        sizePolicy7.setHeightForWidth(self.lb_teta_v_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_teta_v_shtrih.setSizePolicy(sizePolicy7)
+        sizePolicy11.setHeightForWidth(self.lb_teta_v_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_teta_v_shtrih.setSizePolicy(sizePolicy11)
 
         self.horizontalLayout_28.addWidget(self.lb_teta_v_shtrih)
 
@@ -2478,275 +2840,23 @@ class Ui_mainWindow(object):
         self.verticalLayout_3.addLayout(self.horizontalLayout_28)
 
 
-        self.gridLayout_7.addLayout(self.verticalLayout_3, 1, 1, 5, 1)
+        self.gridLayout_7.addLayout(self.verticalLayout_3, 0, 0, 1, 1)
 
-        self.horizontalLayout_7 = QHBoxLayout()
-        self.horizontalLayout_7.setSpacing(0)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.lb_h_pk = QLabel(self.tb_thermal_calc)
-        self.lb_h_pk.setObjectName(u"lb_h_pk")
-        self.lb_h_pk.setMinimumSize(QSize(50, 0))
-        self.lb_h_pk.setMaximumSize(QSize(50, 16777215))
 
-        self.horizontalLayout_7.addWidget(self.lb_h_pk)
+        self.horizontalLayout_12.addWidget(self.groupBox, 0, Qt.AlignTop)
 
-        self.le_h_pk = QLineEdit(self.tb_thermal_calc)
-        self.le_h_pk.setObjectName(u"le_h_pk")
-        self.le_h_pk.setMinimumSize(QSize(100, 0))
-        self.le_h_pk.setMaximumSize(QSize(100, 16777215))
 
-        self.horizontalLayout_7.addWidget(self.le_h_pk)
+        self.gridLayout_21.addLayout(self.horizontalLayout_12, 0, 0, 1, 1)
 
-        self.horizontalLayout_8 = QHBoxLayout()
-        self.horizontalLayout_8.setSpacing(0)
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.lb_b_1 = QLabel(self.tb_thermal_calc)
-        self.lb_b_1.setObjectName(u"lb_b_1")
-        self.lb_b_1.setMinimumSize(QSize(50, 0))
-        self.lb_b_1.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_8.addWidget(self.lb_b_1)
-
-        self.le_b_1 = QLineEdit(self.tb_thermal_calc)
-        self.le_b_1.setObjectName(u"le_b_1")
-        self.le_b_1.setMinimumSize(QSize(100, 0))
-        self.le_b_1.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_8.addWidget(self.le_b_1)
-
-
-        self.horizontalLayout_7.addLayout(self.horizontalLayout_8)
-
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_7, 2, 0, 1, 1)
-
-        self.horizontalLayout_9 = QHBoxLayout()
-        self.horizontalLayout_9.setSpacing(0)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.lb_b_2 = QLabel(self.tb_thermal_calc)
-        self.lb_b_2.setObjectName(u"lb_b_2")
-        self.lb_b_2.setMinimumSize(QSize(50, 0))
-        self.lb_b_2.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_9.addWidget(self.lb_b_2)
-
-        self.le_b_2 = QLineEdit(self.tb_thermal_calc)
-        self.le_b_2.setObjectName(u"le_b_2")
-        self.le_b_2.setMinimumSize(QSize(100, 0))
-        self.le_b_2.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_9.addWidget(self.le_b_2)
-
-        self.horizontalLayout_10 = QHBoxLayout()
-        self.horizontalLayout_10.setSpacing(0)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.lb_b_iz_p_1 = QLabel(self.tb_thermal_calc)
-        self.lb_b_iz_p_1.setObjectName(u"lb_b_iz_p_1")
-        self.lb_b_iz_p_1.setMinimumSize(QSize(50, 0))
-        self.lb_b_iz_p_1.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_10.addWidget(self.lb_b_iz_p_1)
-
-        self.le_b_iz_p_1 = QLineEdit(self.tb_thermal_calc)
-        self.le_b_iz_p_1.setObjectName(u"le_b_iz_p_1")
-        self.le_b_iz_p_1.setMinimumSize(QSize(100, 0))
-        self.le_b_iz_p_1.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_10.addWidget(self.le_b_iz_p_1)
-
-
-        self.horizontalLayout_9.addLayout(self.horizontalLayout_10)
-
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_9, 3, 0, 1, 1)
-
-        self.horizontalLayout_11 = QHBoxLayout()
-        self.horizontalLayout_11.setSpacing(0)
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.lb_lambda_ekv_shtrih = QLabel(self.tb_thermal_calc)
-        self.lb_lambda_ekv_shtrih.setObjectName(u"lb_lambda_ekv_shtrih")
-        self.lb_lambda_ekv_shtrih.setMinimumSize(QSize(50, 0))
-        self.lb_lambda_ekv_shtrih.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_11.addWidget(self.lb_lambda_ekv_shtrih)
-
-        self.le_lambda_ekv_shtrih = QLineEdit(self.tb_thermal_calc)
-        self.le_lambda_ekv_shtrih.setObjectName(u"le_lambda_ekv_shtrih")
-        self.le_lambda_ekv_shtrih.setMinimumSize(QSize(100, 0))
-        self.le_lambda_ekv_shtrih.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_11.addWidget(self.le_lambda_ekv_shtrih)
-
-        self.horizontalLayout_12 = QHBoxLayout()
-        self.horizontalLayout_12.setSpacing(0)
-        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.horizontalLayout_12.setContentsMargins(0, -1, -1, -1)
-        self.lb_l_l_1 = QLabel(self.tb_thermal_calc)
-        self.lb_l_l_1.setObjectName(u"lb_l_l_1")
-        self.lb_l_l_1.setMinimumSize(QSize(50, 0))
-        self.lb_l_l_1.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_12.addWidget(self.lb_l_l_1)
-
-        self.le_l_l_1 = QLineEdit(self.tb_thermal_calc)
-        self.le_l_l_1.setObjectName(u"le_l_l_1")
-        self.le_l_l_1.setMinimumSize(QSize(100, 0))
-        self.le_l_l_1.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_12.addWidget(self.le_l_l_1)
-
-
-        self.horizontalLayout_11.addLayout(self.horizontalLayout_12)
-
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_11, 4, 0, 1, 1)
-
-        self.horizontalLayout_13 = QHBoxLayout()
-        self.horizontalLayout_13.setSpacing(0)
-        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.lb_b_iz_l_1 = QLabel(self.tb_thermal_calc)
-        self.lb_b_iz_l_1.setObjectName(u"lb_b_iz_l_1")
-        self.lb_b_iz_l_1.setMinimumSize(QSize(50, 0))
-        self.lb_b_iz_l_1.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_13.addWidget(self.lb_b_iz_l_1)
-
-        self.le_b_iz_l_1 = QLineEdit(self.tb_thermal_calc)
-        self.le_b_iz_l_1.setObjectName(u"le_b_iz_l_1")
-        self.le_b_iz_l_1.setMinimumSize(QSize(100, 0))
-        self.le_b_iz_l_1.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_13.addWidget(self.le_b_iz_l_1)
-
-        self.horizontalLayout_14 = QHBoxLayout()
-        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.lb_h_p_1 = QLabel(self.tb_thermal_calc)
-        self.lb_h_p_1.setObjectName(u"lb_h_p_1")
-        self.lb_h_p_1.setMinimumSize(QSize(50, 0))
-        self.lb_h_p_1.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_14.addWidget(self.lb_h_p_1)
-
-        self.le_h_p_1 = QLineEdit(self.tb_thermal_calc)
-        self.le_h_p_1.setObjectName(u"le_h_p_1")
-        self.le_h_p_1.setMinimumSize(QSize(100, 0))
-        self.le_h_p_1.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_14.addWidget(self.le_h_p_1)
-
-
-        self.horizontalLayout_13.addLayout(self.horizontalLayout_14)
-
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_13, 5, 0, 1, 1)
-
-        self.horizontalLayout_15 = QHBoxLayout()
-        self.horizontalLayout_15.setSpacing(0)
-        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.lb_l_vbl = QLabel(self.tb_thermal_calc)
-        self.lb_l_vbl.setObjectName(u"lb_l_vbl")
-        self.lb_l_vbl.setMinimumSize(QSize(50, 0))
-        self.lb_l_vbl.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_15.addWidget(self.lb_l_vbl)
-
-        self.le_l_vbl = QLineEdit(self.tb_thermal_calc)
-        self.le_l_vbl.setObjectName(u"le_l_vbl")
-        self.le_l_vbl.setMinimumSize(QSize(100, 0))
-        self.le_l_vbl.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_15.addWidget(self.le_l_vbl)
-
-        self.horizontalLayout_16 = QHBoxLayout()
-        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.lb_l_avg_1 = QLabel(self.tb_thermal_calc)
-        self.lb_l_avg_1.setObjectName(u"lb_l_avg_1")
-        self.lb_l_avg_1.setMinimumSize(QSize(50, 0))
-        self.lb_l_avg_1.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_16.addWidget(self.lb_l_avg_1)
-
-        self.le_l_avg_1 = QLineEdit(self.tb_thermal_calc)
-        self.le_l_avg_1.setObjectName(u"le_l_avg_1")
-        self.le_l_avg_1.setMinimumSize(QSize(100, 0))
-        self.le_l_avg_1.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_16.addWidget(self.le_l_avg_1)
-
-
-        self.horizontalLayout_15.addLayout(self.horizontalLayout_16)
-
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_15, 6, 0, 1, 1)
-
-        self.horizontalLayout_18 = QHBoxLayout()
-        self.horizontalLayout_18.setSpacing(0)
-        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.lb_a_v = QLabel(self.tb_thermal_calc)
-        self.lb_a_v.setObjectName(u"lb_a_v")
-        self.lb_a_v.setMinimumSize(QSize(50, 0))
-        self.lb_a_v.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_18.addWidget(self.lb_a_v)
-
-        self.le_a_v = QLineEdit(self.tb_thermal_calc)
-        self.le_a_v.setObjectName(u"le_a_v")
-        self.le_a_v.setMinimumSize(QSize(100, 0))
-        self.le_a_v.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_18.addWidget(self.le_a_v)
-
-        self.horizontalLayout_19 = QHBoxLayout()
-        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.lb_D_a = QLabel(self.tb_thermal_calc)
-        self.lb_D_a.setObjectName(u"lb_D_a")
-        self.lb_D_a.setMinimumSize(QSize(50, 0))
-        self.lb_D_a.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_19.addWidget(self.lb_D_a)
-
-        self.le_D_a = QLineEdit(self.tb_thermal_calc)
-        self.le_D_a.setObjectName(u"le_D_a")
-        self.le_D_a.setMinimumSize(QSize(100, 0))
-        self.le_D_a.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_19.addWidget(self.le_D_a)
-
-
-        self.horizontalLayout_18.addLayout(self.horizontalLayout_19)
-
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_18, 7, 0, 1, 1)
-
-        self.horizontalLayout_17 = QHBoxLayout()
-        self.horizontalLayout_17.setSpacing(0)
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.lb_s_kor = QLabel(self.tb_thermal_calc)
-        self.lb_s_kor.setObjectName(u"lb_s_kor")
-        self.lb_s_kor.setMinimumSize(QSize(50, 0))
-        self.lb_s_kor.setMaximumSize(QSize(50, 16777215))
-
-        self.horizontalLayout_17.addWidget(self.lb_s_kor)
-
-        self.le_s_kor = QLineEdit(self.tb_thermal_calc)
-        self.le_s_kor.setObjectName(u"le_s_kor")
-        self.le_s_kor.setMinimumSize(QSize(100, 0))
-        self.le_s_kor.setMaximumSize(QSize(100, 16777215))
-
-        self.horizontalLayout_17.addWidget(self.le_s_kor)
-
-
-        self.gridLayout_7.addLayout(self.horizontalLayout_17, 8, 0, 1, 1)
-
-        self.gridLayout_18 = QGridLayout()
-        self.gridLayout_18.setObjectName(u"gridLayout_18")
-        self.bt_thermal_calc = QPushButton(self.tb_thermal_calc)
+        self.bt_thermal_calc = QPushButton(self.groupBox_4)
         self.bt_thermal_calc.setObjectName(u"bt_thermal_calc")
+        sizePolicy2.setHeightForWidth(self.bt_thermal_calc.sizePolicy().hasHeightForWidth())
+        self.bt_thermal_calc.setSizePolicy(sizePolicy2)
 
-        self.gridLayout_18.addWidget(self.bt_thermal_calc, 0, 0, 1, 1)
+        self.gridLayout_21.addWidget(self.bt_thermal_calc, 1, 0, 1, 1, Qt.AlignHCenter)
 
 
-        self.gridLayout_7.addLayout(self.gridLayout_18, 9, 0, 1, 1)
+        self.gridLayout_24.addWidget(self.groupBox_4, 0, 0, 1, 1, Qt.AlignLeft|Qt.AlignTop)
 
         self.tabWidget.addTab(self.tb_thermal_calc, "")
         self.tb_settings = QWidget()
@@ -2779,33 +2889,14 @@ class Ui_mainWindow(object):
         self.tabWidget.addTab(self.tb_settings, "")
         self.tab_5 = QWidget()
         self.tab_5.setObjectName(u"tab_5")
+        self.gridLayout_20 = QGridLayout(self.tab_5)
+        self.gridLayout_20.setObjectName(u"gridLayout_20")
         self.label = QLabel(self.tab_5)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(10, 10, 1371, 471))
         self.label.setWordWrap(True)
-        
-        movie = QMovie('gif/gif1.gif')
-        self.gif1 = QLabel(self.tab_5)
-        self.gif1.setObjectName(u"gif1")
-        self.gif1.setMovie(movie)
-        self.gif1.setGeometry(QRect(25, 415, 600, 500))
-        movie.setScaledSize(QSize(550, 350))
-        movie.start()
-        
-        movie = QMovie('gif/gif2.gif')
-        self.gif2 = QLabel(self.tab_4)
-        self.gif2.setObjectName(u"gif2")
-        self.gif2.setMovie(movie)
-        self.gif2.setGeometry(QRect(550, -150, 1425, 823))
-        movie.setScaledSize(QSize(900, 450))
-        movie.start()
-        
-        self.labelMeow = QLabel(self.tab_4)
-        self.labelMeow.setObjectName(u"labelMeow")
-        self.labelMeow.setGeometry(QRect(700, 90, 1425, 823))
-        self.labelMeow.setWordWrap(True)
-        self.labelMeow.setText("Пример работы программы при правильно введённых значениях")
-        
+
+        self.gridLayout_20.addWidget(self.label, 0, 0, 1, 1, Qt.AlignTop)
+
         self.tabWidget.addTab(self.tab_5, "")
 
         self.gridLayout_19.addWidget(self.tabWidget, 0, 0, 1, 1)
@@ -2828,8 +2919,7 @@ class Ui_mainWindow(object):
 
     def retranslateUi(self, mainWindow):
         mainWindow.setWindowTitle(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430", None))
-        self.Input.setText(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435:", None))
-        self.submitValues.setText(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0441\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f", None))
+        self.groupBox_3.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435", None))
         self.Power.setText(QCoreApplication.translate("mainWindow", u"\u041c\u043e\u0449\u043d\u043e\u0441\u0442\u044c \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043b\u044f ", None))
         self.Voltage.setText(QCoreApplication.translate("mainWindow", u"\u041d\u043e\u043c\u0438\u043d\u0430\u043b\u044c\u043d\u043e\u0435 \u043d\u0430\u043f\u0440\u044f\u0436\u0435\u043d\u0438\u0435", None))
         self.polarity.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043b\u044f\u0440\u043d\u043e\u0441\u0442\u044c", None))
@@ -2883,6 +2973,7 @@ class Ui_mainWindow(object):
         self.cmb_heatClass.setItemText(2, QCoreApplication.translate("mainWindow", u"H", None))
 
         self.lineSnom.setText(QCoreApplication.translate("mainWindow", u"0.024", None))
+        self.submitValues.setText(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0441\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("mainWindow", u"\u0412\u0432\u043e\u0434 \u0434\u0430\u043d\u043d\u044b\u0445", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
@@ -3063,6 +3154,7 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem86.setText(QCoreApplication.translate("mainWindow", u"0.896", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
+        self.groupBox_5.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435:", None))
         self.lb_I0a.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">I</span><span style=\" font-size:14pt; vertical-align:sub;\">0a </span><span style=\" font-size:14pt;\">=</span></p></body></html>", None))
         self.le_I0a.setText(QCoreApplication.translate("mainWindow", u"0.37", None))
         self.lb_I0p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">I</span><span style=\" font-size:14pt; vertical-align:sub;\">0p </span><span style=\" font-size:14pt;\">=</span></p></body></html>", None))
@@ -3228,6 +3320,7 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem152.setText(QCoreApplication.translate("mainWindow", u"101.15", None));
         self.tableWidget_2.setSortingEnabled(__sortingEnabled1)
 
+        self.groupBox_6.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435:", None))
         self.lb_h_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">c </span>=</p></body></html>", None))
         self.le_h_c.setText(QCoreApplication.translate("mainWindow", u"29.62", None))
         self.lb_h_p_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">p2 </span>=</p></body></html>", None))
@@ -3266,15 +3359,11 @@ class Ui_mainWindow(object):
         self.le_Lamda_p_2.setText(QCoreApplication.translate("mainWindow", u"2.42", None))
         self.lb_Lamda_l_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043b</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">2</span>=</p></body></html>", None))
         self.le_Lamda_l_2.setText(QCoreApplication.translate("mainWindow", u"0.678", None))
-        self.bt_calculate_table2.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
-        self.bt_check_table_2.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
         self.bt_export_xl_table_2.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
+        self.bt_check_table_2.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
+        self.bt_calculate_table2.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.lb_error_2.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 2", None))
-        self.bt_check_table_3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
-        self.bt_calculate_table3.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
-        self.bt_show_chart_table3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
-        self.bt_export_xl_table_3.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
         ___qtablewidgetitem153 = self.tableWidget_3.horizontalHeaderItem(0)
         ___qtablewidgetitem153.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
         ___qtablewidgetitem154 = self.tableWidget_3.horizontalHeaderItem(1)
@@ -3460,10 +3549,11 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem242.setText(QCoreApplication.translate("mainWindow", u"1.101", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled2)
 
+        self.groupBox_7.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435:", None))
+        self.lb_C_N.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0421<span style=\" vertical-align:sub;\">N </span>=</p></body></html>", None))
         self.le_C_N.setText(QCoreApplication.translate("mainWindow", u"0.975", None))
         self.lb_k_y_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>k<span style=\" vertical-align:sub;\">y1 </span>=</p></body></html>", None))
         self.le_k_y_1.setText(QCoreApplication.translate("mainWindow", u"1", None))
-        self.lb_C_N.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0421<span style=\" vertical-align:sub;\">N </span>=</p></body></html>", None))
         self.lb_u_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>u<span style=\" vertical-align:sub;\">p</span> =</p></body></html>", None))
         self.le_u_p.setText(QCoreApplication.translate("mainWindow", u"20", None))
         self.lb_k_ob.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>k<span style=\" vertical-align:sub;\">\u043e\u0431</span> =</p></body></html>", None))
@@ -3500,8 +3590,14 @@ class Ui_mainWindow(object):
         self.le_Lamda_p_2_Ksi.setText(QCoreApplication.translate("mainWindow", u"2.2272", None))
         self.lb_K_R.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>K<span style=\" vertical-align:sub;\">R</span> =</p></body></html>", None))
         self.le_K_R.setText(QCoreApplication.translate("mainWindow", u"1.372", None))
+        self.bt_check_table_3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
+        self.bt_calculate_table3.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
+        self.bt_show_chart_table3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
+        self.bt_export_xl_table_3.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
         self.lb_error_3.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 3", None))
+        self.groupBox_4.setTitle("")
+        self.groupBox_2.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435", None))
         self.lb_D.setText(QCoreApplication.translate("mainWindow", u"D=", None))
         self.le_D.setText(QCoreApplication.translate("mainWindow", u"0.208", None))
         self.lb_P_st_main.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">\u0441\u0442. \u043e\u0441\u043d</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
@@ -3510,24 +3606,6 @@ class Ui_mainWindow(object):
         self.le_l_1.setText(QCoreApplication.translate("mainWindow", u"0.145", None))
         self.lb_a_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>a<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_a_1.setText(QCoreApplication.translate("mainWindow", u"113", None))
-        self.l_delta_nu_pov_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u04321</span> =</p></body></html>", None))
-        self.lb_delta_nu_pov_1.setText("")
-        self.l_delta_nu_iz_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043f</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
-        self.lb_delta_nu_iz_p_1.setText("")
-        self.l_delta_nu_iz_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043b1</span> =</p></body></html>", None))
-        self.lb_delta_nu_iz_l_1.setText("")
-        self.l_delta_nu_pov_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u0432.\u043b1</span> =</p></body></html>", None))
-        self.lb_delta_nu_pov_l_1.setText("")
-        self.l_Q_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span><span style=\" font-size:22pt; vertical-align:super;\">'</span> =</p></body></html>", None))
-        self.lb_delta_nu_1_shtrih.setText("")
-        self.l_delta_nu_1_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span> =</p></body></html>", None))
-        self.lb_delta_gamma_v.setText("")
-        self.l_teta_v_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
-        self.lb_delta_nu_1.setText("")
-        self.l_delta_nu_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Q<span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span>= </p></body></html>", None))
-        self.lb_Q_v.setText("")
-        self.l_delta_gamma_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:20px; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471);\">\u03b8</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:16pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:sub;\">\u0432</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:24pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:super;\">'</span> =</p></body></html>", None))
-        self.lb_teta_v_shtrih.setText("")
         self.lb_h_pk.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u043f\u043a</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_h_pk.setText(QCoreApplication.translate("mainWindow", u"26.03", None))
         self.lb_b_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
@@ -3554,6 +3632,25 @@ class Ui_mainWindow(object):
         self.le_D_a.setText(QCoreApplication.translate("mainWindow", u"0.32", None))
         self.lb_s_kor.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>s<span style=\" vertical-align:sub;\">\u043a\u043e\u0440</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
         self.le_s_kor.setText(QCoreApplication.translate("mainWindow", u"1.12", None))
+        self.groupBox.setTitle(QCoreApplication.translate("mainWindow", u"\u0422\u0435\u043f\u043b\u043e\u0432\u043e\u0439 \u0440\u0430\u0441\u0447\u0451\u0442", None))
+        self.l_delta_nu_pov_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u04321</span> =</p></body></html>", None))
+        self.lb_delta_nu_pov_1.setText("")
+        self.l_delta_nu_iz_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043f</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
+        self.lb_delta_nu_iz_p_1.setText("")
+        self.l_delta_nu_iz_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0438\u0437.\u043b1</span> =</p></body></html>", None))
+        self.lb_delta_nu_iz_l_1.setText("")
+        self.l_delta_nu_pov_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u0432.\u043b1</span> =</p></body></html>", None))
+        self.lb_delta_nu_pov_l_1.setText("")
+        self.l_Q_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span><span style=\" font-size:22pt; vertical-align:super;\">'</span> =</p></body></html>", None))
+        self.lb_delta_nu_1_shtrih.setText("")
+        self.l_delta_nu_1_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span> =</p></body></html>", None))
+        self.lb_delta_gamma_v.setText("")
+        self.l_teta_v_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">1</span> =</p></body></html>", None))
+        self.lb_delta_nu_1.setText("")
+        self.l_delta_nu_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Q<span style=\" font-size:16pt; vertical-align:sub;\">\u0432</span>= </p></body></html>", None))
+        self.lb_Q_v.setText("")
+        self.l_delta_gamma_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:20px; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471);\">\u03b8</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:16pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:sub;\">\u0432</span><span style=\" font-family:'Google Sans','arial','sans-serif'; font-size:24pt; font-weight:500; color:#040c28; background-color:rgba(80,151,255,0.176471); vertical-align:super;\">'</span> =</p></body></html>", None))
+        self.lb_teta_v_shtrih.setText("")
         self.bt_thermal_calc.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0441\u0442\u0438 \u0442\u0435\u043f\u043b\u043e\u0432\u043e\u0439 \u0440\u0430\u0441\u0447\u0451\u0442", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tb_thermal_calc), QCoreApplication.translate("mainWindow", u"\u0422\u0435\u043f\u043b\u043e\u0432\u043e\u0439 \u0440\u0430\u0441\u0447\u0451\u0442", None))
         self.lb_valueOfError.setText(QCoreApplication.translate("mainWindow", u"\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043f\u043e\u0433\u0440\u0435\u0448\u043d\u043e\u0441\u0442\u0438", None))

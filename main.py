@@ -642,7 +642,6 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget.item(j, i).setText(
                     str(round(self.table_1_student.calculateTable(j, float(self.ui.tableWidget.item(0, i).text())), 3)))
         self.ui.tableWidget.resizeColumnsToContents()
-        # self.ui.tableWidget.resizeRowsToContents()
         self.ui.tableWidget.reset()
 
     def calculate_table2(self):
