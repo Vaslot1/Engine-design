@@ -6,6 +6,9 @@ import pandas as pd
 from calculate import MainProgram
 from func import SplineCubicInterpolate
 from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
+from PySide6.QtGui import QMovie
+
+
 from ww import *
 from tables import table1, table2, table3
 from thermal_calculation import ThermalCalculation
@@ -40,6 +43,10 @@ class MainWindow(QMainWindow):
         self.ui.bt_thermal_calc.clicked.connect(self.thermalcalculate)
         self.ui.bt_export_xl_table_2.clicked.connect(self.save_table_2_to_xl)
         self.ui.bt_export_xl_table_3.clicked.connect(self.save_table_3_to_xl)
+        self.setgif()
+        self.ui.lb_error_settings.setText(
+            str(self.ui.sl_ValueOfError.value()) + "%")
+
 
     def updateVoltage(self):
         if 0 < float(self.ui.linePower.currentText()) < 22:
@@ -48,6 +55,21 @@ class MainWindow(QMainWindow):
             self.ui.lineVoltage.setCurrentText("380")
         else:
             self.ui.lineVoltage.setCurrentText("660")
+    def setgif(self):
+        movie = QMovie('gif/gif1.gif')
+        self.gif1 = QLabel(self.ui.tab_5)
+        self.gif1.setObjectName(u"gif1")
+        self.gif1.setMovie(movie)
+        self.gif1.setGeometry(QRect(25, 415, 600, 500))
+        movie.setScaledSize(QSize(550, 350))
+        movie.start()
+        movie = QMovie('gif/gif2.gif')
+        self.gif2 = QLabel(self.ui.tab_4)
+        self.gif2.setObjectName(u"gif2")
+        self.gif2.setMovie(movie)
+        self.gif2.setGeometry(QRect(550, -150, 1425, 823))
+        movie.setScaledSize(QSize(900, 450))
+        movie.start()
 
     def resizetables(self):
         self.ui.tableWidget.resizeColumnsToContents()
@@ -291,6 +313,7 @@ class MainWindow(QMainWindow):
         self.ui.bt_export_xl_table_3.setEnabled(False)
         self.ui.bt_calculate_table3.setEnabled(False)
         self.ui.bt_show_chart_table3.setEnabled(False)
+        self.ui.bt_thermal_calc.setEnabled(False)
 
         self.clearTables()
         self.ui.tabWidget.setCurrentWidget(self.ui.tab)
@@ -723,6 +746,8 @@ class MainWindow(QMainWindow):
                 "Необходимо посчитать прошлые таблицы")
             msgBox.exec()
 
+        self.ui.bt_thermal_calc.setEnabled(True)
+
 
     def changeError(self):
         self.ui.lb_error.setText(
@@ -731,6 +756,9 @@ class MainWindow(QMainWindow):
             "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
         self.ui.lb_error_3.setText(
             "Погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
+        self.ui.lb_error_settings.setText(
+            str(self.ui.sl_ValueOfError.value()) + "%")
+
         self.ui.bt_calculate_table1.setEnabled(False)
         self.ui.le_Pst.setEnabled(False)
         self.ui.le_Pmeh.setEnabled(False)

@@ -15,12 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFormLayout,
-    QFrame, QGridLayout, QGroupBox, QHBoxLayout,
-    QHeaderView, QLabel, QLayout, QLineEdit,
-    QPushButton, QScrollArea, QSizePolicy, QSlider,
-    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
+    QGridLayout, QGroupBox, QHBoxLayout, QHeaderView,
+    QLabel, QLayout, QLineEdit, QPushButton,
+    QScrollArea, QSizePolicy, QSlider, QTabWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
@@ -2861,20 +2860,24 @@ class Ui_mainWindow(object):
         self.tabWidget.addTab(self.tb_thermal_calc, "")
         self.tb_settings = QWidget()
         self.tb_settings.setObjectName(u"tb_settings")
-        self.formLayout = QFormLayout(self.tb_settings)
-        self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.formLayout.setFieldGrowthPolicy(QFormLayout.AllNonFixedFieldsGrow)
-        self.formLayout.setRowWrapPolicy(QFormLayout.DontWrapRows)
-        self.lb_valueOfError = QLabel(self.tb_settings)
+        self.widget = QWidget(self.tb_settings)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(10, 10, 618, 29))
+        self.horizontalLayout_54 = QHBoxLayout(self.widget)
+        self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
+        self.horizontalLayout_54.setContentsMargins(0, 0, 0, 0)
+        self.lb_valueOfError = QLabel(self.widget)
         self.lb_valueOfError.setObjectName(u"lb_valueOfError")
         self.lb_valueOfError.setMargin(0)
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.lb_valueOfError)
+        self.horizontalLayout_54.addWidget(self.lb_valueOfError)
 
-        self.sl_ValueOfError = QSlider(self.tb_settings)
+        self.sl_ValueOfError = QSlider(self.widget)
         self.sl_ValueOfError.setObjectName(u"sl_ValueOfError")
-        self.sl_ValueOfError.setMaximumSize(QSize(150, 16777215))
+        sizePolicy2.setHeightForWidth(self.sl_ValueOfError.sizePolicy().hasHeightForWidth())
+        self.sl_ValueOfError.setSizePolicy(sizePolicy2)
+        self.sl_ValueOfError.setMinimumSize(QSize(150, 0))
+        self.sl_ValueOfError.setMaximumSize(QSize(200, 16777215))
         self.sl_ValueOfError.setMinimum(5)
         self.sl_ValueOfError.setMaximum(35)
         self.sl_ValueOfError.setSingleStep(5)
@@ -2884,7 +2887,15 @@ class Ui_mainWindow(object):
         self.sl_ValueOfError.setTickPosition(QSlider.TicksBelow)
         self.sl_ValueOfError.setTickInterval(5)
 
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.sl_ValueOfError)
+        self.horizontalLayout_54.addWidget(self.sl_ValueOfError)
+
+        self.lb_error_settings = QLabel(self.widget)
+        self.lb_error_settings.setObjectName(u"lb_error_settings")
+        sizePolicy10.setHeightForWidth(self.lb_error_settings.sizePolicy().hasHeightForWidth())
+        self.lb_error_settings.setSizePolicy(sizePolicy10)
+        self.lb_error_settings.setMinimumSize(QSize(250, 0))
+
+        self.horizontalLayout_54.addWidget(self.lb_error_settings)
 
         self.tabWidget.addTab(self.tb_settings, "")
         self.tab_5 = QWidget()
@@ -3154,7 +3165,7 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem86.setText(QCoreApplication.translate("mainWindow", u"0.896", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
-        self.groupBox_5.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435:", None))
+        self.groupBox_5.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_I0a.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">I</span><span style=\" font-size:14pt; vertical-align:sub;\">0a </span><span style=\" font-size:14pt;\">=</span></p></body></html>", None))
         self.le_I0a.setText(QCoreApplication.translate("mainWindow", u"0.37", None))
         self.lb_I0p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">I</span><span style=\" font-size:14pt; vertical-align:sub;\">0p </span><span style=\" font-size:14pt;\">=</span></p></body></html>", None))
@@ -3320,7 +3331,7 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem152.setText(QCoreApplication.translate("mainWindow", u"101.15", None));
         self.tableWidget_2.setSortingEnabled(__sortingEnabled1)
 
-        self.groupBox_6.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435:", None))
+        self.groupBox_6.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_h_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">c </span>=</p></body></html>", None))
         self.le_h_c.setText(QCoreApplication.translate("mainWindow", u"29.62", None))
         self.lb_h_p_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">p2 </span>=</p></body></html>", None))
@@ -3549,7 +3560,7 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem242.setText(QCoreApplication.translate("mainWindow", u"1.101", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled2)
 
-        self.groupBox_7.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435:", None))
+        self.groupBox_7.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_C_N.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0421<span style=\" vertical-align:sub;\">N </span>=</p></body></html>", None))
         self.le_C_N.setText(QCoreApplication.translate("mainWindow", u"0.975", None))
         self.lb_k_y_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>k<span style=\" vertical-align:sub;\">y1 </span>=</p></body></html>", None))
@@ -3597,7 +3608,7 @@ class Ui_mainWindow(object):
         self.lb_error_3.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 3", None))
         self.groupBox_4.setTitle("")
-        self.groupBox_2.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0435", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_D.setText(QCoreApplication.translate("mainWindow", u"D=", None))
         self.le_D.setText(QCoreApplication.translate("mainWindow", u"0.208", None))
         self.lb_P_st_main.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">\u0441\u0442. \u043e\u0441\u043d</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
@@ -3657,6 +3668,7 @@ class Ui_mainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.sl_ValueOfError.setWhatsThis(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0421\u041b\u0410\u0419\u0414\u0415\u0420</p><p><br/></p></body></html>", None))
 #endif // QT_CONFIG(whatsthis)
+        self.lb_error_settings.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tb_settings), QCoreApplication.translate("mainWindow", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438", None))
         self.label.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:16pt;\">\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 \u043f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0430 \u0434\u043b\u044f \u043e\u0431\u043b\u0435\u0433\u0447\u0435\u043d\u0438\u044f \u043f\u043e\u0434\u0441\u0447\u0451\u0442\u043e\u0432 \u043f\u0440\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0438 \u0430\u0441\u0438\u043d\u0445\u0440\u043e\u043d\u043d\u043e\u0433\u043e \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043b\u044f \u0441 \u043a\u043e\u0440\u043e\u0442\u043a\u043e\u0437\u0430\u043c\u043a\u043d\u0443\u0442\u044b\u043c \u0440\u043e\u0442\u043e\u0440\u043e\u043c.</span><br/></p><p><span style=\" font-size:16pt; font-style:italic;\">\u041a\u0440\u0430\u0442\u043a\u043e\u0435 \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e:</span></p><p><span style=\" font-size:16pt; font-style:italic;\">1) \u0421\u0442\u0443\u0434\u0435\u043d\u0442\u0443 \u043d\u0435\u043e\u0431"
                         "\u0445\u043e\u0434\u0438\u043c\u043e \u043f\u043e\u0434\u0441\u0447\u0438\u0442\u0430\u0442\u044c \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0434\u043b\u044f \u043d\u043e\u043c\u0438\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u0430.</span></p><p><span style=\" font-size:16pt; font-style:italic;\">2) \u0412\u0432\u0435\u0441\u0442\u0438 \u0432\u043e \u0432\u043a\u043b\u0430\u0434\u043a\u0435 \u00ab\u0412\u0432\u043e\u0434 \u0434\u0430\u043d\u043d\u044b\u0445\u00bb \u0434\u0430\u043d\u043d\u044b\u0435 \u0438\u0437 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0437\u0430\u0434\u0430\u043d\u0438\u044f \u0438 \u043d\u0430\u0436\u0430\u0442\u044c \u043a\u043d\u043e\u043f\u043a\u0443 \u00ab\u0412\u0432\u0435\u0441\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u00bb.</span></p><p><span style=\" font-size:16pt; font-style:italic;\">3) \u0414\u0430\u043b\u0435\u0435 \u0432\u043e \u0432\u043a\u043b\u0430\u0434\u043a\u0435"
