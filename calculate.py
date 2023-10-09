@@ -1,4 +1,6 @@
 import math
+
+import func
 from dict import *
 from func import *
 from colorama import *
@@ -62,7 +64,7 @@ class MainProgram:
     k_ob = 0
     Z_1 = 0
     Z_2 = 0
-    sigma = 0
+    delta = 0
     t_z_1 = 0
     b_sh = 0
     h_sh_r = 0
@@ -191,8 +193,8 @@ class MainProgram:
                     # * __5__
                     A_shtrih = (A__down(self._2p, D_a) +
                                 A__up(self._2p, D_a)) / 2
-                    B_sig_shtrih = (B_sig__down(self._2p, D_a) +
-                                    B_sig__up(self._2p, D_a)) / 2.1
+                    B_del_shtrih = (B_del__down(self._2p, D_a) +
+                                    B_del__up(self._2p, D_a)) / 2.1
                     # * __6__
                     if self.h <= 90:  # пока не сделали,костыль
                         t_z_1_max = round(t_z1__1_max(tau), 3)
@@ -226,11 +228,11 @@ class MainProgram:
                     p = self._2p / 2
                     k_B = math.pi / (2 * math.sqrt(2))
                     omega = math.pi * 2 * self.f / p
-                    l_sig = (P_shtrih / (k_B * D ** 2 * omega *
-                             self.k_ob * A_shtrih * B_sig_shtrih))
+                    l_del = (P_shtrih / (k_B * D ** 2 * omega *
+                             self.k_ob * A_shtrih * B_del_shtrih))
 
                     # ? __8__
-                    lamda = round(l_sig / tau, 1)
+                    lamda = round(l_del / tau, 1)
 
                     # * __9__
 
@@ -259,7 +261,7 @@ class MainProgram:
                         (2 * self.a_harmonic * self.m)
                     A = (2 * self.I_1_nom * w_1 * self.m) / (math.pi * D)
                     Ph = (k_e * self.U) / (4 * k_B * w_1 * self.k_ob * self.f)
-                    B_sig = ((self._2p / 2) * Ph) / (D * l_sig)
+                    B_del = ((self._2p / 2) * Ph) / (D * l_del)
 
                     # * __15__
                     J_1_shtrih = (
@@ -323,10 +325,10 @@ class MainProgram:
                         12: 1.15
                     }[self._2p]
                     k_c = 0.97
-                    l_st_1 = l_sig
-                    b_z_1 = ((B_sig * self.t_z_1 * l_sig) /
-                             (B_z_1 * l_sig * k_c)) * 10 ** 3
-                    h_a = Ph / (2 * B_a * l_sig * k_c)
+                    l_st_1 = l_del
+                    b_z_1 = ((B_del * self.t_z_1 * l_del) /
+                             (B_z_1 * l_del * k_c)) * 10 ** 3
+                    h_a = Ph / (2 * B_a * l_del * k_c)
 
                     # * __20__
                     self.b_sh = {56: 1.8, 63: 1.8, 71: 2, 80: 3, 90: 3, 100: 3.5, 112: 3.5, 132: 3.5, 160: 3.7,
@@ -472,7 +474,7 @@ class MainProgram:
             pass
         else:
             exit()
-        if (A_shtrih * 0.9 < A < A_shtrih * 1.1 or B_sig_shtrih * 0.9 < B_sig < B_sig_shtrih * 1.1):
+        if (A_shtrih * 0.9 < A < A_shtrih * 1.1 or B_del_shtrih * 0.9 < B_del < B_del_shtrih * 1.1):
             pass
         else:
             exit()
@@ -482,16 +484,16 @@ class MainProgram:
             exit()
 
         # * __23__
-        self.sigma = Sigma(self.h)[self._2p](D)
+        self.delta = func.delta(self.h)[self._2p](D)
 
         # * __24__
         self.Z_2 = findTheNumberOfRotorSlots(self.P_2, self.Z_1)
 
         # * __25__
-        D_2 = D - (2 * (self.sigma * 10 ** (-3)))
+        D_2 = D - (2 * (self.delta * 10 ** (-3)))
 
         # * __26__
-        l_2 = l_1 = l_sig
+        l_2 = l_1 = l_del
 
         # * __27__
         self.t_z_2 = (math.pi * D_2) / self.Z_2
@@ -538,7 +540,7 @@ class MainProgram:
                        250: 0.7, 280: 0.7, 315: 0.7, 355: 0.7}
         B_z_2 = 1.95  # от 1.7 до 1.95
         l_st_2 = l_st_1
-        b_z_2 = ((B_sig * self.t_z_2 * l_sig) /
+        b_z_2 = ((B_del * self.t_z_2 * l_del) /
                  (B_z_2 * l_st_1 * k_c)) * 10 ** 3
         self.b_1_r = (math.pi * (D_2 * 10 ** 3 - 2 * self.h_sh_r[self.h] - 2 * self.h_sh_shtrih) - self.Z_2 * b_z_2) / (
             math.pi + self.Z_2)
@@ -572,23 +574,23 @@ class MainProgram:
 
         # * __35__
         nu_0 = 4 * math.pi * 10 ** -7
-        gamma_1 = (self.b_sh[self.h] / self.sigma) ** 2 / \
-            (5 + self.b_sh[self.h] / self.sigma)
-        k_sig = (self.t_z_1 * 10 ** 3) / \
-            ((self.t_z_1 * 10 ** 3) - gamma_1 * self.sigma)
-        F_sig = (2 / nu_0) * B_sig * self.sigma * k_sig * 10 ** -3
+        gamma_1 = (self.b_sh[self.h] / self.delta) ** 2 / \
+            (5 + self.b_sh[self.h] / self.delta)
+        k_del = (self.t_z_1 * 10 ** 3) / \
+            ((self.t_z_1 * 10 ** 3) - gamma_1 * self.delta)
+        F_del = (2 / nu_0) * B_del * self.delta * k_del * 10 ** -3
 
         # * __36__
         h_Z_1 = h_p
         B_Z_1_shtrih = round(
-            ((B_sig * (self.t_z_1 * 10 ** 3) * l_sig) / (b_z_1 * l_st_1 * k_c)), 2)
+            ((B_del * (self.t_z_1 * 10 ** 3) * l_del) / (b_z_1 * l_st_1 * k_c)), 2)
         b_p = self.t_z_1 * 10 ** 3 - B_Z_1_shtrih
 
         if (B_Z_1_shtrih > 1.8):
             h_Z_1 = 0.5 * h_Z_1
 
         b_px_1 = (b_1 + b_2) / 2
-        k_px_1 = (b_px_1 * l_sig) / (b_z_1 * l_st_1 * k_c)
+        k_px_1 = (b_px_1 * l_del) / (b_z_1 * l_st_1 * k_c)
         H_Z_1 = H_Z_1_dict[int(B_Z_1_shtrih * 10) /
                            10][int(B_Z_1_shtrih * 100 % 10)]
         F_Z_1 = 2 * h_Z_1 * 10 ** -3 * H_Z_1
@@ -596,19 +598,19 @@ class MainProgram:
         # * __37__
         h_Z_2 = self.h_p_2 - 0.1 * b_2
         B_Z_2_shtrih = round(
-            ((B_sig * self.t_z_2 * l_sig) / (b_z_2 * l_st_2 * k_c)) * 10 ** 3, 2)
+            ((B_del * self.t_z_2 * l_del) / (b_z_2 * l_st_2 * k_c)) * 10 ** 3, 2)
 
         if (B_Z_2_shtrih > 1.8):
             h_Z_2 = 0.5 * h_Z_2
 
         b_px_2 = (b_1 + b_2) / 2
-        k_px_2 = (b_px_2 * l_sig) / (b_z_2 * l_st_2 * k_c)
+        k_px_2 = (b_px_2 * l_del) / (b_z_2 * l_st_2 * k_c)
         H_Z_2 = H_Z_1_dict[int(B_Z_2_shtrih * 10) /
                            10][int(B_Z_2_shtrih * 100 % 10)]
         F_Z_2 = 2 * h_Z_2 * 10 ** -3 * H_Z_2
 
         # * __38__
-        k_Z = 1 + (F_Z_1 + F_Z_2) / F_sig
+        k_Z = 1 + (F_Z_1 + F_Z_2) / F_del
 
         # * __39__
         h_a = (D_a - D) / 2 - h_p * 10 ** -3
@@ -627,11 +629,11 @@ class MainProgram:
         F_j = L_j * H_j
 
         # * __41__
-        F_c = round(F_sig, 3) + round(F_Z_1, 3) + \
+        F_c = round(F_del, 3) + round(F_Z_1, 3) + \
             round(F_Z_2, 3) + round(F_a, 3) + round(F_j, 3)
 
         # * __42__
-        k_nu = F_c / F_sig
+        k_nu = F_c / F_del
 
         # * __43__
         self.I_nu = ((self._2p / 2) * F_c) / (0.9 * self.m * w_1 * self.k_ob)
@@ -692,15 +694,15 @@ class MainProgram:
                 h_1_temp / b_1 + (3 * self.h_k) / (b_1 + 2 * self.b_sh_2[self.h]) + self.h_sh_shtrih /
                 self.b_sh_2[self.h]) * k_B_shtrih
 
-        self.Lamda_l_1 = 0.34 * (q_1 / l_sig) * \
+        self.Lamda_l_1 = 0.34 * (q_1 / l_del) * \
             (l_l_1 - 0.64 * self.beta_shtrih * tau)
         B_sk = 0
         k_sk_shtrih = k_sk_shtrih_func(self.t_z_2 / self.t_z_1)
         Ksi = 2 * k_sk_shtrih * k_B_shtrih - self.k_ob ** 2 * ((self.t_z_2 * 10 ** 3) / (self.t_z_1 * 10 ** 3)) ** 2 * (
             1 + B_sk ** 2)
         self.Lamda_d_1 = (self.t_z_1 * 10 ** 3) / \
-            (12 * self.sigma * k_sig) * Ksi
-        self.X_1 = 15.8 * (self.f / 100) * (w_1 / 100) ** 2 * (l_sig / ((self._2p / 2) * q_1)) * (
+            (12 * self.delta * k_del) * Ksi
+        self.X_1 = 15.8 * (self.f / 100) * (w_1 / 100) ** 2 * (l_del / ((self._2p / 2) * q_1)) * (
             self.Lamda_p_1 + self.Lamda_l_1 + self.Lamda_d_1)
         X_1_star = self.X_1 * (self.I_1_nom / self.U)
 
@@ -711,15 +713,15 @@ class MainProgram:
                           self.b_sh_2[self.h] / (
             2 * self.b_1_r)) * k_d + self.h_sh_r[self.h] / self.b_sh_2[self.h] + 1.12 * (
             self.h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
-        self.Lamda_l_2 = (2.3 * (D_k_avg * 10 ** -3)) / (self.Z_2 * l_sig * delta ** 2) * math.log10(
+        self.Lamda_l_2 = (2.3 * (D_k_avg * 10 ** -3)) / (self.Z_2 * l_del * delta ** 2) * math.log10(
             (4.7 * D_k_avg * 10 ** -3) / (h_kl * 10 ** -3 + 2 * b_kl * 10 ** -3))
         delta_z = 0
         Ksi = 1 + (1 / 5) * ((math.pi * (self._2p / 2)) / self.Z_2) ** 2 - \
             (delta_z / (1 - ((self._2p / 2) / self.Z_1)))
         self.Lamda_d_2 = (self.t_z_2 * 10 ** 3) / \
-            (12 * self.sigma * k_sig) * Ksi
+            (12 * self.delta * k_del) * Ksi
         Lamda_sk = 0
-        X_2 = 7.9 * self.f * l_sig * \
+        X_2 = 7.9 * self.f * l_del * \
             (self.Lamda_p_2 + self.Lamda_l_2 +
              self.Lamda_d_2 + Lamda_sk) * 10 ** -6
         self.X_2_shtrih = X_2 * \
@@ -744,8 +746,8 @@ class MainProgram:
 
         # * __49__
         k_02 = 1.5
-        betta_02 = beta_0_func(self.b_sh[self.h] / self.sigma)
-        B_02 = betta_02 * k_sig * B_sig
+        betta_02 = beta_0_func(self.b_sh[self.h] / self.delta)
+        B_02 = betta_02 * k_del * B_del
         p_pov_2 = 0.5 * k_02 * \
             ((self.Z_1 * self.n) / 10_000) ** 1.5 * \
             (B_02 * self.t_z_1 * 10 ** 3) ** 2
@@ -757,7 +759,7 @@ class MainProgram:
         m_z_2 = self.Z_2 * h_Z_2 * 10 ** -3 * \
             b_z_2_avg * 10 ** -3 * l_st_2 * k_c * gamma_c
         B_z_2_avg = (B_Z_2_shtrih + B_z_2) / 2
-        B_pul_2 = (gamma_1 * self.sigma) / \
+        B_pul_2 = (gamma_1 * self.delta) / \
             (2 * self.t_z_2 * 10 ** 3) * B_z_2_avg
         P_pul_2 = 0.11 * (((self.Z_1 * self.n) / 1000) * B_pul_2) ** 2 * m_z_2
 
@@ -1034,7 +1036,7 @@ class MainProgram:
         # * __61__
         k_beta_shtrih = 1
         self.C_N = 0.64 + 2.5 * \
-            math.sqrt(self.sigma / ((self.t_z_1 + self.t_z_2) * 10 ** 3))
+            math.sqrt(self.delta / ((self.t_z_1 + self.t_z_2) * 10 ** 3))
         self.k_y_1 = math.sin(self.beta_shtrih * (math.pi / 2))
 
         # * Таблица 3
@@ -1049,14 +1051,14 @@ class MainProgram:
                 return F_p_avg
 
             def f3():
-                global B_Ph_sig
-                B_Ph_sig = (f2() * 10 ** -6) / \
-                    (1.6 * self.sigma * 10 ** -3 * self.C_N)
-                return B_Ph_sig
+                global B_Ph_del
+                B_Ph_del = (f2() * 10 ** -6) / \
+                    (1.6 * self.delta * 10 ** -3 * self.C_N)
+                return B_Ph_del
 
             def f4():
-                k_sig = k_sig_func(f3())
-                return k_sig
+                k_del = k_del_func(f3())
+                return k_del
 
             def f5():
                 c_1 = (self.t_z_1 * 10 ** 3 - self.b_sh[self.h]) * (1 - f4())
@@ -1309,8 +1311,8 @@ class MainProgram:
                     # * __5__
                     A_shtrih = (A__down(self._2p, D_a) +
                                 A__up(self._2p, D_a)) / 2
-                    B_sig_shtrih = (B_sig__down(self._2p, D_a) +
-                                    B_sig__up(self._2p, D_a)) / 2.1
+                    B_del_shtrih = (B_del__down(self._2p, D_a) +
+                                    B_del__up(self._2p, D_a)) / 2.1
 
                     # * __6__
                     if self.h <= 90:  # пока не сделали,костыль
@@ -1345,11 +1347,11 @@ class MainProgram:
                     p = self._2p / 2
                     k_B = math.pi / (2 * math.sqrt(2))
                     omega = math.pi * 2 * self.f / p
-                    l_sig = (P_shtrih / (k_B * D ** 2 * omega *
-                             self.k_ob * A_shtrih * B_sig_shtrih))
+                    l_del = (P_shtrih / (k_B * D ** 2 * omega *
+                             self.k_ob * A_shtrih * B_del_shtrih))
 
                     # ? __8__
-                    lamda = round(l_sig / tau, 1)
+                    lamda = round(l_del / tau, 1)
 
                     # * __9__
 
@@ -1378,7 +1380,7 @@ class MainProgram:
                         (2 * self.a_harmonic * self.m)
                     A = (2 * self.I_1_nom * w_1 * self.m) / (math.pi * D)
                     Ph = (k_e * self.U) / (4 * k_B * w_1 * self.k_ob * self.f)
-                    B_sig = ((self._2p / 2) * Ph) / (D * l_sig)
+                    B_del = ((self._2p / 2) * Ph) / (D * l_del)
 
                     # * __15__
                     J_1_shtrih = (
@@ -1442,10 +1444,10 @@ class MainProgram:
                         12: 1.15
                     }[self._2p]
                     k_c = 0.97
-                    l_st_1 = l_sig
-                    b_z_1 = ((B_sig * self.t_z_1 * l_sig) /
-                             (B_z_1 * l_sig * k_c)) * 10 ** 3
-                    h_a = Ph / (2 * B_a * l_sig * k_c)
+                    l_st_1 = l_del
+                    b_z_1 = ((B_del * self.t_z_1 * l_del) /
+                             (B_z_1 * l_del * k_c)) * 10 ** 3
+                    h_a = Ph / (2 * B_a * l_del * k_c)
 
                     # * __20__
                     self.b_sh = {
@@ -1605,7 +1607,7 @@ class MainProgram:
             pass
         else:
             exit()
-        if (A_shtrih * 0.9 < A < A_shtrih * 1.1 or B_sig_shtrih * 0.9 < B_sig < B_sig_shtrih * 1.1):
+        if (A_shtrih * 0.9 < A < A_shtrih * 1.1 or B_del_shtrih * 0.9 < B_del < B_del_shtrih * 1.1):
             pass
         else:
             exit()
@@ -1615,16 +1617,16 @@ class MainProgram:
             exit()
 
         # * __23__
-        self.sigma = Sigma(self.h)[self._2p](D)
+        self.delta = func.delta(self.h)[self._2p](D)
 
         # * __24__
         self.Z_2 = findTheNumberOfRotorSlots(self.P_2, self.Z_1)
 
         # * __25__
-        D_2 = D - (2 * (self.sigma * 10 ** (-3)))
+        D_2 = D - (2 * (self.delta * 10 ** (-3)))
 
         # * __26__
-        l_2 = l_1 = l_sig
+        l_2 = l_1 = l_del
 
         # * __27__
         self.t_z_2 = (math.pi * D_2) / self.Z_2
@@ -1700,7 +1702,7 @@ class MainProgram:
         B_z_2 = 1.95  # от 1.7 до 1.95
         l_st_2 = l_st_1
 
-        b_z_2 = ((B_sig * self.t_z_2 * l_sig) /
+        b_z_2 = ((B_del * self.t_z_2 * l_del) /
                  (B_z_2 * l_st_1 * k_c)) * 10 ** 3
         self.b_1_r = (math.pi * (D_2 * 10 ** 3 - 2 * self.h_sh_r - 2 * self.h_sh_shtrih) - self.Z_2 * b_z_2) / (
             math.pi + self.Z_2)
@@ -1733,22 +1735,22 @@ class MainProgram:
 
         # * __35__
         nu_0 = 4 * math.pi * 10 ** -7
-        gamma_1 = (self.b_sh / self.sigma) ** 2 / (5 + self.b_sh / self.sigma)
-        k_sig = (self.t_z_1 * 10 ** 3) / \
-            ((self.t_z_1 * 10 ** 3) - gamma_1 * self.sigma)
-        F_sig = (2 / nu_0) * B_sig * self.sigma * k_sig * 10 ** -3
+        gamma_1 = (self.b_sh / self.delta) ** 2 / (5 + self.b_sh / self.delta)
+        k_del = (self.t_z_1 * 10 ** 3) / \
+            ((self.t_z_1 * 10 ** 3) - gamma_1 * self.delta)
+        F_del = (2 / nu_0) * B_del * self.delta * k_del * 10 ** -3
 
         # * __36__
         h_Z_1 = h_p
         B_Z_1_shtrih = round(
-            ((B_sig * (self.t_z_1 * 10 ** 3) * l_sig) / (b_z_1 * l_st_1 * k_c)), 2)
+            ((B_del * (self.t_z_1 * 10 ** 3) * l_del) / (b_z_1 * l_st_1 * k_c)), 2)
         b_p = self.t_z_1 * 10 ** 3 - B_Z_1_shtrih
 
         if (B_Z_1_shtrih > 1.8):
             h_Z_1 = 0.5 * h_Z_1
 
         b_px_1 = (b_1 + b_2) / 2
-        k_px_1 = (b_px_1 * l_sig) / (b_z_1 * l_st_1 * k_c)
+        k_px_1 = (b_px_1 * l_del) / (b_z_1 * l_st_1 * k_c)
         H_Z_1 = H_Z_1_dict[int(B_Z_1_shtrih * 10) /
                            10][int(B_Z_1_shtrih * 100 % 10)]
         F_Z_1 = 2 * h_Z_1 * 10 ** -3 * H_Z_1
@@ -1756,19 +1758,19 @@ class MainProgram:
         # * __37__
         h_Z_2 = self.h_p_2 - 0.1 * b_2
         B_Z_2_shtrih = round(
-            ((B_sig * self.t_z_2 * l_sig) / (b_z_2 * l_st_2 * k_c)) * 10 ** 3, 2)
+            ((B_del * self.t_z_2 * l_del) / (b_z_2 * l_st_2 * k_c)) * 10 ** 3, 2)
 
         if (B_Z_2_shtrih > 1.8):
             h_Z_2 = 0.5 * h_Z_2
 
         b_px_2 = (b_1 + b_2) / 2
-        k_px_2 = (b_px_2 * l_sig) / (b_z_2 * l_st_2 * k_c)
+        k_px_2 = (b_px_2 * l_del) / (b_z_2 * l_st_2 * k_c)
         H_Z_2 = H_Z_1_dict[int(B_Z_2_shtrih * 10) /
                            10][int(B_Z_2_shtrih * 100 % 10)]
         F_Z_2 = 2 * h_Z_2 * 10 ** -3 * H_Z_2
 
         # * __38__
-        k_Z = 1 + (F_Z_1 + F_Z_2) / F_sig
+        k_Z = 1 + (F_Z_1 + F_Z_2) / F_del
 
         # * __39__
         h_a = (D_a - D) / 2 - h_p * 10 ** -3
@@ -1787,11 +1789,11 @@ class MainProgram:
         F_j = L_j * H_j
 
         # * __41__
-        F_c = round(F_sig, 3) + round(F_Z_1, 3) + \
+        F_c = round(F_del, 3) + round(F_Z_1, 3) + \
             round(F_Z_2, 3) + round(F_a, 3) + round(F_j, 3)
 
         # * __42__
-        k_nu = F_c / F_sig
+        k_nu = F_c / F_del
 
         # * __43__
         self.I_nu = ((self._2p / 2) * F_c) / (0.9 * self.m * w_1 * self.k_ob)
@@ -1856,15 +1858,15 @@ class MainProgram:
             # print(
             #     f"Lamda_p_1 = h_2 / (3 * b_1) * k_B + (h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2) + h_sh_shtrih /b_sh_2) * k_B_shtrih = {h_2} / (3 * {b_1}) * {k_B} + ({h_1_temp} / {b_1} + (3 * {self.h_k}) / ({b_1} + 2 * {self.b_sh_2}) + {self.h_sh_shtrih} /{self.b_sh_2}) * {k_B_shtrih} = {self.Lamda_p_1}")
 
-        self.Lamda_l_1 = 0.34 * (q_1 / l_sig) * \
+        self.Lamda_l_1 = 0.34 * (q_1 / l_del) * \
             (l_l_1 - 0.64 * self.beta_shtrih * tau)
         B_sk = 0
         k_sk_shtrih = k_sk_shtrih_func(self.t_z_2 / self.t_z_1)
         Ksi = 2 * k_sk_shtrih * k_B_shtrih - self.k_ob ** 2 * ((self.t_z_2 * 10 ** 3) / (self.t_z_1 * 10 ** 3)) ** 2 * (
             1 + B_sk ** 2)
         self.Lamda_d_1 = (self.t_z_1 * 10 ** 3) / \
-            (12 * self.sigma * k_sig) * Ksi
-        self.X_1 = 15.8 * (self.f / 100) * (w_1 / 100) ** 2 * (l_sig / ((self._2p / 2) * q_1)) * (
+            (12 * self.delta * k_del) * Ksi
+        self.X_1 = 15.8 * (self.f / 100) * (w_1 / 100) ** 2 * (l_del / ((self._2p / 2) * q_1)) * (
             self.Lamda_p_1 + self.Lamda_l_1 + self.Lamda_d_1)
         X_1_star = self.X_1 * (self.I_1_nom / self.U)
 
@@ -1875,15 +1877,15 @@ class MainProgram:
                           self.b_sh_2 / (
             2 * self.b_1_r)) * k_d + self.h_sh_r / self.b_sh_2 + 1.12 * (
             self.h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
-        self.Lamda_l_2 = (2.3 * (D_k_avg * 10 ** -3)) / (self.Z_2 * l_sig * delta ** 2) * math.log10(
+        self.Lamda_l_2 = (2.3 * (D_k_avg * 10 ** -3)) / (self.Z_2 * l_del * delta ** 2) * math.log10(
             (4.7 * D_k_avg * 10 ** -3) / (h_kl * 10 ** -3 + 2 * b_kl * 10 ** -3))
         delta_z = 0
         Ksi = 1 + (1 / 5) * ((math.pi * (self._2p / 2)) / self.Z_2) ** 2 - \
             (delta_z / (1 - ((self._2p / 2) / self.Z_1)))
         self.Lamda_d_2 = (self.t_z_2 * 10 ** 3) / \
-            (12 * self.sigma * k_sig) * Ksi
+            (12 * self.delta * k_del) * Ksi
         Lamda_sk = 0
-        X_2 = 7.9 * self.f * l_sig * \
+        X_2 = 7.9 * self.f * l_del * \
             (self.Lamda_p_2 + self.Lamda_l_2 +
              self.Lamda_d_2 + Lamda_sk) * 10 ** -6
         self.X_2_shtrih = X_2 * \
@@ -1908,8 +1910,8 @@ class MainProgram:
 
         # * __49__
         k_02 = 1.5
-        betta_02 = beta_0_func(self.b_sh / self.sigma)
-        B_02 = betta_02 * k_sig * B_sig
+        betta_02 = beta_0_func(self.b_sh / self.delta)
+        B_02 = betta_02 * k_del * B_del
         p_pov_2 = 0.5 * k_02 * \
             ((self.Z_1 * self.n) / 10_000) ** 1.5 * \
             (B_02 * self.t_z_1 * 10 ** 3) ** 2
@@ -1921,7 +1923,7 @@ class MainProgram:
         m_z_2 = self.Z_2 * h_Z_2 * 10 ** -3 * \
             b_z_2_avg * 10 ** -3 * l_st_2 * k_c * gamma_c
         B_z_2_avg = (B_Z_2_shtrih + B_z_2) / 2
-        B_pul_2 = (gamma_1 * self.sigma) / \
+        B_pul_2 = (gamma_1 * self.delta) / \
             (2 * self.t_z_2 * 10 ** 3) * B_z_2_avg
         P_pul_2 = 0.11 * (((self.Z_1 * self.n) / 1000) * B_pul_2) ** 2 * m_z_2
 
@@ -2200,7 +2202,7 @@ class MainProgram:
         # * __61__
         k_beta_shtrih = 1
         self.C_N = 0.64 + 2.5 * \
-            math.sqrt(self.sigma / ((self.t_z_1 + self.t_z_2) * 10 ** 3))
+            math.sqrt(self.delta / ((self.t_z_1 + self.t_z_2) * 10 ** 3))
         self.k_y_1 = math.sin(self.beta_shtrih * (math.pi / 2))
 
         # * Таблица 3
@@ -2216,14 +2218,14 @@ class MainProgram:
                 return F_p_avg
 
             def f3():
-                global B_Ph_sig
-                B_Ph_sig = (f2() * 10 ** -6) / \
-                    (1.6 * self.sigma * 10 ** -3 * self.C_N)
-                return B_Ph_sig
+                global B_Ph_del
+                B_Ph_del = (f2() * 10 ** -6) / \
+                    (1.6 * self.delta * 10 ** -3 * self.C_N)
+                return B_Ph_del
 
             def f4():
-                k_sig = k_sig_func(f3())
-                return k_sig
+                k_del = k_del_func(f3())
+                return k_del
 
             def f5():
                 c_1 = (self.t_z_1 * 10 ** 3 - self.b_sh) * (1 - f4())
@@ -2374,7 +2376,7 @@ class MainProgram:
 
             f.write("\n\nПункт: 5\n")
             f.write(f"A_shtrih = {A_shtrih}\n")
-            f.write(f"B_sig_shtrih = {B_sig_shtrih}\n")
+            f.write(f"B_del_shtrih = {B_del_shtrih}\n")
 
             f.write("\n\nПункт: 6\n")
             f.write(f"k_ras = {k_ras}\n")
@@ -2385,10 +2387,10 @@ class MainProgram:
             f.write(f"k_B = {k_B}\n")
             f.write(f"omega = {omega}\n")
             f.write(
-                f"l_sig = (P') / (k_B * D^2 * omega * k_ob * A_shtrih * B_sig_shtrih) = ({P_shtrih}) / ({k_B} * {D ** 2} * {omega} * {self.k_ob} * {omega} * {A_shtrih} * {B_sig_shtrih}) = {l_sig}\n")
+                f"l_del = (P') / (k_B * D^2 * omega * k_ob * A_shtrih * B_del_shtrih) = ({P_shtrih}) / ({k_B} * {D ** 2} * {omega} * {self.k_ob} * {omega} * {A_shtrih} * {B_del_shtrih}) = {l_del}\n")
 
             f.write("\n\nПункт: 8\n")
-            f.write(f"lamda = l_sig / tau = {l_sig} / {tau} = {lamda} \n")
+            f.write(f"lamda = l_del / tau = {l_del} / {tau} = {lamda} \n")
 
             f.write("\n\nПункт: 9\n")
             f.write(f"t_z_1_max = {t_z_1_max}\n")
@@ -2397,9 +2399,9 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 10\n")
             f.write(
-                f"Z_1_min = l_sig / tau = 3.14 * {D} / {t_z_1_max} = {Z_1_min}\n")
+                f"Z_1_min = l_del / tau = 3.14 * {D} / {t_z_1_max} = {Z_1_min}\n")
             f.write(
-                f"Z_1_max = l_sig / tau = 3.14 * {D} / {t_z_1_min} = {Z_1_max} \n")
+                f"Z_1_max = l_del / tau = 3.14 * {D} / {t_z_1_min} = {Z_1_max} \n")
 
             f.write(
                 "\n\nПункт: 11\n")
@@ -2426,7 +2428,7 @@ class MainProgram:
             f.write(
                 f"Ph = (k_e * U) / (4 * k_B * w_1 * k_ob * f) = {k_e * self.U} / {(4 * k_B * w_1 * self.k_ob * self.f)} = {Ph}\n")
             f.write(
-                f"B_sig = ((2p / 2) * Ph) / (D * l_sig) = {((self._2p / 2) * Ph)} / {(D * l_sig)} = {B_sig}\n")
+                f"B_del = ((2p / 2) * Ph) / (D * l_del) = {((self._2p / 2) * Ph)} / {(D * l_del)} = {B_del}\n")
 
             f.write(
                 "\n\nПункт: 15\n")
@@ -2484,7 +2486,7 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 23\n")
             f.write(
-                f"sigma =  {self.sigma}\n")
+                f"delta =  {self.delta}\n")
 
             f.write(
                 "\n\nПункт: 24\n")
@@ -2493,7 +2495,7 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 25\n")
             f.write(
-                f"D_2 = D - (2 * (sigma * 10^(-3) )) =  {D} - (2 * ({self.sigma} * 10^(-3) )) = {D_2}\n")
+                f"D_2 = D - (2 * (delta * 10^(-3) )) =  {D} - (2 * ({self.delta} * 10^(-3) )) = {D_2}\n")
 
             f.write(
                 "\n\nПункт: 26\n")
@@ -2522,7 +2524,7 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 31\n")
             f.write(
-                f"b_z_2 = ((B_sig * t_z_2 * l_sig) / (B_z_2 * l_st_1 * k_c)) * 10^3 = {B_sig} / {J_2} = {b_z_2}\n")
+                f"b_z_2 = ((B_del * t_z_2 * l_del) / (B_z_2 * l_st_1 * k_c)) * 10^3 = {B_del} / {J_2} = {b_z_2}\n")
 
             f.write(f"b_1 = (3.14 * (D_2 * 10^3 - 2 * h_sh_r - 2 * h_sh') - Z_2 * b_z_2) / (3.14 + Z_2)"
                     f" = (3.14 * ({D_2}* 10^3 - 2 * {self.h_sh_r} - 2 * * {self.h_sh_shtrih}) - {self.Z_2} *  {b_z_2} = {self.b_1_r}\n")
@@ -2616,18 +2618,18 @@ class MainProgram:
             )
 
             f.write(
-                f"gamma_1 = (b_sh / sigma)^2 / (5 + b_sh / sigma) = "
-                f"({self.b_sh} / {self.sigma}) ** 2 / (5 + {self.b_sh} / {self.sigma}) = {gamma_1}"
+                f"gamma_1 = (b_sh / delta)^2 / (5 + b_sh / delta) = "
+                f"({self.b_sh} / {self.delta}) ** 2 / (5 + {self.b_sh} / {self.delta}) = {gamma_1}"
             )
 
             f.write(
-                f"k_sig = (t_z_1 * 10^3) / ((t_z_1 * 10^3) - gamma_1 * sigma) = "
-                f"({self.t_z_1} * 10^3) / (({self.t_z_1} * 10^3) - {gamma_1} * {self.sigma}) = {k_sig}"
+                f"k_del = (t_z_1 * 10^3) / ((t_z_1 * 10^3) - gamma_1 * delta) = "
+                f"({self.t_z_1} * 10^3) / (({self.t_z_1} * 10^3) - {gamma_1} * {self.delta}) = {k_del}"
             )
 
             f.write(
-                f"F_sig = (2 / nu_0) * B_sig * sigma * k_sig * 10^-3 = "
-                f"(2 / {nu_0}) * {B_sig} * {self.sigma} * {k_sig} * 10^-3 = {F_sig}"
+                f"F_del = (2 / nu_0) * B_del * delta * k_del * 10^-3 = "
+                f"(2 / {nu_0}) * {B_del} * {self.delta} * {k_del} * 10^-3 = {F_del}"
             )
 
             f.write(
@@ -2638,8 +2640,8 @@ class MainProgram:
             )
 
             f.write(
-                f"B_Z_1' = ((B_sig * (t_z_1 * 10^3) * l_sig) / (b_z_1 * l_st_1 * k_c)) = "
-                f"(({B_sig} * ({self.t_z_1} * 10^3) * {l_sig}) / ({b_z_1} * {l_st_1} * {k_c})) = {B_Z_1_shtrih}"
+                f"B_Z_1' = ((B_del * (t_z_1 * 10^3) * l_del) / (b_z_1 * l_st_1 * k_c)) = "
+                f"(({B_del} * ({self.t_z_1} * 10^3) * {l_del}) / ({b_z_1} * {l_st_1} * {k_c})) = {B_Z_1_shtrih}"
             )
 
             f.write(
@@ -2653,8 +2655,8 @@ class MainProgram:
             )
 
             f.write(
-                f"k_px_1 = (b_px_1 * l_sig) / (b_z_1 * l_st_1 * k_c) = "
-                f"({b_px_1} * {l_sig}) / ({b_z_1} * {l_st_1} * {k_c}) = {k_px_1}"
+                f"k_px_1 = (b_px_1 * l_del) / (b_z_1 * l_st_1 * k_c) = "
+                f"({b_px_1} * {l_del}) / ({b_z_1} * {l_st_1} * {k_c}) = {k_px_1}"
             )
 
             f.write(
@@ -2675,8 +2677,8 @@ class MainProgram:
             )
 
             f.write(
-                f"B_Z_2' = ((B_sig * t_z_2 * l_sig) / (b_z_2 * l_st_2 * k_c)) * 10^3 = "
-                f"(({B_sig} * {self.t_z_2} * {l_sig}) / ({b_z_2} * {l_st_2} * {k_c})) * 10^3 = {B_Z_2_shtrih}"
+                f"B_Z_2' = ((B_del * t_z_2 * l_del) / (b_z_2 * l_st_2 * k_c)) * 10^3 = "
+                f"(({B_del} * {self.t_z_2} * {l_del}) / ({b_z_2} * {l_st_2} * {k_c})) * 10^3 = {B_Z_2_shtrih}"
             )
 
             f.write(
@@ -2685,8 +2687,8 @@ class MainProgram:
             )
 
             f.write(
-                f"k_px_2 = (b_px_2 * l_sig) / (b_z_2 * l_st_2 * k_c) = "
-                f"({b_px_2} * {l_sig}) / ({b_z_2} * {l_st_2} * {k_c}) = {k_px_2}"
+                f"k_px_2 = (b_px_2 * l_del) / (b_z_2 * l_st_2 * k_c) = "
+                f"({b_px_2} * {l_del}) / ({b_z_2} * {l_st_2} * {k_c}) = {k_px_2}"
             )
 
             f.write(
@@ -2702,8 +2704,8 @@ class MainProgram:
                 "\n\nПункт: 38\n")
 
             f.write(
-                f"k_Z = 1 + (F_Z_1 + F_Z_2) / F_sig = "
-                f"1 + ({F_Z_1} + {F_Z_2}) / {F_sig} = {k_Z}"
+                f"k_Z = 1 + (F_Z_1 + F_Z_2) / F_del = "
+                f"1 + ({F_Z_1} + {F_Z_2}) / {F_del} = {k_Z}"
             )
 
             f.write(
@@ -2749,11 +2751,11 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 41\n")
             f.write(
-                f"F_c = F_sig + F_Z_1 + F_Z_2 + F_a + F_j = {F_sig} + {F_Z_1} + {F_Z_2} + {F_a} + {F_j} = {F_c}\n")
+                f"F_c = F_del + F_Z_1 + F_Z_2 + F_a + F_j = {F_del} + {F_Z_1} + {F_Z_2} + {F_a} + {F_j} = {F_c}\n")
             f.write(
                 "\n\nПункт: 42\n")
             f.write(
-                f"k_nu = F_c / F_sig = {F_c} / {F_sig} = {k_nu}\n")
+                f"k_nu = F_c / F_del = {F_c} / {F_del} = {k_nu}\n")
 
             f.write(
                 "\n\nПункт: 43\n")
@@ -2787,13 +2789,13 @@ class MainProgram:
                 "\n\nПункт: 46\n")
 
             f.write(
-                f"Lamda_l_1 = 0.34 * (q_1 / l_sig) * (l_l_1 - 0.64 * beta_shtrih * tau) = 0.34 * ({q_1} / {l_sig}) * ({l_l_1} - 0.64 * {self.beta_shtrih} * {tau}) = {self.Lamda_l_1}\n")
+                f"Lamda_l_1 = 0.34 * (q_1 / l_del) * (l_l_1 - 0.64 * beta_shtrih * tau) = 0.34 * ({q_1} / {l_del}) * ({l_l_1} - 0.64 * {self.beta_shtrih} * {tau}) = {self.Lamda_l_1}\n")
             f.write(
                 f"Ksi = 2 * k_sk_shtrih * k_B_shtrih - k_ob^2 * ((t_z_2 * 10^3) / (t_z_1 * 10^3)) ** 2 * (1 + B_sk^2) = 2 * {k_sk_shtrih} * {k_B_shtrih} - {self.k_ob}^2 * (({self.t_z_2} * 10^3) / ({self.t_z_1} * 10^3))^2 * (1 + {B_sk}^2) = {Ksi}\n")
             f.write(
-                f"Lamda_d_1 = (t_z_1 * 10^3) / (12 * sigma * k_sig) * Ksi = ({self.t_z_1} * 10^3) / (12 * {self.sigma} * {k_sig}) * {Ksi} = {self.Lamda_d_1}\n")
+                f"Lamda_d_1 = (t_z_1 * 10^3) / (12 * delta * k_del) * Ksi = ({self.t_z_1} * 10^3) / (12 * {self.delta} * {k_del}) * {Ksi} = {self.Lamda_d_1}\n")
             f.write(
-                f"X_1 = 15.8 * (f / 100) * (w_1 / 100)^2 * (l_sig / ((_2p / 2) * q_1)) * (Lamda_p_1 + Lamda_l_1 + Lamda_d_1) = 15.8 * ({self.f} / 100) * ({w_1} / 100) ** 2 * ({l_sig} / (({self._2p} / 2) * {q_1})) * ({self.Lamda_p_1} + {self.Lamda_l_1} + {self.Lamda_d_1}) = {self.X_1}\n")
+                f"X_1 = 15.8 * (f / 100) * (w_1 / 100)^2 * (l_del / ((_2p / 2) * q_1)) * (Lamda_p_1 + Lamda_l_1 + Lamda_d_1) = 15.8 * ({self.f} / 100) * ({w_1} / 100) ** 2 * ({l_del} / (({self._2p} / 2) * {q_1})) * ({self.Lamda_p_1} + {self.Lamda_l_1} + {self.Lamda_d_1}) = {self.X_1}\n")
             f.write(
                 f"X_1_star = X_1 * (I_1_nom / U) = {self.X_1} * ({self.I_1_nom} / {self.U}) = {X_1_star}\n")
 
@@ -2805,17 +2807,17 @@ class MainProgram:
                 f"Lamda_p_2 = (h_0 / (3 * b_1_r) * (1 - ({math.pi} * b_1_r^2) / (8 * q_c))^2 + 0.66 - b_sh_2 / (2 * b_1_r)) * k_d + h_sh_r / b_sh_2 + 1.12 * (h_sh_shtrih * 10^-3 * 10^6) / I_2 ="
                 f" ({self.h_0} / (3 * {self.b_1_r}) * (1 - ({math.pi} * {self.b_1_r}^2) / (8 * {self.q_c}))^2 + 0.66 - {self.b_sh_2} / (2 * {self.b_1_r})) * {k_d} + {self.h_sh_r} / {self.b_sh_2} + 1.12 * ({self.h_sh_shtrih} * 10^-3 * 10^6) / {I_2} = {self.Lamda_p_2}\n")
             f.write(
-                f"Lamda_l_2 = (2.3 * (D_k_avg * 10^-3)) / (Z_2 * l_sig * delta^2) * log10((4.7 * D_k_avg * 10^-3) / (h_kl * 10^-3 + 2 * b_kl * 10^-3)) = "
-                f"(2.3 * ({D_k_avg} * 10^-3)) / ({self.Z_2} * {l_sig} * {delta}^2) * log10((4.7 * {D_k_avg} * 10^-3) / ({h_kl} * 10^-3 + 2 * {b_kl} * 10^-3)) = {self.Lamda_l_2}\n")
+                f"Lamda_l_2 = (2.3 * (D_k_avg * 10^-3)) / (Z_2 * l_del * delta^2) * log10((4.7 * D_k_avg * 10^-3) / (h_kl * 10^-3 + 2 * b_kl * 10^-3)) = "
+                f"(2.3 * ({D_k_avg} * 10^-3)) / ({self.Z_2} * {l_del} * {delta}^2) * log10((4.7 * {D_k_avg} * 10^-3) / ({h_kl} * 10^-3 + 2 * {b_kl} * 10^-3)) = {self.Lamda_l_2}\n")
 
             f.write(f"Ksi = 1 + (1 / 5) * (({math.pi} * (_2p / 2)) / Z_2)^2 - (delta_z / (1 - ((_2p / 2) / Z_1))) = "
                     f"1 + (1 / 5) * (({math.pi} * ({self._2p} / 2)) / {self.Z_2})^2 - ({delta_z} / (1 - (({self._2p} / 2) / {self.Z_1})))\n")
 
-            f.write(f"Lamda_d_2 = (t_z_2 * 10^3) / (12 * sigma * k_sig) * Ksi = "
-                    f"({self.t_z_2} * 10^3) / (12 * {self.sigma} * {k_sig}) * {Ksi} = {self.Lamda_d_2}\n")
+            f.write(f"Lamda_d_2 = (t_z_2 * 10^3) / (12 * delta * k_del) * Ksi = "
+                    f"({self.t_z_2} * 10^3) / (12 * {self.delta} * {k_del}) * {Ksi} = {self.Lamda_d_2}\n")
 
-            f.write(f"X_2 = 7.9 * f * l_sig * (Lamda_p_2 + Lamda_l_2 + Lamda_d_2 + Lamda_sk) * 10^-6 = "
-                    f"7.9 * {self.f} * {l_sig} * ({self.Lamda_p_2} + {self.Lamda_l_2} + {self.Lamda_d_2} + {Lamda_sk}) * 10^-6 = {X_2}\n")
+            f.write(f"X_2 = 7.9 * f * l_del * (Lamda_p_2 + Lamda_l_2 + Lamda_d_2 + Lamda_sk) * 10^-6 = "
+                    f"7.9 * {self.f} * {l_del} * ({self.Lamda_p_2} + {self.Lamda_l_2} + {self.Lamda_d_2} + {Lamda_sk}) * 10^-6 = {X_2}\n")
 
             f.write(f"X_2_shtrih = X_2 * (4 * m * (w_1 * k_ob)^2) / (Z_2 * k_sk^2) = "
                     f"{X_2} * (4 * {self.m} * ({w_1} * {self.k_ob})^2) / ({self.Z_2} * {k_sk}^2) = {self.X_2_shtrih}\n")
@@ -2838,16 +2840,16 @@ class MainProgram:
             f.write(f"p_pov_2 = 0.5 * k_02 * ((Z_1 * n) / 10000)^1.5 * (B_02 * t_z_1 * 10^3)^2 = "
                     f"0.5 * {k_02} * (({self.Z_1} * {self.n}) / 10000)^1.5 * ({B_02} * {self.t_z_1} * 10^3)^2 = {p_pov_2}\n")
             f.write(
-                f"B_02 = betta_02 * k_sig * B_sig = {betta_02} * {k_sig} * {B_sig} = {B_02}\n")
+                f"B_02 = betta_02 * k_del * B_del = {betta_02} * {k_del} * {B_del} = {B_02}\n")
             f.write(
-                f"betta_02 = beta_0_func(self.b_sh / self.sigma) = {beta_0_func}({self.b_sh} / {self.sigma}) = {betta_02}\n")
+                f"betta_02 = beta_0_func(self.b_sh / self.delta) = {beta_0_func}({self.b_sh} / {self.delta}) = {betta_02}\n")
 
             f.write(
                 "\n\nПункт: 50\n")
             f.write(f"P_пул_2 = 0.11 * (((Z_1 * n) / 1000) * B_пул_2) ** 2 * m_z_2 = "
                     f"0.11 * ((({self.Z_1} * {self.n}) / 1000) * {B_pul_2}) ** 2 * {m_z_2} = {P_pul_2}\n")
-            f.write(f"B_пул_2 = (gamma_1 * sigma) / (2 * t_z_2 * 10 ** 3) * B_z_2_avg = "
-                    f"({gamma_1} * {self.sigma}) / (2 * {self.t_z_2} * 10 ** 3) * {B_z_2_avg} = {B_pul_2}\n")
+            f.write(f"B_пул_2 = (gamma_1 * delta) / (2 * t_z_2 * 10 ** 3) * B_z_2_avg = "
+                    f"({gamma_1} * {self.delta}) / (2 * {self.t_z_2} * 10 ** 3) * {B_z_2_avg} = {B_pul_2}\n")
             f.write(f"B_z_2ср = B_Z_2' + B_z_2) / 2 = "
                     f"({B_Z_2_shtrih} + {B_z_2}) / 2 = {B_z_2_avg}\n")
             f.write(f"m_z_2 = Z_2 * h_Z_2 * 10^(-3) * b_z_2ср * 10^(-3) * l_st_2 * k_c * gamma_c = "
@@ -2954,6 +2956,6 @@ class MainProgram:
             f.write(
                 f"k_y_1 = sin(self.beta_shtrih * ({math.pi} / 2)) = sin({self.beta_shtrih} * ({math.pi} / 2)) = {self.k_y_1}\n")
             f.write(
-                f"C_N = 0.64 + 2.5 * sqrt(sigma / ((t_z_1 + t_z_2) * 10^3)) = 0.64 + 2.5 * sqrt({self.sigma} / (({self.t_z_1} + {self.t_z_2}) * 10^3)) = {self.C_N}\n")
+                f"C_N = 0.64 + 2.5 * sqrt(delta / ((t_z_1 + t_z_2) * 10^3)) = 0.64 + 2.5 * sqrt({self.delta} / (({self.t_z_1} + {self.t_z_2}) * 10^3)) = {self.C_N}\n")
 
         # print(list)

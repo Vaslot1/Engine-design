@@ -5,11 +5,11 @@ import pandas as pd
 
 from calculate import MainProgram
 from func import SplineCubicInterpolate
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog, QInputDialog
 from PySide6.QtGui import QMovie
 
 
-from ww import *
+from GUI_output import *
 from tables import table1, table2, table3
 from thermal_calculation import ThermalCalculation
 
@@ -260,7 +260,7 @@ class MainWindow(QMainWindow):
             self.ui.le_k_ob.setEnabled(True)
             self.ui.le_Z_1.setEnabled(True)
             self.ui.le_Z_2.setEnabled(True)
-            self.ui.le_sigma.setEnabled(True)
+            self.ui.le_delta.setEnabled(True)
             self.ui.le_t_z_1.setEnabled(True)
             self.ui.le_b_sh.setEnabled(True)
             self.ui.le_h_sh_r.setEnabled(True)
@@ -334,7 +334,7 @@ class MainWindow(QMainWindow):
         self.table_3 = table3(
             self.aboba.C_N, self.aboba.k_y_1, self.aboba.u_p, self.aboba.k_ob, self.aboba.X_1, self.aboba.Z_1,
             self.aboba.Z_2,
-            self.aboba.sigma, self.aboba.t_z_1, self.aboba.b_sh[
+            self.aboba.delta, self.aboba.t_z_1, self.aboba.b_sh[
                 self.aboba.h], self.aboba.h_sh_r[self.aboba.h],
             self.aboba.Lamda_p_1, self.aboba.Lamda_d_1, self.aboba.Lamda_l_1, self.aboba.x_1_2_p, self.aboba.t_z_2,
             self.aboba.b_sh_2[self.aboba.h], self.aboba.Lamda_p_2, self.aboba.Lamda_l_2, self.aboba.Lamda_d_2,
@@ -754,7 +754,7 @@ class MainWindow(QMainWindow):
                     self.ui.le_k_y_1.text()), float(self.ui.le_u_p.text()),
                 float(self.ui.le_k_ob.text()), float(self.ui.le_X_1.text()), float(
                     self.ui.le_Z_1.text()), float(self.ui.le_Z_2.text()),
-                float(self.ui.le_sigma.text()), float(self.ui.le_t_z_1.text()),
+                float(self.ui.le_delta.text()), float(self.ui.le_t_z_1.text()),
                 float(self.ui.le_b_sh.text()), float(
                     self.ui.le_h_sh_r.text()), float(self.ui.le_Lamda_p_1.text()),
                 float(self.ui.le_Lamda_d_1.text()), float(

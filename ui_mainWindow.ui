@@ -116,7 +116,7 @@
                   <item>
                    <widget class="QLabel" name="polarity">
                     <property name="text">
-                     <string>Полярность</string>
+                     <string>Число полюсов</string>
                     </property>
                    </widget>
                   </item>
@@ -4428,7 +4428,7 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLineEdit" name="le_sigma">
+                         <widget class="QLineEdit" name="le_delta">
                           <property name="enabled">
                            <bool>false</bool>
                           </property>
@@ -6118,7 +6118,7 @@
           <attribute name="title">
            <string>Настройки</string>
           </attribute>
-          <widget class="QWidget" name="">
+          <widget class="QWidget" name="layoutWidget">
            <property name="geometry">
             <rect>
              <x>10</x>

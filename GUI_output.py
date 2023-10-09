@@ -1978,14 +1978,14 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_19.addWidget(self.lb_sigma)
 
-        self.le_sigma = QLineEdit(self.groupBox_7)
-        self.le_sigma.setObjectName(u"le_sigma")
-        self.le_sigma.setEnabled(False)
-        sizePolicy2.setHeightForWidth(self.le_sigma.sizePolicy().hasHeightForWidth())
-        self.le_sigma.setSizePolicy(sizePolicy2)
-        self.le_sigma.setMaximumSize(QSize(100, 16777215))
+        self.le_delta = QLineEdit(self.groupBox_7)
+        self.le_delta.setObjectName(u"le_delta")
+        self.le_delta.setEnabled(False)
+        sizePolicy2.setHeightForWidth(self.le_delta.sizePolicy().hasHeightForWidth())
+        self.le_delta.setSizePolicy(sizePolicy2)
+        self.le_delta.setMaximumSize(QSize(100, 16777215))
 
-        self.horizontalLayout_19.addWidget(self.le_sigma)
+        self.horizontalLayout_19.addWidget(self.le_delta)
 
 
         self.horizontalLayout_46.addLayout(self.horizontalLayout_19)
@@ -2860,21 +2860,21 @@ class Ui_mainWindow(object):
         self.tabWidget.addTab(self.tb_thermal_calc, "")
         self.tb_settings = QWidget()
         self.tb_settings.setObjectName(u"tb_settings")
-        self.widget = QWidget(self.tb_settings)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(10, 11, 633, 91))
-        self.verticalLayout_9 = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.tb_settings)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(10, 11, 633, 91))
+        self.verticalLayout_9 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_54 = QHBoxLayout()
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
-        self.lb_valueOfError = QLabel(self.widget)
+        self.lb_valueOfError = QLabel(self.layoutWidget)
         self.lb_valueOfError.setObjectName(u"lb_valueOfError")
         self.lb_valueOfError.setMargin(0)
 
         self.horizontalLayout_54.addWidget(self.lb_valueOfError)
 
-        self.sl_ValueOfError = QSlider(self.widget)
+        self.sl_ValueOfError = QSlider(self.layoutWidget)
         self.sl_ValueOfError.setObjectName(u"sl_ValueOfError")
         sizePolicy2.setHeightForWidth(self.sl_ValueOfError.sizePolicy().hasHeightForWidth())
         self.sl_ValueOfError.setSizePolicy(sizePolicy2)
@@ -2891,7 +2891,7 @@ class Ui_mainWindow(object):
 
         self.horizontalLayout_54.addWidget(self.sl_ValueOfError)
 
-        self.lb_error_settings = QLabel(self.widget)
+        self.lb_error_settings = QLabel(self.layoutWidget)
         self.lb_error_settings.setObjectName(u"lb_error_settings")
         sizePolicy10.setHeightForWidth(self.lb_error_settings.sizePolicy().hasHeightForWidth())
         self.lb_error_settings.setSizePolicy(sizePolicy10)
@@ -2902,7 +2902,7 @@ class Ui_mainWindow(object):
 
         self.verticalLayout_9.addLayout(self.horizontalLayout_54)
 
-        self.bt_for_teacher = QPushButton(self.widget)
+        self.bt_for_teacher = QPushButton(self.layoutWidget)
         self.bt_for_teacher.setObjectName(u"bt_for_teacher")
         self.bt_for_teacher.setEnabled(False)
 
@@ -2944,7 +2944,7 @@ class Ui_mainWindow(object):
         self.groupBox_3.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435", None))
         self.Power.setText(QCoreApplication.translate("mainWindow", u"\u041c\u043e\u0449\u043d\u043e\u0441\u0442\u044c \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043b\u044f ", None))
         self.Voltage.setText(QCoreApplication.translate("mainWindow", u"\u041d\u043e\u043c\u0438\u043d\u0430\u043b\u044c\u043d\u043e\u0435 \u043d\u0430\u043f\u0440\u044f\u0436\u0435\u043d\u0438\u0435", None))
-        self.polarity.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043b\u044f\u0440\u043d\u043e\u0441\u0442\u044c", None))
+        self.polarity.setText(QCoreApplication.translate("mainWindow", u"\u0427\u0438\u0441\u043b\u043e \u043f\u043e\u043b\u044e\u0441\u043e\u0432", None))
         self.label_7.setText(QCoreApplication.translate("mainWindow", u"\u041a\u043b\u0430\u0441\u0441 \u043d\u0430\u0433\u0440\u0435\u0432\u043e\u0441\u0442\u043e\u0439\u043a\u043e\u0441\u0442\u0438", None))
         self.Snom.setText(QCoreApplication.translate("mainWindow", u"S_\u043d\u043e\u043c\u0438\u043d\u0430\u043b\u044c\u043d\u043e\u0435", None))
         self.linePower.setItemText(0, QCoreApplication.translate("mainWindow", u"0.06", None))
@@ -3585,7 +3585,7 @@ class Ui_mainWindow(object):
         self.lb_Z_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Z<span style=\" vertical-align:sub;\">2</span> =</p></body></html>", None))
         self.le_Z_2.setText(QCoreApplication.translate("mainWindow", u"38", None))
         self.lb_sigma.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-weight:700; color:#202122; background-color:#ffffff;\">\u03b4 </span>=</p></body></html>", None))
-        self.le_sigma.setText(QCoreApplication.translate("mainWindow", u"0.55", None))
+        self.le_delta.setText(QCoreApplication.translate("mainWindow", u"0.55", None))
         self.lb_t_z_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>t<span style=\" vertical-align:sub;\">z1</span> =</p></body></html>", None))
         self.le_t_z_1.setText(QCoreApplication.translate("mainWindow", u"0.0136", None))
         self.lb_b_sh.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">\u0448</span> =</p></body></html>", None))

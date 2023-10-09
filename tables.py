@@ -3,7 +3,7 @@ import math
 from matplotlib import pyplot as plt
 
 from calculate import ro_115_al, f, k_beta_shtrih, a_harmonic
-from func import phi_func, phi_shtrih_func, k_sig_func, LinearInterpolation, SplineCubicInterpolate, Lagrange
+from func import phi_func, phi_shtrih_func, k_del_func, LinearInterpolation, SplineCubicInterpolate, Lagrange
 
 class table1:
     a_shtrih = a = b = b_shtrih = r_2_shtrih = U = I_0_a = I_nu = C_1 = r_1 = P_st = P_meh = 0
@@ -325,12 +325,12 @@ class table2:
 
 
 class table3:
-    C_N = k_y_1 = u_p = k_ob = X_1 = Z_1 = Z_2 = sigma = t_z_1 = b_sh = h_sh = Lamda_p_1 = Lamda_d_1 = Lamda_l_1 = x_1_2_p = t_z_2 = b_sh_2 = Lamda_p_2 = Lamda_l_2 = Lamda_d_2 = h_sh_shtrih = X_2_shtrih = r_1 = r_2_Ksi_shtrih = U = I_1_p = I_1_nom = I2_shtrih = s_nom = h_k = Lamda_p_2_Ksi = K_R = 0
+    C_N = k_y_1 = u_p = k_ob = X_1 = Z_1 = Z_2 = delta = t_z_1 = b_sh = h_sh = Lamda_p_1 = Lamda_d_1 = Lamda_l_1 = x_1_2_p = t_z_2 = b_sh_2 = Lamda_p_2 = Lamda_l_2 = Lamda_d_2 = h_sh_shtrih = X_2_shtrih = r_1 = r_2_Ksi_shtrih = U = I_1_p = I_1_nom = I2_shtrih = s_nom = h_k = Lamda_p_2_Ksi = K_R = 0
     s_kr = count = 0
     table_2 = 0
     s_shtrih = 0
 
-    def __init__(self, _C_N, _k_y_1, _u_p, _k_ob, _X_1, _Z_1, _Z_2, _sigma, _t_z_1, _b_sh, _h_sh, _Lamda_p_1, _Lamda_d_1, _Lamda_l_1, _x_1_2_p, _t_z_2, _b_sh_2, _Lamda_p_2, _Lamda_l_2, _Lamda_d_2, _h_sh_shtrih, _X_2_shtrih, _r_1, _r_2_Ksi_shtrih, _U, _I_1_p, _I_1_nom, _I2_shtrih, _s_nom, _h_k, _Lamda_p_2_Ksi, _K_R, table_2_student):
+    def __init__(self, _C_N, _k_y_1, _u_p, _k_ob, _X_1, _Z_1, _Z_2, _delta, _t_z_1, _b_sh, _h_sh, _Lamda_p_1, _Lamda_d_1, _Lamda_l_1, _x_1_2_p, _t_z_2, _b_sh_2, _Lamda_p_2, _Lamda_l_2, _Lamda_d_2, _h_sh_shtrih, _X_2_shtrih, _r_1, _r_2_Ksi_shtrih, _U, _I_1_p, _I_1_nom, _I2_shtrih, _s_nom, _h_k, _Lamda_p_2_Ksi, _K_R, table_2_student):
         self.C_N = _C_N
         self.k_y_1 = _k_y_1
         self.u_p = _u_p
@@ -338,7 +338,7 @@ class table3:
         self.X_1 = _X_1
         self.Z_1 = _Z_1
         self.Z_2 = _Z_2
-        self.sigma = _sigma
+        self.delta = _delta
         self.t_z_1 = _t_z_1
         self.b_sh = _b_sh
         self.h_sh = _h_sh
@@ -381,10 +381,10 @@ class table3:
         return 0.7 * (((self.I_1_p * self.f1_3() * self.u_p) / a_harmonic) * (k_beta_shtrih + self.k_y_1 * self.k_ob * (self.Z_1 / self.Z_2)))
 
     def f3_3(self):
-        return (self.f2_3() * 10 ** -6) / (1.6 * self.sigma * 10 ** -3 * self.C_N)
+        return (self.f2_3() * 10 ** -6) / (1.6 * self.delta * 10 ** -3 * self.C_N)
 
     def f4_3(self):
-        return k_sig_func(self.f3_3())
+        return k_del_func(self.f3_3())
 
     def f5_3(self):
         return (self.t_z_1 * 10 ** 3 - self.b_sh) * (1 - self.f4_3())
