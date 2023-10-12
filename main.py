@@ -56,8 +56,11 @@ class MainWindow(QMainWindow):
         expected_password = 'Y9vV7pz6VS!O(VDI)vDQC8h'
 
         if entered_password == expected_password:
-            self.calc_obj.RunWithComments()
             self.dialog.accept()
+            name = QFileDialog.getSaveFileName(
+                self, 'Сохранить файл', '', 'txt (*.txt)', )
+            self.calc_obj.RunWithComments(name)
+
             msgBox = QMessageBox()
             msgBox.setText("Файл создан")
             msgBox.exec()

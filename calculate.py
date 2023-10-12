@@ -1194,7 +1194,7 @@ class MainProgram:
 
     ##########################################################################################################################################################################################
 
-    def RunWithComments(self):
+    def RunWithComments(self,name):
         k_uk = math.sin((math.pi / 2) * self.beta_shtrih)
         cosPhi = cosPhi_func(self._2p, self.P_2)
         kpd = kpd_func(self._2p, self.P_2)
@@ -2359,7 +2359,7 @@ class MainProgram:
             elif numeration == 20:
                 result = f20()
 
-        with open('file.txt', 'w') as f:
+        with open(name[0], 'w') as f:
 
             f.write("Пункт: 2\n")
             f.write(f"k_D = {k_D}\n")
