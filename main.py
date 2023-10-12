@@ -19,7 +19,7 @@ incorrect_color = QColor(255, 216, 216)
 
 class MainWindow(QMainWindow):
     table_2_student = table_1_student = table_3_student = None
-    aboba, table_1, table_2, table_3 = None, None, None, None
+    calc_obj, table_1, table_2, table_3 = None, None, None, None
     dialog, layout, password_input, submit_button = None, None, None, None
 
     def __init__(self, parent=None):
@@ -56,7 +56,7 @@ class MainWindow(QMainWindow):
         expected_password = 'Y9vV7pz6VS!O(VDI)vDQC8h'
 
         if entered_password == expected_password:
-            self.aboba.RunWithComments()
+            self.calc_obj.RunWithComments()
             self.dialog.accept()
             msgBox = QMessageBox()
             msgBox.setText("Файл создан")
@@ -173,9 +173,9 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget.item(i, 8).setFlags(
                 self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
 
-            if (self.table_1.calculateTable(i, self.aboba.s_nom) * (
+            if (self.table_1.calculateTable(i, self.calc_obj.s_nom) * (
                     1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_1.calculateTable(i,
-                                                                                                            self.aboba.s_nom) * (
+                                                                                                            self.calc_obj.s_nom) * (
                     1 + (self.ui.sl_ValueOfError.value() / 100))):
                 self.ui.tableWidget.item(i, 8).setBackground(correct_color)
                 count += 1
@@ -297,8 +297,8 @@ class MainWindow(QMainWindow):
             msgBox.exec()
             return
         try:
-            self.aboba = MainProgram(P_2, U, _2p, heatClass, S_nom)
-            self.aboba.Run()
+            self.calc_obj = MainProgram(P_2, U, _2p, heatClass, S_nom)
+            self.calc_obj.Run()
         except KeyError:
             msgBox = QMessageBox()
             msgBox.setText(
@@ -321,27 +321,27 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget.item(0, 8).setText(str(round(S_nom, 3)))
 
         self.table_1 = table1(
-            self.aboba.a, self.aboba.a_shtrih, self.aboba.r_2_shtrih, self.aboba.b, self.aboba.b_shtrih, self.aboba.U,
-            self.aboba.I_0_a, self.aboba.I_nu, self.aboba.C_1, self.aboba.r_1, self.aboba.P_st, self.aboba.P_meh
+            self.calc_obj.a, self.calc_obj.a_shtrih, self.calc_obj.r_2_shtrih, self.calc_obj.b, self.calc_obj.b_shtrih, self.calc_obj.U,
+            self.calc_obj.I_0_a, self.calc_obj.I_nu, self.calc_obj.C_1, self.calc_obj.r_1, self.calc_obj.P_st, self.calc_obj.P_meh
         )
         self.table_2 = table2(
-            self.aboba.h_c, self.aboba.h_p_2, self.aboba.h_sh, self.aboba.h_sh_shtrih, self.aboba.b_1_r,
-            self.aboba.b_2_r, self.aboba.h_1, self.aboba.q_c, self.aboba.r_c, self.aboba.U, self.aboba.r_1,
-            self.aboba.r_2, self.aboba.r_2_shtrih, self.aboba.h_0,
-            self.aboba.b_sh_2[self.aboba.h], self.aboba.Lamda_p_2, self.aboba.Lamda_l_2, self.aboba.Lamda_d_2,
-            self.aboba.X_2_shtrih, self.aboba.x_1_2_p, self.aboba.c_1_p, self.aboba.X_1
+            self.calc_obj.h_c, self.calc_obj.h_p_2, self.calc_obj.h_sh, self.calc_obj.h_sh_shtrih, self.calc_obj.b_1_r,
+            self.calc_obj.b_2_r, self.calc_obj.h_1, self.calc_obj.q_c, self.calc_obj.r_c, self.calc_obj.U, self.calc_obj.r_1,
+            self.calc_obj.r_2, self.calc_obj.r_2_shtrih, self.calc_obj.h_0,
+            self.calc_obj.b_sh_2[self.calc_obj.h], self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
+            self.calc_obj.X_2_shtrih, self.calc_obj.x_1_2_p, self.calc_obj.c_1_p, self.calc_obj.X_1
         )
         self.table_3 = table3(
-            self.aboba.C_N, self.aboba.k_y_1, self.aboba.u_p, self.aboba.k_ob, self.aboba.X_1, self.aboba.Z_1,
-            self.aboba.Z_2,
-            self.aboba.delta, self.aboba.t_z_1, self.aboba.b_sh[
-                self.aboba.h], self.aboba.h_sh_r[self.aboba.h],
-            self.aboba.Lamda_p_1, self.aboba.Lamda_d_1, self.aboba.Lamda_l_1, self.aboba.x_1_2_p, self.aboba.t_z_2,
-            self.aboba.b_sh_2[self.aboba.h], self.aboba.Lamda_p_2, self.aboba.Lamda_l_2, self.aboba.Lamda_d_2,
-            self.aboba.h_sh_shtrih, self.aboba.X_2_shtrih, self.aboba.r_1, self.aboba.r_2_Ksi_shtrih, self.aboba.U,
-            self.aboba.I_1_p, self.aboba.I_1_nom, self.table_1.calculateTable(
-                11, self.aboba.s_nom), self.aboba.s_nom,
-            self.aboba.h_k, self.aboba.Lamda_p_2_Ksi, self.aboba.K_R, self.table_2
+            self.calc_obj.C_N, self.calc_obj.k_y_1, self.calc_obj.u_p, self.calc_obj.k_ob, self.calc_obj.X_1, self.calc_obj.Z_1,
+            self.calc_obj.Z_2,
+            self.calc_obj.delta, self.calc_obj.t_z_1, self.calc_obj.b_sh[
+                self.calc_obj.h], self.calc_obj.h_sh_r[self.calc_obj.h],
+            self.calc_obj.Lamda_p_1, self.calc_obj.Lamda_d_1, self.calc_obj.Lamda_l_1, self.calc_obj.x_1_2_p, self.calc_obj.t_z_2,
+            self.calc_obj.b_sh_2[self.calc_obj.h], self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
+            self.calc_obj.h_sh_shtrih, self.calc_obj.X_2_shtrih, self.calc_obj.r_1, self.calc_obj.r_2_Ksi_shtrih, self.calc_obj.U,
+            self.calc_obj.I_1_p, self.calc_obj.I_1_nom, self.table_1.calculateTable(
+                11, self.calc_obj.s_nom), self.calc_obj.s_nom,
+            self.calc_obj.h_k, self.calc_obj.Lamda_p_2_Ksi, self.calc_obj.K_R, self.table_2
         )
 
         self.ui.tab.setEnabled(True)
@@ -435,7 +435,7 @@ class MainWindow(QMainWindow):
         df_list.append(list([]))
 
         df_list.append(list(
-            [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}',
+            [f'P_2 = {self.calc_obj.P_2}', f'U = {self.calc_obj.U}', f'2p = {self.calc_obj._2p}',
              f'I0a = {round(self.table_1_student.I_0_a, 3)}', f'I0p = {round(self.table_1_student.I_nu, 3)}',
              f'Pст+Pмех = {round(self.table_1_student.P_st + self.table_1_student.P_meh, 3)}',
              f'r1 = {round(self.table_1_student.r_1, 3)}', f"r'2 = {round(self.table_1_student.r_2_shtrih, 3)}",
@@ -477,13 +477,13 @@ class MainWindow(QMainWindow):
         df_list.append(list([]))
 
         df_list.append(list(
-            [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}',
-             f"I'2ном = {round(self.table_1_student.calculateTable(11,self.aboba.s_nom), 3)}",
+            [f'P_2 = {self.calc_obj.P_2}', f'U = {self.calc_obj.U}', f'2p = {self.calc_obj._2p}',
+             f"I'2ном = {round(self.table_1_student.calculateTable(11,self.calc_obj.s_nom), 3)}",
              f'x1 = {round(self.table_2_student.X_1, 3)}', f"x'2 = {round(self.table_2_student.X_2_shtrih, 3)}",
              f'r1 = {round(self.table_2_student.r_1, 3)}', f"r'2 = {round(self.table_2_student.r_2_shtrih, 3)}"
              ]))
         df_list.append(list(
-            [f'c1п = {round(self.table_2_student.c_1_p, 3)}', f" x12п = {round(self.table_2_student.x_1_2_p, 3)}", f'sном = {round(self.aboba.s_nom, 3)}']))
+            [f'c1п = {round(self.table_2_student.c_1_p, 3)}', f" x12п = {round(self.table_2_student.x_1_2_p, 3)}", f'sном = {round(self.calc_obj.s_nom, 3)}']))
 
         df = pd.DataFrame(df_list, columns=headers)
         name = QFileDialog.getSaveFileName(
@@ -518,14 +518,14 @@ class MainWindow(QMainWindow):
         df_list.append(list([]))
 
         df_list.append(list(
-            [f'P_2 = {self.aboba.P_2}', f'U = {self.aboba.U}', f'2p = {self.aboba._2p}', f"I1ном = {round(self.table_3_student.I_1_nom, 3)}",
-             f"I'2ном = {round(self.table_1_student.calculateTable(11,self.aboba.s_nom), 3)}",
+            [f'P_2 = {self.calc_obj.P_2}', f'U = {self.calc_obj.U}', f'2p = {self.calc_obj._2p}', f"I1ном = {round(self.table_3_student.I_1_nom, 3)}",
+             f"I'2ном = {round(self.table_1_student.calculateTable(11,self.calc_obj.s_nom), 3)}",
              f'x1 = {round(self.table_3_student.X_1, 3)}', f"x'2 = {round(self.table_3_student.X_2_shtrih, 3)}",
              f'r1 = {round(self.table_3_student.r_1, 3)}',
              ]))
         df_list.append(list(
             [f"r'2 = {round(self.table_2_student.r_2_shtrih, 3)}",
-             f" x12п = {round(self.table_3_student.x_1_2_p, 3)}", f'sном = {round(self.aboba.s_nom, 3)}',
+             f" x12п = {round(self.table_3_student.x_1_2_p, 3)}", f'sном = {round(self.calc_obj.s_nom, 3)}',
              f"C_N = {round(self.table_3_student.C_N, 3)}"]))
 
         df = pd.DataFrame(df_list, columns=headers)
@@ -699,7 +699,7 @@ class MainWindow(QMainWindow):
                                           float(self.ui.le_r2_shtrih.text()), float(
                                               self.ui.le_b.text()),
                                           float(self.ui.le_b_shtrih.text(
-                                          )), self.aboba.U, float(self.ui.le_I0a.text()), float(self.ui.le_I0p.text()),
+                                          )), self.calc_obj.U, float(self.ui.le_I0a.text()), float(self.ui.le_I0p.text()),
                                           float(self.ui.le_c1.text()), float(
                                               self.ui.le_r1.text()),
                                           float(self.ui.le_Pst.text()), float(self.ui.le_Pmeh.text()))
@@ -723,7 +723,7 @@ class MainWindow(QMainWindow):
                 float(self.ui.le_h_sh_shtrih.text()), float(
                     self.ui.le_b_1_r.text()), float(self.ui.le_b_2_r.text()),
                 float(self.ui.le_h_1.text()), float(self.ui.le_q_c.text()
-                                                    ), float(self.ui.le_r_c.text()), self.aboba.U,
+                                                    ), float(self.ui.le_r_c.text()), self.calc_obj.U,
                 float(self.ui.le_r1.text()), float(
                     self.ui.le_r_2.text()), float(self.ui.le_r2_shtrih.text()), float(self.ui.le_h_0.text()),
                 float(self.ui.le_b_sh_2.text()),
@@ -767,11 +767,11 @@ class MainWindow(QMainWindow):
                     self.ui.le_h_sh_shtrih.text()),
                 float(self.ui.le_X_2_shtrih.text()), float(
                     self.ui.le_r1.text()),
-                float(self.ui.le_r_2_Ksi_shtrih.text()), self.aboba.U, float(
+                float(self.ui.le_r_2_Ksi_shtrih.text()), self.calc_obj.U, float(
                     self.ui.le_I_1_p.text()),
                 float(self.ui.le_I_1_nom.text()), self.table_1.calculateTable(
-                    11, self.aboba.s_nom),
-                self.aboba.s_nom, float(self.ui.le_h_k.text()), float(
+                    11, self.calc_obj.s_nom),
+                self.calc_obj.s_nom, float(self.ui.le_h_k.text()), float(
                     self.ui.le_Lamda_p_2_Ksi.text()),
                 float(self.ui.le_K_R.text()), self.table_2_student
             )
@@ -823,14 +823,14 @@ class MainWindow(QMainWindow):
 
     def thermalcalculate(self):
         k_ro = {"F": 1.07, "B": 1.15, "H": 1.45}
-        if (self.aboba.h <= 132):
+        if (self.calc_obj.h <= 132):
             m_shtrih = 1.8
         else:
             m_shtrih = 2.5
         try:
-            tc = ThermalCalculation(self.aboba.K, k_ro[self.aboba.heatClass],
+            tc = ThermalCalculation(self.calc_obj.K, k_ro[self.calc_obj.heatClass],
                                     self.table_1_student.calculateTable(
-                                        13, self.aboba.s_nom),
+                                        13, self.calc_obj.s_nom),
                                     float(self.ui.le_P_st_main.text()),
                                     float(self.ui.le_D.text()), float(
                                         self.ui.le_l_1.text()), float(self.ui.le_a_1.text()),
@@ -846,12 +846,12 @@ class MainWindow(QMainWindow):
                                     float(self.ui.le_l_vbl.text()), float(
                                         self.ui.le_l_avg_1.text()),
                                     self.table_1_student.calculateTable(
-                                        16, self.aboba.s_nom),
+                                        16, self.calc_obj.s_nom),
                                     self.table_1_student.calculateTable(
-                                        14, self.aboba.s_nom),
+                                        14, self.calc_obj.s_nom),
                                     float(self.ui.le_Pmeh.text()),
                                     float(self.ui.le_s_kor.text()), float(
-                                        self.ui.le_a_v.text()), m_shtrih, self.aboba.n,
+                                        self.ui.le_a_v.text()), m_shtrih, self.calc_obj.n,
                                     float(self.ui.le_D_a.text()))
             self.ui.lb_delta_nu_pov_1.setText(
                 str(round(tc.delta_nu_pov_1, 3)) + " \u00b0C")
