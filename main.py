@@ -175,7 +175,6 @@ class MainWindow(QMainWindow):
 
             self.ui.tableWidget.item(i, 8).setFlags(
                 self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
-
             if (self.table_1.calculateTable(i, self.calc_obj.s_nom) * (
                     1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_1.calculateTable(i,
                                                                                                             self.calc_obj.s_nom) * (
@@ -331,16 +330,15 @@ class MainWindow(QMainWindow):
             self.calc_obj.h_c, self.calc_obj.h_p_2, self.calc_obj.h_sh, self.calc_obj.h_sh_shtrih, self.calc_obj.b_1_r,
             self.calc_obj.b_2_r, self.calc_obj.h_1, self.calc_obj.q_c, self.calc_obj.r_c, self.calc_obj.U, self.calc_obj.r_1,
             self.calc_obj.r_2, self.calc_obj.r_2_shtrih, self.calc_obj.h_0,
-            self.calc_obj.b_sh_2[self.calc_obj.h], self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
+            self.calc_obj.b_sh_2, self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
             self.calc_obj.X_2_shtrih, self.calc_obj.x_1_2_p, self.calc_obj.c_1_p, self.calc_obj.X_1
         )
         self.table_3 = table3(
             self.calc_obj.C_N, self.calc_obj.k_y_1, self.calc_obj.u_p, self.calc_obj.k_ob, self.calc_obj.X_1, self.calc_obj.Z_1,
             self.calc_obj.Z_2,
-            self.calc_obj.delta, self.calc_obj.t_z_1, self.calc_obj.b_sh[
-                self.calc_obj.h], self.calc_obj.h_sh_r[self.calc_obj.h],
+            self.calc_obj.delta, self.calc_obj.t_z_1, self.calc_obj.b_sh, self.calc_obj.h_sh_r,
             self.calc_obj.Lamda_p_1, self.calc_obj.Lamda_d_1, self.calc_obj.Lamda_l_1, self.calc_obj.x_1_2_p, self.calc_obj.t_z_2,
-            self.calc_obj.b_sh_2[self.calc_obj.h], self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
+            self.calc_obj.b_sh_2, self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
             self.calc_obj.h_sh_shtrih, self.calc_obj.X_2_shtrih, self.calc_obj.r_1, self.calc_obj.r_2_Ksi_shtrih, self.calc_obj.U,
             self.calc_obj.I_1_p, self.calc_obj.I_1_nom, self.table_1.calculateTable(
                 11, self.calc_obj.s_nom), self.calc_obj.s_nom,
@@ -405,9 +403,9 @@ class MainWindow(QMainWindow):
                 if (i % 2):
                     self.ui.tableWidget_3.item(
                         i, j).setBackground(QColor(230, 230, 230))
-                else:
-                    self.ui.tableWidget.item(i, j).setBackground(
-                        QColor(255, 255, 255))
+                #else:
+                    # self.ui.tableWidget.item(i, j).setBackground(
+                    #     QColor(255, 255, 255))
                 if (j > 2):
                     self.ui.tableWidget_3.item(
                         i, j).setFlags(~Qt.ItemIsEditable)

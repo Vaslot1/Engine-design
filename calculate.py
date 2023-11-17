@@ -104,16 +104,16 @@ class MainProgram:
 
         # * __1__
         h_shtrih = {
-            # 2: (p2_up(self.P_2) + p2_down(self.P_2)) / 2,
+            2: (p2_up(self.P_2) + p2_down(self.P_2)) / 2,
             4: (p6_down__p4_up(self.P_2) + p4_down(self.P_2)) / 2,
-            # 6: (p8_down__p6_up(self.P_2) + p6_down__p4_up(self.P_2) / 2),
+            6: (p8_down__p6_up(self.P_2) + p6_down__p4_up(self.P_2)) / 2,
             # 8: (p8_up(self.P_2) + p8_down__p6_up(self.P_2)) / 2,
             10: 0,
             12: 0
         }[self._2p]
         self.h = FindApproximateWithinBounds(
             [56, 63, 71, 80, 90, 100, 112, 132, 160,
-                180, 200, 225, 250, 280, 315, 355],
+             180, 200, 225, 250, 280, 315, 355],
             h_shtrih
         )
         D_a = {
@@ -135,16 +135,44 @@ class MainProgram:
             355: 0.66
         }[self.h]
 
+        # print(
+        #     Back.BLUE + "Пункт: ТЗ" + Back.RESET)  #################################################################################
+        # print("a_gor =", a_harmonic)
+        # print("m =", self.m)
+        # print("f =", self.f)
+        # print("coef_ukorochenia =", k_uk)
+        # print("P_2 =", self.P_2)
+        # print("U =", self.U)
+        # print("cosPhi =", cosPhi)
+        # print("kpd =", kpd)
+        # print("2p =", self._2p, end='\n\n')
+
+        # print(
+        #     Back.BLUE + "Пункт: 1" + Back.RESET)  #################################################################################
+        # print("h_shtrih =", h_shtrih)
+        # print("h =", self.h)
+        # print("D_a =", D_a, end='\n\n')
+
+        list = []
+        # f.write(f"h=, {self.h}")
+
         # * __2__
         k_D = {
             2: 0.56,
             4: 0.62,
-            6: 0.71,
+            6: 0.7,
             8: 0.73,
             10: 0.76,
             12: 0.76
         }[self._2p]
-        k_D = 0.62
+        k_D_max = {
+            2: 0.56,
+            4: 0.685,
+            6: 0.72,
+            8: 0.73,
+            10: 0.76,
+            12: 0.76
+        }[self._2p]
         sumator = 0.005
         sumator_D_a = 0.001
         # НЦ
@@ -173,21 +201,31 @@ class MainProgram:
         while step_h <= 300:
             self.h = FindApproximateWithinBounds(
                 [56, 63, 71, 80, 90, 100, 112, 132, 160,
-                    180, 200, 225, 250, 280, 315, 355],
+                 180, 200, 225, 250, 280, 315, 355],
                 h_shtrih + step_h
             )
 
-            while D_a != D_a_max[self.h] + sumator_D_a:
+            while D_a <= D_a_max[self.h]:
+                print(D_a)
+
                 D_a = round(D_a, 3)
-                k_D = 0.62
-                while (k_D != 0.685):
+                k_D = {
+                    2: 0.56,
+                    4: 0.62,
+                    6: 0.7,
+                    8: 0.73,
+                    10: 0.76,
+                    12: 0.76
+                }[self._2p]
+                while (k_D != k_D_max):
+
                     D = round(k_D * D_a, 3)
 
                     # * __3__
                     tau = (math.pi * D) / self._2p
 
                     # * __4__
-                    k_e = K_e_func(D_a)
+                    k_e = K_e_func(self._2p, D_a)
                     P_shtrih = (self.P_2 * 1000) * (k_e / (kpd * cosPhi))
 
                     # * __5__
@@ -195,6 +233,7 @@ class MainProgram:
                                 A__up(self._2p, D_a)) / 2
                     B_del_shtrih = (B_del__down(self._2p, D_a) +
                                     B_del__up(self._2p, D_a)) / 2.1
+
                     # * __6__
                     if self.h <= 90:  # пока не сделали,костыль
                         t_z_1_max = round(t_z1__1_max(tau), 3)
@@ -220,7 +259,7 @@ class MainProgram:
 
                     q_1 = math.ceil(self.Z_1 / (self._2p * self.m))
                     k_ras = (math.sin(math.pi / (2 * self.m))) / \
-                        (q_1 * math.sin(math.pi / (2 * self.m * q_1)))
+                            (q_1 * math.sin(math.pi / (2 * self.m * q_1)))
 
                     self.k_ob = k_ras * k_uk
 
@@ -229,7 +268,7 @@ class MainProgram:
                     k_B = math.pi / (2 * math.sqrt(2))
                     omega = math.pi * 2 * self.f / p
                     l_del = (P_shtrih / (k_B * D ** 2 * omega *
-                             self.k_ob * A_shtrih * B_del_shtrih))
+                                         self.k_ob * A_shtrih * B_del_shtrih))
 
                     # ? __8__
                     lamda = round(l_del / tau, 1)
@@ -243,9 +282,9 @@ class MainProgram:
 
                     # * __12__
                     self.I_1_nom = (self.P_2 * 1000) / \
-                        (self.m * self.U * cosPhi * kpd)
+                                   (self.m * self.U * cosPhi * kpd)
                     u_shtrih_p = (math.pi * D * A_shtrih) / \
-                        (self.I_1_nom * self.Z_1)
+                                 (self.I_1_nom * self.Z_1)
 
                     # * __13__
                     if self.P_2 <= 15:
@@ -258,18 +297,18 @@ class MainProgram:
 
                     # ? __14__
                     w_1 = (self.u_p * self.Z_1) / \
-                        (2 * self.a_harmonic * self.m)
+                          (2 * self.a_harmonic * self.m)
                     A = (2 * self.I_1_nom * w_1 * self.m) / (math.pi * D)
                     Ph = (k_e * self.U) / (4 * k_B * w_1 * self.k_ob * self.f)
                     B_del = ((self._2p / 2) * Ph) / (D * l_del)
 
                     # * __15__
                     J_1_shtrih = (
-                        (AJ__up(self._2p, D_a) + AJ__down(self._2p, D_a)) / 2) / A
+                                         (AJ__up(self._2p, D_a) + AJ__down(self._2p, D_a)) / 2) / A
 
                     # * __16__
                     q_ef_shtrih = (
-                        self.I_1_nom / (self.a_harmonic * J_1_shtrih)) * 10 ** 6
+                                          self.I_1_nom / (self.a_harmonic * J_1_shtrih)) * 10 ** 6
 
                     # * __17__
                     n_el = 0
@@ -299,7 +338,8 @@ class MainProgram:
                         q_el = FindApproximateWithinBounds(
                             [3.369, 3.561, 3.785, 3.887, 4.025, 4.397, 4.585, 4.825, 4.992, 5.14, 5.465,
                              5.672, 5.785, 6.185, 6.437, 6.585, 6.985, 7.287, 7.385, 7.785, 8.137, 8.265,
-                             9.157, 9.745, 9.385, 9.865, 10.35, 10.51, 11.15, 11.71, 11.79, 12.59, 13.24, 13.39, 14.19, 14.94, 14.99, 15.79, 16.75, 16.64, 17.71, 18.67, 18.68, 19.79, 20.89],
+                             9.157, 9.745, 9.385, 9.865, 10.35, 10.51, 11.15, 11.71, 11.79, 12.59, 13.24, 13.39, 14.19,
+                             14.94, 14.99, 15.79, 16.75, 16.64, 17.71, 18.67, 18.68, 19.79, 20.89],
                             q_el_shtrih
                         )
                     q_ef = n_el * q_el
@@ -331,17 +371,31 @@ class MainProgram:
                     h_a = Ph / (2 * B_a * l_del * k_c)
 
                     # * __20__
-                    self.b_sh = {56: 1.8, 63: 1.8, 71: 2, 80: 3, 90: 3, 100: 3.5, 112: 3.5, 132: 3.5, 160: 3.7,
-                                 180: 3.7, 200: 3.7,
-                                 225: 3.7,
-                                 250: 3.7, 280: 3.7, 315: 3.7, 355: 3.7}
+                    self.b_sh = {
+                        56: 1.8,
+                        63: 1.8,
+                        71: 2,
+                        80: 3,
+                        90: 3,
+                        100: 3.5,
+                        112: 3.5,
+                        132: 3.5,
+                        160: 3.7,
+                        180: 3.7,
+                        200: 3.7,
+                        225: 3.7,
+                        250: 3.7,
+                        280: 3.7,
+                        315: 3.7,
+                        355: 3.7
+                    }[self.h]
                     self.h_sh = 0.8
                     h_p = ((D_a - D) / 2 - h_a) * 10 ** 3
-                    b_1 = (math.pi * ((D * 10 ** 3) + 2 * self.h_sh - self.b_sh[self.h]) - self.Z_1 * b_z_1) / (
-                        self.Z_1 - math.pi)
+                    b_1 = (math.pi * ((D * 10 ** 3) + 2 * self.h_sh - self.b_sh) - self.Z_1 * b_z_1) / (
+                            self.Z_1 - math.pi)
                     b_2 = ((math.pi * ((D * 10 ** 3) + 2 * h_p)) /
                            self.Z_1) - b_z_1
-                    h_p_k = h_p - (self.h_sh + ((b_1 - self.b_sh[self.h]) / 2))
+                    h_p_k = h_p - (self.h_sh + ((b_1 - self.b_sh) / 2))
 
                     # * __21__
                     delta_b = 0
@@ -380,7 +434,7 @@ class MainProgram:
                         b_iz = 0.55
                     S_iz = b_iz * (2 * h_p + b_1 + b_2)
                     S_p_shtrih = ((b_1_shtrih + b_2_shtrih) / 2) * \
-                        h_p_k_shtrih - (S_iz + S_pr)
+                                 h_p_k_shtrih - (S_iz + S_pr)
 
                     # ? __22__
                     if (self.P_2 < 110):
@@ -448,11 +502,18 @@ class MainProgram:
                     else:
                         d_iz = 0
                         k_z = 0
-                    if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3) or (0.6 <= lamda <= 1 and self.h >= 280):
-                        exit_from_inf_while = True
-                        break
-                    else:
-                        k_D += sumator
+                    if self._2p == 4:
+                        if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3) or (0.6 <= lamda <= 1 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                        else:
+                            k_D += sumator
+                    elif self._2p == 6:
+                        if (0.5 <= k_z <= 0.7 and 0.9 <= lamda <= 1.7) or (0.9 <= lamda <= 1.3 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                        else:
+                            k_D += sumator
                 if (0.7 <= k_z <= 0.75) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
                     if (0.7 <= lamda <= 1.3 and self.h <= 250) or (0.6 <= lamda <= 1 and self.h >= 280):
                         exit_from_inf_while = True
@@ -465,16 +526,25 @@ class MainProgram:
             else:
                 step_h += 10
                 number_of_iteration += 1
-
-        if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
-                (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
-            raise Exception("Some exception")
-            exit(1)
-        if (0.7 <= lamda <= 1.3):
-            pass
-        else:
-            exit()
-        if (A_shtrih * 0.9 < A < A_shtrih * 1.1 or B_del_shtrih * 0.9 < B_del < B_del_shtrih * 1.1):
+        if self._2p == 4:
+            if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
+                    (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
+                raise Exception("Some exception")
+                exit(1)
+            if (0.7 <= lamda <= 1.3):
+                pass
+            else:
+                exit()
+        elif self._2p == 6:
+            if (0.5 > k_z > 0.7 or ((lamda < 0.9 or lamda > 1.7) and self.h <= 250) or (
+                    (lamda < 0.9 or lamda > 1.3) and self.h >= 280)) and self.P_2 < 100:
+                raise Exception("Some exception")
+                exit(1)
+            if (0.9 <= lamda <= 1.7):
+                pass
+            else:
+                exit()
+        if (A_shtrih * 0.85 < A < A_shtrih * 1.15 or B_del_shtrih * 0.85 < B_del < B_del_shtrih * 1.15):
             pass
         else:
             exit()
@@ -529,33 +599,61 @@ class MainProgram:
         q_p = I_2 / J_2
 
         # * __31__
-        self.b_sh_2 = {56: 1.0, 63: 1.0, 71: 1.0, 80: 1.0, 90: 1.0, 100: 1.0, 112: 1.5, 132: 1.5, 160: 1.5, 180: 1.5,
-                       200: 1.5,
-                       225: 1.5,
-                       250: 1.5, 280: 1.5, 315: 1.5, 355: 1.5}
+        self.b_sh_2 = {
+            56: 1.0,
+            63: 1.0,
+            71: 1.0,
+            80: 1.0,
+            90: 1.0,
+            100: 1.0,
+            112: 1.5,
+            132: 1.5,
+            160: 1.5,
+            180: 1.5,
+            200: 1.5,
+            225: 1.5,
+            250: 1.5,
+            280: 1.5,
+            315: 1.5,
+            355: 1.5
+        }[self.h]
         self.h_sh_shtrih = 0.3  # это для 2p >= 4, для 2p=2 см стр 380
-        self.h_sh_r = {56: 0.5, 63: 0.5, 71: 0.5, 80: 0.5, 90: 0.5, 100: 0.5, 112: 0.75, 132: 0.75, 160: 0.7, 180: 0.7,
-                       200: 0.7,
-                       225: 0.7,
-                       250: 0.7, 280: 0.7, 315: 0.7, 355: 0.7}
+        self.h_sh_r = {
+            56: 0.5,
+            63: 0.5,
+            71: 0.5,
+            80: 0.5,
+            90: 0.5,
+            100: 0.5,
+            112: 0.75,
+            132: 0.75,
+            160: 0.7,
+            180: 0.7,
+            200: 0.7,
+            225: 0.7,
+            250: 0.7,
+            280: 0.7,
+            315: 0.7,
+            355: 0.7
+        }[self.h]
         B_z_2 = 1.95  # от 1.7 до 1.95
         l_st_2 = l_st_1
+
         b_z_2 = ((B_del * self.t_z_2 * l_del) /
                  (B_z_2 * l_st_1 * k_c)) * 10 ** 3
-        self.b_1_r = (math.pi * (D_2 * 10 ** 3 - 2 * self.h_sh_r[self.h] - 2 * self.h_sh_shtrih) - self.Z_2 * b_z_2) / (
-            math.pi + self.Z_2)
+        self.b_1_r = (math.pi * (D_2 * 10 ** 3 - 2 * self.h_sh_r - 2 * self.h_sh_shtrih) - self.Z_2 * b_z_2) / (
+                math.pi + self.Z_2)
         self.b_2_r = math.sqrt((self.b_1_r ** 2 * (self.Z_2 / math.pi + math.pi / 2) - 4 * q_p * 10 ** 6) / (
-            self.Z_2 / math.pi + math.pi / 2))
+                self.Z_2 / math.pi + math.pi / 2))
         self.h_1 = (self.b_1_r - self.b_2_r) * (self.Z_2 / (2 * math.pi))
 
         # * __32__
-        b_z_2_shtrih = math.pi * ((D_2 * 10 ** 3 - 2 * (self.h_sh_r[self.h] + self.h_sh_shtrih) * self.b_1_r) / (
-            self.Z_2)) - self.b_1_r
+        b_z_2_shtrih = math.pi * (
+                (D_2 * 10 ** 3 - 2 * (self.h_sh_r + self.h_sh_shtrih) * self.b_1_r) / (self.Z_2)) - self.b_1_r
         b_z_2_shtrih_shtrih = math.pi * \
-            ((D_2 * 10 ** 3 - 2 * h_p + self.b_2_r) / (self.Z_2)) - self.b_2_r
-        self.h_p_2 = self.h_sh_shtrih + \
-            self.h_sh_r[self.h] + (self.b_1_r / 2) + \
-            self.h_1 + (self.b_2_r / 2)
+                              ((D_2 * 10 ** 3 - 2 * h_p + self.b_2_r) / (self.Z_2)) - self.b_2_r
+        self.h_p_2 = self.h_sh_shtrih + self.h_sh_r + \
+                     (self.b_1_r / 2) + self.h_1 + (self.b_2_r / 2)
 
         # * __33__
         self.q_c = (math.pi / 8) * (self.b_1_r ** 2 + self.b_2_r **
@@ -574,10 +672,9 @@ class MainProgram:
 
         # * __35__
         nu_0 = 4 * math.pi * 10 ** -7
-        gamma_1 = (self.b_sh[self.h] / self.delta) ** 2 / \
-            (5 + self.b_sh[self.h] / self.delta)
+        gamma_1 = (self.b_sh / self.delta) ** 2 / (5 + self.b_sh / self.delta)
         k_del = (self.t_z_1 * 10 ** 3) / \
-            ((self.t_z_1 * 10 ** 3) - gamma_1 * self.delta)
+                ((self.t_z_1 * 10 ** 3) - gamma_1 * self.delta)
         F_del = (2 / nu_0) * B_del * self.delta * k_del * 10 ** -3
 
         # * __36__
@@ -630,7 +727,7 @@ class MainProgram:
 
         # * __41__
         F_c = round(F_del, 3) + round(F_Z_1, 3) + \
-            round(F_Z_2, 3) + round(F_a, 3) + round(F_j, 3)
+              round(F_Z_2, 3) + round(F_a, 3) + round(F_j, 3)
 
         # * __42__
         k_nu = F_c / F_del
@@ -674,58 +771,62 @@ class MainProgram:
         self.r_c = ro_115_al * (l_2 / (self.q_c * 10 ** -6))
         l_c = l_2
         r_kl = ro_115_al * (math.pi * D_k_avg * 10 ** -3) / \
-            (self.Z_2 * q_kl * 10 ** -6)
+               (self.Z_2 * q_kl * 10 ** -6)
         self.r_2 = self.r_c + (2 * r_kl) / (delta ** 2)
         self.r_2_shtrih = self.r_2 * \
-            (4 * self.m * (w_1 * self.k_ob) ** 2) / (self.Z_2 * k_sk ** 2)
+                          (4 * self.m * (w_1 * self.k_ob) ** 2) / (self.Z_2 * k_sk ** 2)
         r_2_shtrih_star = self.r_2_shtrih * (self.I_1_nom / self.U)
 
         # * __46__
         h_2 = h_p_k - 2 * b_iz
-        self.h_k = 0.5 * (b_1 - self.b_sh_2[self.h])
+        self.h_k = 0.5 * (b_1 - self.b_sh_2)
         k_B_shtrih = 0.25 * (1 + 3 * self.beta_shtrih)
         k_B = 0.25 * (1 + 3 * k_B_shtrih)
         h_1_temp = 0
 
         if (self.P_2 < 15):
             self.Lamda_p_1 = (h_2 / (3 * b_p)) + (self.h_k / b_p)
+            # print(
+            #     f"Lamda_p_1 = (h_2 / (3 * b_p)) + (h_k / b_p) = ({h_2} / (3 * {b_p})) + ({self.h_k} / {b_p}) = {self.Lamda_p_1}")
         else:
             self.Lamda_p_1 = h_2 / (3 * b_1) * k_B + (
-                h_1_temp / b_1 + (3 * self.h_k) / (b_1 + 2 * self.b_sh_2[self.h]) + self.h_sh_shtrih /
-                self.b_sh_2[self.h]) * k_B_shtrih
+                    h_1_temp / b_1 + (3 * self.h_k) / (b_1 + 2 * self.b_sh_2) + self.h_sh_shtrih /
+                    self.b_sh_2) * k_B_shtrih
+            # print(
+            #     f"Lamda_p_1 = h_2 / (3 * b_1) * k_B + (h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2) + h_sh_shtrih /b_sh_2) * k_B_shtrih = {h_2} / (3 * {b_1}) * {k_B} + ({h_1_temp} / {b_1} + (3 * {self.h_k}) / ({b_1} + 2 * {self.b_sh_2}) + {self.h_sh_shtrih} /{self.b_sh_2}) * {k_B_shtrih} = {self.Lamda_p_1}")
 
         self.Lamda_l_1 = 0.34 * (q_1 / l_del) * \
-            (l_l_1 - 0.64 * self.beta_shtrih * tau)
+                         (l_l_1 - 0.64 * self.beta_shtrih * tau)
         B_sk = 0
         k_sk_shtrih = k_sk_shtrih_func(self.t_z_2 / self.t_z_1)
         Ksi = 2 * k_sk_shtrih * k_B_shtrih - self.k_ob ** 2 * ((self.t_z_2 * 10 ** 3) / (self.t_z_1 * 10 ** 3)) ** 2 * (
-            1 + B_sk ** 2)
+                1 + B_sk ** 2)
         self.Lamda_d_1 = (self.t_z_1 * 10 ** 3) / \
-            (12 * self.delta * k_del) * Ksi
+                         (12 * self.delta * k_del) * Ksi
         self.X_1 = 15.8 * (self.f / 100) * (w_1 / 100) ** 2 * (l_del / ((self._2p / 2) * q_1)) * (
-            self.Lamda_p_1 + self.Lamda_l_1 + self.Lamda_d_1)
+                self.Lamda_p_1 + self.Lamda_l_1 + self.Lamda_d_1)
         X_1_star = self.X_1 * (self.I_1_nom / self.U)
 
         # * __47__
         self.h_0 = self.h_1 + 0.4 * self.b_2_r
         k_d = 1
         self.Lamda_p_2 = (self.h_0 / (3 * self.b_1_r) * (1 - (math.pi * self.b_1_r ** 2) / (8 * self.q_c)) ** 2 + 0.66 -
-                          self.b_sh_2[self.h] / (
-            2 * self.b_1_r)) * k_d + self.h_sh_r[self.h] / self.b_sh_2[self.h] + 1.12 * (
-            self.h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
+                          self.b_sh_2 / (
+                                  2 * self.b_1_r)) * k_d + self.h_sh_r / self.b_sh_2 + 1.12 * (
+                                 self.h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
         self.Lamda_l_2 = (2.3 * (D_k_avg * 10 ** -3)) / (self.Z_2 * l_del * delta ** 2) * math.log10(
             (4.7 * D_k_avg * 10 ** -3) / (h_kl * 10 ** -3 + 2 * b_kl * 10 ** -3))
         delta_z = 0
         Ksi = 1 + (1 / 5) * ((math.pi * (self._2p / 2)) / self.Z_2) ** 2 - \
-            (delta_z / (1 - ((self._2p / 2) / self.Z_1)))
+              (delta_z / (1 - ((self._2p / 2) / self.Z_1)))
         self.Lamda_d_2 = (self.t_z_2 * 10 ** 3) / \
-            (12 * self.delta * k_del) * Ksi
+                         (12 * self.delta * k_del) * Ksi
         Lamda_sk = 0
         X_2 = 7.9 * self.f * l_del * \
-            (self.Lamda_p_2 + self.Lamda_l_2 +
-             self.Lamda_d_2 + Lamda_sk) * 10 ** -6
+              (self.Lamda_p_2 + self.Lamda_l_2 +
+               self.Lamda_d_2 + Lamda_sk) * 10 ** -6
         self.X_2_shtrih = X_2 * \
-            (4 * self.m * (w_1 * self.k_ob) ** 2) / (self.Z_2 * k_sk ** 2)
+                          (4 * self.m * (w_1 * self.k_ob) ** 2) / (self.Z_2 * k_sk ** 2)
         X_2_shtrih_star = self.X_2_shtrih * (self.I_1_nom / self.U)
 
         # * __48__
@@ -733,7 +834,7 @@ class MainProgram:
         gamma_c = 7.8 * 10 ** 3
         m_a = math.pi * (D_a - h_a) * h_a * l_st_1 * gamma_c
         m_z_1 = (h_Z_1 * 10 ** -3) * (b_z_1 * 10 ** -3) * \
-            self.Z_1 * l_st_1 * k_sk * gamma_c
+                self.Z_1 * l_st_1 * k_sk * gamma_c
         if (self.P_2 < 250):
             k_d_a = 1.6
             k_d_z = 1.8
@@ -742,25 +843,25 @@ class MainProgram:
             k_d_z = 1.7
 
         P_st_main = P_1_a_150 * (self.f / 50) ** self.beta_shtrih * (
-            k_d_a * B_a ** 2 * m_a + k_d_z * B_z_1 ** 2 * m_z_1)
+                k_d_a * B_a ** 2 * m_a + k_d_z * B_z_1 ** 2 * m_z_1)
 
         # * __49__
         k_02 = 1.5
-        betta_02 = beta_0_func(self.b_sh[self.h] / self.delta)
+        betta_02 = beta_0_func(self.b_sh / self.delta)
         B_02 = betta_02 * k_del * B_del
         p_pov_2 = 0.5 * k_02 * \
-            ((self.Z_1 * self.n) / 10_000) ** 1.5 * \
-            (B_02 * self.t_z_1 * 10 ** 3) ** 2
+                  ((self.Z_1 * self.n) / 10_000) ** 1.5 * \
+                  (B_02 * self.t_z_1 * 10 ** 3) ** 2
         P_pov_2 = p_pov_2 * ((self.t_z_2 * 10 ** 3) -
-                             self.b_sh_2[self.h]) * self.Z_2 * l_st_2 * 10 ** -3
+                             self.b_sh_2) * self.Z_2 * l_st_2 * 10 ** -3
 
         # * __50__
         b_z_2_avg = (b_z_2_shtrih + b_z_2_shtrih_shtrih) / 2
         m_z_2 = self.Z_2 * h_Z_2 * 10 ** -3 * \
-            b_z_2_avg * 10 ** -3 * l_st_2 * k_c * gamma_c
+                b_z_2_avg * 10 ** -3 * l_st_2 * k_c * gamma_c
         B_z_2_avg = (B_Z_2_shtrih + B_z_2) / 2
         B_pul_2 = (gamma_1 * self.delta) / \
-            (2 * self.t_z_2 * 10 ** 3) * B_z_2_avg
+                  (2 * self.t_z_2 * 10 ** 3) * B_z_2_avg
         P_pul_2 = 0.11 * (((self.Z_1 * self.n) / 1000) * B_pul_2) ** 2 * m_z_2
 
         # * __51__
@@ -793,6 +894,7 @@ class MainProgram:
         P = (self.P_st + self.P_meh) * 10 ** -3
 
         # * __56__
+
         def calculate_Table_1(numeration, s):
             def f1():
                 return (self.a_shtrih * self.r_2_shtrih) / s_shtrih
@@ -920,13 +1022,13 @@ class MainProgram:
         ro_115 = ro_115_al
         b_c__na__b_p = 1
         f_1 = self.f
-        self.h_c = self.h_p_2 - (self.h_sh_r[self.h] + self.h_sh_shtrih)
+        self.h_c = self.h_p_2 - (self.h_sh_r + self.h_sh_shtrih)
         Ksi = 63.61 * self.h_c * 10 ** -3 * math.sqrt(s_kr)
         phi = phi_func(Ksi)
         h_r = self.h_c / (1 + phi)
         b_r = self.b_1_r - ((self.b_1_r - self.b_2_r) / self.h_1) * h_r
         q_r = (math.pi * self.b_1_r ** 2) / 8 + \
-            ((self.b_1_r + b_r) / 2) * (h_r - (self.b_1_r / 2))
+              ((self.b_1_r + b_r) / 2) * (h_r - (self.b_1_r / 2))
         k_r = self.q_c / q_r
         r_c_shtrih = self.r_c
         self.K_R = 1 + (r_c_shtrih / self.r_2) * (k_r - 1)
@@ -935,11 +1037,11 @@ class MainProgram:
         # * __58__
         K_d = phi_shtrih_func(Ksi)
         delta_Lambda_p_2_Ksi = (self.h_0 / (3 * self.b_1_r) * (
-            1 - (math.pi * self.b_1_r ** 2) / (8 * self.q_c)) ** 2 + 0.66 - self.b_sh_2[self.h] / (
-            2 * self.b_1_r)) * (1 - K_d)
+                1 - (math.pi * self.b_1_r ** 2) / (8 * self.q_c)) ** 2 + 0.66 - self.b_sh_2 / (
+                                        2 * self.b_1_r)) * (1 - K_d)
         self.Lamda_p_2_Ksi = self.Lamda_p_2 - delta_Lambda_p_2_Ksi
         K_x = (self.Lamda_p_2_Ksi + self.Lamda_l_2 + self.Lamda_d_2) / (
-            self.Lamda_p_2 + self.Lamda_l_2 + self.Lamda_d_2)
+                self.Lamda_p_2 + self.Lamda_l_2 + self.Lamda_d_2)
         X_2__Ksi_shtrih = self.X_2_shtrih * K_x
 
         # * __59__
@@ -951,10 +1053,11 @@ class MainProgram:
         X_p = self.X_1 + self.c_1_p * X_2__Ksi_shtrih
         I_2_p_shtrih = self.U / math.sqrt(R_p ** 2 + X_p ** 2)
         self.I_1_p = I_2_p_shtrih * \
-            (math.sqrt(R_p ** 2 + (X_p + self.x_1_2_p) ** 2) /
-             (self.c_1_p * self.x_1_2_p))
+                     (math.sqrt(R_p ** 2 + (X_p + self.x_1_2_p) ** 2) /
+                      (self.c_1_p * self.x_1_2_p))
 
         # * Таблица 2
+
         def calculate_Table_2(numeration, s):
             def f1():
                 return Ksi
@@ -1036,10 +1139,11 @@ class MainProgram:
         # * __61__
         k_beta_shtrih = 1
         self.C_N = 0.64 + 2.5 * \
-            math.sqrt(self.delta / ((self.t_z_1 + self.t_z_2) * 10 ** 3))
+                   math.sqrt(self.delta / ((self.t_z_1 + self.t_z_2) * 10 ** 3))
         self.k_y_1 = math.sin(self.beta_shtrih * (math.pi / 2))
 
         # * Таблица 3
+
         def calculate_Table_3(numeration, s):
             def f1():
                 return 1.4
@@ -1047,13 +1151,13 @@ class MainProgram:
             def f2():
                 global F_p_avg
                 F_p_avg = 0.7 * (((self.I_1_p * f1() * self.u_p) / self.a_harmonic) * (
-                    k_beta_shtrih + self.k_y_1 * self.k_ob * (self.Z_1 / self.Z_2)))
+                        k_beta_shtrih + self.k_y_1 * self.k_ob * (self.Z_1 / self.Z_2)))
                 return F_p_avg
 
             def f3():
                 global B_Ph_del
                 B_Ph_del = (f2() * 10 ** -6) / \
-                    (1.6 * self.delta * 10 ** -3 * self.C_N)
+                           (1.6 * self.delta * 10 ** -3 * self.C_N)
                 return B_Ph_del
 
             def f4():
@@ -1061,13 +1165,13 @@ class MainProgram:
                 return k_del
 
             def f5():
-                c_1 = (self.t_z_1 * 10 ** 3 - self.b_sh[self.h]) * (1 - f4())
+                c_1 = (self.t_z_1 * 10 ** 3 - self.b_sh) * (1 - f4())
                 return c_1
 
             def f6():
                 global Lamda_p_1_nas
-                Lamda_p_1_nas = self.Lamda_p_1 - (((self.h_sh + 0.58 * self.h_k) / self.b_sh[self.h]) * (
-                    f5() / (f5() + 1.5 * self.b_sh[self.h])))
+                Lamda_p_1_nas = self.Lamda_p_1 - (((self.h_sh + 0.58 * self.h_k) / self.b_sh) * (
+                        f5() / (f5() + 1.5 * self.b_sh)))
                 return Lamda_p_1_nas
 
             def f7():
@@ -1078,7 +1182,7 @@ class MainProgram:
             def f8():
                 global x_1_nas
                 x_1_nas = self.X_1 * (Lamda_p_1_nas + Lamda_d_1_nas + self.Lamda_l_1) / (
-                    self.Lamda_p_1 + self.Lamda_d_1 + self.Lamda_l_1)
+                        self.Lamda_p_1 + self.Lamda_d_1 + self.Lamda_l_1)
                 return x_1_nas
 
             def f9():
@@ -1087,13 +1191,13 @@ class MainProgram:
 
             def f10():
                 global c_2
-                c_2 = (self.t_z_2 * 10 ** 3 - self.b_sh_2[self.h]) * (1 - f4())
+                c_2 = (self.t_z_2 * 10 ** 3 - self.b_sh_2) * (1 - f4())
                 return c_2
 
             def f11():
                 global Lamda_p_2_Ksi_nas
-                Lamda_p_2_Ksi_nas = self.Lamda_p_2_Ksi - (self.h_sh_shtrih / self.b_sh_2[self.h]) * (
-                    f10() / (f10() + self.b_sh_2[self.h]))
+                Lamda_p_2_Ksi_nas = self.Lamda_p_2_Ksi - (self.h_sh_shtrih / self.b_sh_2) * (
+                        f10() / (f10() + self.b_sh_2))
                 return Lamda_p_2_Ksi_nas
 
             def f12():
@@ -1104,14 +1208,14 @@ class MainProgram:
             def f13():
                 global x_2_Ksi_nas_shtrih
                 x_2_Ksi_nas_shtrih = self.X_2_shtrih * (f11() + f12() + self.Lamda_l_2) / (
-                    self.Lamda_p_2 + self.Lamda_d_2 + self.Lamda_l_2)
+                        self.Lamda_p_2 + self.Lamda_d_2 + self.Lamda_l_2)
                 return x_2_Ksi_nas_shtrih
 
             def f14():
                 global R_p_nas
                 R_p_nas = self.r_1 + \
-                    (1 + (f8() / self.x_1_2_p)) * \
-                    (self.r_2_Ksi_shtrih / s_shtrih)
+                          (1 + (f8() / self.x_1_2_p)) * \
+                          (self.r_2_Ksi_shtrih / s_shtrih)
                 return R_p_nas
 
             def f15():
@@ -1127,7 +1231,7 @@ class MainProgram:
             def f17():
                 global I_1_nas
                 I_1_nas = f16() * (math.sqrt(f14() ** 2 + (f15() + self.x_1_2_p) ** 2)) / (
-                    (1 + (f8() / self.x_1_2_p)) * self.x_1_2_p)
+                        (1 + (f8() / self.x_1_2_p)) * self.x_1_2_p)
                 return I_1_nas
 
             def f18():
@@ -1143,7 +1247,7 @@ class MainProgram:
             def f20():
                 global M_dot
                 M_dot = (f16() / self.I2_shtrih) ** 2 * \
-                    self.K_R * (self.s_nom / s_shtrih)
+                        self.K_R * (self.s_nom / s_shtrih)
                 return M_dot
 
             def setS(s: float):
@@ -1201,9 +1305,9 @@ class MainProgram:
 
         # * __1__
         h_shtrih = {
-            # 2: (p2_up(self.P_2) + p2_down(self.P_2)) / 2,
+            2: (p2_up(self.P_2) + p2_down(self.P_2)) / 2,
             4: (p6_down__p4_up(self.P_2) + p4_down(self.P_2)) / 2,
-            # 6: (p8_down__p6_up(self.P_2) + p6_down__p4_up(self.P_2) / 2),
+            6: (p8_down__p6_up(self.P_2) + p6_down__p4_up(self.P_2)) / 2,
             # 8: (p8_up(self.P_2) + p8_down__p6_up(self.P_2)) / 2,
             10: 0,
             12: 0
@@ -1257,12 +1361,19 @@ class MainProgram:
         k_D = {
             2: 0.56,
             4: 0.62,
-            6: 0.71,
+            6: 0.7,
             8: 0.73,
             10: 0.76,
             12: 0.76
         }[self._2p]
-        k_D = 0.62
+        k_D_max = {
+            2: 0.56,
+            4: 0.685,
+            6: 0.72,
+            8: 0.73,
+            10: 0.76,
+            12: 0.76
+        }[self._2p]
         sumator = 0.005
         sumator_D_a = 0.001
         # НЦ
@@ -1295,17 +1406,27 @@ class MainProgram:
                 h_shtrih + step_h
             )
 
-            while D_a != D_a_max[self.h] + sumator_D_a:
+            while D_a <= D_a_max[self.h]:
+                print(D_a)
+
                 D_a = round(D_a, 3)
-                k_D = 0.62
-                while (k_D != 0.685):
+                k_D = {
+                    2: 0.56,
+                    4: 0.62,
+                    6: 0.7,
+                    8: 0.73,
+                    10: 0.76,
+                    12: 0.76
+                }[self._2p]
+                while (k_D != k_D_max):
+
                     D = round(k_D * D_a, 3)
 
                     # * __3__
                     tau = (math.pi * D) / self._2p
 
                     # * __4__
-                    k_e = K_e(_2p,D_a)
+                    k_e = K_e_func(self._2p,D_a)
                     P_shtrih = (self.P_2 * 1000) * (k_e / (kpd * cosPhi))
 
                     # * __5__
@@ -1581,11 +1702,18 @@ class MainProgram:
                     else:
                         d_iz = 0
                         k_z = 0
-                    if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3) or (0.6 <= lamda <= 1 and self.h >= 280):
-                        exit_from_inf_while = True
-                        break
-                    else:
-                        k_D += sumator
+                    if self._2p == 4:
+                        if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3 ) or (0.6 <= lamda <= 1 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                        else:
+                            k_D += sumator
+                    elif self._2p == 6:
+                        if (0.5 <= k_z <= 0.7 and 0.9 <= lamda <= 1.7 ) or (0.9 <= lamda <= 1.3 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                        else:
+                            k_D += sumator
                 if (0.7 <= k_z <= 0.75) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
                     if (0.7 <= lamda <= 1.3 and self.h <= 250) or (0.6 <= lamda <= 1 and self.h >= 280):
                         exit_from_inf_while = True
@@ -1598,16 +1726,25 @@ class MainProgram:
             else:
                 step_h += 10
                 number_of_iteration += 1
-
-        if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
-                (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
-            raise Exception("Some exception")
-            exit(1)
-        if (0.7 <= lamda <= 1.3):
-            pass
-        else:
-            exit()
-        if (A_shtrih * 0.9 < A < A_shtrih * 1.1 or B_del_shtrih * 0.9 < B_del < B_del_shtrih * 1.1):
+        if self._2p == 4:
+            if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
+                    (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
+                raise Exception("Some exception")
+                exit(1)
+            if (0.7 <= lamda <= 1.3):
+                pass
+            else:
+                exit()
+        elif self._2p == 6:
+            if (0.5 > k_z > 0.7 or ((lamda < 0.9 or lamda > 1.7) and self.h <= 250) or (
+                    (lamda < 0.9 or lamda > 1.3) and self.h >= 280)) and self.P_2 < 100:
+                raise Exception("Some exception")
+                exit(1)
+            if (0.9 <= lamda <= 1.7):
+                pass
+            else:
+                exit()
+        if (A_shtrih * 0.85 < A < A_shtrih * 1.15 or B_del_shtrih * 0.85 < B_del < B_del_shtrih * 1.15):
             pass
         else:
             exit()
