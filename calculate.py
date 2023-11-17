@@ -1305,7 +1305,7 @@ class MainProgram:
                     tau = (math.pi * D) / self._2p
 
                     # * __4__
-                    k_e = K_e_func(D_a)
+                    k_e = K_e(_2p,D_a)
                     P_shtrih = (self.P_2 * 1000) * (k_e / (kpd * cosPhi))
 
                     # * __5__
