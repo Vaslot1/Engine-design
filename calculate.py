@@ -158,7 +158,7 @@ class MainProgram:
 
         # * __2__
         k_D = {
-            2: 0.56,
+            2: 0.52,
             4: 0.62,
             6: 0.7,
             8: 0.73,
@@ -166,7 +166,7 @@ class MainProgram:
             12: 0.76
         }[self._2p]
         k_D_max = {
-            2: 0.56,
+            2: 0.6,
             4: 0.685,
             6: 0.72,
             8: 0.73,
@@ -210,7 +210,7 @@ class MainProgram:
 
                 D_a = round(D_a, 3)
                 k_D = {
-                    2: 0.56,
+                    2: 0.52,
                     4: 0.62,
                     6: 0.7,
                     8: 0.73,
@@ -502,6 +502,12 @@ class MainProgram:
                     else:
                         d_iz = 0
                         k_z = 0
+                    if self._2p == 2:
+                        if (0.4 <= k_z <= 0.7 and 0.4 <= lamda <= 1) or (0.2 <= lamda <= 0.8 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                        else:
+                            k_D += sumator
                     if self._2p == 4:
                         if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3) or (0.6 <= lamda <= 1 and self.h >= 280):
                             exit_from_inf_while = True
@@ -526,6 +532,15 @@ class MainProgram:
             else:
                 step_h += 10
                 number_of_iteration += 1
+        if self._2p == 2:
+            if (0.4 > k_z > 0.7 or ((lamda < 0.4 or lamda > 1) and self.h <= 250) or (
+                    (lamda < 0.2 or lamda > 0.8) and self.h >= 280)) and self.P_2 < 100:
+                raise Exception("Some exception")
+                exit(1)
+            if (0.4 <= lamda <= 1):
+                pass
+            else:
+                exit()
         if self._2p == 4:
             if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
                     (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
@@ -1359,7 +1374,7 @@ class MainProgram:
 
         # * __2__
         k_D = {
-            2: 0.56,
+            2: 0.52,
             4: 0.62,
             6: 0.7,
             8: 0.73,
@@ -1367,7 +1382,7 @@ class MainProgram:
             12: 0.76
         }[self._2p]
         k_D_max = {
-            2: 0.56,
+            2: 0.6,
             4: 0.685,
             6: 0.72,
             8: 0.73,
@@ -1411,7 +1426,7 @@ class MainProgram:
 
                 D_a = round(D_a, 3)
                 k_D = {
-                    2: 0.56,
+                    2: 0.52,
                     4: 0.62,
                     6: 0.7,
                     8: 0.73,
@@ -1702,6 +1717,12 @@ class MainProgram:
                     else:
                         d_iz = 0
                         k_z = 0
+                    if self._2p == 2:
+                        if (0.4 <= k_z <= 0.7 and 0.4 <= lamda <= 1) or (0.2 <= lamda <= 0.8 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                        else:
+                            k_D += sumator
                     if self._2p == 4:
                         if (0.7 <= k_z <= 0.75 and 0.7 <= lamda <= 1.3 ) or (0.6 <= lamda <= 1 and self.h >= 280):
                             exit_from_inf_while = True
@@ -1726,6 +1747,15 @@ class MainProgram:
             else:
                 step_h += 10
                 number_of_iteration += 1
+        if self._2p == 2:
+            if (0.4 > k_z > 0.7 or ((lamda < 0.4 or lamda > 1) and self.h <= 250) or (
+                    (lamda < 0.2 or lamda > 0.8) and self.h >= 280)) and self.P_2 < 100:
+                raise Exception("Some exception")
+                exit(1)
+            if (0.4 <= lamda <= 1):
+                pass
+            else:
+                exit()
         if self._2p == 4:
             if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
                     (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
