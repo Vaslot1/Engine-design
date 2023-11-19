@@ -173,7 +173,7 @@ class MainProgram:
             10: 0.76,
             12: 0.76
         }[self._2p]
-        sumator = 0.005
+        sumator = 0.0005
         sumator_D_a = 0.001
         # НЦ
         D_a_max = {
@@ -217,7 +217,7 @@ class MainProgram:
                     10: 0.76,
                     12: 0.76
                 }[self._2p]
-                while (k_D != k_D_max):
+                while (k_D <= k_D_max):
 
                     D = round(k_D * D_a, 3)
 
@@ -520,12 +520,29 @@ class MainProgram:
                             break
                         else:
                             k_D += sumator
-                if (0.7 <= k_z <= 0.75) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
-                    if (0.7 <= lamda <= 1.3 and self.h <= 250) or (0.6 <= lamda <= 1 and self.h >= 280):
-                        exit_from_inf_while = True
-                        break
-                else:
-                    D_a += sumator_D_a
+
+                if self._2p == 2:
+                    if (0.4 <= k_z <= 0.7) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
+                        if (0.4 <= lamda <= 1 and self.h <= 250) or (0.2 <= lamda <= 0.8 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                    else:
+                        D_a += sumator_D_a
+
+                if self._2p == 4:
+                    if (0.7 <= k_z <= 0.75) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
+                        if (0.7 <= lamda <= 1.3 and self.h <= 250) or (0.6 <= lamda <= 1 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                    else:
+                        D_a += sumator_D_a
+                if self._2p == 6:
+                    if (0.5 <= k_z <= 0.7) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
+                        if (0.9 <= lamda <= 1.7 and self.h <= 250) or (0.9 <= lamda <= 1.3 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                    else:
+                        D_a += sumator_D_a
 
             if exit_from_inf_while:
                 break
@@ -572,7 +589,7 @@ class MainProgram:
         self.delta = func.delta(self.h)[self._2p](D)
 
         # * __24__
-        self.Z_2 = findTheNumberOfRotorSlots(self.P_2, self.Z_1)
+        self.Z_2 = findTheNumberOfRotorSlots(self.P_2, self.Z_1,self._2p)
 
         # * __25__
         D_2 = D - (2 * (self.delta * 10 ** (-3)))
@@ -1423,6 +1440,9 @@ class MainProgram:
 
             while D_a <= D_a_max[self.h]:
                 print(D_a)
+                print("d_a")
+                print(self.h)
+                print("h")
 
                 D_a = round(D_a, 3)
                 k_D = {
@@ -1433,7 +1453,7 @@ class MainProgram:
                     10: 0.76,
                     12: 0.76
                 }[self._2p]
-                while (k_D != k_D_max):
+                while (k_D <= k_D_max):
 
                     D = round(k_D * D_a, 3)
 
@@ -1735,12 +1755,29 @@ class MainProgram:
                             break
                         else:
                             k_D += sumator
-                if (0.7 <= k_z <= 0.75) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
-                    if (0.7 <= lamda <= 1.3 and self.h <= 250) or (0.6 <= lamda <= 1 and self.h >= 280):
-                        exit_from_inf_while = True
-                        break
-                else:
-                    D_a += sumator_D_a
+
+                if self._2p == 2:
+                    if (0.4 <= k_z <= 0.7) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
+                        if (0.4 <= lamda <= 1 and self.h <= 250) or (0.2 <= lamda <= 0.8 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                    else:
+                        D_a += sumator_D_a
+
+                if self._2p == 4:
+                    if (0.7 <= k_z <= 0.75) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
+                        if (0.7 <= lamda <= 1.3 and self.h <= 250) or (0.6 <= lamda <= 1 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                    else:
+                        D_a += sumator_D_a
+                if self._2p == 6:
+                    if (0.5 <= k_z <= 0.7) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
+                        if (0.9 <= lamda <= 1.7 and self.h <= 250) or (0.9 <= lamda <= 1.3 and self.h >= 280):
+                            exit_from_inf_while = True
+                            break
+                    else:
+                        D_a += sumator_D_a
 
             if exit_from_inf_while:
                 break
@@ -1751,43 +1788,43 @@ class MainProgram:
             if (0.4 > k_z > 0.7 or ((lamda < 0.4 or lamda > 1) and self.h <= 250) or (
                     (lamda < 0.2 or lamda > 0.8) and self.h >= 280)) and self.P_2 < 100:
                 raise Exception("Some exception")
-                exit(1)
-            if (0.4 <= lamda <= 1):
-                pass
-            else:
-                exit()
+                exit(2)
+            # if (0.4 <= lamda <= 1):???
+            #     pass
+            # else:
+            #     exit()
         if self._2p == 4:
             if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
                     (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
                 raise Exception("Some exception")
-                exit(1)
-            if (0.7 <= lamda <= 1.3):
-                pass
-            else:
-                exit()
+                exit(4)
+            # if (0.7 <= lamda <= 1.3):???
+            #     pass
+            # else:
+            #     exit()
         elif self._2p == 6:
             if (0.5 > k_z > 0.7 or ((lamda < 0.9 or lamda > 1.7) and self.h <= 250) or (
                     (lamda < 0.9 or lamda > 1.3) and self.h >= 280)) and self.P_2 < 100:
                 raise Exception("Some exception")
-                exit(1)
-            if (0.9 <= lamda <= 1.7):
-                pass
-            else:
-                exit()
+                exit(6)
+            # if (0.9 <= lamda <= 1.7): ???
+            #     pass
+            # else:
+            #     exit()
         if (A_shtrih * 0.85 < A < A_shtrih * 1.15 or B_del_shtrih * 0.85 < B_del < B_del_shtrih * 1.15):
             pass
         else:
-            exit()
+            exit(404)
         if ((J_1_shtrih * 0.9) * 10 ** -6 < J_1 < (J_1_shtrih * 1.1) * 10 ** -6):
             pass
         else:
-            exit()
+            exit(505)
 
         # * __23__
         self.delta = func.delta(self.h)[self._2p](D)
 
         # * __24__
-        self.Z_2 = findTheNumberOfRotorSlots(self.P_2, self.Z_1)
+        self.Z_2 = findTheNumberOfRotorSlots(self.P_2, self.Z_1, self._2p)
 
         # * __25__
         D_2 = D - (2 * (self.delta * 10 ** (-3)))
