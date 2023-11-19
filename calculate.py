@@ -104,16 +104,16 @@ class MainProgram:
 
         # * __1__
         h_shtrih = {
-            2: (p2_up(self.P_2) + p2_down(self.P_2)) / 2,
-            4: (p6_down__p4_up(self.P_2) + p4_down(self.P_2)) / 2,
-            6: (p8_down__p6_up(self.P_2) + p6_down__p4_up(self.P_2)) / 2,
-            # 8: (p8_up(self.P_2) + p8_down__p6_up(self.P_2)) / 2,
+            2: p2_down(self.P_2),
+            4: p4_down(self.P_2),
+            6: p6_down__p4_up(self.P_2),
+            8: p8_down__p6_up(self.P_2),
             10: 0,
             12: 0
         }[self._2p]
         self.h = FindApproximateWithinBounds(
             [56, 63, 71, 80, 90, 100, 112, 132, 160,
-             180, 200, 225, 250, 280, 315, 355],
+            180, 200, 225, 250, 280, 315, 355],
             h_shtrih
         )
         D_a = {
@@ -206,8 +206,7 @@ class MainProgram:
             )
 
             while D_a <= D_a_max[self.h]:
-                print(D_a)
-
+                print(number_of_iteration)
                 D_a = round(D_a, 3)
                 k_D = {
                     2: 0.52,
@@ -303,12 +302,10 @@ class MainProgram:
                     B_del = ((self._2p / 2) * Ph) / (D * l_del)
 
                     # * __15__
-                    J_1_shtrih = (
-                                         (AJ__up(self._2p, D_a) + AJ__down(self._2p, D_a)) / 2) / A
+                    J_1_shtrih = ((AJ__up(self._2p, D_a) + AJ__down(self._2p, D_a)) / 2) / A
 
                     # * __16__
-                    q_ef_shtrih = (
-                                          self.I_1_nom / (self.a_harmonic * J_1_shtrih)) * 10 ** 6
+                    q_ef_shtrih = (self.I_1_nom / (self.a_harmonic * J_1_shtrih)) * 10 ** 6
 
                     # * __17__
                     n_el = 0
@@ -514,7 +511,7 @@ class MainProgram:
                             break
                         else:
                             k_D += sumator
-                    elif self._2p == 6:
+                    if self._2p == 6:
                         if (0.5 <= k_z <= 0.7 and 0.9 <= lamda <= 1.7) or (0.9 <= lamda <= 1.3 and self.h >= 280):
                             exit_from_inf_while = True
                             break
@@ -547,7 +544,7 @@ class MainProgram:
             if exit_from_inf_while:
                 break
             else:
-                step_h += 10
+                step_h += 5
                 number_of_iteration += 1
         if self._2p == 2:
             if (0.4 > k_z > 0.7 or ((lamda < 0.4 or lamda > 1) and self.h <= 250) or (
@@ -627,7 +624,7 @@ class MainProgram:
         I_2 = k_i * self.I_1_nom * v_i
 
         # * __30__
-        J_2 = 3.5 * 10 ** 6
+        J_2 = 3 * 10 ** 6
         q_p = I_2 / J_2
 
         # * __31__
@@ -1337,16 +1334,16 @@ class MainProgram:
 
         # * __1__
         h_shtrih = {
-            2: (p2_up(self.P_2) + p2_down(self.P_2)) / 2,
-            4: (p6_down__p4_up(self.P_2) + p4_down(self.P_2)) / 2,
-            6: (p8_down__p6_up(self.P_2) + p6_down__p4_up(self.P_2)) / 2,
-            # 8: (p8_up(self.P_2) + p8_down__p6_up(self.P_2)) / 2,
+            2: p2_down(self.P_2),
+            4: p4_down(self.P_2),
+            6: p6_down__p4_up(self.P_2),
+            8: p8_down__p6_up(self.P_2),
             10: 0,
             12: 0
         }[self._2p]
         self.h = FindApproximateWithinBounds(
             [56, 63, 71, 80, 90, 100, 112, 132, 160,
-                180, 200, 225, 250, 280, 315, 355],
+            180, 200, 225, 250, 280, 315, 355],
             h_shtrih
         )
         D_a = {
@@ -1539,12 +1536,10 @@ class MainProgram:
                     B_del = ((self._2p / 2) * Ph) / (D * l_del)
 
                     # * __15__
-                    J_1_shtrih = (
-                        (AJ__up(self._2p, D_a) + AJ__down(self._2p, D_a)) / 2) / A
+                    J_1_shtrih = ((AJ__up(self._2p, D_a) + AJ__down(self._2p, D_a)) / 2) / A
 
                     # * __16__
-                    q_ef_shtrih = (
-                        self.I_1_nom / (self.a_harmonic * J_1_shtrih)) * 10 ** 6
+                    q_ef_shtrih = (self.I_1_nom / (self.a_harmonic * J_1_shtrih)) * 10 ** 6
 
                     # * __17__
                     n_el = 0
@@ -1558,7 +1553,9 @@ class MainProgram:
                         n_el = 2
                     elif (self.P_2 == 315):
                         n_el = 4
+                    
                     q_el_shtrih = q_ef_shtrih / n_el
+                    
                     if (self.P_2 < 110):
                         q_el = FindApproximateWithinBounds(
                             [0.00502, 0.00636, 0.00785, 0.00985, 0.01227, 0.01368, 0.01539,
@@ -1577,6 +1574,7 @@ class MainProgram:
                              9.157, 9.745, 9.385, 9.865, 10.35, 10.51, 11.15, 11.71, 11.79, 12.59, 13.24, 13.39, 14.19, 14.94, 14.99, 15.79, 16.75, 16.64, 17.71, 18.67, 18.68, 19.79, 20.89],
                             q_el_shtrih
                         )
+                    
                     q_ef = n_el * q_el
 
                     # * __18__
@@ -1668,8 +1666,7 @@ class MainProgram:
                     elif (280 <= self.h <= 355):
                         b_iz = 0.55
                     S_iz = b_iz * (2 * h_p + b_1 + b_2)
-                    S_p_shtrih = ((b_1_shtrih + b_2_shtrih) / 2) * \
-                        h_p_k_shtrih - (S_iz + S_pr)
+                    S_p_shtrih = ((b_1_shtrih + b_2_shtrih) / 2) * h_p_k_shtrih - (S_iz + S_pr)
 
                     # ? __22__
                     if (self.P_2 < 110):
@@ -1732,8 +1729,7 @@ class MainProgram:
                             4.36: 2.16,
                             4.91: 2.6
                         }[q_el]
-                        k_z = round(
-                            (d_iz ** 2 * self.u_p * n_el) / S_p_shtrih, 2)
+                        k_z = round((d_iz ** 2 * self.u_p * n_el) / S_p_shtrih, 2)
                     else:
                         d_iz = 0
                         k_z = 0
@@ -1764,14 +1760,14 @@ class MainProgram:
                     else:
                         D_a += sumator_D_a
 
-                if self._2p == 4:
+                elif self._2p == 4:
                     if (0.7 <= k_z <= 0.75) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
                         if (0.7 <= lamda <= 1.3 and self.h <= 250) or (0.6 <= lamda <= 1 and self.h >= 280):
                             exit_from_inf_while = True
                             break
                     else:
                         D_a += sumator_D_a
-                if self._2p == 6:
+                elif self._2p == 6:
                     if (0.5 <= k_z <= 0.7) or (self.P_2 > 100 and A_shtrih * 0.9 < A < A_shtrih * 1.1):
                         if (0.9 <= lamda <= 1.7 and self.h <= 250) or (0.9 <= lamda <= 1.3 and self.h >= 280):
                             exit_from_inf_while = True
@@ -1782,7 +1778,7 @@ class MainProgram:
             if exit_from_inf_while:
                 break
             else:
-                step_h += 10
+                step_h += 5
                 number_of_iteration += 1
         if self._2p == 2:
             if (0.4 > k_z > 0.7 or ((lamda < 0.4 or lamda > 1) and self.h <= 250) or (
@@ -1793,7 +1789,7 @@ class MainProgram:
             #     pass
             # else:
             #     exit()
-        if self._2p == 4:
+        elif self._2p == 4:
             if (0.7 > k_z > 0.75 or ((lamda < 0.7 or lamda > 1.3) and self.h <= 250) or (
                     (lamda < 0.6 or lamda > 1) and self.h >= 280)) and self.P_2 < 100:
                 raise Exception("Some exception")
@@ -1862,7 +1858,7 @@ class MainProgram:
         I_2 = k_i * self.I_1_nom * v_i
 
         # * __30__
-        J_2 = 3.5 * 10 ** 6
+        J_2 = 3 * (10 ** 6)
         q_p = I_2 / J_2
 
         # * __31__
@@ -2563,7 +2559,11 @@ class MainProgram:
             elif numeration == 20:
                 result = f20()
 
-        with open(name[0], 'w') as f:
+        with open(name + '.txt', 'w', encoding="UTF-8") as f:
+
+            f.write("Пункт: 1\n")
+            f.write(f"h' = {h_shtrih}\n")
+            f.write(f"h = {self.h}\n")
 
             f.write("Пункт: 2\n")
             f.write(f"k_D = {k_D}\n")
@@ -2603,9 +2603,11 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 10\n")
             f.write(
-                f"Z_1_min = l_del / tau = 3.14 * {D} / {t_z_1_max} = {Z_1_min}\n")
+                f"Z_1_min = 3.14 * D / tau = 3.14 * {D} / {t_z_1_max} = {Z_1_min}\n")
             f.write(
-                f"Z_1_max = l_del / tau = 3.14 * {D} / {t_z_1_min} = {Z_1_max} \n")
+                f"Z_1_max = 3.14 * D / tau = 3.14 * {D} / {t_z_1_min} = {Z_1_max} \n")
+            f.write(
+                f"Z_1= {self.Z_1}\n")
 
             f.write(
                 "\n\nПункт: 11\n")
@@ -2637,7 +2639,8 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 15\n")
             f.write(
-                f"w_1 = (u_p * Z_1) / (2 * a_harmonic * m) = {self.u_p * self.Z_1} / {2 * self.a_harmonic * self.m} = {w_1}\n")
+                f"J_1 = A * J_1 / A = {A} * {J_1} / {A} = {J_1}\n")
+            f.write(f"A * J_1 = {A} * {J_1_shtrih} = {A * J_1_shtrih}\n")
 
             f.write(
                 "\n\nПункт: 16\n")
@@ -2645,6 +2648,9 @@ class MainProgram:
                 f"q_ef' = ( I_1_nom / (a_harmonic * J_1')) * 10^6 = ({self.I_1_nom} / {(self.a_harmonic * J_1_shtrih)})* 10 ** 6 = {q_ef_shtrih}\n")
             f.write(
                 "\n\nПункт: 17\n")
+            f.write(f"d_iz = {d_iz} \n")
+            f.write(f"q_el_shtrih = {q_el_shtrih} \n")
+            f.write(f"q_el = {q_el} \n")
             f.write(f"q_ef = (n_el * q_el) = {n_el} * {q_el} = {q_ef} \n")
 
             f.write(
@@ -2652,10 +2658,14 @@ class MainProgram:
             f.write(
                 f"J_1 = I_1_nom / (a_harmonic * q_el * n_el) = {n_el} / {self.a_harmonic * q_el * n_el} = {J_1}\n")
 
-            f.write(
-                "\n\nПункт: 19\n")
-            f.write(
-                f"J_1 = I_1_nom / (a_harmonic * q_el * n_el) = {n_el} / {self.a_harmonic * q_el * n_el} = {J_1}\n")
+            f.write("\n\nПункт: 19\n")
+            f.write(f"B_z_1 = {B_z_1}\n")
+            f.write(f"B_a = {B_a}\n")
+            f.write(f"k_c = {k_c}\n")
+            f.write(f"l_1 = l_st = l_del = {l_1}\n")
+            f.write(f"b_Z_1 = {b_z_1}\n")
+            f.write(f"h_a = {h_a}\n")
+            
             f.write(
                 "\n\nПункт: 20\n")
             f.write(
@@ -2683,10 +2693,12 @@ class MainProgram:
                 f"S_iz = b_iz * (2 * h_p + b_1 + b_2) = {b_iz} * 2 * {h_p} + {b_1} + {b_2}  = {S_iz}\n")
             f.write(
                 f"S_p' = ((b_1' + b_2') / 2) * h_p_k' - (S_iz + S_pr) = (({b_1_shtrih}+{b_2_shtrih}) / 2) * {h_p_k_shtrih} + ({S_iz} + {S_pr}) = {S_p_shtrih}\n")
+            
             f.write(
                 "\n\nПункт: 22\n")
             f.write(
-                f"k_z = d_iz^2 * u_p * n_el / S_p_shtrih = ({(d_iz ** 2)} * {self.u_p} * {n_el}) / {S_p_shtrih}  = {k_z}\n")
+                f"k_z = d_iz^2 * u_p * n_el / S_p_shtrih = ({d_iz}^2 * {self.u_p} * {n_el}) / {S_p_shtrih}  = {k_z}\n")
+            
             f.write(
                 "\n\nПункт: 23\n")
             f.write(
@@ -2696,6 +2708,7 @@ class MainProgram:
                 "\n\nПункт: 24\n")
             f.write(
                 f"Z_2 = {self.Z_2}\n")
+            
             f.write(
                 "\n\nПункт: 25\n")
             f.write(
@@ -2744,17 +2757,17 @@ class MainProgram:
 
             f.write(
                 f"b_z_2' = 3.14 * ((D_2 * 10^3 - 2 * (h_sh_r + h_sh') * b_1_r) / (Z_2)) - b_1_r = "
-                f"3.14 * (({D_2} * 10^3 - 2 * ({self.h_sh_r} + {self.h_sh_shtrih}) * {self.b_1_r}) / ({self.Z_2})) - {self.b_1_r} = {b_z_2_shtrih}"
+                f"3.14 * (({D_2} * 10^3 - 2 * ({self.h_sh_r} + {self.h_sh_shtrih}) * {self.b_1_r}) / ({self.Z_2})) - {self.b_1_r} = {b_z_2_shtrih}\n"
             )
 
             f.write(
                 f"b_z_2'' = 3.14 * ((D_2 * 10^3 - 2 * h_p + b_2_r) / (Z_2)) - b_2_r ="
-                f"3.14 * (({D_2} * 10^3 - 2 * {h_p} + {self.b_2_r}) / ({self.Z_2})) - {self.b_2_r} = {b_z_2_shtrih_shtrih}"
+                f"3.14 * (({D_2} * 10^3 - 2 * {h_p} + {self.b_2_r}) / ({self.Z_2})) - {self.b_2_r} = {b_z_2_shtrih_shtrih}\n"
             )
 
             f.write(
                 f"h_p_2 = h_sh' + h_sh_r + (b_1_r / 2) + h_1 + (b_2_r / 2) = "
-                f"{self.h_sh_shtrih} + {self.h_sh_r} + ({self.b_1_r} / 2) + {self.h_1} + ({self.b_2_r} / 2) = {self.h_p_2}"
+                f"{self.h_sh_shtrih} + {self.h_sh_r} + ({self.b_1_r} / 2) + {self.h_1} + ({self.b_2_r} / 2) = {self.h_p_2}\n"
             )
 
             f.write(
@@ -2762,12 +2775,12 @@ class MainProgram:
 
             f.write(
                 f"q_c = (3.14 / 8) * (b_1_r ** 2 + b_2_r ** 2) + (1 / 2) * (b_1_r + b_2_r) * h_1 = "
-                f"(3.14 / 8) * ({self.b_1_r} ** 2 + {self.b_2_r} ** 2) + (1 / 2) * ({self.b_1_r} + {self.b_2_r}) * {self.h_1} = {self.q_c}"
+                f"(3.14 / 8) * ({self.b_1_r} ** 2 + {self.b_2_r} ** 2) + (1 / 2) * ({self.b_1_r} + {self.b_2_r}) * {self.h_1} = {self.q_c}\n"
             )
 
             f.write(
                 f"J_2 = (I_2 / q_c) * 10^6 = "
-                f"({I_2} / {self.q_c}) * 10^6 = {J_2}"
+                f"({I_2} / {self.q_c}) * 10^6 = {J_2}\n"
             )
 
             f.write(
@@ -2775,42 +2788,42 @@ class MainProgram:
 
             f.write(
                 f"delta = 2 * sin((3.14 * p) / Z_2) = "
-                f"2 * sin(({math.pi} * {p}) / {self.Z_2}) = {delta}"
+                f"2 * sin(({math.pi} * {p}) / {self.Z_2}) = {delta}\n"
             )
 
             f.write(
                 f"I_kl = I_2 / delta = "
-                f"{I_2} / {delta} = {I_kl}"
+                f"{I_2} / {delta} = {I_kl}\n"
             )
 
             f.write(
                 f"j_kl = 0.85 * J_2 = "
-                f"j_kl = 0.85 * {J_2} = {j_kl}"
+                f"j_kl = 0.85 * {J_2} = {j_kl}\n"
             )
 
             f.write(
                 f"q_kl' = (I_kl / j_kl) * 10^6 = "
-                f"({I_kl} / {j_kl}) * 10^6 = {q_kl_shtrih}"
+                f"({I_kl} / {j_kl}) * 10^6 = {q_kl_shtrih}\n"
             )
 
             f.write(
                 f"h_kl = 1.25 * h_p_2 = "
-                f"1.25 * {self.h_p_2} = {h_kl}"
+                f"1.25 * {self.h_p_2} = {h_kl}\n"
             )
 
             f.write(
                 f"b_kl = q_kl' / h_kl = "
-                f"{q_kl_shtrih} / {h_kl} = {b_kl}"
+                f"{q_kl_shtrih} / {h_kl} = {b_kl}\n"
             )
 
             f.write(
                 f"q_kl = h_kl * b_kl = "
-                f"{h_kl} * {b_kl} = {q_kl}"
+                f"{h_kl} * {b_kl} = {q_kl}\n"
             )
 
             f.write(
                 f"D_k_avg = (D_2 * 10 ** 3) - h_kl = "
-                f"({D_2} * 10^3) - {h_kl} = {D_k_avg}"
+                f"({D_2} * 10^3) - {h_kl} = {D_k_avg}\n"
             )
 
             f.write(
@@ -2818,58 +2831,58 @@ class MainProgram:
 
             f.write(
                 f"nu_0 = 4 * 3.14 * 10^-7 = "
-                f"4 * 3.14 * 10^-7 = {nu_0}"
+                f"4 * 3.14 * 10^-7 = {nu_0}\n"
             )
 
             f.write(
                 f"gamma_1 = (b_sh / delta)^2 / (5 + b_sh / delta) = "
-                f"({self.b_sh} / {self.delta}) ** 2 / (5 + {self.b_sh} / {self.delta}) = {gamma_1}"
+                f"({self.b_sh} / {self.delta}) ** 2 / (5 + {self.b_sh} / {self.delta}) = {gamma_1}\n"
             )
 
             f.write(
                 f"k_del = (t_z_1 * 10^3) / ((t_z_1 * 10^3) - gamma_1 * delta) = "
-                f"({self.t_z_1} * 10^3) / (({self.t_z_1} * 10^3) - {gamma_1} * {self.delta}) = {k_del}"
+                f"({self.t_z_1} * 10^3) / (({self.t_z_1} * 10^3) - {gamma_1} * {self.delta}) = {k_del}\n"
             )
 
             f.write(
                 f"F_del = (2 / nu_0) * B_del * delta * k_del * 10^-3 = "
-                f"(2 / {nu_0}) * {B_del} * {self.delta} * {k_del} * 10^-3 = {F_del}"
+                f"(2 / {nu_0}) * {B_del} * {self.delta} * {k_del} * 10^-3 = {F_del}\n"
             )
 
             f.write(
                 "\n\nПункт: 36\n")
 
             f.write(
-                f"h_Z_1 = h_p = {h_p}"
+                f"h_Z_1 = h_p = {h_p}\n"
             )
 
             f.write(
                 f"B_Z_1' = ((B_del * (t_z_1 * 10^3) * l_del) / (b_z_1 * l_st_1 * k_c)) = "
-                f"(({B_del} * ({self.t_z_1} * 10^3) * {l_del}) / ({b_z_1} * {l_st_1} * {k_c})) = {B_Z_1_shtrih}"
+                f"(({B_del} * ({self.t_z_1} * 10^3) * {l_del}) / ({b_z_1} * {l_st_1} * {k_c})) = {B_Z_1_shtrih}\n"
             )
 
             f.write(
                 f"b_p = t_z_1 * 10^3 - B_Z_1' = "
-                f"{self.t_z_1} * 10^3 - {B_Z_1_shtrih} = {b_p}"
+                f"{self.t_z_1} * 10^3 - {B_Z_1_shtrih} = {b_p}\n"
             )
 
             f.write(
                 f"b_px_1 = (b_1 + b_2) / 2 = "
-                f"({b_1} + {b_2}) / 2 = {b_px_1}"
+                f"({b_1} + {b_2}) / 2 = {b_px_1}\n"
             )
 
             f.write(
                 f"k_px_1 = (b_px_1 * l_del) / (b_z_1 * l_st_1 * k_c) = "
-                f"({b_px_1} * {l_del}) / ({b_z_1} * {l_st_1} * {k_c}) = {k_px_1}"
+                f"({b_px_1} * {l_del}) / ({b_z_1} * {l_st_1} * {k_c}) = {k_px_1}\n"
             )
 
             f.write(
-                f"H_Z_1 = {H_Z_1}"
+                f"H_Z_1 = {H_Z_1}\n"
             )
 
             f.write(
                 f"F_Z_1 = 2 * h_Z_1 * 10^-3 * H_Z_1 = "
-                f"2 * {h_Z_1} * 10^-3 * {H_Z_1} = {F_Z_1}"
+                f"2 * {h_Z_1} * 10^-3 * {H_Z_1} = {F_Z_1}\n"
             )
 
             f.write(
@@ -2877,31 +2890,31 @@ class MainProgram:
 
             f.write(
                 f"h_Z_2 = h_p_2 - 0.1 * b_2 = "
-                f"{self.h_p_2} - 0.1 * {b_2} = {h_Z_2}"
+                f"{self.h_p_2} - 0.1 * {b_2} = {h_Z_2}\n"
             )
 
             f.write(
                 f"B_Z_2' = ((B_del * t_z_2 * l_del) / (b_z_2 * l_st_2 * k_c)) * 10^3 = "
-                f"(({B_del} * {self.t_z_2} * {l_del}) / ({b_z_2} * {l_st_2} * {k_c})) * 10^3 = {B_Z_2_shtrih}"
+                f"(({B_del} * {self.t_z_2} * {l_del}) / ({b_z_2} * {l_st_2} * {k_c})) * 10^3 = {B_Z_2_shtrih}\n"
             )
 
             f.write(
                 f"b_px_2 = (b_1 + b_2) / 2 = "
-                f"({b_1} + {b_2}) / 2 = {b_px_2}"
+                f"({b_1} + {b_2}) / 2 = {b_px_2}\n"
             )
 
             f.write(
                 f"k_px_2 = (b_px_2 * l_del) / (b_z_2 * l_st_2 * k_c) = "
-                f"({b_px_2} * {l_del}) / ({b_z_2} * {l_st_2} * {k_c}) = {k_px_2}"
+                f"({b_px_2} * {l_del}) / ({b_z_2} * {l_st_2} * {k_c}) = {k_px_2}\n"
             )
 
             f.write(
-                f"H_Z_2 = {H_Z_2}"
+                f"H_Z_2 = {H_Z_2}\n"
             )
 
             f.write(
                 f"F_Z_2 = 2 * h_Z_2 * 10^-3 * H_Z_2 = "
-                f"2 * {h_Z_2} * 10^-3 * {H_Z_2} = {F_Z_2}"
+                f"2 * {h_Z_2} * 10^-3 * {H_Z_2} = {F_Z_2}\n"
             )
 
             f.write(
@@ -2909,7 +2922,7 @@ class MainProgram:
 
             f.write(
                 f"k_Z = 1 + (F_Z_1 + F_Z_2) / F_del = "
-                f"1 + ({F_Z_1} + {F_Z_2}) / {F_del} = {k_Z}"
+                f"1 + ({F_Z_1} + {F_Z_2}) / {F_del} = {k_Z}\n"
             )
 
             f.write(
@@ -2917,26 +2930,26 @@ class MainProgram:
 
             f.write(
                 f"h_a = (D_a - D) / 2 - h_p * 10^-3 = "
-                f"({D_a} - {D}) / 2 - {h_p} * 10^-3 = {h_a}"
+                f"({D_a} - {D}) / 2 - {h_p} * 10^-3 = {h_a}\n"
             )
 
             f.write(
                 f"L_a = 3.14 * (D_a - h_a) / 2p = "
-                f"3.14 * ({D_a} - {h_a}) / {self._2p} = {L_a}"
+                f"3.14 * ({D_a} - {h_a}) / {self._2p} = {L_a}\n"
             )
 
             f.write(
                 f"B_a = Ph / (2 * h_a * l_st_1 * k_c) = "
-                f"{Ph} / (2 * {h_a} * {l_st_1} * {k_c}) = {B_a}"
+                f"{Ph} / (2 * {h_a} * {l_st_1} * {k_c}) = {B_a}\n"
             )
 
             f.write(
-                f"H_a = {H_a}"
+                f"H_a = {H_a}\n"
             )
 
             f.write(
                 f"F_a = L_a * H_a = "
-                f"{L_a} * {H_a} = {F_a}"
+                f"{L_a} * {H_a} = {F_a}\n"
             )
 
             f.write(
@@ -3040,13 +3053,13 @@ class MainProgram:
             f.write(
                 "\n\nПункт: 49\n")
             f.write(f"P_pov_2 = p_pov_2 * ((t_z_2 * 10^3) - b_sh_2) * Z_2 * l_st_2 * 10^(-3) = "
-                    f"p_pov_2 * (({self.t_z_2} * 10^3) - {self.b_sh_2}) * {self.Z_2} * {l_st_2} * 10^(-3) = {P_pov_2}\n")
+                    f"{p_pov_2} * (({self.t_z_2} * 10^3) - {self.b_sh_2}) * {self.Z_2} * {l_st_2} * 10^(-3) = {P_pov_2}\n")
             f.write(f"p_pov_2 = 0.5 * k_02 * ((Z_1 * n) / 10000)^1.5 * (B_02 * t_z_1 * 10^3)^2 = "
                     f"0.5 * {k_02} * (({self.Z_1} * {self.n}) / 10000)^1.5 * ({B_02} * {self.t_z_1} * 10^3)^2 = {p_pov_2}\n")
             f.write(
                 f"B_02 = betta_02 * k_del * B_del = {betta_02} * {k_del} * {B_del} = {B_02}\n")
             f.write(
-                f"betta_02 = beta_0_func(self.b_sh / self.delta) = {beta_0_func}({self.b_sh} / {self.delta}) = {betta_02}\n")
+                f"betta_02 = beta_0_func(self.b_sh / self.delta) = beta_0_func({self.b_sh} / {self.delta}) = {betta_02}\n")
 
             f.write(
                 "\n\nПункт: 50\n")
