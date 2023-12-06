@@ -175,10 +175,9 @@ class MainWindow(QMainWindow):
 
             self.ui.tableWidget.item(i, 8).setFlags(
                 self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
-            if (self.table_1.calculateTable(i, self.calc_obj.s_nom) * (
-                    1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_1.calculateTable(i,
-                                                                                                            self.calc_obj.s_nom) * (
-                    1 + (self.ui.sl_ValueOfError.value() / 100))):
+            if (
+                self.table_1.calculateTable(i, self.calc_obj.s_nom) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_1.calculateTable(i,self.calc_obj.s_nom) * (1 + (self.ui.sl_ValueOfError.value() / 100))
+                ):
                 self.ui.tableWidget.item(i, 8).setBackground(correct_color)
                 count += 1
 
@@ -210,7 +209,9 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget_2.item(i, 2).setFlags(
                 self.ui.tableWidget_2.item(i, 2).flags() & ~Qt.ItemIsSelectable)
 
-            if self.table_2.calculateTable(i, 1) * 0.9 < curr_value < self.table_2.calculateTable(i, 1) * 1.1:
+            if (
+                self.table_2.calculateTable(i, 1) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_2.calculateTable(i, 1) * (1 + (self.ui.sl_ValueOfError.value() / 100))
+                ):
                 self.ui.tableWidget_2.item(i, 2).setBackground(correct_color)
                 count += 1
 
@@ -250,7 +251,9 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget_3.item(i, 2).setFlags(
                 self.ui.tableWidget_3.item(i, 2).flags() & ~Qt.ItemIsSelectable)
 
-            if self.table_3.calculateTable(i, 1) * 0.9 < curr_value < self.table_3.calculateTable(i, 1) * 1.1:
+            if (
+                self.table_3.calculateTable(i, 1) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_3.calculateTable(i, 1) * (1 + (self.ui.sl_ValueOfError.value() / 100))
+                ):
                 self.ui.tableWidget_3.item(i, 2).setBackground(correct_color)
                 count += 1
 

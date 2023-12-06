@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'ui_mainWindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.2
+## Created by: Qt User Interface Compiler version 6.6.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -2881,7 +2881,7 @@ class Ui_mainWindow(object):
         self.sl_ValueOfError.setMinimumSize(QSize(150, 0))
         self.sl_ValueOfError.setMaximumSize(QSize(200, 16777215))
         self.sl_ValueOfError.setMinimum(5)
-        self.sl_ValueOfError.setMaximum(35)
+        self.sl_ValueOfError.setMaximum(100)
         self.sl_ValueOfError.setSingleStep(5)
         self.sl_ValueOfError.setPageStep(5)
         self.sl_ValueOfError.setValue(10)
@@ -2994,7 +2994,7 @@ class Ui_mainWindow(object):
         self.cmb_heatClass.setItemText(1, QCoreApplication.translate("mainWindow", u"B", None))
         self.cmb_heatClass.setItemText(2, QCoreApplication.translate("mainWindow", u"H", None))
 
-        self.lineSnom.setText(QCoreApplication.translate("mainWindow", u"0.024", None))
+        self.lineSnom.setText(QCoreApplication.translate("mainWindow", u"0", None))
         self.submitValues.setText(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0441\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("mainWindow", u"\u0412\u0432\u043e\u0434 \u0434\u0430\u043d\u043d\u044b\u0445", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
@@ -3064,554 +3064,448 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem30.setText(QCoreApplication.translate("mainWindow", u"a'r'_2/s'", None));
         ___qtablewidgetitem31 = self.tableWidget.item(1, 1)
         ___qtablewidgetitem31.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem32 = self.tableWidget.item(1, 8)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("mainWindow", u"16.692", None));
-        ___qtablewidgetitem33 = self.tableWidget.item(2, 0)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("mainWindow", u"R = a+a'r'_2/s", None));
-        ___qtablewidgetitem34 = self.tableWidget.item(2, 1)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem35 = self.tableWidget.item(2, 8)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("mainWindow", u"17.344", None));
-        ___qtablewidgetitem36 = self.tableWidget.item(3, 0)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("mainWindow", u"X = b+b'r'_2/s", None));
-        ___qtablewidgetitem37 = self.tableWidget.item(3, 1)
+        ___qtablewidgetitem32 = self.tableWidget.item(2, 0)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("mainWindow", u"R = a+a'r'_2/s", None));
+        ___qtablewidgetitem33 = self.tableWidget.item(2, 1)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem34 = self.tableWidget.item(3, 0)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("mainWindow", u"X = b+b'r'_2/s", None));
+        ___qtablewidgetitem35 = self.tableWidget.item(3, 1)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem36 = self.tableWidget.item(4, 0)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("mainWindow", u"Z = \u221a(R^2+X^2)", None));
+        ___qtablewidgetitem37 = self.tableWidget.item(4, 1)
         ___qtablewidgetitem37.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem38 = self.tableWidget.item(3, 8)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("mainWindow", u"4.123", None));
-        ___qtablewidgetitem39 = self.tableWidget.item(4, 0)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("mainWindow", u"Z = \u221a(R^2+X^2)", None));
-        ___qtablewidgetitem40 = self.tableWidget.item(4, 1)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem41 = self.tableWidget.item(4, 8)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("mainWindow", u"17.828", None));
-        ___qtablewidgetitem42 = self.tableWidget.item(5, 0)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("mainWindow", u"I'_2 = U/Z", None));
-        ___qtablewidgetitem43 = self.tableWidget.item(5, 1)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem44 = self.tableWidget.item(5, 8)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("mainWindow", u"21.315", None));
-        ___qtablewidgetitem45 = self.tableWidget.item(6, 0)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6)'_2 = R/Z", None));
-        ___qtablewidgetitem46 = self.tableWidget.item(6, 1)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem47 = self.tableWidget.item(6, 8)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("mainWindow", u"0.973", None));
-        ___qtablewidgetitem48 = self.tableWidget.item(7, 0)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("mainWindow", u"sin(\u03c6)'_2 = X/Z", None));
-        ___qtablewidgetitem49 = self.tableWidget.item(7, 1)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem50 = self.tableWidget.item(7, 8)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("mainWindow", u"0.231", None));
-        ___qtablewidgetitem51 = self.tableWidget.item(8, 0)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f = I_0\u043f+I'_2cos(\u03c6)'_2", None));
-        ___qtablewidgetitem52 = self.tableWidget.item(8, 1)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem53 = self.tableWidget.item(8, 8)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("mainWindow", u"21.128", None));
-        ___qtablewidgetitem54 = self.tableWidget.item(9, 0)
-        ___qtablewidgetitem54.setText(QCoreApplication.translate("mainWindow", u"I_1\u0440 = I_0\u043f+I'_2sin(\u03c6)'_2", None));
-        ___qtablewidgetitem55 = self.tableWidget.item(9, 1)
-        ___qtablewidgetitem55.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem56 = self.tableWidget.item(9, 8)
-        ___qtablewidgetitem56.setText(QCoreApplication.translate("mainWindow", u"10.459", None));
-        ___qtablewidgetitem57 = self.tableWidget.item(10, 0)
-        ___qtablewidgetitem57.setText(QCoreApplication.translate("mainWindow", u"I_1 = \u221a(I_1\u043f^2+I_1\u0440^2)", None));
-        ___qtablewidgetitem58 = self.tableWidget.item(10, 1)
-        ___qtablewidgetitem58.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem59 = self.tableWidget.item(10, 8)
-        ___qtablewidgetitem59.setText(QCoreApplication.translate("mainWindow", u"23.575", None));
-        ___qtablewidgetitem60 = self.tableWidget.item(11, 0)
-        ___qtablewidgetitem60.setText(QCoreApplication.translate("mainWindow", u"I'_2 = c_1 I'_2", None));
-        ___qtablewidgetitem61 = self.tableWidget.item(11, 1)
-        ___qtablewidgetitem61.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem62 = self.tableWidget.item(11, 8)
-        ___qtablewidgetitem62.setText(QCoreApplication.translate("mainWindow", u"21.856", None));
-        ___qtablewidgetitem63 = self.tableWidget.item(12, 0)
-        ___qtablewidgetitem63.setText(QCoreApplication.translate("mainWindow", u"P_1 = 3U I_1a * 10^-3", None));
-        ___qtablewidgetitem64 = self.tableWidget.item(12, 1)
-        ___qtablewidgetitem64.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem65 = self.tableWidget.item(12, 8)
-        ___qtablewidgetitem65.setText(QCoreApplication.translate("mainWindow", u"24.086", None));
-        ___qtablewidgetitem66 = self.tableWidget.item(13, 0)
-        ___qtablewidgetitem66.setText(QCoreApplication.translate("mainWindow", u"P_\u044d1 = 3I_1^2*r_1*10^-3", None));
-        ___qtablewidgetitem67 = self.tableWidget.item(13, 1)
-        ___qtablewidgetitem67.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem68 = self.tableWidget.item(13, 8)
-        ___qtablewidgetitem68.setText(QCoreApplication.translate("mainWindow", u"1.06", None));
-        ___qtablewidgetitem69 = self.tableWidget.item(14, 0)
-        ___qtablewidgetitem69.setText(QCoreApplication.translate("mainWindow", u"P_\u044d2=3I'_2^2*r'_2*10^-3", None));
-        ___qtablewidgetitem70 = self.tableWidget.item(14, 1)
-        ___qtablewidgetitem70.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem71 = self.tableWidget.item(14, 8)
-        ___qtablewidgetitem71.setText(QCoreApplication.translate("mainWindow", u"0.546", None));
-        ___qtablewidgetitem72 = self.tableWidget.item(15, 0)
-        ___qtablewidgetitem72.setText(QCoreApplication.translate("mainWindow", u"P_\u0434\u043e\u0431 = 0,005P_1", None));
-        ___qtablewidgetitem73 = self.tableWidget.item(15, 1)
-        ___qtablewidgetitem73.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem74 = self.tableWidget.item(15, 8)
-        ___qtablewidgetitem74.setText(QCoreApplication.translate("mainWindow", u"0.12", None));
-        ___qtablewidgetitem75 = self.tableWidget.item(16, 0)
-        ___qtablewidgetitem75.setText(QCoreApplication.translate("mainWindow", u"\u03a3P=P\u0441\u0442+P\u043c\u0435\u0445+P\u044d2+P\u044d1+P\u044d.\u0449+P\u0434\u043e\u0431", None));
-        ___qtablewidgetitem76 = self.tableWidget.item(16, 1)
-        ___qtablewidgetitem76.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem77 = self.tableWidget.item(16, 8)
-        ___qtablewidgetitem77.setText(QCoreApplication.translate("mainWindow", u"2.341", None));
-        ___qtablewidgetitem78 = self.tableWidget.item(17, 0)
-        ___qtablewidgetitem78.setText(QCoreApplication.translate("mainWindow", u"P_2 = P_1 - \u03a3P", None));
-        ___qtablewidgetitem79 = self.tableWidget.item(17, 1)
-        ___qtablewidgetitem79.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem80 = self.tableWidget.item(17, 8)
-        ___qtablewidgetitem80.setText(QCoreApplication.translate("mainWindow", u"21.745", None));
-        ___qtablewidgetitem81 = self.tableWidget.item(18, 0)
-        ___qtablewidgetitem81.setText(QCoreApplication.translate("mainWindow", u"\u03b7 = 1 - \u03a3P/P_1", None));
-        ___qtablewidgetitem82 = self.tableWidget.item(18, 1)
-        ___qtablewidgetitem82.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem83 = self.tableWidget.item(18, 8)
-        ___qtablewidgetitem83.setText(QCoreApplication.translate("mainWindow", u"0.903", None));
-        ___qtablewidgetitem84 = self.tableWidget.item(19, 0)
-        ___qtablewidgetitem84.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6) = I_1a/I_1", None));
-        ___qtablewidgetitem85 = self.tableWidget.item(19, 1)
-        ___qtablewidgetitem85.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem86 = self.tableWidget.item(19, 8)
-        ___qtablewidgetitem86.setText(QCoreApplication.translate("mainWindow", u"0.896", None));
+        ___qtablewidgetitem38 = self.tableWidget.item(5, 0)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("mainWindow", u"I'_2 = U/Z", None));
+        ___qtablewidgetitem39 = self.tableWidget.item(5, 1)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem40 = self.tableWidget.item(6, 0)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6)'_2 = R/Z", None));
+        ___qtablewidgetitem41 = self.tableWidget.item(6, 1)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem42 = self.tableWidget.item(7, 0)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("mainWindow", u"sin(\u03c6)'_2 = X/Z", None));
+        ___qtablewidgetitem43 = self.tableWidget.item(7, 1)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem44 = self.tableWidget.item(8, 0)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f = I_0\u043f+I'_2cos(\u03c6)'_2", None));
+        ___qtablewidgetitem45 = self.tableWidget.item(8, 1)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem46 = self.tableWidget.item(9, 0)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("mainWindow", u"I_1\u0440 = I_0\u043f+I'_2sin(\u03c6)'_2", None));
+        ___qtablewidgetitem47 = self.tableWidget.item(9, 1)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem48 = self.tableWidget.item(10, 0)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("mainWindow", u"I_1 = \u221a(I_1\u043f^2+I_1\u0440^2)", None));
+        ___qtablewidgetitem49 = self.tableWidget.item(10, 1)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem50 = self.tableWidget.item(11, 0)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("mainWindow", u"I'_2 = c_1 I'_2", None));
+        ___qtablewidgetitem51 = self.tableWidget.item(11, 1)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem52 = self.tableWidget.item(12, 0)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("mainWindow", u"P_1 = 3U I_1a * 10^-3", None));
+        ___qtablewidgetitem53 = self.tableWidget.item(12, 1)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem54 = self.tableWidget.item(13, 0)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("mainWindow", u"P_\u044d1 = 3I_1^2*r_1*10^-3", None));
+        ___qtablewidgetitem55 = self.tableWidget.item(13, 1)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem56 = self.tableWidget.item(14, 0)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("mainWindow", u"P_\u044d2=3I'_2^2*r'_2*10^-3", None));
+        ___qtablewidgetitem57 = self.tableWidget.item(14, 1)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem58 = self.tableWidget.item(15, 0)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("mainWindow", u"P_\u0434\u043e\u0431 = 0,005P_1", None));
+        ___qtablewidgetitem59 = self.tableWidget.item(15, 1)
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem60 = self.tableWidget.item(16, 0)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("mainWindow", u"\u03a3P=P\u0441\u0442+P\u043c\u0435\u0445+P\u044d2+P\u044d1+P\u044d.\u0449+P\u0434\u043e\u0431", None));
+        ___qtablewidgetitem61 = self.tableWidget.item(16, 1)
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem62 = self.tableWidget.item(17, 0)
+        ___qtablewidgetitem62.setText(QCoreApplication.translate("mainWindow", u"P_2 = P_1 - \u03a3P", None));
+        ___qtablewidgetitem63 = self.tableWidget.item(17, 1)
+        ___qtablewidgetitem63.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem64 = self.tableWidget.item(18, 0)
+        ___qtablewidgetitem64.setText(QCoreApplication.translate("mainWindow", u"\u03b7 = 1 - \u03a3P/P_1", None));
+        ___qtablewidgetitem65 = self.tableWidget.item(18, 1)
+        ___qtablewidgetitem65.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem66 = self.tableWidget.item(19, 0)
+        ___qtablewidgetitem66.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6) = I_1a/I_1", None));
+        ___qtablewidgetitem67 = self.tableWidget.item(19, 1)
+        ___qtablewidgetitem67.setText(QCoreApplication.translate("mainWindow", u"-", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.groupBox_5.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_I0a.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">I</span><span style=\" font-size:14pt; vertical-align:sub;\">0a </span><span style=\" font-size:14pt;\">=</span></p></body></html>", None))
-        self.le_I0a.setText(QCoreApplication.translate("mainWindow", u"0.37", None))
+        self.le_I0a.setText("")
         self.lb_I0p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">I</span><span style=\" font-size:14pt; vertical-align:sub;\">0p </span><span style=\" font-size:14pt;\">=</span></p></body></html>", None))
-        self.le_I0p.setText(QCoreApplication.translate("mainWindow", u"5.39", None))
+        self.le_I0p.setText("")
         self.lb_Pst.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">\u0421\u0422</span> =</p></body></html>", None))
-        self.le_Pst.setText(QCoreApplication.translate("mainWindow", u"449", None))
+        self.le_Pst.setText("")
         self.lb_Pmeh.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">\u043c\u0435\u0445</span> =</p></body></html>", None))
-        self.le_Pmeh.setText(QCoreApplication.translate("mainWindow", u"208", None))
+        self.le_Pmeh.setText("")
         self.lb_r1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">r</span><span style=\" font-size:14pt; vertical-align:sub;\">1 </span><span style=\" font-size:14pt;\">=</span></p></body></html>", None))
-        self.le_r1.setText(QCoreApplication.translate("mainWindow", u"0.6", None))
+        self.le_r1.setText("")
         self.lb_r2_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>r'<span style=\" vertical-align:sub;\">2 </span>=</p></body></html>", None))
-        self.le_r2_shtrih.setText(QCoreApplication.translate("mainWindow", u"0.38", None))
+        self.le_r2_shtrih.setText("")
         self.lb_c1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>c<span style=\" vertical-align:sub;\">1 </span>=</p></body></html>", None))
-        self.le_c1.setText(QCoreApplication.translate("mainWindow", u"1.029", None))
+        self.le_c1.setText("")
         self.lb_a_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>a' =</p></body></html>", None))
-        self.le_a_shtrih.setText(QCoreApplication.translate("mainWindow", u"1.06", None))
+        self.le_a_shtrih.setText("")
         self.lb_a.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>a =</p></body></html>", None))
-        self.le_a.setText(QCoreApplication.translate("mainWindow", u"0.364", None))
+        self.le_a.setText("")
         self.lb_b_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b' =</p></body></html>", None))
-        self.le_b_shtrih.setText(QCoreApplication.translate("mainWindow", u"0", None))
+        self.le_b_shtrih.setText("")
         self.lb_b.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b =</p></body></html>", None))
-        self.le_b.setText(QCoreApplication.translate("mainWindow", u"4.17", None))
+        self.le_b.setText("")
         self.bt_check_table_1.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
         self.bt_calculate_table1.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.bt_show_chart_1.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
         self.bt_export_xl_1.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
         self.lb_error.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 1", None))
-        ___qtablewidgetitem87 = self.tableWidget_2.horizontalHeaderItem(0)
-        ___qtablewidgetitem87.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
-        ___qtablewidgetitem88 = self.tableWidget_2.horizontalHeaderItem(1)
-        ___qtablewidgetitem88.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
-        ___qtablewidgetitem89 = self.tableWidget_2.horizontalHeaderItem(4)
-        ___qtablewidgetitem89.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
-        ___qtablewidgetitem90 = self.tableWidget_2.horizontalHeaderItem(7)
-        ___qtablewidgetitem90.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
-        ___qtablewidgetitem91 = self.tableWidget_2.verticalHeaderItem(1)
-        ___qtablewidgetitem91.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem92 = self.tableWidget_2.verticalHeaderItem(2)
-        ___qtablewidgetitem92.setText(QCoreApplication.translate("mainWindow", u"2", None));
-        ___qtablewidgetitem93 = self.tableWidget_2.verticalHeaderItem(3)
-        ___qtablewidgetitem93.setText(QCoreApplication.translate("mainWindow", u"3", None));
-        ___qtablewidgetitem94 = self.tableWidget_2.verticalHeaderItem(4)
-        ___qtablewidgetitem94.setText(QCoreApplication.translate("mainWindow", u"4", None));
-        ___qtablewidgetitem95 = self.tableWidget_2.verticalHeaderItem(5)
-        ___qtablewidgetitem95.setText(QCoreApplication.translate("mainWindow", u"5", None));
-        ___qtablewidgetitem96 = self.tableWidget_2.verticalHeaderItem(6)
-        ___qtablewidgetitem96.setText(QCoreApplication.translate("mainWindow", u"6", None));
-        ___qtablewidgetitem97 = self.tableWidget_2.verticalHeaderItem(7)
-        ___qtablewidgetitem97.setText(QCoreApplication.translate("mainWindow", u"7", None));
-        ___qtablewidgetitem98 = self.tableWidget_2.verticalHeaderItem(8)
-        ___qtablewidgetitem98.setText(QCoreApplication.translate("mainWindow", u"8", None));
-        ___qtablewidgetitem99 = self.tableWidget_2.verticalHeaderItem(9)
-        ___qtablewidgetitem99.setText(QCoreApplication.translate("mainWindow", u"9", None));
-        ___qtablewidgetitem100 = self.tableWidget_2.verticalHeaderItem(10)
-        ___qtablewidgetitem100.setText(QCoreApplication.translate("mainWindow", u"10", None));
-        ___qtablewidgetitem101 = self.tableWidget_2.verticalHeaderItem(11)
-        ___qtablewidgetitem101.setText(QCoreApplication.translate("mainWindow", u"11", None));
-        ___qtablewidgetitem102 = self.tableWidget_2.verticalHeaderItem(12)
-        ___qtablewidgetitem102.setText(QCoreApplication.translate("mainWindow", u"12", None));
-        ___qtablewidgetitem103 = self.tableWidget_2.verticalHeaderItem(13)
-        ___qtablewidgetitem103.setText(QCoreApplication.translate("mainWindow", u"13", None));
-        ___qtablewidgetitem104 = self.tableWidget_2.verticalHeaderItem(14)
-        ___qtablewidgetitem104.setText(QCoreApplication.translate("mainWindow", u"14", None));
+        ___qtablewidgetitem68 = self.tableWidget_2.horizontalHeaderItem(0)
+        ___qtablewidgetitem68.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
+        ___qtablewidgetitem69 = self.tableWidget_2.horizontalHeaderItem(1)
+        ___qtablewidgetitem69.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
+        ___qtablewidgetitem70 = self.tableWidget_2.horizontalHeaderItem(4)
+        ___qtablewidgetitem70.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
+        ___qtablewidgetitem71 = self.tableWidget_2.horizontalHeaderItem(7)
+        ___qtablewidgetitem71.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
+        ___qtablewidgetitem72 = self.tableWidget_2.verticalHeaderItem(1)
+        ___qtablewidgetitem72.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem73 = self.tableWidget_2.verticalHeaderItem(2)
+        ___qtablewidgetitem73.setText(QCoreApplication.translate("mainWindow", u"2", None));
+        ___qtablewidgetitem74 = self.tableWidget_2.verticalHeaderItem(3)
+        ___qtablewidgetitem74.setText(QCoreApplication.translate("mainWindow", u"3", None));
+        ___qtablewidgetitem75 = self.tableWidget_2.verticalHeaderItem(4)
+        ___qtablewidgetitem75.setText(QCoreApplication.translate("mainWindow", u"4", None));
+        ___qtablewidgetitem76 = self.tableWidget_2.verticalHeaderItem(5)
+        ___qtablewidgetitem76.setText(QCoreApplication.translate("mainWindow", u"5", None));
+        ___qtablewidgetitem77 = self.tableWidget_2.verticalHeaderItem(6)
+        ___qtablewidgetitem77.setText(QCoreApplication.translate("mainWindow", u"6", None));
+        ___qtablewidgetitem78 = self.tableWidget_2.verticalHeaderItem(7)
+        ___qtablewidgetitem78.setText(QCoreApplication.translate("mainWindow", u"7", None));
+        ___qtablewidgetitem79 = self.tableWidget_2.verticalHeaderItem(8)
+        ___qtablewidgetitem79.setText(QCoreApplication.translate("mainWindow", u"8", None));
+        ___qtablewidgetitem80 = self.tableWidget_2.verticalHeaderItem(9)
+        ___qtablewidgetitem80.setText(QCoreApplication.translate("mainWindow", u"9", None));
+        ___qtablewidgetitem81 = self.tableWidget_2.verticalHeaderItem(10)
+        ___qtablewidgetitem81.setText(QCoreApplication.translate("mainWindow", u"10", None));
+        ___qtablewidgetitem82 = self.tableWidget_2.verticalHeaderItem(11)
+        ___qtablewidgetitem82.setText(QCoreApplication.translate("mainWindow", u"11", None));
+        ___qtablewidgetitem83 = self.tableWidget_2.verticalHeaderItem(12)
+        ___qtablewidgetitem83.setText(QCoreApplication.translate("mainWindow", u"12", None));
+        ___qtablewidgetitem84 = self.tableWidget_2.verticalHeaderItem(13)
+        ___qtablewidgetitem84.setText(QCoreApplication.translate("mainWindow", u"13", None));
+        ___qtablewidgetitem85 = self.tableWidget_2.verticalHeaderItem(14)
+        ___qtablewidgetitem85.setText(QCoreApplication.translate("mainWindow", u"14", None));
 
         __sortingEnabled1 = self.tableWidget_2.isSortingEnabled()
         self.tableWidget_2.setSortingEnabled(False)
-        ___qtablewidgetitem105 = self.tableWidget_2.item(0, 2)
-        ___qtablewidgetitem105.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem106 = self.tableWidget_2.item(0, 3)
-        ___qtablewidgetitem106.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
-        ___qtablewidgetitem107 = self.tableWidget_2.item(0, 4)
-        ___qtablewidgetitem107.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
-        ___qtablewidgetitem108 = self.tableWidget_2.item(0, 5)
-        ___qtablewidgetitem108.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
-        ___qtablewidgetitem109 = self.tableWidget_2.item(0, 6)
-        ___qtablewidgetitem109.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
-        ___qtablewidgetitem110 = self.tableWidget_2.item(0, 7)
-        ___qtablewidgetitem110.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
-        ___qtablewidgetitem111 = self.tableWidget_2.item(1, 0)
-        ___qtablewidgetitem111.setText(QCoreApplication.translate("mainWindow", u"\u03be=63,61h_c*\u221as", None));
-        ___qtablewidgetitem112 = self.tableWidget_2.item(1, 1)
-        ___qtablewidgetitem112.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem113 = self.tableWidget_2.item(1, 2)
-        ___qtablewidgetitem113.setText(QCoreApplication.translate("mainWindow", u"1.55", None));
-        ___qtablewidgetitem114 = self.tableWidget_2.item(2, 0)
-        ___qtablewidgetitem114.setText(QCoreApplication.translate("mainWindow", u"\u03c6(\u03be)", None));
-        ___qtablewidgetitem115 = self.tableWidget_2.item(2, 1)
-        ___qtablewidgetitem115.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem116 = self.tableWidget_2.item(2, 2)
-        ___qtablewidgetitem116.setText(QCoreApplication.translate("mainWindow", u"0.39", None));
-        ___qtablewidgetitem117 = self.tableWidget_2.item(3, 0)
-        ___qtablewidgetitem117.setText(QCoreApplication.translate("mainWindow", u"h_r = h_c/(1-\u03c6)", None));
-        ___qtablewidgetitem118 = self.tableWidget_2.item(3, 1)
-        ___qtablewidgetitem118.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
-        ___qtablewidgetitem119 = self.tableWidget_2.item(3, 2)
-        ___qtablewidgetitem119.setText(QCoreApplication.translate("mainWindow", u"17.524", None));
-        ___qtablewidgetitem120 = self.tableWidget_2.item(4, 0)
-        ___qtablewidgetitem120.setText(QCoreApplication.translate("mainWindow", u"k_r=q_c/q_r", None));
-        ___qtablewidgetitem121 = self.tableWidget_2.item(4, 1)
-        ___qtablewidgetitem121.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem122 = self.tableWidget_2.item(4, 2)
-        ___qtablewidgetitem122.setText(QCoreApplication.translate("mainWindow", u"1.348", None));
-        ___qtablewidgetitem123 = self.tableWidget_2.item(5, 0)
-        ___qtablewidgetitem123.setText(QCoreApplication.translate("mainWindow", u"K_R =1+(r_c/r_2)*(k_r-1)", None));
-        ___qtablewidgetitem124 = self.tableWidget_2.item(5, 1)
-        ___qtablewidgetitem124.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem125 = self.tableWidget_2.item(5, 2)
-        ___qtablewidgetitem125.setText(QCoreApplication.translate("mainWindow", u"1.23", None));
-        ___qtablewidgetitem126 = self.tableWidget_2.item(6, 0)
-        ___qtablewidgetitem126.setText(QCoreApplication.translate("mainWindow", u"r'_2_\u03be = K_R*r'_2", None));
-        ___qtablewidgetitem127 = self.tableWidget_2.item(6, 1)
-        ___qtablewidgetitem127.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem128 = self.tableWidget_2.item(6, 2)
-        ___qtablewidgetitem128.setText(QCoreApplication.translate("mainWindow", u"0.48", None));
-        ___qtablewidgetitem129 = self.tableWidget_2.item(7, 0)
-        ___qtablewidgetitem129.setText(QCoreApplication.translate("mainWindow", u"\u043a_\u0434 = \u03c6'(\u03be)", None));
-        ___qtablewidgetitem130 = self.tableWidget_2.item(7, 1)
-        ___qtablewidgetitem130.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem131 = self.tableWidget_2.item(7, 2)
-        ___qtablewidgetitem131.setText(QCoreApplication.translate("mainWindow", u"0.85", None));
-        ___qtablewidgetitem132 = self.tableWidget_2.item(8, 0)
-        ___qtablewidgetitem132.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be = \u03bb_\u043f2 - \u0394\u03bb\u043f2\u03be", None));
-        ___qtablewidgetitem133 = self.tableWidget_2.item(8, 1)
-        ___qtablewidgetitem133.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem134 = self.tableWidget_2.item(8, 2)
-        ___qtablewidgetitem134.setText(QCoreApplication.translate("mainWindow", u"1.9", None));
-        ___qtablewidgetitem135 = self.tableWidget_2.item(9, 0)
-        ___qtablewidgetitem135.setText(QCoreApplication.translate("mainWindow", u"Kx = \u03a3\u03bb_2\u03be/\u03a3\u03bb_2", None));
-        ___qtablewidgetitem136 = self.tableWidget_2.item(9, 1)
-        ___qtablewidgetitem136.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem137 = self.tableWidget_2.item(9, 2)
-        ___qtablewidgetitem137.setText(QCoreApplication.translate("mainWindow", u"0.972", None));
-        ___qtablewidgetitem138 = self.tableWidget_2.item(10, 0)
-        ___qtablewidgetitem138.setText(QCoreApplication.translate("mainWindow", u"x'2\u03be = Kx * x'_2", None));
-        ___qtablewidgetitem139 = self.tableWidget_2.item(10, 1)
-        ___qtablewidgetitem139.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem140 = self.tableWidget_2.item(10, 2)
-        ___qtablewidgetitem140.setText(QCoreApplication.translate("mainWindow", u"2.058", None));
-        ___qtablewidgetitem141 = self.tableWidget_2.item(11, 0)
-        ___qtablewidgetitem141.setText(QCoreApplication.translate("mainWindow", u"R\u043f = r_1+c_1\u043f* (r'_2_\u03be/s)", None));
-        ___qtablewidgetitem142 = self.tableWidget_2.item(11, 1)
-        ___qtablewidgetitem142.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem143 = self.tableWidget_2.item(11, 2)
-        ___qtablewidgetitem143.setText(QCoreApplication.translate("mainWindow", u"1.16", None));
-        ___qtablewidgetitem144 = self.tableWidget_2.item(12, 0)
-        ___qtablewidgetitem144.setText(QCoreApplication.translate("mainWindow", u"X\u043f = x_1+c_1\u043f*x'2\u03be", None));
-        ___qtablewidgetitem145 = self.tableWidget_2.item(12, 1)
-        ___qtablewidgetitem145.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem146 = self.tableWidget_2.item(12, 2)
-        ___qtablewidgetitem146.setText(QCoreApplication.translate("mainWindow", u"3.667", None));
-        ___qtablewidgetitem147 = self.tableWidget_2.item(13, 0)
-        ___qtablewidgetitem147.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043f = U/\u221a(R\u043f^2 + X\u043f^2)", None));
-        ___qtablewidgetitem148 = self.tableWidget_2.item(13, 1)
-        ___qtablewidgetitem148.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem149 = self.tableWidget_2.item(13, 2)
-        ___qtablewidgetitem149.setText(QCoreApplication.translate("mainWindow", u"98.81", None));
-        ___qtablewidgetitem150 = self.tableWidget_2.item(14, 0)
-        ___qtablewidgetitem150.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f=I'_2\u221a(R\u043f^2 + (X\u043f+x_12\u043f)^2)/(c_1\u043f*x_12\u043f)", None));
-        ___qtablewidgetitem151 = self.tableWidget_2.item(14, 1)
-        ___qtablewidgetitem151.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem152 = self.tableWidget_2.item(14, 2)
-        ___qtablewidgetitem152.setText(QCoreApplication.translate("mainWindow", u"101.15", None));
+        ___qtablewidgetitem86 = self.tableWidget_2.item(0, 2)
+        ___qtablewidgetitem86.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem87 = self.tableWidget_2.item(0, 3)
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
+        ___qtablewidgetitem88 = self.tableWidget_2.item(0, 4)
+        ___qtablewidgetitem88.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
+        ___qtablewidgetitem89 = self.tableWidget_2.item(0, 5)
+        ___qtablewidgetitem89.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
+        ___qtablewidgetitem90 = self.tableWidget_2.item(0, 6)
+        ___qtablewidgetitem90.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
+        ___qtablewidgetitem91 = self.tableWidget_2.item(0, 7)
+        ___qtablewidgetitem91.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
+        ___qtablewidgetitem92 = self.tableWidget_2.item(1, 0)
+        ___qtablewidgetitem92.setText(QCoreApplication.translate("mainWindow", u"\u03be=63,61h_c*\u221as", None));
+        ___qtablewidgetitem93 = self.tableWidget_2.item(1, 1)
+        ___qtablewidgetitem93.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem94 = self.tableWidget_2.item(2, 0)
+        ___qtablewidgetitem94.setText(QCoreApplication.translate("mainWindow", u"\u03c6(\u03be)", None));
+        ___qtablewidgetitem95 = self.tableWidget_2.item(2, 1)
+        ___qtablewidgetitem95.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem96 = self.tableWidget_2.item(3, 0)
+        ___qtablewidgetitem96.setText(QCoreApplication.translate("mainWindow", u"h_r = h_c/(1-\u03c6)", None));
+        ___qtablewidgetitem97 = self.tableWidget_2.item(3, 1)
+        ___qtablewidgetitem97.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
+        ___qtablewidgetitem98 = self.tableWidget_2.item(4, 0)
+        ___qtablewidgetitem98.setText(QCoreApplication.translate("mainWindow", u"k_r=q_c/q_r", None));
+        ___qtablewidgetitem99 = self.tableWidget_2.item(4, 1)
+        ___qtablewidgetitem99.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem100 = self.tableWidget_2.item(5, 0)
+        ___qtablewidgetitem100.setText(QCoreApplication.translate("mainWindow", u"K_R =1+(r_c/r_2)*(k_r-1)", None));
+        ___qtablewidgetitem101 = self.tableWidget_2.item(5, 1)
+        ___qtablewidgetitem101.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem102 = self.tableWidget_2.item(6, 0)
+        ___qtablewidgetitem102.setText(QCoreApplication.translate("mainWindow", u"r'_2_\u03be = K_R*r'_2", None));
+        ___qtablewidgetitem103 = self.tableWidget_2.item(6, 1)
+        ___qtablewidgetitem103.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem104 = self.tableWidget_2.item(7, 0)
+        ___qtablewidgetitem104.setText(QCoreApplication.translate("mainWindow", u"\u043a_\u0434 = \u03c6'(\u03be)", None));
+        ___qtablewidgetitem105 = self.tableWidget_2.item(7, 1)
+        ___qtablewidgetitem105.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem106 = self.tableWidget_2.item(8, 0)
+        ___qtablewidgetitem106.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be = \u03bb_\u043f2 - \u0394\u03bb\u043f2\u03be", None));
+        ___qtablewidgetitem107 = self.tableWidget_2.item(8, 1)
+        ___qtablewidgetitem107.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem108 = self.tableWidget_2.item(9, 0)
+        ___qtablewidgetitem108.setText(QCoreApplication.translate("mainWindow", u"Kx = \u03a3\u03bb_2\u03be/\u03a3\u03bb_2", None));
+        ___qtablewidgetitem109 = self.tableWidget_2.item(9, 1)
+        ___qtablewidgetitem109.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem110 = self.tableWidget_2.item(10, 0)
+        ___qtablewidgetitem110.setText(QCoreApplication.translate("mainWindow", u"x'2\u03be = Kx * x'_2", None));
+        ___qtablewidgetitem111 = self.tableWidget_2.item(10, 1)
+        ___qtablewidgetitem111.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem112 = self.tableWidget_2.item(11, 0)
+        ___qtablewidgetitem112.setText(QCoreApplication.translate("mainWindow", u"R\u043f = r_1+c_1\u043f* (r'_2_\u03be/s)", None));
+        ___qtablewidgetitem113 = self.tableWidget_2.item(11, 1)
+        ___qtablewidgetitem113.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem114 = self.tableWidget_2.item(12, 0)
+        ___qtablewidgetitem114.setText(QCoreApplication.translate("mainWindow", u"X\u043f = x_1+c_1\u043f*x'2\u03be", None));
+        ___qtablewidgetitem115 = self.tableWidget_2.item(12, 1)
+        ___qtablewidgetitem115.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem116 = self.tableWidget_2.item(13, 0)
+        ___qtablewidgetitem116.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043f = U/\u221a(R\u043f^2 + X\u043f^2)", None));
+        ___qtablewidgetitem117 = self.tableWidget_2.item(13, 1)
+        ___qtablewidgetitem117.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem118 = self.tableWidget_2.item(14, 0)
+        ___qtablewidgetitem118.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f=I'_2\u221a(R\u043f^2 + (X\u043f+x_12\u043f)^2)/(c_1\u043f*x_12\u043f)", None));
+        ___qtablewidgetitem119 = self.tableWidget_2.item(14, 1)
+        ___qtablewidgetitem119.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
         self.tableWidget_2.setSortingEnabled(__sortingEnabled1)
 
         self.groupBox_6.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_h_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">c </span>=</p></body></html>", None))
-        self.le_h_c.setText(QCoreApplication.translate("mainWindow", u"29.62", None))
+        self.le_h_c.setText("")
         self.lb_h_p_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">p2 </span>=</p></body></html>", None))
-        self.le_h_p_2.setText(QCoreApplication.translate("mainWindow", u"30.62", None))
+        self.le_h_p_2.setText("")
         self.lb_h_sh.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u0448</span> =</p></body></html>", None))
-        self.le_h_sh.setText(QCoreApplication.translate("mainWindow", u"0.7", None))
+        self.le_h_sh.setText("")
         self.lb_h_sh_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h'<span style=\" vertical-align:sub;\">\u0448</span> =</p></body></html>", None))
-        self.le_h_sh_shtrih.setText(QCoreApplication.translate("mainWindow", u"0.3", None))
+        self.le_h_sh_shtrih.setText("")
         self.lb_b_1_r.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">1\u0440\u043e\u0442.</span>=</p></body></html>", None))
-        self.le_b_1_r.setText(QCoreApplication.translate("mainWindow", u"8.36", None))
+        self.le_b_1_r.setText("")
         self.lb_b_2_r.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">2\u0440\u043e\u0442.</span>=</p></body></html>", None))
-        self.le_b_2_r.setText(QCoreApplication.translate("mainWindow", u"4.53", None))
+        self.le_b_2_r.setText("")
         self.lb_h_0.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">0</span> =</p></body></html>", None))
-        self.le_h_0.setText(QCoreApplication.translate("mainWindow", u"24.98", None))
+        self.le_h_0.setText("")
         self.lb_b_sh_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">\u04482</span> =</p></body></html>", None))
-        self.le_b_sh_2.setText(QCoreApplication.translate("mainWindow", u"1.5", None))
+        self.le_b_sh_2.setText("")
         self.lb_Lamda_d_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u0434</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">2</span>=</p></body></html>", None))
-        self.le_Lamda_d_2.setText(QCoreApplication.translate("mainWindow", u"2.19", None))
+        self.le_Lamda_d_2.setText("")
         self.lb_X_2_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>X'<span style=\" vertical-align:sub;\">2</span> =</p></body></html>", None))
-        self.le_X_2_shtrih.setText(QCoreApplication.translate("mainWindow", u"2.03", None))
+        self.le_X_2_shtrih.setText("")
         self.lb_x_1_2_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0445<span style=\" vertical-align:sub;\">12\u0440</span> =</p></body></html>", None))
-        self.le_x_1_2_p.setText(QCoreApplication.translate("mainWindow", u"91.84", None))
+        self.le_x_1_2_p.setText("")
         self.lb_c_1_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0441<span style=\" vertical-align:sub;\">1\u0440</span> =</p></body></html>", None))
-        self.le_c_1_p.setText(QCoreApplication.translate("mainWindow", u"1.02", None))
+        self.le_c_1_p.setText("")
         self.lb_X_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0425<span style=\" vertical-align:sub;\">1</span> =</p></body></html>", None))
-        self.le_X_1.setText(QCoreApplication.translate("mainWindow", u"1.89", None))
+        self.le_X_1.setText("")
         self.lb_h_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">1 </span>=</p></body></html>", None))
-        self.le_h_1.setText(QCoreApplication.translate("mainWindow", u"23.17", None))
+        self.le_h_1.setText("")
         self.lb_q_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>q<span style=\" vertical-align:sub;\">c</span> =</p></body></html>", None))
-        self.le_q_c.setText(QCoreApplication.translate("mainWindow", u"184.94", None))
+        self.le_q_c.setText("")
         self.lb_r_c.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>r<span style=\" vertical-align:sub;\">c</span> =</p></body></html>", None))
-        self.le_r_c.setText(QCoreApplication.translate("mainWindow", u"38.3", None))
+        self.le_r_c.setText("")
         self.lb_r_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>r<span style=\" vertical-align:sub;\">2</span> =</p></body></html>", None))
-        self.le_r_2.setText(QCoreApplication.translate("mainWindow", u"57.3", None))
+        self.le_r_2.setText("")
         self.lb_Lamda_p_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">p2</span>=</p></body></html>", None))
-        self.le_Lamda_p_2.setText(QCoreApplication.translate("mainWindow", u"2.42", None))
+        self.le_Lamda_p_2.setText("")
         self.lb_Lamda_l_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; font-weight:700; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043b</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">2</span>=</p></body></html>", None))
-        self.le_Lamda_l_2.setText(QCoreApplication.translate("mainWindow", u"0.678", None))
+        self.le_Lamda_l_2.setText("")
         self.bt_export_xl_table_2.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
         self.bt_check_table_2.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
         self.bt_calculate_table2.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.lb_error_2.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 2", None))
-        ___qtablewidgetitem153 = self.tableWidget_3.horizontalHeaderItem(0)
-        ___qtablewidgetitem153.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
-        ___qtablewidgetitem154 = self.tableWidget_3.horizontalHeaderItem(1)
-        ___qtablewidgetitem154.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
-        ___qtablewidgetitem155 = self.tableWidget_3.horizontalHeaderItem(4)
-        ___qtablewidgetitem155.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
-        ___qtablewidgetitem156 = self.tableWidget_3.horizontalHeaderItem(7)
-        ___qtablewidgetitem156.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
-        ___qtablewidgetitem157 = self.tableWidget_3.verticalHeaderItem(1)
-        ___qtablewidgetitem157.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem158 = self.tableWidget_3.verticalHeaderItem(2)
-        ___qtablewidgetitem158.setText(QCoreApplication.translate("mainWindow", u"2", None));
-        ___qtablewidgetitem159 = self.tableWidget_3.verticalHeaderItem(3)
-        ___qtablewidgetitem159.setText(QCoreApplication.translate("mainWindow", u"3", None));
-        ___qtablewidgetitem160 = self.tableWidget_3.verticalHeaderItem(4)
-        ___qtablewidgetitem160.setText(QCoreApplication.translate("mainWindow", u"4", None));
-        ___qtablewidgetitem161 = self.tableWidget_3.verticalHeaderItem(5)
-        ___qtablewidgetitem161.setText(QCoreApplication.translate("mainWindow", u"5", None));
-        ___qtablewidgetitem162 = self.tableWidget_3.verticalHeaderItem(6)
-        ___qtablewidgetitem162.setText(QCoreApplication.translate("mainWindow", u"6", None));
-        ___qtablewidgetitem163 = self.tableWidget_3.verticalHeaderItem(7)
-        ___qtablewidgetitem163.setText(QCoreApplication.translate("mainWindow", u"7", None));
-        ___qtablewidgetitem164 = self.tableWidget_3.verticalHeaderItem(8)
-        ___qtablewidgetitem164.setText(QCoreApplication.translate("mainWindow", u"8", None));
-        ___qtablewidgetitem165 = self.tableWidget_3.verticalHeaderItem(9)
-        ___qtablewidgetitem165.setText(QCoreApplication.translate("mainWindow", u"9", None));
-        ___qtablewidgetitem166 = self.tableWidget_3.verticalHeaderItem(10)
-        ___qtablewidgetitem166.setText(QCoreApplication.translate("mainWindow", u"10", None));
-        ___qtablewidgetitem167 = self.tableWidget_3.verticalHeaderItem(11)
-        ___qtablewidgetitem167.setText(QCoreApplication.translate("mainWindow", u"11", None));
-        ___qtablewidgetitem168 = self.tableWidget_3.verticalHeaderItem(12)
-        ___qtablewidgetitem168.setText(QCoreApplication.translate("mainWindow", u"12", None));
-        ___qtablewidgetitem169 = self.tableWidget_3.verticalHeaderItem(13)
-        ___qtablewidgetitem169.setText(QCoreApplication.translate("mainWindow", u"13", None));
-        ___qtablewidgetitem170 = self.tableWidget_3.verticalHeaderItem(14)
-        ___qtablewidgetitem170.setText(QCoreApplication.translate("mainWindow", u"14", None));
-        ___qtablewidgetitem171 = self.tableWidget_3.verticalHeaderItem(15)
-        ___qtablewidgetitem171.setText(QCoreApplication.translate("mainWindow", u"15", None));
-        ___qtablewidgetitem172 = self.tableWidget_3.verticalHeaderItem(16)
-        ___qtablewidgetitem172.setText(QCoreApplication.translate("mainWindow", u"16", None));
-        ___qtablewidgetitem173 = self.tableWidget_3.verticalHeaderItem(17)
-        ___qtablewidgetitem173.setText(QCoreApplication.translate("mainWindow", u"17", None));
-        ___qtablewidgetitem174 = self.tableWidget_3.verticalHeaderItem(18)
-        ___qtablewidgetitem174.setText(QCoreApplication.translate("mainWindow", u"18", None));
-        ___qtablewidgetitem175 = self.tableWidget_3.verticalHeaderItem(19)
-        ___qtablewidgetitem175.setText(QCoreApplication.translate("mainWindow", u"19", None));
-        ___qtablewidgetitem176 = self.tableWidget_3.verticalHeaderItem(20)
-        ___qtablewidgetitem176.setText(QCoreApplication.translate("mainWindow", u"20", None));
+        ___qtablewidgetitem120 = self.tableWidget_3.horizontalHeaderItem(0)
+        ___qtablewidgetitem120.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
+        ___qtablewidgetitem121 = self.tableWidget_3.horizontalHeaderItem(1)
+        ___qtablewidgetitem121.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
+        ___qtablewidgetitem122 = self.tableWidget_3.horizontalHeaderItem(4)
+        ___qtablewidgetitem122.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
+        ___qtablewidgetitem123 = self.tableWidget_3.horizontalHeaderItem(7)
+        ___qtablewidgetitem123.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
+        ___qtablewidgetitem124 = self.tableWidget_3.verticalHeaderItem(1)
+        ___qtablewidgetitem124.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem125 = self.tableWidget_3.verticalHeaderItem(2)
+        ___qtablewidgetitem125.setText(QCoreApplication.translate("mainWindow", u"2", None));
+        ___qtablewidgetitem126 = self.tableWidget_3.verticalHeaderItem(3)
+        ___qtablewidgetitem126.setText(QCoreApplication.translate("mainWindow", u"3", None));
+        ___qtablewidgetitem127 = self.tableWidget_3.verticalHeaderItem(4)
+        ___qtablewidgetitem127.setText(QCoreApplication.translate("mainWindow", u"4", None));
+        ___qtablewidgetitem128 = self.tableWidget_3.verticalHeaderItem(5)
+        ___qtablewidgetitem128.setText(QCoreApplication.translate("mainWindow", u"5", None));
+        ___qtablewidgetitem129 = self.tableWidget_3.verticalHeaderItem(6)
+        ___qtablewidgetitem129.setText(QCoreApplication.translate("mainWindow", u"6", None));
+        ___qtablewidgetitem130 = self.tableWidget_3.verticalHeaderItem(7)
+        ___qtablewidgetitem130.setText(QCoreApplication.translate("mainWindow", u"7", None));
+        ___qtablewidgetitem131 = self.tableWidget_3.verticalHeaderItem(8)
+        ___qtablewidgetitem131.setText(QCoreApplication.translate("mainWindow", u"8", None));
+        ___qtablewidgetitem132 = self.tableWidget_3.verticalHeaderItem(9)
+        ___qtablewidgetitem132.setText(QCoreApplication.translate("mainWindow", u"9", None));
+        ___qtablewidgetitem133 = self.tableWidget_3.verticalHeaderItem(10)
+        ___qtablewidgetitem133.setText(QCoreApplication.translate("mainWindow", u"10", None));
+        ___qtablewidgetitem134 = self.tableWidget_3.verticalHeaderItem(11)
+        ___qtablewidgetitem134.setText(QCoreApplication.translate("mainWindow", u"11", None));
+        ___qtablewidgetitem135 = self.tableWidget_3.verticalHeaderItem(12)
+        ___qtablewidgetitem135.setText(QCoreApplication.translate("mainWindow", u"12", None));
+        ___qtablewidgetitem136 = self.tableWidget_3.verticalHeaderItem(13)
+        ___qtablewidgetitem136.setText(QCoreApplication.translate("mainWindow", u"13", None));
+        ___qtablewidgetitem137 = self.tableWidget_3.verticalHeaderItem(14)
+        ___qtablewidgetitem137.setText(QCoreApplication.translate("mainWindow", u"14", None));
+        ___qtablewidgetitem138 = self.tableWidget_3.verticalHeaderItem(15)
+        ___qtablewidgetitem138.setText(QCoreApplication.translate("mainWindow", u"15", None));
+        ___qtablewidgetitem139 = self.tableWidget_3.verticalHeaderItem(16)
+        ___qtablewidgetitem139.setText(QCoreApplication.translate("mainWindow", u"16", None));
+        ___qtablewidgetitem140 = self.tableWidget_3.verticalHeaderItem(17)
+        ___qtablewidgetitem140.setText(QCoreApplication.translate("mainWindow", u"17", None));
+        ___qtablewidgetitem141 = self.tableWidget_3.verticalHeaderItem(18)
+        ___qtablewidgetitem141.setText(QCoreApplication.translate("mainWindow", u"18", None));
+        ___qtablewidgetitem142 = self.tableWidget_3.verticalHeaderItem(19)
+        ___qtablewidgetitem142.setText(QCoreApplication.translate("mainWindow", u"19", None));
+        ___qtablewidgetitem143 = self.tableWidget_3.verticalHeaderItem(20)
+        ___qtablewidgetitem143.setText(QCoreApplication.translate("mainWindow", u"20", None));
 
         __sortingEnabled2 = self.tableWidget_3.isSortingEnabled()
         self.tableWidget_3.setSortingEnabled(False)
-        ___qtablewidgetitem177 = self.tableWidget_3.item(0, 2)
-        ___qtablewidgetitem177.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem178 = self.tableWidget_3.item(0, 3)
-        ___qtablewidgetitem178.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
-        ___qtablewidgetitem179 = self.tableWidget_3.item(0, 4)
-        ___qtablewidgetitem179.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
-        ___qtablewidgetitem180 = self.tableWidget_3.item(0, 5)
-        ___qtablewidgetitem180.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
-        ___qtablewidgetitem181 = self.tableWidget_3.item(0, 6)
-        ___qtablewidgetitem181.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
-        ___qtablewidgetitem182 = self.tableWidget_3.item(0, 7)
-        ___qtablewidgetitem182.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
-        ___qtablewidgetitem183 = self.tableWidget_3.item(1, 0)
-        ___qtablewidgetitem183.setText(QCoreApplication.translate("mainWindow", u"k_\u043d\u0430\u0441", None));
-        ___qtablewidgetitem184 = self.tableWidget_3.item(1, 1)
-        ___qtablewidgetitem184.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem185 = self.tableWidget_3.item(1, 2)
-        ___qtablewidgetitem185.setText(QCoreApplication.translate("mainWindow", u"1.4", None));
-        ___qtablewidgetitem186 = self.tableWidget_3.item(2, 0)
-        ___qtablewidgetitem186.setText(QCoreApplication.translate("mainWindow", u"F\u043f.\u0441\u0440=0,7*((I_1*k_\u043d\u0430\u0441*u_\u043f)/a)(k'_beta+k_y1*k_\u043e\u04311*(Z1/Z2))", None));
-        ___qtablewidgetitem187 = self.tableWidget_3.item(2, 1)
-        ___qtablewidgetitem187.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem188 = self.tableWidget_3.item(2, 2)
-        ___qtablewidgetitem188.setText(QCoreApplication.translate("mainWindow", u"4587.33", None));
-        ___qtablewidgetitem189 = self.tableWidget_3.item(3, 0)
-        ___qtablewidgetitem189.setText(QCoreApplication.translate("mainWindow", u"\u0412_\u0444\u0431 = F\u043f.\u0441\u0440 * 10^(-6)/(1,6\u03b4*\u0421_N)", None));
-        ___qtablewidgetitem190 = self.tableWidget_3.item(3, 1)
-        ___qtablewidgetitem190.setText(QCoreApplication.translate("mainWindow", u"\u0422\u043b", None));
-        ___qtablewidgetitem191 = self.tableWidget_3.item(3, 2)
-        ___qtablewidgetitem191.setText(QCoreApplication.translate("mainWindow", u"5.114", None));
-        ___qtablewidgetitem192 = self.tableWidget_3.item(4, 0)
-        ___qtablewidgetitem192.setText(QCoreApplication.translate("mainWindow", u"k_\u03b4 = f(\u0412_\u0444\u0431)", None));
-        ___qtablewidgetitem193 = self.tableWidget_3.item(4, 1)
-        ___qtablewidgetitem193.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem194 = self.tableWidget_3.item(4, 2)
-        ___qtablewidgetitem194.setText(QCoreApplication.translate("mainWindow", u"0.481", None));
-        ___qtablewidgetitem195 = self.tableWidget_3.item(5, 0)
-        ___qtablewidgetitem195.setText(QCoreApplication.translate("mainWindow", u"\u0441_1 = (t_z1-b_\u04481)(1-k_\u03b4)", None));
-        ___qtablewidgetitem196 = self.tableWidget_3.item(5, 1)
-        ___qtablewidgetitem196.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
-        ___qtablewidgetitem197 = self.tableWidget_3.item(5, 2)
-        ___qtablewidgetitem197.setText(QCoreApplication.translate("mainWindow", u"5.114", None));
-        ___qtablewidgetitem198 = self.tableWidget_3.item(6, 0)
-        ___qtablewidgetitem198.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f1\u043d\u0430\u0441 = \u03bb\u043f1 - \u0394\u03bb_\u043f1\u043d\u0430\u0441", None));
-        ___qtablewidgetitem199 = self.tableWidget_3.item(6, 1)
-        ___qtablewidgetitem199.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem200 = self.tableWidget_3.item(6, 2)
-        ___qtablewidgetitem200.setText(QCoreApplication.translate("mainWindow", u"1.26", None));
-        ___qtablewidgetitem201 = self.tableWidget_3.item(7, 0)
-        ___qtablewidgetitem201.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04341\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04341", None));
-        ___qtablewidgetitem202 = self.tableWidget_3.item(7, 1)
-        ___qtablewidgetitem202.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem203 = self.tableWidget_3.item(7, 2)
-        ___qtablewidgetitem203.setText(QCoreApplication.translate("mainWindow", u"0.658", None));
-        ___qtablewidgetitem204 = self.tableWidget_3.item(8, 0)
-        ___qtablewidgetitem204.setText(QCoreApplication.translate("mainWindow", u"\u0445_1\u043d\u0430\u0441 = \u04451*\u03a3\u03bb_1\u043d\u0430\u0441/\u03a3\u03bb_1", None));
-        ___qtablewidgetitem205 = self.tableWidget_3.item(8, 1)
-        ___qtablewidgetitem205.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem206 = self.tableWidget_3.item(8, 2)
-        ___qtablewidgetitem206.setText(QCoreApplication.translate("mainWindow", u"1.176", None));
-        ___qtablewidgetitem207 = self.tableWidget_3.item(9, 0)
-        ___qtablewidgetitem207.setText(QCoreApplication.translate("mainWindow", u"c_1_\u043f = 1 + x_1\u043d\u0430\u0441/ x_12\u043f", None));
-        ___qtablewidgetitem208 = self.tableWidget_3.item(9, 1)
-        ___qtablewidgetitem208.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem209 = self.tableWidget_3.item(9, 2)
-        ___qtablewidgetitem209.setText(QCoreApplication.translate("mainWindow", u"1.013", None));
-        ___qtablewidgetitem210 = self.tableWidget_3.item(10, 0)
-        ___qtablewidgetitem210.setText(QCoreApplication.translate("mainWindow", u"\u0441_2 = (t_z2-b_\u04482)(1-k_\u03b4)", None));
-        ___qtablewidgetitem211 = self.tableWidget_3.item(10, 1)
-        ___qtablewidgetitem211.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
-        ___qtablewidgetitem212 = self.tableWidget_3.item(10, 2)
-        ___qtablewidgetitem212.setText(QCoreApplication.translate("mainWindow", u"9.098", None));
-        ___qtablewidgetitem213 = self.tableWidget_3.item(11, 0)
-        ___qtablewidgetitem213.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be\u043d\u0430\u0441 = \u03bb_\u043f2\u03be - \u0394\u03bb_\u043f2\u043d\u0430\u0441", None));
-        ___qtablewidgetitem214 = self.tableWidget_3.item(11, 1)
-        ___qtablewidgetitem214.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem215 = self.tableWidget_3.item(11, 2)
-        ___qtablewidgetitem215.setText(QCoreApplication.translate("mainWindow", u"1.729", None));
-        ___qtablewidgetitem216 = self.tableWidget_3.item(12, 0)
-        ___qtablewidgetitem216.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04342\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04342", None));
-        ___qtablewidgetitem217 = self.tableWidget_3.item(12, 1)
-        ___qtablewidgetitem217.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem218 = self.tableWidget_3.item(12, 2)
-        ___qtablewidgetitem218.setText(QCoreApplication.translate("mainWindow", u"1.127", None));
-        ___qtablewidgetitem219 = self.tableWidget_3.item(13, 0)
-        ___qtablewidgetitem219.setText(QCoreApplication.translate("mainWindow", u"\u0445'_2\u03be\u043d\u0430\u0441 = x'2*\u03a3\u03bb_2\u03be\u043d\u0430\u0441/\u03a3\u03bb_2", None));
-        ___qtablewidgetitem220 = self.tableWidget_3.item(13, 1)
-        ___qtablewidgetitem220.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem221 = self.tableWidget_3.item(13, 2)
-        ___qtablewidgetitem221.setText(QCoreApplication.translate("mainWindow", u"1.470", None));
-        ___qtablewidgetitem222 = self.tableWidget_3.item(14, 0)
-        ___qtablewidgetitem222.setText(QCoreApplication.translate("mainWindow", u"R\u043f.\u043d\u0430\u0441 = r_1 + c_1\u043f.\u043d\u0430\u0441 * r'_2\u03be / s", None));
-        ___qtablewidgetitem223 = self.tableWidget_3.item(14, 1)
-        ___qtablewidgetitem223.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem224 = self.tableWidget_3.item(14, 2)
-        ___qtablewidgetitem224.setText(QCoreApplication.translate("mainWindow", u"1.157", None));
-        ___qtablewidgetitem225 = self.tableWidget_3.item(15, 0)
-        ___qtablewidgetitem225.setText(QCoreApplication.translate("mainWindow", u"\u0425\u043f.\u043d\u0430\u0441 = x_1\u043d\u0430\u0441 + c_1\u043f.\u043d\u0430\u0441 * \u0445'_2\u03be\u043d\u0430\u0441", None));
-        ___qtablewidgetitem226 = self.tableWidget_3.item(15, 1)
-        ___qtablewidgetitem226.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem227 = self.tableWidget_3.item(15, 2)
-        ___qtablewidgetitem227.setText(QCoreApplication.translate("mainWindow", u"2.666", None));
-        ___qtablewidgetitem228 = self.tableWidget_3.item(16, 0)
-        ___qtablewidgetitem228.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043d\u0430\u0441 = U/\u221a(R\u043f.\u043d\u0430\u0441^2+\u0425\u043f.\u043d\u0430\u0441^2)", None));
-        ___qtablewidgetitem229 = self.tableWidget_3.item(16, 1)
-        ___qtablewidgetitem229.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem230 = self.tableWidget_3.item(16, 2)
-        ___qtablewidgetitem230.setText(QCoreApplication.translate("mainWindow", u"130.765", None));
-        ___qtablewidgetitem231 = self.tableWidget_3.item(17, 0)
-        ___qtablewidgetitem231.setText(QCoreApplication.translate("mainWindow", u"I_1\u043d\u0430\u0441=I'_2\u043d\u0430\u0441*((\u221a(R\u043f.\u043d\u0430\u0441^2+(\u0425\u043f.\u043d\u0430\u0441+\u0445_12\u043f)^2))/(\u0441_1\u043f.\u043d\u0430\u0441*\u0445_12\u043f))", None));
-        ___qtablewidgetitem232 = self.tableWidget_3.item(17, 1)
-        ___qtablewidgetitem232.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem233 = self.tableWidget_3.item(17, 2)
-        ___qtablewidgetitem233.setText(QCoreApplication.translate("mainWindow", u"132.983", None));
-        ___qtablewidgetitem234 = self.tableWidget_3.item(18, 0)
-        ___qtablewidgetitem234.setText(QCoreApplication.translate("mainWindow", u"k'\u043d\u0430\u0441 = I_1\u043d\u0430\u0441/I_1\u043f", None));
-        ___qtablewidgetitem235 = self.tableWidget_3.item(18, 1)
-        ___qtablewidgetitem235.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem236 = self.tableWidget_3.item(18, 2)
-        ___qtablewidgetitem236.setText(QCoreApplication.translate("mainWindow", u"1.315", None));
-        ___qtablewidgetitem237 = self.tableWidget_3.item(19, 0)
-        ___qtablewidgetitem237.setText(QCoreApplication.translate("mainWindow", u"I_i= I_1\u043d\u0430\u0441 / I_1\u043d\u043e\u043c", None));
-        ___qtablewidgetitem238 = self.tableWidget_3.item(19, 1)
-        ___qtablewidgetitem238.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem239 = self.tableWidget_3.item(19, 2)
-        ___qtablewidgetitem239.setText(QCoreApplication.translate("mainWindow", u"5.582", None));
-        ___qtablewidgetitem240 = self.tableWidget_3.item(20, 0)
-        ___qtablewidgetitem240.setText(QCoreApplication.translate("mainWindow", u"\u041c*", None));
-        ___qtablewidgetitem241 = self.tableWidget_3.item(20, 1)
-        ___qtablewidgetitem241.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem242 = self.tableWidget_3.item(20, 2)
-        ___qtablewidgetitem242.setText(QCoreApplication.translate("mainWindow", u"1.101", None));
+        ___qtablewidgetitem144 = self.tableWidget_3.item(0, 2)
+        ___qtablewidgetitem144.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem145 = self.tableWidget_3.item(0, 3)
+        ___qtablewidgetitem145.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
+        ___qtablewidgetitem146 = self.tableWidget_3.item(0, 4)
+        ___qtablewidgetitem146.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
+        ___qtablewidgetitem147 = self.tableWidget_3.item(0, 5)
+        ___qtablewidgetitem147.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
+        ___qtablewidgetitem148 = self.tableWidget_3.item(0, 6)
+        ___qtablewidgetitem148.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
+        ___qtablewidgetitem149 = self.tableWidget_3.item(0, 7)
+        ___qtablewidgetitem149.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
+        ___qtablewidgetitem150 = self.tableWidget_3.item(1, 0)
+        ___qtablewidgetitem150.setText(QCoreApplication.translate("mainWindow", u"k_\u043d\u0430\u0441", None));
+        ___qtablewidgetitem151 = self.tableWidget_3.item(1, 1)
+        ___qtablewidgetitem151.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem152 = self.tableWidget_3.item(2, 0)
+        ___qtablewidgetitem152.setText(QCoreApplication.translate("mainWindow", u"F\u043f.\u0441\u0440=0,7*((I_1*k_\u043d\u0430\u0441*u_\u043f)/a)(k'_beta+k_y1*k_\u043e\u04311*(Z1/Z2))", None));
+        ___qtablewidgetitem153 = self.tableWidget_3.item(2, 1)
+        ___qtablewidgetitem153.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem154 = self.tableWidget_3.item(3, 0)
+        ___qtablewidgetitem154.setText(QCoreApplication.translate("mainWindow", u"\u0412_\u0444\u0431 = F\u043f.\u0441\u0440 * 10^(-6)/(1,6\u03b4*\u0421_N)", None));
+        ___qtablewidgetitem155 = self.tableWidget_3.item(3, 1)
+        ___qtablewidgetitem155.setText(QCoreApplication.translate("mainWindow", u"\u0422\u043b", None));
+        ___qtablewidgetitem156 = self.tableWidget_3.item(4, 0)
+        ___qtablewidgetitem156.setText(QCoreApplication.translate("mainWindow", u"k_\u03b4 = f(\u0412_\u0444\u0431)", None));
+        ___qtablewidgetitem157 = self.tableWidget_3.item(4, 1)
+        ___qtablewidgetitem157.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem158 = self.tableWidget_3.item(5, 0)
+        ___qtablewidgetitem158.setText(QCoreApplication.translate("mainWindow", u"\u0441_1 = (t_z1-b_\u04481)(1-k_\u03b4)", None));
+        ___qtablewidgetitem159 = self.tableWidget_3.item(5, 1)
+        ___qtablewidgetitem159.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
+        ___qtablewidgetitem160 = self.tableWidget_3.item(6, 0)
+        ___qtablewidgetitem160.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f1\u043d\u0430\u0441 = \u03bb\u043f1 - \u0394\u03bb_\u043f1\u043d\u0430\u0441", None));
+        ___qtablewidgetitem161 = self.tableWidget_3.item(6, 1)
+        ___qtablewidgetitem161.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem162 = self.tableWidget_3.item(7, 0)
+        ___qtablewidgetitem162.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04341\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04341", None));
+        ___qtablewidgetitem163 = self.tableWidget_3.item(7, 1)
+        ___qtablewidgetitem163.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem164 = self.tableWidget_3.item(8, 0)
+        ___qtablewidgetitem164.setText(QCoreApplication.translate("mainWindow", u"\u0445_1\u043d\u0430\u0441 = \u04451*\u03a3\u03bb_1\u043d\u0430\u0441/\u03a3\u03bb_1", None));
+        ___qtablewidgetitem165 = self.tableWidget_3.item(8, 1)
+        ___qtablewidgetitem165.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem166 = self.tableWidget_3.item(9, 0)
+        ___qtablewidgetitem166.setText(QCoreApplication.translate("mainWindow", u"c_1_\u043f = 1 + x_1\u043d\u0430\u0441/ x_12\u043f", None));
+        ___qtablewidgetitem167 = self.tableWidget_3.item(9, 1)
+        ___qtablewidgetitem167.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem168 = self.tableWidget_3.item(10, 0)
+        ___qtablewidgetitem168.setText(QCoreApplication.translate("mainWindow", u"\u0441_2 = (t_z2-b_\u04482)(1-k_\u03b4)", None));
+        ___qtablewidgetitem169 = self.tableWidget_3.item(10, 1)
+        ___qtablewidgetitem169.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
+        ___qtablewidgetitem170 = self.tableWidget_3.item(11, 0)
+        ___qtablewidgetitem170.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be\u043d\u0430\u0441 = \u03bb_\u043f2\u03be - \u0394\u03bb_\u043f2\u043d\u0430\u0441", None));
+        ___qtablewidgetitem171 = self.tableWidget_3.item(11, 1)
+        ___qtablewidgetitem171.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem172 = self.tableWidget_3.item(12, 0)
+        ___qtablewidgetitem172.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04342\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04342", None));
+        ___qtablewidgetitem173 = self.tableWidget_3.item(12, 1)
+        ___qtablewidgetitem173.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem174 = self.tableWidget_3.item(13, 0)
+        ___qtablewidgetitem174.setText(QCoreApplication.translate("mainWindow", u"\u0445'_2\u03be\u043d\u0430\u0441 = x'2*\u03a3\u03bb_2\u03be\u043d\u0430\u0441/\u03a3\u03bb_2", None));
+        ___qtablewidgetitem175 = self.tableWidget_3.item(13, 1)
+        ___qtablewidgetitem175.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem176 = self.tableWidget_3.item(14, 0)
+        ___qtablewidgetitem176.setText(QCoreApplication.translate("mainWindow", u"R\u043f.\u043d\u0430\u0441 = r_1 + c_1\u043f.\u043d\u0430\u0441 * r'_2\u03be / s", None));
+        ___qtablewidgetitem177 = self.tableWidget_3.item(14, 1)
+        ___qtablewidgetitem177.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem178 = self.tableWidget_3.item(15, 0)
+        ___qtablewidgetitem178.setText(QCoreApplication.translate("mainWindow", u"\u0425\u043f.\u043d\u0430\u0441 = x_1\u043d\u0430\u0441 + c_1\u043f.\u043d\u0430\u0441 * \u0445'_2\u03be\u043d\u0430\u0441", None));
+        ___qtablewidgetitem179 = self.tableWidget_3.item(15, 1)
+        ___qtablewidgetitem179.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem180 = self.tableWidget_3.item(16, 0)
+        ___qtablewidgetitem180.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043d\u0430\u0441 = U/\u221a(R\u043f.\u043d\u0430\u0441^2+\u0425\u043f.\u043d\u0430\u0441^2)", None));
+        ___qtablewidgetitem181 = self.tableWidget_3.item(16, 1)
+        ___qtablewidgetitem181.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem182 = self.tableWidget_3.item(17, 0)
+        ___qtablewidgetitem182.setText(QCoreApplication.translate("mainWindow", u"I_1\u043d\u0430\u0441=I'_2\u043d\u0430\u0441*((\u221a(R\u043f.\u043d\u0430\u0441^2+(\u0425\u043f.\u043d\u0430\u0441+\u0445_12\u043f)^2))/(\u0441_1\u043f.\u043d\u0430\u0441*\u0445_12\u043f))", None));
+        ___qtablewidgetitem183 = self.tableWidget_3.item(17, 1)
+        ___qtablewidgetitem183.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem184 = self.tableWidget_3.item(18, 0)
+        ___qtablewidgetitem184.setText(QCoreApplication.translate("mainWindow", u"k'\u043d\u0430\u0441 = I_1\u043d\u0430\u0441/I_1\u043f", None));
+        ___qtablewidgetitem185 = self.tableWidget_3.item(18, 1)
+        ___qtablewidgetitem185.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem186 = self.tableWidget_3.item(19, 0)
+        ___qtablewidgetitem186.setText(QCoreApplication.translate("mainWindow", u"I_i= I_1\u043d\u0430\u0441 / I_1\u043d\u043e\u043c", None));
+        ___qtablewidgetitem187 = self.tableWidget_3.item(19, 1)
+        ___qtablewidgetitem187.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem188 = self.tableWidget_3.item(20, 0)
+        ___qtablewidgetitem188.setText(QCoreApplication.translate("mainWindow", u"\u041c*", None));
+        ___qtablewidgetitem189 = self.tableWidget_3.item(20, 1)
+        ___qtablewidgetitem189.setText(QCoreApplication.translate("mainWindow", u"-", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled2)
 
         self.groupBox_7.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_C_N.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0421<span style=\" vertical-align:sub;\">N </span>=</p></body></html>", None))
-        self.le_C_N.setText(QCoreApplication.translate("mainWindow", u"0.975", None))
+        self.le_C_N.setText("")
         self.lb_k_y_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>k<span style=\" vertical-align:sub;\">y1 </span>=</p></body></html>", None))
-        self.le_k_y_1.setText(QCoreApplication.translate("mainWindow", u"1", None))
+        self.le_k_y_1.setText("")
         self.lb_u_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>u<span style=\" vertical-align:sub;\">p</span> =</p></body></html>", None))
-        self.le_u_p.setText(QCoreApplication.translate("mainWindow", u"20", None))
+        self.le_u_p.setText("")
         self.lb_k_ob.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>k<span style=\" vertical-align:sub;\">\u043e\u0431</span> =</p></body></html>", None))
-        self.le_k_ob.setText(QCoreApplication.translate("mainWindow", u"0.91", None))
+        self.le_k_ob.setText("")
         self.lb_Z_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Z<span style=\" vertical-align:sub;\">1 </span>=</p></body></html>", None))
-        self.le_Z_1.setText(QCoreApplication.translate("mainWindow", u"48", None))
+        self.le_Z_1.setText("")
         self.lb_Z_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>Z<span style=\" vertical-align:sub;\">2</span> =</p></body></html>", None))
-        self.le_Z_2.setText(QCoreApplication.translate("mainWindow", u"38", None))
+        self.le_Z_2.setText("")
         self.lb_sigma.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-weight:700; color:#202122; background-color:#ffffff;\">\u03b4 </span>=</p></body></html>", None))
-        self.le_delta.setText(QCoreApplication.translate("mainWindow", u"0.55", None))
+        self.le_delta.setText("")
         self.lb_t_z_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>t<span style=\" vertical-align:sub;\">z1</span> =</p></body></html>", None))
-        self.le_t_z_1.setText(QCoreApplication.translate("mainWindow", u"0.0136", None))
+        self.le_t_z_1.setText("")
         self.lb_b_sh.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">\u0448</span> =</p></body></html>", None))
-        self.le_b_sh.setText(QCoreApplication.translate("mainWindow", u"3.7", None))
+        self.le_b_sh.setText("")
         self.lb_h_sh_r.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u0448 \u0440\u043e\u0442.</span> =</p></body></html>", None))
-        self.le_h_sh_r.setText(QCoreApplication.translate("mainWindow", u"0.7", None))
+        self.le_h_sh_r.setText("")
         self.lb_Lamda_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">p1</span>=</p></body></html>", None))
-        self.le_Lamda_p_1.setText(QCoreApplication.translate("mainWindow", u"1.99", None))
+        self.le_Lamda_p_1.setText("")
         self.lb_Lamda_d_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u04341</span>=</p></body></html>", None))
-        self.le_Lamda_d_1.setText(QCoreApplication.translate("mainWindow", u"2.06", None))
+        self.le_Lamda_d_1.setText("")
         self.lb_Lamda_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u043b1</span>=</p></body></html>", None))
-        self.le_Lamda_l_1.setText(QCoreApplication.translate("mainWindow", u"1.1", None))
+        self.le_Lamda_l_1.setText("")
         self.lb_t_z_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>t<span style=\" vertical-align:sub;\">z2</span> =</p></body></html>", None))
-        self.le_t_z_2.setText(QCoreApplication.translate("mainWindow", u"0.0171", None))
+        self.le_t_z_2.setText("")
         self.lb_r_2_Ksi_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>r'<span style=\" vertical-align:sub;\">2\u03be </span>=</p></body></html>", None))
-        self.le_r_2_Ksi_shtrih.setText(QCoreApplication.translate("mainWindow", u"0.521", None))
+        self.le_r_2_Ksi_shtrih.setText("")
         self.lb_I_1_p.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>I<span style=\" vertical-align:sub;\">1p</span> =</p></body></html>", None))
-        self.le_I_1_p.setText(QCoreApplication.translate("mainWindow", u"103.993", None))
+        self.le_I_1_p.setText("")
         self.lb_I_1_nom.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>I<span style=\" vertical-align:sub;\">1\u043d\u043e\u043c</span> =</p></body></html>", None))
-        self.le_I_1_nom.setText(QCoreApplication.translate("mainWindow", u"23.715", None))
+        self.le_I_1_nom.setText("")
         self.lb_h_k.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">k</span> =</p></body></html>", None))
-        self.le_h_k.setText(QCoreApplication.translate("mainWindow", u"3.43", None))
+        self.le_h_k.setText("")
         self.lb_Lamda_p_2_Ksi.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u03bb<span style=\" vertical-align:sub;\">\u043f2\u03be </span>=</p></body></html>", None))
-        self.le_Lamda_p_2_Ksi.setText(QCoreApplication.translate("mainWindow", u"2.2272", None))
+        self.le_Lamda_p_2_Ksi.setText("")
         self.lb_K_R.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>K<span style=\" vertical-align:sub;\">R</span> =</p></body></html>", None))
-        self.le_K_R.setText(QCoreApplication.translate("mainWindow", u"1.372", None))
+        self.le_K_R.setText("")
         self.bt_check_table_3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
         self.bt_calculate_table3.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.bt_show_chart_table3.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
@@ -3621,39 +3515,39 @@ class Ui_mainWindow(object):
         self.groupBox_4.setTitle("")
         self.groupBox_2.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
         self.lb_D.setText(QCoreApplication.translate("mainWindow", u"D=", None))
-        self.le_D.setText(QCoreApplication.translate("mainWindow", u"0.208", None))
+        self.le_D.setText("")
         self.lb_P_st_main.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>P<span style=\" vertical-align:sub;\">\u0441\u0442. \u043e\u0441\u043d</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_P_st_main.setText(QCoreApplication.translate("mainWindow", u"371.39", None))
+        self.le_P_st_main.setText("")
         self.lb_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>l<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_l_1.setText(QCoreApplication.translate("mainWindow", u"0.145", None))
+        self.le_l_1.setText("")
         self.lb_a_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>a<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_a_1.setText(QCoreApplication.translate("mainWindow", u"113", None))
+        self.le_a_1.setText("")
         self.lb_h_pk.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u043f\u043a</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_h_pk.setText(QCoreApplication.translate("mainWindow", u"26.03", None))
+        self.le_h_pk.setText("")
         self.lb_b_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_b_1.setText(QCoreApplication.translate("mainWindow", u"7.71", None))
+        self.le_b_1.setText("")
         self.lb_b_2.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">2</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_b_2.setText(QCoreApplication.translate("mainWindow", u"11.11", None))
+        self.le_b_2.setText("")
         self.lb_b_iz_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">\u0438\u0437. \u043f1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_b_iz_p_1.setText(QCoreApplication.translate("mainWindow", u"0.4", None))
+        self.le_b_iz_p_1.setText("")
         self.lb_lambda_ekv_shtrih.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; color:#202122; background-color:#ffffff;\">\u03bb</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; font-size:16pt; color:#202122; background-color:#ffffff;\">'</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; color:#202122; background-color:#ffffff; vertical-align:sub;\">\u044d\u043a\u0432</span><span style=\" font-family:'palatino linotype','new athena unicode','athena','gentium','code2000','serif'; color:#202122; background-color:#ffffff; vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_lambda_ekv_shtrih.setText(QCoreApplication.translate("mainWindow", u"1.2", None))
+        self.le_lambda_ekv_shtrih.setText("")
         self.lb_l_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>l<span style=\" vertical-align:sub;\">\u043b1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_l_l_1.setText(QCoreApplication.translate("mainWindow", u"0.222", None))
+        self.le_l_l_1.setText("")
         self.lb_b_iz_l_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b<span style=\" vertical-align:sub;\">\u0438\u0437. \u043b1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_b_iz_l_1.setText(QCoreApplication.translate("mainWindow", u"0.05", None))
+        self.le_b_iz_l_1.setText("")
         self.lb_h_p_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>h<span style=\" vertical-align:sub;\">\u043f1</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_h_p_1.setText(QCoreApplication.translate("mainWindow", u"26.03", None))
+        self.le_h_p_1.setText("")
         self.lb_l_vbl.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>l<span style=\" vertical-align:sub;\">\u0432\u044b\u043b</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_l_vbl.setText(QCoreApplication.translate("mainWindow", u"0.0723", None))
+        self.le_l_vbl.setText("")
         self.lb_l_avg_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>l<span style=\" vertical-align:sub;\">\u0441\u04401</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_l_avg_1.setText(QCoreApplication.translate("mainWindow", u"0.734", None))
+        self.le_l_avg_1.setText("")
         self.lb_a_v.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>a<span style=\" vertical-align:sub;\">\u0432</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_a_v.setText(QCoreApplication.translate("mainWindow", u"22.5", None))
+        self.le_a_v.setText("")
         self.lb_D_a.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>D<span style=\" vertical-align:sub;\">a</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_D_a.setText(QCoreApplication.translate("mainWindow", u"0.32", None))
+        self.le_D_a.setText("")
         self.lb_s_kor.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>s<span style=\" vertical-align:sub;\">\u043a\u043e\u0440</span><span style=\" vertical-align:super;\">=</span></p></body></html>", None))
-        self.le_s_kor.setText(QCoreApplication.translate("mainWindow", u"1.12", None))
+        self.le_s_kor.setText("")
         self.groupBox.setTitle(QCoreApplication.translate("mainWindow", u"\u0422\u0435\u043f\u043b\u043e\u0432\u043e\u0439 \u0440\u0430\u0441\u0447\u0451\u0442", None))
         self.l_delta_nu_pov_1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>\u0394<span style=\" font-size:20pt;\">\u03bd</span><span style=\" font-size:16pt; vertical-align:sub;\">\u043f\u043e\u04321</span> =</p></body></html>", None))
         self.lb_delta_nu_pov_1.setText("")
@@ -3690,4 +3584,3 @@ class Ui_mainWindow(object):
                         "\u0441\u0442\u0438\u043a \u0430.\u0434. </span></p><p><span style=\" font-size:16pt; font-style:italic;\">8) \u0410\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u043e \u0437\u0430\u043f\u043e\u043b\u043d\u044f\u044e\u0442\u0441\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430 2 \u0438 \u0442\u0430\u0431\u043b\u0438\u0446\u0430 3 \u0434\u043b\u044f \u0441\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u044f, \u0440\u0430\u0432\u043d\u043e\u0433\u043e 1.</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("mainWindow", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
     # retranslateUi
-

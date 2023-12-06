@@ -2046,15 +2046,13 @@ class MainProgram:
         k_B_shtrih = 0.25 * (1 + 3 * self.beta_shtrih)
         k_B = 0.25 * (1 + 3 * k_B_shtrih)
         h_1_temp = 0
-
+        
         if (self.P_2 < 15):
             self.Lamda_p_1 = (h_2 / (3 * b_p)) + (self.h_k / b_p)
             # print(
             #     f"Lamda_p_1 = (h_2 / (3 * b_p)) + (h_k / b_p) = ({h_2} / (3 * {b_p})) + ({self.h_k} / {b_p}) = {self.Lamda_p_1}")
         else:
-            self.Lamda_p_1 = h_2 / (3 * b_1) * k_B + (
-                h_1_temp / b_1 + (3 * self.h_k) / (b_1 + 2 * self.b_sh_2) + self.h_sh_shtrih /
-                self.b_sh_2) * k_B_shtrih
+            self.Lamda_p_1 = h_2 / (3 * b_1) * k_B + (h_1_temp / b_1 + (3 * self.h_k) / (b_1 + 2 * self.b_sh_2) + self.h_sh_shtrih / self.b_sh_2) * k_B_shtrih
             # print(
             #     f"Lamda_p_1 = h_2 / (3 * b_1) * k_B + (h_1_temp / b_1 + (3 * h_k) / (b_1 + 2 * b_sh_2) + h_sh_shtrih /b_sh_2) * k_B_shtrih = {h_2} / (3 * {b_1}) * {k_B} + ({h_1_temp} / {b_1} + (3 * {self.h_k}) / ({b_1} + 2 * {self.b_sh_2}) + {self.h_sh_shtrih} /{self.b_sh_2}) * {k_B_shtrih} = {self.Lamda_p_1}")
 
@@ -2073,10 +2071,7 @@ class MainProgram:
         # * __47__
         self.h_0 = self.h_1 + 0.4 * self.b_2_r
         k_d = 1
-        self.Lamda_p_2 = (self.h_0 / (3 * self.b_1_r) * (1 - (math.pi * self.b_1_r ** 2) / (8 * self.q_c)) ** 2 + 0.66 -
-                          self.b_sh_2 / (
-            2 * self.b_1_r)) * k_d + self.h_sh_r / self.b_sh_2 + 1.12 * (
-            self.h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
+        self.Lamda_p_2 = (self.h_0 / (3 * self.b_1_r) * (1 - (math.pi * self.b_1_r ** 2) / (8 * self.q_c)) ** 2 + 0.66 - self.b_sh_2 / (2 * self.b_1_r)) * k_d + self.h_sh_r / self.b_sh_2 + 1.12 * (self.h_sh_shtrih * 10 ** -3 * 10 ** 6) / I_2
         self.Lamda_l_2 = (2.3 * (D_k_avg * 10 ** -3)) / (self.Z_2 * l_del * delta ** 2) * math.log10(
             (4.7 * D_k_avg * 10 ** -3) / (h_kl * 10 ** -3 + 2 * b_kl * 10 ** -3))
         delta_z = 0
@@ -3006,6 +3001,8 @@ class MainProgram:
                 "\n\nПункт: 46\n")
 
             f.write(
+                f"h_2 = h_p_k - 2 * b_iz = {h_p_k} - 2 * {b_iz} = {h_2}\n")
+            f.write(
                 f"Lamda_l_1 = 0.34 * (q_1 / l_del) * (l_l_1 - 0.64 * beta_shtrih * tau) = 0.34 * ({q_1} / {l_del}) * ({l_l_1} - 0.64 * {self.beta_shtrih} * {tau}) = {self.Lamda_l_1}\n")
             f.write(
                 f"Ksi = 2 * k_sk_shtrih * k_B_shtrih - k_ob^2 * ((t_z_2 * 10^3) / (t_z_1 * 10^3)) ** 2 * (1 + B_sk^2) = 2 * {k_sk_shtrih} * {k_B_shtrih} - {self.k_ob}^2 * (({self.t_z_2} * 10^3) / ({self.t_z_1} * 10^3))^2 * (1 + {B_sk}^2) = {Ksi}\n")
@@ -3015,6 +3012,17 @@ class MainProgram:
                 f"X_1 = 15.8 * (f / 100) * (w_1 / 100)^2 * (l_del / ((_2p / 2) * q_1)) * (Lamda_p_1 + Lamda_l_1 + Lamda_d_1) = 15.8 * ({self.f} / 100) * ({w_1} / 100) ** 2 * ({l_del} / (({self._2p} / 2) * {q_1})) * ({self.Lamda_p_1} + {self.Lamda_l_1} + {self.Lamda_d_1}) = {self.X_1}\n")
             f.write(
                 f"X_1_star = X_1 * (I_1_nom / U) = {self.X_1} * ({self.I_1_nom} / {self.U}) = {X_1_star}\n")
+            
+            if (self.P_2 < 15):
+                self.Lamda_p_1 = (h_2 / (3 * b_p)) + (self.h_k / b_p)
+                
+                f.write(
+                f"self.Lamda_p_1 = (h_2 / (3 * b_p)) + (self.h_k / b_p) = ({h_2} / (3 * {b_p})) + ({self.h_k} / {b_p}) = {self.Lamda_p_1}\n")
+            else:
+                self.Lamda_p_1 = h_2 / (3 * b_1) * k_B + (h_1_temp / b_1 + (3 * self.h_k) / (b_1 + 2 * self.b_sh_2) + self.h_sh_shtrih / self.b_sh_2) * k_B_shtrih
+                
+                f.write(
+                f"self.Lamda_p_1 = h_2 / (3 * b_1) * k_B + (h_1_temp / b_1 + (3 * self.h_k) / (b_1 + 2 * self.b_sh_2) + self.h_sh_shtrih / self.b_sh_2) * k_B_shtrih = {h_2} / (3 * {b_1}) * {k_B} + ({h_1_temp} / {b_1} + (3 * {self.h_k}) / ({b_1} + 2 * {self.b_sh_2}) + {self.h_sh_shtrih} / {self.b_sh_2}) * {k_B_shtrih} = {self.Lamda_p_1}\n")
 
             f.write(
                 "\n\nПункт: 47\n")
