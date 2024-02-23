@@ -151,7 +151,7 @@ class MainWindow(QMainWindow):
 
     def clearTables(self):
         for i in range(2, 8):
-            for j in range(1, 19 + 1):
+            for j in range(1, 20 + 1):
                 self.ui.tableWidget.setItem(j, i, QTableWidgetItem(""))
 
         for i in range(3, 7 + 1):
@@ -163,9 +163,23 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget_3.setItem(j, i, QTableWidgetItem(""))
 
     def checkTable1(self):
-
+        try:
+            self.table_1_student = table1(float(self.ui.le_a.text()), float(self.ui.le_a_shtrih.text()),
+                                          float(self.ui.le_r2_shtrih.text()), float(
+                                              self.ui.le_b.text()),
+                                          float(self.ui.le_b_shtrih.text(
+                                          )), self.calc_obj.U, float(self.ui.le_I0a.text()), float(self.ui.le_I0p.text()),
+                                          float(self.ui.le_c1.text()), float(
+                                              self.ui.le_r1.text()),
+                                          float(self.ui.le_Pst.text()), float(self.ui.le_Pmeh.text()),
+                                          float(self.ui.le_n1.text()))
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText(
+                "Неправильно введены значения")
+            msgBox.exec()
         count = 0
-        for i in range(1, 19 + 1):
+        for i in range(1, 20 + 1):
             self.ui.tableWidget.item(i, 8).setBackground(incorrect_color)
 
             try:
@@ -176,26 +190,40 @@ class MainWindow(QMainWindow):
             self.ui.tableWidget.item(i, 8).setFlags(
                 self.ui.tableWidget.item(i, 8).flags() & ~Qt.ItemIsSelectable)
             if (
-                self.table_1.calculateTable(i, self.calc_obj.s_nom) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_1.calculateTable(i,self.calc_obj.s_nom) * (1 + (self.ui.sl_ValueOfError.value() / 100))
+                self.table_1_student.calculateTable(i, self.calc_obj.s_nom) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_1_student.calculateTable(i,self.calc_obj.s_nom) * (1 + (self.ui.sl_ValueOfError.value() / 100))
                 ):
                 self.ui.tableWidget.item(i, 8).setBackground(correct_color)
                 count += 1
 
-        if (count == 19):
+        if (count == 20):
             self.ui.bt_calculate_table1.setEnabled(True)
-            self.ui.le_Pst.setEnabled(True)
-            self.ui.le_Pmeh.setEnabled(True)
-            self.ui.le_a.setEnabled(True)
-            self.ui.le_a_shtrih.setEnabled(True)
-            self.ui.le_b.setEnabled(True)
-            self.ui.le_b_shtrih.setEnabled(True)
-            self.ui.le_I0p.setEnabled(True)
-            self.ui.le_I0a.setEnabled(True)
-            self.ui.le_r1.setEnabled(True)
-            self.ui.le_r2_shtrih.setEnabled(True)
-            self.ui.le_c1.setEnabled(True)
+
 
     def checkTable2(self):
+
+        try:
+            self.table_2_student = table2(
+                float(self.ui.le_h_c.text()), float(
+                    self.ui.le_h_p_2.text()), float(self.ui.le_h_sh.text()),
+                float(self.ui.le_h_sh_shtrih.text()), float(
+                    self.ui.le_b_1_r.text()), float(self.ui.le_b_2_r.text()),
+                float(self.ui.le_h_1.text()), float(self.ui.le_q_c.text()
+                                                    ), float(self.ui.le_r_c.text()), self.calc_obj.U,
+                float(self.ui.le_r1.text()), float(
+                    self.ui.le_r_2.text()), float(self.ui.le_r2_shtrih.text()), float(self.ui.le_h_0.text()),
+                float(self.ui.le_b_sh_2.text()),
+                float(self.ui.le_Lamda_p_2.text()), float(
+                    self.ui.le_Lamda_l_2.text()),
+                float(self.ui.le_Lamda_d_2.text()), float(
+                    self.ui.le_X_2_shtrih.text()),
+                float(self.ui.le_x_1_2_p.text()), float(
+                    self.ui.le_c_1_p.text()), float(self.ui.le_X_1.text())
+            )
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText(
+                "Неправильно введены значения")
+            msgBox.exec()
 
         count = 0
         for i in range(1, 14 + 1):
@@ -210,34 +238,49 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget_2.item(i, 2).flags() & ~Qt.ItemIsSelectable)
 
             if (
-                self.table_2.calculateTable(i, 1) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_2.calculateTable(i, 1) * (1 + (self.ui.sl_ValueOfError.value() / 100))
+                self.table_2_student.calculateTable(i, 1) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_2_student.calculateTable(i, 1) * (1 + (self.ui.sl_ValueOfError.value() / 100))
                 ):
                 self.ui.tableWidget_2.item(i, 2).setBackground(correct_color)
                 count += 1
 
         if count == 14:
             self.ui.bt_calculate_table2.setEnabled(True)
-            self.ui.le_h_c.setEnabled(True)
-            self.ui.le_h_p_2.setEnabled(True)
-            self.ui.le_h_sh.setEnabled(True)
-            self.ui.le_h_sh_shtrih.setEnabled(True)
-            self.ui.le_b_1_r.setEnabled(True)
-            self.ui.le_b_2_r.setEnabled(True)
-            self.ui.le_h_1.setEnabled(True)
-            self.ui.le_q_c.setEnabled(True)
-            self.ui.le_r_2.setEnabled(True)
-            self.ui.le_h_0.setEnabled(True)
-            self.ui.le_b_sh_2.setEnabled(True)
-            self.ui.le_Lamda_p_2.setEnabled(True)
-            self.ui.le_Lamda_d_2.setEnabled(True)
-            self.ui.le_Lamda_l_2.setEnabled(True)
-            self.ui.le_X_2_shtrih.setEnabled(True)
-            self.ui.le_x_1_2_p.setEnabled(True)
-            self.ui.le_c_1_p.setEnabled(True)
-            self.ui.le_X_1.setEnabled(True)
-            self.ui.le_r_c.setEnabled(True)
+
 
     def checkTable3(self):
+
+        try:
+            self.table_3_student = table3(
+                float(self.ui.le_C_N.text()), float(
+                    self.ui.le_k_y_1.text()), float(self.ui.le_u_p.text()),
+                float(self.ui.le_k_ob.text()), float(self.ui.le_X_1.text()), float(
+                    self.ui.le_Z_1.text()), float(self.ui.le_Z_2.text()),
+                float(self.ui.le_delta.text()), float(self.ui.le_t_z_1.text()),
+                float(self.ui.le_b_sh.text()), float(
+                    self.ui.le_h_sh_r.text()), float(self.ui.le_Lamda_p_1.text()),
+                float(self.ui.le_Lamda_d_1.text()), float(
+                    self.ui.le_Lamda_l_1.text()),
+                float(self.ui.le_x_1_2_p.text()), float(
+                    self.ui.le_t_z_2.text()), float(self.ui.le_b_sh_2.text()),
+                float(self.ui.le_Lamda_p_2.text()), float(
+                    self.ui.le_Lamda_l_2.text()),
+                float(self.ui.le_Lamda_d_2.text()), float(
+                    self.ui.le_h_sh_shtrih.text()),
+                float(self.ui.le_X_2_shtrih.text()), float(
+                    self.ui.le_r1.text()),
+                float(self.ui.le_r_2_Ksi_shtrih.text()), self.calc_obj.U, float(
+                    self.ui.le_I_1_p.text()),
+                float(self.ui.le_I_1_nom.text()), self.table_1_student.calculateTable(
+                    11, self.calc_obj.s_nom),
+                self.calc_obj.s_nom, float(self.ui.le_h_k.text()), float(
+                    self.ui.le_Lamda_p_2_Ksi.text()),
+                float(self.ui.le_K_R.text()), self.table_2_student
+            )
+        except Exception as e:
+            msgBox = QMessageBox()
+            msgBox.setText(
+                "Неправильно введены значения")
+            msgBox.exec()
 
         count = 0
         for i in range(1, 20 + 1):
@@ -252,33 +295,14 @@ class MainWindow(QMainWindow):
                 self.ui.tableWidget_3.item(i, 2).flags() & ~Qt.ItemIsSelectable)
 
             if (
-                self.table_3.calculateTable(i, 1) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_3.calculateTable(i, 1) * (1 + (self.ui.sl_ValueOfError.value() / 100))
+                self.table_3_student.calculateTable(i, 1) * (1 - (self.ui.sl_ValueOfError.value() / 100)) < curr_value < self.table_3_student.calculateTable(i, 1) * (1 + (self.ui.sl_ValueOfError.value() / 100))
                 ):
                 self.ui.tableWidget_3.item(i, 2).setBackground(correct_color)
                 count += 1
 
         if count == 20:
             self.ui.bt_calculate_table3.setEnabled(True)
-            self.ui.le_C_N.setEnabled(True)
-            self.ui.le_k_y_1.setEnabled(True)
-            self.ui.le_u_p.setEnabled(True)
-            self.ui.le_k_ob.setEnabled(True)
-            self.ui.le_Z_1.setEnabled(True)
-            self.ui.le_Z_2.setEnabled(True)
-            self.ui.le_delta.setEnabled(True)
-            self.ui.le_t_z_1.setEnabled(True)
-            self.ui.le_b_sh.setEnabled(True)
-            self.ui.le_h_sh_r.setEnabled(True)
-            self.ui.le_Lamda_l_1.setEnabled(True)
-            self.ui.le_Lamda_p_1.setEnabled(True)
-            self.ui.le_Lamda_d_1.setEnabled(True)
-            self.ui.le_t_z_2.setEnabled(True)
-            self.ui.le_r_2_Ksi_shtrih.setEnabled(True)
-            self.ui.le_I_1_p.setEnabled(True)
-            self.ui.le_I_1_nom.setEnabled(True)
-            self.ui.le_Lamda_p_2_Ksi.setEnabled(True)
-            self.ui.le_h_k.setEnabled(True)
-            self.ui.le_K_R.setEnabled(True)
+
 
     def submitValuesButton(self):
         P_2 = float(self.ui.linePower.currentText())
@@ -303,7 +327,7 @@ class MainWindow(QMainWindow):
             return
         try:
             self.calc_obj = MainProgram(P_2, U, _2p, heatClass, S_nom)
-            self.calc_obj.Run()
+            #self.calc_obj.Run()
         except KeyError:
             msgBox = QMessageBox()
             msgBox.setText(
@@ -325,28 +349,28 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget.item(0, 7).setText(str(round(6 * S_nom / 7, 3)))
         self.ui.tableWidget.item(0, 8).setText(str(round(S_nom, 3)))
 
-        self.table_1 = table1(
-            self.calc_obj.a, self.calc_obj.a_shtrih, self.calc_obj.r_2_shtrih, self.calc_obj.b, self.calc_obj.b_shtrih, self.calc_obj.U,
-            self.calc_obj.I_0_a, self.calc_obj.I_nu, self.calc_obj.C_1, self.calc_obj.r_1, self.calc_obj.P_st, self.calc_obj.P_meh
-        )
-        self.table_2 = table2(
-            self.calc_obj.h_c, self.calc_obj.h_p_2, self.calc_obj.h_sh, self.calc_obj.h_sh_shtrih, self.calc_obj.b_1_r,
-            self.calc_obj.b_2_r, self.calc_obj.h_1, self.calc_obj.q_c, self.calc_obj.r_c, self.calc_obj.U, self.calc_obj.r_1,
-            self.calc_obj.r_2, self.calc_obj.r_2_shtrih, self.calc_obj.h_0,
-            self.calc_obj.b_sh_2, self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
-            self.calc_obj.X_2_shtrih, self.calc_obj.x_1_2_p, self.calc_obj.c_1_p, self.calc_obj.X_1
-        )
-        self.table_3 = table3(
-            self.calc_obj.C_N, self.calc_obj.k_y_1, self.calc_obj.u_p, self.calc_obj.k_ob, self.calc_obj.X_1, self.calc_obj.Z_1,
-            self.calc_obj.Z_2,
-            self.calc_obj.delta, self.calc_obj.t_z_1, self.calc_obj.b_sh, self.calc_obj.h_sh_r,
-            self.calc_obj.Lamda_p_1, self.calc_obj.Lamda_d_1, self.calc_obj.Lamda_l_1, self.calc_obj.x_1_2_p, self.calc_obj.t_z_2,
-            self.calc_obj.b_sh_2, self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
-            self.calc_obj.h_sh_shtrih, self.calc_obj.X_2_shtrih, self.calc_obj.r_1, self.calc_obj.r_2_Ksi_shtrih, self.calc_obj.U,
-            self.calc_obj.I_1_p, self.calc_obj.I_1_nom, self.table_1.calculateTable(
-                11, self.calc_obj.s_nom), self.calc_obj.s_nom,
-            self.calc_obj.h_k, self.calc_obj.Lamda_p_2_Ksi, self.calc_obj.K_R, self.table_2
-        )
+        # self.table_1 = table1(
+        #     self.calc_obj.a, self.calc_obj.a_shtrih, self.calc_obj.r_2_shtrih, self.calc_obj.b, self.calc_obj.b_shtrih, self.calc_obj.U,
+        #     self.calc_obj.I_0_a, self.calc_obj.I_nu, self.calc_obj.C_1, self.calc_obj.r_1, self.calc_obj.P_st, self.calc_obj.P_meh
+        # )
+        # self.table_2 = table2(
+        #     self.calc_obj.h_c, self.calc_obj.h_p_2, self.calc_obj.h_sh, self.calc_obj.h_sh_shtrih, self.calc_obj.b_1_r,
+        #     self.calc_obj.b_2_r, self.calc_obj.h_1, self.calc_obj.q_c, self.calc_obj.r_c, self.calc_obj.U, self.calc_obj.r_1,
+        #     self.calc_obj.r_2, self.calc_obj.r_2_shtrih, self.calc_obj.h_0,
+        #     self.calc_obj.b_sh_2, self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
+        #     self.calc_obj.X_2_shtrih, self.calc_obj.x_1_2_p, self.calc_obj.c_1_p, self.calc_obj.X_1
+        # )
+        # self.table_3 = table3(
+        #     self.calc_obj.C_N, self.calc_obj.k_y_1, self.calc_obj.u_p, self.calc_obj.k_ob, self.calc_obj.X_1, self.calc_obj.Z_1,
+        #     self.calc_obj.Z_2,
+        #     self.calc_obj.delta, self.calc_obj.t_z_1, self.calc_obj.b_sh, self.calc_obj.h_sh_r,
+        #     self.calc_obj.Lamda_p_1, self.calc_obj.Lamda_d_1, self.calc_obj.Lamda_l_1, self.calc_obj.x_1_2_p, self.calc_obj.t_z_2,
+        #     self.calc_obj.b_sh_2, self.calc_obj.Lamda_p_2, self.calc_obj.Lamda_l_2, self.calc_obj.Lamda_d_2,
+        #     self.calc_obj.h_sh_shtrih, self.calc_obj.X_2_shtrih, self.calc_obj.r_1, self.calc_obj.r_2_Ksi_shtrih, self.calc_obj.U,
+        #     self.calc_obj.I_1_p, self.calc_obj.I_1_nom, self.table_1.calculateTable(
+        #         11, self.calc_obj.s_nom), self.calc_obj.s_nom,
+        #     self.calc_obj.h_k, self.calc_obj.Lamda_p_2_Ksi, self.calc_obj.K_R, self.table_2
+        # )
 
         self.ui.tab.setEnabled(True)
         self.ui.tab_2.setEnabled(True)
@@ -412,6 +436,60 @@ class MainWindow(QMainWindow):
                 if (j > 2):
                     self.ui.tableWidget_3.item(
                         i, j).setFlags(~Qt.ItemIsEditable)
+
+        self.ui.le_Pst.setEnabled(True)
+        self.ui.le_Pmeh.setEnabled(True)
+        self.ui.le_a.setEnabled(True)
+        self.ui.le_a_shtrih.setEnabled(True)
+        self.ui.le_b.setEnabled(True)
+        self.ui.le_b_shtrih.setEnabled(True)
+        self.ui.le_I0p.setEnabled(True)
+        self.ui.le_I0a.setEnabled(True)
+        self.ui.le_r1.setEnabled(True)
+        self.ui.le_r2_shtrih.setEnabled(True)
+        self.ui.le_c1.setEnabled(True)
+
+        self.ui.le_h_c.setEnabled(True)
+        self.ui.le_h_p_2.setEnabled(True)
+        self.ui.le_h_sh.setEnabled(True)
+        self.ui.le_h_sh_shtrih.setEnabled(True)
+        self.ui.le_b_1_r.setEnabled(True)
+        self.ui.le_b_2_r.setEnabled(True)
+        self.ui.le_h_1.setEnabled(True)
+        self.ui.le_q_c.setEnabled(True)
+        self.ui.le_r_2.setEnabled(True)
+        self.ui.le_h_0.setEnabled(True)
+        self.ui.le_b_sh_2.setEnabled(True)
+        self.ui.le_Lamda_p_2.setEnabled(True)
+        self.ui.le_Lamda_d_2.setEnabled(True)
+        self.ui.le_Lamda_l_2.setEnabled(True)
+        self.ui.le_X_2_shtrih.setEnabled(True)
+        self.ui.le_x_1_2_p.setEnabled(True)
+        self.ui.le_c_1_p.setEnabled(True)
+        self.ui.le_X_1.setEnabled(True)
+        self.ui.le_r_c.setEnabled(True)
+
+        self.ui.le_C_N.setEnabled(True)
+        self.ui.le_k_y_1.setEnabled(True)
+        self.ui.le_u_p.setEnabled(True)
+        self.ui.le_k_ob.setEnabled(True)
+        self.ui.le_Z_1.setEnabled(True)
+        self.ui.le_Z_2.setEnabled(True)
+        self.ui.le_delta.setEnabled(True)
+        self.ui.le_t_z_1.setEnabled(True)
+        self.ui.le_b_sh.setEnabled(True)
+        self.ui.le_h_sh_r.setEnabled(True)
+        self.ui.le_Lamda_l_1.setEnabled(True)
+        self.ui.le_Lamda_p_1.setEnabled(True)
+        self.ui.le_Lamda_d_1.setEnabled(True)
+        self.ui.le_t_z_2.setEnabled(True)
+        self.ui.le_r_2_Ksi_shtrih.setEnabled(True)
+        self.ui.le_I_1_p.setEnabled(True)
+        self.ui.le_I_1_nom.setEnabled(True)
+        self.ui.le_Lamda_p_2_Ksi.setEnabled(True)
+        self.ui.le_h_k.setEnabled(True)
+        self.ui.le_K_R.setEnabled(True)
+        self.ui.le_n1.setEnabled(True)
 
     def save_table_to_xl_1(self):
         col_count = self.ui.tableWidget.columnCount()
@@ -546,6 +624,7 @@ class MainWindow(QMainWindow):
         y_arr_2 = [0]
         y_arr_3 = [0]
         y_arr_4 = [0]
+        y_arr_5 = [0]
 
         S_nom = float(self.ui.tableWidget.item(0, 8).text())
 
@@ -565,16 +644,20 @@ class MainWindow(QMainWindow):
         for i in range(round(length_of_s_nom * (S_nom / 7)), round(length_of_s_nom * S_nom)):
             y_arr_4.append(
                 round(self.table_1_student.calculateTable(10, i / length_of_s_nom), 3))
+        for i in range(round(length_of_s_nom * (S_nom / 7)), round(length_of_s_nom * S_nom)):
+            y_arr_5.append(
+                round(self.table_1_student.calculateTable(20, i / length_of_s_nom), 3))
 
         y_arr_1[0] = y_arr_1[1] * 0.1
         y_arr_4[0] = y_arr_4[1] * 0.75
 
         fig = plt.figure()
 
-        cosPhi_chart = fig.add_subplot(2, 2, 1)
-        kpd_chart = fig.add_subplot(2, 2, 2)
-        s_chart = fig.add_subplot(2, 2, 3)
-        I_1_chart = fig.add_subplot(2, 2, 4)
+        cosPhi_chart = fig.add_subplot(2, 3, 1)
+        kpd_chart = fig.add_subplot(2, 3, 2)
+        s_chart = fig.add_subplot(2, 3, 3)
+        I_1_chart = fig.add_subplot(2, 3, 4)
+        n_1_chart = fig.add_subplot(2, 3, 5)
 
         x_list = [x / 50 for x in range(0, round(x_arr[-1] * 50))]
 
@@ -628,8 +711,21 @@ class MainWindow(QMainWindow):
         I_1_chart.set_ylabel('I₁', size=16)
         I_1_chart.set_xlabel('P_квт', size=16)
 
-        fig.set_figwidth(10)
-        fig.set_figheight(8)
+        n_1_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_5)
+                                   for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+        n_1_chart.minorticks_on()
+        n_1_chart.grid(which='major',
+                          color='k',
+                          linewidth=1)
+        n_1_chart.grid(which='minor',
+                          color='k',
+                          linestyle=':')
+        n_1_chart.set_ylabel('n_1', size=16)
+        n_1_chart.set_xlabel('P_квт', size=16)
+        n_1_chart.set_ylim(0, 1)
+
+        fig.set_figwidth(16)
+        fig.set_figheight(9)
 
         plt.show()
 
@@ -698,51 +794,17 @@ class MainWindow(QMainWindow):
     def calculate_table1(self):
         self.ui.bt_show_chart_1.setEnabled(True)
         self.ui.bt_export_xl_1.setEnabled(True)
-        try:
-            self.table_1_student = table1(float(self.ui.le_a.text()), float(self.ui.le_a_shtrih.text()),
-                                          float(self.ui.le_r2_shtrih.text()), float(
-                                              self.ui.le_b.text()),
-                                          float(self.ui.le_b_shtrih.text(
-                                          )), self.calc_obj.U, float(self.ui.le_I0a.text()), float(self.ui.le_I0p.text()),
-                                          float(self.ui.le_c1.text()), float(
-                                              self.ui.le_r1.text()),
-                                          float(self.ui.le_Pst.text()), float(self.ui.le_Pmeh.text()))
-        except Exception as e:
-            msgBox = QMessageBox()
-            msgBox.setText(
-                "Неправильно введены значения")
-            msgBox.exec()
+
         for i in range(2, 8):
-            for j in range(1, 19 + 1):
+            for j in range(1, 20 + 1):
                 self.ui.tableWidget.item(j, i).setText(
                     str(round(self.table_1_student.calculateTable(j, float(self.ui.tableWidget.item(0, i).text())), 3)))
         self.ui.tableWidget.resizeColumnsToContents()
         self.ui.tableWidget.reset()
 
     def calculate_table2(self):
-        try:
-            self.table_2_student = table2(
-                float(self.ui.le_h_c.text()), float(
-                    self.ui.le_h_p_2.text()), float(self.ui.le_h_sh.text()),
-                float(self.ui.le_h_sh_shtrih.text()), float(
-                    self.ui.le_b_1_r.text()), float(self.ui.le_b_2_r.text()),
-                float(self.ui.le_h_1.text()), float(self.ui.le_q_c.text()
-                                                    ), float(self.ui.le_r_c.text()), self.calc_obj.U,
-                float(self.ui.le_r1.text()), float(
-                    self.ui.le_r_2.text()), float(self.ui.le_r2_shtrih.text()), float(self.ui.le_h_0.text()),
-                float(self.ui.le_b_sh_2.text()),
-                float(self.ui.le_Lamda_p_2.text()), float(
-                    self.ui.le_Lamda_l_2.text()),
-                float(self.ui.le_Lamda_d_2.text()), float(
-                    self.ui.le_X_2_shtrih.text()),
-                float(self.ui.le_x_1_2_p.text()), float(
-                    self.ui.le_c_1_p.text()), float(self.ui.le_X_1.text())
-            )
-        except Exception as e:
-            msgBox = QMessageBox()
-            msgBox.setText(
-                "Неправильно введены значения")
-            msgBox.exec()
+
+
         for i in range(3, 7 + 1):
             for j in range(1, 14 + 1):
                 self.ui.tableWidget_2.item(j, i).setText(str(round(self.table_2_student.calculateTable(
@@ -752,38 +814,7 @@ class MainWindow(QMainWindow):
 
     def calculate_table3(self):
 
-        try:
-            self.table_3_student = table3(
-                float(self.ui.le_C_N.text()), float(
-                    self.ui.le_k_y_1.text()), float(self.ui.le_u_p.text()),
-                float(self.ui.le_k_ob.text()), float(self.ui.le_X_1.text()), float(
-                    self.ui.le_Z_1.text()), float(self.ui.le_Z_2.text()),
-                float(self.ui.le_delta.text()), float(self.ui.le_t_z_1.text()),
-                float(self.ui.le_b_sh.text()), float(
-                    self.ui.le_h_sh_r.text()), float(self.ui.le_Lamda_p_1.text()),
-                float(self.ui.le_Lamda_d_1.text()), float(
-                    self.ui.le_Lamda_l_1.text()),
-                float(self.ui.le_x_1_2_p.text()), float(
-                    self.ui.le_t_z_2.text()), float(self.ui.le_b_sh_2.text()),
-                float(self.ui.le_Lamda_p_2.text()), float(
-                    self.ui.le_Lamda_l_2.text()),
-                float(self.ui.le_Lamda_d_2.text()), float(
-                    self.ui.le_h_sh_shtrih.text()),
-                float(self.ui.le_X_2_shtrih.text()), float(
-                    self.ui.le_r1.text()),
-                float(self.ui.le_r_2_Ksi_shtrih.text()), self.calc_obj.U, float(
-                    self.ui.le_I_1_p.text()),
-                float(self.ui.le_I_1_nom.text()), self.table_1.calculateTable(
-                    11, self.calc_obj.s_nom),
-                self.calc_obj.s_nom, float(self.ui.le_h_k.text()), float(
-                    self.ui.le_Lamda_p_2_Ksi.text()),
-                float(self.ui.le_K_R.text()), self.table_2_student
-            )
-        except Exception as e:
-            msgBox = QMessageBox()
-            msgBox.setText(
-                "Неправильно введены значения")
-            msgBox.exec()
+
         try:
             for i in range(3, 7 + 1):
                 for j in range(1, 20 + 1):
@@ -812,17 +843,6 @@ class MainWindow(QMainWindow):
             str(self.ui.sl_ValueOfError.value()) + "%")
 
         self.ui.bt_calculate_table1.setEnabled(False)
-        self.ui.le_Pst.setEnabled(False)
-        self.ui.le_Pmeh.setEnabled(False)
-        self.ui.le_a.setEnabled(False)
-        self.ui.le_a_shtrih.setEnabled(False)
-        self.ui.le_b.setEnabled(False)
-        self.ui.le_b_shtrih.setEnabled(False)
-        self.ui.le_I0p.setEnabled(False)
-        self.ui.le_I0a.setEnabled(False)
-        self.ui.le_r1.setEnabled(False)
-        self.ui.le_r2_shtrih.setEnabled(False)
-        self.ui.le_c1.setEnabled(False)
         self.clearTables()
 
     def thermalcalculate(self):
@@ -885,3 +905,4 @@ app = QApplication()
 window = MainWindow()
 window.show()
 sys.exit(app.exec())
+

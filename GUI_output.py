@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_mainWindow.ui'
+## Form generated from reading UI file 'ui_mainwindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.6.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -222,8 +222,8 @@ class Ui_mainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(8, __qtablewidgetitem8)
-        if (self.tableWidget.rowCount() < 20):
-            self.tableWidget.setRowCount(20)
+        if (self.tableWidget.rowCount() < 21):
+            self.tableWidget.setRowCount(21)
         __qtablewidgetitem9 = QTableWidgetItem()
         self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
@@ -265,222 +265,229 @@ class Ui_mainWindow(object):
         __qtablewidgetitem28 = QTableWidgetItem()
         self.tableWidget.setVerticalHeaderItem(19, __qtablewidgetitem28)
         __qtablewidgetitem29 = QTableWidgetItem()
-        __qtablewidgetitem29.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 0, __qtablewidgetitem29)
+        self.tableWidget.setVerticalHeaderItem(20, __qtablewidgetitem29)
         __qtablewidgetitem30 = QTableWidgetItem()
         __qtablewidgetitem30.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 1, __qtablewidgetitem30)
+        self.tableWidget.setItem(0, 0, __qtablewidgetitem30)
         __qtablewidgetitem31 = QTableWidgetItem()
         __qtablewidgetitem31.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 2, __qtablewidgetitem31)
+        self.tableWidget.setItem(0, 1, __qtablewidgetitem31)
         __qtablewidgetitem32 = QTableWidgetItem()
         __qtablewidgetitem32.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 3, __qtablewidgetitem32)
+        self.tableWidget.setItem(0, 2, __qtablewidgetitem32)
         __qtablewidgetitem33 = QTableWidgetItem()
         __qtablewidgetitem33.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 4, __qtablewidgetitem33)
+        self.tableWidget.setItem(0, 3, __qtablewidgetitem33)
         __qtablewidgetitem34 = QTableWidgetItem()
         __qtablewidgetitem34.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 5, __qtablewidgetitem34)
+        self.tableWidget.setItem(0, 4, __qtablewidgetitem34)
         __qtablewidgetitem35 = QTableWidgetItem()
         __qtablewidgetitem35.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 6, __qtablewidgetitem35)
+        self.tableWidget.setItem(0, 5, __qtablewidgetitem35)
         __qtablewidgetitem36 = QTableWidgetItem()
         __qtablewidgetitem36.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget.setItem(0, 7, __qtablewidgetitem36)
+        self.tableWidget.setItem(0, 6, __qtablewidgetitem36)
+        __qtablewidgetitem37 = QTableWidgetItem()
+        __qtablewidgetitem37.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget.setItem(0, 7, __qtablewidgetitem37)
         font1 = QFont()
         font1.setBold(True)
-        __qtablewidgetitem37 = QTableWidgetItem()
-        __qtablewidgetitem37.setFont(font1);
-        __qtablewidgetitem37.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(0, 8, __qtablewidgetitem37)
+        __qtablewidgetitem38 = QTableWidgetItem()
+        __qtablewidgetitem38.setFont(font1);
+        __qtablewidgetitem38.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(0, 8, __qtablewidgetitem38)
         font2 = QFont()
         font2.setPointSize(12)
         font2.setBold(True)
-        __qtablewidgetitem38 = QTableWidgetItem()
-        __qtablewidgetitem38.setFont(font2);
-        __qtablewidgetitem38.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(1, 0, __qtablewidgetitem38)
         __qtablewidgetitem39 = QTableWidgetItem()
+        __qtablewidgetitem39.setFont(font2);
         __qtablewidgetitem39.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(1, 1, __qtablewidgetitem39)
+        self.tableWidget.setItem(1, 0, __qtablewidgetitem39)
+        __qtablewidgetitem40 = QTableWidgetItem()
+        __qtablewidgetitem40.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(1, 1, __qtablewidgetitem40)
         brush = QBrush(QColor(0, 0, 0, 255))
         brush.setStyle(Qt.NoBrush)
         brush1 = QBrush(QColor(255, 0, 0, 120))
         brush1.setStyle(Qt.NoBrush)
-        __qtablewidgetitem40 = QTableWidgetItem()
-        __qtablewidgetitem40.setBackground(brush1);
-        __qtablewidgetitem40.setForeground(brush);
-        self.tableWidget.setItem(1, 8, __qtablewidgetitem40)
         __qtablewidgetitem41 = QTableWidgetItem()
-        __qtablewidgetitem41.setFont(font1);
-        __qtablewidgetitem41.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(2, 0, __qtablewidgetitem41)
+        __qtablewidgetitem41.setBackground(brush1);
+        __qtablewidgetitem41.setForeground(brush);
+        self.tableWidget.setItem(1, 8, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
+        __qtablewidgetitem42.setFont(font1);
         __qtablewidgetitem42.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(2, 1, __qtablewidgetitem42)
+        self.tableWidget.setItem(2, 0, __qtablewidgetitem42)
         __qtablewidgetitem43 = QTableWidgetItem()
-        self.tableWidget.setItem(2, 2, __qtablewidgetitem43)
+        __qtablewidgetitem43.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(2, 1, __qtablewidgetitem43)
         __qtablewidgetitem44 = QTableWidgetItem()
-        self.tableWidget.setItem(2, 8, __qtablewidgetitem44)
+        self.tableWidget.setItem(2, 2, __qtablewidgetitem44)
         __qtablewidgetitem45 = QTableWidgetItem()
-        __qtablewidgetitem45.setFont(font1);
-        __qtablewidgetitem45.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(3, 0, __qtablewidgetitem45)
+        self.tableWidget.setItem(2, 8, __qtablewidgetitem45)
         __qtablewidgetitem46 = QTableWidgetItem()
+        __qtablewidgetitem46.setFont(font1);
         __qtablewidgetitem46.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(3, 1, __qtablewidgetitem46)
+        self.tableWidget.setItem(3, 0, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
-        self.tableWidget.setItem(3, 8, __qtablewidgetitem47)
+        __qtablewidgetitem47.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(3, 1, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
-        __qtablewidgetitem48.setFont(font1);
-        __qtablewidgetitem48.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(4, 0, __qtablewidgetitem48)
+        self.tableWidget.setItem(3, 8, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
+        __qtablewidgetitem49.setFont(font1);
         __qtablewidgetitem49.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(4, 1, __qtablewidgetitem49)
+        self.tableWidget.setItem(4, 0, __qtablewidgetitem49)
         __qtablewidgetitem50 = QTableWidgetItem()
-        self.tableWidget.setItem(4, 8, __qtablewidgetitem50)
+        __qtablewidgetitem50.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(4, 1, __qtablewidgetitem50)
         __qtablewidgetitem51 = QTableWidgetItem()
-        __qtablewidgetitem51.setFont(font1);
-        __qtablewidgetitem51.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(5, 0, __qtablewidgetitem51)
+        self.tableWidget.setItem(4, 8, __qtablewidgetitem51)
         __qtablewidgetitem52 = QTableWidgetItem()
+        __qtablewidgetitem52.setFont(font1);
         __qtablewidgetitem52.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(5, 1, __qtablewidgetitem52)
+        self.tableWidget.setItem(5, 0, __qtablewidgetitem52)
         __qtablewidgetitem53 = QTableWidgetItem()
-        self.tableWidget.setItem(5, 8, __qtablewidgetitem53)
+        __qtablewidgetitem53.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(5, 1, __qtablewidgetitem53)
         __qtablewidgetitem54 = QTableWidgetItem()
-        __qtablewidgetitem54.setFont(font1);
-        __qtablewidgetitem54.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(6, 0, __qtablewidgetitem54)
+        self.tableWidget.setItem(5, 8, __qtablewidgetitem54)
         __qtablewidgetitem55 = QTableWidgetItem()
+        __qtablewidgetitem55.setFont(font1);
         __qtablewidgetitem55.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(6, 1, __qtablewidgetitem55)
+        self.tableWidget.setItem(6, 0, __qtablewidgetitem55)
         __qtablewidgetitem56 = QTableWidgetItem()
-        self.tableWidget.setItem(6, 8, __qtablewidgetitem56)
+        __qtablewidgetitem56.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(6, 1, __qtablewidgetitem56)
         __qtablewidgetitem57 = QTableWidgetItem()
-        __qtablewidgetitem57.setFont(font1);
-        __qtablewidgetitem57.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(7, 0, __qtablewidgetitem57)
+        self.tableWidget.setItem(6, 8, __qtablewidgetitem57)
         __qtablewidgetitem58 = QTableWidgetItem()
+        __qtablewidgetitem58.setFont(font1);
         __qtablewidgetitem58.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(7, 1, __qtablewidgetitem58)
+        self.tableWidget.setItem(7, 0, __qtablewidgetitem58)
         __qtablewidgetitem59 = QTableWidgetItem()
-        self.tableWidget.setItem(7, 8, __qtablewidgetitem59)
+        __qtablewidgetitem59.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(7, 1, __qtablewidgetitem59)
         __qtablewidgetitem60 = QTableWidgetItem()
-        __qtablewidgetitem60.setFont(font1);
-        __qtablewidgetitem60.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(8, 0, __qtablewidgetitem60)
+        self.tableWidget.setItem(7, 8, __qtablewidgetitem60)
         __qtablewidgetitem61 = QTableWidgetItem()
+        __qtablewidgetitem61.setFont(font1);
         __qtablewidgetitem61.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(8, 1, __qtablewidgetitem61)
+        self.tableWidget.setItem(8, 0, __qtablewidgetitem61)
         __qtablewidgetitem62 = QTableWidgetItem()
-        self.tableWidget.setItem(8, 8, __qtablewidgetitem62)
+        __qtablewidgetitem62.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(8, 1, __qtablewidgetitem62)
         __qtablewidgetitem63 = QTableWidgetItem()
-        __qtablewidgetitem63.setFont(font1);
-        __qtablewidgetitem63.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(9, 0, __qtablewidgetitem63)
+        self.tableWidget.setItem(8, 8, __qtablewidgetitem63)
         __qtablewidgetitem64 = QTableWidgetItem()
+        __qtablewidgetitem64.setFont(font1);
         __qtablewidgetitem64.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(9, 1, __qtablewidgetitem64)
+        self.tableWidget.setItem(9, 0, __qtablewidgetitem64)
         __qtablewidgetitem65 = QTableWidgetItem()
-        self.tableWidget.setItem(9, 8, __qtablewidgetitem65)
+        __qtablewidgetitem65.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(9, 1, __qtablewidgetitem65)
         __qtablewidgetitem66 = QTableWidgetItem()
-        __qtablewidgetitem66.setFont(font1);
-        __qtablewidgetitem66.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(10, 0, __qtablewidgetitem66)
+        self.tableWidget.setItem(9, 8, __qtablewidgetitem66)
         __qtablewidgetitem67 = QTableWidgetItem()
+        __qtablewidgetitem67.setFont(font1);
         __qtablewidgetitem67.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(10, 1, __qtablewidgetitem67)
+        self.tableWidget.setItem(10, 0, __qtablewidgetitem67)
         __qtablewidgetitem68 = QTableWidgetItem()
-        self.tableWidget.setItem(10, 8, __qtablewidgetitem68)
+        __qtablewidgetitem68.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(10, 1, __qtablewidgetitem68)
         __qtablewidgetitem69 = QTableWidgetItem()
-        __qtablewidgetitem69.setFont(font1);
-        __qtablewidgetitem69.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(11, 0, __qtablewidgetitem69)
+        self.tableWidget.setItem(10, 8, __qtablewidgetitem69)
         __qtablewidgetitem70 = QTableWidgetItem()
+        __qtablewidgetitem70.setFont(font1);
         __qtablewidgetitem70.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(11, 1, __qtablewidgetitem70)
+        self.tableWidget.setItem(11, 0, __qtablewidgetitem70)
         __qtablewidgetitem71 = QTableWidgetItem()
-        self.tableWidget.setItem(11, 8, __qtablewidgetitem71)
+        __qtablewidgetitem71.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(11, 1, __qtablewidgetitem71)
         __qtablewidgetitem72 = QTableWidgetItem()
-        __qtablewidgetitem72.setFont(font1);
-        __qtablewidgetitem72.setFlags(Qt.ItemIsEditable|Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(12, 0, __qtablewidgetitem72)
+        self.tableWidget.setItem(11, 8, __qtablewidgetitem72)
         __qtablewidgetitem73 = QTableWidgetItem()
-        __qtablewidgetitem73.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(12, 1, __qtablewidgetitem73)
+        __qtablewidgetitem73.setFont(font1);
+        __qtablewidgetitem73.setFlags(Qt.ItemIsEditable|Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(12, 0, __qtablewidgetitem73)
         __qtablewidgetitem74 = QTableWidgetItem()
-        self.tableWidget.setItem(12, 8, __qtablewidgetitem74)
+        __qtablewidgetitem74.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(12, 1, __qtablewidgetitem74)
         __qtablewidgetitem75 = QTableWidgetItem()
-        __qtablewidgetitem75.setFont(font1);
-        __qtablewidgetitem75.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(13, 0, __qtablewidgetitem75)
+        self.tableWidget.setItem(12, 8, __qtablewidgetitem75)
         __qtablewidgetitem76 = QTableWidgetItem()
+        __qtablewidgetitem76.setFont(font1);
         __qtablewidgetitem76.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(13, 1, __qtablewidgetitem76)
+        self.tableWidget.setItem(13, 0, __qtablewidgetitem76)
         __qtablewidgetitem77 = QTableWidgetItem()
-        self.tableWidget.setItem(13, 8, __qtablewidgetitem77)
+        __qtablewidgetitem77.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(13, 1, __qtablewidgetitem77)
         __qtablewidgetitem78 = QTableWidgetItem()
-        __qtablewidgetitem78.setFont(font1);
-        __qtablewidgetitem78.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(14, 0, __qtablewidgetitem78)
+        self.tableWidget.setItem(13, 8, __qtablewidgetitem78)
         __qtablewidgetitem79 = QTableWidgetItem()
+        __qtablewidgetitem79.setFont(font1);
         __qtablewidgetitem79.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(14, 1, __qtablewidgetitem79)
+        self.tableWidget.setItem(14, 0, __qtablewidgetitem79)
         __qtablewidgetitem80 = QTableWidgetItem()
-        self.tableWidget.setItem(14, 8, __qtablewidgetitem80)
+        __qtablewidgetitem80.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(14, 1, __qtablewidgetitem80)
         __qtablewidgetitem81 = QTableWidgetItem()
-        __qtablewidgetitem81.setFont(font1);
-        __qtablewidgetitem81.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(15, 0, __qtablewidgetitem81)
+        self.tableWidget.setItem(14, 8, __qtablewidgetitem81)
         __qtablewidgetitem82 = QTableWidgetItem()
+        __qtablewidgetitem82.setFont(font1);
         __qtablewidgetitem82.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(15, 1, __qtablewidgetitem82)
+        self.tableWidget.setItem(15, 0, __qtablewidgetitem82)
         __qtablewidgetitem83 = QTableWidgetItem()
-        self.tableWidget.setItem(15, 8, __qtablewidgetitem83)
+        __qtablewidgetitem83.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(15, 1, __qtablewidgetitem83)
+        __qtablewidgetitem84 = QTableWidgetItem()
+        self.tableWidget.setItem(15, 8, __qtablewidgetitem84)
         font3 = QFont()
         font3.setFamilies([u"Segoe UI Symbol"])
         font3.setPointSize(9)
         font3.setBold(True)
         font3.setKerning(False)
-        __qtablewidgetitem84 = QTableWidgetItem()
-        __qtablewidgetitem84.setFont(font3);
-        __qtablewidgetitem84.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(16, 0, __qtablewidgetitem84)
         __qtablewidgetitem85 = QTableWidgetItem()
+        __qtablewidgetitem85.setFont(font3);
         __qtablewidgetitem85.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(16, 1, __qtablewidgetitem85)
+        self.tableWidget.setItem(16, 0, __qtablewidgetitem85)
         __qtablewidgetitem86 = QTableWidgetItem()
-        self.tableWidget.setItem(16, 8, __qtablewidgetitem86)
+        __qtablewidgetitem86.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(16, 1, __qtablewidgetitem86)
         __qtablewidgetitem87 = QTableWidgetItem()
-        __qtablewidgetitem87.setFont(font1);
-        __qtablewidgetitem87.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(17, 0, __qtablewidgetitem87)
+        self.tableWidget.setItem(16, 8, __qtablewidgetitem87)
         __qtablewidgetitem88 = QTableWidgetItem()
+        __qtablewidgetitem88.setFont(font1);
         __qtablewidgetitem88.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(17, 1, __qtablewidgetitem88)
+        self.tableWidget.setItem(17, 0, __qtablewidgetitem88)
         __qtablewidgetitem89 = QTableWidgetItem()
-        self.tableWidget.setItem(17, 8, __qtablewidgetitem89)
+        __qtablewidgetitem89.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(17, 1, __qtablewidgetitem89)
         __qtablewidgetitem90 = QTableWidgetItem()
-        __qtablewidgetitem90.setFont(font1);
-        __qtablewidgetitem90.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(18, 0, __qtablewidgetitem90)
+        self.tableWidget.setItem(17, 8, __qtablewidgetitem90)
         __qtablewidgetitem91 = QTableWidgetItem()
+        __qtablewidgetitem91.setFont(font1);
         __qtablewidgetitem91.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(18, 1, __qtablewidgetitem91)
+        self.tableWidget.setItem(18, 0, __qtablewidgetitem91)
         __qtablewidgetitem92 = QTableWidgetItem()
-        self.tableWidget.setItem(18, 8, __qtablewidgetitem92)
+        __qtablewidgetitem92.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(18, 1, __qtablewidgetitem92)
         __qtablewidgetitem93 = QTableWidgetItem()
-        __qtablewidgetitem93.setFont(font1);
-        __qtablewidgetitem93.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(19, 0, __qtablewidgetitem93)
+        self.tableWidget.setItem(18, 8, __qtablewidgetitem93)
         __qtablewidgetitem94 = QTableWidgetItem()
+        __qtablewidgetitem94.setFont(font1);
         __qtablewidgetitem94.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget.setItem(19, 1, __qtablewidgetitem94)
+        self.tableWidget.setItem(19, 0, __qtablewidgetitem94)
         __qtablewidgetitem95 = QTableWidgetItem()
-        self.tableWidget.setItem(19, 8, __qtablewidgetitem95)
+        __qtablewidgetitem95.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget.setItem(19, 1, __qtablewidgetitem95)
+        __qtablewidgetitem96 = QTableWidgetItem()
+        self.tableWidget.setItem(19, 8, __qtablewidgetitem96)
+        __qtablewidgetitem97 = QTableWidgetItem()
+        __qtablewidgetitem97.setFont(font1);
+        self.tableWidget.setItem(20, 0, __qtablewidgetitem97)
+        __qtablewidgetitem98 = QTableWidgetItem()
+        self.tableWidget.setItem(20, 1, __qtablewidgetitem98)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEnabled(False)
         sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.MinimumExpanding)
@@ -497,7 +504,7 @@ class Ui_mainWindow(object):
         self.tableWidget.setSortingEnabled(False)
         self.tableWidget.setWordWrap(True)
         self.tableWidget.setCornerButtonEnabled(False)
-        self.tableWidget.setRowCount(20)
+        self.tableWidget.setRowCount(21)
         self.tableWidget.setColumnCount(9)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
         self.tableWidget.horizontalHeader().setMinimumSectionSize(25)
@@ -756,6 +763,26 @@ class Ui_mainWindow(object):
 
         self.vl_variables.addLayout(self.hl_b)
 
+        self.hl_n1 = QHBoxLayout()
+        self.hl_n1.setObjectName(u"hl_n1")
+        self.lb_n1 = QLabel(self.groupBox_5)
+        self.lb_n1.setObjectName(u"lb_n1")
+        sizePolicy4.setHeightForWidth(self.lb_n1.sizePolicy().hasHeightForWidth())
+        self.lb_n1.setSizePolicy(sizePolicy4)
+
+        self.hl_n1.addWidget(self.lb_n1)
+
+        self.le_n1 = QLineEdit(self.groupBox_5)
+        self.le_n1.setObjectName(u"le_n1")
+        self.le_n1.setEnabled(False)
+        sizePolicy2.setHeightForWidth(self.le_n1.sizePolicy().hasHeightForWidth())
+        self.le_n1.setSizePolicy(sizePolicy2)
+
+        self.hl_n1.addWidget(self.le_n1)
+
+
+        self.vl_variables.addLayout(self.hl_n1)
+
 
         self.gridLayout.addLayout(self.vl_variables, 0, 0, 1, 1)
 
@@ -816,207 +843,207 @@ class Ui_mainWindow(object):
         self.tableWidget_2 = QTableWidget(self.tab_2)
         if (self.tableWidget_2.columnCount() < 8):
             self.tableWidget_2.setColumnCount(8)
-        __qtablewidgetitem96 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem96)
-        __qtablewidgetitem97 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem97)
-        __qtablewidgetitem98 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem98)
         __qtablewidgetitem99 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem99)
+        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem99)
         __qtablewidgetitem100 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(4, __qtablewidgetitem100)
+        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem100)
         __qtablewidgetitem101 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(5, __qtablewidgetitem101)
+        self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem101)
         __qtablewidgetitem102 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(6, __qtablewidgetitem102)
+        self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem102)
         __qtablewidgetitem103 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(7, __qtablewidgetitem103)
+        self.tableWidget_2.setHorizontalHeaderItem(4, __qtablewidgetitem103)
+        __qtablewidgetitem104 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(5, __qtablewidgetitem104)
+        __qtablewidgetitem105 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(6, __qtablewidgetitem105)
+        __qtablewidgetitem106 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(7, __qtablewidgetitem106)
         if (self.tableWidget_2.rowCount() < 15):
             self.tableWidget_2.setRowCount(15)
-        __qtablewidgetitem104 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem104)
-        __qtablewidgetitem105 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem105)
-        __qtablewidgetitem106 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem106)
         __qtablewidgetitem107 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem107)
+        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem107)
         __qtablewidgetitem108 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem108)
+        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem108)
         __qtablewidgetitem109 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem109)
+        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem109)
         __qtablewidgetitem110 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem110)
+        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem110)
         __qtablewidgetitem111 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem111)
+        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem111)
         __qtablewidgetitem112 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem112)
+        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem112)
         __qtablewidgetitem113 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem113)
+        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem113)
         __qtablewidgetitem114 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem114)
+        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem114)
         __qtablewidgetitem115 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem115)
+        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem115)
         __qtablewidgetitem116 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem116)
+        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem116)
         __qtablewidgetitem117 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem117)
+        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem117)
         __qtablewidgetitem118 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem118)
+        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem118)
         __qtablewidgetitem119 = QTableWidgetItem()
-        __qtablewidgetitem119.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 0, __qtablewidgetitem119)
+        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem119)
         __qtablewidgetitem120 = QTableWidgetItem()
-        __qtablewidgetitem120.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 1, __qtablewidgetitem120)
+        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem120)
         __qtablewidgetitem121 = QTableWidgetItem()
-        __qtablewidgetitem121.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 2, __qtablewidgetitem121)
+        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem121)
         __qtablewidgetitem122 = QTableWidgetItem()
         __qtablewidgetitem122.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 3, __qtablewidgetitem122)
+        self.tableWidget_2.setItem(0, 0, __qtablewidgetitem122)
         __qtablewidgetitem123 = QTableWidgetItem()
         __qtablewidgetitem123.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 4, __qtablewidgetitem123)
+        self.tableWidget_2.setItem(0, 1, __qtablewidgetitem123)
         __qtablewidgetitem124 = QTableWidgetItem()
         __qtablewidgetitem124.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 5, __qtablewidgetitem124)
+        self.tableWidget_2.setItem(0, 2, __qtablewidgetitem124)
         __qtablewidgetitem125 = QTableWidgetItem()
         __qtablewidgetitem125.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 6, __qtablewidgetitem125)
+        self.tableWidget_2.setItem(0, 3, __qtablewidgetitem125)
         __qtablewidgetitem126 = QTableWidgetItem()
-        __qtablewidgetitem126.setFont(font1);
-        self.tableWidget_2.setItem(0, 7, __qtablewidgetitem126)
+        __qtablewidgetitem126.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_2.setItem(0, 4, __qtablewidgetitem126)
         __qtablewidgetitem127 = QTableWidgetItem()
-        __qtablewidgetitem127.setFont(font1);
-        __qtablewidgetitem127.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(1, 0, __qtablewidgetitem127)
+        __qtablewidgetitem127.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_2.setItem(0, 5, __qtablewidgetitem127)
         __qtablewidgetitem128 = QTableWidgetItem()
-        __qtablewidgetitem128.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(1, 1, __qtablewidgetitem128)
+        __qtablewidgetitem128.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_2.setItem(0, 6, __qtablewidgetitem128)
         __qtablewidgetitem129 = QTableWidgetItem()
-        self.tableWidget_2.setItem(1, 2, __qtablewidgetitem129)
+        __qtablewidgetitem129.setFont(font1);
+        self.tableWidget_2.setItem(0, 7, __qtablewidgetitem129)
         __qtablewidgetitem130 = QTableWidgetItem()
         __qtablewidgetitem130.setFont(font1);
         __qtablewidgetitem130.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(2, 0, __qtablewidgetitem130)
+        self.tableWidget_2.setItem(1, 0, __qtablewidgetitem130)
         __qtablewidgetitem131 = QTableWidgetItem()
         __qtablewidgetitem131.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(2, 1, __qtablewidgetitem131)
+        self.tableWidget_2.setItem(1, 1, __qtablewidgetitem131)
         __qtablewidgetitem132 = QTableWidgetItem()
-        self.tableWidget_2.setItem(2, 2, __qtablewidgetitem132)
+        self.tableWidget_2.setItem(1, 2, __qtablewidgetitem132)
         __qtablewidgetitem133 = QTableWidgetItem()
         __qtablewidgetitem133.setFont(font1);
         __qtablewidgetitem133.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(3, 0, __qtablewidgetitem133)
+        self.tableWidget_2.setItem(2, 0, __qtablewidgetitem133)
         __qtablewidgetitem134 = QTableWidgetItem()
         __qtablewidgetitem134.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(3, 1, __qtablewidgetitem134)
+        self.tableWidget_2.setItem(2, 1, __qtablewidgetitem134)
         __qtablewidgetitem135 = QTableWidgetItem()
-        self.tableWidget_2.setItem(3, 2, __qtablewidgetitem135)
+        self.tableWidget_2.setItem(2, 2, __qtablewidgetitem135)
         __qtablewidgetitem136 = QTableWidgetItem()
         __qtablewidgetitem136.setFont(font1);
         __qtablewidgetitem136.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(4, 0, __qtablewidgetitem136)
+        self.tableWidget_2.setItem(3, 0, __qtablewidgetitem136)
         __qtablewidgetitem137 = QTableWidgetItem()
         __qtablewidgetitem137.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(4, 1, __qtablewidgetitem137)
+        self.tableWidget_2.setItem(3, 1, __qtablewidgetitem137)
         __qtablewidgetitem138 = QTableWidgetItem()
-        self.tableWidget_2.setItem(4, 2, __qtablewidgetitem138)
+        self.tableWidget_2.setItem(3, 2, __qtablewidgetitem138)
         __qtablewidgetitem139 = QTableWidgetItem()
         __qtablewidgetitem139.setFont(font1);
         __qtablewidgetitem139.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(5, 0, __qtablewidgetitem139)
+        self.tableWidget_2.setItem(4, 0, __qtablewidgetitem139)
         __qtablewidgetitem140 = QTableWidgetItem()
         __qtablewidgetitem140.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(5, 1, __qtablewidgetitem140)
+        self.tableWidget_2.setItem(4, 1, __qtablewidgetitem140)
         __qtablewidgetitem141 = QTableWidgetItem()
-        self.tableWidget_2.setItem(5, 2, __qtablewidgetitem141)
+        self.tableWidget_2.setItem(4, 2, __qtablewidgetitem141)
         __qtablewidgetitem142 = QTableWidgetItem()
         __qtablewidgetitem142.setFont(font1);
         __qtablewidgetitem142.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(6, 0, __qtablewidgetitem142)
+        self.tableWidget_2.setItem(5, 0, __qtablewidgetitem142)
         __qtablewidgetitem143 = QTableWidgetItem()
         __qtablewidgetitem143.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(6, 1, __qtablewidgetitem143)
+        self.tableWidget_2.setItem(5, 1, __qtablewidgetitem143)
         __qtablewidgetitem144 = QTableWidgetItem()
-        self.tableWidget_2.setItem(6, 2, __qtablewidgetitem144)
+        self.tableWidget_2.setItem(5, 2, __qtablewidgetitem144)
         __qtablewidgetitem145 = QTableWidgetItem()
         __qtablewidgetitem145.setFont(font1);
         __qtablewidgetitem145.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(7, 0, __qtablewidgetitem145)
+        self.tableWidget_2.setItem(6, 0, __qtablewidgetitem145)
         __qtablewidgetitem146 = QTableWidgetItem()
         __qtablewidgetitem146.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(7, 1, __qtablewidgetitem146)
+        self.tableWidget_2.setItem(6, 1, __qtablewidgetitem146)
         __qtablewidgetitem147 = QTableWidgetItem()
-        self.tableWidget_2.setItem(7, 2, __qtablewidgetitem147)
+        self.tableWidget_2.setItem(6, 2, __qtablewidgetitem147)
         __qtablewidgetitem148 = QTableWidgetItem()
         __qtablewidgetitem148.setFont(font1);
         __qtablewidgetitem148.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(8, 0, __qtablewidgetitem148)
+        self.tableWidget_2.setItem(7, 0, __qtablewidgetitem148)
         __qtablewidgetitem149 = QTableWidgetItem()
         __qtablewidgetitem149.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(8, 1, __qtablewidgetitem149)
+        self.tableWidget_2.setItem(7, 1, __qtablewidgetitem149)
         __qtablewidgetitem150 = QTableWidgetItem()
-        self.tableWidget_2.setItem(8, 2, __qtablewidgetitem150)
+        self.tableWidget_2.setItem(7, 2, __qtablewidgetitem150)
         __qtablewidgetitem151 = QTableWidgetItem()
         __qtablewidgetitem151.setFont(font1);
         __qtablewidgetitem151.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(9, 0, __qtablewidgetitem151)
+        self.tableWidget_2.setItem(8, 0, __qtablewidgetitem151)
         __qtablewidgetitem152 = QTableWidgetItem()
         __qtablewidgetitem152.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(9, 1, __qtablewidgetitem152)
+        self.tableWidget_2.setItem(8, 1, __qtablewidgetitem152)
         __qtablewidgetitem153 = QTableWidgetItem()
-        self.tableWidget_2.setItem(9, 2, __qtablewidgetitem153)
+        self.tableWidget_2.setItem(8, 2, __qtablewidgetitem153)
         __qtablewidgetitem154 = QTableWidgetItem()
         __qtablewidgetitem154.setFont(font1);
         __qtablewidgetitem154.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(10, 0, __qtablewidgetitem154)
+        self.tableWidget_2.setItem(9, 0, __qtablewidgetitem154)
         __qtablewidgetitem155 = QTableWidgetItem()
         __qtablewidgetitem155.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(10, 1, __qtablewidgetitem155)
+        self.tableWidget_2.setItem(9, 1, __qtablewidgetitem155)
         __qtablewidgetitem156 = QTableWidgetItem()
-        self.tableWidget_2.setItem(10, 2, __qtablewidgetitem156)
+        self.tableWidget_2.setItem(9, 2, __qtablewidgetitem156)
         __qtablewidgetitem157 = QTableWidgetItem()
         __qtablewidgetitem157.setFont(font1);
         __qtablewidgetitem157.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(11, 0, __qtablewidgetitem157)
+        self.tableWidget_2.setItem(10, 0, __qtablewidgetitem157)
         __qtablewidgetitem158 = QTableWidgetItem()
         __qtablewidgetitem158.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(11, 1, __qtablewidgetitem158)
+        self.tableWidget_2.setItem(10, 1, __qtablewidgetitem158)
         __qtablewidgetitem159 = QTableWidgetItem()
-        self.tableWidget_2.setItem(11, 2, __qtablewidgetitem159)
+        self.tableWidget_2.setItem(10, 2, __qtablewidgetitem159)
         __qtablewidgetitem160 = QTableWidgetItem()
         __qtablewidgetitem160.setFont(font1);
         __qtablewidgetitem160.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(12, 0, __qtablewidgetitem160)
+        self.tableWidget_2.setItem(11, 0, __qtablewidgetitem160)
         __qtablewidgetitem161 = QTableWidgetItem()
         __qtablewidgetitem161.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(12, 1, __qtablewidgetitem161)
+        self.tableWidget_2.setItem(11, 1, __qtablewidgetitem161)
         __qtablewidgetitem162 = QTableWidgetItem()
-        self.tableWidget_2.setItem(12, 2, __qtablewidgetitem162)
+        self.tableWidget_2.setItem(11, 2, __qtablewidgetitem162)
         __qtablewidgetitem163 = QTableWidgetItem()
         __qtablewidgetitem163.setFont(font1);
         __qtablewidgetitem163.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(13, 0, __qtablewidgetitem163)
+        self.tableWidget_2.setItem(12, 0, __qtablewidgetitem163)
         __qtablewidgetitem164 = QTableWidgetItem()
         __qtablewidgetitem164.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(13, 1, __qtablewidgetitem164)
+        self.tableWidget_2.setItem(12, 1, __qtablewidgetitem164)
         __qtablewidgetitem165 = QTableWidgetItem()
-        self.tableWidget_2.setItem(13, 2, __qtablewidgetitem165)
+        self.tableWidget_2.setItem(12, 2, __qtablewidgetitem165)
+        __qtablewidgetitem166 = QTableWidgetItem()
+        __qtablewidgetitem166.setFont(font1);
+        __qtablewidgetitem166.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(13, 0, __qtablewidgetitem166)
+        __qtablewidgetitem167 = QTableWidgetItem()
+        __qtablewidgetitem167.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(13, 1, __qtablewidgetitem167)
+        __qtablewidgetitem168 = QTableWidgetItem()
+        self.tableWidget_2.setItem(13, 2, __qtablewidgetitem168)
         font4 = QFont()
         font4.setPointSize(11)
         font4.setBold(True)
-        __qtablewidgetitem166 = QTableWidgetItem()
-        __qtablewidgetitem166.setFont(font4);
-        __qtablewidgetitem166.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(14, 0, __qtablewidgetitem166)
-        __qtablewidgetitem167 = QTableWidgetItem()
-        __qtablewidgetitem167.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(14, 1, __qtablewidgetitem167)
-        __qtablewidgetitem168 = QTableWidgetItem()
-        self.tableWidget_2.setItem(14, 2, __qtablewidgetitem168)
+        __qtablewidgetitem169 = QTableWidgetItem()
+        __qtablewidgetitem169.setFont(font4);
+        __qtablewidgetitem169.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(14, 0, __qtablewidgetitem169)
+        __qtablewidgetitem170 = QTableWidgetItem()
+        __qtablewidgetitem170.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(14, 1, __qtablewidgetitem170)
+        __qtablewidgetitem171 = QTableWidgetItem()
+        self.tableWidget_2.setItem(14, 2, __qtablewidgetitem171)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
         self.tableWidget_2.setEnabled(False)
         self.tableWidget_2.setMinimumSize(QSize(1050, 0))
@@ -1539,264 +1566,264 @@ class Ui_mainWindow(object):
         self.tableWidget_3 = QTableWidget(self.tab_3)
         if (self.tableWidget_3.columnCount() < 8):
             self.tableWidget_3.setColumnCount(8)
-        __qtablewidgetitem169 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem169)
-        __qtablewidgetitem170 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem170)
-        __qtablewidgetitem171 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem171)
         __qtablewidgetitem172 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem172)
+        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem172)
         __qtablewidgetitem173 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem173)
+        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem173)
         __qtablewidgetitem174 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem174)
+        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem174)
         __qtablewidgetitem175 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem175)
+        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem175)
         __qtablewidgetitem176 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem176)
+        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem176)
+        __qtablewidgetitem177 = QTableWidgetItem()
+        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem177)
+        __qtablewidgetitem178 = QTableWidgetItem()
+        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem178)
+        __qtablewidgetitem179 = QTableWidgetItem()
+        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem179)
         if (self.tableWidget_3.rowCount() < 21):
             self.tableWidget_3.setRowCount(21)
-        __qtablewidgetitem177 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem177)
-        __qtablewidgetitem178 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem178)
-        __qtablewidgetitem179 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(2, __qtablewidgetitem179)
         __qtablewidgetitem180 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(3, __qtablewidgetitem180)
+        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem180)
         __qtablewidgetitem181 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem181)
+        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem181)
         __qtablewidgetitem182 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(5, __qtablewidgetitem182)
+        self.tableWidget_3.setVerticalHeaderItem(2, __qtablewidgetitem182)
         __qtablewidgetitem183 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(6, __qtablewidgetitem183)
+        self.tableWidget_3.setVerticalHeaderItem(3, __qtablewidgetitem183)
         __qtablewidgetitem184 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(7, __qtablewidgetitem184)
+        self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem184)
         __qtablewidgetitem185 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(8, __qtablewidgetitem185)
+        self.tableWidget_3.setVerticalHeaderItem(5, __qtablewidgetitem185)
         __qtablewidgetitem186 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(9, __qtablewidgetitem186)
+        self.tableWidget_3.setVerticalHeaderItem(6, __qtablewidgetitem186)
         __qtablewidgetitem187 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(10, __qtablewidgetitem187)
+        self.tableWidget_3.setVerticalHeaderItem(7, __qtablewidgetitem187)
         __qtablewidgetitem188 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(11, __qtablewidgetitem188)
+        self.tableWidget_3.setVerticalHeaderItem(8, __qtablewidgetitem188)
         __qtablewidgetitem189 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(12, __qtablewidgetitem189)
+        self.tableWidget_3.setVerticalHeaderItem(9, __qtablewidgetitem189)
         __qtablewidgetitem190 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(13, __qtablewidgetitem190)
+        self.tableWidget_3.setVerticalHeaderItem(10, __qtablewidgetitem190)
         __qtablewidgetitem191 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(14, __qtablewidgetitem191)
+        self.tableWidget_3.setVerticalHeaderItem(11, __qtablewidgetitem191)
         __qtablewidgetitem192 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(15, __qtablewidgetitem192)
+        self.tableWidget_3.setVerticalHeaderItem(12, __qtablewidgetitem192)
         __qtablewidgetitem193 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(16, __qtablewidgetitem193)
+        self.tableWidget_3.setVerticalHeaderItem(13, __qtablewidgetitem193)
         __qtablewidgetitem194 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(17, __qtablewidgetitem194)
+        self.tableWidget_3.setVerticalHeaderItem(14, __qtablewidgetitem194)
         __qtablewidgetitem195 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(18, __qtablewidgetitem195)
+        self.tableWidget_3.setVerticalHeaderItem(15, __qtablewidgetitem195)
         __qtablewidgetitem196 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(19, __qtablewidgetitem196)
+        self.tableWidget_3.setVerticalHeaderItem(16, __qtablewidgetitem196)
         __qtablewidgetitem197 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(20, __qtablewidgetitem197)
+        self.tableWidget_3.setVerticalHeaderItem(17, __qtablewidgetitem197)
         __qtablewidgetitem198 = QTableWidgetItem()
-        __qtablewidgetitem198.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 2, __qtablewidgetitem198)
+        self.tableWidget_3.setVerticalHeaderItem(18, __qtablewidgetitem198)
         __qtablewidgetitem199 = QTableWidgetItem()
-        __qtablewidgetitem199.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 3, __qtablewidgetitem199)
+        self.tableWidget_3.setVerticalHeaderItem(19, __qtablewidgetitem199)
         __qtablewidgetitem200 = QTableWidgetItem()
-        __qtablewidgetitem200.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 4, __qtablewidgetitem200)
+        self.tableWidget_3.setVerticalHeaderItem(20, __qtablewidgetitem200)
         __qtablewidgetitem201 = QTableWidgetItem()
         __qtablewidgetitem201.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 5, __qtablewidgetitem201)
+        self.tableWidget_3.setItem(0, 2, __qtablewidgetitem201)
         __qtablewidgetitem202 = QTableWidgetItem()
         __qtablewidgetitem202.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 6, __qtablewidgetitem202)
+        self.tableWidget_3.setItem(0, 3, __qtablewidgetitem202)
         __qtablewidgetitem203 = QTableWidgetItem()
-        __qtablewidgetitem203.setFont(font1);
-        self.tableWidget_3.setItem(0, 7, __qtablewidgetitem203)
+        __qtablewidgetitem203.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_3.setItem(0, 4, __qtablewidgetitem203)
         __qtablewidgetitem204 = QTableWidgetItem()
-        __qtablewidgetitem204.setFont(font1);
-        __qtablewidgetitem204.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem204)
+        __qtablewidgetitem204.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_3.setItem(0, 5, __qtablewidgetitem204)
         __qtablewidgetitem205 = QTableWidgetItem()
-        __qtablewidgetitem205.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem205)
+        __qtablewidgetitem205.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_3.setItem(0, 6, __qtablewidgetitem205)
         __qtablewidgetitem206 = QTableWidgetItem()
-        self.tableWidget_3.setItem(1, 2, __qtablewidgetitem206)
+        __qtablewidgetitem206.setFont(font1);
+        self.tableWidget_3.setItem(0, 7, __qtablewidgetitem206)
         __qtablewidgetitem207 = QTableWidgetItem()
-        __qtablewidgetitem207.setFont(font4);
+        __qtablewidgetitem207.setFont(font1);
         __qtablewidgetitem207.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(2, 0, __qtablewidgetitem207)
+        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem207)
         __qtablewidgetitem208 = QTableWidgetItem()
         __qtablewidgetitem208.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(2, 1, __qtablewidgetitem208)
+        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem208)
         __qtablewidgetitem209 = QTableWidgetItem()
-        self.tableWidget_3.setItem(2, 2, __qtablewidgetitem209)
+        self.tableWidget_3.setItem(1, 2, __qtablewidgetitem209)
         __qtablewidgetitem210 = QTableWidgetItem()
         __qtablewidgetitem210.setFont(font4);
         __qtablewidgetitem210.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(3, 0, __qtablewidgetitem210)
+        self.tableWidget_3.setItem(2, 0, __qtablewidgetitem210)
         __qtablewidgetitem211 = QTableWidgetItem()
         __qtablewidgetitem211.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(3, 1, __qtablewidgetitem211)
+        self.tableWidget_3.setItem(2, 1, __qtablewidgetitem211)
         __qtablewidgetitem212 = QTableWidgetItem()
-        self.tableWidget_3.setItem(3, 2, __qtablewidgetitem212)
+        self.tableWidget_3.setItem(2, 2, __qtablewidgetitem212)
         __qtablewidgetitem213 = QTableWidgetItem()
-        __qtablewidgetitem213.setFont(font1);
+        __qtablewidgetitem213.setFont(font4);
         __qtablewidgetitem213.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(4, 0, __qtablewidgetitem213)
+        self.tableWidget_3.setItem(3, 0, __qtablewidgetitem213)
         __qtablewidgetitem214 = QTableWidgetItem()
         __qtablewidgetitem214.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(4, 1, __qtablewidgetitem214)
+        self.tableWidget_3.setItem(3, 1, __qtablewidgetitem214)
         __qtablewidgetitem215 = QTableWidgetItem()
-        self.tableWidget_3.setItem(4, 2, __qtablewidgetitem215)
+        self.tableWidget_3.setItem(3, 2, __qtablewidgetitem215)
         __qtablewidgetitem216 = QTableWidgetItem()
         __qtablewidgetitem216.setFont(font1);
         __qtablewidgetitem216.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(5, 0, __qtablewidgetitem216)
+        self.tableWidget_3.setItem(4, 0, __qtablewidgetitem216)
         __qtablewidgetitem217 = QTableWidgetItem()
         __qtablewidgetitem217.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(5, 1, __qtablewidgetitem217)
+        self.tableWidget_3.setItem(4, 1, __qtablewidgetitem217)
         __qtablewidgetitem218 = QTableWidgetItem()
-        self.tableWidget_3.setItem(5, 2, __qtablewidgetitem218)
+        self.tableWidget_3.setItem(4, 2, __qtablewidgetitem218)
         __qtablewidgetitem219 = QTableWidgetItem()
         __qtablewidgetitem219.setFont(font1);
         __qtablewidgetitem219.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(6, 0, __qtablewidgetitem219)
+        self.tableWidget_3.setItem(5, 0, __qtablewidgetitem219)
         __qtablewidgetitem220 = QTableWidgetItem()
         __qtablewidgetitem220.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(6, 1, __qtablewidgetitem220)
+        self.tableWidget_3.setItem(5, 1, __qtablewidgetitem220)
         __qtablewidgetitem221 = QTableWidgetItem()
-        self.tableWidget_3.setItem(6, 2, __qtablewidgetitem221)
+        self.tableWidget_3.setItem(5, 2, __qtablewidgetitem221)
         __qtablewidgetitem222 = QTableWidgetItem()
         __qtablewidgetitem222.setFont(font1);
         __qtablewidgetitem222.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(7, 0, __qtablewidgetitem222)
+        self.tableWidget_3.setItem(6, 0, __qtablewidgetitem222)
         __qtablewidgetitem223 = QTableWidgetItem()
         __qtablewidgetitem223.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(7, 1, __qtablewidgetitem223)
+        self.tableWidget_3.setItem(6, 1, __qtablewidgetitem223)
         __qtablewidgetitem224 = QTableWidgetItem()
-        self.tableWidget_3.setItem(7, 2, __qtablewidgetitem224)
+        self.tableWidget_3.setItem(6, 2, __qtablewidgetitem224)
         __qtablewidgetitem225 = QTableWidgetItem()
         __qtablewidgetitem225.setFont(font1);
         __qtablewidgetitem225.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(8, 0, __qtablewidgetitem225)
+        self.tableWidget_3.setItem(7, 0, __qtablewidgetitem225)
         __qtablewidgetitem226 = QTableWidgetItem()
         __qtablewidgetitem226.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(8, 1, __qtablewidgetitem226)
+        self.tableWidget_3.setItem(7, 1, __qtablewidgetitem226)
         __qtablewidgetitem227 = QTableWidgetItem()
-        self.tableWidget_3.setItem(8, 2, __qtablewidgetitem227)
+        self.tableWidget_3.setItem(7, 2, __qtablewidgetitem227)
         __qtablewidgetitem228 = QTableWidgetItem()
         __qtablewidgetitem228.setFont(font1);
         __qtablewidgetitem228.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(9, 0, __qtablewidgetitem228)
+        self.tableWidget_3.setItem(8, 0, __qtablewidgetitem228)
         __qtablewidgetitem229 = QTableWidgetItem()
         __qtablewidgetitem229.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(9, 1, __qtablewidgetitem229)
+        self.tableWidget_3.setItem(8, 1, __qtablewidgetitem229)
         __qtablewidgetitem230 = QTableWidgetItem()
-        self.tableWidget_3.setItem(9, 2, __qtablewidgetitem230)
+        self.tableWidget_3.setItem(8, 2, __qtablewidgetitem230)
         __qtablewidgetitem231 = QTableWidgetItem()
         __qtablewidgetitem231.setFont(font1);
         __qtablewidgetitem231.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(10, 0, __qtablewidgetitem231)
+        self.tableWidget_3.setItem(9, 0, __qtablewidgetitem231)
         __qtablewidgetitem232 = QTableWidgetItem()
         __qtablewidgetitem232.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(10, 1, __qtablewidgetitem232)
+        self.tableWidget_3.setItem(9, 1, __qtablewidgetitem232)
         __qtablewidgetitem233 = QTableWidgetItem()
-        self.tableWidget_3.setItem(10, 2, __qtablewidgetitem233)
+        self.tableWidget_3.setItem(9, 2, __qtablewidgetitem233)
         __qtablewidgetitem234 = QTableWidgetItem()
         __qtablewidgetitem234.setFont(font1);
         __qtablewidgetitem234.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(11, 0, __qtablewidgetitem234)
+        self.tableWidget_3.setItem(10, 0, __qtablewidgetitem234)
         __qtablewidgetitem235 = QTableWidgetItem()
         __qtablewidgetitem235.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(11, 1, __qtablewidgetitem235)
+        self.tableWidget_3.setItem(10, 1, __qtablewidgetitem235)
         __qtablewidgetitem236 = QTableWidgetItem()
-        self.tableWidget_3.setItem(11, 2, __qtablewidgetitem236)
+        self.tableWidget_3.setItem(10, 2, __qtablewidgetitem236)
         __qtablewidgetitem237 = QTableWidgetItem()
         __qtablewidgetitem237.setFont(font1);
         __qtablewidgetitem237.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(12, 0, __qtablewidgetitem237)
+        self.tableWidget_3.setItem(11, 0, __qtablewidgetitem237)
         __qtablewidgetitem238 = QTableWidgetItem()
         __qtablewidgetitem238.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(12, 1, __qtablewidgetitem238)
+        self.tableWidget_3.setItem(11, 1, __qtablewidgetitem238)
         __qtablewidgetitem239 = QTableWidgetItem()
-        self.tableWidget_3.setItem(12, 2, __qtablewidgetitem239)
+        self.tableWidget_3.setItem(11, 2, __qtablewidgetitem239)
         __qtablewidgetitem240 = QTableWidgetItem()
         __qtablewidgetitem240.setFont(font1);
         __qtablewidgetitem240.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(13, 0, __qtablewidgetitem240)
+        self.tableWidget_3.setItem(12, 0, __qtablewidgetitem240)
         __qtablewidgetitem241 = QTableWidgetItem()
         __qtablewidgetitem241.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(13, 1, __qtablewidgetitem241)
+        self.tableWidget_3.setItem(12, 1, __qtablewidgetitem241)
         __qtablewidgetitem242 = QTableWidgetItem()
-        self.tableWidget_3.setItem(13, 2, __qtablewidgetitem242)
+        self.tableWidget_3.setItem(12, 2, __qtablewidgetitem242)
         __qtablewidgetitem243 = QTableWidgetItem()
-        __qtablewidgetitem243.setFont(font4);
+        __qtablewidgetitem243.setFont(font1);
         __qtablewidgetitem243.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(14, 0, __qtablewidgetitem243)
+        self.tableWidget_3.setItem(13, 0, __qtablewidgetitem243)
         __qtablewidgetitem244 = QTableWidgetItem()
         __qtablewidgetitem244.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(14, 1, __qtablewidgetitem244)
+        self.tableWidget_3.setItem(13, 1, __qtablewidgetitem244)
         __qtablewidgetitem245 = QTableWidgetItem()
-        self.tableWidget_3.setItem(14, 2, __qtablewidgetitem245)
+        self.tableWidget_3.setItem(13, 2, __qtablewidgetitem245)
         __qtablewidgetitem246 = QTableWidgetItem()
         __qtablewidgetitem246.setFont(font4);
         __qtablewidgetitem246.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(15, 0, __qtablewidgetitem246)
+        self.tableWidget_3.setItem(14, 0, __qtablewidgetitem246)
         __qtablewidgetitem247 = QTableWidgetItem()
         __qtablewidgetitem247.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(15, 1, __qtablewidgetitem247)
+        self.tableWidget_3.setItem(14, 1, __qtablewidgetitem247)
         __qtablewidgetitem248 = QTableWidgetItem()
-        self.tableWidget_3.setItem(15, 2, __qtablewidgetitem248)
+        self.tableWidget_3.setItem(14, 2, __qtablewidgetitem248)
         __qtablewidgetitem249 = QTableWidgetItem()
         __qtablewidgetitem249.setFont(font4);
         __qtablewidgetitem249.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(16, 0, __qtablewidgetitem249)
+        self.tableWidget_3.setItem(15, 0, __qtablewidgetitem249)
         __qtablewidgetitem250 = QTableWidgetItem()
         __qtablewidgetitem250.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(16, 1, __qtablewidgetitem250)
+        self.tableWidget_3.setItem(15, 1, __qtablewidgetitem250)
         __qtablewidgetitem251 = QTableWidgetItem()
-        self.tableWidget_3.setItem(16, 2, __qtablewidgetitem251)
+        self.tableWidget_3.setItem(15, 2, __qtablewidgetitem251)
         __qtablewidgetitem252 = QTableWidgetItem()
         __qtablewidgetitem252.setFont(font4);
         __qtablewidgetitem252.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(17, 0, __qtablewidgetitem252)
+        self.tableWidget_3.setItem(16, 0, __qtablewidgetitem252)
         __qtablewidgetitem253 = QTableWidgetItem()
         __qtablewidgetitem253.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(17, 1, __qtablewidgetitem253)
+        self.tableWidget_3.setItem(16, 1, __qtablewidgetitem253)
         __qtablewidgetitem254 = QTableWidgetItem()
-        self.tableWidget_3.setItem(17, 2, __qtablewidgetitem254)
+        self.tableWidget_3.setItem(16, 2, __qtablewidgetitem254)
         __qtablewidgetitem255 = QTableWidgetItem()
         __qtablewidgetitem255.setFont(font4);
         __qtablewidgetitem255.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(18, 0, __qtablewidgetitem255)
+        self.tableWidget_3.setItem(17, 0, __qtablewidgetitem255)
         __qtablewidgetitem256 = QTableWidgetItem()
         __qtablewidgetitem256.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(18, 1, __qtablewidgetitem256)
+        self.tableWidget_3.setItem(17, 1, __qtablewidgetitem256)
         __qtablewidgetitem257 = QTableWidgetItem()
-        self.tableWidget_3.setItem(18, 2, __qtablewidgetitem257)
+        self.tableWidget_3.setItem(17, 2, __qtablewidgetitem257)
         __qtablewidgetitem258 = QTableWidgetItem()
-        __qtablewidgetitem258.setFont(font1);
+        __qtablewidgetitem258.setFont(font4);
         __qtablewidgetitem258.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(19, 0, __qtablewidgetitem258)
+        self.tableWidget_3.setItem(18, 0, __qtablewidgetitem258)
         __qtablewidgetitem259 = QTableWidgetItem()
         __qtablewidgetitem259.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(19, 1, __qtablewidgetitem259)
+        self.tableWidget_3.setItem(18, 1, __qtablewidgetitem259)
         __qtablewidgetitem260 = QTableWidgetItem()
-        self.tableWidget_3.setItem(19, 2, __qtablewidgetitem260)
+        self.tableWidget_3.setItem(18, 2, __qtablewidgetitem260)
         __qtablewidgetitem261 = QTableWidgetItem()
         __qtablewidgetitem261.setFont(font1);
         __qtablewidgetitem261.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(20, 0, __qtablewidgetitem261)
+        self.tableWidget_3.setItem(19, 0, __qtablewidgetitem261)
         __qtablewidgetitem262 = QTableWidgetItem()
         __qtablewidgetitem262.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(20, 1, __qtablewidgetitem262)
+        self.tableWidget_3.setItem(19, 1, __qtablewidgetitem262)
         __qtablewidgetitem263 = QTableWidgetItem()
-        self.tableWidget_3.setItem(20, 2, __qtablewidgetitem263)
+        self.tableWidget_3.setItem(19, 2, __qtablewidgetitem263)
+        __qtablewidgetitem264 = QTableWidgetItem()
+        __qtablewidgetitem264.setFont(font1);
+        __qtablewidgetitem264.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(20, 0, __qtablewidgetitem264)
+        __qtablewidgetitem265 = QTableWidgetItem()
+        __qtablewidgetitem265.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(20, 1, __qtablewidgetitem265)
+        __qtablewidgetitem266 = QTableWidgetItem()
+        self.tableWidget_3.setItem(20, 2, __qtablewidgetitem266)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setMinimumSize(QSize(1100, 0))
         self.tableWidget_3.setMaximumSize(QSize(1100, 680))
@@ -3043,99 +3070,105 @@ class Ui_mainWindow(object):
         ___qtablewidgetitem21.setText(QCoreApplication.translate("mainWindow", u"18", None));
         ___qtablewidgetitem22 = self.tableWidget.verticalHeaderItem(19)
         ___qtablewidgetitem22.setText(QCoreApplication.translate("mainWindow", u"19", None));
+        ___qtablewidgetitem23 = self.tableWidget.verticalHeaderItem(20)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("mainWindow", u"20", None));
 
         __sortingEnabled = self.tableWidget.isSortingEnabled()
         self.tableWidget.setSortingEnabled(False)
-        ___qtablewidgetitem23 = self.tableWidget.item(0, 2)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("mainWindow", u"0.005", None));
-        ___qtablewidgetitem24 = self.tableWidget.item(0, 3)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("mainWindow", u"0.01", None));
-        ___qtablewidgetitem25 = self.tableWidget.item(0, 4)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("mainWindow", u"0.015", None));
-        ___qtablewidgetitem26 = self.tableWidget.item(0, 5)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("mainWindow", u"0.02", None));
-        ___qtablewidgetitem27 = self.tableWidget.item(0, 6)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("mainWindow", u"0.025", None));
-        ___qtablewidgetitem28 = self.tableWidget.item(0, 7)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("mainWindow", u"0.03", None));
-        ___qtablewidgetitem29 = self.tableWidget.item(0, 8)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("mainWindow", u"0.024", None));
-        ___qtablewidgetitem30 = self.tableWidget.item(1, 0)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("mainWindow", u"a'r'_2/s'", None));
-        ___qtablewidgetitem31 = self.tableWidget.item(1, 1)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem32 = self.tableWidget.item(2, 0)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("mainWindow", u"R = a+a'r'_2/s", None));
-        ___qtablewidgetitem33 = self.tableWidget.item(2, 1)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem34 = self.tableWidget.item(3, 0)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("mainWindow", u"X = b+b'r'_2/s", None));
-        ___qtablewidgetitem35 = self.tableWidget.item(3, 1)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem36 = self.tableWidget.item(4, 0)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("mainWindow", u"Z = \u221a(R^2+X^2)", None));
-        ___qtablewidgetitem37 = self.tableWidget.item(4, 1)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem38 = self.tableWidget.item(5, 0)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("mainWindow", u"I'_2 = U/Z", None));
-        ___qtablewidgetitem39 = self.tableWidget.item(5, 1)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem40 = self.tableWidget.item(6, 0)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6)'_2 = R/Z", None));
-        ___qtablewidgetitem41 = self.tableWidget.item(6, 1)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem42 = self.tableWidget.item(7, 0)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("mainWindow", u"sin(\u03c6)'_2 = X/Z", None));
-        ___qtablewidgetitem43 = self.tableWidget.item(7, 1)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem44 = self.tableWidget.item(8, 0)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f = I_0\u043f+I'_2cos(\u03c6)'_2", None));
-        ___qtablewidgetitem45 = self.tableWidget.item(8, 1)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem46 = self.tableWidget.item(9, 0)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("mainWindow", u"I_1\u0440 = I_0\u043f+I'_2sin(\u03c6)'_2", None));
-        ___qtablewidgetitem47 = self.tableWidget.item(9, 1)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem48 = self.tableWidget.item(10, 0)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("mainWindow", u"I_1 = \u221a(I_1\u043f^2+I_1\u0440^2)", None));
-        ___qtablewidgetitem49 = self.tableWidget.item(10, 1)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem50 = self.tableWidget.item(11, 0)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("mainWindow", u"I'_2 = c_1 I'_2", None));
-        ___qtablewidgetitem51 = self.tableWidget.item(11, 1)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem52 = self.tableWidget.item(12, 0)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("mainWindow", u"P_1 = 3U I_1a * 10^-3", None));
-        ___qtablewidgetitem53 = self.tableWidget.item(12, 1)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem54 = self.tableWidget.item(13, 0)
-        ___qtablewidgetitem54.setText(QCoreApplication.translate("mainWindow", u"P_\u044d1 = 3I_1^2*r_1*10^-3", None));
-        ___qtablewidgetitem55 = self.tableWidget.item(13, 1)
-        ___qtablewidgetitem55.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem56 = self.tableWidget.item(14, 0)
-        ___qtablewidgetitem56.setText(QCoreApplication.translate("mainWindow", u"P_\u044d2=3I'_2^2*r'_2*10^-3", None));
-        ___qtablewidgetitem57 = self.tableWidget.item(14, 1)
-        ___qtablewidgetitem57.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem58 = self.tableWidget.item(15, 0)
-        ___qtablewidgetitem58.setText(QCoreApplication.translate("mainWindow", u"P_\u0434\u043e\u0431 = 0,005P_1", None));
-        ___qtablewidgetitem59 = self.tableWidget.item(15, 1)
-        ___qtablewidgetitem59.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem60 = self.tableWidget.item(16, 0)
-        ___qtablewidgetitem60.setText(QCoreApplication.translate("mainWindow", u"\u03a3P=P\u0441\u0442+P\u043c\u0435\u0445+P\u044d2+P\u044d1+P\u044d.\u0449+P\u0434\u043e\u0431", None));
-        ___qtablewidgetitem61 = self.tableWidget.item(16, 1)
-        ___qtablewidgetitem61.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem62 = self.tableWidget.item(17, 0)
-        ___qtablewidgetitem62.setText(QCoreApplication.translate("mainWindow", u"P_2 = P_1 - \u03a3P", None));
-        ___qtablewidgetitem63 = self.tableWidget.item(17, 1)
-        ___qtablewidgetitem63.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
-        ___qtablewidgetitem64 = self.tableWidget.item(18, 0)
-        ___qtablewidgetitem64.setText(QCoreApplication.translate("mainWindow", u"\u03b7 = 1 - \u03a3P/P_1", None));
-        ___qtablewidgetitem65 = self.tableWidget.item(18, 1)
-        ___qtablewidgetitem65.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem66 = self.tableWidget.item(19, 0)
-        ___qtablewidgetitem66.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6) = I_1a/I_1", None));
-        ___qtablewidgetitem67 = self.tableWidget.item(19, 1)
-        ___qtablewidgetitem67.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem24 = self.tableWidget.item(0, 2)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("mainWindow", u"0.005", None));
+        ___qtablewidgetitem25 = self.tableWidget.item(0, 3)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("mainWindow", u"0.01", None));
+        ___qtablewidgetitem26 = self.tableWidget.item(0, 4)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("mainWindow", u"0.015", None));
+        ___qtablewidgetitem27 = self.tableWidget.item(0, 5)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("mainWindow", u"0.02", None));
+        ___qtablewidgetitem28 = self.tableWidget.item(0, 6)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("mainWindow", u"0.025", None));
+        ___qtablewidgetitem29 = self.tableWidget.item(0, 7)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("mainWindow", u"0.03", None));
+        ___qtablewidgetitem30 = self.tableWidget.item(0, 8)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("mainWindow", u"0.024", None));
+        ___qtablewidgetitem31 = self.tableWidget.item(1, 0)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("mainWindow", u"a'r'_2/s'", None));
+        ___qtablewidgetitem32 = self.tableWidget.item(1, 1)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem33 = self.tableWidget.item(2, 0)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("mainWindow", u"R = a+a'r'_2/s", None));
+        ___qtablewidgetitem34 = self.tableWidget.item(2, 1)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem35 = self.tableWidget.item(3, 0)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("mainWindow", u"X = b+b'r'_2/s", None));
+        ___qtablewidgetitem36 = self.tableWidget.item(3, 1)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem37 = self.tableWidget.item(4, 0)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("mainWindow", u"Z = \u221a(R^2+X^2)", None));
+        ___qtablewidgetitem38 = self.tableWidget.item(4, 1)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem39 = self.tableWidget.item(5, 0)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("mainWindow", u"I'_2 = U/Z", None));
+        ___qtablewidgetitem40 = self.tableWidget.item(5, 1)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem41 = self.tableWidget.item(6, 0)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6)'_2 = R/Z", None));
+        ___qtablewidgetitem42 = self.tableWidget.item(6, 1)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem43 = self.tableWidget.item(7, 0)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("mainWindow", u"sin(\u03c6)'_2 = X/Z", None));
+        ___qtablewidgetitem44 = self.tableWidget.item(7, 1)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem45 = self.tableWidget.item(8, 0)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f = I_0\u043f+I'_2cos(\u03c6)'_2", None));
+        ___qtablewidgetitem46 = self.tableWidget.item(8, 1)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem47 = self.tableWidget.item(9, 0)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("mainWindow", u"I_1\u0440 = I_0\u043f+I'_2sin(\u03c6)'_2", None));
+        ___qtablewidgetitem48 = self.tableWidget.item(9, 1)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem49 = self.tableWidget.item(10, 0)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("mainWindow", u"I_1 = \u221a(I_1\u043f^2+I_1\u0440^2)", None));
+        ___qtablewidgetitem50 = self.tableWidget.item(10, 1)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem51 = self.tableWidget.item(11, 0)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("mainWindow", u"I'_2 = c_1 I'_2", None));
+        ___qtablewidgetitem52 = self.tableWidget.item(11, 1)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem53 = self.tableWidget.item(12, 0)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("mainWindow", u"P_1 = 3U I_1a * 10^-3", None));
+        ___qtablewidgetitem54 = self.tableWidget.item(12, 1)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem55 = self.tableWidget.item(13, 0)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("mainWindow", u"P_\u044d1 = 3I_1^2*r_1*10^-3", None));
+        ___qtablewidgetitem56 = self.tableWidget.item(13, 1)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem57 = self.tableWidget.item(14, 0)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("mainWindow", u"P_\u044d2=3I'_2^2*r'_2*10^-3", None));
+        ___qtablewidgetitem58 = self.tableWidget.item(14, 1)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem59 = self.tableWidget.item(15, 0)
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("mainWindow", u"P_\u0434\u043e\u0431 = 0,005P_1", None));
+        ___qtablewidgetitem60 = self.tableWidget.item(15, 1)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem61 = self.tableWidget.item(16, 0)
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("mainWindow", u"\u03a3P=P\u0441\u0442+P\u043c\u0435\u0445+P\u044d2+P\u044d1+P\u044d.\u0449+P\u0434\u043e\u0431", None));
+        ___qtablewidgetitem62 = self.tableWidget.item(16, 1)
+        ___qtablewidgetitem62.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem63 = self.tableWidget.item(17, 0)
+        ___qtablewidgetitem63.setText(QCoreApplication.translate("mainWindow", u"P_2 = P_1 - \u03a3P", None));
+        ___qtablewidgetitem64 = self.tableWidget.item(17, 1)
+        ___qtablewidgetitem64.setText(QCoreApplication.translate("mainWindow", u"\u043a\u0412\u0442", None));
+        ___qtablewidgetitem65 = self.tableWidget.item(18, 0)
+        ___qtablewidgetitem65.setText(QCoreApplication.translate("mainWindow", u"\u03b7 = 1 - \u03a3P/P_1", None));
+        ___qtablewidgetitem66 = self.tableWidget.item(18, 1)
+        ___qtablewidgetitem66.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem67 = self.tableWidget.item(19, 0)
+        ___qtablewidgetitem67.setText(QCoreApplication.translate("mainWindow", u"cos(\u03c6) = I_1a/I_1", None));
+        ___qtablewidgetitem68 = self.tableWidget.item(19, 1)
+        ___qtablewidgetitem68.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem69 = self.tableWidget.item(20, 0)
+        ___qtablewidgetitem69.setText(QCoreApplication.translate("mainWindow", u"n = n_1(1 - s)", None));
+        ___qtablewidgetitem70 = self.tableWidget.item(20, 1)
+        ___qtablewidgetitem70.setText(QCoreApplication.translate("mainWindow", u"\u043e\u0431/\u043c\u0438\u043d", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.groupBox_5.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
@@ -3161,119 +3194,120 @@ class Ui_mainWindow(object):
         self.le_b_shtrih.setText("")
         self.lb_b.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>b =</p></body></html>", None))
         self.le_b.setText("")
+        self.lb_n1.setText(QCoreApplication.translate("mainWindow", u"<html><head/><body><p>n<span style=\" vertical-align:sub;\">1</span> = </p></body></html>", None))
         self.bt_check_table_1.setText(QCoreApplication.translate("mainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430", None))
         self.bt_calculate_table1.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.bt_show_chart_1.setText(QCoreApplication.translate("mainWindow", u"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0433\u0440\u0430\u0444\u0438\u043a", None))
         self.bt_export_xl_1.setText(QCoreApplication.translate("mainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 \u044d\u043a\u0441\u0435\u043b\u044c", None))
         self.lb_error.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 1", None))
-        ___qtablewidgetitem68 = self.tableWidget_2.horizontalHeaderItem(0)
-        ___qtablewidgetitem68.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
-        ___qtablewidgetitem69 = self.tableWidget_2.horizontalHeaderItem(1)
-        ___qtablewidgetitem69.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
-        ___qtablewidgetitem70 = self.tableWidget_2.horizontalHeaderItem(4)
-        ___qtablewidgetitem70.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
-        ___qtablewidgetitem71 = self.tableWidget_2.horizontalHeaderItem(7)
-        ___qtablewidgetitem71.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
-        ___qtablewidgetitem72 = self.tableWidget_2.verticalHeaderItem(1)
-        ___qtablewidgetitem72.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem73 = self.tableWidget_2.verticalHeaderItem(2)
-        ___qtablewidgetitem73.setText(QCoreApplication.translate("mainWindow", u"2", None));
-        ___qtablewidgetitem74 = self.tableWidget_2.verticalHeaderItem(3)
-        ___qtablewidgetitem74.setText(QCoreApplication.translate("mainWindow", u"3", None));
-        ___qtablewidgetitem75 = self.tableWidget_2.verticalHeaderItem(4)
-        ___qtablewidgetitem75.setText(QCoreApplication.translate("mainWindow", u"4", None));
-        ___qtablewidgetitem76 = self.tableWidget_2.verticalHeaderItem(5)
-        ___qtablewidgetitem76.setText(QCoreApplication.translate("mainWindow", u"5", None));
-        ___qtablewidgetitem77 = self.tableWidget_2.verticalHeaderItem(6)
-        ___qtablewidgetitem77.setText(QCoreApplication.translate("mainWindow", u"6", None));
-        ___qtablewidgetitem78 = self.tableWidget_2.verticalHeaderItem(7)
-        ___qtablewidgetitem78.setText(QCoreApplication.translate("mainWindow", u"7", None));
-        ___qtablewidgetitem79 = self.tableWidget_2.verticalHeaderItem(8)
-        ___qtablewidgetitem79.setText(QCoreApplication.translate("mainWindow", u"8", None));
-        ___qtablewidgetitem80 = self.tableWidget_2.verticalHeaderItem(9)
-        ___qtablewidgetitem80.setText(QCoreApplication.translate("mainWindow", u"9", None));
-        ___qtablewidgetitem81 = self.tableWidget_2.verticalHeaderItem(10)
-        ___qtablewidgetitem81.setText(QCoreApplication.translate("mainWindow", u"10", None));
-        ___qtablewidgetitem82 = self.tableWidget_2.verticalHeaderItem(11)
-        ___qtablewidgetitem82.setText(QCoreApplication.translate("mainWindow", u"11", None));
-        ___qtablewidgetitem83 = self.tableWidget_2.verticalHeaderItem(12)
-        ___qtablewidgetitem83.setText(QCoreApplication.translate("mainWindow", u"12", None));
-        ___qtablewidgetitem84 = self.tableWidget_2.verticalHeaderItem(13)
-        ___qtablewidgetitem84.setText(QCoreApplication.translate("mainWindow", u"13", None));
-        ___qtablewidgetitem85 = self.tableWidget_2.verticalHeaderItem(14)
-        ___qtablewidgetitem85.setText(QCoreApplication.translate("mainWindow", u"14", None));
+        ___qtablewidgetitem71 = self.tableWidget_2.horizontalHeaderItem(0)
+        ___qtablewidgetitem71.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
+        ___qtablewidgetitem72 = self.tableWidget_2.horizontalHeaderItem(1)
+        ___qtablewidgetitem72.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
+        ___qtablewidgetitem73 = self.tableWidget_2.horizontalHeaderItem(4)
+        ___qtablewidgetitem73.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
+        ___qtablewidgetitem74 = self.tableWidget_2.horizontalHeaderItem(7)
+        ___qtablewidgetitem74.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
+        ___qtablewidgetitem75 = self.tableWidget_2.verticalHeaderItem(1)
+        ___qtablewidgetitem75.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem76 = self.tableWidget_2.verticalHeaderItem(2)
+        ___qtablewidgetitem76.setText(QCoreApplication.translate("mainWindow", u"2", None));
+        ___qtablewidgetitem77 = self.tableWidget_2.verticalHeaderItem(3)
+        ___qtablewidgetitem77.setText(QCoreApplication.translate("mainWindow", u"3", None));
+        ___qtablewidgetitem78 = self.tableWidget_2.verticalHeaderItem(4)
+        ___qtablewidgetitem78.setText(QCoreApplication.translate("mainWindow", u"4", None));
+        ___qtablewidgetitem79 = self.tableWidget_2.verticalHeaderItem(5)
+        ___qtablewidgetitem79.setText(QCoreApplication.translate("mainWindow", u"5", None));
+        ___qtablewidgetitem80 = self.tableWidget_2.verticalHeaderItem(6)
+        ___qtablewidgetitem80.setText(QCoreApplication.translate("mainWindow", u"6", None));
+        ___qtablewidgetitem81 = self.tableWidget_2.verticalHeaderItem(7)
+        ___qtablewidgetitem81.setText(QCoreApplication.translate("mainWindow", u"7", None));
+        ___qtablewidgetitem82 = self.tableWidget_2.verticalHeaderItem(8)
+        ___qtablewidgetitem82.setText(QCoreApplication.translate("mainWindow", u"8", None));
+        ___qtablewidgetitem83 = self.tableWidget_2.verticalHeaderItem(9)
+        ___qtablewidgetitem83.setText(QCoreApplication.translate("mainWindow", u"9", None));
+        ___qtablewidgetitem84 = self.tableWidget_2.verticalHeaderItem(10)
+        ___qtablewidgetitem84.setText(QCoreApplication.translate("mainWindow", u"10", None));
+        ___qtablewidgetitem85 = self.tableWidget_2.verticalHeaderItem(11)
+        ___qtablewidgetitem85.setText(QCoreApplication.translate("mainWindow", u"11", None));
+        ___qtablewidgetitem86 = self.tableWidget_2.verticalHeaderItem(12)
+        ___qtablewidgetitem86.setText(QCoreApplication.translate("mainWindow", u"12", None));
+        ___qtablewidgetitem87 = self.tableWidget_2.verticalHeaderItem(13)
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("mainWindow", u"13", None));
+        ___qtablewidgetitem88 = self.tableWidget_2.verticalHeaderItem(14)
+        ___qtablewidgetitem88.setText(QCoreApplication.translate("mainWindow", u"14", None));
 
         __sortingEnabled1 = self.tableWidget_2.isSortingEnabled()
         self.tableWidget_2.setSortingEnabled(False)
-        ___qtablewidgetitem86 = self.tableWidget_2.item(0, 2)
-        ___qtablewidgetitem86.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem87 = self.tableWidget_2.item(0, 3)
-        ___qtablewidgetitem87.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
-        ___qtablewidgetitem88 = self.tableWidget_2.item(0, 4)
-        ___qtablewidgetitem88.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
-        ___qtablewidgetitem89 = self.tableWidget_2.item(0, 5)
-        ___qtablewidgetitem89.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
-        ___qtablewidgetitem90 = self.tableWidget_2.item(0, 6)
-        ___qtablewidgetitem90.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
-        ___qtablewidgetitem91 = self.tableWidget_2.item(0, 7)
-        ___qtablewidgetitem91.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
-        ___qtablewidgetitem92 = self.tableWidget_2.item(1, 0)
-        ___qtablewidgetitem92.setText(QCoreApplication.translate("mainWindow", u"\u03be=63,61h_c*\u221as", None));
-        ___qtablewidgetitem93 = self.tableWidget_2.item(1, 1)
-        ___qtablewidgetitem93.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem94 = self.tableWidget_2.item(2, 0)
-        ___qtablewidgetitem94.setText(QCoreApplication.translate("mainWindow", u"\u03c6(\u03be)", None));
-        ___qtablewidgetitem95 = self.tableWidget_2.item(2, 1)
-        ___qtablewidgetitem95.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem96 = self.tableWidget_2.item(3, 0)
-        ___qtablewidgetitem96.setText(QCoreApplication.translate("mainWindow", u"h_r = h_c/(1-\u03c6)", None));
-        ___qtablewidgetitem97 = self.tableWidget_2.item(3, 1)
-        ___qtablewidgetitem97.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
-        ___qtablewidgetitem98 = self.tableWidget_2.item(4, 0)
-        ___qtablewidgetitem98.setText(QCoreApplication.translate("mainWindow", u"k_r=q_c/q_r", None));
-        ___qtablewidgetitem99 = self.tableWidget_2.item(4, 1)
-        ___qtablewidgetitem99.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem100 = self.tableWidget_2.item(5, 0)
-        ___qtablewidgetitem100.setText(QCoreApplication.translate("mainWindow", u"K_R =1+(r_c/r_2)*(k_r-1)", None));
-        ___qtablewidgetitem101 = self.tableWidget_2.item(5, 1)
-        ___qtablewidgetitem101.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem102 = self.tableWidget_2.item(6, 0)
-        ___qtablewidgetitem102.setText(QCoreApplication.translate("mainWindow", u"r'_2_\u03be = K_R*r'_2", None));
-        ___qtablewidgetitem103 = self.tableWidget_2.item(6, 1)
-        ___qtablewidgetitem103.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem104 = self.tableWidget_2.item(7, 0)
-        ___qtablewidgetitem104.setText(QCoreApplication.translate("mainWindow", u"\u043a_\u0434 = \u03c6'(\u03be)", None));
-        ___qtablewidgetitem105 = self.tableWidget_2.item(7, 1)
-        ___qtablewidgetitem105.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem106 = self.tableWidget_2.item(8, 0)
-        ___qtablewidgetitem106.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be = \u03bb_\u043f2 - \u0394\u03bb\u043f2\u03be", None));
-        ___qtablewidgetitem107 = self.tableWidget_2.item(8, 1)
-        ___qtablewidgetitem107.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem108 = self.tableWidget_2.item(9, 0)
-        ___qtablewidgetitem108.setText(QCoreApplication.translate("mainWindow", u"Kx = \u03a3\u03bb_2\u03be/\u03a3\u03bb_2", None));
-        ___qtablewidgetitem109 = self.tableWidget_2.item(9, 1)
-        ___qtablewidgetitem109.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem110 = self.tableWidget_2.item(10, 0)
-        ___qtablewidgetitem110.setText(QCoreApplication.translate("mainWindow", u"x'2\u03be = Kx * x'_2", None));
-        ___qtablewidgetitem111 = self.tableWidget_2.item(10, 1)
-        ___qtablewidgetitem111.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem112 = self.tableWidget_2.item(11, 0)
-        ___qtablewidgetitem112.setText(QCoreApplication.translate("mainWindow", u"R\u043f = r_1+c_1\u043f* (r'_2_\u03be/s)", None));
-        ___qtablewidgetitem113 = self.tableWidget_2.item(11, 1)
-        ___qtablewidgetitem113.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem114 = self.tableWidget_2.item(12, 0)
-        ___qtablewidgetitem114.setText(QCoreApplication.translate("mainWindow", u"X\u043f = x_1+c_1\u043f*x'2\u03be", None));
-        ___qtablewidgetitem115 = self.tableWidget_2.item(12, 1)
-        ___qtablewidgetitem115.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem116 = self.tableWidget_2.item(13, 0)
-        ___qtablewidgetitem116.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043f = U/\u221a(R\u043f^2 + X\u043f^2)", None));
-        ___qtablewidgetitem117 = self.tableWidget_2.item(13, 1)
-        ___qtablewidgetitem117.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem118 = self.tableWidget_2.item(14, 0)
-        ___qtablewidgetitem118.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f=I'_2\u221a(R\u043f^2 + (X\u043f+x_12\u043f)^2)/(c_1\u043f*x_12\u043f)", None));
-        ___qtablewidgetitem119 = self.tableWidget_2.item(14, 1)
-        ___qtablewidgetitem119.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem89 = self.tableWidget_2.item(0, 2)
+        ___qtablewidgetitem89.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem90 = self.tableWidget_2.item(0, 3)
+        ___qtablewidgetitem90.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
+        ___qtablewidgetitem91 = self.tableWidget_2.item(0, 4)
+        ___qtablewidgetitem91.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
+        ___qtablewidgetitem92 = self.tableWidget_2.item(0, 5)
+        ___qtablewidgetitem92.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
+        ___qtablewidgetitem93 = self.tableWidget_2.item(0, 6)
+        ___qtablewidgetitem93.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
+        ___qtablewidgetitem94 = self.tableWidget_2.item(0, 7)
+        ___qtablewidgetitem94.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
+        ___qtablewidgetitem95 = self.tableWidget_2.item(1, 0)
+        ___qtablewidgetitem95.setText(QCoreApplication.translate("mainWindow", u"\u03be=63,61h_c*\u221as", None));
+        ___qtablewidgetitem96 = self.tableWidget_2.item(1, 1)
+        ___qtablewidgetitem96.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem97 = self.tableWidget_2.item(2, 0)
+        ___qtablewidgetitem97.setText(QCoreApplication.translate("mainWindow", u"\u03c6(\u03be)", None));
+        ___qtablewidgetitem98 = self.tableWidget_2.item(2, 1)
+        ___qtablewidgetitem98.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem99 = self.tableWidget_2.item(3, 0)
+        ___qtablewidgetitem99.setText(QCoreApplication.translate("mainWindow", u"h_r = h_c/(1-\u03c6)", None));
+        ___qtablewidgetitem100 = self.tableWidget_2.item(3, 1)
+        ___qtablewidgetitem100.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
+        ___qtablewidgetitem101 = self.tableWidget_2.item(4, 0)
+        ___qtablewidgetitem101.setText(QCoreApplication.translate("mainWindow", u"k_r=q_c/q_r", None));
+        ___qtablewidgetitem102 = self.tableWidget_2.item(4, 1)
+        ___qtablewidgetitem102.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem103 = self.tableWidget_2.item(5, 0)
+        ___qtablewidgetitem103.setText(QCoreApplication.translate("mainWindow", u"K_R =1+(r_c/r_2)*(k_r-1)", None));
+        ___qtablewidgetitem104 = self.tableWidget_2.item(5, 1)
+        ___qtablewidgetitem104.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem105 = self.tableWidget_2.item(6, 0)
+        ___qtablewidgetitem105.setText(QCoreApplication.translate("mainWindow", u"r'_2_\u03be = K_R*r'_2", None));
+        ___qtablewidgetitem106 = self.tableWidget_2.item(6, 1)
+        ___qtablewidgetitem106.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem107 = self.tableWidget_2.item(7, 0)
+        ___qtablewidgetitem107.setText(QCoreApplication.translate("mainWindow", u"\u043a_\u0434 = \u03c6'(\u03be)", None));
+        ___qtablewidgetitem108 = self.tableWidget_2.item(7, 1)
+        ___qtablewidgetitem108.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem109 = self.tableWidget_2.item(8, 0)
+        ___qtablewidgetitem109.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be = \u03bb_\u043f2 - \u0394\u03bb\u043f2\u03be", None));
+        ___qtablewidgetitem110 = self.tableWidget_2.item(8, 1)
+        ___qtablewidgetitem110.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem111 = self.tableWidget_2.item(9, 0)
+        ___qtablewidgetitem111.setText(QCoreApplication.translate("mainWindow", u"Kx = \u03a3\u03bb_2\u03be/\u03a3\u03bb_2", None));
+        ___qtablewidgetitem112 = self.tableWidget_2.item(9, 1)
+        ___qtablewidgetitem112.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem113 = self.tableWidget_2.item(10, 0)
+        ___qtablewidgetitem113.setText(QCoreApplication.translate("mainWindow", u"x'2\u03be = Kx * x'_2", None));
+        ___qtablewidgetitem114 = self.tableWidget_2.item(10, 1)
+        ___qtablewidgetitem114.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem115 = self.tableWidget_2.item(11, 0)
+        ___qtablewidgetitem115.setText(QCoreApplication.translate("mainWindow", u"R\u043f = r_1+c_1\u043f* (r'_2_\u03be/s)", None));
+        ___qtablewidgetitem116 = self.tableWidget_2.item(11, 1)
+        ___qtablewidgetitem116.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem117 = self.tableWidget_2.item(12, 0)
+        ___qtablewidgetitem117.setText(QCoreApplication.translate("mainWindow", u"X\u043f = x_1+c_1\u043f*x'2\u03be", None));
+        ___qtablewidgetitem118 = self.tableWidget_2.item(12, 1)
+        ___qtablewidgetitem118.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem119 = self.tableWidget_2.item(13, 0)
+        ___qtablewidgetitem119.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043f = U/\u221a(R\u043f^2 + X\u043f^2)", None));
+        ___qtablewidgetitem120 = self.tableWidget_2.item(13, 1)
+        ___qtablewidgetitem120.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem121 = self.tableWidget_2.item(14, 0)
+        ___qtablewidgetitem121.setText(QCoreApplication.translate("mainWindow", u"I_1\u043f=I'_2\u221a(R\u043f^2 + (X\u043f+x_12\u043f)^2)/(c_1\u043f*x_12\u043f)", None));
+        ___qtablewidgetitem122 = self.tableWidget_2.item(14, 1)
+        ___qtablewidgetitem122.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
         self.tableWidget_2.setSortingEnabled(__sortingEnabled1)
 
         self.groupBox_6.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
@@ -3320,149 +3354,149 @@ class Ui_mainWindow(object):
         self.bt_calculate_table2.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044c", None))
         self.lb_error_2.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("mainWindow", u"\u0422\u0430\u0431\u043b\u0438\u0446\u0430 2", None))
-        ___qtablewidgetitem120 = self.tableWidget_3.horizontalHeaderItem(0)
-        ___qtablewidgetitem120.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
-        ___qtablewidgetitem121 = self.tableWidget_3.horizontalHeaderItem(1)
-        ___qtablewidgetitem121.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
-        ___qtablewidgetitem122 = self.tableWidget_3.horizontalHeaderItem(4)
-        ___qtablewidgetitem122.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
-        ___qtablewidgetitem123 = self.tableWidget_3.horizontalHeaderItem(7)
-        ___qtablewidgetitem123.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
-        ___qtablewidgetitem124 = self.tableWidget_3.verticalHeaderItem(1)
-        ___qtablewidgetitem124.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem125 = self.tableWidget_3.verticalHeaderItem(2)
-        ___qtablewidgetitem125.setText(QCoreApplication.translate("mainWindow", u"2", None));
-        ___qtablewidgetitem126 = self.tableWidget_3.verticalHeaderItem(3)
-        ___qtablewidgetitem126.setText(QCoreApplication.translate("mainWindow", u"3", None));
-        ___qtablewidgetitem127 = self.tableWidget_3.verticalHeaderItem(4)
-        ___qtablewidgetitem127.setText(QCoreApplication.translate("mainWindow", u"4", None));
-        ___qtablewidgetitem128 = self.tableWidget_3.verticalHeaderItem(5)
-        ___qtablewidgetitem128.setText(QCoreApplication.translate("mainWindow", u"5", None));
-        ___qtablewidgetitem129 = self.tableWidget_3.verticalHeaderItem(6)
-        ___qtablewidgetitem129.setText(QCoreApplication.translate("mainWindow", u"6", None));
-        ___qtablewidgetitem130 = self.tableWidget_3.verticalHeaderItem(7)
-        ___qtablewidgetitem130.setText(QCoreApplication.translate("mainWindow", u"7", None));
-        ___qtablewidgetitem131 = self.tableWidget_3.verticalHeaderItem(8)
-        ___qtablewidgetitem131.setText(QCoreApplication.translate("mainWindow", u"8", None));
-        ___qtablewidgetitem132 = self.tableWidget_3.verticalHeaderItem(9)
-        ___qtablewidgetitem132.setText(QCoreApplication.translate("mainWindow", u"9", None));
-        ___qtablewidgetitem133 = self.tableWidget_3.verticalHeaderItem(10)
-        ___qtablewidgetitem133.setText(QCoreApplication.translate("mainWindow", u"10", None));
-        ___qtablewidgetitem134 = self.tableWidget_3.verticalHeaderItem(11)
-        ___qtablewidgetitem134.setText(QCoreApplication.translate("mainWindow", u"11", None));
-        ___qtablewidgetitem135 = self.tableWidget_3.verticalHeaderItem(12)
-        ___qtablewidgetitem135.setText(QCoreApplication.translate("mainWindow", u"12", None));
-        ___qtablewidgetitem136 = self.tableWidget_3.verticalHeaderItem(13)
-        ___qtablewidgetitem136.setText(QCoreApplication.translate("mainWindow", u"13", None));
-        ___qtablewidgetitem137 = self.tableWidget_3.verticalHeaderItem(14)
-        ___qtablewidgetitem137.setText(QCoreApplication.translate("mainWindow", u"14", None));
-        ___qtablewidgetitem138 = self.tableWidget_3.verticalHeaderItem(15)
-        ___qtablewidgetitem138.setText(QCoreApplication.translate("mainWindow", u"15", None));
-        ___qtablewidgetitem139 = self.tableWidget_3.verticalHeaderItem(16)
-        ___qtablewidgetitem139.setText(QCoreApplication.translate("mainWindow", u"16", None));
-        ___qtablewidgetitem140 = self.tableWidget_3.verticalHeaderItem(17)
-        ___qtablewidgetitem140.setText(QCoreApplication.translate("mainWindow", u"17", None));
-        ___qtablewidgetitem141 = self.tableWidget_3.verticalHeaderItem(18)
-        ___qtablewidgetitem141.setText(QCoreApplication.translate("mainWindow", u"18", None));
-        ___qtablewidgetitem142 = self.tableWidget_3.verticalHeaderItem(19)
-        ___qtablewidgetitem142.setText(QCoreApplication.translate("mainWindow", u"19", None));
-        ___qtablewidgetitem143 = self.tableWidget_3.verticalHeaderItem(20)
-        ___qtablewidgetitem143.setText(QCoreApplication.translate("mainWindow", u"20", None));
+        ___qtablewidgetitem123 = self.tableWidget_3.horizontalHeaderItem(0)
+        ___qtablewidgetitem123.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
+        ___qtablewidgetitem124 = self.tableWidget_3.horizontalHeaderItem(1)
+        ___qtablewidgetitem124.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0441\u0442\u044c", None));
+        ___qtablewidgetitem125 = self.tableWidget_3.horizontalHeaderItem(4)
+        ___qtablewidgetitem125.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u0435 s", None));
+        ___qtablewidgetitem126 = self.tableWidget_3.horizontalHeaderItem(7)
+        ___qtablewidgetitem126.setText(QCoreApplication.translate("mainWindow", u"s \u043a\u0440", None));
+        ___qtablewidgetitem127 = self.tableWidget_3.verticalHeaderItem(1)
+        ___qtablewidgetitem127.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem128 = self.tableWidget_3.verticalHeaderItem(2)
+        ___qtablewidgetitem128.setText(QCoreApplication.translate("mainWindow", u"2", None));
+        ___qtablewidgetitem129 = self.tableWidget_3.verticalHeaderItem(3)
+        ___qtablewidgetitem129.setText(QCoreApplication.translate("mainWindow", u"3", None));
+        ___qtablewidgetitem130 = self.tableWidget_3.verticalHeaderItem(4)
+        ___qtablewidgetitem130.setText(QCoreApplication.translate("mainWindow", u"4", None));
+        ___qtablewidgetitem131 = self.tableWidget_3.verticalHeaderItem(5)
+        ___qtablewidgetitem131.setText(QCoreApplication.translate("mainWindow", u"5", None));
+        ___qtablewidgetitem132 = self.tableWidget_3.verticalHeaderItem(6)
+        ___qtablewidgetitem132.setText(QCoreApplication.translate("mainWindow", u"6", None));
+        ___qtablewidgetitem133 = self.tableWidget_3.verticalHeaderItem(7)
+        ___qtablewidgetitem133.setText(QCoreApplication.translate("mainWindow", u"7", None));
+        ___qtablewidgetitem134 = self.tableWidget_3.verticalHeaderItem(8)
+        ___qtablewidgetitem134.setText(QCoreApplication.translate("mainWindow", u"8", None));
+        ___qtablewidgetitem135 = self.tableWidget_3.verticalHeaderItem(9)
+        ___qtablewidgetitem135.setText(QCoreApplication.translate("mainWindow", u"9", None));
+        ___qtablewidgetitem136 = self.tableWidget_3.verticalHeaderItem(10)
+        ___qtablewidgetitem136.setText(QCoreApplication.translate("mainWindow", u"10", None));
+        ___qtablewidgetitem137 = self.tableWidget_3.verticalHeaderItem(11)
+        ___qtablewidgetitem137.setText(QCoreApplication.translate("mainWindow", u"11", None));
+        ___qtablewidgetitem138 = self.tableWidget_3.verticalHeaderItem(12)
+        ___qtablewidgetitem138.setText(QCoreApplication.translate("mainWindow", u"12", None));
+        ___qtablewidgetitem139 = self.tableWidget_3.verticalHeaderItem(13)
+        ___qtablewidgetitem139.setText(QCoreApplication.translate("mainWindow", u"13", None));
+        ___qtablewidgetitem140 = self.tableWidget_3.verticalHeaderItem(14)
+        ___qtablewidgetitem140.setText(QCoreApplication.translate("mainWindow", u"14", None));
+        ___qtablewidgetitem141 = self.tableWidget_3.verticalHeaderItem(15)
+        ___qtablewidgetitem141.setText(QCoreApplication.translate("mainWindow", u"15", None));
+        ___qtablewidgetitem142 = self.tableWidget_3.verticalHeaderItem(16)
+        ___qtablewidgetitem142.setText(QCoreApplication.translate("mainWindow", u"16", None));
+        ___qtablewidgetitem143 = self.tableWidget_3.verticalHeaderItem(17)
+        ___qtablewidgetitem143.setText(QCoreApplication.translate("mainWindow", u"17", None));
+        ___qtablewidgetitem144 = self.tableWidget_3.verticalHeaderItem(18)
+        ___qtablewidgetitem144.setText(QCoreApplication.translate("mainWindow", u"18", None));
+        ___qtablewidgetitem145 = self.tableWidget_3.verticalHeaderItem(19)
+        ___qtablewidgetitem145.setText(QCoreApplication.translate("mainWindow", u"19", None));
+        ___qtablewidgetitem146 = self.tableWidget_3.verticalHeaderItem(20)
+        ___qtablewidgetitem146.setText(QCoreApplication.translate("mainWindow", u"20", None));
 
         __sortingEnabled2 = self.tableWidget_3.isSortingEnabled()
         self.tableWidget_3.setSortingEnabled(False)
-        ___qtablewidgetitem144 = self.tableWidget_3.item(0, 2)
-        ___qtablewidgetitem144.setText(QCoreApplication.translate("mainWindow", u"1", None));
-        ___qtablewidgetitem145 = self.tableWidget_3.item(0, 3)
-        ___qtablewidgetitem145.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
-        ___qtablewidgetitem146 = self.tableWidget_3.item(0, 4)
-        ___qtablewidgetitem146.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
-        ___qtablewidgetitem147 = self.tableWidget_3.item(0, 5)
-        ___qtablewidgetitem147.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
-        ___qtablewidgetitem148 = self.tableWidget_3.item(0, 6)
-        ___qtablewidgetitem148.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
-        ___qtablewidgetitem149 = self.tableWidget_3.item(0, 7)
-        ___qtablewidgetitem149.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
-        ___qtablewidgetitem150 = self.tableWidget_3.item(1, 0)
-        ___qtablewidgetitem150.setText(QCoreApplication.translate("mainWindow", u"k_\u043d\u0430\u0441", None));
-        ___qtablewidgetitem151 = self.tableWidget_3.item(1, 1)
-        ___qtablewidgetitem151.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem152 = self.tableWidget_3.item(2, 0)
-        ___qtablewidgetitem152.setText(QCoreApplication.translate("mainWindow", u"F\u043f.\u0441\u0440=0,7*((I_1*k_\u043d\u0430\u0441*u_\u043f)/a)(k'_beta+k_y1*k_\u043e\u04311*(Z1/Z2))", None));
-        ___qtablewidgetitem153 = self.tableWidget_3.item(2, 1)
-        ___qtablewidgetitem153.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem154 = self.tableWidget_3.item(3, 0)
-        ___qtablewidgetitem154.setText(QCoreApplication.translate("mainWindow", u"\u0412_\u0444\u0431 = F\u043f.\u0441\u0440 * 10^(-6)/(1,6\u03b4*\u0421_N)", None));
-        ___qtablewidgetitem155 = self.tableWidget_3.item(3, 1)
-        ___qtablewidgetitem155.setText(QCoreApplication.translate("mainWindow", u"\u0422\u043b", None));
-        ___qtablewidgetitem156 = self.tableWidget_3.item(4, 0)
-        ___qtablewidgetitem156.setText(QCoreApplication.translate("mainWindow", u"k_\u03b4 = f(\u0412_\u0444\u0431)", None));
-        ___qtablewidgetitem157 = self.tableWidget_3.item(4, 1)
-        ___qtablewidgetitem157.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem158 = self.tableWidget_3.item(5, 0)
-        ___qtablewidgetitem158.setText(QCoreApplication.translate("mainWindow", u"\u0441_1 = (t_z1-b_\u04481)(1-k_\u03b4)", None));
-        ___qtablewidgetitem159 = self.tableWidget_3.item(5, 1)
-        ___qtablewidgetitem159.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
-        ___qtablewidgetitem160 = self.tableWidget_3.item(6, 0)
-        ___qtablewidgetitem160.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f1\u043d\u0430\u0441 = \u03bb\u043f1 - \u0394\u03bb_\u043f1\u043d\u0430\u0441", None));
-        ___qtablewidgetitem161 = self.tableWidget_3.item(6, 1)
-        ___qtablewidgetitem161.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem162 = self.tableWidget_3.item(7, 0)
-        ___qtablewidgetitem162.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04341\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04341", None));
-        ___qtablewidgetitem163 = self.tableWidget_3.item(7, 1)
-        ___qtablewidgetitem163.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem164 = self.tableWidget_3.item(8, 0)
-        ___qtablewidgetitem164.setText(QCoreApplication.translate("mainWindow", u"\u0445_1\u043d\u0430\u0441 = \u04451*\u03a3\u03bb_1\u043d\u0430\u0441/\u03a3\u03bb_1", None));
-        ___qtablewidgetitem165 = self.tableWidget_3.item(8, 1)
-        ___qtablewidgetitem165.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem166 = self.tableWidget_3.item(9, 0)
-        ___qtablewidgetitem166.setText(QCoreApplication.translate("mainWindow", u"c_1_\u043f = 1 + x_1\u043d\u0430\u0441/ x_12\u043f", None));
-        ___qtablewidgetitem167 = self.tableWidget_3.item(9, 1)
-        ___qtablewidgetitem167.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem168 = self.tableWidget_3.item(10, 0)
-        ___qtablewidgetitem168.setText(QCoreApplication.translate("mainWindow", u"\u0441_2 = (t_z2-b_\u04482)(1-k_\u03b4)", None));
-        ___qtablewidgetitem169 = self.tableWidget_3.item(10, 1)
-        ___qtablewidgetitem169.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
-        ___qtablewidgetitem170 = self.tableWidget_3.item(11, 0)
-        ___qtablewidgetitem170.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be\u043d\u0430\u0441 = \u03bb_\u043f2\u03be - \u0394\u03bb_\u043f2\u043d\u0430\u0441", None));
-        ___qtablewidgetitem171 = self.tableWidget_3.item(11, 1)
-        ___qtablewidgetitem171.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem172 = self.tableWidget_3.item(12, 0)
-        ___qtablewidgetitem172.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04342\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04342", None));
-        ___qtablewidgetitem173 = self.tableWidget_3.item(12, 1)
-        ___qtablewidgetitem173.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem174 = self.tableWidget_3.item(13, 0)
-        ___qtablewidgetitem174.setText(QCoreApplication.translate("mainWindow", u"\u0445'_2\u03be\u043d\u0430\u0441 = x'2*\u03a3\u03bb_2\u03be\u043d\u0430\u0441/\u03a3\u03bb_2", None));
-        ___qtablewidgetitem175 = self.tableWidget_3.item(13, 1)
-        ___qtablewidgetitem175.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem176 = self.tableWidget_3.item(14, 0)
-        ___qtablewidgetitem176.setText(QCoreApplication.translate("mainWindow", u"R\u043f.\u043d\u0430\u0441 = r_1 + c_1\u043f.\u043d\u0430\u0441 * r'_2\u03be / s", None));
-        ___qtablewidgetitem177 = self.tableWidget_3.item(14, 1)
-        ___qtablewidgetitem177.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem178 = self.tableWidget_3.item(15, 0)
-        ___qtablewidgetitem178.setText(QCoreApplication.translate("mainWindow", u"\u0425\u043f.\u043d\u0430\u0441 = x_1\u043d\u0430\u0441 + c_1\u043f.\u043d\u0430\u0441 * \u0445'_2\u03be\u043d\u0430\u0441", None));
-        ___qtablewidgetitem179 = self.tableWidget_3.item(15, 1)
-        ___qtablewidgetitem179.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
-        ___qtablewidgetitem180 = self.tableWidget_3.item(16, 0)
-        ___qtablewidgetitem180.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043d\u0430\u0441 = U/\u221a(R\u043f.\u043d\u0430\u0441^2+\u0425\u043f.\u043d\u0430\u0441^2)", None));
-        ___qtablewidgetitem181 = self.tableWidget_3.item(16, 1)
-        ___qtablewidgetitem181.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem182 = self.tableWidget_3.item(17, 0)
-        ___qtablewidgetitem182.setText(QCoreApplication.translate("mainWindow", u"I_1\u043d\u0430\u0441=I'_2\u043d\u0430\u0441*((\u221a(R\u043f.\u043d\u0430\u0441^2+(\u0425\u043f.\u043d\u0430\u0441+\u0445_12\u043f)^2))/(\u0441_1\u043f.\u043d\u0430\u0441*\u0445_12\u043f))", None));
-        ___qtablewidgetitem183 = self.tableWidget_3.item(17, 1)
-        ___qtablewidgetitem183.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
-        ___qtablewidgetitem184 = self.tableWidget_3.item(18, 0)
-        ___qtablewidgetitem184.setText(QCoreApplication.translate("mainWindow", u"k'\u043d\u0430\u0441 = I_1\u043d\u0430\u0441/I_1\u043f", None));
-        ___qtablewidgetitem185 = self.tableWidget_3.item(18, 1)
-        ___qtablewidgetitem185.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem186 = self.tableWidget_3.item(19, 0)
-        ___qtablewidgetitem186.setText(QCoreApplication.translate("mainWindow", u"I_i= I_1\u043d\u0430\u0441 / I_1\u043d\u043e\u043c", None));
-        ___qtablewidgetitem187 = self.tableWidget_3.item(19, 1)
-        ___qtablewidgetitem187.setText(QCoreApplication.translate("mainWindow", u"-", None));
-        ___qtablewidgetitem188 = self.tableWidget_3.item(20, 0)
-        ___qtablewidgetitem188.setText(QCoreApplication.translate("mainWindow", u"\u041c*", None));
-        ___qtablewidgetitem189 = self.tableWidget_3.item(20, 1)
-        ___qtablewidgetitem189.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem147 = self.tableWidget_3.item(0, 2)
+        ___qtablewidgetitem147.setText(QCoreApplication.translate("mainWindow", u"1", None));
+        ___qtablewidgetitem148 = self.tableWidget_3.item(0, 3)
+        ___qtablewidgetitem148.setText(QCoreApplication.translate("mainWindow", u"0.8", None));
+        ___qtablewidgetitem149 = self.tableWidget_3.item(0, 4)
+        ___qtablewidgetitem149.setText(QCoreApplication.translate("mainWindow", u"0.5", None));
+        ___qtablewidgetitem150 = self.tableWidget_3.item(0, 5)
+        ___qtablewidgetitem150.setText(QCoreApplication.translate("mainWindow", u"0.2", None));
+        ___qtablewidgetitem151 = self.tableWidget_3.item(0, 6)
+        ___qtablewidgetitem151.setText(QCoreApplication.translate("mainWindow", u"0.1", None));
+        ___qtablewidgetitem152 = self.tableWidget_3.item(0, 7)
+        ___qtablewidgetitem152.setText(QCoreApplication.translate("mainWindow", u"0.19", None));
+        ___qtablewidgetitem153 = self.tableWidget_3.item(1, 0)
+        ___qtablewidgetitem153.setText(QCoreApplication.translate("mainWindow", u"k_\u043d\u0430\u0441", None));
+        ___qtablewidgetitem154 = self.tableWidget_3.item(1, 1)
+        ___qtablewidgetitem154.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem155 = self.tableWidget_3.item(2, 0)
+        ___qtablewidgetitem155.setText(QCoreApplication.translate("mainWindow", u"F\u043f.\u0441\u0440=0,7*((I_1*k_\u043d\u0430\u0441*u_\u043f)/a)(k'_beta+k_y1*k_\u043e\u04311*(Z1/Z2))", None));
+        ___qtablewidgetitem156 = self.tableWidget_3.item(2, 1)
+        ___qtablewidgetitem156.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem157 = self.tableWidget_3.item(3, 0)
+        ___qtablewidgetitem157.setText(QCoreApplication.translate("mainWindow", u"\u0412_\u0444\u0431 = F\u043f.\u0441\u0440 * 10^(-6)/(1,6\u03b4*\u0421_N)", None));
+        ___qtablewidgetitem158 = self.tableWidget_3.item(3, 1)
+        ___qtablewidgetitem158.setText(QCoreApplication.translate("mainWindow", u"\u0422\u043b", None));
+        ___qtablewidgetitem159 = self.tableWidget_3.item(4, 0)
+        ___qtablewidgetitem159.setText(QCoreApplication.translate("mainWindow", u"k_\u03b4 = f(\u0412_\u0444\u0431)", None));
+        ___qtablewidgetitem160 = self.tableWidget_3.item(4, 1)
+        ___qtablewidgetitem160.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem161 = self.tableWidget_3.item(5, 0)
+        ___qtablewidgetitem161.setText(QCoreApplication.translate("mainWindow", u"\u0441_1 = (t_z1-b_\u04481)(1-k_\u03b4)", None));
+        ___qtablewidgetitem162 = self.tableWidget_3.item(5, 1)
+        ___qtablewidgetitem162.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
+        ___qtablewidgetitem163 = self.tableWidget_3.item(6, 0)
+        ___qtablewidgetitem163.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f1\u043d\u0430\u0441 = \u03bb\u043f1 - \u0394\u03bb_\u043f1\u043d\u0430\u0441", None));
+        ___qtablewidgetitem164 = self.tableWidget_3.item(6, 1)
+        ___qtablewidgetitem164.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem165 = self.tableWidget_3.item(7, 0)
+        ___qtablewidgetitem165.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04341\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04341", None));
+        ___qtablewidgetitem166 = self.tableWidget_3.item(7, 1)
+        ___qtablewidgetitem166.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem167 = self.tableWidget_3.item(8, 0)
+        ___qtablewidgetitem167.setText(QCoreApplication.translate("mainWindow", u"\u0445_1\u043d\u0430\u0441 = \u04451*\u03a3\u03bb_1\u043d\u0430\u0441/\u03a3\u03bb_1", None));
+        ___qtablewidgetitem168 = self.tableWidget_3.item(8, 1)
+        ___qtablewidgetitem168.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem169 = self.tableWidget_3.item(9, 0)
+        ___qtablewidgetitem169.setText(QCoreApplication.translate("mainWindow", u"c_1_\u043f = 1 + x_1\u043d\u0430\u0441/ x_12\u043f", None));
+        ___qtablewidgetitem170 = self.tableWidget_3.item(9, 1)
+        ___qtablewidgetitem170.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem171 = self.tableWidget_3.item(10, 0)
+        ___qtablewidgetitem171.setText(QCoreApplication.translate("mainWindow", u"\u0441_2 = (t_z2-b_\u04482)(1-k_\u03b4)", None));
+        ___qtablewidgetitem172 = self.tableWidget_3.item(10, 1)
+        ___qtablewidgetitem172.setText(QCoreApplication.translate("mainWindow", u"\u043c\u043c", None));
+        ___qtablewidgetitem173 = self.tableWidget_3.item(11, 0)
+        ___qtablewidgetitem173.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u043f2\u03be\u043d\u0430\u0441 = \u03bb_\u043f2\u03be - \u0394\u03bb_\u043f2\u043d\u0430\u0441", None));
+        ___qtablewidgetitem174 = self.tableWidget_3.item(11, 1)
+        ___qtablewidgetitem174.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem175 = self.tableWidget_3.item(12, 0)
+        ___qtablewidgetitem175.setText(QCoreApplication.translate("mainWindow", u"\u03bb_\u04342\u043d\u0430\u0441 = k_\u03b4*\u03bb\u04342", None));
+        ___qtablewidgetitem176 = self.tableWidget_3.item(12, 1)
+        ___qtablewidgetitem176.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem177 = self.tableWidget_3.item(13, 0)
+        ___qtablewidgetitem177.setText(QCoreApplication.translate("mainWindow", u"\u0445'_2\u03be\u043d\u0430\u0441 = x'2*\u03a3\u03bb_2\u03be\u043d\u0430\u0441/\u03a3\u03bb_2", None));
+        ___qtablewidgetitem178 = self.tableWidget_3.item(13, 1)
+        ___qtablewidgetitem178.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem179 = self.tableWidget_3.item(14, 0)
+        ___qtablewidgetitem179.setText(QCoreApplication.translate("mainWindow", u"R\u043f.\u043d\u0430\u0441 = r_1 + c_1\u043f.\u043d\u0430\u0441 * r'_2\u03be / s", None));
+        ___qtablewidgetitem180 = self.tableWidget_3.item(14, 1)
+        ___qtablewidgetitem180.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem181 = self.tableWidget_3.item(15, 0)
+        ___qtablewidgetitem181.setText(QCoreApplication.translate("mainWindow", u"\u0425\u043f.\u043d\u0430\u0441 = x_1\u043d\u0430\u0441 + c_1\u043f.\u043d\u0430\u0441 * \u0445'_2\u03be\u043d\u0430\u0441", None));
+        ___qtablewidgetitem182 = self.tableWidget_3.item(15, 1)
+        ___qtablewidgetitem182.setText(QCoreApplication.translate("mainWindow", u"\u041e\u043c", None));
+        ___qtablewidgetitem183 = self.tableWidget_3.item(16, 0)
+        ___qtablewidgetitem183.setText(QCoreApplication.translate("mainWindow", u"I'_2\u043d\u0430\u0441 = U/\u221a(R\u043f.\u043d\u0430\u0441^2+\u0425\u043f.\u043d\u0430\u0441^2)", None));
+        ___qtablewidgetitem184 = self.tableWidget_3.item(16, 1)
+        ___qtablewidgetitem184.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem185 = self.tableWidget_3.item(17, 0)
+        ___qtablewidgetitem185.setText(QCoreApplication.translate("mainWindow", u"I_1\u043d\u0430\u0441=I'_2\u043d\u0430\u0441*((\u221a(R\u043f.\u043d\u0430\u0441^2+(\u0425\u043f.\u043d\u0430\u0441+\u0445_12\u043f)^2))/(\u0441_1\u043f.\u043d\u0430\u0441*\u0445_12\u043f))", None));
+        ___qtablewidgetitem186 = self.tableWidget_3.item(17, 1)
+        ___qtablewidgetitem186.setText(QCoreApplication.translate("mainWindow", u"\u0410", None));
+        ___qtablewidgetitem187 = self.tableWidget_3.item(18, 0)
+        ___qtablewidgetitem187.setText(QCoreApplication.translate("mainWindow", u"k'\u043d\u0430\u0441 = I_1\u043d\u0430\u0441/I_1\u043f", None));
+        ___qtablewidgetitem188 = self.tableWidget_3.item(18, 1)
+        ___qtablewidgetitem188.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem189 = self.tableWidget_3.item(19, 0)
+        ___qtablewidgetitem189.setText(QCoreApplication.translate("mainWindow", u"I_i= I_1\u043d\u0430\u0441 / I_1\u043d\u043e\u043c", None));
+        ___qtablewidgetitem190 = self.tableWidget_3.item(19, 1)
+        ___qtablewidgetitem190.setText(QCoreApplication.translate("mainWindow", u"-", None));
+        ___qtablewidgetitem191 = self.tableWidget_3.item(20, 0)
+        ___qtablewidgetitem191.setText(QCoreApplication.translate("mainWindow", u"\u041c*", None));
+        ___qtablewidgetitem192 = self.tableWidget_3.item(20, 1)
+        ___qtablewidgetitem192.setText(QCoreApplication.translate("mainWindow", u"-", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled2)
 
         self.groupBox_7.setTitle(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0430\u043d\u043d\u044b\u0435:", None))
@@ -3584,3 +3618,4 @@ class Ui_mainWindow(object):
                         "\u0441\u0442\u0438\u043a \u0430.\u0434. </span></p><p><span style=\" font-size:16pt; font-style:italic;\">8) \u0410\u043d\u0430\u043b\u043e\u0433\u0438\u0447\u043d\u043e \u0437\u0430\u043f\u043e\u043b\u043d\u044f\u044e\u0442\u0441\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430 2 \u0438 \u0442\u0430\u0431\u043b\u0438\u0446\u0430 3 \u0434\u043b\u044f \u0441\u043a\u043e\u043b\u044c\u0436\u0435\u043d\u0438\u044f, \u0440\u0430\u0432\u043d\u043e\u0433\u043e 1.</span></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("mainWindow", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
     # retranslateUi
+

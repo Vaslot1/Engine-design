@@ -9,7 +9,7 @@ class table1:
     a_shtrih = a = b = b_shtrih = r_2_shtrih = U = I_0_a = I_nu = C_1 = r_1 = P_st = P_meh = 0
     s_shtrih = 0
 
-    def __init__(self, _a, _a_shtrih, _r_2_shtrih, _b, _b_shtrih, _U, _I_0_a, _I_nu, _C_1, _r_1, _P_st, _P_meh):
+    def __init__(self, _a, _a_shtrih, _r_2_shtrih, _b, _b_shtrih, _U, _I_0_a, _I_nu, _C_1, _r_1, _P_st, _P_meh, _n_1):
         self.a_shtrih = _a_shtrih
         self.a = _a
         self.b = _b
@@ -22,6 +22,7 @@ class table1:
         self.r_1 = _r_1
         self.P_st = _P_st
         self.P_meh = _P_meh
+        self.n_1 = _n_1
 
     def setS(self, s):
         self.s_shtrih = s
@@ -102,6 +103,9 @@ class table1:
         cosPhi = self.f8_1() / self.f10_1()
         return cosPhi
 
+    def f20_1(self):
+        return self.n_1 * (1 - self.s_shtrih)
+
     def calculateTable(self, numeration, s):
         self.s_shtrih = s
         if numeration == 1:
@@ -179,6 +183,10 @@ class table1:
             pass
         if numeration == 19:
             return self.f19_1()
+        else:
+            pass
+        if numeration == 20:
+            return self.f20_1()
         return -1
 
 
@@ -237,7 +245,7 @@ class table2:
         return phi_shtrih_func(self.f1_2())
 
     def f8_2(self):
-        delta_Lambda_p_2_Ksi = (self.h_0 / (3 * self.b_1_r) * (1 - (math.pi * self.b_1_r ** 2) / (8 * self.q_c)) ** 2 + 0.66 - self.b_sh_2 / (2 * self.b_1_r)) * (1 - self.f7_2())
+        delta_Lambda_p_2_Ksi = ((self.h_0 / (3 * self.b_1_r)) * ((1 - (math.pi * self.b_1_r ** 2)) / (8 * self.q_c)) ** 2 + 0.66 - self.b_sh_2 / (2 * self.b_1_r)) * (1 - self.f7_2())
         return self.Lamda_p_2 - delta_Lambda_p_2_Ksi
 
     def f9_2(self):
