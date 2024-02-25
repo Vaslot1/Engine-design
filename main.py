@@ -657,7 +657,7 @@ class MainWindow(QMainWindow):
         kpd_chart = fig.add_subplot(2, 3, 2)
         s_chart = fig.add_subplot(2, 3, 3)
         I_1_chart = fig.add_subplot(2, 3, 4)
-        n_1_chart = fig.add_subplot(2, 3, 5)
+        n_chart = fig.add_subplot(2, 3, 5)
 
         x_list = [x / 50 for x in range(0, round(x_arr[-1] * 50))]
 
@@ -711,18 +711,17 @@ class MainWindow(QMainWindow):
         I_1_chart.set_ylabel('I₁', size=16)
         I_1_chart.set_xlabel('P_квт', size=16)
 
-        n_1_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_5)
+        n_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_5)
                                    for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
-        n_1_chart.minorticks_on()
-        n_1_chart.grid(which='major',
+        n_chart.minorticks_on()
+        n_chart.grid(which='major',
                           color='k',
                           linewidth=1)
-        n_1_chart.grid(which='minor',
+        n_chart.grid(which='minor',
                           color='k',
                           linestyle=':')
-        n_1_chart.set_ylabel('n_1', size=16)
-        n_1_chart.set_xlabel('P_квт', size=16)
-        n_1_chart.set_ylim(0, 1)
+        n_chart.set_ylabel('n', size=16)
+        n_chart.set_xlabel('P_квт', size=16)
 
         fig.set_figwidth(16)
         fig.set_figheight(9)
