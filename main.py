@@ -1,3 +1,4 @@
+import math
 import sys
 
 import matplotlib.pyplot as plt
@@ -349,6 +350,7 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget.item(0, 7).setText(str(round(6 * S_nom / 7, 3)))
         self.ui.tableWidget.item(0, 8).setText(str(round(S_nom, 3)))
 
+
         # self.table_1 = table1(
         #     self.calc_obj.a, self.calc_obj.a_shtrih, self.calc_obj.r_2_shtrih, self.calc_obj.b, self.calc_obj.b_shtrih, self.calc_obj.U,
         #     self.calc_obj.I_0_a, self.calc_obj.I_nu, self.calc_obj.C_1, self.calc_obj.r_1, self.calc_obj.P_st, self.calc_obj.P_meh
@@ -393,7 +395,7 @@ class MainWindow(QMainWindow):
         self.ui.bt_for_teacher.setEnabled(True)
 
         self.clearTables()
-        self.ui.tabWidget.setCurrentWidget(self.ui.tab)
+
 
         self.ui.lb_error.setText(
             "Допустимая погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
@@ -490,6 +492,8 @@ class MainWindow(QMainWindow):
         self.ui.le_h_k.setEnabled(True)
         self.ui.le_K_R.setEnabled(True)
         self.ui.le_n1.setEnabled(True)
+
+        self.ui.tabWidget.setCurrentWidget(self.ui.tab)
 
     def save_table_to_xl_1(self):
         col_count = self.ui.tableWidget.columnCount()
@@ -624,7 +628,7 @@ class MainWindow(QMainWindow):
         y_arr_2 = [0]
         y_arr_3 = [0]
         y_arr_4 = [0]
-        y_arr_5 = [0]
+        y_arr_5 = []
 
         S_nom = float(self.ui.tableWidget.item(0, 8).text())
 
@@ -712,12 +716,23 @@ class MainWindow(QMainWindow):
         I_1_chart.set_xlabel('P_квт', size=16)
 
         P_2_chart = []
+        s_k = S_nom * (2.5 + math.sqrt(2.5**2 - 1))
+        M_n = float(self.ui.linePower.currentText()) / (float(self.ui.le_n1.text()) * (1 - S_nom))
+        M_kr = M_n * 2.5
 
+        M = []
+
+        for s in y_arr_3:
+            if(s != 0):
+                M.append((2 * M_kr * (float(self.ui.le_a.text())+1+s_k))/((s/s_k)+(s_k/s)+(2*float(self.ui.le_a.text())*s_k)))
+        print(M)
+        itterator = 0
         for item in y_arr_5:
-            P_2_chart.append(200*item)
+            P_2_chart.append((((math.pi*item)/30)*M[itterator])/1000)
+            itterator += 1
 
-        n_chart.plot(x_list, [SplineCubicInterpolate(x, P_2_chart, y_arr_5)
-                                   for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
+        n_chart.plot(P_2_chart, [SplineCubicInterpolate(x, P_2_chart, y_arr_5)
+                                   for x in P_2_chart], color='red', marker='o', markersize=0.5, linewidth=1)
         n_chart.minorticks_on()
         n_chart.grid(which='major',
                           color='k',
@@ -727,6 +742,7 @@ class MainWindow(QMainWindow):
                           linestyle=':')
         n_chart.set_ylabel('n', size=16)
         n_chart.set_xlabel('P_2, кВт', size=16)
+        n_chart.set_ylim(0, float(self.ui.le_n1.text()))
 
         fig.set_figwidth(16)
         fig.set_figheight(9)
