@@ -711,7 +711,12 @@ class MainWindow(QMainWindow):
         I_1_chart.set_ylabel('I₁', size=16)
         I_1_chart.set_xlabel('P_квт', size=16)
 
-        n_chart.plot(x_list, [SplineCubicInterpolate(x, x_arr, y_arr_5)
+        P_2_chart = []
+
+        for item in y_arr_5:
+            P_2_chart.append(200*item)
+
+        n_chart.plot(x_list, [SplineCubicInterpolate(x, P_2_chart, y_arr_5)
                                    for x in x_list], color='red', marker='o', markersize=0.5, linewidth=1)
         n_chart.minorticks_on()
         n_chart.grid(which='major',
@@ -721,7 +726,7 @@ class MainWindow(QMainWindow):
                           color='k',
                           linestyle=':')
         n_chart.set_ylabel('n', size=16)
-        n_chart.set_xlabel('P_квт', size=16)
+        n_chart.set_xlabel('P_2, кВт', size=16)
 
         fig.set_figwidth(16)
         fig.set_figheight(9)
