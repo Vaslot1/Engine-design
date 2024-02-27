@@ -725,10 +725,9 @@ class MainWindow(QMainWindow):
         for s in y_arr_3:
             if(s != 0):
                 M.append((2 * M_kr * (float(self.ui.le_a.text())+1+s_k))/((s/s_k)+(s_k/s)+(2*float(self.ui.le_a.text())*s_k)))
-        print(M)
         itterator = 0
         for item in y_arr_5:
-            P_2_chart.append((((math.pi*item)/30)*M[itterator])/1000)
+            P_2_chart.append(((math.pi*item)/30)*M[itterator])
             itterator += 1
 
         n_chart.plot(P_2_chart, [SplineCubicInterpolate(x, P_2_chart, y_arr_5)
@@ -742,7 +741,8 @@ class MainWindow(QMainWindow):
                           linestyle=':')
         n_chart.set_ylabel('n', size=16)
         n_chart.set_xlabel('P_2, кВт', size=16)
-        n_chart.set_ylim(0, float(self.ui.le_n1.text()))
+        n = float(self.ui.le_n1.text())
+        n_chart.set_ylim(0.8 * n, n * 1.01)
 
         fig.set_figwidth(16)
         fig.set_figheight(9)
