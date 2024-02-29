@@ -742,7 +742,7 @@ class MainWindow(QMainWindow):
         n_chart.grid(which='minor',
                           color='k',
                           linestyle=':')
-        n_chart.set_ylabel('n', size=16)
+        n_chart.set_ylabel('n, обр/мин', size=16)
         n_chart.set_xlabel('P_2, кВт', size=16)
 
         n_chart.set_ylim(0.9 * n, n * 1.01)
