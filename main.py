@@ -1,5 +1,6 @@
 import math
 import sys
+import json
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -45,6 +46,9 @@ class MainWindow(QMainWindow):
         self.ui.bt_thermal_calc.clicked.connect(self.thermalcalculate)
         self.ui.bt_export_xl_table_2.clicked.connect(self.save_table_2_to_xl)
         self.ui.bt_export_xl_table_3.clicked.connect(self.save_table_3_to_xl)
+
+        self.ui.bt_save.clicked.connect(self.saveProject)
+        self.ui.bt_load_project.clicked.connect(self.loadProject)
 
         self.ui.bt_for_teacher.clicked.connect(self.initUI)
 
@@ -404,7 +408,7 @@ class MainWindow(QMainWindow):
         self.ui.lb_error_3.setText(
             "Допустимая погрешность при проверке = " + str(self.ui.sl_ValueOfError.value()) + "%")
 
-        for i in range(1, 19 + 1):
+        for i in range(1, 20 + 1):
             for j in range(0, 9):
                 if (i % 2):
                     self.ui.tableWidget.item(i, j).setBackground(
@@ -826,6 +830,8 @@ class MainWindow(QMainWindow):
         self.ui.tableWidget.resizeColumnsToContents()
         self.ui.tableWidget.reset()
 
+        self.saveProject()
+
     def calculate_table2(self):
 
 
@@ -923,6 +929,205 @@ class MainWindow(QMainWindow):
             msgBox.setText(
                 "Необходимо посчитать таблицы")
             msgBox.exec()
+
+    def saveProject(self):
+        projectJson = {
+            "table_1": {
+                'I_0a': self.ui.le_I0a.text(),
+                'I_0p': self.ui.le_I0p.text(),
+                'P_st': self.ui.le_Pst.text(),
+                'P_meh': self.ui.le_Pmeh.text(),
+                'r_1': self.ui.le_r1.text(),
+                'r2_shtrih': self.ui.le_r2_shtrih.text(),
+                'c_1': self.ui.le_c1.text(),
+                'a_shtrih': self.ui.le_a_shtrih.text(),
+                'a': self.ui.le_a.text(),
+                'b_shtrih': self.ui.le_b_shtrih.text(),
+                'b': self.ui.le_b.text(),
+                'n_1': self.ui.le_n1.text()
+            },
+            "table_2": {
+                'h_c': self.ui.le_h_c.text(),
+                'h_p_2': self.ui.le_h_p_2.text(),
+                'h_sh': self.ui.le_h_sh.text(),
+                'h_sh_shtrih': self.ui.le_h_sh_shtrih.text(),
+                'b_1_r': self.ui.le_b_1_r.text(),
+                'b_2_r': self.ui.le_b_2_r.text(),
+                'h_1': self.ui.le_h_1.text(),
+                'q_c': self.ui.le_q_c.text(),
+                'r_c': self.ui.le_r_c.text(),
+                'r_2': self.ui.le_r_2.text(),
+                'h_0': self.ui.le_h_0.text(),
+                'b_sh_2': self.ui.le_b_sh_2.text(),
+                'lamda_p_2': self.ui.le_Lamda_p_2.text(),
+                'lamda_l_2': self.ui.le_Lamda_l_2.text(),
+                'lamda_d_2': self.ui.le_Lamda_d_2.text(),
+                'X_2_shtrih': self.ui.le_X_2_shtrih.text(),
+                'x_1_2_p': self.ui.le_x_1_2_p.text(),
+                'C_1_p': self.ui.le_c_1_p.text(),
+                'X_1': self.ui.le_X_1.text()
+            },
+            "table_3": {
+                'C_N': self.ui.le_C_N.text(),
+                'k_y_1': self.ui.le_k_y_1.text(),
+                'u_p': self.ui.le_u_p.text(),
+                'k_ob': self.ui.le_k_ob.text(),
+                'Z_1': self.ui.le_Z_1.text(),
+                'Z_2': self.ui.le_Z_2.text(),
+                'delta': self.ui.le_delta.text(),
+                't_z_1': self.ui.le_t_z_1.text(),
+                'b_sh': self.ui.le_b_sh.text(),
+                'h_sh_r': self.ui.le_h_sh_r.text(),
+                'lamda_p_1': self.ui.le_Lamda_p_1.text(),
+                't_z_2': self.ui.le_t_z_2.text(),
+                'lamda_l_1': self.ui.le_Lamda_l_1.text(),
+                'lamda_d_1': self.ui.le_Lamda_d_1.text(),
+                'r_2_Ksi_shtrih': self.ui.le_r_2_Ksi_shtrih.text(),
+                'I_1_p': self.ui.le_I_1_p.text(),
+                'I_1_nom': self.ui.le_I_1_nom.text(),
+                'h_k': self.ui.le_h_k.text(),
+                'lamda_p_2_ksi': self.ui.le_Lamda_p_2_Ksi.text(),
+                'K_R': self.ui.le_K_R.text()
+            },
+            "thermalCalc": {
+                'D': self.ui.le_D.text(),
+                'P_st_main': self.ui.le_P_st_main.text(),
+                'l_1': self.ui.le_l_1.text(),
+                'a_1': self.ui.le_a_1.text(),
+                'h_pk': self.ui.le_h_pk.text(),
+                'b_1': self.ui.le_b_1.text(),
+                'b_2': self.ui.le_b_2.text(),
+                'b_iz_p_1': self.ui.le_b_iz_p_1.text(),
+                'lambda_ekv_shtrih': self.ui.le_lambda_ekv_shtrih.text(),
+                'l_l_1': self.ui.le_l_l_1.text(),
+                'b_iz_l_1': self.ui.le_b_iz_l_1.text(),
+                'h_p_1': self.ui.le_h_p_1.text(),
+                'l_vbl': self.ui.le_l_vbl.text(),
+                'l_avg_1': self.ui.le_l_avg_1.text(),
+                'a_v': self.ui.le_a_v.text(),
+                'D_a': self.ui.le_D_a.text(),
+                's_kor': self.ui.le_s_kor.text()
+            },
+            'originData': {
+                'P_2': self.ui.linePower.currentText(),
+                'U': self.ui.lineVoltage.currentText(),
+                '_2p': self.ui.linePolarity.currentText(),
+                'heatClass': self.ui.cmb_heatClass.currentText(),
+                's_nom': self.ui.lineSnom.text()
+            }
+        }
+        for i in range(1, 20 + 1):
+            projectJson['table_1'][i] = self.ui.tableWidget.item(i, 8).text()
+
+        for i in range(1, 14 + 1):
+            projectJson['table_2'][i] = self.ui.tableWidget_2.item(i, 2).text()
+
+        for i in range(1, 20 + 1):
+            projectJson['table_3'][i] = self.ui.tableWidget_3.item(i, 2).text()
+
+
+        name = QFileDialog.getSaveFileName(
+            self, 'Сохранить файл', '', 'JSON File (*.json)', )
+
+        with open(name[0], 'w') as json_file:
+            json.dump(projectJson, json_file)
+
+    def loadProject(self):
+        name = QFileDialog.getOpenFileName(
+            self, 'Загрузить файл', '', 'JSON File (*.json)', )
+        json_vars = dict()
+        with open(name[0], 'r') as json_file:
+            json_vars = json.load(json_file)
+
+            self.ui.le_I0a.setText(json_vars["table_1"]["I_0a"])
+            self.ui.le_I0p.setText(json_vars["table_1"]["I_0p"])
+            self.ui.le_Pst.setText(json_vars["table_1"]["P_st"])
+            self.ui.le_Pmeh.setText(json_vars["table_1"]["P_meh"])
+            self.ui.le_r1.setText(json_vars["table_1"]["r_1"])
+            self.ui.le_r2_shtrih.setText(json_vars["table_1"]["r2_shtrih"])
+            self.ui.le_c1.setText(json_vars["table_1"]["c_1"])
+            self.ui.le_a_shtrih.setText(json_vars["table_1"]["a_shtrih"])
+            self.ui.le_a.setText(json_vars["table_1"]["a"])
+            self.ui.le_b_shtrih.setText(json_vars["table_1"]["b_shtrih"])
+            self.ui.le_b.setText(json_vars["table_1"]["b"])
+            self.ui.le_n1.setText(json_vars["table_1"]["n_1"])
+
+            self.ui.le_h_c.setText(json_vars["table_2"]["h_c"])
+            self.ui.le_h_p_2.setText(json_vars["table_2"]["h_p_2"])
+            self.ui.le_h_sh.setText(json_vars["table_2"]["h_sh"])
+            self.ui.le_h_sh_shtrih.setText(json_vars["table_2"]["h_sh_shtrih"])
+            self.ui.le_b_1_r.setText(json_vars["table_2"]["b_1_r"])
+            self.ui.le_b_2_r.setText(json_vars["table_2"]["b_2_r"])
+            self.ui.le_h_1.setText(json_vars["table_2"]["h_1"])
+            self.ui.le_q_c.setText(json_vars["table_2"]["q_c"])
+            self.ui.le_r_c.setText(json_vars["table_2"]["r_c"])
+            self.ui.le_r_2.setText(json_vars["table_2"]["r_2"])
+            self.ui.le_h_0.setText(json_vars["table_2"]["h_0"])
+            self.ui.le_b_sh_2.setText(json_vars["table_2"]["b_sh_2"])
+            self.ui.le_Lamda_p_2.setText(json_vars["table_2"]["lamda_p_2"])
+            self.ui.le_Lamda_l_2.setText(json_vars["table_2"]["lamda_l_2"])
+            self.ui.le_Lamda_d_2.setText(json_vars["table_2"]["lamda_d_2"])
+            self.ui.le_X_2_shtrih.setText(json_vars["table_2"]["X_2_shtrih"])
+            self.ui.le_x_1_2_p.setText(json_vars["table_2"]["x_1_2_p"])
+            self.ui.le_c_1_p.setText(json_vars["table_2"]["C_1_p"])
+            self.ui.le_X_1.setText(json_vars["table_2"]["X_1"])
+
+            self.ui.le_C_N.setText(json_vars["table_3"]["C_N"])
+            self.ui.le_k_y_1.setText(json_vars["table_3"]["k_y_1"])
+            self.ui.le_u_p.setText(json_vars["table_3"]["u_p"])
+            self.ui.le_k_ob.setText(json_vars["table_3"]["k_ob"])
+            self.ui.le_Z_1.setText(json_vars["table_3"]["Z_1"])
+            self.ui.le_Z_2.setText(json_vars["table_3"]["Z_2"])
+            self.ui.le_delta.setText(json_vars["table_3"]["delta"])
+            self.ui.le_t_z_1.setText(json_vars["table_3"]["t_z_1"])
+            self.ui.le_b_sh.setText(json_vars["table_3"]["b_sh"])
+            self.ui.le_h_sh_r.setText(json_vars["table_3"]["h_sh_r"])
+            self.ui.le_Lamda_p_1.setText(json_vars["table_3"]["lamda_p_1"])
+            self.ui.le_t_z_2.setText(json_vars["table_3"]["t_z_2"])
+            self.ui.le_Lamda_l_1.setText(json_vars["table_3"]["lamda_l_1"])
+            self.ui.le_Lamda_d_1.setText(json_vars["table_3"]["lamda_d_1"])
+            self.ui.le_r_2_Ksi_shtrih.setText(json_vars["table_3"]["r_2_Ksi_shtrih"])
+            self.ui.le_I_1_p.setText(json_vars["table_3"]["I_1_p"])
+            self.ui.le_I_1_nom.setText(json_vars["table_3"]["I_1_nom"])
+            self.ui.le_h_k.setText(json_vars["table_3"]["h_k"])
+            self.ui.le_Lamda_p_2_Ksi.setText(json_vars["table_3"]["lamda_p_2_ksi"])
+            self.ui.le_K_R.setText(json_vars["table_3"]["K_R"])
+
+            self.ui.le_D.setText(json_vars["thermalCalc"]["D"])
+            self.ui.le_P_st_main.setText(json_vars["thermalCalc"]["P_st_main"])
+            self.ui.le_l_1.setText(json_vars["thermalCalc"]["l_1"])
+            self.ui.le_a_1.setText(json_vars["thermalCalc"]["a_1"])
+            self.ui.le_h_pk.setText(json_vars["thermalCalc"]["h_pk"])
+            self.ui.le_b_1.setText(json_vars["thermalCalc"]["b_1"])
+            self.ui.le_b_2.setText(json_vars["thermalCalc"]["b_2"])
+            self.ui.le_b_iz_p_1.setText(json_vars["thermalCalc"]["b_iz_p_1"])
+            self.ui.le_lambda_ekv_shtrih.setText(json_vars["thermalCalc"]["lambda_ekv_shtrih"])
+            self.ui.le_l_l_1.setText(json_vars["thermalCalc"]["l_l_1"])
+            self.ui.le_b_iz_l_1.setText(json_vars["thermalCalc"]["b_iz_l_1"])
+            self.ui.le_h_p_1.setText(json_vars["thermalCalc"]["h_p_1"])
+            self.ui.le_l_vbl.setText(json_vars["thermalCalc"]["l_vbl"])
+            self.ui.le_l_avg_1.setText(json_vars["thermalCalc"]["l_avg_1"])
+            self.ui.le_a_v.setText(json_vars["thermalCalc"]["a_v"])
+            self.ui.le_D_a.setText(json_vars["thermalCalc"]["D_a"])
+            self.ui.le_s_kor.setText(json_vars["thermalCalc"]["s_kor"])
+
+            self.ui.linePower.setCurrentText(json_vars["originData"]["P_2"])
+            self.ui.lineVoltage.setCurrentText(json_vars["originData"]["U"])
+            self.ui.linePolarity.setCurrentText(json_vars["originData"]["_2p"])
+            self.ui.cmb_heatClass.setCurrentText(json_vars["originData"]["heatClass"])
+            self.ui.lineSnom.setText(json_vars["originData"]["s_nom"])
+
+            for i in range(1, 20 + 1):
+                if json_vars['table_1'][f'{i}']:
+                    self.ui.tableWidget.item(i, 8).setText(json_vars['table_1'][f'{i}'])
+
+            for i in range(1, 14 + 1):
+                if json_vars['table_2'][f'{i}']:
+                    self.ui.tableWidget_2.item(i, 2).setText(json_vars['table_2'][f'{i}'])
+
+            for i in range(1, 20 + 1):
+                if json_vars['table_3'][f'{i}']:
+                    self.ui.tableWidget_3.item(i, 2).setText(json_vars['table_3'][f'{i}'])
 
 
 app = QApplication()

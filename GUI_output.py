@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_mainwindow.ui'
+## Form generated from reading UI file 'ui_mainWindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.1
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,18 +15,19 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
-    QGridLayout, QGroupBox, QHBoxLayout, QHeaderView,
-    QLabel, QLayout, QLineEdit, QPushButton,
-    QScrollArea, QSizePolicy, QSlider, QTabWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QButtonGroup, QComboBox, QDialog,
+    QFrame, QGridLayout, QGroupBox, QHBoxLayout,
+    QHeaderView, QLabel, QLayout, QLineEdit,
+    QPushButton, QScrollArea, QSizePolicy, QSlider,
+    QTabWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         if not mainWindow.objectName():
             mainWindow.setObjectName(u"mainWindow")
         mainWindow.resize(1503, 875)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
@@ -41,12 +42,12 @@ class Ui_mainWindow(object):
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1483, 855))
-        self.gridLayout_19 = QGridLayout(self.scrollAreaWidgetContents)
-        self.gridLayout_19.setObjectName(u"gridLayout_19")
+        self.gridLayout_9 = QGridLayout(self.scrollAreaWidgetContents)
+        self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.tabWidget = QTabWidget(self.scrollAreaWidgetContents)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setEnabled(True)
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
@@ -65,7 +66,7 @@ class Ui_mainWindow(object):
         self.gridLayout_23.setObjectName(u"gridLayout_23")
         self.groupBox_3 = QGroupBox(self.tab_4)
         self.groupBox_3.setObjectName(u"groupBox_3")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
@@ -187,6 +188,39 @@ class Ui_mainWindow(object):
         self.submitValues.setObjectName(u"submitValues")
 
         self.gridLayout_22.addWidget(self.submitValues, 1, 0, 1, 1)
+
+        self.bt_save = QPushButton(self.groupBox_3)
+        self.buttonGroup = QButtonGroup(mainWindow)
+        self.buttonGroup.setObjectName(u"buttonGroup")
+        self.buttonGroup.addButton(self.bt_save)
+        self.bt_save.setObjectName(u"bt_save")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy3.setHorizontalStretch(100)
+        sizePolicy3.setVerticalStretch(100)
+        sizePolicy3.setHeightForWidth(self.bt_save.sizePolicy().hasHeightForWidth())
+        self.bt_save.setSizePolicy(sizePolicy3)
+        self.bt_save.setMinimumSize(QSize(100, 10))
+        self.bt_save.setMaximumSize(QSize(1000, 100))
+        self.bt_save.setSizeIncrement(QSize(0, 0))
+        self.bt_save.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.bt_save.setAutoFillBackground(False)
+        self.bt_save.setAutoDefault(True)
+        self.bt_save.setFlat(False)
+
+        self.gridLayout_22.addWidget(self.bt_save, 2, 0, 1, 1)
+
+        self.bt_load_project = QPushButton(self.groupBox_3)
+        self.buttonGroup.addButton(self.bt_load_project)
+        self.bt_load_project.setObjectName(u"bt_load_project")
+        sizePolicy1.setHeightForWidth(self.bt_load_project.sizePolicy().hasHeightForWidth())
+        self.bt_load_project.setSizePolicy(sizePolicy1)
+        self.bt_load_project.setMinimumSize(QSize(100, 10))
+        self.bt_load_project.setMaximumSize(QSize(1000, 100))
+        self.bt_load_project.setSizeIncrement(QSize(0, 0))
+        self.bt_load_project.setBaseSize(QSize(0, 0))
+        self.bt_load_project.setLayoutDirection(Qt.LeftToRight)
+
+        self.gridLayout_22.addWidget(self.bt_load_project, 3, 0, 1, 1)
 
 
         self.gridLayout_23.addWidget(self.groupBox_3, 0, 0, 1, 1, Qt.AlignLeft|Qt.AlignTop)
@@ -488,13 +522,15 @@ class Ui_mainWindow(object):
         self.tableWidget.setItem(20, 0, __qtablewidgetitem97)
         __qtablewidgetitem98 = QTableWidgetItem()
         self.tableWidget.setItem(20, 1, __qtablewidgetitem98)
+        __qtablewidgetitem99 = QTableWidgetItem()
+        self.tableWidget.setItem(20, 8, __qtablewidgetitem99)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setEnabled(False)
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.MinimumExpanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy4)
         self.tableWidget.setMinimumSize(QSize(820, 0))
         self.tableWidget.setMaximumSize(QSize(910, 750))
         self.tableWidget.setFont(font)
@@ -516,11 +552,11 @@ class Ui_mainWindow(object):
 
         self.groupBox_5 = QGroupBox(self.tab)
         self.groupBox_5.setObjectName(u"groupBox_5")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.groupBox_5.sizePolicy().hasHeightForWidth())
-        self.groupBox_5.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Expanding)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.groupBox_5.sizePolicy().hasHeightForWidth())
+        self.groupBox_5.setSizePolicy(sizePolicy5)
         self.gridLayout = QGridLayout(self.groupBox_5)
         self.gridLayout.setObjectName(u"gridLayout")
         self.vl_variables = QVBoxLayout()
@@ -532,8 +568,8 @@ class Ui_mainWindow(object):
         self.hl_I0a.setContentsMargins(2, -1, -1, -1)
         self.lb_I0a = QLabel(self.groupBox_5)
         self.lb_I0a.setObjectName(u"lb_I0a")
-        sizePolicy4.setHeightForWidth(self.lb_I0a.sizePolicy().hasHeightForWidth())
-        self.lb_I0a.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_I0a.sizePolicy().hasHeightForWidth())
+        self.lb_I0a.setSizePolicy(sizePolicy5)
 
         self.hl_I0a.addWidget(self.lb_I0a)
 
@@ -556,8 +592,8 @@ class Ui_mainWindow(object):
         self.hl_I0p.setContentsMargins(0, -1, -1, -1)
         self.lb_I0p = QLabel(self.groupBox_5)
         self.lb_I0p.setObjectName(u"lb_I0p")
-        sizePolicy4.setHeightForWidth(self.lb_I0p.sizePolicy().hasHeightForWidth())
-        self.lb_I0p.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_I0p.sizePolicy().hasHeightForWidth())
+        self.lb_I0p.setSizePolicy(sizePolicy5)
 
         self.hl_I0p.addWidget(self.lb_I0p)
 
@@ -577,8 +613,8 @@ class Ui_mainWindow(object):
         self.hl_Pst.setContentsMargins(-1, -1, 6, -1)
         self.lb_Pst = QLabel(self.groupBox_5)
         self.lb_Pst.setObjectName(u"lb_Pst")
-        sizePolicy4.setHeightForWidth(self.lb_Pst.sizePolicy().hasHeightForWidth())
-        self.lb_Pst.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Pst.sizePolicy().hasHeightForWidth())
+        self.lb_Pst.setSizePolicy(sizePolicy5)
 
         self.hl_Pst.addWidget(self.lb_Pst)
 
@@ -599,19 +635,19 @@ class Ui_mainWindow(object):
         self.hl_Pmeh.setContentsMargins(-1, -1, 6, -1)
         self.lb_Pmeh = QLabel(self.groupBox_5)
         self.lb_Pmeh.setObjectName(u"lb_Pmeh")
-        sizePolicy4.setHeightForWidth(self.lb_Pmeh.sizePolicy().hasHeightForWidth())
-        self.lb_Pmeh.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Pmeh.sizePolicy().hasHeightForWidth())
+        self.lb_Pmeh.setSizePolicy(sizePolicy5)
 
         self.hl_Pmeh.addWidget(self.lb_Pmeh)
 
         self.le_Pmeh = QLineEdit(self.groupBox_5)
         self.le_Pmeh.setObjectName(u"le_Pmeh")
         self.le_Pmeh.setEnabled(False)
-        sizePolicy5 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy5.setHorizontalStretch(100)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.le_Pmeh.sizePolicy().hasHeightForWidth())
-        self.le_Pmeh.setSizePolicy(sizePolicy5)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy6.setHorizontalStretch(100)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.le_Pmeh.sizePolicy().hasHeightForWidth())
+        self.le_Pmeh.setSizePolicy(sizePolicy6)
         self.le_Pmeh.setMinimumSize(QSize(20, 20))
         self.le_Pmeh.setSizeIncrement(QSize(100, 0))
 
@@ -624,8 +660,8 @@ class Ui_mainWindow(object):
         self.hl_r1.setObjectName(u"hl_r1")
         self.lb_r1 = QLabel(self.groupBox_5)
         self.lb_r1.setObjectName(u"lb_r1")
-        sizePolicy4.setHeightForWidth(self.lb_r1.sizePolicy().hasHeightForWidth())
-        self.lb_r1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_r1.sizePolicy().hasHeightForWidth())
+        self.lb_r1.setSizePolicy(sizePolicy5)
 
         self.hl_r1.addWidget(self.lb_r1)
 
@@ -646,8 +682,8 @@ class Ui_mainWindow(object):
         self.hl_r2_shtrih.setContentsMargins(0, -1, -1, -1)
         self.lb_r2_shtrih = QLabel(self.groupBox_5)
         self.lb_r2_shtrih.setObjectName(u"lb_r2_shtrih")
-        sizePolicy4.setHeightForWidth(self.lb_r2_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_r2_shtrih.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_r2_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_r2_shtrih.setSizePolicy(sizePolicy5)
         self.lb_r2_shtrih.setFrameShape(QFrame.NoFrame)
 
         self.hl_r2_shtrih.addWidget(self.lb_r2_shtrih)
@@ -667,8 +703,8 @@ class Ui_mainWindow(object):
         self.hl_c1.setObjectName(u"hl_c1")
         self.lb_c1 = QLabel(self.groupBox_5)
         self.lb_c1.setObjectName(u"lb_c1")
-        sizePolicy4.setHeightForWidth(self.lb_c1.sizePolicy().hasHeightForWidth())
-        self.lb_c1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_c1.sizePolicy().hasHeightForWidth())
+        self.lb_c1.setSizePolicy(sizePolicy5)
 
         self.hl_c1.addWidget(self.lb_c1)
 
@@ -687,8 +723,8 @@ class Ui_mainWindow(object):
         self.hl_a_shtrih.setObjectName(u"hl_a_shtrih")
         self.lb_a_shtrih = QLabel(self.groupBox_5)
         self.lb_a_shtrih.setObjectName(u"lb_a_shtrih")
-        sizePolicy4.setHeightForWidth(self.lb_a_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_a_shtrih.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_a_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_a_shtrih.setSizePolicy(sizePolicy5)
 
         self.hl_a_shtrih.addWidget(self.lb_a_shtrih)
 
@@ -707,8 +743,8 @@ class Ui_mainWindow(object):
         self.hl_a.setObjectName(u"hl_a")
         self.lb_a = QLabel(self.groupBox_5)
         self.lb_a.setObjectName(u"lb_a")
-        sizePolicy4.setHeightForWidth(self.lb_a.sizePolicy().hasHeightForWidth())
-        self.lb_a.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_a.sizePolicy().hasHeightForWidth())
+        self.lb_a.setSizePolicy(sizePolicy5)
 
         self.hl_a.addWidget(self.lb_a)
 
@@ -727,8 +763,8 @@ class Ui_mainWindow(object):
         self.hl_b_shtrih.setObjectName(u"hl_b_shtrih")
         self.lb_b_shtrih = QLabel(self.groupBox_5)
         self.lb_b_shtrih.setObjectName(u"lb_b_shtrih")
-        sizePolicy4.setHeightForWidth(self.lb_b_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_b_shtrih.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_b_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_b_shtrih.setSizePolicy(sizePolicy5)
 
         self.hl_b_shtrih.addWidget(self.lb_b_shtrih)
 
@@ -747,8 +783,8 @@ class Ui_mainWindow(object):
         self.hl_b.setObjectName(u"hl_b")
         self.lb_b = QLabel(self.groupBox_5)
         self.lb_b.setObjectName(u"lb_b")
-        sizePolicy4.setHeightForWidth(self.lb_b.sizePolicy().hasHeightForWidth())
-        self.lb_b.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_b.sizePolicy().hasHeightForWidth())
+        self.lb_b.setSizePolicy(sizePolicy5)
 
         self.hl_b.addWidget(self.lb_b)
 
@@ -767,8 +803,8 @@ class Ui_mainWindow(object):
         self.hl_n1.setObjectName(u"hl_n1")
         self.lb_n1 = QLabel(self.groupBox_5)
         self.lb_n1.setObjectName(u"lb_n1")
-        sizePolicy4.setHeightForWidth(self.lb_n1.sizePolicy().hasHeightForWidth())
-        self.lb_n1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_n1.sizePolicy().hasHeightForWidth())
+        self.lb_n1.setSizePolicy(sizePolicy5)
 
         self.hl_n1.addWidget(self.lb_n1)
 
@@ -843,207 +879,207 @@ class Ui_mainWindow(object):
         self.tableWidget_2 = QTableWidget(self.tab_2)
         if (self.tableWidget_2.columnCount() < 8):
             self.tableWidget_2.setColumnCount(8)
-        __qtablewidgetitem99 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem99)
         __qtablewidgetitem100 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem100)
+        self.tableWidget_2.setHorizontalHeaderItem(0, __qtablewidgetitem100)
         __qtablewidgetitem101 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem101)
+        self.tableWidget_2.setHorizontalHeaderItem(1, __qtablewidgetitem101)
         __qtablewidgetitem102 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem102)
+        self.tableWidget_2.setHorizontalHeaderItem(2, __qtablewidgetitem102)
         __qtablewidgetitem103 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(4, __qtablewidgetitem103)
+        self.tableWidget_2.setHorizontalHeaderItem(3, __qtablewidgetitem103)
         __qtablewidgetitem104 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(5, __qtablewidgetitem104)
+        self.tableWidget_2.setHorizontalHeaderItem(4, __qtablewidgetitem104)
         __qtablewidgetitem105 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(6, __qtablewidgetitem105)
+        self.tableWidget_2.setHorizontalHeaderItem(5, __qtablewidgetitem105)
         __qtablewidgetitem106 = QTableWidgetItem()
-        self.tableWidget_2.setHorizontalHeaderItem(7, __qtablewidgetitem106)
+        self.tableWidget_2.setHorizontalHeaderItem(6, __qtablewidgetitem106)
+        __qtablewidgetitem107 = QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(7, __qtablewidgetitem107)
         if (self.tableWidget_2.rowCount() < 15):
             self.tableWidget_2.setRowCount(15)
-        __qtablewidgetitem107 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem107)
         __qtablewidgetitem108 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem108)
+        self.tableWidget_2.setVerticalHeaderItem(0, __qtablewidgetitem108)
         __qtablewidgetitem109 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem109)
+        self.tableWidget_2.setVerticalHeaderItem(1, __qtablewidgetitem109)
         __qtablewidgetitem110 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem110)
+        self.tableWidget_2.setVerticalHeaderItem(2, __qtablewidgetitem110)
         __qtablewidgetitem111 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem111)
+        self.tableWidget_2.setVerticalHeaderItem(3, __qtablewidgetitem111)
         __qtablewidgetitem112 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem112)
+        self.tableWidget_2.setVerticalHeaderItem(4, __qtablewidgetitem112)
         __qtablewidgetitem113 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem113)
+        self.tableWidget_2.setVerticalHeaderItem(5, __qtablewidgetitem113)
         __qtablewidgetitem114 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem114)
+        self.tableWidget_2.setVerticalHeaderItem(6, __qtablewidgetitem114)
         __qtablewidgetitem115 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem115)
+        self.tableWidget_2.setVerticalHeaderItem(7, __qtablewidgetitem115)
         __qtablewidgetitem116 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem116)
+        self.tableWidget_2.setVerticalHeaderItem(8, __qtablewidgetitem116)
         __qtablewidgetitem117 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem117)
+        self.tableWidget_2.setVerticalHeaderItem(9, __qtablewidgetitem117)
         __qtablewidgetitem118 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem118)
+        self.tableWidget_2.setVerticalHeaderItem(10, __qtablewidgetitem118)
         __qtablewidgetitem119 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem119)
+        self.tableWidget_2.setVerticalHeaderItem(11, __qtablewidgetitem119)
         __qtablewidgetitem120 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem120)
+        self.tableWidget_2.setVerticalHeaderItem(12, __qtablewidgetitem120)
         __qtablewidgetitem121 = QTableWidgetItem()
-        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem121)
+        self.tableWidget_2.setVerticalHeaderItem(13, __qtablewidgetitem121)
         __qtablewidgetitem122 = QTableWidgetItem()
-        __qtablewidgetitem122.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 0, __qtablewidgetitem122)
+        self.tableWidget_2.setVerticalHeaderItem(14, __qtablewidgetitem122)
         __qtablewidgetitem123 = QTableWidgetItem()
         __qtablewidgetitem123.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 1, __qtablewidgetitem123)
+        self.tableWidget_2.setItem(0, 0, __qtablewidgetitem123)
         __qtablewidgetitem124 = QTableWidgetItem()
         __qtablewidgetitem124.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 2, __qtablewidgetitem124)
+        self.tableWidget_2.setItem(0, 1, __qtablewidgetitem124)
         __qtablewidgetitem125 = QTableWidgetItem()
         __qtablewidgetitem125.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 3, __qtablewidgetitem125)
+        self.tableWidget_2.setItem(0, 2, __qtablewidgetitem125)
         __qtablewidgetitem126 = QTableWidgetItem()
         __qtablewidgetitem126.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 4, __qtablewidgetitem126)
+        self.tableWidget_2.setItem(0, 3, __qtablewidgetitem126)
         __qtablewidgetitem127 = QTableWidgetItem()
         __qtablewidgetitem127.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 5, __qtablewidgetitem127)
+        self.tableWidget_2.setItem(0, 4, __qtablewidgetitem127)
         __qtablewidgetitem128 = QTableWidgetItem()
         __qtablewidgetitem128.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_2.setItem(0, 6, __qtablewidgetitem128)
+        self.tableWidget_2.setItem(0, 5, __qtablewidgetitem128)
         __qtablewidgetitem129 = QTableWidgetItem()
-        __qtablewidgetitem129.setFont(font1);
-        self.tableWidget_2.setItem(0, 7, __qtablewidgetitem129)
+        __qtablewidgetitem129.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_2.setItem(0, 6, __qtablewidgetitem129)
         __qtablewidgetitem130 = QTableWidgetItem()
         __qtablewidgetitem130.setFont(font1);
-        __qtablewidgetitem130.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(1, 0, __qtablewidgetitem130)
+        self.tableWidget_2.setItem(0, 7, __qtablewidgetitem130)
         __qtablewidgetitem131 = QTableWidgetItem()
+        __qtablewidgetitem131.setFont(font1);
         __qtablewidgetitem131.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(1, 1, __qtablewidgetitem131)
+        self.tableWidget_2.setItem(1, 0, __qtablewidgetitem131)
         __qtablewidgetitem132 = QTableWidgetItem()
-        self.tableWidget_2.setItem(1, 2, __qtablewidgetitem132)
+        __qtablewidgetitem132.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(1, 1, __qtablewidgetitem132)
         __qtablewidgetitem133 = QTableWidgetItem()
-        __qtablewidgetitem133.setFont(font1);
-        __qtablewidgetitem133.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(2, 0, __qtablewidgetitem133)
+        self.tableWidget_2.setItem(1, 2, __qtablewidgetitem133)
         __qtablewidgetitem134 = QTableWidgetItem()
+        __qtablewidgetitem134.setFont(font1);
         __qtablewidgetitem134.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(2, 1, __qtablewidgetitem134)
+        self.tableWidget_2.setItem(2, 0, __qtablewidgetitem134)
         __qtablewidgetitem135 = QTableWidgetItem()
-        self.tableWidget_2.setItem(2, 2, __qtablewidgetitem135)
+        __qtablewidgetitem135.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(2, 1, __qtablewidgetitem135)
         __qtablewidgetitem136 = QTableWidgetItem()
-        __qtablewidgetitem136.setFont(font1);
-        __qtablewidgetitem136.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(3, 0, __qtablewidgetitem136)
+        self.tableWidget_2.setItem(2, 2, __qtablewidgetitem136)
         __qtablewidgetitem137 = QTableWidgetItem()
+        __qtablewidgetitem137.setFont(font1);
         __qtablewidgetitem137.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(3, 1, __qtablewidgetitem137)
+        self.tableWidget_2.setItem(3, 0, __qtablewidgetitem137)
         __qtablewidgetitem138 = QTableWidgetItem()
-        self.tableWidget_2.setItem(3, 2, __qtablewidgetitem138)
+        __qtablewidgetitem138.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(3, 1, __qtablewidgetitem138)
         __qtablewidgetitem139 = QTableWidgetItem()
-        __qtablewidgetitem139.setFont(font1);
-        __qtablewidgetitem139.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(4, 0, __qtablewidgetitem139)
+        self.tableWidget_2.setItem(3, 2, __qtablewidgetitem139)
         __qtablewidgetitem140 = QTableWidgetItem()
+        __qtablewidgetitem140.setFont(font1);
         __qtablewidgetitem140.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(4, 1, __qtablewidgetitem140)
+        self.tableWidget_2.setItem(4, 0, __qtablewidgetitem140)
         __qtablewidgetitem141 = QTableWidgetItem()
-        self.tableWidget_2.setItem(4, 2, __qtablewidgetitem141)
+        __qtablewidgetitem141.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(4, 1, __qtablewidgetitem141)
         __qtablewidgetitem142 = QTableWidgetItem()
-        __qtablewidgetitem142.setFont(font1);
-        __qtablewidgetitem142.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(5, 0, __qtablewidgetitem142)
+        self.tableWidget_2.setItem(4, 2, __qtablewidgetitem142)
         __qtablewidgetitem143 = QTableWidgetItem()
+        __qtablewidgetitem143.setFont(font1);
         __qtablewidgetitem143.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(5, 1, __qtablewidgetitem143)
+        self.tableWidget_2.setItem(5, 0, __qtablewidgetitem143)
         __qtablewidgetitem144 = QTableWidgetItem()
-        self.tableWidget_2.setItem(5, 2, __qtablewidgetitem144)
+        __qtablewidgetitem144.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(5, 1, __qtablewidgetitem144)
         __qtablewidgetitem145 = QTableWidgetItem()
-        __qtablewidgetitem145.setFont(font1);
-        __qtablewidgetitem145.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(6, 0, __qtablewidgetitem145)
+        self.tableWidget_2.setItem(5, 2, __qtablewidgetitem145)
         __qtablewidgetitem146 = QTableWidgetItem()
+        __qtablewidgetitem146.setFont(font1);
         __qtablewidgetitem146.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(6, 1, __qtablewidgetitem146)
+        self.tableWidget_2.setItem(6, 0, __qtablewidgetitem146)
         __qtablewidgetitem147 = QTableWidgetItem()
-        self.tableWidget_2.setItem(6, 2, __qtablewidgetitem147)
+        __qtablewidgetitem147.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(6, 1, __qtablewidgetitem147)
         __qtablewidgetitem148 = QTableWidgetItem()
-        __qtablewidgetitem148.setFont(font1);
-        __qtablewidgetitem148.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(7, 0, __qtablewidgetitem148)
+        self.tableWidget_2.setItem(6, 2, __qtablewidgetitem148)
         __qtablewidgetitem149 = QTableWidgetItem()
+        __qtablewidgetitem149.setFont(font1);
         __qtablewidgetitem149.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(7, 1, __qtablewidgetitem149)
+        self.tableWidget_2.setItem(7, 0, __qtablewidgetitem149)
         __qtablewidgetitem150 = QTableWidgetItem()
-        self.tableWidget_2.setItem(7, 2, __qtablewidgetitem150)
+        __qtablewidgetitem150.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(7, 1, __qtablewidgetitem150)
         __qtablewidgetitem151 = QTableWidgetItem()
-        __qtablewidgetitem151.setFont(font1);
-        __qtablewidgetitem151.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(8, 0, __qtablewidgetitem151)
+        self.tableWidget_2.setItem(7, 2, __qtablewidgetitem151)
         __qtablewidgetitem152 = QTableWidgetItem()
+        __qtablewidgetitem152.setFont(font1);
         __qtablewidgetitem152.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(8, 1, __qtablewidgetitem152)
+        self.tableWidget_2.setItem(8, 0, __qtablewidgetitem152)
         __qtablewidgetitem153 = QTableWidgetItem()
-        self.tableWidget_2.setItem(8, 2, __qtablewidgetitem153)
+        __qtablewidgetitem153.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(8, 1, __qtablewidgetitem153)
         __qtablewidgetitem154 = QTableWidgetItem()
-        __qtablewidgetitem154.setFont(font1);
-        __qtablewidgetitem154.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(9, 0, __qtablewidgetitem154)
+        self.tableWidget_2.setItem(8, 2, __qtablewidgetitem154)
         __qtablewidgetitem155 = QTableWidgetItem()
+        __qtablewidgetitem155.setFont(font1);
         __qtablewidgetitem155.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(9, 1, __qtablewidgetitem155)
+        self.tableWidget_2.setItem(9, 0, __qtablewidgetitem155)
         __qtablewidgetitem156 = QTableWidgetItem()
-        self.tableWidget_2.setItem(9, 2, __qtablewidgetitem156)
+        __qtablewidgetitem156.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(9, 1, __qtablewidgetitem156)
         __qtablewidgetitem157 = QTableWidgetItem()
-        __qtablewidgetitem157.setFont(font1);
-        __qtablewidgetitem157.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(10, 0, __qtablewidgetitem157)
+        self.tableWidget_2.setItem(9, 2, __qtablewidgetitem157)
         __qtablewidgetitem158 = QTableWidgetItem()
+        __qtablewidgetitem158.setFont(font1);
         __qtablewidgetitem158.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(10, 1, __qtablewidgetitem158)
+        self.tableWidget_2.setItem(10, 0, __qtablewidgetitem158)
         __qtablewidgetitem159 = QTableWidgetItem()
-        self.tableWidget_2.setItem(10, 2, __qtablewidgetitem159)
+        __qtablewidgetitem159.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(10, 1, __qtablewidgetitem159)
         __qtablewidgetitem160 = QTableWidgetItem()
-        __qtablewidgetitem160.setFont(font1);
-        __qtablewidgetitem160.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(11, 0, __qtablewidgetitem160)
+        self.tableWidget_2.setItem(10, 2, __qtablewidgetitem160)
         __qtablewidgetitem161 = QTableWidgetItem()
+        __qtablewidgetitem161.setFont(font1);
         __qtablewidgetitem161.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(11, 1, __qtablewidgetitem161)
+        self.tableWidget_2.setItem(11, 0, __qtablewidgetitem161)
         __qtablewidgetitem162 = QTableWidgetItem()
-        self.tableWidget_2.setItem(11, 2, __qtablewidgetitem162)
+        __qtablewidgetitem162.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(11, 1, __qtablewidgetitem162)
         __qtablewidgetitem163 = QTableWidgetItem()
-        __qtablewidgetitem163.setFont(font1);
-        __qtablewidgetitem163.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(12, 0, __qtablewidgetitem163)
+        self.tableWidget_2.setItem(11, 2, __qtablewidgetitem163)
         __qtablewidgetitem164 = QTableWidgetItem()
+        __qtablewidgetitem164.setFont(font1);
         __qtablewidgetitem164.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(12, 1, __qtablewidgetitem164)
+        self.tableWidget_2.setItem(12, 0, __qtablewidgetitem164)
         __qtablewidgetitem165 = QTableWidgetItem()
-        self.tableWidget_2.setItem(12, 2, __qtablewidgetitem165)
+        __qtablewidgetitem165.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(12, 1, __qtablewidgetitem165)
         __qtablewidgetitem166 = QTableWidgetItem()
-        __qtablewidgetitem166.setFont(font1);
-        __qtablewidgetitem166.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(13, 0, __qtablewidgetitem166)
+        self.tableWidget_2.setItem(12, 2, __qtablewidgetitem166)
         __qtablewidgetitem167 = QTableWidgetItem()
+        __qtablewidgetitem167.setFont(font1);
         __qtablewidgetitem167.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(13, 1, __qtablewidgetitem167)
+        self.tableWidget_2.setItem(13, 0, __qtablewidgetitem167)
         __qtablewidgetitem168 = QTableWidgetItem()
-        self.tableWidget_2.setItem(13, 2, __qtablewidgetitem168)
+        __qtablewidgetitem168.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(13, 1, __qtablewidgetitem168)
+        __qtablewidgetitem169 = QTableWidgetItem()
+        self.tableWidget_2.setItem(13, 2, __qtablewidgetitem169)
         font4 = QFont()
         font4.setPointSize(11)
         font4.setBold(True)
-        __qtablewidgetitem169 = QTableWidgetItem()
-        __qtablewidgetitem169.setFont(font4);
-        __qtablewidgetitem169.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(14, 0, __qtablewidgetitem169)
         __qtablewidgetitem170 = QTableWidgetItem()
+        __qtablewidgetitem170.setFont(font4);
         __qtablewidgetitem170.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_2.setItem(14, 1, __qtablewidgetitem170)
+        self.tableWidget_2.setItem(14, 0, __qtablewidgetitem170)
         __qtablewidgetitem171 = QTableWidgetItem()
-        self.tableWidget_2.setItem(14, 2, __qtablewidgetitem171)
+        __qtablewidgetitem171.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_2.setItem(14, 1, __qtablewidgetitem171)
+        __qtablewidgetitem172 = QTableWidgetItem()
+        self.tableWidget_2.setItem(14, 2, __qtablewidgetitem172)
         self.tableWidget_2.setObjectName(u"tableWidget_2")
         self.tableWidget_2.setEnabled(False)
         self.tableWidget_2.setMinimumSize(QSize(1050, 0))
@@ -1055,11 +1091,11 @@ class Ui_mainWindow(object):
 
         self.groupBox_6 = QGroupBox(self.tab_2)
         self.groupBox_6.setObjectName(u"groupBox_6")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.groupBox_6.sizePolicy().hasHeightForWidth())
-        self.groupBox_6.setSizePolicy(sizePolicy6)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.groupBox_6.sizePolicy().hasHeightForWidth())
+        self.groupBox_6.setSizePolicy(sizePolicy7)
         self.gridLayout_2 = QGridLayout(self.groupBox_6)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_4 = QGridLayout()
@@ -1072,8 +1108,8 @@ class Ui_mainWindow(object):
         self.hl_h_c.setContentsMargins(0, -1, -1, -1)
         self.lb_h_c = QLabel(self.groupBox_6)
         self.lb_h_c.setObjectName(u"lb_h_c")
-        sizePolicy4.setHeightForWidth(self.lb_h_c.sizePolicy().hasHeightForWidth())
-        self.lb_h_c.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_h_c.sizePolicy().hasHeightForWidth())
+        self.lb_h_c.setSizePolicy(sizePolicy5)
         self.lb_h_c.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_c.addWidget(self.lb_h_c)
@@ -1098,8 +1134,8 @@ class Ui_mainWindow(object):
         self.hl_h_p_2.setContentsMargins(0, -1, -1, -1)
         self.lb_h_p_2 = QLabel(self.groupBox_6)
         self.lb_h_p_2.setObjectName(u"lb_h_p_2")
-        sizePolicy4.setHeightForWidth(self.lb_h_p_2.sizePolicy().hasHeightForWidth())
-        self.lb_h_p_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_h_p_2.sizePolicy().hasHeightForWidth())
+        self.lb_h_p_2.setSizePolicy(sizePolicy5)
         self.lb_h_p_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_p_2.addWidget(self.lb_h_p_2)
@@ -1126,8 +1162,8 @@ class Ui_mainWindow(object):
         self.hl_h_sh.setContentsMargins(-1, -1, 0, -1)
         self.lb_h_sh = QLabel(self.groupBox_6)
         self.lb_h_sh.setObjectName(u"lb_h_sh")
-        sizePolicy4.setHeightForWidth(self.lb_h_sh.sizePolicy().hasHeightForWidth())
-        self.lb_h_sh.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_h_sh.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh.setSizePolicy(sizePolicy5)
         self.lb_h_sh.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_sh.addWidget(self.lb_h_sh)
@@ -1147,11 +1183,11 @@ class Ui_mainWindow(object):
         self.hl_h_sh_shtrih.setContentsMargins(0, -1, 0, -1)
         self.lb_h_sh_shtrih = QLabel(self.groupBox_6)
         self.lb_h_sh_shtrih.setObjectName(u"lb_h_sh_shtrih")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Expanding)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.lb_h_sh_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_h_sh_shtrih.setSizePolicy(sizePolicy7)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Expanding)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.lb_h_sh_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh_shtrih.setSizePolicy(sizePolicy8)
         self.lb_h_sh_shtrih.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_sh_shtrih.addWidget(self.lb_h_sh_shtrih)
@@ -1159,8 +1195,8 @@ class Ui_mainWindow(object):
         self.le_h_sh_shtrih = QLineEdit(self.groupBox_6)
         self.le_h_sh_shtrih.setObjectName(u"le_h_sh_shtrih")
         self.le_h_sh_shtrih.setEnabled(False)
-        sizePolicy5.setHeightForWidth(self.le_h_sh_shtrih.sizePolicy().hasHeightForWidth())
-        self.le_h_sh_shtrih.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.le_h_sh_shtrih.sizePolicy().hasHeightForWidth())
+        self.le_h_sh_shtrih.setSizePolicy(sizePolicy6)
         self.le_h_sh_shtrih.setMinimumSize(QSize(20, 20))
         self.le_h_sh_shtrih.setMaximumSize(QSize(100, 16777215))
         self.le_h_sh_shtrih.setSizeIncrement(QSize(100, 0))
@@ -1180,11 +1216,11 @@ class Ui_mainWindow(object):
         self.hl_b_1_r.setContentsMargins(0, -1, -1, -1)
         self.lb_b_1_r = QLabel(self.groupBox_6)
         self.lb_b_1_r.setObjectName(u"lb_b_1_r")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.lb_b_1_r.sizePolicy().hasHeightForWidth())
-        self.lb_b_1_r.setSizePolicy(sizePolicy8)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.lb_b_1_r.sizePolicy().hasHeightForWidth())
+        self.lb_b_1_r.setSizePolicy(sizePolicy9)
         self.lb_b_1_r.setMaximumSize(QSize(50, 16777215))
         self.lb_b_1_r.setLineWidth(1)
         self.lb_b_1_r.setMargin(0)
@@ -1207,8 +1243,8 @@ class Ui_mainWindow(object):
         self.hl_b_2_r.setContentsMargins(0, -1, -1, -1)
         self.lb_b_2_r = QLabel(self.groupBox_6)
         self.lb_b_2_r.setObjectName(u"lb_b_2_r")
-        sizePolicy4.setHeightForWidth(self.lb_b_2_r.sizePolicy().hasHeightForWidth())
-        self.lb_b_2_r.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_b_2_r.sizePolicy().hasHeightForWidth())
+        self.lb_b_2_r.setSizePolicy(sizePolicy5)
         self.lb_b_2_r.setMaximumSize(QSize(100, 16777215))
         self.lb_b_2_r.setFrameShape(QFrame.NoFrame)
 
@@ -1233,8 +1269,8 @@ class Ui_mainWindow(object):
         self.hl_h_0.setObjectName(u"hl_h_0")
         self.lb_h_0 = QLabel(self.groupBox_6)
         self.lb_h_0.setObjectName(u"lb_h_0")
-        sizePolicy4.setHeightForWidth(self.lb_h_0.sizePolicy().hasHeightForWidth())
-        self.lb_h_0.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_h_0.sizePolicy().hasHeightForWidth())
+        self.lb_h_0.setSizePolicy(sizePolicy5)
         self.lb_h_0.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_0.addWidget(self.lb_h_0)
@@ -1252,8 +1288,8 @@ class Ui_mainWindow(object):
         self.hl_b_sh_2.setObjectName(u"hl_b_sh_2")
         self.lb_b_sh_2 = QLabel(self.groupBox_6)
         self.lb_b_sh_2.setObjectName(u"lb_b_sh_2")
-        sizePolicy4.setHeightForWidth(self.lb_b_sh_2.sizePolicy().hasHeightForWidth())
-        self.lb_b_sh_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_b_sh_2.sizePolicy().hasHeightForWidth())
+        self.lb_b_sh_2.setSizePolicy(sizePolicy5)
         self.lb_b_sh_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_b_sh_2.addWidget(self.lb_b_sh_2)
@@ -1277,8 +1313,8 @@ class Ui_mainWindow(object):
         self.hl_Lamda_d_2.setObjectName(u"hl_Lamda_d_2")
         self.lb_Lamda_d_2 = QLabel(self.groupBox_6)
         self.lb_Lamda_d_2.setObjectName(u"lb_Lamda_d_2")
-        sizePolicy4.setHeightForWidth(self.lb_Lamda_d_2.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_d_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Lamda_d_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_d_2.setSizePolicy(sizePolicy5)
         self.lb_Lamda_d_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_Lamda_d_2.addWidget(self.lb_Lamda_d_2)
@@ -1296,8 +1332,8 @@ class Ui_mainWindow(object):
         self.hl_X_2_shtrih.setObjectName(u"hl_X_2_shtrih")
         self.lb_X_2_shtrih = QLabel(self.groupBox_6)
         self.lb_X_2_shtrih.setObjectName(u"lb_X_2_shtrih")
-        sizePolicy4.setHeightForWidth(self.lb_X_2_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_X_2_shtrih.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_X_2_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_X_2_shtrih.setSizePolicy(sizePolicy5)
         self.lb_X_2_shtrih.setMaximumSize(QSize(50, 16777215))
 
         self.hl_X_2_shtrih.addWidget(self.lb_X_2_shtrih)
@@ -1321,8 +1357,8 @@ class Ui_mainWindow(object):
         self.hl_x_1_2_p.setObjectName(u"hl_x_1_2_p")
         self.lb_x_1_2_p = QLabel(self.groupBox_6)
         self.lb_x_1_2_p.setObjectName(u"lb_x_1_2_p")
-        sizePolicy4.setHeightForWidth(self.lb_x_1_2_p.sizePolicy().hasHeightForWidth())
-        self.lb_x_1_2_p.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_x_1_2_p.sizePolicy().hasHeightForWidth())
+        self.lb_x_1_2_p.setSizePolicy(sizePolicy5)
         self.lb_x_1_2_p.setMaximumSize(QSize(50, 16777215))
 
         self.hl_x_1_2_p.addWidget(self.lb_x_1_2_p)
@@ -1340,8 +1376,8 @@ class Ui_mainWindow(object):
         self.hl_c_1_p.setObjectName(u"hl_c_1_p")
         self.lb_c_1_p = QLabel(self.groupBox_6)
         self.lb_c_1_p.setObjectName(u"lb_c_1_p")
-        sizePolicy4.setHeightForWidth(self.lb_c_1_p.sizePolicy().hasHeightForWidth())
-        self.lb_c_1_p.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_c_1_p.sizePolicy().hasHeightForWidth())
+        self.lb_c_1_p.setSizePolicy(sizePolicy5)
         self.lb_c_1_p.setMaximumSize(QSize(50, 16777215))
 
         self.hl_c_1_p.addWidget(self.lb_c_1_p)
@@ -1365,8 +1401,8 @@ class Ui_mainWindow(object):
         self.hl_X_1.setObjectName(u"hl_X_1")
         self.lb_X_1 = QLabel(self.groupBox_6)
         self.lb_X_1.setObjectName(u"lb_X_1")
-        sizePolicy4.setHeightForWidth(self.lb_X_1.sizePolicy().hasHeightForWidth())
-        self.lb_X_1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_X_1.sizePolicy().hasHeightForWidth())
+        self.lb_X_1.setSizePolicy(sizePolicy5)
         self.lb_X_1.setMaximumSize(QSize(50, 16777215))
 
         self.hl_X_1.addWidget(self.lb_X_1)
@@ -1387,8 +1423,8 @@ class Ui_mainWindow(object):
         self.hl_h_1.setObjectName(u"hl_h_1")
         self.lb_h_1 = QLabel(self.groupBox_6)
         self.lb_h_1.setObjectName(u"lb_h_1")
-        sizePolicy4.setHeightForWidth(self.lb_h_1.sizePolicy().hasHeightForWidth())
-        self.lb_h_1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_h_1.sizePolicy().hasHeightForWidth())
+        self.lb_h_1.setSizePolicy(sizePolicy5)
         self.lb_h_1.setMaximumSize(QSize(50, 16777215))
 
         self.hl_h_1.addWidget(self.lb_h_1)
@@ -1406,8 +1442,8 @@ class Ui_mainWindow(object):
         self.hl_q_c.setObjectName(u"hl_q_c")
         self.lb_q_c = QLabel(self.groupBox_6)
         self.lb_q_c.setObjectName(u"lb_q_c")
-        sizePolicy4.setHeightForWidth(self.lb_q_c.sizePolicy().hasHeightForWidth())
-        self.lb_q_c.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_q_c.sizePolicy().hasHeightForWidth())
+        self.lb_q_c.setSizePolicy(sizePolicy5)
         self.lb_q_c.setMaximumSize(QSize(50, 16777215))
 
         self.hl_q_c.addWidget(self.lb_q_c)
@@ -1431,8 +1467,8 @@ class Ui_mainWindow(object):
         self.hl_r_c.setObjectName(u"hl_r_c")
         self.lb_r_c = QLabel(self.groupBox_6)
         self.lb_r_c.setObjectName(u"lb_r_c")
-        sizePolicy4.setHeightForWidth(self.lb_r_c.sizePolicy().hasHeightForWidth())
-        self.lb_r_c.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_r_c.sizePolicy().hasHeightForWidth())
+        self.lb_r_c.setSizePolicy(sizePolicy5)
         self.lb_r_c.setMaximumSize(QSize(50, 16777215))
 
         self.hl_r_c.addWidget(self.lb_r_c)
@@ -1450,8 +1486,8 @@ class Ui_mainWindow(object):
         self.hl_r_2.setObjectName(u"hl_r_2")
         self.lb_r_2 = QLabel(self.groupBox_6)
         self.lb_r_2.setObjectName(u"lb_r_2")
-        sizePolicy4.setHeightForWidth(self.lb_r_2.sizePolicy().hasHeightForWidth())
-        self.lb_r_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_r_2.sizePolicy().hasHeightForWidth())
+        self.lb_r_2.setSizePolicy(sizePolicy5)
         self.lb_r_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_r_2.addWidget(self.lb_r_2)
@@ -1475,8 +1511,8 @@ class Ui_mainWindow(object):
         self.hl_Lamda_p_2.setObjectName(u"hl_Lamda_p_2")
         self.lb_Lamda_p_2 = QLabel(self.groupBox_6)
         self.lb_Lamda_p_2.setObjectName(u"lb_Lamda_p_2")
-        sizePolicy4.setHeightForWidth(self.lb_Lamda_p_2.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_p_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Lamda_p_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_2.setSizePolicy(sizePolicy5)
         self.lb_Lamda_p_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_Lamda_p_2.addWidget(self.lb_Lamda_p_2)
@@ -1494,8 +1530,8 @@ class Ui_mainWindow(object):
         self.hl_Lamda_l_2.setObjectName(u"hl_Lamda_l_2")
         self.lb_Lamda_l_2 = QLabel(self.groupBox_6)
         self.lb_Lamda_l_2.setObjectName(u"lb_Lamda_l_2")
-        sizePolicy4.setHeightForWidth(self.lb_Lamda_l_2.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_l_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Lamda_l_2.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_l_2.setSizePolicy(sizePolicy5)
         self.lb_Lamda_l_2.setMaximumSize(QSize(50, 16777215))
 
         self.hl_Lamda_l_2.addWidget(self.lb_Lamda_l_2)
@@ -1566,264 +1602,264 @@ class Ui_mainWindow(object):
         self.tableWidget_3 = QTableWidget(self.tab_3)
         if (self.tableWidget_3.columnCount() < 8):
             self.tableWidget_3.setColumnCount(8)
-        __qtablewidgetitem172 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem172)
         __qtablewidgetitem173 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem173)
+        self.tableWidget_3.setHorizontalHeaderItem(0, __qtablewidgetitem173)
         __qtablewidgetitem174 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem174)
+        self.tableWidget_3.setHorizontalHeaderItem(1, __qtablewidgetitem174)
         __qtablewidgetitem175 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem175)
+        self.tableWidget_3.setHorizontalHeaderItem(2, __qtablewidgetitem175)
         __qtablewidgetitem176 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem176)
+        self.tableWidget_3.setHorizontalHeaderItem(3, __qtablewidgetitem176)
         __qtablewidgetitem177 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem177)
+        self.tableWidget_3.setHorizontalHeaderItem(4, __qtablewidgetitem177)
         __qtablewidgetitem178 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem178)
+        self.tableWidget_3.setHorizontalHeaderItem(5, __qtablewidgetitem178)
         __qtablewidgetitem179 = QTableWidgetItem()
-        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem179)
+        self.tableWidget_3.setHorizontalHeaderItem(6, __qtablewidgetitem179)
+        __qtablewidgetitem180 = QTableWidgetItem()
+        self.tableWidget_3.setHorizontalHeaderItem(7, __qtablewidgetitem180)
         if (self.tableWidget_3.rowCount() < 21):
             self.tableWidget_3.setRowCount(21)
-        __qtablewidgetitem180 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem180)
         __qtablewidgetitem181 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem181)
+        self.tableWidget_3.setVerticalHeaderItem(0, __qtablewidgetitem181)
         __qtablewidgetitem182 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(2, __qtablewidgetitem182)
+        self.tableWidget_3.setVerticalHeaderItem(1, __qtablewidgetitem182)
         __qtablewidgetitem183 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(3, __qtablewidgetitem183)
+        self.tableWidget_3.setVerticalHeaderItem(2, __qtablewidgetitem183)
         __qtablewidgetitem184 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem184)
+        self.tableWidget_3.setVerticalHeaderItem(3, __qtablewidgetitem184)
         __qtablewidgetitem185 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(5, __qtablewidgetitem185)
+        self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem185)
         __qtablewidgetitem186 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(6, __qtablewidgetitem186)
+        self.tableWidget_3.setVerticalHeaderItem(5, __qtablewidgetitem186)
         __qtablewidgetitem187 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(7, __qtablewidgetitem187)
+        self.tableWidget_3.setVerticalHeaderItem(6, __qtablewidgetitem187)
         __qtablewidgetitem188 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(8, __qtablewidgetitem188)
+        self.tableWidget_3.setVerticalHeaderItem(7, __qtablewidgetitem188)
         __qtablewidgetitem189 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(9, __qtablewidgetitem189)
+        self.tableWidget_3.setVerticalHeaderItem(8, __qtablewidgetitem189)
         __qtablewidgetitem190 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(10, __qtablewidgetitem190)
+        self.tableWidget_3.setVerticalHeaderItem(9, __qtablewidgetitem190)
         __qtablewidgetitem191 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(11, __qtablewidgetitem191)
+        self.tableWidget_3.setVerticalHeaderItem(10, __qtablewidgetitem191)
         __qtablewidgetitem192 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(12, __qtablewidgetitem192)
+        self.tableWidget_3.setVerticalHeaderItem(11, __qtablewidgetitem192)
         __qtablewidgetitem193 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(13, __qtablewidgetitem193)
+        self.tableWidget_3.setVerticalHeaderItem(12, __qtablewidgetitem193)
         __qtablewidgetitem194 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(14, __qtablewidgetitem194)
+        self.tableWidget_3.setVerticalHeaderItem(13, __qtablewidgetitem194)
         __qtablewidgetitem195 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(15, __qtablewidgetitem195)
+        self.tableWidget_3.setVerticalHeaderItem(14, __qtablewidgetitem195)
         __qtablewidgetitem196 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(16, __qtablewidgetitem196)
+        self.tableWidget_3.setVerticalHeaderItem(15, __qtablewidgetitem196)
         __qtablewidgetitem197 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(17, __qtablewidgetitem197)
+        self.tableWidget_3.setVerticalHeaderItem(16, __qtablewidgetitem197)
         __qtablewidgetitem198 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(18, __qtablewidgetitem198)
+        self.tableWidget_3.setVerticalHeaderItem(17, __qtablewidgetitem198)
         __qtablewidgetitem199 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(19, __qtablewidgetitem199)
+        self.tableWidget_3.setVerticalHeaderItem(18, __qtablewidgetitem199)
         __qtablewidgetitem200 = QTableWidgetItem()
-        self.tableWidget_3.setVerticalHeaderItem(20, __qtablewidgetitem200)
+        self.tableWidget_3.setVerticalHeaderItem(19, __qtablewidgetitem200)
         __qtablewidgetitem201 = QTableWidgetItem()
-        __qtablewidgetitem201.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 2, __qtablewidgetitem201)
+        self.tableWidget_3.setVerticalHeaderItem(20, __qtablewidgetitem201)
         __qtablewidgetitem202 = QTableWidgetItem()
         __qtablewidgetitem202.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 3, __qtablewidgetitem202)
+        self.tableWidget_3.setItem(0, 2, __qtablewidgetitem202)
         __qtablewidgetitem203 = QTableWidgetItem()
         __qtablewidgetitem203.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 4, __qtablewidgetitem203)
+        self.tableWidget_3.setItem(0, 3, __qtablewidgetitem203)
         __qtablewidgetitem204 = QTableWidgetItem()
         __qtablewidgetitem204.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 5, __qtablewidgetitem204)
+        self.tableWidget_3.setItem(0, 4, __qtablewidgetitem204)
         __qtablewidgetitem205 = QTableWidgetItem()
         __qtablewidgetitem205.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
-        self.tableWidget_3.setItem(0, 6, __qtablewidgetitem205)
+        self.tableWidget_3.setItem(0, 5, __qtablewidgetitem205)
         __qtablewidgetitem206 = QTableWidgetItem()
-        __qtablewidgetitem206.setFont(font1);
-        self.tableWidget_3.setItem(0, 7, __qtablewidgetitem206)
+        __qtablewidgetitem206.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable);
+        self.tableWidget_3.setItem(0, 6, __qtablewidgetitem206)
         __qtablewidgetitem207 = QTableWidgetItem()
         __qtablewidgetitem207.setFont(font1);
-        __qtablewidgetitem207.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem207)
+        self.tableWidget_3.setItem(0, 7, __qtablewidgetitem207)
         __qtablewidgetitem208 = QTableWidgetItem()
+        __qtablewidgetitem208.setFont(font1);
         __qtablewidgetitem208.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem208)
+        self.tableWidget_3.setItem(1, 0, __qtablewidgetitem208)
         __qtablewidgetitem209 = QTableWidgetItem()
-        self.tableWidget_3.setItem(1, 2, __qtablewidgetitem209)
+        __qtablewidgetitem209.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(1, 1, __qtablewidgetitem209)
         __qtablewidgetitem210 = QTableWidgetItem()
-        __qtablewidgetitem210.setFont(font4);
-        __qtablewidgetitem210.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(2, 0, __qtablewidgetitem210)
+        self.tableWidget_3.setItem(1, 2, __qtablewidgetitem210)
         __qtablewidgetitem211 = QTableWidgetItem()
+        __qtablewidgetitem211.setFont(font4);
         __qtablewidgetitem211.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(2, 1, __qtablewidgetitem211)
+        self.tableWidget_3.setItem(2, 0, __qtablewidgetitem211)
         __qtablewidgetitem212 = QTableWidgetItem()
-        self.tableWidget_3.setItem(2, 2, __qtablewidgetitem212)
+        __qtablewidgetitem212.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(2, 1, __qtablewidgetitem212)
         __qtablewidgetitem213 = QTableWidgetItem()
-        __qtablewidgetitem213.setFont(font4);
-        __qtablewidgetitem213.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(3, 0, __qtablewidgetitem213)
+        self.tableWidget_3.setItem(2, 2, __qtablewidgetitem213)
         __qtablewidgetitem214 = QTableWidgetItem()
+        __qtablewidgetitem214.setFont(font4);
         __qtablewidgetitem214.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(3, 1, __qtablewidgetitem214)
+        self.tableWidget_3.setItem(3, 0, __qtablewidgetitem214)
         __qtablewidgetitem215 = QTableWidgetItem()
-        self.tableWidget_3.setItem(3, 2, __qtablewidgetitem215)
+        __qtablewidgetitem215.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(3, 1, __qtablewidgetitem215)
         __qtablewidgetitem216 = QTableWidgetItem()
-        __qtablewidgetitem216.setFont(font1);
-        __qtablewidgetitem216.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(4, 0, __qtablewidgetitem216)
+        self.tableWidget_3.setItem(3, 2, __qtablewidgetitem216)
         __qtablewidgetitem217 = QTableWidgetItem()
+        __qtablewidgetitem217.setFont(font1);
         __qtablewidgetitem217.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(4, 1, __qtablewidgetitem217)
+        self.tableWidget_3.setItem(4, 0, __qtablewidgetitem217)
         __qtablewidgetitem218 = QTableWidgetItem()
-        self.tableWidget_3.setItem(4, 2, __qtablewidgetitem218)
+        __qtablewidgetitem218.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(4, 1, __qtablewidgetitem218)
         __qtablewidgetitem219 = QTableWidgetItem()
-        __qtablewidgetitem219.setFont(font1);
-        __qtablewidgetitem219.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(5, 0, __qtablewidgetitem219)
+        self.tableWidget_3.setItem(4, 2, __qtablewidgetitem219)
         __qtablewidgetitem220 = QTableWidgetItem()
+        __qtablewidgetitem220.setFont(font1);
         __qtablewidgetitem220.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(5, 1, __qtablewidgetitem220)
+        self.tableWidget_3.setItem(5, 0, __qtablewidgetitem220)
         __qtablewidgetitem221 = QTableWidgetItem()
-        self.tableWidget_3.setItem(5, 2, __qtablewidgetitem221)
+        __qtablewidgetitem221.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(5, 1, __qtablewidgetitem221)
         __qtablewidgetitem222 = QTableWidgetItem()
-        __qtablewidgetitem222.setFont(font1);
-        __qtablewidgetitem222.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(6, 0, __qtablewidgetitem222)
+        self.tableWidget_3.setItem(5, 2, __qtablewidgetitem222)
         __qtablewidgetitem223 = QTableWidgetItem()
+        __qtablewidgetitem223.setFont(font1);
         __qtablewidgetitem223.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(6, 1, __qtablewidgetitem223)
+        self.tableWidget_3.setItem(6, 0, __qtablewidgetitem223)
         __qtablewidgetitem224 = QTableWidgetItem()
-        self.tableWidget_3.setItem(6, 2, __qtablewidgetitem224)
+        __qtablewidgetitem224.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(6, 1, __qtablewidgetitem224)
         __qtablewidgetitem225 = QTableWidgetItem()
-        __qtablewidgetitem225.setFont(font1);
-        __qtablewidgetitem225.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(7, 0, __qtablewidgetitem225)
+        self.tableWidget_3.setItem(6, 2, __qtablewidgetitem225)
         __qtablewidgetitem226 = QTableWidgetItem()
+        __qtablewidgetitem226.setFont(font1);
         __qtablewidgetitem226.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(7, 1, __qtablewidgetitem226)
+        self.tableWidget_3.setItem(7, 0, __qtablewidgetitem226)
         __qtablewidgetitem227 = QTableWidgetItem()
-        self.tableWidget_3.setItem(7, 2, __qtablewidgetitem227)
+        __qtablewidgetitem227.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(7, 1, __qtablewidgetitem227)
         __qtablewidgetitem228 = QTableWidgetItem()
-        __qtablewidgetitem228.setFont(font1);
-        __qtablewidgetitem228.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(8, 0, __qtablewidgetitem228)
+        self.tableWidget_3.setItem(7, 2, __qtablewidgetitem228)
         __qtablewidgetitem229 = QTableWidgetItem()
+        __qtablewidgetitem229.setFont(font1);
         __qtablewidgetitem229.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(8, 1, __qtablewidgetitem229)
+        self.tableWidget_3.setItem(8, 0, __qtablewidgetitem229)
         __qtablewidgetitem230 = QTableWidgetItem()
-        self.tableWidget_3.setItem(8, 2, __qtablewidgetitem230)
+        __qtablewidgetitem230.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(8, 1, __qtablewidgetitem230)
         __qtablewidgetitem231 = QTableWidgetItem()
-        __qtablewidgetitem231.setFont(font1);
-        __qtablewidgetitem231.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(9, 0, __qtablewidgetitem231)
+        self.tableWidget_3.setItem(8, 2, __qtablewidgetitem231)
         __qtablewidgetitem232 = QTableWidgetItem()
+        __qtablewidgetitem232.setFont(font1);
         __qtablewidgetitem232.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(9, 1, __qtablewidgetitem232)
+        self.tableWidget_3.setItem(9, 0, __qtablewidgetitem232)
         __qtablewidgetitem233 = QTableWidgetItem()
-        self.tableWidget_3.setItem(9, 2, __qtablewidgetitem233)
+        __qtablewidgetitem233.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(9, 1, __qtablewidgetitem233)
         __qtablewidgetitem234 = QTableWidgetItem()
-        __qtablewidgetitem234.setFont(font1);
-        __qtablewidgetitem234.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(10, 0, __qtablewidgetitem234)
+        self.tableWidget_3.setItem(9, 2, __qtablewidgetitem234)
         __qtablewidgetitem235 = QTableWidgetItem()
+        __qtablewidgetitem235.setFont(font1);
         __qtablewidgetitem235.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(10, 1, __qtablewidgetitem235)
+        self.tableWidget_3.setItem(10, 0, __qtablewidgetitem235)
         __qtablewidgetitem236 = QTableWidgetItem()
-        self.tableWidget_3.setItem(10, 2, __qtablewidgetitem236)
+        __qtablewidgetitem236.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(10, 1, __qtablewidgetitem236)
         __qtablewidgetitem237 = QTableWidgetItem()
-        __qtablewidgetitem237.setFont(font1);
-        __qtablewidgetitem237.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(11, 0, __qtablewidgetitem237)
+        self.tableWidget_3.setItem(10, 2, __qtablewidgetitem237)
         __qtablewidgetitem238 = QTableWidgetItem()
+        __qtablewidgetitem238.setFont(font1);
         __qtablewidgetitem238.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(11, 1, __qtablewidgetitem238)
+        self.tableWidget_3.setItem(11, 0, __qtablewidgetitem238)
         __qtablewidgetitem239 = QTableWidgetItem()
-        self.tableWidget_3.setItem(11, 2, __qtablewidgetitem239)
+        __qtablewidgetitem239.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(11, 1, __qtablewidgetitem239)
         __qtablewidgetitem240 = QTableWidgetItem()
-        __qtablewidgetitem240.setFont(font1);
-        __qtablewidgetitem240.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(12, 0, __qtablewidgetitem240)
+        self.tableWidget_3.setItem(11, 2, __qtablewidgetitem240)
         __qtablewidgetitem241 = QTableWidgetItem()
+        __qtablewidgetitem241.setFont(font1);
         __qtablewidgetitem241.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(12, 1, __qtablewidgetitem241)
+        self.tableWidget_3.setItem(12, 0, __qtablewidgetitem241)
         __qtablewidgetitem242 = QTableWidgetItem()
-        self.tableWidget_3.setItem(12, 2, __qtablewidgetitem242)
+        __qtablewidgetitem242.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(12, 1, __qtablewidgetitem242)
         __qtablewidgetitem243 = QTableWidgetItem()
-        __qtablewidgetitem243.setFont(font1);
-        __qtablewidgetitem243.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(13, 0, __qtablewidgetitem243)
+        self.tableWidget_3.setItem(12, 2, __qtablewidgetitem243)
         __qtablewidgetitem244 = QTableWidgetItem()
+        __qtablewidgetitem244.setFont(font1);
         __qtablewidgetitem244.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(13, 1, __qtablewidgetitem244)
+        self.tableWidget_3.setItem(13, 0, __qtablewidgetitem244)
         __qtablewidgetitem245 = QTableWidgetItem()
-        self.tableWidget_3.setItem(13, 2, __qtablewidgetitem245)
+        __qtablewidgetitem245.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(13, 1, __qtablewidgetitem245)
         __qtablewidgetitem246 = QTableWidgetItem()
-        __qtablewidgetitem246.setFont(font4);
-        __qtablewidgetitem246.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(14, 0, __qtablewidgetitem246)
+        self.tableWidget_3.setItem(13, 2, __qtablewidgetitem246)
         __qtablewidgetitem247 = QTableWidgetItem()
+        __qtablewidgetitem247.setFont(font4);
         __qtablewidgetitem247.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(14, 1, __qtablewidgetitem247)
+        self.tableWidget_3.setItem(14, 0, __qtablewidgetitem247)
         __qtablewidgetitem248 = QTableWidgetItem()
-        self.tableWidget_3.setItem(14, 2, __qtablewidgetitem248)
+        __qtablewidgetitem248.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(14, 1, __qtablewidgetitem248)
         __qtablewidgetitem249 = QTableWidgetItem()
-        __qtablewidgetitem249.setFont(font4);
-        __qtablewidgetitem249.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(15, 0, __qtablewidgetitem249)
+        self.tableWidget_3.setItem(14, 2, __qtablewidgetitem249)
         __qtablewidgetitem250 = QTableWidgetItem()
+        __qtablewidgetitem250.setFont(font4);
         __qtablewidgetitem250.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(15, 1, __qtablewidgetitem250)
+        self.tableWidget_3.setItem(15, 0, __qtablewidgetitem250)
         __qtablewidgetitem251 = QTableWidgetItem()
-        self.tableWidget_3.setItem(15, 2, __qtablewidgetitem251)
+        __qtablewidgetitem251.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(15, 1, __qtablewidgetitem251)
         __qtablewidgetitem252 = QTableWidgetItem()
-        __qtablewidgetitem252.setFont(font4);
-        __qtablewidgetitem252.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(16, 0, __qtablewidgetitem252)
+        self.tableWidget_3.setItem(15, 2, __qtablewidgetitem252)
         __qtablewidgetitem253 = QTableWidgetItem()
+        __qtablewidgetitem253.setFont(font4);
         __qtablewidgetitem253.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(16, 1, __qtablewidgetitem253)
+        self.tableWidget_3.setItem(16, 0, __qtablewidgetitem253)
         __qtablewidgetitem254 = QTableWidgetItem()
-        self.tableWidget_3.setItem(16, 2, __qtablewidgetitem254)
+        __qtablewidgetitem254.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(16, 1, __qtablewidgetitem254)
         __qtablewidgetitem255 = QTableWidgetItem()
-        __qtablewidgetitem255.setFont(font4);
-        __qtablewidgetitem255.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(17, 0, __qtablewidgetitem255)
+        self.tableWidget_3.setItem(16, 2, __qtablewidgetitem255)
         __qtablewidgetitem256 = QTableWidgetItem()
+        __qtablewidgetitem256.setFont(font4);
         __qtablewidgetitem256.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(17, 1, __qtablewidgetitem256)
+        self.tableWidget_3.setItem(17, 0, __qtablewidgetitem256)
         __qtablewidgetitem257 = QTableWidgetItem()
-        self.tableWidget_3.setItem(17, 2, __qtablewidgetitem257)
+        __qtablewidgetitem257.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(17, 1, __qtablewidgetitem257)
         __qtablewidgetitem258 = QTableWidgetItem()
-        __qtablewidgetitem258.setFont(font4);
-        __qtablewidgetitem258.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(18, 0, __qtablewidgetitem258)
+        self.tableWidget_3.setItem(17, 2, __qtablewidgetitem258)
         __qtablewidgetitem259 = QTableWidgetItem()
+        __qtablewidgetitem259.setFont(font4);
         __qtablewidgetitem259.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(18, 1, __qtablewidgetitem259)
+        self.tableWidget_3.setItem(18, 0, __qtablewidgetitem259)
         __qtablewidgetitem260 = QTableWidgetItem()
-        self.tableWidget_3.setItem(18, 2, __qtablewidgetitem260)
+        __qtablewidgetitem260.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(18, 1, __qtablewidgetitem260)
         __qtablewidgetitem261 = QTableWidgetItem()
-        __qtablewidgetitem261.setFont(font1);
-        __qtablewidgetitem261.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(19, 0, __qtablewidgetitem261)
+        self.tableWidget_3.setItem(18, 2, __qtablewidgetitem261)
         __qtablewidgetitem262 = QTableWidgetItem()
+        __qtablewidgetitem262.setFont(font1);
         __qtablewidgetitem262.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(19, 1, __qtablewidgetitem262)
+        self.tableWidget_3.setItem(19, 0, __qtablewidgetitem262)
         __qtablewidgetitem263 = QTableWidgetItem()
-        self.tableWidget_3.setItem(19, 2, __qtablewidgetitem263)
+        __qtablewidgetitem263.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(19, 1, __qtablewidgetitem263)
         __qtablewidgetitem264 = QTableWidgetItem()
-        __qtablewidgetitem264.setFont(font1);
-        __qtablewidgetitem264.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(20, 0, __qtablewidgetitem264)
+        self.tableWidget_3.setItem(19, 2, __qtablewidgetitem264)
         __qtablewidgetitem265 = QTableWidgetItem()
+        __qtablewidgetitem265.setFont(font1);
         __qtablewidgetitem265.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
-        self.tableWidget_3.setItem(20, 1, __qtablewidgetitem265)
+        self.tableWidget_3.setItem(20, 0, __qtablewidgetitem265)
         __qtablewidgetitem266 = QTableWidgetItem()
-        self.tableWidget_3.setItem(20, 2, __qtablewidgetitem266)
+        __qtablewidgetitem266.setFlags(Qt.ItemIsDragEnabled|Qt.ItemIsDropEnabled|Qt.ItemIsUserCheckable|Qt.ItemIsEnabled);
+        self.tableWidget_3.setItem(20, 1, __qtablewidgetitem266)
+        __qtablewidgetitem267 = QTableWidgetItem()
+        self.tableWidget_3.setItem(20, 2, __qtablewidgetitem267)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setMinimumSize(QSize(1100, 0))
         self.tableWidget_3.setMaximumSize(QSize(1100, 680))
@@ -1844,8 +1880,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.lb_C_N = QLabel(self.groupBox_7)
         self.lb_C_N.setObjectName(u"lb_C_N")
-        sizePolicy4.setHeightForWidth(self.lb_C_N.sizePolicy().hasHeightForWidth())
-        self.lb_C_N.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_C_N.sizePolicy().hasHeightForWidth())
+        self.lb_C_N.setSizePolicy(sizePolicy5)
         self.lb_C_N.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_15.addWidget(self.lb_C_N)
@@ -1867,11 +1903,11 @@ class Ui_mainWindow(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.lb_k_y_1 = QLabel(self.groupBox_7)
         self.lb_k_y_1.setObjectName(u"lb_k_y_1")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.lb_k_y_1.sizePolicy().hasHeightForWidth())
-        self.lb_k_y_1.setSizePolicy(sizePolicy9)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.lb_k_y_1.sizePolicy().hasHeightForWidth())
+        self.lb_k_y_1.setSizePolicy(sizePolicy10)
         self.lb_k_y_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_14.addWidget(self.lb_k_y_1)
@@ -1897,8 +1933,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.lb_u_p = QLabel(self.groupBox_7)
         self.lb_u_p.setObjectName(u"lb_u_p")
-        sizePolicy4.setHeightForWidth(self.lb_u_p.sizePolicy().hasHeightForWidth())
-        self.lb_u_p.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_u_p.sizePolicy().hasHeightForWidth())
+        self.lb_u_p.setSizePolicy(sizePolicy5)
         self.lb_u_p.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_17.addWidget(self.lb_u_p)
@@ -1919,8 +1955,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
         self.lb_k_ob = QLabel(self.groupBox_7)
         self.lb_k_ob.setObjectName(u"lb_k_ob")
-        sizePolicy9.setHeightForWidth(self.lb_k_ob.sizePolicy().hasHeightForWidth())
-        self.lb_k_ob.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_k_ob.sizePolicy().hasHeightForWidth())
+        self.lb_k_ob.setSizePolicy(sizePolicy10)
         self.lb_k_ob.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_35.addWidget(self.lb_k_ob)
@@ -1928,8 +1964,8 @@ class Ui_mainWindow(object):
         self.le_k_ob = QLineEdit(self.groupBox_7)
         self.le_k_ob.setObjectName(u"le_k_ob")
         self.le_k_ob.setEnabled(False)
-        sizePolicy5.setHeightForWidth(self.le_k_ob.sizePolicy().hasHeightForWidth())
-        self.le_k_ob.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.le_k_ob.sizePolicy().hasHeightForWidth())
+        self.le_k_ob.setSizePolicy(sizePolicy6)
         self.le_k_ob.setMinimumSize(QSize(20, 20))
         self.le_k_ob.setMaximumSize(QSize(100, 16777215))
         self.le_k_ob.setSizeIncrement(QSize(100, 0))
@@ -1948,8 +1984,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.lb_Z_1 = QLabel(self.groupBox_7)
         self.lb_Z_1.setObjectName(u"lb_Z_1")
-        sizePolicy4.setHeightForWidth(self.lb_Z_1.sizePolicy().hasHeightForWidth())
-        self.lb_Z_1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Z_1.sizePolicy().hasHeightForWidth())
+        self.lb_Z_1.setSizePolicy(sizePolicy5)
         self.lb_Z_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_18.addWidget(self.lb_Z_1)
@@ -1971,8 +2007,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
         self.lb_Z_2 = QLabel(self.groupBox_7)
         self.lb_Z_2.setObjectName(u"lb_Z_2")
-        sizePolicy9.setHeightForWidth(self.lb_Z_2.sizePolicy().hasHeightForWidth())
-        self.lb_Z_2.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_Z_2.sizePolicy().hasHeightForWidth())
+        self.lb_Z_2.setSizePolicy(sizePolicy10)
         self.lb_Z_2.setMaximumSize(QSize(50, 16777215))
         self.lb_Z_2.setFrameShape(QFrame.NoFrame)
 
@@ -1999,8 +2035,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.lb_sigma = QLabel(self.groupBox_7)
         self.lb_sigma.setObjectName(u"lb_sigma")
-        sizePolicy4.setHeightForWidth(self.lb_sigma.sizePolicy().hasHeightForWidth())
-        self.lb_sigma.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_sigma.sizePolicy().hasHeightForWidth())
+        self.lb_sigma.setSizePolicy(sizePolicy5)
         self.lb_sigma.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_19.addWidget(self.lb_sigma)
@@ -2021,8 +2057,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
         self.lb_t_z_1 = QLabel(self.groupBox_7)
         self.lb_t_z_1.setObjectName(u"lb_t_z_1")
-        sizePolicy9.setHeightForWidth(self.lb_t_z_1.sizePolicy().hasHeightForWidth())
-        self.lb_t_z_1.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_t_z_1.sizePolicy().hasHeightForWidth())
+        self.lb_t_z_1.setSizePolicy(sizePolicy10)
         self.lb_t_z_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_37.addWidget(self.lb_t_z_1)
@@ -2048,8 +2084,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.lb_b_sh = QLabel(self.groupBox_7)
         self.lb_b_sh.setObjectName(u"lb_b_sh")
-        sizePolicy4.setHeightForWidth(self.lb_b_sh.sizePolicy().hasHeightForWidth())
-        self.lb_b_sh.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_b_sh.sizePolicy().hasHeightForWidth())
+        self.lb_b_sh.setSizePolicy(sizePolicy5)
         self.lb_b_sh.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_29.addWidget(self.lb_b_sh)
@@ -2070,8 +2106,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
         self.lb_h_sh_r = QLabel(self.groupBox_7)
         self.lb_h_sh_r.setObjectName(u"lb_h_sh_r")
-        sizePolicy9.setHeightForWidth(self.lb_h_sh_r.sizePolicy().hasHeightForWidth())
-        self.lb_h_sh_r.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_h_sh_r.sizePolicy().hasHeightForWidth())
+        self.lb_h_sh_r.setSizePolicy(sizePolicy10)
         self.lb_h_sh_r.setMaximumSize(QSize(75, 16777215))
 
         self.horizontalLayout_38.addWidget(self.lb_h_sh_r)
@@ -2097,8 +2133,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.lb_Lamda_p_1 = QLabel(self.groupBox_7)
         self.lb_Lamda_p_1.setObjectName(u"lb_Lamda_p_1")
-        sizePolicy4.setHeightForWidth(self.lb_Lamda_p_1.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_p_1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Lamda_p_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_1.setSizePolicy(sizePolicy5)
         self.lb_Lamda_p_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_30.addWidget(self.lb_Lamda_p_1)
@@ -2119,8 +2155,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
         self.lb_Lamda_d_1 = QLabel(self.groupBox_7)
         self.lb_Lamda_d_1.setObjectName(u"lb_Lamda_d_1")
-        sizePolicy9.setHeightForWidth(self.lb_Lamda_d_1.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_d_1.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_Lamda_d_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_d_1.setSizePolicy(sizePolicy10)
         self.lb_Lamda_d_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_39.addWidget(self.lb_Lamda_d_1)
@@ -2146,8 +2182,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
         self.lb_Lamda_l_1 = QLabel(self.groupBox_7)
         self.lb_Lamda_l_1.setObjectName(u"lb_Lamda_l_1")
-        sizePolicy4.setHeightForWidth(self.lb_Lamda_l_1.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_l_1.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Lamda_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_l_1.setSizePolicy(sizePolicy5)
         self.lb_Lamda_l_1.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_31.addWidget(self.lb_Lamda_l_1)
@@ -2168,8 +2204,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
         self.lb_t_z_2 = QLabel(self.groupBox_7)
         self.lb_t_z_2.setObjectName(u"lb_t_z_2")
-        sizePolicy9.setHeightForWidth(self.lb_t_z_2.sizePolicy().hasHeightForWidth())
-        self.lb_t_z_2.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_t_z_2.sizePolicy().hasHeightForWidth())
+        self.lb_t_z_2.setSizePolicy(sizePolicy10)
         self.lb_t_z_2.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_40.addWidget(self.lb_t_z_2)
@@ -2195,8 +2231,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
         self.lb_r_2_Ksi_shtrih = QLabel(self.groupBox_7)
         self.lb_r_2_Ksi_shtrih.setObjectName(u"lb_r_2_Ksi_shtrih")
-        sizePolicy4.setHeightForWidth(self.lb_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_r_2_Ksi_shtrih.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_r_2_Ksi_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_r_2_Ksi_shtrih.setSizePolicy(sizePolicy5)
         self.lb_r_2_Ksi_shtrih.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_32.addWidget(self.lb_r_2_Ksi_shtrih)
@@ -2217,8 +2253,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
         self.lb_I_1_p = QLabel(self.groupBox_7)
         self.lb_I_1_p.setObjectName(u"lb_I_1_p")
-        sizePolicy9.setHeightForWidth(self.lb_I_1_p.sizePolicy().hasHeightForWidth())
-        self.lb_I_1_p.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_I_1_p.sizePolicy().hasHeightForWidth())
+        self.lb_I_1_p.setSizePolicy(sizePolicy10)
         self.lb_I_1_p.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_41.addWidget(self.lb_I_1_p)
@@ -2244,8 +2280,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
         self.lb_I_1_nom = QLabel(self.groupBox_7)
         self.lb_I_1_nom.setObjectName(u"lb_I_1_nom")
-        sizePolicy4.setHeightForWidth(self.lb_I_1_nom.sizePolicy().hasHeightForWidth())
-        self.lb_I_1_nom.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_I_1_nom.sizePolicy().hasHeightForWidth())
+        self.lb_I_1_nom.setSizePolicy(sizePolicy5)
         self.lb_I_1_nom.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_33.addWidget(self.lb_I_1_nom)
@@ -2266,8 +2302,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
         self.lb_h_k = QLabel(self.groupBox_7)
         self.lb_h_k.setObjectName(u"lb_h_k")
-        sizePolicy9.setHeightForWidth(self.lb_h_k.sizePolicy().hasHeightForWidth())
-        self.lb_h_k.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_h_k.sizePolicy().hasHeightForWidth())
+        self.lb_h_k.setSizePolicy(sizePolicy10)
         self.lb_h_k.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_42.addWidget(self.lb_h_k)
@@ -2293,8 +2329,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.lb_Lamda_p_2_Ksi = QLabel(self.groupBox_7)
         self.lb_Lamda_p_2_Ksi.setObjectName(u"lb_Lamda_p_2_Ksi")
-        sizePolicy4.setHeightForWidth(self.lb_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
-        self.lb_Lamda_p_2_Ksi.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.lb_Lamda_p_2_Ksi.sizePolicy().hasHeightForWidth())
+        self.lb_Lamda_p_2_Ksi.setSizePolicy(sizePolicy5)
         self.lb_Lamda_p_2_Ksi.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_34.addWidget(self.lb_Lamda_p_2_Ksi)
@@ -2315,8 +2351,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
         self.lb_K_R = QLabel(self.groupBox_7)
         self.lb_K_R.setObjectName(u"lb_K_R")
-        sizePolicy9.setHeightForWidth(self.lb_K_R.sizePolicy().hasHeightForWidth())
-        self.lb_K_R.setSizePolicy(sizePolicy9)
+        sizePolicy10.setHeightForWidth(self.lb_K_R.sizePolicy().hasHeightForWidth())
+        self.lb_K_R.setSizePolicy(sizePolicy10)
         self.lb_K_R.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout_43.addWidget(self.lb_K_R)
@@ -2392,8 +2428,8 @@ class Ui_mainWindow(object):
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.groupBox_2 = QGroupBox(self.groupBox_4)
         self.groupBox_2.setObjectName(u"groupBox_2")
-        sizePolicy4.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
-        self.groupBox_2.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        self.groupBox_2.setSizePolicy(sizePolicy5)
         self.gridLayout_18 = QGridLayout(self.groupBox_2)
         self.gridLayout_18.setObjectName(u"gridLayout_18")
         self.verticalLayout_4 = QVBoxLayout()
@@ -2409,11 +2445,11 @@ class Ui_mainWindow(object):
 
         self.le_D = QLineEdit(self.groupBox_2)
         self.le_D.setObjectName(u"le_D")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(0)
-        sizePolicy10.setHeightForWidth(self.le_D.sizePolicy().hasHeightForWidth())
-        self.le_D.setSizePolicy(sizePolicy10)
+        sizePolicy11 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        sizePolicy11.setHorizontalStretch(0)
+        sizePolicy11.setVerticalStretch(0)
+        sizePolicy11.setHeightForWidth(self.le_D.sizePolicy().hasHeightForWidth())
+        self.le_D.setSizePolicy(sizePolicy11)
         self.le_D.setMinimumSize(QSize(100, 0))
         self.le_D.setMaximumSize(QSize(100, 16777215))
 
@@ -2710,11 +2746,11 @@ class Ui_mainWindow(object):
 
         self.lb_delta_nu_pov_1 = QLabel(self.groupBox)
         self.lb_delta_nu_pov_1.setObjectName(u"lb_delta_nu_pov_1")
-        sizePolicy11 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Preferred)
-        sizePolicy11.setHorizontalStretch(0)
-        sizePolicy11.setVerticalStretch(0)
-        sizePolicy11.setHeightForWidth(self.lb_delta_nu_pov_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_pov_1.setSizePolicy(sizePolicy11)
+        sizePolicy12 = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Preferred)
+        sizePolicy12.setHorizontalStretch(0)
+        sizePolicy12.setVerticalStretch(0)
+        sizePolicy12.setHeightForWidth(self.lb_delta_nu_pov_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_pov_1.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_20.addWidget(self.lb_delta_nu_pov_1)
 
@@ -2731,8 +2767,8 @@ class Ui_mainWindow(object):
 
         self.lb_delta_nu_iz_p_1 = QLabel(self.groupBox)
         self.lb_delta_nu_iz_p_1.setObjectName(u"lb_delta_nu_iz_p_1")
-        sizePolicy11.setHeightForWidth(self.lb_delta_nu_iz_p_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_iz_p_1.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_delta_nu_iz_p_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_iz_p_1.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_21.addWidget(self.lb_delta_nu_iz_p_1)
 
@@ -2749,8 +2785,8 @@ class Ui_mainWindow(object):
 
         self.lb_delta_nu_iz_l_1 = QLabel(self.groupBox)
         self.lb_delta_nu_iz_l_1.setObjectName(u"lb_delta_nu_iz_l_1")
-        sizePolicy11.setHeightForWidth(self.lb_delta_nu_iz_l_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_iz_l_1.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_delta_nu_iz_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_iz_l_1.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_22.addWidget(self.lb_delta_nu_iz_l_1)
 
@@ -2767,8 +2803,8 @@ class Ui_mainWindow(object):
 
         self.lb_delta_nu_pov_l_1 = QLabel(self.groupBox)
         self.lb_delta_nu_pov_l_1.setObjectName(u"lb_delta_nu_pov_l_1")
-        sizePolicy11.setHeightForWidth(self.lb_delta_nu_pov_l_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_pov_l_1.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_delta_nu_pov_l_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_pov_l_1.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_23.addWidget(self.lb_delta_nu_pov_l_1)
 
@@ -2785,8 +2821,8 @@ class Ui_mainWindow(object):
 
         self.lb_delta_nu_1_shtrih = QLabel(self.groupBox)
         self.lb_delta_nu_1_shtrih.setObjectName(u"lb_delta_nu_1_shtrih")
-        sizePolicy11.setHeightForWidth(self.lb_delta_nu_1_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_1_shtrih.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_delta_nu_1_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_1_shtrih.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_24.addWidget(self.lb_delta_nu_1_shtrih)
 
@@ -2803,8 +2839,8 @@ class Ui_mainWindow(object):
 
         self.lb_delta_gamma_v = QLabel(self.groupBox)
         self.lb_delta_gamma_v.setObjectName(u"lb_delta_gamma_v")
-        sizePolicy11.setHeightForWidth(self.lb_delta_gamma_v.sizePolicy().hasHeightForWidth())
-        self.lb_delta_gamma_v.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_delta_gamma_v.sizePolicy().hasHeightForWidth())
+        self.lb_delta_gamma_v.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_25.addWidget(self.lb_delta_gamma_v)
 
@@ -2821,8 +2857,8 @@ class Ui_mainWindow(object):
 
         self.lb_delta_nu_1 = QLabel(self.groupBox)
         self.lb_delta_nu_1.setObjectName(u"lb_delta_nu_1")
-        sizePolicy11.setHeightForWidth(self.lb_delta_nu_1.sizePolicy().hasHeightForWidth())
-        self.lb_delta_nu_1.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_delta_nu_1.sizePolicy().hasHeightForWidth())
+        self.lb_delta_nu_1.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_26.addWidget(self.lb_delta_nu_1)
 
@@ -2839,8 +2875,8 @@ class Ui_mainWindow(object):
 
         self.lb_Q_v = QLabel(self.groupBox)
         self.lb_Q_v.setObjectName(u"lb_Q_v")
-        sizePolicy11.setHeightForWidth(self.lb_Q_v.sizePolicy().hasHeightForWidth())
-        self.lb_Q_v.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_Q_v.sizePolicy().hasHeightForWidth())
+        self.lb_Q_v.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_27.addWidget(self.lb_Q_v)
 
@@ -2857,8 +2893,8 @@ class Ui_mainWindow(object):
 
         self.lb_teta_v_shtrih = QLabel(self.groupBox)
         self.lb_teta_v_shtrih.setObjectName(u"lb_teta_v_shtrih")
-        sizePolicy11.setHeightForWidth(self.lb_teta_v_shtrih.sizePolicy().hasHeightForWidth())
-        self.lb_teta_v_shtrih.setSizePolicy(sizePolicy11)
+        sizePolicy12.setHeightForWidth(self.lb_teta_v_shtrih.sizePolicy().hasHeightForWidth())
+        self.lb_teta_v_shtrih.setSizePolicy(sizePolicy12)
 
         self.horizontalLayout_28.addWidget(self.lb_teta_v_shtrih)
 
@@ -2920,8 +2956,8 @@ class Ui_mainWindow(object):
 
         self.lb_error_settings = QLabel(self.layoutWidget)
         self.lb_error_settings.setObjectName(u"lb_error_settings")
-        sizePolicy10.setHeightForWidth(self.lb_error_settings.sizePolicy().hasHeightForWidth())
-        self.lb_error_settings.setSizePolicy(sizePolicy10)
+        sizePolicy11.setHeightForWidth(self.lb_error_settings.sizePolicy().hasHeightForWidth())
+        self.lb_error_settings.setSizePolicy(sizePolicy11)
         self.lb_error_settings.setMinimumSize(QSize(250, 0))
 
         self.horizontalLayout_54.addWidget(self.lb_error_settings)
@@ -2948,7 +2984,7 @@ class Ui_mainWindow(object):
 
         self.tabWidget.addTab(self.tab_5, "")
 
-        self.gridLayout_19.addWidget(self.tabWidget, 0, 0, 1, 1)
+        self.gridLayout_9.addWidget(self.tabWidget, 0, 0, 1, 1)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
@@ -3023,6 +3059,8 @@ class Ui_mainWindow(object):
 
         self.lineSnom.setText(QCoreApplication.translate("mainWindow", u"0", None))
         self.submitValues.setText(QCoreApplication.translate("mainWindow", u"\u0412\u0432\u0435\u0441\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f", None))
+        self.bt_save.setText(QCoreApplication.translate("mainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u043f\u0440\u043e\u0435\u043a\u0442", None))
+        self.bt_load_project.setText(QCoreApplication.translate("mainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043f\u0440\u043e\u0435\u043a\u0442", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("mainWindow", u"\u0412\u0432\u043e\u0434 \u0434\u0430\u043d\u043d\u044b\u0445", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("mainWindow", u"\u0420\u0430\u0441\u0447\u0451\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0430", None));
